@@ -302,29 +302,6 @@ export default async function BusinessPage({ params, searchParams }: Props) {
           LIMIT 4
         `;
 
-        // Parking: fetch nearby places within 800m across useful categories
-        if (category === "parking" && business.lat && business.lng) {
-          nearbyPlaces = await prisma.$queryRaw<NearbyPlace[]>`
-            SELECT sub.slug, sub.name, sub.address, sub."categorySlug", sub."categoryName",
-                   ROUND(sub.distance_m::numeric) AS distance_m
-            FROM (
-              SELECT b.slug, b.name, b.address,
-                     c.slug AS "categorySlug", c.name AS "categoryName",
-                     (6371000 * acos(LEAST(1.0,
-                       cos(radians(${business.lat})) * cos(radians(b.lat)) *
-                       cos(radians(b.lng) - radians(${business.lng})) +
-                       sin(radians(${business.lat})) * sin(radians(b.lat))
-                     ))) AS distance_m
-              FROM "Business" b
-              JOIN "Category" c ON b."categoryId" = c.id
-              WHERE c.slug IN ('restaurants','cafes','bars-nightlife','attractions','beaches-parks','shopping','activities')
-                AND b.lat IS NOT NULL AND b.lng IS NOT NULL
-            ) sub
-            WHERE sub.distance_m < 800
-            ORDER BY sub.distance_m
-            LIMIT 8
-          `;
-        }
       }
     }
   } catch {
