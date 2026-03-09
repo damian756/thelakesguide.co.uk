@@ -29,6 +29,8 @@ const CATEGORY_COLORS: Record<string, string> = {
   Music: "bg-blue-100 text-blue-700",
   Golf: "bg-emerald-100 text-emerald-700",
   "Arts & Culture": "bg-teal-100 text-teal-700",
+  Outdoor: "bg-emerald-100 text-emerald-700",
+  Culture: "bg-teal-100 text-teal-700",
 };
 
 function categoryClass(cat: string) {

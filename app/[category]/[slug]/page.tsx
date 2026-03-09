@@ -58,6 +58,7 @@ const SCHEMA_TYPES: Record<string, string | string[]> = {
   walks:         "LocalBusiness",
   villages:      "LocalBusiness",
   activities:    "LocalBusiness",
+  attractions:   "TouristAttraction",
 };
 
 // Categories that might have food hygiene ratings

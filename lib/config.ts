@@ -5,6 +5,7 @@ export const CATEGORIES = [
   { slug: "cafes", name: "Cafes & Tea Rooms", description: "Cafes and tea rooms in the Lake District" },
   { slug: "pubs", name: "Pubs & Inns", description: "Pubs and inns in the Lake District" },
   { slug: "activities", name: "Activities", description: "Tours, rentals and activities" },
+  { slug: "attractions", name: "Attractions", description: "Dove Cottage, Hill Top, Brockhole, Lakes Aquarium and more" },
   { slug: "accommodation", name: "Places to Stay", description: "Hotels, B&Bs and holiday lets in the Lake District" },
   { slug: "shopping", name: "Shopping", description: "Shops and boutiques in the Lake District" },
 ] as const;

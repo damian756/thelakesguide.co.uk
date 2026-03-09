@@ -23,13 +23,14 @@ const THEMES: Record<string, { gradient: string; accent: string; emoji: string; 
   cafes:         { gradient: "from-[#6B3A1F] to-[#A06040]", accent: "#8B5E3C", emoji: "☕", tagline: "Great coffee, cafes and tea rooms", heroPos: "center 35%" },
   pubs:         { gradient: "from-[#3D1A5C] to-[#6B3AA0]", accent: "#5B2D8A", emoji: "🍺", tagline: "Pubs and inns in the Lake District", heroPos: "center 5%" },
   activities:   { gradient: "from-[#0D6E6E] to-[#0F9B8E]", accent: "#0D6E6E", emoji: "🏄", tagline: "Sport, leisure and outdoor activities", heroPos: "center" },
+  attractions:  { gradient: "from-[#5C2A6B] to-[#8B3AA0]", accent: "#6B3A7A", emoji: "🏛️", tagline: "Dove Cottage, Hill Top, Brockhole, Lakes Aquarium and more", heroPos: "center" },
   accommodation: { gradient: "from-[#14231C] to-[#245E3F]", accent: "#245E3F", emoji: "🏨", tagline: "Where to stay in the Lake District", heroPos: "center" },
   shopping:     { gradient: "from-[#8B2847] to-[#C45C6A]", accent: "#C45C6A", emoji: "🛍️", tagline: "Shops, boutiques and markets", heroPos: "center" },
 };
 
 const CAT_ORDER = [
   "walks", "villages", "restaurants", "cafes", "pubs",
-  "activities", "accommodation", "shopping",
+  "activities", "attractions", "accommodation", "shopping",
 ];
 
 const CATEGORY_GUIDES: Record<string, { href: string; label: string }[]> = {
@@ -65,6 +66,10 @@ const CATEGORY_GUIDES: Record<string, { href: string; label: string }[]> = {
     { href: "/things-to-do", label: "Things to Do in the Lake District" },
     { href: "/collections", label: "Collections" },
   ],
+  attractions: [
+    { href: "/things-to-do", label: "Things to Do in the Lake District" },
+    { href: "/guides/lake-district-with-kids", label: "Lake District with Kids" },
+  ],
 };
 
 const CATEGORY_CONTENT: Record<string, string[]> = {
@@ -97,6 +102,11 @@ const CATEGORY_CONTENT: Record<string, string[]> = {
     "Walking is the main draw, but there's more. Windermere and Coniston have steamers. Ullswater too. Paddleboarding, kayaking, and sailing are available on the main lakes. Grizedale has mountain biking and Go Ape.",
     "Brockhole on Windermere is the main family attraction. Adventure activities, gardens, lake access. The Ravenglass and Eskdale Railway is a proper day out. Honister Slate Mine does via ferrata for the adventurous.",
     "Worth knowing: water sports and boat hire get booked up in summer. Book ahead. The steamers run year-round but with reduced schedules in winter.",
+  ],
+  "attractions": [
+    "Dove Cottage, Hill Top, Brockhole, Lakes Aquarium, Haverthwaite Railway, World of Beatrix Potter, Honister Slate Mine. The Lake District has a solid mix of heritage and family attractions.",
+    "Dove Cottage in Grasmere is Wordsworth's home. Hill Top near Sawrey is Beatrix Potter's. Both need booking. Brockhole on Windermere is the main family day out. Lakes Aquarium at the southern end of Windermere is good for wet weather.",
+    "Worth knowing: the heritage sites get busy in summer. Book ahead. Honister Slate Mine does tours and via ferrata. The Ravenglass and Eskdale Railway is a proper day out for families.",
   ],
   "accommodation": [
     "The Lake District has everything from bunkhouses to five-star hotels. Ambleside, Keswick, and Windermere have the biggest range. Grasmere and Coniston are quieter. The Gilpin and Linthwaite House are the splurge options. B&Bs and inns are the backbone.",
@@ -266,8 +276,27 @@ export default async function CategoryPage({ params, searchParams }: Props) {
     ...(isFoodCat ? [{ key: "hygiene", label: "🛡️ Hygiene Rating" }] : []),
   ];
 
-  // ItemList schema — top 15 listings (Lakes: no parking category, schema disabled)
-  const itemListLd: { "@context": string; "@type": string; name: string; description: string; url: string; numberOfItems: number; itemListElement: { "@type": string; position: number; url: string; name: string }[] } | null = null;
+  // ItemList schema — top 15 listings by rating
+  const top15 = filteredBusinesses
+    .slice(0, 15)
+    .map((b, i) => ({
+      "@type": "ListItem" as const,
+      position: i + 1,
+      url: `${BASE_URL}/${category}/${b.slug}`,
+      name: b.name,
+    }));
+  const itemListLd =
+    top15.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: `${cat.name} in the Lake District`,
+          description: theme.tagline,
+          url: `${BASE_URL}/${category}`,
+          numberOfItems: top15.length,
+          itemListElement: top15,
+        }
+      : null;
 
   return (
     <>

@@ -103,7 +103,7 @@ export const COLLECTIONS: Collection[] = [
   },
   {
     slug: "lakeside-restaurants-lake-district",
-    title: "Lakeside Restaurants in the Lake District",
+    title: "Restaurants with Views in the Lake District",
     metaDescription:
       "Restaurants with lake views in the Lake District. Dining by the water.",
     intro:
@@ -111,6 +111,42 @@ export const COLLECTIONS: Collection[] = [
     tags: ["lakeside"],
     categorySlugs: ["restaurants"],
     emoji: "🍽️",
+    priority: 0.78,
+  },
+  {
+    slug: "cafes-with-views-lake-district",
+    title: "Cafés with Views in the Lake District",
+    metaDescription:
+      "Cafés and tea rooms with lake views in the Lake District. Coffee with a view.",
+    intro:
+      "Cafés where you can sit with a coffee and look at the water. The Lake District has a few. Worth seeking out.",
+    tags: ["lake-views"],
+    categorySlugs: ["cafes"],
+    emoji: "☕",
+    priority: 0.75,
+  },
+  {
+    slug: "pubs-after-a-walk-lake-district",
+    title: "Pubs After a Walk in the Lake District",
+    metaDescription:
+      "Post-walk pubs in the Lake District. Boots-off, beer-in-hand. The honest list.",
+    intro:
+      "The best part of a day on the fells is the pub afterwards. These Lake District pubs are the ones walkers actually use. Boots off, beer in hand.",
+    tags: ["post-walk"],
+    categorySlugs: ["pubs"],
+    emoji: "🥾",
+    priority: 0.8,
+  },
+  {
+    slug: "fine-dining-lake-district",
+    title: "Fine Dining in the Lake District",
+    metaDescription:
+      "Fine dining restaurants in the Lake District. Michelin and high-end dining.",
+    intro:
+      "The Lake District has a handful of serious restaurants. Book ahead. Dress code varies. These are the places for a proper treat.",
+    tags: ["fine-dining"],
+    categorySlugs: ["restaurants"],
+    emoji: "✨",
     priority: 0.78,
   },
 
@@ -138,6 +174,30 @@ export const COLLECTIONS: Collection[] = [
     categorySlugs: ["accommodation"],
     emoji: "💷",
     priority: 0.78,
+  },
+  {
+    slug: "accommodation-near-windermere",
+    title: "Accommodation Near Windermere",
+    metaDescription:
+      "Places to stay near Windermere. B&Bs, hotels, and holiday lets in Windermere, Bowness, and the surrounding area.",
+    intro:
+      "Windermere and Bowness are the busiest bases in the Lakes. Good transport, plenty of options. These are the places to stay if you want to be near the lake.",
+    tags: ["windermere"],
+    categorySlugs: ["accommodation"],
+    emoji: "🏨",
+    priority: 0.85,
+  },
+  {
+    slug: "accommodation-near-keswick",
+    title: "Accommodation Near Keswick",
+    metaDescription:
+      "Places to stay near Keswick. B&Bs, hotels, and holiday lets for the northern fells.",
+    intro:
+      "Keswick is the gateway to the northern fells. Skiddaw, Blencathra, Catbells. These are the places to stay if you want to walk from the door.",
+    tags: ["keswick"],
+    categorySlugs: ["accommodation"],
+    emoji: "🏔️",
+    priority: 0.85,
   },
 
   // ── Free / budget-friendly ────────────────────────────────────────────────

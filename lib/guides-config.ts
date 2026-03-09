@@ -131,6 +131,36 @@ export const GUIDES: Guide[] = [
     metaTitle: "Ambleside | The Lakes Guide",
     metaDescription: "Ambleside guide. Content coming soon.",
   },
+  {
+    slug: "grasmere",
+    title: "Grasmere",
+    description: "Wordsworth country. Gingerbread and the lakeshore. Coming soon.",
+    excerpt: "Grasmere guide. Content coming soon.",
+    category: "areas",
+    heroImage: HERO_IMAGE_URL,
+    seoPriority: 0.84,
+    datePublished: "2026-03-09",
+    dateUpdated: "2026-03-09",
+    tags: ["grasmere", "wordsworth", "central-lakes"],
+    status: "coming-soon",
+    metaTitle: "Grasmere | The Lakes Guide",
+    metaDescription: "Grasmere guide. Content coming soon.",
+  },
+  {
+    slug: "coniston",
+    title: "Coniston",
+    description: "Coniston Water and the Old Man. Coming soon.",
+    excerpt: "Coniston guide. Content coming soon.",
+    category: "areas",
+    heroImage: HERO_IMAGE_URL,
+    seoPriority: 0.84,
+    datePublished: "2026-03-09",
+    dateUpdated: "2026-03-09",
+    tags: ["coniston", "coniston-water", "southern-fells"],
+    status: "coming-soon",
+    metaTitle: "Coniston | The Lakes Guide",
+    metaDescription: "Coniston guide. Content coming soon.",
+  },
 
   // ── Practical ──────────────────────────────────────────────────────────────
   {
@@ -150,10 +180,10 @@ export const GUIDES: Guide[] = [
     metaDescription: "Where to park in the Lake District. Content coming soon.",
   },
   {
-    slug: "dog-friendly-walks-lake-district",
-    title: "Dog-Friendly Walks in the Lake District",
-    description: "Walks that welcome dogs. Coming soon.",
-    excerpt: "Dog-friendly walks in the Lake District. Content coming soon.",
+    slug: "dog-friendly-lake-district",
+    title: "Dog-Friendly Lake District",
+    description: "Where to go and where to stay with your dog. Coming soon.",
+    excerpt: "Dog-friendly Lake District guide. Walks, pubs, accommodation. Content coming soon.",
     category: "practical",
     heroImage: HERO_IMAGE_URL,
     seoPriority: 0.82,
@@ -161,8 +191,23 @@ export const GUIDES: Guide[] = [
     dateUpdated: "2026-03-09",
     tags: ["dog-friendly", "walks", "practical"],
     status: "coming-soon",
-    metaTitle: "Dog-Friendly Walks in the Lake District | The Lakes Guide",
-    metaDescription: "Dog-friendly walks in the Lake District. Content coming soon.",
+    metaTitle: "Dog-Friendly Lake District | The Lakes Guide",
+    metaDescription: "Dog-friendly Lake District. Walks, pubs, accommodation. Content coming soon.",
+  },
+  {
+    slug: "lake-district-with-kids",
+    title: "Lake District with Kids",
+    description: "Family-friendly days out. Coming soon.",
+    excerpt: "Lake District with kids. Family walks, activities, accommodation. Content coming soon.",
+    category: "practical",
+    heroImage: HERO_IMAGE_URL,
+    seoPriority: 0.82,
+    datePublished: "2026-03-09",
+    dateUpdated: "2026-03-09",
+    tags: ["family", "kids", "practical"],
+    status: "coming-soon",
+    metaTitle: "Lake District with Kids | The Lakes Guide",
+    metaDescription: "Lake District with kids. Family walks and activities. Content coming soon.",
   },
   {
     slug: "rainy-day-lake-district",
@@ -240,6 +285,11 @@ export function getGuide(slug: string): Guide {
   return guide;
 }
 
+/** Get a single guide by slug. Returns undefined if not found. */
+export function getGuideOptional(slug: string): Guide | undefined {
+  return GUIDES.find((g) => g.slug === slug);
+}
+
 /** Get all published guides. */
 export function getPublishedGuides(): Guide[] {
   return GUIDES.filter((g) => g.status === "published");
@@ -258,7 +308,7 @@ export function getRelatedGuides(slug: string, limit = 4): Guide[] {
   const current = GUIDES.find((g) => g.slug === slug);
   if (!current) return [];
 
-  const scored = GUIDES.filter((g) => g.slug !== slug && g.status === "published").map((g) => {
+  const scored = GUIDES.filter((g) => g.slug !== slug && (g.status === "published" || g.status === "coming-soon")).map((g) => {
     let score = 0;
     if (g.category === current.category) score += 2;
     const sharedTags = g.tags.filter((t) => current.tags.includes(t));

@@ -160,13 +160,13 @@ function Footer() {
                   <span className="text-sm font-semibold text-white/40">TheLakesGuide.co.uk</span>
                 </li>
                 <li>
-                  <a href="https://www.thelakeswildlife.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C4782A] transition">
-                    The Lakes Wildlife ↗
+                  <a href="https://www.thelakeswildlife.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C4782A] transition" title="Lake District wildlife, species and reserves">
+                    The Lakes Wildlife — species & reserves ↗
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.hikethelakes.com" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C4782A] transition">
-                    Hike The Lakes ↗
+                  <a href="https://www.hikethelakes.com" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C4782A] transition" title="Wainwright fells and walking routes">
+                    Hike The Lakes — 214 fells & routes ↗
                   </a>
                 </li>
                 <li>
@@ -239,8 +239,8 @@ function Footer() {
           <span>Part of the <a href="https://thelakes.network" target="_blank" rel="noopener" className="hover:text-white/60 transition">Lakes Network</a></span>
           <div className="flex flex-wrap gap-5">
             <a href="https://www.thelakesguide.co.uk" target="_blank" rel="noopener" className="hover:text-white/60 transition">The Lakes Guide</a>
-            <a href="https://www.thelakeswildlife.co.uk" target="_blank" rel="noopener" className="hover:text-white/60 transition">The Lakes Wildlife</a>
-            <a href="https://www.hikethelakes.com" target="_blank" rel="noopener" className="hover:text-white/60 transition">Hike The Lakes</a>
+            <a href="https://www.thelakeswildlife.co.uk" target="_blank" rel="noopener" className="hover:text-white/60 transition">The Lakes Wildlife — species & reserves</a>
+            <a href="https://www.hikethelakes.com" target="_blank" rel="noopener" className="hover:text-white/60 transition">Hike The Lakes — 214 fells</a>
             <a href="https://thelakes.network" target="_blank" rel="noopener" className="hover:text-white/60 transition">TheLakes.network</a>
           </div>
         </div>

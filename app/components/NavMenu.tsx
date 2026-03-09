@@ -17,6 +17,7 @@ const CATEGORIES = [
   { slug: "cafes",        label: "Cafes",          icon: Coffee,     color: "text-amber-600" },
   { slug: "pubs",         label: "Pubs & Inns",    icon: Beer,       color: "text-purple-500" },
   { slug: "activities",   label: "Activities",     icon: Dumbbell,   color: "text-orange-500" },
+  { slug: "attractions",  label: "Attractions",   icon: Flag,       color: "text-violet-500" },
   { slug: "accommodation", label: "Places to Stay", icon: Hotel,      color: "text-blue-600" },
   { slug: "shopping",     label: "Shopping",       icon: ShoppingBag, color: "text-rose-500" },
 ];
