@@ -7,19 +7,19 @@ const url = `${BASE_URL}/lake-district-walks`;
 const faqs = [
   {
     q: "What is the best walk in the Lake District for beginners?",
-    a: "Catbells above Keswick is the most recommended — accessible, short (2 to 3 hours return from Hawes End jetty), with excellent views over Derwentwater. Loughrigg Fell above Ambleside is another good starter. Both give a proper fell experience without the commitment of the higher mountains.",
+    a: "Catbells above Keswick. Accessible, short (2 to 3 hours return from Hawes End jetty), with excellent views over Derwentwater. Loughrigg Fell above Ambleside is another good starter. Both give a proper fell experience without the commitment of the higher mountains.",
   },
   {
     q: "What is the best walk in the Lake District?",
-    a: "Subjectivity applies, but Striding Edge on Helvellyn is the most celebrated route. The Fairfield Horseshoe from Ambleside, the Coniston Fells circuit, and the Buttermere round (Red Pike, High Stile, High Crag, Haystacks) are all serious contenders. It depends what you want from a day in the hills.",
+    a: "Striding Edge on Helvellyn is the most celebrated route. The Fairfield Horseshoe from Ambleside, the Coniston Fells circuit, and the Buttermere round (Red Pike, High Stile, High Crag, Haystacks) are all serious contenders. It depends what you want from a day in the hills.",
   },
   {
     q: "How do I get to Scafell Pike?",
-    a: "The most popular route is from Wasdale Head (CA20 1EX, NT car park). 5.6 miles return, 900m ascent, 5 to 6 hours. The Langdale route via Esk Hause is longer but wilder. Start early — the summit can be busy in summer and weather can change fast.",
+    a: "The most popular route is from Wasdale Head (CA20 1EX, NT car park). 5.6 miles return, 900m ascent, 5 to 6 hours. The Langdale route via Esk Hause is longer but wilder. Start early. The summit gets busy in summer and the weather can change fast.",
   },
   {
     q: "What should I bring for a Lake District walk?",
-    a: "Proper waterproofs (jacket and trousers). Boots with ankle support and grip. A map and compass — phone GPS is unreliable in mist and out of charge at the wrong moment. Water and food for the full day. A warm layer for summits even in summer. The weather changes fast.",
+    a: "Proper waterproofs (jacket and trousers). Boots with ankle support and grip. A map and compass. Phone GPS is unreliable in mist and runs out of charge at the wrong moment. Water and food for the full day. A warm layer for summits even in summer. The weather changes fast.",
   },
   {
     q: "Are Lake District walks suitable for families with children?",
@@ -78,12 +78,26 @@ export default function LakeDistrictWalksPage() {
               Lake District Walks
             </h1>
             <p className="text-white/75 text-lg leading-relaxed max-w-2xl">
-              The Lake District has the finest walking in England. From a 30-minute lakeshore stroll to a 10-hour fell circuit, there is a walk for every fitness level and every kind of day. The question is knowing which walk suits the day you have and the legs you bring.
+              I have walked in the Lakes in every season, in every kind of weather, with kids, with dogs, and on my own. The walking here is exceptional. It also requires genuine preparation. Weather changes fast. Navigation on the high tops matters. This guide covers the routes worth doing and the things worth knowing before you go.
             </p>
           </div>
         </div>
 
         <div className="mx-auto max-w-3xl px-4 py-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
+            {[
+              { stat: "214", label: "Wainwright fells" },
+              { stat: "OL4–OL7", label: "OS Explorer maps" },
+              { stat: "mwis.org.uk", label: "Best forecast" },
+              { stat: "Year-round", label: "Walking season" },
+            ].map(({ stat, label }) => (
+              <div key={label} className="rounded-xl bg-gray-50 p-4 text-center">
+                <p className="font-display text-xl font-bold text-[#14231C]">{stat}</p>
+                <p className="text-xs text-gray-500 mt-1">{label}</p>
+              </div>
+            ))}
+          </div>
+
           <div className="prose prose-slate max-w-none">
             <h2>Getting started: what you need to know</h2>
             <p>
@@ -129,7 +143,7 @@ export default function LakeDistrictWalksPage() {
               The Coledale Horseshoe from Braithwaite near Keswick takes in Grisedale Pike, Hopegill Head, Eel Crag, Sail, Scar Crags, and Causey Pike. Around 10 miles with 1,100 metres of ascent. Allow 6 to 7 hours. One of the best circuit walks in the north-western fells, consistently underrated compared to the central Lakes routes.
             </p>
             <p>
-              The Buttermere round combines Red Pike, High Stile, High Crag, and Haystacks with a start and finish at Buttermere (CA13 9XA). Adding Haystacks — Wainwright's favourite fell — makes this around 9 miles with 1,100 metres of ascent. Allow 7 to 8 hours. The combination of high-level ridge walking and two lakes in the valley below is outstanding.
+              The Buttermere round combines Red Pike, High Stile, High Crag, and Haystacks with a start and finish at Buttermere (CA13 9XA). Adding Haystacks (Wainwright's favourite fell) makes this around 9 miles with 1,100 metres of ascent. Allow 7 to 8 hours. The combination of high-level ridge walking and two lakes in the valley below is outstanding.
             </p>
 
             <h2>The big days</h2>
@@ -145,7 +159,7 @@ export default function LakeDistrictWalksPage() {
 
             <h2>What to bring</h2>
             <p>
-              Waterproof jacket and waterproof overtrousers. Insulating layer — a fleece or down jacket that goes in the rucksack for summits and stops. Walking boots, not trainers: the ankle support and sole grip matter on wet or rocky ground. A printed OS map (phone GPS is unreliable in cloud and dies in the cold) and a compass. Water — at least 1 litre per person for a half-day, 2 litres for a full day. Food — enough for the planned duration plus an unplanned hour. A first aid kit.
+              Waterproof jacket and waterproof overtrousers. Insulating layer: a fleece or down jacket that goes in the rucksack for summits and stops. Walking boots, not trainers: the ankle support and sole grip matter on wet or rocky ground. A printed OS map (phone GPS is unreliable in cloud and dies in the cold) and a compass. Water — at least 1 litre per person for a half-day, 2 litres for a full day. Food — enough for the planned duration plus an unplanned hour. A first aid kit.
             </p>
             <p>
               The navigation tools: 1:25,000 OS Explorer maps cover the national park in four sheets (OL4, OL5, OL6, OL7). The Harvey Superwalker maps are an alternative for those who prefer a cleaner fell-walking specific format. A silva or similar baseplate compass and the ability to take a bearing from the map and follow it in poor visibility is the essential skill that separates walkers who get into trouble from those who do not.
@@ -169,14 +183,16 @@ export default function LakeDistrictWalksPage() {
             <h2 className="font-display text-xl font-bold text-[#14231C] mb-4">Related guides</h2>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
-                { href: "/guides/dog-friendly-lake-district", label: "Dog-friendly walks" },
-                { href: "/guides/lake-district-with-kids", label: "Lake District with kids" },
-                { href: "/guides/rainy-day-lake-district", label: "Rainy day options" },
-                { href: "/keswick", label: "Keswick village guide" },
-                { href: "/ambleside", label: "Ambleside village guide" },
-              ].map(({ href, label }) => (
-                <Link key={href} href={href} className="block p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition font-medium text-[#14231C] text-sm">
-                  {label} →
+                { href: "/dog-friendly-lake-district", label: "Dog-friendly Lake District", desc: "Walks, pubs, and practical advice with a dog" },
+                { href: "/lake-district-with-kids", label: "Lake District with Kids", desc: "What actually works with children" },
+                { href: "/rainy-day-lake-district", label: "Rainy Day Options", desc: "When the weather turns — the plan" },
+                { href: "/keswick", label: "Keswick", desc: "Northern fells, Derwentwater, Catbells" },
+                { href: "/ambleside", label: "Ambleside", desc: "Best walking base in the Lakes" },
+                { href: "/coniston", label: "Coniston", desc: "Old Man, Brantwood, Tarn Hows" },
+              ].map(({ href, label, desc }) => (
+                <Link key={href} href={href} className="block p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition">
+                  <p className="font-semibold text-[#14231C]">{label}</p>
+                  <p className="text-sm text-gray-500 mt-0.5">{desc}</p>
                 </Link>
               ))}
             </div>

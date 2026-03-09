@@ -97,7 +97,23 @@ export default function RainyDayLakeDistrictPage() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-3xl px-4 py-12 space-y-12">
+        <div className="mx-auto max-w-3xl px-4 py-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+            {[
+              { stat: "140 in/yr", label: "Keswick rainfall" },
+              { stat: "The Armitt", label: "Best museum, Ambleside" },
+              { stat: "Pencil Museum", label: "Keswick, worth an hour" },
+              { stat: "Waterproofs", label: "Still walk anyway" },
+            ].map(({ stat, label }) => (
+              <div key={label} className="rounded-xl bg-gray-50 p-4 text-center">
+                <p className="font-display text-xl font-bold text-[#14231C]">{stat}</p>
+                <p className="text-xs text-gray-500 mt-1">{label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-3xl px-4 pb-12 space-y-12">
 
           <section>
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
@@ -260,32 +276,19 @@ export default function RainyDayLakeDistrictPage() {
             </p>
             <ul className="space-y-4 text-gray-700">
               <li>
-                <strong className="text-[#14231C]">The Apple Pie, Ambleside</strong> (Rydal
-                Road, LA22 9AN) — bakery and café. Good sandwiches, excellent cakes, proper
-                coffee. Gets busy. Sit in and wait rather than giving up.
+                <strong className="text-[#14231C]">The Apple Pie, Ambleside</strong> (Rydal Road, LA22 9AN). Bakery and café. Good sandwiches, excellent cakes, proper coffee. Gets busy. Sit in and wait rather than giving up.
               </li>
               <li>
-                <strong className="text-[#14231C]">The Square Orange, Keswick</strong> (CA12
-                5JA) — relaxed café-bar in central Keswick. Good food at reasonable prices.
-                Useful midday or afternoon.
+                <strong className="text-[#14231C]">The Square Orange, Keswick</strong> (CA12 5JA). Relaxed café-bar in central Keswick. Good food at reasonable prices. Useful midday or afternoon.
               </li>
               <li>
-                <strong className="text-[#14231C]">Old Dungeon Ghyll, Langdale</strong> (LA22
-                9JU) — the hikers' bar is the best place in the Lakes to be when it is
-                properly raining. Open fires, wet gear hanging everywhere, good beer, no
-                pretension. Drive to Great Langdale and make a day of the valley even if the
-                fells are in cloud.
+                <strong className="text-[#14231C]">Old Dungeon Ghyll, Langdale</strong> (LA22 9JU). The hikers' bar is the best place in the Lakes to be when it is properly raining. Open fires, wet gear hanging everywhere, good beer, no pretension. Drive to Great Langdale and make a day of the valley even if the fells are in cloud.
               </li>
               <li>
-                <strong className="text-[#14231C]">Grasmere Gingerbread Shop</strong> (LA22
-                9SW) — queuing in the rain for Grasmere gingerbread is a Lakes ritual. It is
-                sold hot or cold, the shop is tiny, and the queue moves. Worth it.
+                <strong className="text-[#14231C]">Grasmere Gingerbread Shop</strong> (LA22 9SW). Queuing in the rain for Grasmere gingerbread is a Lakes ritual. It is sold hot or cold, the shop is tiny, and the queue moves. Worth it.
               </li>
               <li>
-                <strong className="text-[#14231C]">The Cuckoo Brow Inn, Far Sawrey</strong>
-                (LA22 0LQ) — in the village near Hill Top, Beatrix Potter's farm. Small,
-                proper pub, good food, not over-touristed. Worth combining with a visit to
-                Hill Top if you have children who know the Potter books.
+                <strong className="text-[#14231C]">The Cuckoo Brow Inn, Far Sawrey</strong> (LA22 0LQ). In the village near Hill Top, Beatrix Potter's farm. Small, proper pub, good food, not over-touristed. Worth combining with a visit to Hill Top if you have children who know the Potter books.
               </li>
             </ul>
           </section>

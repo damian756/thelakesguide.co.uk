@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: "What age can children go on Lake District fells?",
-    a: "Confident walkers from around 6 to 8 can manage the lower fells like Catbells or Loughrigg. Anything over 700m and with technical terrain should wait until teenagers. Scafell Pike requires full adult fitness, navigation ability, and proper gear — it is not suitable for young children regardless of how 'adventurous' they are.",
+    a: "Confident walkers from around 6 to 8 can manage the lower fells like Catbells or Loughrigg. Anything over 700m and with technical terrain should wait until teenagers. Scafell Pike requires full adult fitness, navigation ability, and proper gear. It is not suitable for young children regardless of how 'adventurous' they are.",
   },
   {
     q: "Are there activities for kids in the Lake District when it is raining?",
@@ -97,7 +97,23 @@ export default function LakeDistrictWithKidsPage() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-3xl px-4 py-12 space-y-12">
+        <div className="mx-auto max-w-3xl px-4 py-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+            {[
+              { stat: "All ages", label: "Routes available" },
+              { stat: "Tarn Hows", label: "Best flat walk" },
+              { stat: "Catbells", label: "Best starter fell" },
+              { stat: "555 bus", label: "Car-free option" },
+            ].map(({ stat, label }) => (
+              <div key={label} className="rounded-xl bg-gray-50 p-4 text-center">
+                <p className="font-display text-xl font-bold text-[#14231C]">{stat}</p>
+                <p className="text-xs text-gray-500 mt-1">{label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-3xl px-4 pb-12 space-y-12">
 
           <section>
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
@@ -239,39 +255,22 @@ export default function LakeDistrictWithKidsPage() {
             </p>
             <ul className="space-y-4 text-gray-700">
               <li>
-                <strong className="text-[#14231C]">Windermere Jetty Museum</strong> (LA23
-                3JH) — a serious museum about Windermere's maritime history, opening onto the
-                lake. The building itself is worth visiting. Good for 8 and above. Excellent
-                on a wet afternoon. Admission charged.
+                <strong className="text-[#14231C]">Windermere Jetty Museum</strong> (LA23 3JH). A serious museum about Windermere's maritime history, opening onto the lake. The building itself is worth visiting. Good for 8 and above. Excellent on a wet afternoon. Admission charged.
               </li>
               <li>
-                <strong className="text-[#14231C]">Pencil Museum, Keswick</strong> (CA12 5NG)
-                — unexpectedly good. The story of Cumberland graphite and pencil manufacturing
-                from the 16th century. Children enjoy the giant pencil. Two hours, reasonably
-                priced. Better than you expect.
+                <strong className="text-[#14231C]">Pencil Museum, Keswick</strong> (CA12 5NG). Unexpectedly good. The story of Cumberland graphite and pencil manufacturing from the 16th century. Children enjoy the giant pencil. Two hours, reasonably priced. Better than you expect.
               </li>
               <li>
-                <strong className="text-[#14231C]">World of Beatrix Potter, Bowness</strong>
-                (LA23 3BX) — directly aimed at under-8s and the Peter Rabbit audience. An
-                indoor walk-through attraction with the Potter characters and scenes. Short.
-                Works well for young children, less so for older ones.
+                <strong className="text-[#14231C]">World of Beatrix Potter, Bowness</strong> (LA23 3BX). Directly aimed at under-8s and the Peter Rabbit audience. An indoor walk-through attraction with the Potter characters and scenes. Short. Works well for young children, less so for older ones.
               </li>
               <li>
-                <strong className="text-[#14231C]">Go Ape, Grizedale Forest</strong> (LA22
-                0QJ) — treetop aerial adventure with zip lines and rope walks. Minimum height
-                restrictions apply (1m for junior course, 1.4m for adult). Book in advance,
-                particularly in school holidays. Forestry England site. Several hours.
+                <strong className="text-[#14231C]">Go Ape, Grizedale Forest</strong> (LA22 0QJ). Treetop aerial adventure with zip lines and rope walks. Minimum height restrictions apply (1m for junior course, 1.4m for adult). Book in advance, particularly in school holidays. Forestry England site. Several hours.
               </li>
               <li>
-                <strong className="text-[#14231C]">Rheged, near Penrith</strong> (CA11 0DQ)
-                — a large arts and retail complex built into a hillside near Junction 40 of
-                the M6. Has a cinema, climbing wall, and soft play area. Useful if you are
-                arriving or departing via the M6.
+                <strong className="text-[#14231C]">Rheged, near Penrith</strong> (CA11 0DQ). A large arts and retail complex built into a hillside near Junction 40 of the M6. Has a cinema, climbing wall, and soft play area. Useful if you are arriving or departing via the M6.
               </li>
               <li>
-                <strong className="text-[#14231C]">Keswick leisure centre</strong> (CA12 5NB)
-                — a public leisure centre with a 25m pool. Family swim sessions. Not
-                glamorous, but useful if you are based in Keswick for several days.
+                <strong className="text-[#14231C]">Keswick leisure centre</strong> (CA12 5NB). A public leisure centre with a 25m pool. Family swim sessions. Not glamorous, but useful if you are based in Keswick for several days.
               </li>
             </ul>
           </section>

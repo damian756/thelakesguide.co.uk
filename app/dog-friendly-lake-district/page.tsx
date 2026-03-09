@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: "Can I take my dog to Windermere?",
-    a: "Yes. The eastern and western shores both have good walking with dogs. Boats operated by Windermere Lake Cruises allow dogs on board. Bowness itself is manageable with a dog. Narrow pavements in town can get very busy in summer — early morning or evening is easier.",
+    a: "Yes. The eastern and western shores both have good walking with dogs. Boats operated by Windermere Lake Cruises allow dogs on board. Bowness itself is manageable with a dog. Narrow pavements in town can get very busy in summer. Early morning or evening is easier.",
   },
   {
     q: "Are there dog-friendly beaches in the Lake District?",
@@ -98,7 +98,23 @@ export default function DogFriendlyLakeDistrictPage() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-3xl px-4 py-12 space-y-12">
+        <div className="mx-auto max-w-3xl px-4 py-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+            {[
+              { stat: "Open fells", label: "Dogs permitted" },
+              { stat: "Lead required", label: "Near livestock" },
+              { stat: "Mar-May", label: "Lambing (caution)" },
+              { stat: "Check LDNPA", label: "Algae warnings" },
+            ].map(({ stat, label }) => (
+              <div key={label} className="rounded-xl bg-gray-50 p-4 text-center">
+                <p className="font-display text-xl font-bold text-[#14231C]">{stat}</p>
+                <p className="text-xs text-gray-500 mt-1">{label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-3xl px-4 pb-12 space-y-12">
 
           <section>
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
@@ -217,34 +233,22 @@ export default function DogFriendlyLakeDistrictPage() {
             </p>
             <ul className="space-y-3 text-gray-700">
               <li>
-                <strong className="text-[#14231C]">Wasdale Head Inn</strong> (CA20 1EX) — as
-                remote as it gets, dogs very welcome in the bar, and after Scafell Pike you
-                will be glad it is there.
+                <strong className="text-[#14231C]">Wasdale Head Inn</strong> (CA20 1EX). As remote as it gets, dogs very welcome in the bar, and after Scafell Pike you will be glad it is there.
               </li>
               <li>
-                <strong className="text-[#14231C]">Old Dungeon Ghyll, Langdale</strong> (LA22
-                9JU) — the hikers' bar is legendary. Muddy boots and dogs are part of the
-                furniture. No booking needed for the bar.
+                <strong className="text-[#14231C]">Old Dungeon Ghyll, Langdale</strong> (LA22 9JU). The hikers' bar is legendary. Muddy boots and dogs are part of the furniture. No booking needed for the bar.
               </li>
               <li>
-                <strong className="text-[#14231C]">Kirkstone Pass Inn</strong> (LA23 1LU) —
-                England's third highest pub, on the pass between Windermere and Ullswater.
-                Exposed and often cold. Dogs very welcome, open fires.
+                <strong className="text-[#14231C]">Kirkstone Pass Inn</strong> (LA23 1LU). England's third highest pub, on the pass between Windermere and Ullswater. Exposed and often cold. Dogs very welcome, open fires.
               </li>
               <li>
-                <strong className="text-[#14231C]">The Dog and Gun, Keswick</strong> (CA12
-                5JB) — the name is a reasonable clue. Busy town pub, dogs in the bar,
-                Keswick's best atmosphere on a wet evening.
+                <strong className="text-[#14231C]">The Dog and Gun, Keswick</strong> (CA12 5JB). The name is a reasonable clue. Busy town pub, dogs in the bar, Keswick's best atmosphere on a wet evening.
               </li>
               <li>
-                <strong className="text-[#14231C]">Travellers Rest, Grasmere</strong> (LA22
-                9RR) — on the A591 just north of Grasmere. Good beer garden for summer.
-                Dogs welcome in the bar and the garden.
+                <strong className="text-[#14231C]">Travellers Rest, Grasmere</strong> (LA22 9RR). On the A591 just north of Grasmere. Good beer garden for summer. Dogs welcome in the bar and the garden.
               </li>
               <li>
-                <strong className="text-[#14231C]">The Fish Inn, Buttermere</strong> (CA13
-                9XA) — village pub in one of the most beautiful valleys in the Lakes. Small,
-                gets busy after a Haystacks day. Dogs in the bar.
+                <strong className="text-[#14231C]">The Fish Inn, Buttermere</strong> (CA13 9XA). Village pub in one of the most beautiful valleys in the Lakes. Small, gets busy after a Haystacks day. Dogs in the bar.
               </li>
             </ul>
             <p className="text-gray-700 leading-relaxed mt-4">
