@@ -1,12 +1,8 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import Stripe from "stripe";
+import { getStripe } from "@/lib/stripe";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2026-01-28.clover",
-});
 
 export async function POST() {
   const session = await getServerSession(authOptions);
@@ -27,7 +23,7 @@ export async function POST() {
     return NextResponse.json({ error: "No active Pro subscription." }, { status: 400 });
   }
 
-  await stripe.subscriptions.cancel(business.stripeSubscriptionId);
+  await getStripe().subscriptions.cancel(business.stripeSubscriptionId);
 
   await prisma.business.update({
     where: { id: business.id },

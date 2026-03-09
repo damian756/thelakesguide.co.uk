@@ -1,12 +1,9 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import Stripe from "stripe";
+import { getStripe } from "@/lib/stripe";
 import { z } from "zod";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-
-const STRIPE_SECRET = process.env.STRIPE_SECRET_KEY;
-const stripe = STRIPE_SECRET ? new Stripe(STRIPE_SECRET) : null;
 
 const BOOST_TYPES: Record<string, { pricePence: number; label: string }> = {
   standard: { pricePence: 1500, label: "Standard 7 days" },
@@ -36,12 +33,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Stripe payments are disabled in the demo account." }, { status: 403 });
   }
 
-  if (!stripe) {
-    return NextResponse.json(
-      { error: "Stripe not configured" },
-      { status: 500 }
-    );
-  }
+
 
   let body: unknown;
   try {
@@ -105,7 +97,7 @@ export async function POST(request: Request) {
     process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
   const productName = `SouthportGuide Boost — ${label?.trim() || config.label}`;
 
-  const checkoutSession = await stripe.checkout.sessions.create({
+  const checkoutSession = await getStripe().checkout.sessions.create({
     mode: "payment",
     payment_method_types: ["card"],
     line_items: [
