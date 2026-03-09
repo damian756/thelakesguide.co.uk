@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
 const url = `${BASE_URL}/rainy-day-lake-district`;
@@ -75,49 +77,66 @@ export default function RainyDayLakeDistrictPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
       <main>
-        <div className="bg-[#14231C] text-white">
-          <div className="mx-auto max-w-3xl px-4 py-12">
-            <nav className="text-sm text-white/50 mb-4 flex items-center gap-1.5">
-              <Link href="/" className="hover:text-white/80 transition">
-                Home
-              </Link>
+
+        {/* Hero */}
+        <section className="relative min-h-[480px] flex items-end text-white overflow-hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1504266106287-1659872e6590?w=1400&q=80"
+            alt="Rainy day in the Lake District valleys"
+            fill priority sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+          <div className="relative w-full max-w-3xl mx-auto px-4 pb-12 pt-32">
+            <nav className="flex items-center gap-1.5 text-xs text-white/50 mb-4">
+              <Link href="/" className="hover:text-white transition">Home</Link>
               <span>/</span>
-              <span className="text-white/80">Rainy day Lake District</span>
+              <span className="text-white/80">Rainy Day Lake District</span>
             </nav>
-            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">
-              Practical guide · Lake District
+            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">Practical guide · Lake District</p>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Rainy Day in the Lake District</h1>
+            <p className="text-white/80 text-lg leading-relaxed max-w-2xl mb-8">
+              It will rain. The Lakes has some of the highest rainfall in England and that is part of what makes it what it is. Here is what to do about it.
             </p>
-            <h1 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
-              Rainy Day in the Lake District
-            </h1>
-            <p className="text-white/75 text-lg leading-relaxed max-w-2xl">
-              It will rain. The Lakes has some of the highest rainfall in England and that is
-              part of what makes it what it is. Here is what to do about it.
-            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
+              {[
+                { stat: "140 in/yr", label: "Keswick rainfall" },
+                { stat: "Jetty Museum", label: "Best wet day museum" },
+                { stat: "Pencil Museum", label: "Keswick, 2 hrs" },
+                { stat: "Waterproofs", label: "Still walk anyway" },
+              ].map(({ stat, label }) => (
+                <div key={label} className="bg-black/40 backdrop-blur rounded-xl px-3 py-2.5 border border-white/20">
+                  <p className="text-white/50 text-[10px] uppercase tracking-wider mb-0.5">{label}</p>
+                  <p className="font-display text-sm font-bold text-white">{stat}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div className="mx-auto max-w-3xl px-4 py-10">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
-            {[
-              { stat: "140 in/yr", label: "Keswick rainfall" },
-              { stat: "The Armitt", label: "Best museum, Ambleside" },
-              { stat: "Pencil Museum", label: "Keswick, worth an hour" },
-              { stat: "Waterproofs", label: "Still walk anyway" },
-            ].map(({ stat, label }) => (
-              <div key={label} className="rounded-xl bg-gray-50 p-4 text-center">
-                <p className="font-display text-xl font-bold text-[#14231C]">{stat}</p>
-                <p className="text-xs text-gray-500 mt-1">{label}</p>
-              </div>
-            ))}
+        {/* Sticky nav */}
+        <nav className="bg-[#14231C] border-b border-white/10 sticky top-16 z-40">
+          <div className="mx-auto max-w-3xl px-4 py-3">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              {[
+                { href: "#walk-anyway", label: "Walk Anyway" },
+                { href: "#wet-walks", label: "Wet Weather Walks" },
+                { href: "#museums", label: "Museums" },
+                { href: "#where-to-eat", label: "Where to Eat" },
+                { href: "#boat-trips", label: "Boat Trips" },
+                { href: "#gear", label: "Gear" },
+              ].map(({ href, label }) => (
+                <a key={href} href={href} className="text-white/60 hover:text-[#C4782A] transition-colors font-medium">{label}</a>
+              ))}
+            </div>
           </div>
-        </div>
+        </nav>
 
-        <div className="mx-auto max-w-3xl px-4 pb-12 space-y-12">
+        <div className="mx-auto max-w-3xl px-4 pb-12 space-y-12 pt-10">
 
-          <section>
+          <section id="walk-anyway" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              First: gear up and walk anyway
+              First: Gear Up and Walk Anyway
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               The honest advice is this: if you have proper waterproofs and boots, walking
@@ -141,9 +160,9 @@ export default function RainyDayLakeDistrictPage() {
             </p>
           </section>
 
-          <section>
+          <section id="wet-walks" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Best wet weather walks
+              Best Wet Weather Walks
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               Some walks are better in the rain than in sun. These are worth doing on a wet day:
@@ -186,9 +205,9 @@ export default function RainyDayLakeDistrictPage() {
             </p>
           </section>
 
-          <section>
+          <section id="museums" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Museums and indoor attractions
+              Museums and Indoor Attractions
             </h2>
 
             <h3 className="font-semibold text-lg text-[#14231C] mb-2">
@@ -266,9 +285,9 @@ export default function RainyDayLakeDistrictPage() {
             </p>
           </section>
 
-          <section>
+          <section id="where-to-eat" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Where to eat on a rainy day
+              Where to Eat on a Rainy Day
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               A wet day is a good day for a long lunch or an afternoon tea. The Lakes has
@@ -293,9 +312,9 @@ export default function RainyDayLakeDistrictPage() {
             </ul>
           </section>
 
-          <section>
+          <section id="boat-trips" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Lake boat trips in rain
+              Lake Boat Trips in Rain
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               Lake cruises operate in most rain conditions unless winds are severe. The boats
@@ -310,9 +329,9 @@ export default function RainyDayLakeDistrictPage() {
             </p>
           </section>
 
-          <section>
+          <section id="gear" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Gear for wet weather in the Lakes
+              Gear for Wet Weather in the Lakes
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               This is worth a paragraph because it determines whether a rainy day is good or
@@ -343,15 +362,39 @@ export default function RainyDayLakeDistrictPage() {
           </section>
 
           <section className="border-t border-gray-100 pt-8">
-            <h2 className="font-display text-xl font-bold text-[#14231C] mb-6">
-              Common questions
+            <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">
+              Common Questions
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-3">
               {faqs.map((faq) => (
-                <div key={faq.q}>
-                  <h3 className="font-semibold text-[#14231C] mb-2">{faq.q}</h3>
-                  <p className="text-gray-700 leading-relaxed">{faq.a}</p>
-                </div>
+                <details key={faq.q} className="group bg-gray-50 rounded-xl p-4">
+                  <summary className="font-medium text-[#14231C] cursor-pointer list-none flex justify-between items-center">
+                    {faq.q}
+                    <span className="text-[#C4782A] text-lg group-open:rotate-45 transition-transform flex-shrink-0 ml-4">+</span>
+                  </summary>
+                  <p className="mt-3 text-sm text-gray-600 leading-relaxed">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          <section className="border-t border-gray-100 pt-8">
+            <h2 className="font-display text-xl font-bold text-[#14231C] mb-5">Explore More Guides</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { href: "/lake-district-with-kids", label: "Lake District with Kids", desc: "Family-tested activities", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" },
+                { href: "/keswick", label: "Keswick", desc: "Pencil Museum, Derwentwater", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" },
+                { href: "/windermere", label: "Windermere", desc: "Jetty Museum, lake cruises", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" },
+                { href: "/coniston", label: "Coniston", desc: "Brantwood, Tarn Hows", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&q=80" },
+              ].map(({ href, label, desc, image }) => (
+                <Link key={href} href={href} className="group relative h-32 rounded-2xl overflow-hidden block">
+                  <Image src={image} alt={label} fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3">
+                    <p className="text-white font-display font-bold text-sm">{label} <ArrowRight className="inline w-3 h-3" /></p>
+                    <p className="text-white/65 text-xs">{desc}</p>
+                  </div>
+                </Link>
               ))}
             </div>
           </section>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
 const url = `${BASE_URL}/lake-district-with-kids`;
@@ -75,49 +77,66 @@ export default function LakeDistrictWithKidsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
       <main>
-        <div className="bg-[#14231C] text-white">
-          <div className="mx-auto max-w-3xl px-4 py-12">
-            <nav className="text-sm text-white/50 mb-4 flex items-center gap-1.5">
-              <Link href="/" className="hover:text-white/80 transition">
-                Home
-              </Link>
+
+        {/* Hero */}
+        <section className="relative min-h-[480px] flex items-end text-white overflow-hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80"
+            alt="Windermere lake — a classic Lake District family day out"
+            fill priority sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+          <div className="relative w-full max-w-3xl mx-auto px-4 pb-12 pt-32">
+            <nav className="flex items-center gap-1.5 text-xs text-white/50 mb-4">
+              <Link href="/" className="hover:text-white transition">Home</Link>
               <span>/</span>
-              <span className="text-white/80">Lake District with kids</span>
+              <span className="text-white/80">Lake District with Kids</span>
             </nav>
-            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">
-              Family guide · Lake District
+            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">Family guide · Lake District</p>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Lake District with Kids</h1>
+            <p className="text-white/80 text-lg leading-relaxed max-w-2xl mb-8">
+              I have brought my kids here since they were small. The Lakes works for families, but only if you pick the right things to do. Here is what actually works.
             </p>
-            <h1 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
-              Lake District with Kids
-            </h1>
-            <p className="text-white/75 text-lg leading-relaxed max-w-2xl">
-              I have brought my kids here since they were small. The Lakes works for families,
-              but only if you pick the right things to do. Here is what actually works.
-            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
+              {[
+                { stat: "All ages", label: "Routes available" },
+                { stat: "Tarn Hows", label: "Best flat walk" },
+                { stat: "Catbells", label: "Best starter fell" },
+                { stat: "555 bus", label: "Car-free option" },
+              ].map(({ stat, label }) => (
+                <div key={label} className="bg-black/40 backdrop-blur rounded-xl px-3 py-2.5 border border-white/20">
+                  <p className="text-white/50 text-[10px] uppercase tracking-wider mb-0.5">{label}</p>
+                  <p className="font-display text-sm font-bold text-white">{stat}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div className="mx-auto max-w-3xl px-4 py-10">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
-            {[
-              { stat: "All ages", label: "Routes available" },
-              { stat: "Tarn Hows", label: "Best flat walk" },
-              { stat: "Catbells", label: "Best starter fell" },
-              { stat: "555 bus", label: "Car-free option" },
-            ].map(({ stat, label }) => (
-              <div key={label} className="rounded-xl bg-gray-50 p-4 text-center">
-                <p className="font-display text-xl font-bold text-[#14231C]">{stat}</p>
-                <p className="text-xs text-gray-500 mt-1">{label}</p>
-              </div>
-            ))}
+        {/* Sticky nav */}
+        <nav className="bg-[#14231C] border-b border-white/10 sticky top-16 z-40">
+          <div className="mx-auto max-w-3xl px-4 py-3">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              {[
+                { href: "#what-works", label: "What Works" },
+                { href: "#best-walks", label: "Best Walks" },
+                { href: "#boat-trips", label: "Boat Trips" },
+                { href: "#indoor-activities", label: "Indoor Activities" },
+                { href: "#wildlife", label: "Wildlife" },
+                { href: "#practical-notes", label: "Practical Notes" },
+              ].map(({ href, label }) => (
+                <a key={href} href={href} className="text-white/60 hover:text-[#C4782A] transition-colors font-medium">{label}</a>
+              ))}
+            </div>
           </div>
-        </div>
+        </nav>
 
-        <div className="mx-auto max-w-3xl px-4 pb-12 space-y-12">
+        <div className="mx-auto max-w-3xl px-4 pb-12 space-y-12 pt-10">
 
-          <section>
+          <section id="what-works" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              What works with children
+              What Works with Children
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               The Lake District is a better destination for children than most adults expect,
@@ -139,9 +158,9 @@ export default function LakeDistrictWithKidsPage() {
             </p>
           </section>
 
-          <section>
+          <section id="best-walks" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Best family walks
+              Best Family Walks
             </h2>
 
             <h3 className="font-semibold text-lg text-[#14231C] mb-2">
@@ -215,9 +234,9 @@ export default function LakeDistrictWithKidsPage() {
             </p>
           </section>
 
-          <section>
+          <section id="boat-trips" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Boat trips
+              Boat Trips
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               Lake boat trips are the single most reliable family activity in the Lakes,
@@ -246,9 +265,9 @@ export default function LakeDistrictWithKidsPage() {
             </p>
           </section>
 
-          <section>
+          <section id="indoor-activities" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Indoor and wet weather activities
+              Indoor and Wet Weather Activities
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               It will rain. Have a plan. The following are worth your time:
@@ -275,9 +294,9 @@ export default function LakeDistrictWithKidsPage() {
             </ul>
           </section>
 
-          <section>
+          <section id="wildlife" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Wildlife with children
+              Wildlife with Children
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               Wildlife spotting works well with children if you set realistic expectations.
@@ -303,7 +322,7 @@ export default function LakeDistrictWithKidsPage() {
 
           <section>
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Where to stay with children
+              Where to Stay with Children
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               Self-catering is the most practical option for families with children. You can
@@ -326,9 +345,9 @@ export default function LakeDistrictWithKidsPage() {
             </p>
           </section>
 
-          <section>
+          <section id="practical-notes" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Practical notes
+              Practical Notes
             </h2>
             <ul className="space-y-3 text-gray-700 list-disc list-inside">
               <li>
@@ -360,15 +379,39 @@ export default function LakeDistrictWithKidsPage() {
           </section>
 
           <section className="border-t border-gray-100 pt-8">
-            <h2 className="font-display text-xl font-bold text-[#14231C] mb-6">
-              Common questions
+            <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">
+              Common Questions
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-3">
               {faqs.map((faq) => (
-                <div key={faq.q}>
-                  <h3 className="font-semibold text-[#14231C] mb-2">{faq.q}</h3>
-                  <p className="text-gray-700 leading-relaxed">{faq.a}</p>
-                </div>
+                <details key={faq.q} className="group bg-gray-50 rounded-xl p-4">
+                  <summary className="font-medium text-[#14231C] cursor-pointer list-none flex justify-between items-center">
+                    {faq.q}
+                    <span className="text-[#C4782A] text-lg group-open:rotate-45 transition-transform flex-shrink-0 ml-4">+</span>
+                  </summary>
+                  <p className="mt-3 text-sm text-gray-600 leading-relaxed">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          <section className="border-t border-gray-100 pt-8">
+            <h2 className="font-display text-xl font-bold text-[#14231C] mb-5">Explore More Guides</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { href: "/lake-district-walks", label: "Lake District Walks", desc: "Routes for every ability", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&q=80" },
+                { href: "/dog-friendly-lake-district", label: "Dog-Friendly Lakes", desc: "Bringing the dog too", image: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=400&q=80" },
+                { href: "/windermere", label: "Windermere", desc: "Lake cruises, Jetty Museum", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" },
+                { href: "/keswick", label: "Keswick", desc: "Best family base in the Lakes", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" },
+              ].map(({ href, label, desc, image }) => (
+                <Link key={href} href={href} className="group relative h-32 rounded-2xl overflow-hidden block">
+                  <Image src={image} alt={label} fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3">
+                    <p className="text-white font-display font-bold text-sm">{label} <ArrowRight className="inline w-3 h-3" /></p>
+                    <p className="text-white/65 text-xs">{desc}</p>
+                  </div>
+                </Link>
               ))}
             </div>
           </section>

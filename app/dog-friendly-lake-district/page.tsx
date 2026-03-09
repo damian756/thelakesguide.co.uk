@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
 const url = `${BASE_URL}/dog-friendly-lake-district`;
@@ -75,50 +77,66 @@ export default function DogFriendlyLakeDistrictPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
       />
       <main>
-        <div className="bg-[#14231C] text-white">
-          <div className="mx-auto max-w-3xl px-4 py-12">
-            <nav className="text-sm text-white/50 mb-4 flex items-center gap-1.5">
-              <Link href="/" className="hover:text-white/80 transition">
-                Home
-              </Link>
+
+        {/* Hero */}
+        <section className="relative min-h-[480px] flex items-end text-white overflow-hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=1400&q=80"
+            alt="Walking a dog through woodland in the Lake District"
+            fill priority sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+          <div className="relative w-full max-w-3xl mx-auto px-4 pb-12 pt-32">
+            <nav className="flex items-center gap-1.5 text-xs text-white/50 mb-4">
+              <Link href="/" className="hover:text-white transition">Home</Link>
               <span>/</span>
-              <span className="text-white/80">Dog-friendly Lake District</span>
+              <span className="text-white/80">Dog-Friendly Lake District</span>
             </nav>
-            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">
-              Practical guide · Lake District
+            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">Practical guide · Lake District</p>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Dog-Friendly Lake District</h1>
+            <p className="text-white/80 text-lg leading-relaxed max-w-2xl mb-8">
+              The Lake District is a reasonable place to bring a dog, provided you know the rules. Most fells are open, most pubs welcome dogs, and the lake shores are accessible. Here is the practical guide.
             </p>
-            <h1 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
-              Dog-Friendly Lake District
-            </h1>
-            <p className="text-white/75 text-lg leading-relaxed max-w-2xl">
-              The Lake District is a reasonable place to bring a dog, provided you know the
-              rules. Most fells are open, most pubs welcome dogs, and the lake shores are
-              accessible. Here is the practical guide.
-            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
+              {[
+                { stat: "Open fells", label: "Dogs permitted" },
+                { stat: "Lead required", label: "Near livestock" },
+                { stat: "Mar–May", label: "Lambing (caution)" },
+                { stat: "Check LDNPA", label: "Algae warnings" },
+              ].map(({ stat, label }) => (
+                <div key={label} className="bg-black/40 backdrop-blur rounded-xl px-3 py-2.5 border border-white/20">
+                  <p className="text-white/50 text-[10px] uppercase tracking-wider mb-0.5">{label}</p>
+                  <p className="font-display text-sm font-bold text-white">{stat}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div className="mx-auto max-w-3xl px-4 py-10">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
-            {[
-              { stat: "Open fells", label: "Dogs permitted" },
-              { stat: "Lead required", label: "Near livestock" },
-              { stat: "Mar-May", label: "Lambing (caution)" },
-              { stat: "Check LDNPA", label: "Algae warnings" },
-            ].map(({ stat, label }) => (
-              <div key={label} className="rounded-xl bg-gray-50 p-4 text-center">
-                <p className="font-display text-xl font-bold text-[#14231C]">{stat}</p>
-                <p className="text-xs text-gray-500 mt-1">{label}</p>
-              </div>
-            ))}
+        {/* Sticky nav */}
+        <nav className="bg-[#14231C] border-b border-white/10 sticky top-16 z-40">
+          <div className="mx-auto max-w-3xl px-4 py-3">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              {[
+                { href: "#the-basics", label: "The Basics" },
+                { href: "#best-walks", label: "Best Walks" },
+                { href: "#dog-friendly-pubs", label: "Pubs" },
+                { href: "#accommodation", label: "Accommodation" },
+                { href: "#lake-shores", label: "Lake Shores" },
+                { href: "#practical-tips", label: "Practical Tips" },
+              ].map(({ href, label }) => (
+                <a key={href} href={href} className="text-white/60 hover:text-[#C4782A] transition-colors font-medium">{label}</a>
+              ))}
+            </div>
           </div>
-        </div>
+        </nav>
 
-        <div className="mx-auto max-w-3xl px-4 pb-12 space-y-12">
+        <div className="mx-auto max-w-3xl px-4 pb-12 space-y-12 pt-10">
 
-          <section>
+          <section id="the-basics" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              The basics
+              The Basics
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               Dogs are welcome across the vast majority of the Lake District. The open fell
@@ -143,9 +161,9 @@ export default function DogFriendlyLakeDistrictPage() {
             </p>
           </section>
 
-          <section>
+          <section id="best-walks" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Best dog walks in the Lake District
+              Best Dog Walks in the Lake District
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               Almost every fell walk in the Lakes is suitable for dogs, provided they are fit
@@ -223,9 +241,9 @@ export default function DogFriendlyLakeDistrictPage() {
             </p>
           </section>
 
-          <section>
+          <section id="dog-friendly-pubs" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Dog-friendly pubs
+              Dog-Friendly Pubs
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               Post-walk pub access is a genuine priority with a dog. The majority of walkers'
@@ -257,9 +275,9 @@ export default function DogFriendlyLakeDistrictPage() {
             </p>
           </section>
 
-          <section>
+          <section id="accommodation" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Dog-friendly accommodation
+              Dog-Friendly Accommodation
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               Dog-friendly accommodation in the Lakes is plentiful but fills fast in school
@@ -287,9 +305,9 @@ export default function DogFriendlyLakeDistrictPage() {
             </p>
           </section>
 
-          <section>
+          <section id="lake-shores" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Lake shores and water access
+              Lake Shores and Water Access
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               Dogs swimming in the Lakes is generally not a problem and most dogs will want
@@ -312,9 +330,9 @@ export default function DogFriendlyLakeDistrictPage() {
             </p>
           </section>
 
-          <section>
+          <section id="practical-tips" className="scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">
-              Practical tips
+              Practical Tips
             </h2>
             <ul className="space-y-3 text-gray-700 list-disc list-inside">
               <li>
@@ -349,15 +367,39 @@ export default function DogFriendlyLakeDistrictPage() {
           </section>
 
           <section className="border-t border-gray-100 pt-8">
-            <h2 className="font-display text-xl font-bold text-[#14231C] mb-6">
-              Common questions
+            <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">
+              Common Questions
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-3">
               {faqs.map((faq) => (
-                <div key={faq.q}>
-                  <h3 className="font-semibold text-[#14231C] mb-2">{faq.q}</h3>
-                  <p className="text-gray-700 leading-relaxed">{faq.a}</p>
-                </div>
+                <details key={faq.q} className="group bg-gray-50 rounded-xl p-4">
+                  <summary className="font-medium text-[#14231C] cursor-pointer list-none flex justify-between items-center">
+                    {faq.q}
+                    <span className="text-[#C4782A] text-lg group-open:rotate-45 transition-transform flex-shrink-0 ml-4">+</span>
+                  </summary>
+                  <p className="mt-3 text-sm text-gray-600 leading-relaxed">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          <section className="border-t border-gray-100 pt-8">
+            <h2 className="font-display text-xl font-bold text-[#14231C] mb-5">Explore More Guides</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { href: "/lake-district-walks", label: "Lake District Walks", desc: "Routes for every ability", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&q=80" },
+                { href: "/lake-district-with-kids", label: "Lake District with Kids", desc: "Family-tested days out", image: "https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=400&q=80" },
+                { href: "/windermere", label: "Windermere", desc: "England's largest lake", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" },
+                { href: "/keswick", label: "Keswick", desc: "Northern Lakes base", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" },
+              ].map(({ href, label, desc, image }) => (
+                <Link key={href} href={href} className="group relative h-32 rounded-2xl overflow-hidden block">
+                  <Image src={image} alt={label} fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3">
+                    <p className="text-white font-display font-bold text-sm">{label} <ArrowRight className="inline w-3 h-3" /></p>
+                    <p className="text-white/65 text-xs">{desc}</p>
+                  </div>
+                </Link>
               ))}
             </div>
           </section>
