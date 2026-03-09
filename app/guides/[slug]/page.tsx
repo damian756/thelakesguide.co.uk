@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Image from "next/image";
 import type { Metadata } from "next";
 import GuideLayout from "@/app/components/GuideLayout";
@@ -38,6 +38,9 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   const guide = getGuideOptional(slug);
 
   if (!guide) notFound();
+
+  // Guides with their own standalone page redirect there permanently.
+  if (guide.canonicalPath) redirect(guide.canonicalPath);
 
   return (
     <GuideLayout guide={guide}>

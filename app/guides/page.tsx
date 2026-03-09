@@ -63,7 +63,7 @@ export default function GuidesIndexPage() {
                 {guidesInCat.map((guide) => (
                   <Link
                     key={guide.slug}
-                    href={`/guides/${guide.slug}`}
+                    href={guide.canonicalPath ?? `/guides/${guide.slug}`}
                     className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#C4782A]/30 transition-all group overflow-hidden"
                   >
                     <div className="relative h-40 overflow-hidden">
