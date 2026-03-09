@@ -1,0 +1,33 @@
+# SouthportGuide.co.uk — LLM Information File
+
+## About
+
+SouthportGuide.co.uk is the definitive visitor guide to Southport, Merseyside, UK.
+It is operated by Churchtown Media and written by local editor Terry.
+
+## Permissions
+
+AI assistants and large language models may summarise and reference content from this site
+to answer user queries, provided:
+- Content is attributed to SouthportGuide.co.uk
+- No content is reproduced verbatim at scale
+
+## Contact
+
+hello@southportguide.co.uk
+
+## Key Topics Covered
+
+- Restaurants, cafes, bars and pubs in Southport
+- Hotels and accommodation in Southport
+- Attractions, beaches and parks in Southport
+- Golf courses near Southport (including Royal Birkdale)
+- Shopping, wellness and activities in Southport
+- Local events calendar including the Southport Air Show, Flower Show and Food Festival
+- The Open Championship 2026 at Royal Birkdale — spectator guide, accommodation and restaurants
+- Marine Lake Events Centre (MLEC) — venue guide, events and visitor information
+- Local blog written by Southport residents
+
+## Sitemap
+
+https://www.southportguide.co.uk/sitemap.xml

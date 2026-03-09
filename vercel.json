@@ -1,0 +1,10 @@
+{
+  "framework": "nextjs",
+  "crons": [
+    { "path": "/api/cron/weekly-email", "schedule": "0 8 * * 1" },
+    { "path": "/api/cron/review-check", "schedule": "0 9 * * *" },
+    { "path": "/api/cron/monthly-credits", "schedule": "0 9 1 * *" },
+    { "path": "/api/cron/eventbrite-sync", "schedule": "0 6 * * *" },
+    { "path": "/api/cron/hash-review-ips", "schedule": "0 3 * * *" }
+  ]
+}

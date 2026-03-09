@@ -1,0 +1,2 @@
+source,name,address,postcode,lat,lng,parking_type,fee,notes,price_manual,opening_hours,capacity,access
+manual,Example — Informal Beach Verge (Victoria Road Formby),"Victoria Road, Formby",L37 1LJ,53.5621,-3.0614,informal,Free,"Roadside verge commonly used when NT car park is full. Informal only — no markings.",Free,24 hours,,public

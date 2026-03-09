@@ -1,0 +1,27 @@
+{
+  "name": "SouthportGuide.co.uk",
+  "short_name": "SouthportGuide",
+  "description": "Your definitive guide to eating, staying and exploring Southport",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1B2E4B",
+  "theme_color": "#1B2E4B",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["travel", "food", "lifestyle"],
+  "lang": "en-GB",
+  "dir": "ltr"
+}

@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+:root {
+  --background: #FAF8F5;
+  --foreground: #1B2E4B;
+  --font-inter: "Inter", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+
+  /* Brand palette */
+  --navy:   #1B2E4B;
+  --gold:   #C9A84C;
+  --teal:   #2E7D6E;
+  --coral:  #E8593A;
+  --cream:  #FAF8F5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+}
+
+body {
+  background: var(--cream);
+  color: var(--navy);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Display / serif headings */
+.font-display {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+/* Gold shimmer on hover */
+.gold-hover:hover { color: var(--gold); }
+
+/* Smooth card hover */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(27, 46, 75, 0.12);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #c9a84c44; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* Scrollbar hide utility (used on horizontal scroll strips) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
