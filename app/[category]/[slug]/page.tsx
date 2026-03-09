@@ -411,16 +411,16 @@ export default async function BusinessPage({ params, searchParams }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
-      <div className="min-h-screen bg-[#FAF8F5]">
+      <div className="min-h-screen bg-[#EAEDE8]">
         <div className="container mx-auto px-4 py-8 max-w-5xl">
 
           {/* Breadcrumb */}
           <nav className="text-sm text-gray-400 mb-6 flex items-center gap-1 flex-wrap">
-            <Link href="/" className="hover:text-[#C9A84C] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-[#C4782A] transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link href={`/${category}`} className="hover:text-[#C9A84C] transition-colors">{cat.name}</Link>
+            <Link href={`/${category}`} className="hover:text-[#C4782A] transition-colors">{cat.name}</Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-[#1B2E4B] font-medium">{business.name}</span>
+            <span className="text-[#14231C] font-medium">{business.name}</span>
           </nav>
 
           <div className="grid lg:grid-cols-3 gap-6">
@@ -430,14 +430,14 @@ export default async function BusinessPage({ params, searchParams }: Props) {
 
               {/* Hero card */}
               <div className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
-                <div className="h-52 bg-gradient-to-br from-[#1B2E4B] to-[#2A4A73] flex items-center justify-center relative overflow-hidden">
+                <div className="h-52 bg-gradient-to-br from-[#14231C] to-[#245E3F] flex items-center justify-center relative overflow-hidden">
                   {heroImage ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={heroImage} alt={business.name} className="w-full h-full object-cover" />
                   ) : (
                     <>
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#1B2E4B] to-[#2A4A73]" />
-                      <div className="absolute top-4 right-4 w-32 h-32 bg-[#C9A84C]/10 rounded-full blur-2xl" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#14231C] to-[#245E3F]" />
+                      <div className="absolute top-4 right-4 w-32 h-32 bg-[#C4782A]/10 rounded-full blur-2xl" />
                       <span className="relative text-6xl select-none opacity-40">📍</span>
                     </>
                   )}
@@ -447,11 +447,11 @@ export default async function BusinessPage({ params, searchParams }: Props) {
                   {/* Badges row */}
                   <div className="flex flex-wrap items-center gap-2 mb-3">
                     {isFeatured && (
-                      <span className="bg-[#C9A84C]/10 text-[#C9A84C] text-xs font-bold px-3 py-1 rounded-full border border-[#C9A84C]/20">✦ FEATURED</span>
+                      <span className="bg-[#C4782A]/10 text-[#C4782A] text-xs font-bold px-3 py-1 rounded-full border border-[#C4782A]/20">✦ FEATURED</span>
                     )}
-                    <Link href={`/${category}`} className="bg-[#FAF8F5] text-[#1B2E4B] text-xs font-medium px-3 py-1 rounded-full border border-gray-200 hover:border-gray-400 transition-colors">{cat.name}</Link>
+                    <Link href={`/${category}`} className="bg-[#EAEDE8] text-[#14231C] text-xs font-medium px-3 py-1 rounded-full border border-gray-200 hover:border-gray-400 transition-colors">{cat.name}</Link>
                     {secondaryCategories.map((sc) => (
-                      <Link key={sc.slug} href={`/${sc.slug}`} className="bg-[#FAF8F5] text-[#1B2E4B] text-xs font-medium px-3 py-1 rounded-full border border-gray-200 hover:border-gray-400 transition-colors">{sc.name}</Link>
+                      <Link key={sc.slug} href={`/${sc.slug}`} className="bg-[#EAEDE8] text-[#14231C] text-xs font-medium px-3 py-1 rounded-full border border-gray-200 hover:border-gray-400 transition-colors">{sc.name}</Link>
                     ))}
                     {business.priceRange && (
                       <span className="bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full border border-green-200">{business.priceRange}</span>
@@ -475,7 +475,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
                     )}
                   </div>
 
-                  <h1 className="font-display text-3xl font-bold text-[#1B2E4B] mb-3">{business.name}</h1>
+                  <h1 className="font-display text-3xl font-bold text-[#14231C] mb-3">{business.name}</h1>
 
                   {/* Google rating */}
                   {business.rating && (
@@ -519,7 +519,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
                         href={trackUrl(business.id, "website", websiteHref(business.website))}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-[#1B2E4B] text-white px-5 py-2.5 rounded-full hover:bg-[#2A4A73] transition font-semibold text-sm"
+                        className="inline-flex items-center gap-2 bg-[#14231C] text-white px-5 py-2.5 rounded-full hover:bg-[#245E3F] transition font-semibold text-sm"
                       >
                         <Globe className="w-4 h-4" /> Visit Website
                       </a>
@@ -527,9 +527,9 @@ export default async function BusinessPage({ params, searchParams }: Props) {
                     {business.phone && (
                       <a
                         href={`tel:${business.phone.replace(/\s/g, "")}`}
-                        className="inline-flex items-center gap-2 bg-[#C9A84C]/10 text-[#1B2E4B] border border-[#C9A84C]/30 px-5 py-2.5 rounded-full hover:bg-[#C9A84C]/20 transition font-semibold text-sm"
+                        className="inline-flex items-center gap-2 bg-[#C4782A]/10 text-[#14231C] border border-[#C4782A]/30 px-5 py-2.5 rounded-full hover:bg-[#C4782A]/20 transition font-semibold text-sm"
                       >
-                        <Phone className="w-4 h-4 text-[#C9A84C]" /> {business.phone}
+                        <Phone className="w-4 h-4 text-[#C4782A]" /> {business.phone}
                       </a>
                     )}
                   </div>
@@ -655,7 +655,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
                       </Link>
                     ))}
                   </div>
-                  <Link href={`/${category}`} className="block text-center text-[#C9A84C] text-sm mt-4 hover:underline font-bold">
+                  <Link href={`/${category}`} className="block text-center text-[#C4782A] text-sm mt-4 hover:underline font-bold">
                     View all {cat.name} →
                   </Link>
                 </div>
@@ -738,14 +738,14 @@ export default async function BusinessPage({ params, searchParams }: Props) {
 
               {/* Claim listing */}
               {!business.claimed && (
-                <div className="bg-[#1B2E4B] rounded-2xl p-5 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#C9A84C]/10 rounded-full -translate-y-8 translate-x-8 blur-2xl" />
+                <div className="bg-[#14231C] rounded-2xl p-5 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#C4782A]/10 rounded-full -translate-y-8 translate-x-8 blur-2xl" />
                   <div className="relative">
                     <p className="font-display font-bold text-white mb-1">Is this your business?</p>
                     <p className="text-white/60 text-sm mb-4">Claim your free listing to update details, manage your food hygiene display, and attract more customers.</p>
                     <Link
                       href="/claim-listing"
-                      className="block text-center bg-[#C9A84C] text-white px-4 py-2.5 rounded-full font-bold text-sm hover:bg-[#E8C87A] transition"
+                      className="block text-center bg-[#C4782A] text-white px-4 py-2.5 rounded-full font-bold text-sm hover:bg-[#E8C87A] transition"
                     >
                       Claim Free Listing →
                     </Link>
@@ -757,7 +757,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
               <div className="bg-white border border-gray-100 rounded-2xl p-5 text-center">
                 <p className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold mb-2">Upgrade this listing</p>
                 <p className="text-gray-600 text-sm mb-3">Get more visibility with a featured listing from £29/month</p>
-                <Link href="/pricing" className="text-[#C9A84C] text-sm font-bold hover:underline">View pricing →</Link>
+                <Link href="/pricing" className="text-[#C4782A] text-sm font-bold hover:underline">View pricing →</Link>
               </div>
             </div>
           </div>

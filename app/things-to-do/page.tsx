@@ -64,7 +64,7 @@ const LAKES = [
       "Parking fills early in summer. Arrive before 10am or use the bus.",
       "Dogs allowed on most cruises. Check with the operator.",
     ],
-    gradient: "from-[#1A5C7A] to-[#1E8AB0]",
+    gradient: "from-[#2A6B8A] to-[#1E8AB0]",
     emoji: "🛶",
     href: "/activities",
   },
@@ -437,10 +437,10 @@ export default function ThingsToDoPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_LD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_LD) }} />
 
-      <div className="min-h-screen bg-[#FAF8F5]">
+      <div className="min-h-screen bg-[#EAEDE8]">
 
         {/* Hero */}
-        <div className="relative min-h-[80vh] flex items-end bg-[#1B2E4B] text-white overflow-hidden">
+        <div className="relative min-h-[80vh] flex items-end bg-[#14231C] text-white overflow-hidden">
           <div className="absolute inset-0">
             <Image
               src={HERO_IMAGE_URL}
@@ -452,21 +452,21 @@ export default function ThingsToDoPage() {
               style={{ objectPosition: "center 40%" }}
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1B2E4B] via-[#1B2E4B]/60 to-[#1B2E4B]/20" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1B2E4B]/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#14231C] via-[#14231C]/60 to-[#14231C]/20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#14231C]/50 to-transparent" />
           </div>
 
           <div className="relative container mx-auto px-4 pb-16 pt-32 max-w-7xl">
             <div className="max-w-3xl">
               <div className="flex items-center gap-3 mb-5">
-                <span className="bg-[#C9A84C] text-[#1B2E4B] text-xs font-black px-3 py-1 rounded-full uppercase tracking-widest">
+                <span className="bg-[#C4782A] text-[#14231C] text-xs font-black px-3 py-1 rounded-full uppercase tracking-widest">
                   The Complete Guide
                 </span>
                 <span className="text-white/50 text-sm font-medium">TheLakesGuide.co.uk</span>
               </div>
               <h1 className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-5">
                 Things to Do in the
-                <span className="block text-[#C9A84C]">Lake District</span>
+                <span className="block text-[#C4782A]">Lake District</span>
               </h1>
               <p className="text-white/75 text-xl max-w-2xl mb-8 leading-relaxed">
                 Most people come for the walking. The fells, the lakes, the views. But there&apos;s more. Wildlife at Haweswater.
@@ -475,7 +475,7 @@ export default function ThingsToDoPage() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="#lakes"
-                  className="bg-[#C9A84C] hover:bg-[#E8C87A] text-[#1B2E4B] px-7 py-3.5 rounded-full font-bold text-sm transition-colors"
+                  className="bg-[#C4782A] hover:bg-[#E8B87A] text-[#14231C] px-7 py-3.5 rounded-full font-bold text-sm transition-colors"
                 >
                   Explore the Guide
                 </a>
@@ -491,14 +491,14 @@ export default function ThingsToDoPage() {
         </div>
 
         {/* Quick Nav */}
-        <div className="sticky top-16 z-20 bg-[#1B2E4B]/97 backdrop-blur-sm border-b border-white/10 shadow-lg">
+        <div className="sticky top-16 z-20 bg-[#14231C]/97 backdrop-blur-sm border-b border-white/10 shadow-lg">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="flex gap-0.5 overflow-x-auto py-2.5 scrollbar-hide">
               {QUICK_LINKS.map(({ href, label, icon: Icon }) => (
                 <a
                   key={href}
                   href={href}
-                  className="flex items-center gap-1.5 text-white/60 hover:text-[#C9A84C] text-xs font-semibold px-3.5 py-2 rounded-lg hover:bg-white/5 whitespace-nowrap transition"
+                  className="flex items-center gap-1.5 text-white/60 hover:text-[#C4782A] text-xs font-semibold px-3.5 py-2 rounded-lg hover:bg-white/5 whitespace-nowrap transition"
                 >
                   <Icon className="w-3.5 h-3.5 flex-shrink-0" />
                   {label}
@@ -509,8 +509,8 @@ export default function ThingsToDoPage() {
         </div>
 
         {/* Stats strip */}
-        <div className="relative bg-[#1B2E4B] text-white overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1B2E4B]/80 via-[#1B2E4B]/60 to-[#1B2E4B]/80" />
+        <div className="relative bg-[#14231C] text-white overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#14231C]/80 via-[#14231C]/60 to-[#14231C]/80" />
           <div className="relative container mx-auto px-4 max-w-7xl">
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-x divide-white/10">
               {[
@@ -522,7 +522,7 @@ export default function ThingsToDoPage() {
                 { value: "912", unit: "sq miles", label: "national park" },
               ].map((s) => (
                 <div key={s.label} className="text-center px-4 py-6">
-                  <div className="text-2xl font-extrabold text-[#C9A84C]">{s.value}</div>
+                  <div className="text-2xl font-extrabold text-[#C4782A]">{s.value}</div>
                   <div className="text-xs text-white/60 mt-0.5">{s.unit}</div>
                   <div className="text-[11px] text-white/40 mt-1 leading-tight">{s.label}</div>
                 </div>
@@ -535,9 +535,9 @@ export default function ThingsToDoPage() {
 
           {/* Damian's Take */}
           <section>
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12 border-l-4 border-l-[#C9A84C]">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-3">Damian&apos;s Take</p>
-              <h2 className="font-display text-3xl font-bold text-[#1B2E4B] mb-6">Why the Lakes Keeps Drawing People Back</h2>
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12 border-l-4 border-l-[#C4782A]">
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-3">Damian&apos;s Take</p>
+              <h2 className="font-display text-3xl font-bold text-[#14231C] mb-6">Why the Lakes Keeps Drawing People Back</h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-[1.05rem]">
                 <p>
                   I&apos;ve walked Helvellyn a dozen times. Striding Edge in mist is not a joke. Go early, check the forecast, and bring layers. The summit can be brutal even in summer. But when the conditions are right, there&apos;s nowhere better.
@@ -555,8 +555,8 @@ export default function ThingsToDoPage() {
           {/* The Lakes */}
           <section id="lakes" className="scroll-mt-28">
             <div className="mb-10">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">On the Water</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#1B2E4B]">The Lakes</h2>
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">On the Water</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C]">The Lakes</h2>
               <p className="text-gray-600 mt-3 max-w-2xl text-lg leading-relaxed">
                 Four of the main lakes, each with a different character. Cruises, kayaking, and quiet shores.
               </p>
@@ -575,21 +575,21 @@ export default function ThingsToDoPage() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <div className="bg-[#C9A84C]/10 border border-[#C9A84C]/20 rounded-lg px-3 py-2 mb-4">
-                      <p className="text-[11px] font-bold text-[#C9A84C] uppercase tracking-wider">{lake.highlight}</p>
+                    <div className="bg-[#C4782A]/10 border border-[#C4782A]/20 rounded-lg px-3 py-2 mb-4">
+                      <p className="text-[11px] font-bold text-[#C4782A] uppercase tracking-wider">{lake.highlight}</p>
                     </div>
                     <p className="text-gray-700 leading-relaxed mb-5 text-sm">{lake.description}</p>
                     <div className="space-y-2 mb-5">
                       {lake.practical.map((tip) => (
                         <div key={tip} className="flex gap-2 text-xs text-gray-600">
-                          <ChevronRight className="w-3.5 h-3.5 text-[#C9A84C] flex-shrink-0 mt-0.5" />
+                          <ChevronRight className="w-3.5 h-3.5 text-[#C4782A] flex-shrink-0 mt-0.5" />
                           <span>{tip}</span>
                         </div>
                       ))}
                     </div>
                     <Link
                       href={lake.href}
-                      className="inline-flex items-center gap-1.5 text-[#C9A84C] font-semibold text-sm hover:text-[#1B2E4B] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-[#C4782A] font-semibold text-sm hover:text-[#14231C] transition-colors"
                     >
                       Explore Activities <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -598,10 +598,10 @@ export default function ThingsToDoPage() {
               ))}
             </div>
 
-            <div className="mt-6 bg-[#1B2E4B] rounded-2xl p-6 md:p-8 text-white">
+            <div className="mt-6 bg-[#14231C] rounded-2xl p-6 md:p-8 text-white">
               <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
                 <div className="flex-1">
-                  <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-1">Water Sports</p>
+                  <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-1">Water Sports</p>
                   <h3 className="font-display text-xl font-bold">Kayaking, Sailing, Paddleboarding</h3>
                   <p className="text-white/60 text-sm mt-2 leading-relaxed">
                     Windermere and Coniston have the most options. Derwentwater and Ullswater have hire too. Book ahead at weekends in summer.
@@ -609,7 +609,7 @@ export default function ThingsToDoPage() {
                 </div>
                 <Link
                   href="/activities"
-                  className="flex-shrink-0 bg-[#C9A84C] text-[#1B2E4B] px-6 py-3 rounded-full font-bold text-sm hover:bg-[#E8C87A] transition-colors"
+                  className="flex-shrink-0 bg-[#C4782A] text-[#14231C] px-6 py-3 rounded-full font-bold text-sm hover:bg-[#E8B87A] transition-colors"
                 >
                   Walking &amp; Activities →
                 </Link>
@@ -620,8 +620,8 @@ export default function ThingsToDoPage() {
           {/* Family Days Out */}
           <section id="family" className="scroll-mt-28">
             <div className="mb-10">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">With Kids</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#1B2E4B]">Family Days Out</h2>
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">With Kids</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C]">Family Days Out</h2>
               <p className="text-gray-600 mt-3 max-w-2xl text-lg leading-relaxed">
                 The Lake District works for families. These are the spots that actually deliver.
               </p>
@@ -631,13 +631,13 @@ export default function ThingsToDoPage() {
               {FAMILY.map((item) => (
                 <div key={item.name} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
                   <div className="text-3xl mb-3">{item.emoji}</div>
-                  <h3 className="font-display font-bold text-[#1B2E4B] text-lg mb-0.5">{item.name}</h3>
-                  <p className="text-[#C9A84C] text-xs font-semibold mb-3">{item.sub}</p>
+                  <h3 className="font-display font-bold text-[#14231C] text-lg mb-0.5">{item.name}</h3>
+                  <p className="text-[#C4782A] text-xs font-semibold mb-3">{item.sub}</p>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">{item.detail}</p>
                   <div className="bg-gray-50 rounded-lg px-3 py-2 mb-4">
                     <p className="text-xs text-gray-500 font-medium">{item.practical}</p>
                   </div>
-                  <Link href={item.href} className="text-[#C9A84C] text-sm font-semibold hover:text-[#1B2E4B] transition-colors flex items-center gap-1">
+                  <Link href={item.href} className="text-[#C4782A] text-sm font-semibold hover:text-[#14231C] transition-colors flex items-center gap-1">
                     More info <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -648,8 +648,8 @@ export default function ThingsToDoPage() {
           {/* Nature & Wildlife */}
           <section id="nature" className="scroll-mt-28">
             <div className="mb-10">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">Beyond the Fells</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#1B2E4B]">Nature &amp; Wildlife</h2>
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">Beyond the Fells</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C]">Nature &amp; Wildlife</h2>
               <p className="text-gray-600 mt-3 max-w-2xl text-lg leading-relaxed">
                 Ospreys, red squirrels, and one of the best wetland reserves in the North West.
               </p>
@@ -658,7 +658,7 @@ export default function ThingsToDoPage() {
             <div className="grid md:grid-cols-2 gap-6">
               {NATURE.map((item) => (
                 <div key={item.name} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                  <div className={`px-6 py-5 ${item.color === "green" ? "bg-gradient-to-r from-[#1A4020] to-[#2E6830]" : "bg-gradient-to-r from-[#1A5C7A] to-[#1E8AB0]"}`}>
+                  <div className={`px-6 py-5 ${item.color === "green" ? "bg-gradient-to-r from-[#1A4020] to-[#2E6830]" : "bg-gradient-to-r from-[#2A6B8A] to-[#1E8AB0]"}`}>
                     <span className="text-white/70 text-xs font-semibold uppercase tracking-wide">{item.org}</span>
                     <div className="flex items-center gap-3 mt-1">
                       <h3 className="font-display text-xl font-bold text-white">{item.name}</h3>
@@ -668,11 +668,11 @@ export default function ThingsToDoPage() {
                   </div>
                   <div className="p-6">
                     <p className="text-gray-700 leading-relaxed mb-5 text-sm">{item.story}</p>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#1B2E4B] mb-3">Practical Information</h4>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#14231C] mb-3">Practical Information</h4>
                     <div className="space-y-2">
                       {item.tips.map((tip) => (
                         <div key={tip} className="flex gap-2 text-xs text-gray-600">
-                          <ChevronRight className="w-3.5 h-3.5 text-[#C9A84C] flex-shrink-0 mt-0.5" />
+                          <ChevronRight className="w-3.5 h-3.5 text-[#C4782A] flex-shrink-0 mt-0.5" />
                           <span>{tip}</span>
                         </div>
                       ))}
@@ -686,8 +686,8 @@ export default function ThingsToDoPage() {
           {/* Culture & Heritage */}
           <section id="culture" className="scroll-mt-28">
             <div className="mb-10">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">History &amp; Culture</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#1B2E4B]">Culture &amp; Heritage</h2>
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">History &amp; Culture</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C]">Culture &amp; Heritage</h2>
               <p className="text-gray-600 mt-3 max-w-2xl text-lg leading-relaxed">
                 Wordsworth, Beatrix Potter, Ruskin, and stone circles. The Lakes has more than the scenery.
               </p>
@@ -698,11 +698,11 @@ export default function ThingsToDoPage() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md hover:border-[#C9A84C]/30 transition-all group"
+                  className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md hover:border-[#C4782A]/30 transition-all group"
                 >
                   <div className="text-3xl mb-3">{item.emoji}</div>
-                  <p className="text-[#C9A84C] text-[11px] font-bold uppercase tracking-wider mb-1">{item.tag}</p>
-                  <h3 className="font-display font-bold text-[#1B2E4B] text-lg mb-3 group-hover:text-[#C9A84C] transition-colors">{item.name}</h3>
+                  <p className="text-[#C4782A] text-[11px] font-bold uppercase tracking-wider mb-1">{item.tag}</p>
+                  <h3 className="font-display font-bold text-[#14231C] text-lg mb-3 group-hover:text-[#C4782A] transition-colors">{item.name}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.detail}</p>
                 </Link>
               ))}
@@ -712,8 +712,8 @@ export default function ThingsToDoPage() {
           {/* Walks & Fells */}
           <section id="walks" className="scroll-mt-28">
             <div className="mb-10">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">The Fells</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#1B2E4B]">Walks &amp; Fells</h2>
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">The Fells</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C]">Walks &amp; Fells</h2>
               <p className="text-gray-600 mt-3 max-w-2xl text-lg leading-relaxed">
                 The 214 Wainwrights draw completionists. These four are the ones everyone should know.
               </p>
@@ -725,15 +725,15 @@ export default function ThingsToDoPage() {
                   <div className="flex items-start justify-between gap-3 mb-3">
                     <div>
                       <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${course.tagColor}`}>{course.tag}</span>
-                      <h3 className="font-display text-xl font-bold text-[#1B2E4B] mt-2">{course.name}</h3>
-                      <p className="text-[#C9A84C] text-xs font-semibold mt-0.5">{course.rank}</p>
+                      <h3 className="font-display text-xl font-bold text-[#14231C] mt-2">{course.name}</h3>
+                      <p className="text-[#C4782A] text-xs font-semibold mt-0.5">{course.rank}</p>
                     </div>
                     <span className="text-3xl flex-shrink-0">{course.emoji}</span>
                   </div>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">{course.detail}</p>
                   <div className="flex items-center justify-between">
                     <p className="text-xs text-gray-500 font-medium">{course.open}</p>
-                    <Link href={course.href} className="text-[#C9A84C] text-sm font-semibold hover:text-[#1B2E4B] transition-colors flex items-center gap-1">
+                    <Link href={course.href} className="text-[#C4782A] text-sm font-semibold hover:text-[#14231C] transition-colors flex items-center gap-1">
                       Details <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -744,7 +744,7 @@ export default function ThingsToDoPage() {
             <div className="bg-gradient-to-r from-[#1A4020] to-[#2E6830] rounded-2xl p-6 md:p-8 text-white">
               <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
                 <div className="flex-1">
-                  <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-1">The Wainwrights</p>
+                  <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-1">The Wainwrights</p>
                   <h3 className="font-display text-xl font-bold">214 Fells</h3>
                   <p className="text-white/60 text-sm mt-2 leading-relaxed">
                     Alfred Wainwright documented 214 fells in his seven Pictorial Guides. Completionists come from around the world to tick them all. Start with the classics and work up.
@@ -752,7 +752,7 @@ export default function ThingsToDoPage() {
                 </div>
                 <Link
                   href="/walks"
-                  className="flex-shrink-0 bg-[#C9A84C] text-[#1B2E4B] px-6 py-3 rounded-full font-bold text-sm hover:bg-[#E8C87A] transition-colors"
+                  className="flex-shrink-0 bg-[#C4782A] text-[#14231C] px-6 py-3 rounded-full font-bold text-sm hover:bg-[#E8B87A] transition-colors"
                 >
                   Walks Guide →
                 </Link>
@@ -763,8 +763,8 @@ export default function ThingsToDoPage() {
           {/* Activities */}
           <section id="activities" className="scroll-mt-28">
             <div className="mb-8">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">Sport &amp; Outdoors</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#1B2E4B]">Activities</h2>
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">Sport &amp; Outdoors</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C]">Activities</h2>
               <p className="text-gray-600 mt-3 max-w-2xl text-lg leading-relaxed">
                 The Lakes is built for outdoor activity. Water, bikes, and climbing.
               </p>
@@ -781,10 +781,10 @@ export default function ThingsToDoPage() {
                 <Link
                   key={item.title}
                   href={item.link}
-                  className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md hover:border-[#C9A84C]/30 transition-all group"
+                  className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md hover:border-[#C4782A]/30 transition-all group"
                 >
                   <div className="text-3xl mb-3">{item.emoji}</div>
-                  <h3 className="font-display font-bold text-[#1B2E4B] text-lg mb-2 group-hover:text-[#C9A84C] transition-colors">{item.title}</h3>
+                  <h3 className="font-display font-bold text-[#14231C] text-lg mb-2 group-hover:text-[#C4782A] transition-colors">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.detail}</p>
                 </Link>
               ))}
@@ -794,8 +794,8 @@ export default function ThingsToDoPage() {
           {/* Shopping */}
           <section id="shopping" className="scroll-mt-28">
             <div className="mb-8">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">Shops &amp; Villages</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#1B2E4B]">Shopping in the Lake District</h2>
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">Shops &amp; Villages</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C]">Shopping in the Lake District</h2>
               <p className="text-gray-600 mt-3 max-w-2xl text-lg leading-relaxed">
                 Keswick, Ambleside, and Windermere have the main shopping. Grasmere for gingerbread. Hawkshead for Beatrix Potter.
               </p>
@@ -812,11 +812,11 @@ export default function ThingsToDoPage() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md hover:border-[#C9A84C]/30 transition-all group"
+                  className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md hover:border-[#C4782A]/30 transition-all group"
                 >
                   <div className="text-3xl mb-3">{item.emoji}</div>
-                  <p className="text-[#C9A84C] text-[11px] font-bold uppercase tracking-wider mb-1">{item.sub}</p>
-                  <h3 className="font-display font-bold text-[#1B2E4B] text-lg mb-2 group-hover:text-[#C9A84C] transition-colors">{item.name}</h3>
+                  <p className="text-[#C4782A] text-[11px] font-bold uppercase tracking-wider mb-1">{item.sub}</p>
+                  <h3 className="font-display font-bold text-[#14231C] text-lg mb-2 group-hover:text-[#C4782A] transition-colors">{item.name}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.detail}</p>
                 </Link>
               ))}
@@ -826,8 +826,8 @@ export default function ThingsToDoPage() {
           {/* Events */}
           <section id="events" className="scroll-mt-28">
             <div className="mb-10">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">Year-Round</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#1B2E4B]">Events in the Lake District</h2>
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">Year-Round</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C]">Events in the Lake District</h2>
               <p className="text-gray-600 mt-3 max-w-2xl text-lg leading-relaxed">
                 Mountain festivals, traditional sports, and music. The calendar runs year-round.
               </p>
@@ -837,12 +837,12 @@ export default function ThingsToDoPage() {
               {EVENTS.map((ev) => (
                 <div key={ev.event} className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[#C9A84C] text-xs font-black uppercase tracking-widest">{ev.month}</span>
+                    <span className="text-[#C4782A] text-xs font-black uppercase tracking-widest">{ev.month}</span>
                     {ev.free && (
                       <span className="text-[10px] bg-green-100 text-green-700 font-bold px-1.5 py-0.5 rounded-full">FREE</span>
                     )}
                   </div>
-                  <h3 className="font-display font-bold text-[#1B2E4B] text-sm leading-snug mb-1">{ev.event}</h3>
+                  <h3 className="font-display font-bold text-[#14231C] text-sm leading-snug mb-1">{ev.event}</h3>
                   <p className="text-gray-500 text-xs leading-relaxed">{ev.desc}</p>
                 </div>
               ))}
@@ -850,7 +850,7 @@ export default function ThingsToDoPage() {
 
             <Link
               href="/events"
-              className="inline-flex items-center gap-2 bg-[#1B2E4B] text-white px-7 py-3.5 rounded-full font-bold text-sm hover:bg-[#2A4A73] transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14231C] text-white px-7 py-3.5 rounded-full font-bold text-sm hover:bg-[#245E3F] transition-colors"
             >
               Full Events Calendar <ArrowRight className="w-4 h-4" />
             </Link>
@@ -859,8 +859,8 @@ export default function ThingsToDoPage() {
           {/* Plan Your Visit */}
           <section className="scroll-mt-28">
             <div className="mb-8">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">Plan Your Visit</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#1B2E4B]">What Kind of Trip?</h2>
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">Plan Your Visit</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C]">What Kind of Trip?</h2>
               <p className="text-gray-600 mt-3 max-w-2xl text-lg">
                 Different visitors want very different things from the Lakes. Here&apos;s the guide by type.
               </p>
@@ -883,10 +883,10 @@ export default function ThingsToDoPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
                   <div className="relative p-6">
-                    <panel.icon className="w-7 h-7 mb-2 text-[#C9A84C]" />
-                    <h3 className="font-display font-bold text-white text-lg mb-1.5 group-hover:text-[#C9A84C] transition-colors">{panel.title}</h3>
+                    <panel.icon className="w-7 h-7 mb-2 text-[#C4782A]" />
+                    <h3 className="font-display font-bold text-white text-lg mb-1.5 group-hover:text-[#C4782A] transition-colors">{panel.title}</h3>
                     <p className="text-white/70 text-xs leading-relaxed mb-3 line-clamp-3">{panel.desc}</p>
-                    <span className="text-[#C9A84C] text-sm font-semibold flex items-center gap-1">
+                    <span className="text-[#C4782A] text-sm font-semibold flex items-center gap-1">
                       {panel.cta} <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
@@ -898,29 +898,29 @@ export default function ThingsToDoPage() {
           {/* Where to Eat & Stay strip */}
           <section className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10">
             <div className="text-center mb-8">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">Complete Your Visit</p>
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-[#1B2E4B]">Where to Eat &amp; Stay</h2>
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">Complete Your Visit</p>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-[#14231C]">Where to Eat &amp; Stay</h2>
             </div>
             <div className="grid sm:grid-cols-3 gap-5">
-              <Link href="/restaurants" className="group flex flex-col items-center text-center p-6 rounded-xl hover:bg-[#FAF8F5] transition">
+              <Link href="/restaurants" className="group flex flex-col items-center text-center p-6 rounded-xl hover:bg-[#EAEDE8] transition">
                 <div className="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center mb-4 group-hover:bg-red-100 transition">
                   <MapPin className="w-7 h-7 text-red-600" />
                 </div>
-                <h3 className="font-display font-bold text-[#1B2E4B] text-lg mb-1 group-hover:text-[#C9A84C] transition-colors">Restaurants</h3>
+                <h3 className="font-display font-bold text-[#14231C] text-lg mb-1 group-hover:text-[#C4782A] transition-colors">Restaurants</h3>
                 <p className="text-gray-500 text-sm">From pub grub to fine dining. Book ahead at weekends.</p>
               </Link>
-              <Link href="/hotels" className="group flex flex-col items-center text-center p-6 rounded-xl hover:bg-[#FAF8F5] transition">
+              <Link href="/hotels" className="group flex flex-col items-center text-center p-6 rounded-xl hover:bg-[#EAEDE8] transition">
                 <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition">
                   <Users className="w-7 h-7 text-blue-600" />
                 </div>
-                <h3 className="font-display font-bold text-[#1B2E4B] text-lg mb-1 group-hover:text-[#C9A84C] transition-colors">Hotels</h3>
+                <h3 className="font-display font-bold text-[#14231C] text-lg mb-1 group-hover:text-[#C4782A] transition-colors">Hotels</h3>
                 <p className="text-gray-500 text-sm">B&Bs, inns, and hotels. From budget to luxury.</p>
               </Link>
-              <Link href="/pubs" className="group flex flex-col items-center text-center p-6 rounded-xl hover:bg-[#FAF8F5] transition">
+              <Link href="/pubs" className="group flex flex-col items-center text-center p-6 rounded-xl hover:bg-[#EAEDE8] transition">
                 <div className="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center mb-4 group-hover:bg-purple-100 transition">
                   <Wine className="w-7 h-7 text-purple-600" />
                 </div>
-                <h3 className="font-display font-bold text-[#1B2E4B] text-lg mb-1 group-hover:text-[#C9A84C] transition-colors">Pubs</h3>
+                <h3 className="font-display font-bold text-[#14231C] text-lg mb-1 group-hover:text-[#C4782A] transition-colors">Pubs</h3>
                 <p className="text-gray-500 text-sm">Post-walk pubs. Real ale and lake views.</p>
               </Link>
             </div>
@@ -929,14 +929,14 @@ export default function ThingsToDoPage() {
           {/* FAQ */}
           <section id="faq" className="scroll-mt-28">
             <div className="text-center mb-10">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">Common Questions</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#1B2E4B]">Things to Do in the Lake District, FAQs</h2>
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">Common Questions</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C]">Things to Do in the Lake District, FAQs</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {FAQS.map((faq) => (
                 <div key={faq.q} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                  <h3 className="font-display font-bold text-[#1B2E4B] text-base mb-2 flex items-start gap-2">
-                    <ChevronRight className="w-5 h-5 text-[#C9A84C] flex-shrink-0 mt-0.5" />
+                  <h3 className="font-display font-bold text-[#14231C] text-base mb-2 flex items-start gap-2">
+                    <ChevronRight className="w-5 h-5 text-[#C4782A] flex-shrink-0 mt-0.5" />
                     {faq.q}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed pl-7">{faq.a}</p>
@@ -946,8 +946,8 @@ export default function ThingsToDoPage() {
           </section>
 
           {/* CTA */}
-          <section className="bg-[#1B2E4B] rounded-2xl p-8 md:p-12 text-center text-white">
-            <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-3">Lake District Business?</p>
+          <section className="bg-[#14231C] rounded-2xl p-8 md:p-12 text-center text-white">
+            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">Lake District Business?</p>
             <h2 className="font-display text-3xl font-bold mb-4">Get Your Business in Front of Visitors</h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
               TheLakesGuide.co.uk is the independent visitor guide to the Lake District. List your restaurant,
@@ -956,7 +956,7 @@ export default function ThingsToDoPage() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/claim-listing"
-                className="bg-[#C9A84C] hover:bg-[#E8C87A] text-[#1B2E4B] px-8 py-3.5 rounded-full font-bold transition-colors"
+                className="bg-[#C4782A] hover:bg-[#E8B87A] text-[#14231C] px-8 py-3.5 rounded-full font-bold transition-colors"
               >
                 List Your Business
               </Link>

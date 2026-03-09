@@ -637,7 +637,7 @@ export default async function ParkingSlugPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
-      <div className="min-h-screen bg-[#FAF8F5]">
+      <div className="min-h-screen bg-[#EAEDE8]">
 
         {/* ── Street View hero strip ──────────────────────────────────────── */}
         <div className="relative w-full h-44 bg-[#1C3148] overflow-hidden">
@@ -669,7 +669,7 @@ export default async function ParkingSlugPage({ params }: Props) {
 
               {/* Name + postcode */}
               <div>
-                <h1 className="font-display text-2xl md:text-3xl font-bold text-[#1B2E4B] leading-tight">
+                <h1 className="font-display text-2xl md:text-3xl font-bold text-[#14231C] leading-tight">
                   {business.name}
                 </h1>
                 {business.postcode && (
@@ -712,7 +712,7 @@ export default async function ParkingSlugPage({ params }: Props) {
                 </span>
               )}
               {ptype && (
-                <span className="inline-flex items-center gap-1 bg-[#EBF0F7] text-[#1B2E4B] border border-[#1B2E4B]/10 text-xs font-medium px-2.5 py-1 rounded-full">
+                <span className="inline-flex items-center gap-1 bg-[#EAEDE8] text-[#14231C] border border-[#14231C]/10 text-xs font-medium px-2.5 py-1 rounded-full">
                   🅿️ {ptype}
                 </span>
               )}
@@ -953,7 +953,7 @@ export default async function ParkingSlugPage({ params }: Props) {
                     <div>
                       <p className="text-xs text-gray-400 mb-0.5">Postcode</p>
                       <div className="flex items-center gap-2">
-                        <span className="font-mono font-semibold text-[#1B2E4B] text-sm">{business.postcode}</span>
+                        <span className="font-mono font-semibold text-[#14231C] text-sm">{business.postcode}</span>
                         <PostcodeCopy postcode={business.postcode} />
                       </div>
                     </div>
@@ -1011,7 +1011,7 @@ export default async function ParkingSlugPage({ params }: Props) {
                   </div>
                   <Link
                     href="/parking"
-                    className="block text-center text-[#C9A84C] text-xs font-bold mt-3 hover:underline"
+                    className="block text-center text-[#C4782A] text-xs font-bold mt-3 hover:underline"
                   >
                     All parking →
                   </Link>

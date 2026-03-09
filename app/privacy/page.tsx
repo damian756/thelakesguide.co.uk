@@ -9,17 +9,17 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-[#FAF8F5]">
+    <div className="min-h-screen bg-[#EAEDE8]">
       {/* Header */}
       <section className="bg-[#1B2E4B]">
-        <div className="h-1 bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent" />
+        <div className="h-1 bg-gradient-to-r from-transparent via-[#C4782A] to-transparent" />
         <div className="container mx-auto px-4 py-14 max-w-3xl">
           <Link href="/" className="inline-flex items-center gap-1.5 text-white/60 hover:text-white text-sm mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to guide
           </Link>
           <div className="flex items-center gap-3 mb-4">
-            <Shield className="w-8 h-8 text-[#C9A84C]" />
-            <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest">Legal</p>
+            <Shield className="w-8 h-8 text-[#C4782A]" />
+            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest">Legal</p>
           </div>
           <h1 className="font-display text-4xl font-bold text-white mb-2">Privacy Policy</h1>
           <p className="text-white/50 text-sm">Last updated: 18 February 2026</p>
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
             </p>
             <p className="text-gray-600 leading-relaxed">
               <strong>Contact:</strong>{" "}
-              <a href="mailto:hello@churchtownmedia.co.uk" className="text-[#C9A84C] hover:underline">
+              <a href="mailto:hello@churchtownmedia.co.uk" className="text-[#C4782A] hover:underline">
                 hello@churchtownmedia.co.uk
               </a>
             </p>
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
                 },
               ].map(({ title, desc }) => (
                 <div key={title} className="flex gap-4">
-                  <div className="w-2 h-2 rounded-full bg-[#C9A84C] mt-2 flex-none" />
+                  <div className="w-2 h-2 rounded-full bg-[#C4782A] mt-2 flex-none" />
                   <div>
                     <p className="font-semibold text-[#1B2E4B] text-sm">{title}</p>
                     <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
@@ -87,7 +87,7 @@ export default function PrivacyPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm border-collapse">
                 <thead>
-                  <tr className="bg-[#FAF8F5]">
+                  <tr className="bg-[#EAEDE8]">
                     <th className="text-left p-3 font-semibold text-[#1B2E4B] border border-gray-100">Purpose</th>
                     <th className="text-left p-3 font-semibold text-[#1B2E4B] border border-gray-100">Legal basis</th>
                   </tr>
@@ -112,9 +112,9 @@ export default function PrivacyPage() {
           <section>
             <h2 className="font-display text-xl font-bold text-[#1B2E4B] mb-4">4. How long we keep it</h2>
             <ul className="space-y-2 text-gray-600 text-sm">
-              <li className="flex gap-3"><span className="text-[#C9A84C]">→</span> Contact form submissions: <strong>12 months</strong></li>
-              <li className="flex gap-3"><span className="text-[#C9A84C]">→</span> Business listing data: <strong>for the duration of your listing plus 6 months</strong></li>
-              <li className="flex gap-3"><span className="text-[#C9A84C]">→</span> Analytics data: <strong>aggregated, no personal data retained</strong> (Plausible Analytics)</li>
+              <li className="flex gap-3"><span className="text-[#C4782A]">→</span> Contact form submissions: <strong>12 months</strong></li>
+              <li className="flex gap-3"><span className="text-[#C4782A]">→</span> Business listing data: <strong>for the duration of your listing plus 6 months</strong></li>
+              <li className="flex gap-3"><span className="text-[#C4782A]">→</span> Analytics data: <strong>aggregated, no personal data retained</strong> (Plausible Analytics)</li>
             </ul>
           </section>
 
@@ -126,7 +126,7 @@ export default function PrivacyPage() {
                 { name: "Stripe", detail: "Payment processing for paid business listings. Subject to Stripe's own privacy policy." },
                 { name: "Vercel", detail: "Website hosting infrastructure. Data is processed in UK/EU-region data centres where possible." },
               ].map(({ name, detail }) => (
-                <div key={name} className="bg-[#FAF8F5] rounded-xl p-4">
+                <div key={name} className="bg-[#EAEDE8] rounded-xl p-4">
                   <p className="font-semibold text-[#1B2E4B] text-sm mb-1">{name}</p>
                   <p className="text-gray-500 text-sm">{detail}</p>
                 </div>
@@ -140,7 +140,7 @@ export default function PrivacyPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm border-collapse">
                 <thead>
-                  <tr className="bg-[#FAF8F5]">
+                  <tr className="bg-[#EAEDE8]">
                     <th className="text-left p-3 font-semibold text-[#1B2E4B] border border-gray-100">Type</th>
                     <th className="text-left p-3 font-semibold text-[#1B2E4B] border border-gray-100">Purpose</th>
                     <th className="text-left p-3 font-semibold text-[#1B2E4B] border border-gray-100">Required?</th>
@@ -178,17 +178,17 @@ export default function PrivacyPage() {
                 "Withdraw consent at any time",
               ].map((right) => (
                 <div key={right} className="flex items-center gap-2 text-sm text-gray-600">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] flex-none" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C4782A] flex-none" />
                   {right}
                 </div>
               ))}
             </div>
             <p className="text-gray-600 text-sm mt-4">
               To exercise any of these rights, email{" "}
-              <a href="mailto:hello@churchtownmedia.co.uk" className="text-[#C9A84C] hover:underline">
+              <a href="mailto:hello@churchtownmedia.co.uk" className="text-[#C4782A] hover:underline">
                 hello@churchtownmedia.co.uk
               </a>. You may also lodge a complaint with the{" "}
-              <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] hover:underline">
+              <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#C4782A] hover:underline">
                 Information Commissioner&apos;s Office (ICO)
               </a>.
             </p>
@@ -201,7 +201,7 @@ export default function PrivacyPage() {
             </p>
             <div className="overflow-x-auto rounded-xl border border-gray-100">
               <table className="w-full text-sm">
-                <thead className="bg-[#FAF8F5]">
+                <thead className="bg-[#EAEDE8]">
                   <tr>
                     <th className="text-left px-4 py-3 text-xs font-semibold text-[#1B2E4B] uppercase tracking-wider">Category</th>
                     <th className="text-left px-4 py-3 text-xs font-semibold text-[#1B2E4B] uppercase tracking-wider">Purpose</th>
@@ -217,7 +217,7 @@ export default function PrivacyPage() {
                     <tr key={cat}>
                       <td className="px-4 py-3 font-semibold text-[#1B2E4B] align-top whitespace-nowrap">{cat}</td>
                       <td className="px-4 py-3 text-gray-600 align-top">{purpose}</td>
-                      <td className={`px-4 py-3 align-top whitespace-nowrap font-medium ${req.startsWith("No") ? "text-[#C9A84C]" : "text-gray-500"}`}>{req}</td>
+                      <td className={`px-4 py-3 align-top whitespace-nowrap font-medium ${req.startsWith("No") ? "text-[#C4782A]" : "text-gray-500"}`}>{req}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -239,9 +239,9 @@ export default function PrivacyPage() {
 
         <div className="mt-8 text-center text-sm text-gray-400">
           Questions?{" "}
-          <Link href="/contact" className="text-[#C9A84C] hover:underline">Contact us</Link>
+          <Link href="/contact" className="text-[#C4782A] hover:underline">Contact us</Link>
           {" "}·{" "}
-          <Link href="/terms" className="text-[#C9A84C] hover:underline">Terms & Conditions</Link>
+          <Link href="/terms" className="text-[#C4782A] hover:underline">Terms & Conditions</Link>
         </div>
       </div>
     </div>

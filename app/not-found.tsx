@@ -17,7 +17,7 @@ const QUICK_LINKS = [
 
 export default function NotFound() {
   return (
-    <div className="min-h-[80vh] bg-[#FAF8F5] flex items-center justify-center px-4 py-16">
+    <div className="min-h-[80vh] bg-[#EAEDE8] flex items-center justify-center px-4 py-16">
       <div className="max-w-xl w-full text-center">
 
         <div className="text-8xl font-extrabold text-[#1B2E4B]/10 leading-none select-none mb-2">
@@ -47,7 +47,7 @@ export default function NotFound() {
               <Link
                 key={href}
                 href={href}
-                className="text-sm text-[#C9A84C] hover:text-[#a88835] font-semibold hover:underline"
+                className="text-sm text-[#C4782A] hover:text-[#a88835] font-semibold hover:underline"
               >
                 {label}
               </Link>

@@ -93,7 +93,7 @@ export default function BlogClient({ posts, categories }: Props) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search posts…"
-            className="w-full bg-white border border-gray-200 rounded-2xl py-3.5 pl-11 pr-10 text-[#1B2E4B] text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/40 focus:border-[#C9A84C] transition-all placeholder:text-gray-400"
+            className="w-full bg-white border border-gray-200 rounded-2xl py-3.5 pl-11 pr-10 text-[#14231C] text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C4782A]/40 focus:border-[#C4782A] transition-all placeholder:text-gray-400"
           />
           {query && (
             <button
@@ -107,15 +107,15 @@ export default function BlogClient({ posts, categories }: Props) {
       </div>
 
       {/* ── Category filter ────────────────────────────────────────── */}
-      <div className="bg-[#FAF8F5] border-b border-gray-100 shadow-sm">
+      <div className="bg-[#EAEDE8] border-b border-gray-100 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex flex-wrap gap-2 justify-center">
             <button
               onClick={() => selectCategory("")}
               className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
                 activeCategory === ""
-                  ? "bg-[#1B2E4B] text-white shadow"
-                  : "bg-white text-gray-600 border border-gray-200 hover:border-[#1B2E4B] hover:text-[#1B2E4B]"
+                  ? "bg-[#14231C] text-white shadow"
+                  : "bg-white text-gray-600 border border-gray-200 hover:border-[#14231C] hover:text-[#14231C]"
               }`}
             >
               All posts
@@ -132,7 +132,7 @@ export default function BlogClient({ posts, categories }: Props) {
                   className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
                     isActive
                       ? "text-white shadow"
-                      : "bg-white text-gray-600 border border-gray-200 hover:text-[#1B2E4B] hover:border-gray-300"
+                      : "bg-white text-gray-600 border border-gray-200 hover:text-[#14231C] hover:border-gray-300"
                   }`}
                   style={isActive ? { backgroundColor: cat.color } : {}}
                 >
@@ -150,11 +150,11 @@ export default function BlogClient({ posts, categories }: Props) {
         <div>
           {query ? (
             <p className="text-sm text-gray-500">
-              <span className="font-semibold text-[#1B2E4B]">{filtered.length}</span> post{filtered.length !== 1 ? "s" : ""} matching &ldquo;{query}&rdquo;
+              <span className="font-semibold text-[#14231C]">{filtered.length}</span> post{filtered.length !== 1 ? "s" : ""} matching &ldquo;{query}&rdquo;
             </p>
           ) : activeCat ? (
             <div>
-              <p className="font-display text-xl font-bold text-[#1B2E4B]">{activeCat.label}</p>
+              <p className="font-display text-xl font-bold text-[#14231C]">{activeCat.label}</p>
               <p className="text-sm text-gray-500 mt-0.5">{activeCat.description}</p>
             </div>
           ) : null}
@@ -162,7 +162,7 @@ export default function BlogClient({ posts, categories }: Props) {
         {(query || activeCategory) && (
           <button
             onClick={() => { setQuery(""); selectCategory(""); }}
-            className="text-xs text-gray-400 hover:text-[#1B2E4B] flex items-center gap-1 transition-colors"
+            className="text-xs text-gray-400 hover:text-[#14231C] flex items-center gap-1 transition-colors"
           >
             <X className="w-3 h-3" /> Clear filters
           </button>
@@ -174,7 +174,7 @@ export default function BlogClient({ posts, categories }: Props) {
         <div className="max-w-6xl mx-auto px-4 mb-4">
           <Link
             href={`/blog/${featuredPost.slug}`}
-            className="group block rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C9A84C]/40 hover:shadow-xl transition-all bg-white"
+            className="group block rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C4782A]/40 hover:shadow-xl transition-all bg-white"
           >
             <div className="flex flex-col md:flex-row">
               {/* Image */}
@@ -188,7 +188,7 @@ export default function BlogClient({ posts, categories }: Props) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent md:bg-gradient-to-r md:from-transparent md:to-black/10" />
                 <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="bg-[#1B2E4B] text-[#C9A84C] text-[11px] font-bold px-3 py-1.5 rounded-full shadow">
+                  <span className="bg-[#14231C] text-[#C4782A] text-[11px] font-bold px-3 py-1.5 rounded-full shadow">
                     Latest
                   </span>
                   {featuredCat && (
@@ -204,13 +204,13 @@ export default function BlogClient({ posts, categories }: Props) {
               {/* Text */}
               <div className="flex flex-col justify-center p-7 md:p-10 flex-1">
                 <p className="text-gray-400 text-xs mb-3 uppercase tracking-wider">{featuredPost.date}</p>
-                <h2 className="font-display text-2xl md:text-3xl font-bold text-[#1B2E4B] leading-snug mb-4 group-hover:text-[#C9A84C] transition-colors">
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-[#14231C] leading-snug mb-4 group-hover:text-[#C4782A] transition-colors">
                   {featuredPost.title}
                 </h2>
                 <p className="text-gray-500 text-[0.9375rem] leading-relaxed line-clamp-3 mb-6">
                   {featuredPost.excerpt}
                 </p>
-                <span className="self-start inline-flex items-center gap-2 bg-[#1B2E4B] group-hover:bg-[#C9A84C] text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors">
+                <span className="self-start inline-flex items-center gap-2 bg-[#14231C] group-hover:bg-[#C4782A] text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors">
                   Read the full post →
                 </span>
               </div>
@@ -224,7 +224,7 @@ export default function BlogClient({ posts, categories }: Props) {
         {filtered.length === 0 ? (
           <div className="text-center py-20">
             <div className="text-5xl mb-4">✍️</div>
-            <h3 className="font-display text-xl font-bold text-[#1B2E4B] mb-2">
+            <h3 className="font-display text-xl font-bold text-[#14231C] mb-2">
               {query ? `No posts found for "${query}"` : "No posts in this category yet"}
             </h3>
             <p className="text-gray-500 text-sm">
@@ -232,7 +232,7 @@ export default function BlogClient({ posts, categories }: Props) {
             </p>
             <button
               onClick={() => { setQuery(""); selectCategory(""); }}
-              className="mt-5 text-sm font-semibold text-[#C9A84C] hover:underline"
+              className="mt-5 text-sm font-semibold text-[#C4782A] hover:underline"
             >
               View all posts →
             </button>
@@ -245,10 +245,10 @@ export default function BlogClient({ posts, categories }: Props) {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C9A84C]/30 hover:shadow-lg transition-all flex flex-col"
+                  className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C4782A]/30 hover:shadow-lg transition-all flex flex-col"
                 >
                   {/* Thumbnail */}
-                  <div className="relative h-48 overflow-hidden bg-[#1B2E4B] flex-none">
+                  <div className="relative h-48 overflow-hidden bg-[#14231C] flex-none">
                     <PostImage
                       src={post.image}
                       alt={post.title}
@@ -268,11 +268,11 @@ export default function BlogClient({ posts, categories }: Props) {
                   {/* Body */}
                   <div className="p-5 flex flex-col flex-1">
                     <p className="text-[11px] text-gray-400 mb-2">{post.date}</p>
-                    <h2 className="font-display font-bold text-[#1B2E4B] text-lg leading-snug mb-2 group-hover:text-[#C9A84C] transition-colors line-clamp-2">
+                    <h2 className="font-display font-bold text-[#14231C] text-lg leading-snug mb-2 group-hover:text-[#C4782A] transition-colors line-clamp-2">
                       {post.title}
                     </h2>
                     <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 flex-1">{post.excerpt}</p>
-                    <span className="mt-4 text-[#C9A84C] text-sm font-semibold group-hover:translate-x-1 transition-transform inline-block">
+                    <span className="mt-4 text-[#C4782A] text-sm font-semibold group-hover:translate-x-1 transition-transform inline-block">
                       Read more →
                     </span>
                   </div>
@@ -286,7 +286,7 @@ export default function BlogClient({ posts, categories }: Props) {
       {/* ── Browse by category (no filter active, no search) ──────── */}
       {!activeCategory && !query && (
         <div className="max-w-6xl mx-auto px-4 pb-16">
-          <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-6">Browse by category</h2>
+          <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">Browse by category</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
             {categories.map((cat) => {
               const count = posts.filter((p) => p.categorySlug === cat.slug).length;
@@ -295,7 +295,7 @@ export default function BlogClient({ posts, categories }: Props) {
                 <button
                   key={cat.slug}
                   onClick={() => selectCategory(cat.slug)}
-                  className="flex flex-col items-start p-4 bg-white border border-gray-100 rounded-2xl hover:border-[#C9A84C]/30 hover:shadow-md transition-all text-left group"
+                  className="flex flex-col items-start p-4 bg-white border border-gray-100 rounded-2xl hover:border-[#C4782A]/30 hover:shadow-md transition-all text-left group"
                 >
                   <div
                     className="w-9 h-9 rounded-xl mb-3 flex-none flex items-center justify-center text-lg"
@@ -303,7 +303,7 @@ export default function BlogClient({ posts, categories }: Props) {
                   >
                     {cat.emoji}
                   </div>
-                  <span className="font-semibold text-[#1B2E4B] text-sm leading-tight group-hover:text-[#C9A84C] transition-colors">{cat.label}</span>
+                  <span className="font-semibold text-[#14231C] text-sm leading-tight group-hover:text-[#C4782A] transition-colors">{cat.label}</span>
                   <span className="text-xs text-gray-400 mt-1">{count} post{count !== 1 ? "s" : ""}</span>
                 </button>
               );

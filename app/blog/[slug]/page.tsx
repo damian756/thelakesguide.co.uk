@@ -48,7 +48,7 @@ function parseInlineLinks(text: string): React.ReactNode {
       <a
         key={match.index}
         href={href}
-        className="text-[#1B2E4B] underline underline-offset-2 decoration-[#C9A84C]/60 hover:decoration-[#C9A84C] transition-colors font-medium"
+        className="text-[#14231C] underline underline-offset-2 decoration-[#C4782A]/60 hover:decoration-[#C4782A] transition-colors font-medium"
         {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {linkText}
@@ -66,13 +66,13 @@ function renderBlock(block: ContentBlock, i: number) {
   switch (block.type) {
     case "h2":
       return (
-        <h2 key={i} className="font-display text-2xl md:text-3xl font-bold text-[#1B2E4B] mt-10 mb-4 leading-snug">
+        <h2 key={i} className="font-display text-2xl md:text-3xl font-bold text-[#14231C] mt-10 mb-4 leading-snug">
           {block.text}
         </h2>
       );
     case "h3":
       return (
-        <h3 key={i} className="font-display text-xl font-bold text-[#1B2E4B] mt-8 mb-3">
+        <h3 key={i} className="font-display text-xl font-bold text-[#14231C] mt-8 mb-3">
           {block.text}
         </h3>
       );
@@ -90,11 +90,11 @@ function renderBlock(block: ContentBlock, i: number) {
             const hasLead = dashIdx !== -1;
             return (
               <li key={j} className="flex gap-3 text-gray-700 text-[1.0625rem]">
-                <span className="text-[#C9A84C] font-bold flex-none mt-0.5">→</span>
+                <span className="text-[#C4782A] font-bold flex-none mt-0.5">→</span>
                 <span>
                   {hasLead ? (
                     <>
-                      <strong className="text-[#1B2E4B]">{item.slice(0, dashIdx)}</strong>
+                      <strong className="text-[#14231C]">{item.slice(0, dashIdx)}</strong>
                       {" — "}
                       {item.slice(dashIdx + 3)}
                     </>
@@ -117,8 +117,8 @@ function renderBlock(block: ContentBlock, i: number) {
       );
     case "callout":
       return (
-        <div key={i} className="bg-[#FAF8F5] border-l-4 border-[#C9A84C] rounded-r-xl px-5 py-4 my-7">
-          <p className="text-[#1B2E4B] font-medium leading-relaxed">
+        <div key={i} className="bg-[#EAEDE8] border-l-4 border-[#C4782A] rounded-r-xl px-5 py-4 my-7">
+          <p className="text-[#14231C] font-medium leading-relaxed">
             <span className="mr-2">{block.emoji}</span>
             {block.text}
           </p>
@@ -126,16 +126,16 @@ function renderBlock(block: ContentBlock, i: number) {
       );
     case "quote":
       return (
-        <blockquote key={i} className="border-l-4 border-[#C9A84C] pl-5 py-1 my-7 italic text-gray-600 text-lg">
+        <blockquote key={i} className="border-l-4 border-[#C4782A] pl-5 py-1 my-7 italic text-gray-600 text-lg">
           &ldquo;{block.text}&rdquo;
           {block.attr && <cite className="block text-sm not-italic text-gray-400 mt-2">— {block.attr}</cite>}
         </blockquote>
       );
     case "cta":
       return (
-        <div key={i} className="my-8 rounded-2xl border border-[#C9A84C]/30 bg-[#1B2E4B] px-6 py-5">
+        <div key={i} className="my-8 rounded-2xl border border-[#C4782A]/30 bg-[#14231C] px-6 py-5">
           <p className="text-white/80 text-sm mb-3 leading-relaxed">{block.text}</p>
-          <a href={block.href} className="inline-flex items-center font-bold text-[#C9A84C] hover:text-[#e0ba66] transition-colors text-sm">
+          <a href={block.href} className="inline-flex items-center font-bold text-[#C4782A] hover:text-[#E8B87A] transition-colors text-sm">
             {block.label}
           </a>
         </div>
@@ -278,9 +278,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
       />
-    <div className="min-h-screen bg-[#FAF8F5]">
+    <div className="min-h-screen bg-[#EAEDE8]">
       {/* Hero image */}
-      <div className="relative h-72 md:h-[26rem] bg-[#1B2E4B]">
+      <div className="relative h-72 md:h-[26rem] bg-[#14231C]">
         <HeroImageWithFallback
           src={post.image}
           alt={post.title}
@@ -291,7 +291,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           className="object-cover"
           style={{ objectPosition: "center 35%" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1B2E4B]/50 via-[#1B2E4B]/20 to-[#1B2E4B]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#14231C]/50 via-[#14231C]/20 to-[#14231C]/95" />
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 max-w-3xl mx-auto">
           <Link
             href="/blog"
@@ -331,12 +331,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 unoptimized
               />
             ) : (
-              <div className="w-8 h-8 rounded-full bg-[#1B2E4B] flex items-center justify-center flex-none">
-                <User className="w-4 h-4 text-[#C9A84C]" />
+              <div className="w-8 h-8 rounded-full bg-[#14231C] flex items-center justify-center flex-none">
+                <User className="w-4 h-4 text-[#C4782A]" />
               </div>
             )}
             <div>
-              <p className="font-semibold text-[#1B2E4B] text-xs">{isDamian ? "Damian Roche" : "Terry"}</p>
+              <p className="font-semibold text-[#14231C] text-xs">{isDamian ? "Damian Roche" : "Terry"}</p>
               <p className="text-[10px] text-gray-400">{isDamian ? "Founder, Churchtown Media" : "Chief Editor, SouthportGuide.co.uk"}</p>
             </div>
           </div>
@@ -376,12 +376,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     unoptimized
                   />
                 ) : (
-                  <div className="w-12 h-12 rounded-full bg-[#1B2E4B] flex items-center justify-center flex-none text-[#C9A84C] font-display font-bold text-xl">
+                  <div className="w-12 h-12 rounded-full bg-[#14231C] flex items-center justify-center flex-none text-[#C4782A] font-display font-bold text-xl">
                     T
                   </div>
                 )}
                 <div>
-                  <p className="font-bold text-[#1B2E4B] text-sm">{isDamian ? "Damian Roche" : "Terry"}</p>
+                  <p className="font-bold text-[#14231C] text-sm">{isDamian ? "Damian Roche" : "Terry"}</p>
                   <p className="text-gray-400 text-xs leading-snug mt-0.5">
                     {isDamian
                       ? "Founder, Churchtown Media. Builder of SouthportGuide.co.uk and SeftonCoastWildlife.co.uk. Based in Churchtown, Southport."
@@ -396,7 +396,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <p className="text-gray-600 text-lg leading-relaxed mb-6">{post.excerpt}</p>
               <div className="bg-amber-50 border border-amber-100 rounded-xl p-6 text-center">
                 <div className="text-3xl mb-3">✍️</div>
-                <h3 className="font-display text-xl font-bold text-[#1B2E4B] mb-2">Full article coming soon</h3>
+                <h3 className="font-display text-xl font-bold text-[#14231C] mb-2">Full article coming soon</h3>
                 <p className="text-gray-500 text-sm">Check back shortly — Terry&apos;s working on it.</p>
               </div>
             </>
@@ -412,8 +412,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           return (
             <div className="mb-10">
               <div className="flex items-center justify-between mb-5">
-                <h3 className="font-display text-xl font-bold text-[#1B2E4B]">More in {cat.label}</h3>
-                <Link href={`/blog?category=${cat.slug}`} className="text-sm text-[#C9A84C] font-semibold hover:underline">
+                <h3 className="font-display text-xl font-bold text-[#14231C]">More in {cat.label}</h3>
+                <Link href={`/blog?category=${cat.slug}`} className="text-sm text-[#C4782A] font-semibold hover:underline">
                   View all →
                 </Link>
               </div>
@@ -424,14 +424,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <Link
                       key={related.slug}
                       href={`/blog/${related.slug}`}
-                      className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C9A84C]/30 hover:shadow-md transition-all flex"
+                      className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C4782A]/30 hover:shadow-md transition-all flex"
                     >
                       <div className="relative w-24 flex-none overflow-hidden">
                         <Image src={related.image} alt={related.title} fill sizes="96px" quality={60} className="object-cover" />
                       </div>
                       <div className="p-4 flex flex-col justify-center">
                         <span className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: relatedCat?.color }}>{relatedCat?.label}</span>
-                        <h4 className="font-bold text-[#1B2E4B] text-sm leading-snug group-hover:text-[#C9A84C] transition-colors line-clamp-2">{related.title}</h4>
+                        <h4 className="font-bold text-[#14231C] text-sm leading-snug group-hover:text-[#C4782A] transition-colors line-clamp-2">{related.title}</h4>
                       </div>
                     </Link>
                   );
@@ -442,7 +442,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         })()}
 
         {/* Other posts */}
-        <h3 className="font-display text-xl font-bold text-[#1B2E4B] mb-5">More from the blog</h3>
+        <h3 className="font-display text-xl font-bold text-[#14231C] mb-5">More from the blog</h3>
         <div className="grid sm:grid-cols-2 gap-4 mb-14">
           {BLOG_POSTS.filter((p) => p.slug !== slug && p.categorySlug !== post.categorySlug)
             .slice(0, 4)
@@ -452,14 +452,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <Link
                   key={related.slug}
                   href={`/blog/${related.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C9A84C]/30 hover:shadow-md transition-all flex"
+                  className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C4782A]/30 hover:shadow-md transition-all flex"
                 >
                   <div className="relative w-24 flex-none overflow-hidden">
                     <Image src={related.image} alt={related.title} fill sizes="96px" quality={60} className="object-cover" />
                   </div>
                   <div className="p-4 flex flex-col justify-center">
                     <span className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: relatedCat?.color }}>{relatedCat?.label}</span>
-                    <h4 className="font-bold text-[#1B2E4B] text-sm leading-snug group-hover:text-[#C9A84C] transition-colors line-clamp-2">{related.title}</h4>
+                    <h4 className="font-bold text-[#14231C] text-sm leading-snug group-hover:text-[#C4782A] transition-colors line-clamp-2">{related.title}</h4>
                   </div>
                 </Link>
               );

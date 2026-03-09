@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Lora, Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import NavMenu from "./components/NavMenu";
@@ -7,11 +7,11 @@ import { ConditionalNav, ConditionalFooter } from "./components/ConditionalShell
 import { Analytics } from "@vercel/analytics/next";
 import { SiteTracker } from "@/components/SiteTracker";
 
-const playfair = Playfair_Display({
+const lora = Lora({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-lora",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "600", "700"],
 });
 
 const inter = Inter({
@@ -102,7 +102,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-[#FAF8F5]`}>
+      <body className={`${lora.variable} ${inter.variable} font-sans antialiased bg-[#EAEDE8]`}>
         <ConditionalNav><Navigation /></ConditionalNav>
         <main className="overflow-x-hidden">{children}</main>
         <ConditionalFooter><Footer /></ConditionalFooter>
@@ -115,12 +115,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
 function Navigation() {
   return (
-    <nav className="relative bg-white/95 backdrop-blur-sm border-b border-[#1B2E4B]/8 sticky top-0 z-50 shadow-sm">
+    <nav className="relative bg-white/95 backdrop-blur-sm border-b border-[#14231C]/8 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 flex-shrink-0 group">
-            <span className="font-display text-xl font-bold text-[#1B2E4B] group-hover:text-[#C9A84C] transition-colors">
-              The Lakes<span className="text-[#C9A84C]">Guide</span>
+            <span className="font-display text-xl font-bold text-[#14231C] group-hover:text-[#245E3F] transition-colors">
+              The Lakes<span className="text-[#C4782A]">Guide</span>
             </span>
             <span className="hidden sm:block text-xs text-gray-400 font-light tracking-widest uppercase mt-0.5">.co.uk</span>
           </Link>
@@ -133,23 +133,23 @@ function Navigation() {
 
 function Footer() {
   return (
-    <footer className="bg-[#1B2E4B] text-white/80">
-      {/* Gold accent strip */}
-      <div className="h-1 bg-gradient-to-r from-[#C9A84C] via-[#E8C87A] to-[#C9A84C]" />
+    <footer className="bg-[#0D1910] text-white/80">
+      {/* Bracken accent strip */}
+      <div className="h-1 bg-gradient-to-r from-[#C4782A] via-[#E8B87A] to-[#C4782A]" />
 
       <div className="container mx-auto px-4 py-14 max-w-7xl">
         <div className="grid md:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="font-display text-2xl font-bold text-white mb-3">
-              The Lakes<span className="text-[#C9A84C]">Guide</span>
+              The Lakes<span className="text-[#C4782A]">Guide</span>
               <span className="text-white/40 text-sm font-normal ml-1">.co.uk</span>
             </div>
             <p className="text-sm leading-relaxed text-white/60 mb-4 max-w-xs">
               Your definitive guide to eating, staying, and exploring the Lake District.
             </p>
             <div className="flex gap-3">
-              <a href="https://churchtownmedia.co.uk" className="text-xs text-[#C9A84C] hover:text-[#E8C87A] transition">
+              <a href="https://churchtownmedia.co.uk" className="text-xs text-[#C4782A] hover:text-[#E8B87A] transition">
                 Built by Churchtown Media ↗
               </a>
             </div>
@@ -160,17 +160,17 @@ function Footer() {
                   <span className="text-sm font-semibold text-white/40">TheLakesGuide.co.uk</span>
                 </li>
                 <li>
-                  <a href="https://www.thelakeswildlife.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C9A84C] transition">
+                  <a href="https://www.thelakeswildlife.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C4782A] transition">
                     The Lakes Wildlife ↗
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.hikethelakes.com" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C9A84C] transition">
+                  <a href="https://www.hikethelakes.com" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C4782A] transition">
                     Hike The Lakes ↗
                   </a>
                 </li>
                 <li>
-                  <a href="https://thelakes.network" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C9A84C] transition">
+                  <a href="https://thelakes.network" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C4782A] transition">
                     TheLakes.network ↗
                   </a>
                 </li>
@@ -192,7 +192,7 @@ function Footer() {
                 ["Villages", "/villages"],
               ].map(([label, href]) => (
                 <li key={href}>
-                  <Link href={href} className="text-white/60 hover:text-[#C9A84C] transition">{label}</Link>
+                  <Link href={href} className="text-white/60 hover:text-[#C4782A] transition">{label}</Link>
                 </li>
               ))}
             </ul>
@@ -210,7 +210,7 @@ function Footer() {
                 ["Shopping", "/shopping"],
               ].map(([label, href]) => (
                 <li key={href}>
-                  <Link href={href} className="text-white/60 hover:text-[#C9A84C] transition">{label}</Link>
+                  <Link href={href} className="text-white/60 hover:text-[#C4782A] transition">{label}</Link>
                 </li>
               ))}
             </ul>
@@ -228,7 +228,7 @@ function Footer() {
                 ["Business Dashboard", "/dashboard"],
               ].map(([label, href]) => (
                 <li key={href}>
-                  <Link href={href} className="text-white/60 hover:text-[#C9A84C] transition">{label}</Link>
+                  <Link href={href} className="text-white/60 hover:text-[#C4782A] transition">{label}</Link>
                 </li>
               ))}
             </ul>
@@ -248,9 +248,9 @@ function Footer() {
         <div className="border-t border-white/10 pt-5 pb-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
           <p className="text-white/50">
             Lake District business?{" "}
-            <span className="text-[#C9A84C] font-semibold">Partner with the Lakes Network</span>
+            <span className="text-[#C4782A] font-semibold">Partner with the Lakes Network</span>
           </p>
-          <a href="mailto:hello@thelakes.network" className="text-[#C9A84C] hover:text-white transition font-medium text-sm">
+          <a href="mailto:hello@thelakes.network" className="text-[#C4782A] hover:text-white transition font-medium text-sm">
             hello@thelakes.network →
           </a>
         </div>

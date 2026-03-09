@@ -29,7 +29,7 @@ const FEATURED_COLLECTIONS = [
 ];
 
 // Shared nav link style — uppercase editorial feel
-const NAV_LINK = "text-[11px] font-bold tracking-[0.12em] uppercase text-[#1B2E4B] hover:text-[#C9A84C] px-3 py-2 transition-colors flex items-center gap-1";
+const NAV_LINK = "text-[11px] font-bold tracking-[0.12em] uppercase text-[#14231C] hover:text-[#C4782A] px-3 py-2 transition-colors flex items-center gap-1";
 
 export default function NavMenu() {
   const [mobileOpen, setMobileOpen]   = useState(false);
@@ -61,15 +61,15 @@ export default function NavMenu() {
             {/* Key pages */}
             <div className="grid grid-cols-3 gap-1.5 mb-4">
               <Link href="/things-to-do" onClick={() => setExploreOpen(false)}
-                className="col-span-3 flex items-center gap-2 px-3 py-2.5 rounded-xl bg-[#1B2E4B] text-white text-sm hover:bg-[#2A4A73] transition-colors">
+                className="col-span-3 flex items-center gap-2 px-3 py-2.5 rounded-xl bg-[#14231C] text-white text-sm hover:bg-[#245E3F] transition-colors">
                 <span className="font-semibold">Things to Do — Full Guide</span>
               </Link>
               <Link href="/events" onClick={() => setExploreOpen(false)}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#FAF8F5] text-[#1B2E4B] text-xs font-semibold hover:bg-gray-100 transition-colors">
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#EAEDE8] text-[#14231C] text-xs font-semibold hover:bg-gray-100 transition-colors">
                 📅 Events
               </Link>
               <Link href="/blog" onClick={() => setExploreOpen(false)}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#FAF8F5] text-[#1B2E4B] text-xs font-semibold hover:bg-gray-100 transition-colors">
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#EAEDE8] text-[#14231C] text-xs font-semibold hover:bg-gray-100 transition-colors">
                 ✍️ Blog
               </Link>
             </div>
@@ -80,9 +80,9 @@ export default function NavMenu() {
               {CATEGORIES.map(({ slug, label, icon: Icon, color }) => (
                 <Link key={slug} href={`/${slug}`}
                   onClick={() => setExploreOpen(false)}
-                  className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg hover:bg-[#FAF8F5] text-[#1B2E4B] text-xs font-medium transition-colors group">
+                  className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg hover:bg-[#EAEDE8] text-[#14231C] text-xs font-medium transition-colors group">
                   <Icon className={`w-3.5 h-3.5 flex-none ${color}`} />
-                  <span className="group-hover:text-[#C9A84C] transition-colors truncate">{label}</span>
+                  <span className="group-hover:text-[#C4782A] transition-colors truncate">{label}</span>
                 </Link>
               ))}
             </div>
@@ -92,15 +92,15 @@ export default function NavMenu() {
               <div className="flex items-center justify-between mb-2 px-1">
                 <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-gray-400">Curated Lists</p>
                 <Link href="/collections" onClick={() => setExploreOpen(false)}
-                  className="text-[#C9A84C] text-[10px] font-bold hover:text-[#1B2E4B] transition-colors">All collections →</Link>
+                  className="text-[#C4782A] text-[10px] font-bold hover:text-[#14231C] transition-colors">All collections →</Link>
               </div>
               <div className="grid grid-cols-2 gap-0.5">
                 {FEATURED_COLLECTIONS.map(({ href, label, emoji }) => (
                   <Link key={href} href={href}
                     onClick={() => setExploreOpen(false)}
-                    className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg hover:bg-[#FAF8F5] text-[#1B2E4B] text-xs font-medium transition-colors group">
+                    className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg hover:bg-[#EAEDE8] text-[#14231C] text-xs font-medium transition-colors group">
                     <span className="text-sm leading-none flex-none">{emoji}</span>
-                    <span className="group-hover:text-[#C9A84C] transition-colors truncate">{label}</span>
+                    <span className="group-hover:text-[#C4782A] transition-colors truncate">{label}</span>
                   </Link>
                 ))}
               </div>
@@ -136,7 +136,7 @@ export default function NavMenu() {
                   {catGuides.map((g) => (
                     <Link key={g.slug} href={`/guides/${g.slug}`}
                       onClick={() => setGuidesOpen(false)}
-                      className="flex items-center px-2 py-1.5 rounded-lg text-sm text-[#1B2E4B] hover:bg-[#FAF8F5] hover:text-[#C9A84C] transition-colors truncate">
+                      className="flex items-center px-2 py-1.5 rounded-lg text-sm text-[#14231C] hover:bg-[#EAEDE8] hover:text-[#C4782A] transition-colors truncate">
                       {g.shortTitle ?? g.title}
                     </Link>
                   ))}
@@ -146,7 +146,7 @@ export default function NavMenu() {
             <div className="border-t border-gray-100 mt-1 pt-1 px-2">
               <Link href="/guides"
                 onClick={() => setGuidesOpen(false)}
-                className="flex items-center gap-2 px-2 py-2 rounded-lg text-xs font-bold text-[#C9A84C] hover:text-[#1B2E4B] transition-colors">
+                className="flex items-center gap-2 px-2 py-2 rounded-lg text-xs font-bold text-[#C4782A] hover:text-[#14231C] transition-colors">
                 <BookOpen className="w-3.5 h-3.5" /> All guides →
               </Link>
             </div>
@@ -155,20 +155,20 @@ export default function NavMenu() {
 
         {/* Hub — icon only */}
         <Link href="/dashboard" title="Business Hub Login"
-          className="p-2 text-[#1B2E4B]/35 hover:text-[#1B2E4B] transition-colors">
+          className="p-2 text-[#14231C]/35 hover:text-[#14231C] transition-colors">
           <LayoutDashboard className="w-4 h-4" />
         </Link>
 
         {/* CTA */}
         <Link href="/claim-listing"
-          className="ml-1 bg-[#C9A84C] hover:bg-[#B8972A] text-white px-4 py-2 rounded-full text-[11px] font-bold tracking-wide uppercase transition-colors shadow-sm shadow-[#C9A84C]/30">
+          className="ml-1 bg-[#C4782A] hover:bg-[#A86C2A] text-white px-4 py-2 rounded-full text-[11px] font-bold tracking-wide uppercase transition-colors shadow-sm shadow-[#C4782A]/30">
           List Your Business
         </Link>
       </div>
 
       {/* ── Mobile hamburger ─────────────────────────────────────────────── */}
       <button
-        className="md:hidden text-[#1B2E4B] p-2 rounded-lg hover:bg-gray-100 transition-colors"
+        className="md:hidden text-[#14231C] p-2 rounded-lg hover:bg-gray-100 transition-colors"
         onClick={() => setMobileOpen(!mobileOpen)}
         aria-label="Toggle menu"
       >
@@ -182,16 +182,16 @@ export default function NavMenu() {
           {/* Hero links */}
           <div className="space-y-1.5">
             <Link href="/things-to-do" onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2.5 px-4 py-3.5 rounded-xl bg-[#1B2E4B] text-white text-sm font-semibold">
+              className="flex items-center gap-2.5 px-4 py-3.5 rounded-xl bg-[#14231C] text-white text-sm font-semibold">
               Things to Do in the Lake District
             </Link>
             <div className="grid grid-cols-2 gap-1.5">
               <Link href="/events" onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center gap-1 px-3 py-2.5 rounded-xl bg-[#FAF8F5] text-[#1B2E4B] text-xs font-semibold">
+                className="flex items-center justify-center gap-1 px-3 py-2.5 rounded-xl bg-[#EAEDE8] text-[#14231C] text-xs font-semibold">
                 📅 Events
               </Link>
               <Link href="/blog" onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center gap-1 px-3 py-2.5 rounded-xl bg-[#FAF8F5] text-[#1B2E4B] text-xs font-semibold">
+                className="flex items-center justify-center gap-1 px-3 py-2.5 rounded-xl bg-[#EAEDE8] text-[#14231C] text-xs font-semibold">
                 ✍️ Blog
               </Link>
             </div>
@@ -203,7 +203,7 @@ export default function NavMenu() {
             <div className="grid grid-cols-2 gap-1">
               {CATEGORIES.map(({ slug, label, icon: Icon, color }) => (
                 <Link key={slug} href={`/${slug}`} onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2.5 px-3 py-3 rounded-xl hover:bg-[#FAF8F5] text-[#1B2E4B] text-sm transition-colors">
+                  className="flex items-center gap-2.5 px-3 py-3 rounded-xl hover:bg-[#EAEDE8] text-[#14231C] text-sm transition-colors">
                   <Icon className={`w-4 h-4 flex-none ${color}`} />
                   <span className="font-medium">{label}</span>
                 </Link>
@@ -216,7 +216,7 @@ export default function NavMenu() {
             <div className="flex items-center justify-between mb-3 px-1">
               <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-gray-400">Guides</p>
               <Link href="/guides" onClick={() => setMobileOpen(false)}
-                className="text-[#C9A84C] text-[10px] font-bold">All guides →</Link>
+                className="text-[#C4782A] text-[10px] font-bold">All guides →</Link>
             </div>
             {(["beaches-coast", "areas", "events", "food-drink", "practical"] as GuideCategory[]).map((cat) => {
               const catGuides = publishedGuides
@@ -232,7 +232,7 @@ export default function NavMenu() {
                   <div className="grid grid-cols-2 gap-1">
                     {catGuides.map((g) => (
                       <Link key={g.slug} href={`/guides/${g.slug}`} onClick={() => setMobileOpen(false)}
-                        className="flex items-center px-3 py-2.5 rounded-xl bg-[#FAF8F5] text-[#1B2E4B] text-xs font-medium truncate">
+                        className="flex items-center px-3 py-2.5 rounded-xl bg-[#EAEDE8] text-[#14231C] text-xs font-medium truncate">
                         {g.shortTitle ?? g.title}
                       </Link>
                     ))}
@@ -247,12 +247,12 @@ export default function NavMenu() {
             <div className="flex items-center justify-between mb-2 px-1">
               <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-gray-400">Curated Lists</p>
               <Link href="/collections" onClick={() => setMobileOpen(false)}
-                className="text-[#C9A84C] text-[10px] font-bold">All →</Link>
+                className="text-[#C4782A] text-[10px] font-bold">All →</Link>
             </div>
             <div className="grid grid-cols-2 gap-1">
               {FEATURED_COLLECTIONS.map(({ href, label, emoji }) => (
                 <Link key={href} href={href} onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-[#FAF8F5] text-[#1B2E4B] text-xs font-medium">
+                  className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-[#EAEDE8] text-[#14231C] text-xs font-medium">
                   <span className="text-base leading-none">{emoji}</span> {label}
                 </Link>
               ))}
@@ -263,11 +263,11 @@ export default function NavMenu() {
           <div className="border-t border-gray-100 pt-4 space-y-1.5">
             <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-gray-400 mb-2 px-1">For Business</p>
             <Link href="/dashboard" onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2.5 px-3 py-3 rounded-xl bg-[#FAF8F5] text-[#1B2E4B] text-sm font-medium">
-              <LayoutDashboard className="w-4 h-4 text-[#C9A84C]" /> Business Hub Login
+              className="flex items-center gap-2.5 px-3 py-3 rounded-xl bg-[#EAEDE8] text-[#14231C] text-sm font-medium">
+              <LayoutDashboard className="w-4 h-4 text-[#C4782A]" /> Business Hub Login
             </Link>
             <Link href="/claim-listing" onClick={() => setMobileOpen(false)}
-              className="block w-full text-center bg-[#C9A84C] text-white px-4 py-3.5 rounded-xl font-bold text-sm hover:bg-[#B8972A] transition-colors tracking-wide">
+              className="block w-full text-center bg-[#C4782A] text-white px-4 py-3.5 rounded-xl font-bold text-sm hover:bg-[#A86C2A] transition-colors tracking-wide">
               List Your Business →
             </Link>
           </div>

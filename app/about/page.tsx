@@ -62,12 +62,12 @@ export default function AboutPage() {
 
       <div className="min-h-screen bg-gray-50">
         {/* Hero */}
-        <div className="relative bg-[#1B2E4B] text-white py-16 px-4 overflow-hidden">
+        <div className="relative bg-[#14231C] text-white py-16 px-4 overflow-hidden">
           <div className="absolute inset-0">
             <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={70} className="object-cover object-center opacity-30" />
           </div>
           <div className="relative z-10 container mx-auto max-w-3xl">
-            <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-3">
+            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">
               About this site
             </p>
             <h1 className="font-display text-4xl md:text-5xl font-bold mb-5 leading-tight">
@@ -85,14 +85,14 @@ export default function AboutPage() {
 
           {/* Who writes it */}
           <section className="mb-14">
-            <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-5">Who writes it</h2>
+            <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">Who writes it</h2>
             <div className="bg-white rounded-2xl border border-gray-100 p-8">
               <div className="flex items-start gap-5 mb-6">
-                <div className="w-14 h-14 rounded-full bg-[#1B2E4B] flex items-center justify-center flex-shrink-0">
-                  <span className="text-[#C9A84C] font-display font-bold text-xl">D</span>
+                <div className="w-14 h-14 rounded-full bg-[#14231C] flex items-center justify-center flex-shrink-0">
+                  <span className="text-[#C4782A] font-display font-bold text-xl">D</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-[#1B2E4B] text-lg">Damian — Editor</p>
+                  <p className="font-semibold text-[#14231C] text-lg">Damian — Editor</p>
                   <p className="text-gray-500 text-sm">Ex-army · Fell walker · 20+ years in the Lakes</p>
                 </div>
               </div>
@@ -113,7 +113,7 @@ export default function AboutPage() {
 
           {/* Who publishes it */}
           <section id="damian" className="mb-14">
-            <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-5">Who publishes it</h2>
+            <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">Who publishes it</h2>
             <div className="bg-white rounded-2xl border border-gray-100 p-8">
               <div className="flex flex-col sm:flex-row gap-6 items-start">
                 <div className="flex-shrink-0">
@@ -127,12 +127,12 @@ export default function AboutPage() {
                   />
                 </div>
                 <div>
-                  <p className="font-semibold text-[#1B2E4B] text-lg">Damian Roche</p>
+                  <p className="font-semibold text-[#14231C] text-lg">Damian Roche</p>
                   <p className="text-gray-500 text-sm mb-3">
                     Founder,{" "}
                     <a
                       href="https://churchtownmedia.co.uk"
-                      className="text-[#C9A84C] hover:underline font-medium"
+                      className="text-[#C4782A] hover:underline font-medium"
                     >
                       Churchtown Media Ltd
                     </a>{" "}
@@ -147,7 +147,7 @@ export default function AboutPage() {
                     The Lakes Guide is part of{" "}
                     <a
                       href="https://thelakes.network"
-                      className="text-[#C9A84C] hover:underline font-medium"
+                      className="text-[#C4782A] hover:underline font-medium"
                     >
                       The Lakes Network
                     </a>{" "}
@@ -157,7 +157,7 @@ export default function AboutPage() {
                     href="https://www.linkedin.com/in/damian-roche-7ba8293a5/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-[#1B2E4B] hover:text-[#C9A84C] transition-colors"
+                    className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-[#14231C] hover:text-[#C4782A] transition-colors"
                   >
                     LinkedIn profile →
                   </a>
@@ -168,7 +168,7 @@ export default function AboutPage() {
 
           {/* What the site covers */}
           <section className="mb-14">
-            <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-5">What we cover</h2>
+            <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">What we cover</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
                 { label: "Restaurants & Cafés", desc: "Independent reviews and a full directory of places to eat and drink across the Lake District." },
@@ -179,7 +179,7 @@ export default function AboutPage() {
                 { label: "Events", desc: "What&apos;s on calendar — festivals, races, and seasonal events across the Lake District." },
               ].map(({ label, desc }) => (
                 <div key={label} className="bg-white rounded-xl border border-gray-100 p-5">
-                  <p className="font-semibold text-[#1B2E4B] mb-1">{label}</p>
+                  <p className="font-semibold text-[#14231C] mb-1">{label}</p>
                   <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
                 </div>
               ))}
@@ -188,7 +188,7 @@ export default function AboutPage() {
 
           {/* How we make money */}
           <section className="mb-14">
-            <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-5">How it&apos;s funded</h2>
+            <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">How it&apos;s funded</h2>
             <div className="bg-white rounded-2xl border border-gray-100 p-8">
               <p className="text-gray-700 leading-relaxed mb-4">
                 The Lakes Guide is free to use. It&apos;s funded by featured placement — businesses can pay
@@ -208,7 +208,7 @@ export default function AboutPage() {
 
           {/* Contact */}
           <section>
-            <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-5">Get in touch</h2>
+            <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">Get in touch</h2>
             <div className="bg-white rounded-2xl border border-gray-100 p-8">
               <p className="text-gray-700 leading-relaxed mb-6">
                 To list your business, enquire about featured placement, or report anything that
@@ -217,13 +217,13 @@ export default function AboutPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center bg-[#1B2E4B] text-white font-semibold px-6 py-3 rounded-xl hover:bg-[#C9A84C] transition-colors"
+                  className="inline-flex items-center justify-center bg-[#14231C] text-white font-semibold px-6 py-3 rounded-xl hover:bg-[#C4782A] transition-colors"
                 >
                   Contact us
                 </Link>
                 <Link
                   href="/claim-listing"
-                  className="inline-flex items-center justify-center border border-[#1B2E4B] text-[#1B2E4B] font-semibold px-6 py-3 rounded-xl hover:bg-[#1B2E4B] hover:text-white transition-colors"
+                  className="inline-flex items-center justify-center border border-[#14231C] text-[#14231C] font-semibold px-6 py-3 rounded-xl hover:bg-[#14231C] hover:text-white transition-colors"
                 >
                   Claim your listing
                 </Link>

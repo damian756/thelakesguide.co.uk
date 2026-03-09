@@ -105,19 +105,19 @@ export default function ClaimListingClient() {
   }
 
   const inputCls =
-    "w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/40 focus:border-[#C9A84C] transition bg-[#FAF8F5]";
-  const labelCls = "block text-xs font-semibold text-[#1B2E4B] uppercase tracking-wider mb-1.5";
+    "w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#C4782A]/40 focus:border-[#C4782A] transition bg-[#FAF8F5]";
+  const labelCls = "block text-xs font-semibold text-[#14231C] uppercase tracking-wider mb-1.5";
 
   return (
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
-      <div className="bg-[#1B2E4B] relative overflow-hidden">
+      <div className="bg-[#14231C] relative overflow-hidden">
         <div className="absolute inset-0">
           <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={70} className="object-cover object-center opacity-30" />
         </div>
-        <div className="h-1 bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent relative z-10" />
+        <div className="h-1 bg-gradient-to-r from-transparent via-[#C4782A] to-transparent relative z-10" />
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#C9A84C]/8 rounded-full -translate-y-16 translate-x-16 blur-3xl" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#C4782A]/8 rounded-full -translate-y-16 translate-x-16 blur-3xl" />
         </div>
         <div className="relative z-10 container mx-auto px-4 max-w-5xl py-12">
           <h1 className="font-display text-4xl font-bold text-white mb-2">
@@ -146,7 +146,7 @@ export default function ClaimListingClient() {
           {/* Sidebar */}
           <div className="md:col-span-2 space-y-5">
             <div className="bg-white rounded-2xl border border-gray-100 p-6">
-              <h2 className="font-display font-bold text-[#1B2E4B] mb-4">
+              <h2 className="font-display font-bold text-[#14231C] mb-4">
                 What you get
               </h2>
               <ul className="space-y-3">
@@ -170,10 +170,10 @@ export default function ClaimListingClient() {
               </ul>
             </div>
 
-            <div className="bg-[#1B2E4B] rounded-2xl p-6 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#C9A84C]/10 rounded-full -translate-y-8 translate-x-8 blur-2xl" />
+            <div className="bg-[#14231C] rounded-2xl p-6 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#C4782A]/10 rounded-full -translate-y-8 translate-x-8 blur-2xl" />
               <div className="relative">
-                <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-2">
+                <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-2">
                   Featured listing
                 </p>
                 <p className="font-display font-bold text-white mb-2">
@@ -185,7 +185,7 @@ export default function ClaimListingClient() {
                 </p>
                 <Link
                   href="/pricing"
-                  className="block text-center border border-[#C9A84C]/40 text-[#C9A84C] px-4 py-2 rounded-full font-bold text-sm hover:bg-[#C9A84C]/10 transition"
+                  className="block text-center border border-[#C4782A]/40 text-[#C4782A] px-4 py-2 rounded-full font-bold text-sm hover:bg-[#C4782A]/10 transition"
                 >
                   View pricing →
                 </Link>
@@ -193,11 +193,11 @@ export default function ClaimListingClient() {
             </div>
 
             <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-center">
-              <p className="text-sm font-semibold text-[#1B2E4B] mb-1">Can&apos;t find your business?</p>
+              <p className="text-sm font-semibold text-[#14231C] mb-1">Can&apos;t find your business?</p>
               <p className="text-xs text-gray-500 mb-3">If your business isn&apos;t listed yet, get in touch and we&apos;ll add it for you.</p>
               <Link
                 href="/contact"
-                className="inline-block bg-[#1B2E4B] text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-[#2A4A73] transition"
+                className="inline-block bg-[#14231C] text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-[#245E3F] transition"
               >
                 Contact us →
               </Link>
@@ -208,15 +208,15 @@ export default function ClaimListingClient() {
           <div className="md:col-span-3">
             {step === 1 && (
               <div className="bg-white rounded-2xl border border-gray-100 p-7">
-                <h2 className="font-display text-xl font-bold text-[#1B2E4B] mb-4">
+                <h2 className="font-display text-xl font-bold text-[#14231C] mb-4">
                   Find your business
                 </h2>
                 <form onSubmit={handleSearch} className="space-y-4">
                   <div>
                     <label className={labelCls}>
                       <span className="inline-flex items-center gap-1.5">
-                        <Building2 className="w-3.5 h-3.5 text-[#C9A84C]" />{" "}
-                        Business name <span className="text-[#C9A84C]">*</span>
+                        <Building2 className="w-3.5 h-3.5 text-[#C4782A]" />{" "}
+                        Business name <span className="text-[#C4782A]">*</span>
                       </span>
                     </label>
                     <input
@@ -262,7 +262,7 @@ export default function ClaimListingClient() {
                   <button
                     type="submit"
                     disabled={searching}
-                    className="w-full flex items-center justify-center gap-2 bg-[#1B2E4B] hover:bg-[#2A4A73] disabled:opacity-60 text-white py-3.5 rounded-full font-bold text-sm transition-colors"
+                    className="w-full flex items-center justify-center gap-2 bg-[#14231C] hover:bg-[#245E3F] disabled:opacity-60 text-white py-3.5 rounded-full font-bold text-sm transition-colors"
                   >
                     {searching ? (
                       <>
@@ -293,12 +293,12 @@ export default function ClaimListingClient() {
                             className={`w-full text-left p-4 rounded-xl border transition ${
                               b.claimed
                                 ? "bg-gray-50 border-gray-100 text-gray-400 cursor-not-allowed"
-                                : "bg-white border-gray-200 hover:border-[#C9A84C]/40 hover:bg-[#C9A84C]/5"
+                                : "bg-white border-gray-200 hover:border-[#C4782A]/40 hover:bg-[#C4782A]/5"
                             }`}
                           >
                             <div className="flex justify-between items-start">
                               <div>
-                                <p className="font-semibold text-[#1B2E4B]">
+                                <p className="font-semibold text-[#14231C]">
                                   {b.name}
                                 </p>
                                 <p className="text-sm text-gray-500">
@@ -313,7 +313,7 @@ export default function ClaimListingClient() {
                                   Already claimed
                                 </span>
                               ) : (
-                                <span className="text-xs font-semibold text-[#C9A84C]">
+                                <span className="text-xs font-semibold text-[#C4782A]">
                                   This is my business →
                                 </span>
                               )}
@@ -337,11 +337,11 @@ export default function ClaimListingClient() {
                     setForm({ name: "", email: "", message: "" });
                     setSubmitError("");
                   }}
-                  className="text-sm text-gray-500 hover:text-[#C9A84C] mb-4"
+                  className="text-sm text-gray-500 hover:text-[#C4782A] mb-4"
                 >
                   ← Change business
                 </button>
-                <h2 className="font-display text-xl font-bold text-[#1B2E4B] mb-2">
+                <h2 className="font-display text-xl font-bold text-[#14231C] mb-2">
                   Your details
                 </h2>
                 <p className="text-sm text-gray-500 mb-6">
@@ -358,7 +358,7 @@ export default function ClaimListingClient() {
 
                   <div>
                     <label className={labelCls}>
-                      Your name <span className="text-[#C9A84C]">*</span>
+                      Your name <span className="text-[#C4782A]">*</span>
                     </label>
                     <input
                       type="text"
@@ -375,8 +375,8 @@ export default function ClaimListingClient() {
                   <div>
                     <label className={labelCls}>
                       <span className="inline-flex items-center gap-1.5">
-                        <Mail className="w-3.5 h-3.5 text-[#C9A84C]" /> Email
-                        address <span className="text-[#C9A84C]">*</span>
+                        <Mail className="w-3.5 h-3.5 text-[#C4782A]" /> Email
+                        address <span className="text-[#C4782A]">*</span>
                       </span>
                     </label>
                     <input
@@ -394,7 +394,7 @@ export default function ClaimListingClient() {
                   <div>
                     <label className={labelCls}>
                       <span className="inline-flex items-center gap-1.5">
-                        <MessageSquare className="w-3.5 h-3.5 text-[#C9A84C]" />{" "}
+                        <MessageSquare className="w-3.5 h-3.5 text-[#C4782A]" />{" "}
                         Message to reviewer{" "}
                         <span className="text-gray-400 font-normal normal-case">
                           (optional)
@@ -415,7 +415,7 @@ export default function ClaimListingClient() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full flex items-center justify-center gap-2 bg-[#1B2E4B] hover:bg-[#2A4A73] disabled:opacity-60 text-white py-3.5 rounded-full font-bold text-sm transition-colors"
+                    className="w-full flex items-center justify-center gap-2 bg-[#14231C] hover:bg-[#245E3F] disabled:opacity-60 text-white py-3.5 rounded-full font-bold text-sm transition-colors"
                   >
                     {submitting ? (
                       <>
@@ -440,7 +440,7 @@ export default function ClaimListingClient() {
                 <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
                   <CheckCircle className="w-8 h-8 text-green-500" />
                 </div>
-                <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-2">
+                <h2 className="font-display text-2xl font-bold text-[#14231C] mb-2">
                   Request submitted
                 </h2>
                 <p className="text-gray-500 mb-6">
@@ -451,7 +451,7 @@ export default function ClaimListingClient() {
                 </p>
                 <Link
                   href="/"
-                  className="inline-block px-6 py-2.5 bg-[#C9A84C] text-white rounded-full text-sm font-bold hover:bg-[#B8972A] transition"
+                  className="inline-block px-6 py-2.5 bg-[#C4782A] text-white rounded-full text-sm font-bold hover:bg-[#B8972A] transition"
                 >
                   Back to the guide →
                 </Link>

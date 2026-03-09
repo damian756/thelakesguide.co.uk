@@ -65,7 +65,7 @@ export default async function CollectionsIndexPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(COLLECTION_LD) }} />
 
-      <div className="min-h-screen bg-[#FAF8F5]">
+      <div className="min-h-screen bg-[#EAEDE8]">
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <div className="relative bg-[#1B2E4B] text-white py-14 px-4 overflow-hidden">
@@ -78,7 +78,7 @@ export default async function CollectionsIndexPage() {
               <span className="text-white/20">›</span>
               <span className="text-white/70">Collections</span>
             </nav>
-            <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-3">The Lakes Guide</p>
+            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">The Lakes Guide</p>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
               Lake District Collections
             </h1>
@@ -89,7 +89,7 @@ export default async function CollectionsIndexPage() {
           </div>
           <div className="relative z-10 h-6 overflow-hidden mt-6">
             <svg viewBox="0 0 1440 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" preserveAspectRatio="none">
-              <path d="M0 24L360 12C720 0 1080 0 1440 12V24H0Z" fill="#FAF8F5" />
+              <path d="M0 24L360 12C720 0 1080 0 1440 12V24H0Z" fill="#EAEDE8" />
             </svg>
           </div>
         </div>
@@ -105,13 +105,13 @@ export default async function CollectionsIndexPage() {
                 className="group bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:shadow-md hover:-translate-y-0.5 transition-all"
               >
                 <div className="text-3xl mb-3">{c.emoji}</div>
-                <h2 className="font-display font-bold text-[#1B2E4B] text-base leading-snug mb-2 group-hover:text-[#C9A84C] transition-colors">
+                <h2 className="font-display font-bold text-[#1B2E4B] text-base leading-snug mb-2 group-hover:text-[#C4782A] transition-colors">
                   {c.title}
                 </h2>
                 <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 mb-3">
                   {c.metaDescription}
                 </p>
-                <span className="inline-flex items-center gap-1.5 text-[#C9A84C] text-sm font-semibold">
+                <span className="inline-flex items-center gap-1.5 text-[#C4782A] text-sm font-semibold">
                   View list <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </Link>
@@ -145,7 +145,7 @@ export default async function CollectionsIndexPage() {
             </p>
             <Link
               href="/claim-listing"
-              className="inline-block bg-[#C9A84C] hover:bg-[#E8C87A] text-white px-7 py-3 rounded-full font-bold text-sm transition-all"
+              className="inline-block bg-[#C4782A] hover:bg-[#E8C87A] text-white px-7 py-3 rounded-full font-bold text-sm transition-all"
             >
               Add Your Business →
             </Link>

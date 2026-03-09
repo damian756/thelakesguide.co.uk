@@ -173,7 +173,7 @@ export default async function EventsPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventsJsonLd) }} />
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
-      <section className="relative bg-[#1B2E4B] overflow-hidden">
+      <section className="relative bg-[#14231C] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={HERO_IMAGE_URL}
@@ -185,7 +185,7 @@ export default async function EventsPage({
             className="object-cover object-center opacity-30"
           />
         </div>
-        <div className="h-1 bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent relative z-10" />
+        <div className="h-1 bg-gradient-to-r from-transparent via-[#C4782A] to-transparent relative z-10" />
         <div className="relative z-10 container mx-auto px-4 py-14 md:py-20 max-w-5xl">
           <Link
             href="/"
@@ -194,12 +194,12 @@ export default async function EventsPage({
             <ArrowLeft className="w-4 h-4" /> Back to guide
           </Link>
           <div className="flex items-center gap-3 mb-4">
-            <CalendarDays className="w-8 h-8 text-[#C9A84C]" />
-            <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest">Updated weekly</p>
+            <CalendarDays className="w-8 h-8 text-[#C4782A]" />
+            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest">Updated weekly</p>
           </div>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
             What&apos;s On in the Lake District<br />
-            <span className="text-[#C9A84C]">2026 Events Calendar</span>
+            <span className="text-[#C4782A]">2026 Events Calendar</span>
           </h1>
           <p className="text-white/60 text-lg max-w-xl">
             {upcomingCount} upcoming events across the year — from free community events to festivals and races. Updated regularly.
@@ -217,7 +217,7 @@ export default async function EventsPage({
         {activeMonth && !eventsByMonth[activeMonth] ? (
           <div className="text-center py-20">
             <p className="text-gray-400">No events found for this month.</p>
-            <Link href="/events" className="text-[#C9A84C] font-semibold mt-4 inline-block hover:underline">
+            <Link href="/events" className="text-[#C4782A] font-semibold mt-4 inline-block hover:underline">
               View all events →
             </Link>
           </div>
@@ -234,7 +234,7 @@ export default async function EventsPage({
                   <div className="flex items-center gap-4 mb-5">
                     <h2
                       className={`font-display text-xl md:text-2xl font-bold ${
-                        isPast ? "text-gray-400" : "text-[#1B2E4B]"
+                        isPast ? "text-gray-400" : "text-[#14231C]"
                       }`}
                     >
                       {month}
@@ -264,7 +264,7 @@ export default async function EventsPage({
                           className={`group bg-white rounded-2xl p-5 border transition-all ${
                             isPast
                               ? "border-gray-100 opacity-50 pointer-events-none"
-                              : "border-gray-100 hover:border-[#C9A84C]/40 hover:shadow-md"
+                              : "border-gray-100 hover:border-[#C4782A]/40 hover:shadow-md"
                           }`}
                         >
                           <div className="flex items-start justify-between mb-3">
@@ -280,17 +280,17 @@ export default async function EventsPage({
                                   Free
                                 </span>
                               ) : (
-                                <span className="text-xs font-semibold text-[#1B2E4B]/50 bg-gray-100 px-2.5 py-1 rounded-full">
+                                <span className="text-xs font-semibold text-[#14231C]/50 bg-gray-100 px-2.5 py-1 rounded-full">
                                   Tickets
                                 </span>
                               )}
                             </div>
                           </div>
 
-                          <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-1">
+                          <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-1">
                             {eventDayLabel(event)}
                           </p>
-                          <h3 className="font-display font-bold text-[#1B2E4B] text-base leading-snug mb-1 group-hover:text-[#C9A84C] transition-colors">
+                          <h3 className="font-display font-bold text-[#14231C] text-base leading-snug mb-1 group-hover:text-[#C4782A] transition-colors">
                             {event.title}
                           </h3>
                           <p className="text-gray-400 text-sm mb-3">{event.venue}</p>
@@ -300,7 +300,7 @@ export default async function EventsPage({
                               {event.category}
                             </span>
                             {isExternal && (
-                              <ExternalLink className="w-3.5 h-3.5 text-gray-300 group-hover:text-[#C9A84C] transition-colors" />
+                              <ExternalLink className="w-3.5 h-3.5 text-gray-300 group-hover:text-[#C4782A] transition-colors" />
                             )}
                           </div>
                         </Tag>
@@ -314,14 +314,14 @@ export default async function EventsPage({
         )}
 
         {/* Submit event CTA */}
-        <div className="mt-16 bg-[#1B2E4B] rounded-3xl p-8 text-center">
+        <div className="mt-16 bg-[#14231C] rounded-3xl p-8 text-center">
           <h3 className="font-display text-2xl font-bold text-white mb-2">Got an event to add?</h3>
           <p className="text-white/60 mb-6">
             We update this calendar weekly. If you run a Southport event that&apos;s not listed, get in touch.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#E8C87A] text-white font-bold px-6 py-3 rounded-full transition-colors"
+            className="inline-flex items-center gap-2 bg-[#C4782A] hover:bg-[#E8B87A] text-white font-bold px-6 py-3 rounded-full transition-colors"
           >
             Submit your event
           </Link>

@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-[#FAF8F5]">
+    <div className="min-h-screen bg-[#EAEDE8]">
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="relative h-64 md:h-80 bg-[#1B2E4B] overflow-hidden">
         <Image
@@ -31,7 +31,7 @@ export default function BlogPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#1B2E4B]/50 via-[#1B2E4B]/30 to-[#1B2E4B]/80" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <div className="flex items-center gap-2 text-[#C9A84C] mb-3">
+          <div className="flex items-center gap-2 text-[#C4782A] mb-3">
             <Newspaper className="w-5 h-5" />
             <span className="text-sm font-semibold tracking-widest uppercase">The Lakes Guide Blog</span>
           </div>
@@ -49,7 +49,7 @@ export default function BlogPage() {
       {/* ── Interactive content (search + tabs + grid) ─────────────── */}
       <Suspense fallback={
         <div className="flex justify-center py-20">
-          <div className="w-8 h-8 border-2 border-[#C9A84C] border-t-transparent rounded-full animate-spin" />
+          <div className="w-8 h-8 border-2 border-[#C4782A] border-t-transparent rounded-full animate-spin" />
         </div>
       }>
         <BlogClient
@@ -72,7 +72,7 @@ export default function BlogPage() {
           </a>
           <a
             href="/"
-            className="text-sm font-semibold text-[#C9A84C] border border-[#C9A84C]/30 px-5 py-2.5 rounded-full hover:bg-[#C9A84C] hover:text-white transition-all"
+            className="text-sm font-semibold text-[#C4782A] border border-[#C4782A]/30 px-5 py-2.5 rounded-full hover:bg-[#C4782A] hover:text-white transition-all"
           >
             Explore the guide
           </a>

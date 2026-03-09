@@ -27,7 +27,7 @@ const CATEGORIES = [
   { slug: "cafes",         label: "Cafes",           icon: Coffee,      emoji: "☕", gradient: "from-[#6B3A1F] to-[#A06040]",  light: "#FAF0E8" },
   { slug: "pubs",          label: "Pubs & Inns",     icon: Beer,        emoji: "🍺", gradient: "from-[#3D1A5C] to-[#6B3AA0]",  light: "#F3EEF9" },
   { slug: "activities",    label: "Activities",      icon: Dumbbell,    emoji: "🏄", gradient: "from-[#0D6E6E] to-[#0F9B8E]",  light: "#E6F5F5" },
-  { slug: "accommodation", label: "Places to Stay",   icon: Hotel,       emoji: "🏨", gradient: "from-[#1B2E4B] to-[#2A4A73]",  light: "#EEF1F7" },
+  { slug: "accommodation", label: "Places to Stay",   icon: Hotel,       emoji: "🏨", gradient: "from-[#14231C] to-[#245E3F]",  light: "#E8EDE8" },
   { slug: "shopping",      label: "Shopping",         icon: ShoppingBag, emoji: "🛍️", gradient: "from-[#8B2847] to-[#C45C6A]",  light: "#FAE8EC" },
 ];
 
@@ -128,9 +128,9 @@ export default async function Home() {
       {/* ══════════════════════════════════════════════════════
           HERO — SPLIT LAYOUT
       ══════════════════════════════════════════════════════ */}
-      <section className="bg-[#1B2E4B] overflow-hidden">
-        {/* Gold top accent */}
-        <div className="h-1 bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent" />
+      <section className="bg-[#14231C] overflow-hidden">
+        {/* Bracken top accent */}
+        <div className="h-1 bg-gradient-to-r from-transparent via-[#C4782A] to-transparent" />
 
         <div className="flex flex-col md:flex-row md:min-h-[560px]">
 
@@ -146,9 +146,9 @@ export default async function Home() {
               className="object-cover object-center"
             />
             {/* Desktop: right-edge fade into the dark panel */}
-            <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#1B2E4B]" />
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#14231C]" />
             {/* Mobile: bottom fade */}
-            <div className="md:hidden absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1B2E4B]" />
+            <div className="md:hidden absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#14231C]" />
           </div>
 
           {/* RIGHT: Live pulse panel */}
@@ -162,11 +162,11 @@ export default async function Home() {
 
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 leading-tight tracking-tight">
               Your Local Guide<br />
-              <span className="text-[#C9A84C]">to the Lake District.</span>
+              <span className="text-[#C4782A]">to the Lake District.</span>
             </h1>
 
             <p className="text-white/60 text-sm md:text-base mb-7 leading-relaxed max-w-sm">
-              Events, restaurants, <Link href="/things-to-do" className="text-white/80 hover:text-[#C9A84C] underline underline-offset-2 transition-colors">things to do</Link> — updated regularly by people who live here.
+              Events, restaurants, <Link href="/things-to-do" className="text-white/80 hover:text-[#C4782A] underline underline-offset-2 transition-colors">things to do</Link> — updated regularly by people who live here.
             </p>
 
             {/* Next 2 upcoming events */}
@@ -183,14 +183,14 @@ export default async function Home() {
                   >
                     <span className="text-lg flex-none">{event.emoji}</span>
                     <div className="flex-1 min-w-0">
-                      <p className="text-white text-sm font-semibold truncate group-hover:text-[#C9A84C] transition-colors">{event.title}</p>
+                      <p className="text-white text-sm font-semibold truncate group-hover:text-[#C4782A] transition-colors">{event.title}</p>
                       <p className="text-white/40 text-xs">{formatEventLabel(event)} · {event.venue}</p>
                     </div>
-                    <ArrowRight className="w-3.5 h-3.5 text-white/25 group-hover:text-[#C9A84C] flex-none transition-colors" />
+                    <ArrowRight className="w-3.5 h-3.5 text-white/25 group-hover:text-[#C4782A] flex-none transition-colors" />
                   </a>
                 ))}
               </div>
-              <Link href="/events" className="text-xs text-white/35 hover:text-[#C9A84C] transition-colors mt-2 inline-block">
+              <Link href="/events" className="text-xs text-white/35 hover:text-[#C4782A] transition-colors mt-2 inline-block">
                 View full 2026 calendar →
               </Link>
             </div>
@@ -213,7 +213,7 @@ export default async function Home() {
         {/* Wave divider */}
         <div className="h-10 overflow-hidden relative">
           <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none">
-            <path d="M0 40L60 35C120 30 240 20 360 15C480 10 600 10 720 15C840 20 960 30 1080 32C1200 33 1320 25 1380 21L1440 17V40H0Z" fill="#FAF8F5"/>
+            <path d="M0 40L60 35C120 30 240 20 360 15C480 10 600 10 720 15C840 20 960 30 1080 32C1200 33 1320 25 1380 21L1440 17V40H0Z" fill="#EAEDE8"/>
           </svg>
         </div>
       </section>
@@ -222,17 +222,17 @@ export default async function Home() {
           WHAT'S ON — EVENTS STRIP
       ══════════════════════════════════════════════════════ */}
       {upcomingEvents.length > 0 && (
-        <section className="py-12 bg-[#FAF8F5]">
+        <section className="py-12 bg-[#EAEDE8]">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="flex items-end justify-between mb-6">
               <div>
-                <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-1">Updated weekly</p>
-                <h2 className="font-display text-2xl md:text-3xl font-bold text-[#1B2E4B] flex items-center gap-2">
-                  <CalendarDays className="w-6 h-6 text-[#C9A84C]" />
+                <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-1">Updated weekly</p>
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-[#14231C] flex items-center gap-2">
+                  <CalendarDays className="w-6 h-6 text-[#C4782A]" />
                   What&apos;s On in the Lake District
                 </h2>
               </div>
-              <Link href="/events" className="hidden sm:inline-flex items-center gap-1.5 text-sm text-[#1B2E4B] hover:text-[#C9A84C] font-semibold transition-colors">
+              <Link href="/events" className="hidden sm:inline-flex items-center gap-1.5 text-sm text-[#14231C] hover:text-[#C4782A] font-semibold transition-colors">
                 Full calendar <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -245,17 +245,17 @@ export default async function Home() {
                   href={event.link}
                   target={event.link.startsWith("http") ? "_blank" : undefined}
                   rel={event.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="flex-none w-44 snap-start bg-white rounded-2xl p-4 border border-gray-100 hover:border-[#C9A84C]/40 hover:shadow-md transition-all group cursor-pointer"
+                  className="flex-none w-44 snap-start bg-white rounded-2xl p-4 border border-gray-100 hover:border-[#C4782A]/40 hover:shadow-md transition-all group cursor-pointer"
                 >
-                  <div className="text-[10px] font-bold text-[#C9A84C] uppercase tracking-widest mb-2">{formatEventLabel(event)}</div>
+                  <div className="text-[10px] font-bold text-[#C4782A] uppercase tracking-widest mb-2">{formatEventLabel(event)}</div>
                   <div className="text-2xl mb-2">{event.emoji}</div>
-                  <h3 className="font-bold text-[#1B2E4B] text-sm leading-tight mb-1 group-hover:text-[#C9A84C] transition-colors line-clamp-2">{event.title}</h3>
+                  <h3 className="font-bold text-[#14231C] text-sm leading-tight mb-1 group-hover:text-[#C4782A] transition-colors line-clamp-2">{event.title}</h3>
                   <p className="text-gray-400 text-xs mb-3 line-clamp-1">{event.venue}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] text-gray-500">{event.category}</span>
                     {event.free
                       ? <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Free</span>
-                      : <span className="text-[10px] font-semibold text-[#1B2E4B]/50 bg-gray-100 px-2 py-0.5 rounded-full">Tickets</span>
+                      : <span className="text-[10px] font-semibold text-[#14231C]/50 bg-gray-100 px-2 py-0.5 rounded-full">Tickets</span>
                     }
                   </div>
                 </a>
@@ -264,15 +264,15 @@ export default async function Home() {
               {/* View all card */}
               <Link
                 href="/events"
-                className="flex-none w-44 snap-start bg-[#1B2E4B] rounded-2xl p-4 flex flex-col items-center justify-center text-center group hover:bg-[#C9A84C] transition-colors"
+                className="flex-none w-44 snap-start bg-[#14231C] rounded-2xl p-4 flex flex-col items-center justify-center text-center group hover:bg-[#C4782A] transition-colors"
               >
-                <CalendarDays className="w-8 h-8 text-[#C9A84C] group-hover:text-white mb-3 transition-colors" />
+                <CalendarDays className="w-8 h-8 text-[#C4782A] group-hover:text-white mb-3 transition-colors" />
                 <span className="font-bold text-white text-sm">Full 2026 Calendar</span>
                 <span className="text-white/50 group-hover:text-white/80 text-xs mt-1 transition-colors">All events →</span>
               </Link>
             </div>
 
-            <Link href="/events" className="mt-4 text-sm text-[#C9A84C] font-semibold sm:hidden block text-center">
+            <Link href="/events" className="mt-4 text-sm text-[#C4782A] font-semibold sm:hidden block text-center">
               View full 2026 calendar →
             </Link>
           </div>
@@ -297,13 +297,13 @@ export default async function Home() {
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="flex items-end justify-between mb-8">
                 <div>
-                  <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-1">Lakes Guide Blog</p>
-                  <h2 className="font-display text-2xl md:text-3xl font-bold text-[#1B2E4B] flex items-center gap-2">
-                    <Newspaper className="w-6 h-6 text-[#C9A84C]" />
+                  <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-1">Lakes Guide Blog</p>
+                  <h2 className="font-display text-2xl md:text-3xl font-bold text-[#14231C] flex items-center gap-2">
+                    <Newspaper className="w-6 h-6 text-[#C4782A]" />
                     Latest from the Guide
                   </h2>
                 </div>
-                <Link href="/blog" className="hidden sm:inline-flex items-center gap-1.5 text-sm text-[#1B2E4B] hover:text-[#C9A84C] font-semibold transition-colors">
+                <Link href="/blog" className="hidden sm:inline-flex items-center gap-1.5 text-sm text-[#14231C] hover:text-[#C4782A] font-semibold transition-colors">
                   All posts <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -314,7 +314,7 @@ export default async function Home() {
                 {featPost && (
                   <Link
                     href={`/blog/${featPost.slug}`}
-                    className="group md:col-span-2 bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C9A84C]/40 hover:shadow-xl transition-all flex flex-col"
+                    className="group md:col-span-2 bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C4782A]/40 hover:shadow-xl transition-all flex flex-col"
                   >
                     <div className="relative h-52 md:h-64 overflow-hidden flex-none">
                       <Image
@@ -327,7 +327,7 @@ export default async function Home() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <div className="absolute top-3 left-3 flex items-center gap-2">
-                        <span className="bg-[#1B2E4B] text-[#C9A84C] text-[11px] font-bold px-3 py-1.5 rounded-full shadow">
+                        <span className="bg-[#14231C] text-[#C4782A] text-[11px] font-bold px-3 py-1.5 rounded-full shadow">
                           Latest
                         </span>
                         {featCat && (
@@ -342,13 +342,13 @@ export default async function Home() {
                     </div>
                     <div className="p-6 flex flex-col flex-1">
                       <p className="text-gray-400 text-xs mb-2">{formatPostDate(featPost.date)}</p>
-                      <h3 className="font-display font-bold text-[#1B2E4B] text-xl leading-snug mb-3 group-hover:text-[#C9A84C] transition-colors line-clamp-2">
+                      <h3 className="font-display font-bold text-[#14231C] text-xl leading-snug mb-3 group-hover:text-[#C4782A] transition-colors line-clamp-2">
                         {featPost.title}
                       </h3>
                       <p className="text-gray-400 text-sm leading-relaxed line-clamp-2 flex-1 mb-4">
                         {featPost.excerpt}
                       </p>
-                      <span className="text-[#C9A84C] text-sm font-semibold group-hover:translate-x-0.5 transition-transform inline-block">
+                      <span className="text-[#C4782A] text-sm font-semibold group-hover:translate-x-0.5 transition-transform inline-block">
                         Read more →
                       </span>
                     </div>
@@ -363,7 +363,7 @@ export default async function Home() {
                       <Link
                         key={post.slug}
                         href={`/blog/${post.slug}`}
-                        className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C9A84C]/30 hover:shadow-lg transition-all flex flex-col flex-1"
+                        className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C4782A]/30 hover:shadow-lg transition-all flex flex-col flex-1"
                       >
                         <div className="relative h-36 overflow-hidden flex-none">
                           <Image
@@ -385,12 +385,12 @@ export default async function Home() {
                           )}
                         </div>
                         <div className="p-4 flex flex-col flex-1">
-                          <h3 className="font-display font-bold text-[#1B2E4B] text-base leading-snug mb-2 group-hover:text-[#C9A84C] transition-colors line-clamp-2">
+                          <h3 className="font-display font-bold text-[#14231C] text-base leading-snug mb-2 group-hover:text-[#C4782A] transition-colors line-clamp-2">
                             {post.title}
                           </h3>
                           <div className="flex items-center justify-between text-xs text-gray-400 mt-auto">
                             <span>{formatPostDate(post.date)}</span>
-                            <span className="text-[#C9A84C] font-semibold">Read →</span>
+                            <span className="text-[#C4782A] font-semibold">Read →</span>
                           </div>
                         </div>
                       </Link>
@@ -402,7 +402,7 @@ export default async function Home() {
               <div className="mt-6 text-center">
                 <Link
                   href="/blog"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#1B2E4B] border border-[#1B2E4B]/20 px-6 py-2.5 rounded-full hover:bg-[#1B2E4B] hover:text-white transition-all sm:hidden"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#14231C] border border-[#14231C]/20 px-6 py-2.5 rounded-full hover:bg-[#14231C] hover:text-white transition-all sm:hidden"
                 >
                   All blog posts →
                 </Link>
@@ -415,13 +415,13 @@ export default async function Home() {
       {/* ══════════════════════════════════════════════════════
           LAKE DISTRICT WALKS FEATURE STRIP
       ══════════════════════════════════════════════════════ */}
-      <section className="py-12 bg-[#1A5C7A]">
+      <section className="py-12 bg-[#2A6B8A]">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1 text-white">
-              <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-2">214 Wainwright fells</p>
+              <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-2">214 Wainwright fells</p>
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
-                <Link href="/guides/lake-district-walks" className="hover:text-[#C9A84C] transition-colors">
+                <Link href="/guides/lake-district-walks" className="hover:text-[#C4782A] transition-colors">
                   Lake District Walks
                 </Link>
               </h2>
@@ -436,7 +436,7 @@ export default async function Home() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/guides/lake-district-walks"
-                  className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#E8C87A] text-[#1B2E4B] px-6 py-3 rounded-full font-bold text-sm transition-all"
+                  className="inline-flex items-center gap-2 bg-[#C4782A] hover:bg-[#E8B87A] text-[#14231C] px-6 py-3 rounded-full font-bold text-sm transition-all"
                 >
                   Lake District Walks Guide <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -458,8 +458,8 @@ export default async function Home() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-2">Everything in one place</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-[#1B2E4B] mb-3">Explore the Lake District</h2>
+            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-2">Everything in one place</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C] mb-3">Explore the Lake District</h2>
             <p className="text-gray-400 text-sm">
               {totalBusinesses.toLocaleString() || "999"} local businesses across {CATEGORIES.length} categories
             </p>
@@ -498,7 +498,7 @@ export default async function Home() {
           <div className="mt-8 text-center">
             <Link
               href="/things-to-do"
-              className="inline-flex items-center gap-2 bg-[#1B2E4B] hover:bg-[#2A4A73] text-white px-7 py-3 rounded-full font-semibold text-sm transition-all"
+              className="inline-flex items-center gap-2 bg-[#14231C] hover:bg-[#245E3F] text-white px-7 py-3 rounded-full font-semibold text-sm transition-all"
             >
               Things to Do in the Lake District <ArrowRight className="w-4 h-4" />
             </Link>
@@ -510,11 +510,11 @@ export default async function Home() {
           TOP RATED — MAGAZINE GRID
       ══════════════════════════════════════════════════════ */}
       {featured.length > 0 && (
-        <section className="py-16 bg-[#FAF8F5]">
+        <section className="py-16 bg-[#EAEDE8]">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-12">
-              <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-2">Verified by Google</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#1B2E4B] mb-3">Top Rated in the Lake District</h2>
+              <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-2">Verified by Google</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C] mb-3">Top Rated in the Lake District</h2>
               <p className="text-gray-400 text-sm">The highest-rated businesses based on thousands of Google reviews</p>
             </div>
 
@@ -530,10 +530,10 @@ export default async function Home() {
                     href={`/${b.category.slug}/${b.slug}`}
                     className="md:col-span-2 group relative overflow-hidden rounded-2xl min-h-[260px] card-hover"
                   >
-                    <div className={`absolute inset-0 bg-gradient-to-br ${theme?.gradient || "from-[#1B2E4B] to-[#2A4A73]"}`} />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${theme?.gradient || "from-[#14231C] to-[#245E3F]"}`} />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                     <div className="absolute top-4 right-4">
-                      <span className="bg-[#C9A84C] text-white text-xs font-bold px-3 py-1 rounded-full">
+                      <span className="bg-[#C4782A] text-white text-xs font-bold px-3 py-1 rounded-full">
                         #{1} Rated
                       </span>
                     </div>
@@ -542,15 +542,15 @@ export default async function Home() {
                         <span className="text-white/60 text-xs uppercase tracking-wider">
                           {theme?.emoji} {b.category.slug.replace("-", " ")} · {area}
                         </span>
-                        <h3 className="font-display text-2xl md:text-3xl font-bold text-white mt-1 mb-2 group-hover:text-[#C9A84C] transition-colors">
+                        <h3 className="font-display text-2xl md:text-3xl font-bold text-white mt-1 mb-2 group-hover:text-[#C4782A] transition-colors">
                           {b.name}
                         </h3>
                         {b.shortDescription && (
                           <p className="text-white/70 text-sm line-clamp-2 mb-3">{b.shortDescription}</p>
                         )}
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-1.5 text-[#C9A84C]">
-                            <Star className="w-4 h-4 fill-[#C9A84C]" />
+                          <div className="flex items-center gap-1.5 text-[#C4782A]">
+                            <Star className="w-4 h-4 fill-[#C4782A]" />
                             <span className="font-bold text-white">{b.rating?.toFixed(1)}</span>
                             {b.reviewCount && <span className="text-white/50 text-sm">({b.reviewCount.toLocaleString()} reviews)</span>}
                           </div>
@@ -575,21 +575,21 @@ export default async function Home() {
                       href={`/${b.category.slug}/${b.slug}`}
                       className="group relative overflow-hidden rounded-2xl card-hover"
                     >
-                      <div className={`absolute inset-0 bg-gradient-to-br ${theme?.gradient || "from-[#1B2E4B] to-[#2A4A73]"}`} />
+                      <div className={`absolute inset-0 bg-gradient-to-br ${theme?.gradient || "from-[#14231C] to-[#245E3F]"}`} />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <div className="absolute top-3 right-3">
-                        <span className="bg-[#C9A84C] text-white text-xs font-bold px-2.5 py-0.5 rounded-full">
+                        <span className="bg-[#C4782A] text-white text-xs font-bold px-2.5 py-0.5 rounded-full">
                           #{i + 2}
                         </span>
                       </div>
                       <div className="relative p-5 flex flex-col justify-end min-h-[118px]">
                         <div className="mt-auto">
                           <span className="text-white/50 text-xs">{theme?.emoji} {area}</span>
-                          <h3 className="font-display font-bold text-white text-lg leading-tight group-hover:text-[#C9A84C] transition-colors line-clamp-1">
+                          <h3 className="font-display font-bold text-white text-lg leading-tight group-hover:text-[#C4782A] transition-colors line-clamp-1">
                             {b.name}
                           </h3>
                           <div className="flex items-center gap-1 mt-1">
-                            <Star className="w-3 h-3 fill-[#C9A84C] text-[#C9A84C]" />
+                            <Star className="w-3 h-3 fill-[#C4782A] text-[#C4782A]" />
                             <span className="text-white font-semibold text-sm">{b.rating?.toFixed(1)}</span>
                             {b.reviewCount && <span className="text-white/50 text-xs">({b.reviewCount.toLocaleString()})</span>}
                           </div>
@@ -608,18 +608,18 @@ export default async function Home() {
                   <Link
                     key={b.slug}
                     href={`/${b.category.slug}/${b.slug}`}
-                    className="group bg-white rounded-2xl p-5 border border-gray-100 hover:border-[#C9A84C]/30 card-hover flex flex-col"
+                    className="group bg-white rounded-2xl p-5 border border-gray-100 hover:border-[#C4782A]/30 card-hover flex flex-col"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <span
                         className="text-xs font-bold px-2.5 py-1 rounded-full"
-                        style={{ backgroundColor: theme?.light || "#EEF1F7", color: "#1B2E4B" }}
+                        style={{ backgroundColor: theme?.light || "#EAEDE8", color: "#14231C" }}
                       >
                         {theme?.emoji} {b.category.slug.replace(/-/g, " ")}
                       </span>
-                      <span className="text-[#C9A84C] text-xs font-bold">#{i + 4}</span>
+                      <span className="text-[#C4782A] text-xs font-bold">#{i + 4}</span>
                     </div>
-                    <h3 className="font-display font-bold text-[#1B2E4B] text-base group-hover:text-[#C9A84C] transition-colors mb-1 line-clamp-2 flex-1">
+                    <h3 className="font-display font-bold text-[#14231C] text-base group-hover:text-[#C4782A] transition-colors mb-1 line-clamp-2 flex-1">
                       {b.name}
                     </h3>
                     <p className="text-gray-400 text-xs mb-3">{area}</p>
@@ -639,15 +639,15 @@ export default async function Home() {
       {/* ══════════════════════════════════════════════════════
           BUSINESS CTA
       ══════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-[#1B2E4B] relative overflow-hidden">
+      <section className="py-20 bg-[#14231C] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-[#C9A84C]/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#C4782A]/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#2E7D6E]/8 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl" />
         </div>
         <div className="relative container mx-auto px-4 text-center max-w-2xl">
           <div className="font-display text-4xl font-bold text-white mb-4">
             List Your Business.<br />
-            <span className="text-[#C9A84C]">It&apos;s Free.</span>
+            <span className="text-[#C4782A]">It&apos;s Free.</span>
           </div>
           <p className="text-white/60 text-lg mb-10 leading-relaxed">
             Join {totalBusinesses.toLocaleString() || "999"}+ businesses on the Lake District&apos;s fastest-growing guide. Get discovered by visitors planning their trip.
@@ -655,7 +655,7 @@ export default async function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/claim-listing"
-              className="bg-[#C9A84C] hover:bg-[#E8C87A] text-white px-8 py-4 rounded-full font-bold text-base transition-all hover:shadow-lg hover:shadow-[#C9A84C]/30"
+              className="bg-[#C4782A] hover:bg-[#E8B87A] text-white px-8 py-4 rounded-full font-bold text-base transition-all hover:shadow-lg hover:shadow-[#C4782A]/30"
             >
               Claim Your Free Listing →
             </Link>

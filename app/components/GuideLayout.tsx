@@ -85,23 +85,23 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
   const categoryLabel = GUIDE_CATEGORIES[guide.category].label;
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5]">
+    <div className="min-h-screen bg-[#EAEDE8]">
 
       {/* ── Breadcrumb strip ── */}
       <nav
         aria-label="Breadcrumb"
-        className="bg-[#1B2E4B] border-b border-white/10"
+        className="bg-[#14231C] border-b border-white/10"
       >
         <div className="container mx-auto px-4 max-w-7xl py-2.5">
           <ol className="flex items-center gap-1.5 text-xs text-white/50 flex-wrap">
             <li>
-              <Link href="/" className="hover:text-[#C9A84C] transition-colors font-medium">
+              <Link href="/" className="hover:text-[#C4782A] transition-colors font-medium">
                 Home
               </Link>
             </li>
             <li><ChevronRight className="w-3 h-3" /></li>
             <li>
-              <Link href="/guides" className="hover:text-[#C9A84C] transition-colors font-medium">
+              <Link href="/guides" className="hover:text-[#C4782A] transition-colors font-medium">
                 Guides
               </Link>
             </li>
@@ -109,7 +109,7 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
             <li>
               <Link
                 href={`/guides?category=${guide.category}`}
-                className="hover:text-[#C9A84C] transition-colors font-medium"
+                className="hover:text-[#C4782A] transition-colors font-medium"
               >
                 {categoryLabel}
               </Link>
@@ -128,10 +128,10 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
         <section className="bg-white border-t border-gray-100">
           <div className="container mx-auto px-4 max-w-7xl py-16">
             <div className="mb-8">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">
                 Lake District Businesses
               </p>
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-[#1B2E4B]">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-[#14231C]">
                 Relevant Listings
               </h2>
               <p className="text-gray-600 mt-2 text-base">
@@ -143,7 +143,7 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
                 <Link
                   key={biz.id}
                   href={`/${biz.category.slug}/${biz.slug}`}
-                  className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#C9A84C]/30 transition-all group overflow-hidden"
+                  className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#C4782A]/30 transition-all group overflow-hidden"
                 >
                   <div className="relative h-36 overflow-hidden">
                     {biz.images[0] ? (
@@ -155,7 +155,7 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     ) : (
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#1B2E4B] to-[#2E4A6B] flex items-center justify-center">
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#14231C] to-[#245E3F] flex items-center justify-center">
                         <span className="text-white/20 font-display font-bold text-4xl select-none">
                           {biz.name.charAt(0)}
                         </span>
@@ -163,20 +163,20 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     <div className="absolute bottom-2 left-3">
-                      <p className="text-[#C9A84C] text-[10px] font-bold uppercase tracking-wider">
+                      <p className="text-[#C4782A] text-[10px] font-bold uppercase tracking-wider">
                         {biz.category.name}
                       </p>
                     </div>
                     {biz.listingTier === "featured" && (
                       <div className="absolute top-2 right-2">
-                        <span className="bg-[#C9A84C] text-[#1B2E4B] text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">
+                        <span className="bg-[#C4782A] text-[#14231C] text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">
                           Featured
                         </span>
                       </div>
                     )}
                   </div>
                   <div className="p-5">
-                    <h3 className="font-display font-bold text-[#1B2E4B] text-base mb-1.5 group-hover:text-[#C9A84C] transition-colors">
+                    <h3 className="font-display font-bold text-[#14231C] text-base mb-1.5 group-hover:text-[#C4782A] transition-colors">
                       {biz.name}
                     </h3>
                     {biz.shortDescription && (
@@ -197,7 +197,7 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
             <div className="mt-6">
               <Link
                 href={`/${guide.listingFilter?.categorySlugs?.[0] ?? "restaurants"}`}
-                className="inline-flex items-center gap-2 text-[#C9A84C] font-semibold text-sm hover:text-[#1B2E4B] transition-colors"
+                className="inline-flex items-center gap-2 text-[#C4782A] font-semibold text-sm hover:text-[#14231C] transition-colors"
               >
                 Browse all listings <ArrowRight className="w-4 h-4" />
               </Link>
@@ -208,13 +208,13 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
 
       {/* ── Related Guides ── */}
       {relatedGuides.length > 0 && (
-        <section className="bg-[#FAF8F5] border-t border-gray-100">
+        <section className="bg-[#EAEDE8] border-t border-gray-100">
           <div className="container mx-auto px-4 max-w-7xl py-16">
             <div className="mb-8">
-              <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">
+              <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">
                 Keep Exploring
               </p>
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-[#1B2E4B]">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-[#14231C]">
                 Related Guides
               </h2>
             </div>
@@ -223,7 +223,7 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
                 <Link
                   key={related.slug}
                   href={`/guides/${related.slug}`}
-                  className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#C9A84C]/30 transition-all group overflow-hidden"
+                  className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#C4782A]/30 transition-all group overflow-hidden"
                 >
                   <div className="relative h-32 overflow-hidden">
                     <Image
@@ -235,13 +235,13 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-3">
-                      <p className="text-[#C9A84C] text-[10px] font-bold uppercase tracking-wider">
+                      <p className="text-[#C4782A] text-[10px] font-bold uppercase tracking-wider">
                         {GUIDE_CATEGORIES[related.category].label}
                       </p>
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="font-display font-bold text-[#1B2E4B] text-sm mb-1.5 group-hover:text-[#C9A84C] transition-colors leading-snug">
+                    <h3 className="font-display font-bold text-[#14231C] text-sm mb-1.5 group-hover:text-[#C4782A] transition-colors leading-snug">
                       {related.title}
                     </h3>
                     <p className="text-gray-500 text-xs leading-relaxed line-clamp-2">
@@ -254,7 +254,7 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
             <div className="mt-6">
               <Link
                 href="/guides"
-                className="inline-flex items-center gap-2 text-[#C9A84C] font-semibold text-sm hover:text-[#1B2E4B] transition-colors"
+                className="inline-flex items-center gap-2 text-[#C4782A] font-semibold text-sm hover:text-[#14231C] transition-colors"
               >
                 All guides <ArrowRight className="w-4 h-4" />
               </Link>
@@ -264,11 +264,11 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
       )}
 
       {/* ── List Your Business CTA ── */}
-      <section className="bg-[#1B2E4B] py-14">
+      <section className="bg-[#14231C] py-14">
         <div className="container mx-auto px-4 max-w-7xl text-center text-white">
-          <MapPin className="w-8 h-8 text-[#C9A84C] mx-auto mb-4" />
-          <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-3">
-            Southport Business?
+          <MapPin className="w-8 h-8 text-[#C4782A] mx-auto mb-4" />
+          <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">
+            Lake District Business?
           </p>
           <h2 className="font-display text-2xl md:text-3xl font-bold mb-3">
             Get Your Business in These Guides
@@ -280,7 +280,7 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/claim-listing"
-              className="bg-[#C9A84C] hover:bg-[#E8C87A] text-[#1B2E4B] px-8 py-3.5 rounded-full font-bold transition-colors"
+              className="bg-[#C4782A] hover:bg-[#E8B87A] text-[#14231C] px-8 py-3.5 rounded-full font-bold transition-colors"
             >
               List Your Business
             </Link>

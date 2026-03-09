@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 export default function WindermerePage() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-16">
-      <h1 className="font-display text-3xl font-bold text-[var(--forest)]">Windermere</h1>
-      <p className="mt-4 text-[var(--slate)]">Content coming soon.</p>
+      <h1 className="font-display text-3xl font-bold text-[#14231C]">Windermere</h1>
+      <p className="mt-4 text-[#4E5A50]">Content coming soon.</p>
     </main>
   );
 }

@@ -39,13 +39,13 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
-      <div className="bg-[#1B2E4B] relative overflow-hidden">
+      <div className="bg-[#14231C] relative overflow-hidden">
         <div className="absolute inset-0">
           <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={70} className="object-cover object-center opacity-30" />
         </div>
-        <div className="h-1 bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent relative z-10" />
+        <div className="h-1 bg-gradient-to-r from-transparent via-[#C4782A] to-transparent relative z-10" />
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#C9A84C]/8 rounded-full -translate-y-16 translate-x-16 blur-3xl" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#C4782A]/8 rounded-full -translate-y-16 translate-x-16 blur-3xl" />
         </div>
         <div className="relative z-10 container mx-auto px-4 max-w-5xl py-12">
           <h1 className="font-display text-4xl font-bold text-white mb-2">
@@ -72,7 +72,7 @@ export default function PricingPage() {
       <div className="container mx-auto px-4 max-w-5xl py-12 space-y-12">
         {/* Free vs Pro table */}
         <section>
-          <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-6">
+          <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">
             Free vs Pro
           </h2>
           <div className="overflow-x-auto">
@@ -85,7 +85,7 @@ export default function PricingPage() {
                   <th className="text-center py-5 px-6 text-gray-600 font-semibold">
                     Free
                   </th>
-                  <th className="text-center py-5 px-6 bg-[#C9A84C]/10 border-l border-[#C9A84C]/20 font-semibold text-[#1B2E4B]">
+                  <th className="text-center py-5 px-6 bg-[#C4782A]/10 border-l border-[#C4782A]/20 font-semibold text-[#14231C]">
                     Pro
                   </th>
                 </tr>
@@ -106,7 +106,7 @@ export default function PricingPage() {
                         <Minus className="w-5 h-5 text-gray-300 inline" />
                       )}
                     </td>
-                    <td className="py-4 px-6 text-center bg-[#C9A84C]/5">
+                    <td className="py-4 px-6 text-center bg-[#C4782A]/5">
                       {f.pro ? (
                         <Check className="w-5 h-5 text-emerald-600 inline" />
                       ) : (
@@ -121,9 +121,9 @@ export default function PricingPage() {
         </section>
 
         {/* Annual banner */}
-        <div className="bg-[#C9A84C]/15 border border-[#C9A84C]/30 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="bg-[#C4782A]/15 border border-[#C4782A]/30 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <h3 className="font-display font-bold text-[#1B2E4B] text-lg">
+            <h3 className="font-display font-bold text-[#14231C] text-lg">
               Pay annually and save 2 months
             </h3>
             <p className="text-gray-600 text-sm mt-0.5">
@@ -132,7 +132,7 @@ export default function PricingPage() {
           </div>
           <Link
             href="/dashboard"
-            className="bg-[#C9A84C] hover:bg-[#B8972A] text-white px-6 py-3 rounded-full font-bold text-sm transition-colors whitespace-nowrap"
+            className="bg-[#C4782A] hover:bg-[#A86C2A] text-white px-6 py-3 rounded-full font-bold text-sm transition-colors whitespace-nowrap"
           >
             Go to Business Hub →
           </Link>
@@ -140,7 +140,7 @@ export default function PricingPage() {
 
         {/* Boosts section */}
         <section>
-          <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-6">
+          <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">
             Category boosts
           </h2>
           <p className="text-gray-600 mb-6 max-w-2xl">
@@ -153,15 +153,15 @@ export default function PricingPage() {
                 key={b.type}
                 className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm"
               >
-                <p className="font-semibold text-[#1B2E4B]">{b.type}</p>
-                <p className="text-2xl font-bold text-[#C9A84C] mt-2">{b.price}</p>
+                <p className="font-semibold text-[#14231C]">{b.type}</p>
+                <p className="text-2xl font-bold text-[#C4782A] mt-2">{b.price}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* The Open 2026 */}
-        <div className="bg-[#1B2E4B] rounded-2xl p-6 text-white">
+        <div className="bg-[#14231C] rounded-2xl p-6 text-white">
           <h3 className="font-display font-bold text-lg mb-2 flex items-center gap-2">
             🏌️ The Open 2026 — Royal Birkdale
           </h3>
@@ -170,7 +170,7 @@ export default function PricingPage() {
           </p>
           <Link
             href="/dashboard"
-            className="inline-block mt-4 border border-[#C9A84C]/40 text-[#C9A84C] px-4 py-2 rounded-full font-bold text-sm hover:bg-[#C9A84C]/10 transition"
+            className="inline-block mt-4 border border-[#C4782A]/40 text-[#C4782A] px-4 py-2 rounded-full font-bold text-sm hover:bg-[#C4782A]/10 transition"
           >
             Book your boost →
           </Link>
@@ -178,7 +178,7 @@ export default function PricingPage() {
 
         {/* FAQ */}
         <section>
-          <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-6">
+          <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">
             FAQ
           </h2>
           <PricingFAQ />

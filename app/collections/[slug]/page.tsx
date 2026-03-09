@@ -175,7 +175,7 @@ export default async function CollectionPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <div className="min-h-screen bg-[#FAF8F5]">
+      <div className="min-h-screen bg-[#EAEDE8]">
 
         {/* ── Hero ─────────────────────────────────────────────────────────── */}
         <div className="relative bg-[#1B2E4B] text-white overflow-hidden">
@@ -200,7 +200,7 @@ export default async function CollectionPage({ params }: Props) {
             </p>
 
             <div className="mt-6 flex items-center gap-3 text-sm text-white/50">
-              <span className="font-semibold text-[#C9A84C] text-2xl">{count}</span>
+              <span className="font-semibold text-[#C4782A] text-2xl">{count}</span>
               <span>{count === 1 ? "listing" : "listings"} found</span>
               {!isIndexable && (
                 <span className="ml-2 text-amber-400 text-xs font-semibold uppercase tracking-wider">
@@ -212,7 +212,7 @@ export default async function CollectionPage({ params }: Props) {
 
           <div className="relative z-10 h-6 overflow-hidden">
             <svg viewBox="0 0 1440 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" preserveAspectRatio="none">
-              <path d="M0 24L360 12C720 0 1080 0 1440 12V24H0Z" fill="#FAF8F5" />
+              <path d="M0 24L360 12C720 0 1080 0 1440 12V24H0Z" fill="#EAEDE8" />
             </svg>
           </div>
         </div>
@@ -229,7 +229,7 @@ export default async function CollectionPage({ params }: Props) {
               </p>
               <Link
                 href={`/${collection.categorySlugs[0]}`}
-                className="inline-flex items-center gap-2 mt-6 text-[#C9A84C] font-semibold hover:underline"
+                className="inline-flex items-center gap-2 mt-6 text-[#C4782A] font-semibold hover:underline"
               >
                 Browse all in this category <ArrowRight className="w-4 h-4" />
               </Link>
@@ -253,7 +253,7 @@ export default async function CollectionPage({ params }: Props) {
                   <Link
                     key={catSlug}
                     href={`/${catSlug}`}
-                    className="inline-flex items-center gap-2 bg-white border border-gray-200 text-[#1B2E4B] px-5 py-2.5 rounded-full text-sm font-semibold hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all shadow-sm"
+                    className="inline-flex items-center gap-2 bg-white border border-gray-200 text-[#1B2E4B] px-5 py-2.5 rounded-full text-sm font-semibold hover:border-[#C4782A] hover:text-[#C4782A] transition-all shadow-sm"
                   >
                     Browse all {catSlug.replace(/-/g, " ")} <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -272,7 +272,7 @@ export default async function CollectionPage({ params }: Props) {
             </p>
             <Link
               href="/claim-listing"
-              className="inline-block bg-[#C9A84C] hover:bg-[#E8C87A] text-white px-7 py-3 rounded-full font-bold text-sm transition-all"
+              className="inline-block bg-[#C4782A] hover:bg-[#E8C87A] text-white px-7 py-3 rounded-full font-bold text-sm transition-all"
             >
               Add Your Business →
             </Link>
@@ -310,14 +310,14 @@ function BusinessCard({ business: b }: { business: CollectionBusiness }) {
           </>
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="absolute top-3 right-3 w-20 h-20 bg-[#C9A84C]/10 rounded-full blur-2xl" />
+            <div className="absolute top-3 right-3 w-20 h-20 bg-[#C4782A]/10 rounded-full blur-2xl" />
             <span className="text-5xl opacity-30 select-none">📍</span>
           </div>
         )}
 
         {/* Featured badge overlaid on image */}
         {b.listingTier === "premium" && (
-          <span className="absolute top-3 left-3 text-[10px] font-black bg-[#C9A84C] text-[#1B2E4B] px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+          <span className="absolute top-3 left-3 text-[10px] font-black bg-[#C4782A] text-[#1B2E4B] px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
             ✦ Featured
           </span>
         )}
@@ -325,7 +325,7 @@ function BusinessCard({ business: b }: { business: CollectionBusiness }) {
 
       {/* Card body */}
       <div className="p-4 flex flex-col flex-1 gap-2">
-        <h2 className="font-display font-bold text-[#1B2E4B] text-base leading-snug group-hover:text-[#C9A84C] transition-colors line-clamp-2">
+        <h2 className="font-display font-bold text-[#1B2E4B] text-base leading-snug group-hover:text-[#C4782A] transition-colors line-clamp-2">
           {b.name}
         </h2>
 
@@ -356,7 +356,7 @@ function BusinessCard({ business: b }: { business: CollectionBusiness }) {
             {b.priceRange && (
               <span className="text-gray-400 text-xs font-semibold">{b.priceRange}</span>
             )}
-            <span className="text-xs font-bold text-[#C9A84C] group-hover:translate-x-0.5 transition-transform">
+            <span className="text-xs font-bold text-[#C4782A] group-hover:translate-x-0.5 transition-transform">
               View →
             </span>
           </div>

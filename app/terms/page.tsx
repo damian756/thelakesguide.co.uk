@@ -9,17 +9,17 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-[#FAF8F5]">
+    <div className="min-h-screen bg-[#EAEDE8]">
       {/* Header */}
       <section className="bg-[#1B2E4B]">
-        <div className="h-1 bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent" />
+        <div className="h-1 bg-gradient-to-r from-transparent via-[#C4782A] to-transparent" />
         <div className="container mx-auto px-4 py-14 max-w-3xl">
           <Link href="/" className="inline-flex items-center gap-1.5 text-white/60 hover:text-white text-sm mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to guide
           </Link>
           <div className="flex items-center gap-3 mb-4">
-            <FileText className="w-8 h-8 text-[#C9A84C]" />
-            <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest">Legal</p>
+            <FileText className="w-8 h-8 text-[#C4782A]" />
+            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest">Legal</p>
           </div>
           <h1 className="font-display text-4xl font-bold text-white mb-2">Terms &amp; Conditions</h1>
           <p className="text-white/50 text-sm">Last updated: 18 February 2026</p>
@@ -43,7 +43,7 @@ export default function TermsPage() {
               TheLakesGuide.co.uk is a visitor guide and local business directory for the Lake District, operated by <strong>Churchtown Media</strong>. The Site provides information about local businesses, events, and attractions for the benefit of visitors and residents.
             </p>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Contact: <a href="mailto:hello@churchtownmedia.co.uk" className="text-[#C9A84C] hover:underline">hello@churchtownmedia.co.uk</a>
+              Contact: <a href="mailto:hello@churchtownmedia.co.uk" className="text-[#C4782A] hover:underline">hello@churchtownmedia.co.uk</a>
             </p>
           </section>
 
@@ -59,7 +59,7 @@ export default function TermsPage() {
                 "Reproduce or republish Site content without attribution and our consent",
               ].map((item) => (
                 <li key={item} className="flex gap-3 text-sm text-gray-600">
-                  <span className="text-[#C9A84C] flex-none">→</span>
+                  <span className="text-[#C4782A] flex-none">→</span>
                   {item}
                 </li>
               ))}
@@ -98,7 +98,7 @@ export default function TermsPage() {
                     "Failure to pay will result in suspension and, after 14 days, removal of the enhanced listing",
                   ].map((item) => (
                     <li key={item} className="flex gap-3 text-sm text-gray-600">
-                      <span className="text-[#C9A84C] flex-none mt-0.5">•</span>
+                      <span className="text-[#C4782A] flex-none mt-0.5">•</span>
                       {item}
                     </li>
                   ))}
@@ -173,9 +173,9 @@ export default function TermsPage() {
 
         <div className="mt-8 text-center text-sm text-gray-400">
           Questions?{" "}
-          <Link href="/contact" className="text-[#C9A84C] hover:underline">Contact us</Link>
+          <Link href="/contact" className="text-[#C4782A] hover:underline">Contact us</Link>
           {" "}·{" "}
-          <Link href="/privacy" className="text-[#C9A84C] hover:underline">Privacy Policy</Link>
+          <Link href="/privacy" className="text-[#C4782A] hover:underline">Privacy Policy</Link>
         </div>
       </div>
     </div>

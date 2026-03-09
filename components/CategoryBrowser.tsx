@@ -265,14 +265,14 @@ export default function CategoryBrowser({
           {q ? (
             <>
               <p className="text-gray-500 text-lg mb-2">No results for &ldquo;{search}&rdquo;</p>
-              <button onClick={() => setSearch("")} className="text-[#C9A84C] font-semibold text-sm hover:underline">
+              <button onClick={() => setSearch("")} className="text-[#C4782A] font-semibold text-sm hover:underline">
                 Clear search
               </button>
             </>
           ) : activeArea ? (
             <>
               <p className="text-gray-500 text-lg mb-2">No listings in this area</p>
-              <Link href={`/${category}`} className="text-[#C9A84C] font-semibold text-sm hover:underline">
+              <Link href={`/${category}`} className="text-[#C4782A] font-semibold text-sm hover:underline">
                 Clear area filter
               </Link>
             </>
@@ -280,7 +280,7 @@ export default function CategoryBrowser({
             <>
               <p className="text-gray-500 text-lg mb-2">No listings yet</p>
               <p className="text-gray-400 text-sm mb-6">Be the first to list your business here.</p>
-              <Link href="/claim-listing" className="inline-block bg-[#C9A84C] text-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-[#B8972A] transition-colors">
+              <Link href="/claim-listing" className="inline-block bg-[#C4782A] text-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-[#B8972A] transition-colors">
                 Add Your Business
               </Link>
             </>
@@ -302,7 +302,7 @@ export default function CategoryBrowser({
                 href={`/${category}/${b.slug}`}
                 className={`group flex flex-col bg-white rounded-2xl overflow-hidden border transition-all hover:-translate-y-0.5 ${
                   isFeatured
-                    ? "border-[#C9A84C]/40 ring-1 ring-[#C9A84C]/15 shadow-md hover:shadow-lg"
+                    ? "border-[#C4782A]/40 ring-1 ring-[#C4782A]/15 shadow-md hover:shadow-lg"
                     : "border-gray-100 hover:border-gray-200 hover:shadow-md shadow-sm"
                 }`}
               >
@@ -329,12 +329,12 @@ export default function CategoryBrowser({
                   {(isFeatured || isBoosted) && (
                     <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
                       {isFeatured && (
-                        <span className="text-[10px] font-black bg-[#C9A84C] text-[#1B2E4B] px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                        <span className="text-[10px] font-black bg-[#C4782A] text-[#14231C] px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
                           ✦ Featured
                         </span>
                       )}
                       {isBoosted && !isFeatured && (
-                        <span className="text-[10px] font-semibold bg-white/90 text-[#1B2E4B] px-2.5 py-1 rounded-full shadow-sm">
+                        <span className="text-[10px] font-semibold bg-white/90 text-[#14231C] px-2.5 py-1 rounded-full shadow-sm">
                           Featured This Week
                         </span>
                       )}
@@ -343,7 +343,7 @@ export default function CategoryBrowser({
                 </div>
 
                 <div className="p-4 flex flex-col flex-1">
-                  <h2 className="font-display font-bold text-[#1B2E4B] text-base leading-snug group-hover:text-[#C9A84C] transition-colors mb-1 line-clamp-2">
+                  <h2 className="font-display font-bold text-[#14231C] text-base leading-snug group-hover:text-[#C4782A] transition-colors mb-1 line-clamp-2">
                     {b.name}
                   </h2>
 

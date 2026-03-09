@@ -17,13 +17,13 @@ type Props = {
 // ── Category config ──────────────────────────────────────────────────────────
 
 const THEMES: Record<string, { gradient: string; accent: string; emoji: string; tagline: string; heroPos: string }> = {
-  walks:        { gradient: "from-[#1A4020] to-[#2E6830]", accent: "#2C5F2E", emoji: "🥾", tagline: "Walks and hiking routes in the Lake District", heroPos: "center 20%" },
+  walks:        { gradient: "from-[#2A6B8A] to-[#245E3F]", accent: "#245E3F", emoji: "🥾", tagline: "Walks and hiking routes in the Lake District", heroPos: "center 20%" },
   villages:     { gradient: "from-[#2A3F5C] to-[#3A5070]", accent: "#3A4F6B", emoji: "🏘️", tagline: "Villages and towns in the Lake District", heroPos: "center" },
   restaurants:  { gradient: "from-[#8B2635] to-[#C94B3B]", accent: "#C94B3B", emoji: "🍽️", tagline: "The best places to eat in the Lake District", heroPos: "center 75%" },
   cafes:         { gradient: "from-[#6B3A1F] to-[#A06040]", accent: "#8B5E3C", emoji: "☕", tagline: "Great coffee, cafes and tea rooms", heroPos: "center 35%" },
   pubs:         { gradient: "from-[#3D1A5C] to-[#6B3AA0]", accent: "#5B2D8A", emoji: "🍺", tagline: "Pubs and inns in the Lake District", heroPos: "center 5%" },
   activities:   { gradient: "from-[#0D6E6E] to-[#0F9B8E]", accent: "#0D6E6E", emoji: "🏄", tagline: "Sport, leisure and outdoor activities", heroPos: "center" },
-  accommodation: { gradient: "from-[#1B2E4B] to-[#2A4A73]", accent: "#1B2E4B", emoji: "🏨", tagline: "Where to stay in the Lake District", heroPos: "center" },
+  accommodation: { gradient: "from-[#14231C] to-[#245E3F]", accent: "#245E3F", emoji: "🏨", tagline: "Where to stay in the Lake District", heroPos: "center" },
   shopping:     { gradient: "from-[#8B2847] to-[#C45C6A]", accent: "#C45C6A", emoji: "🛍️", tagline: "Shops, boutiques and markets", heroPos: "center" },
 };
 
@@ -293,7 +293,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
       {itemListLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
       )}
-    <div className="min-h-screen bg-[#FAF8F5]">
+    <div className="min-h-screen bg-[#EAEDE8]">
 
       {/* ── Hero ────────────────────────────────────────────────────────────── */}
       <div className={`relative overflow-hidden bg-gradient-to-br ${theme.gradient}`}>
@@ -334,7 +334,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
 
         <div className="relative h-8 overflow-hidden">
           <svg viewBox="0 0 1440 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none">
-            <path d="M0 32L360 16C720 0 1080 0 1440 16V32H0Z" fill="#FAF8F5" />
+            <path d="M0 32L360 16C720 0 1080 0 1440 16V32H0Z" fill="#EAEDE8" />
           </svg>
         </div>
       </div>
@@ -478,13 +478,13 @@ export default async function CategoryPage({ params, searchParams }: Props) {
             {/* ── Related Guides ──────────────────────────────────────────── */}
             {CATEGORY_GUIDES[category] && (
               <div className="mt-8 bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#C9A84C] mb-4">Related Guides</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#C4782A] mb-4">Related Guides</p>
                 <div className="flex flex-wrap gap-3">
                   {CATEGORY_GUIDES[category].map(({ href, label }) => (
                     <Link
                       key={href}
                       href={href}
-                      className="inline-flex items-center gap-1.5 bg-[#FAF8F5] hover:bg-[#1B2E4B] text-[#1B2E4B] hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-colors border border-gray-100 hover:border-[#1B2E4B]"
+                      className="inline-flex items-center gap-1.5 bg-[#EAEDE8] hover:bg-[#14231C] text-[#14231C] hover:text-white px-4 py-2 rounded-full text-sm font-semibold transition-colors border border-gray-100 hover:border-[#14231C]"
                     >
                       {label} →
                     </Link>
@@ -501,7 +501,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                 <p className="text-white/70 text-sm mb-6 max-w-sm mx-auto">
                   List for free and get discovered by thousands of visitors planning their Lake District trip.
                 </p>
-                <Link href="/claim-listing" className="inline-block bg-[#C9A84C] hover:bg-[#E8C87A] text-white px-7 py-3 rounded-full font-bold text-sm transition-all hover:shadow-lg">
+                <Link href="/claim-listing" className="inline-block bg-[#C4782A] hover:bg-[#E8B87A] text-white px-7 py-3 rounded-full font-bold text-sm transition-all hover:shadow-lg">
                   Add Your Business →
                 </Link>
               </div>
