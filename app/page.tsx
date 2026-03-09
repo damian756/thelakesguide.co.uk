@@ -95,8 +95,8 @@ export default async function Home() {
         publisher: { "@id": "https://www.thelakesguide.co.uk/#organization" },
         inLanguage: "en-GB",
         potentialAction: {
-          "@type": "SearchAction",
-          target: "https://www.thelakesguide.co.uk/restaurants",
+          "@type": "ReadAction",
+          target: "https://www.thelakesguide.co.uk/things-to-do",
         },
       },
       {
@@ -116,6 +116,17 @@ export default async function Home() {
           "https://thelakes.network",
           "https://www.linkedin.com/company/churchtownmedia",
           "https://churchtownmedia.co.uk",
+        ],
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.churchtownmedia.co.uk/about#founder",
+        name: "Damian Roche",
+        jobTitle: "Founder, Churchtown Media",
+        url: "https://www.churchtownmedia.co.uk/about",
+        sameAs: [
+          "https://www.linkedin.com/in/damian-roche-7ba8293a5/",
+          "https://find-and-update.company-information.service.gov.uk/company/16960442",
         ],
       },
     ],
