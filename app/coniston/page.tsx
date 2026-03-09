@@ -29,9 +29,25 @@ const faqs = [
   },
 ];
 
-const pageJsonLd = [
+const pageJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
   {
-    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "@id": url,
+    name: "Coniston",
+    description: "Coniston is a village at the foot of Coniston Old Man on the western shore of Coniston Water. Known for John Ruskin's Brantwood, the Swallows and Amazons legacy, and Donald Campbell's water speed record attempts.",
+    url,
+    geo: { "@type": "GeoCoordinates", latitude: 54.3693, longitude: -3.0723 },
+    address: { "@type": "PostalAddress", addressLocality: "Coniston", postalCode: "LA21 8EH", addressCountry: "GB" },
+    image: {
+      "@type": "ImageObject",
+      url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1400&q=80",
+      width: 1400,
+      height: 900,
+    },
+  },
+  {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
@@ -39,7 +55,6 @@ const pageJsonLd = [
     ],
   },
   {
-    "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faqs.map(({ q, a }) => ({
       "@type": "Question",
@@ -47,16 +62,8 @@ const pageJsonLd = [
       acceptedAnswer: { "@type": "Answer", text: a },
     })),
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    name: "Coniston",
-    description: "Coniston is a village at the foot of Coniston Old Man on the western shore of Coniston Water. Known for John Ruskin's Brantwood, the Swallows and Amazons legacy, and Donald Campbell's water speed record attempts.",
-    url,
-    geo: { "@type": "GeoCoordinates", latitude: 54.3693, longitude: -3.0723 },
-    address: { "@type": "PostalAddress", addressLocality: "Coniston", postalCode: "LA21 8EH", addressCountry: "GB" },
-  },
-];
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Coniston | Ruskin, Old Man & Complete Visitor Guide",

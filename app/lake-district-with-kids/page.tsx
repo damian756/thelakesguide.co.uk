@@ -29,23 +29,31 @@ const faqs = [
   },
 ];
 
-const pageJsonLd = [
+const pageJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
   {
-    "@context": "https://schema.org",
     "@type": "Article",
+    "@id": url + "#article",
     headline: "Lake District with Kids: Family Guide to Walks, Activities and Days Out",
     description:
       "Field-tested guide to the Lake District with children. Best family walks, indoor activities, lake boat trips, wildlife spotting, and practical advice for parents.",
     url,
-    author: {
-      "@type": "Person",
-      name: "Damian Roche",
-      url: BASE_URL,
-    },
-    publisher: { "@type": "Organization", name: "The Lakes Guide", url: BASE_URL },
+    mainEntityOfPage: url,
+    datePublished: "2024-06-01",
+    dateModified: "2025-03-01",
+    author: { "@id": "https://www.churchtownmedia.co.uk/about#founder" },
+    publisher: { "@id": `${BASE_URL}/#organization` },
   },
   {
-    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Guides", item: `${BASE_URL}/guides` },
+      { "@type": "ListItem", position: 3, name: "Lake District with Kids", item: url },
+    ],
+  },
+  {
     "@type": "FAQPage",
     mainEntity: faqs.map(({ q, a }) => ({
       "@type": "Question",
@@ -53,7 +61,8 @@ const pageJsonLd = [
       acceptedAnswer: { "@type": "Answer", text: a },
     })),
   },
-];
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Lake District with Kids | Family Walks, Activities and Days Out",

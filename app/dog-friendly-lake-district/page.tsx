@@ -29,23 +29,31 @@ const faqs = [
   },
 ];
 
-const pageJsonLd = [
+const pageJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
   {
-    "@context": "https://schema.org",
     "@type": "Article",
+    "@id": url + "#article",
     headline: "Dog-Friendly Lake District: Walks, Pubs, and Practical Advice",
     description:
       "Where to walk, stay, eat, and explore in the Lake District with your dog. Practical advice on dog-friendly fells, pubs, accommodation, and lake shores.",
     url,
-    author: {
-      "@type": "Person",
-      name: "Damian Roche",
-      url: BASE_URL,
-    },
-    publisher: { "@type": "Organization", name: "The Lakes Guide", url: BASE_URL },
+    mainEntityOfPage: url,
+    datePublished: "2024-06-01",
+    dateModified: "2025-03-01",
+    author: { "@id": "https://www.churchtownmedia.co.uk/about#founder" },
+    publisher: { "@id": `${BASE_URL}/#organization` },
   },
   {
-    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Guides", item: `${BASE_URL}/guides` },
+      { "@type": "ListItem", position: 3, name: "Dog-Friendly Lake District", item: url },
+    ],
+  },
+  {
     "@type": "FAQPage",
     mainEntity: faqs.map(({ q, a }) => ({
       "@type": "Question",
@@ -53,7 +61,8 @@ const pageJsonLd = [
       acceptedAnswer: { "@type": "Answer", text: a },
     })),
   },
-];
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Dog-Friendly Lake District | Walks, Pubs and Accommodation",

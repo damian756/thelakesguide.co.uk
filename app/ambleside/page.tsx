@@ -29,9 +29,25 @@ const faqs = [
   },
 ];
 
-const pageJsonLd = [
+const pageJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
   {
-    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "@id": url,
+    name: "Ambleside",
+    description: "Ambleside is the walking hub of the Lake District, a small market town at the northern tip of Windermere giving direct access to the central fells, Langdale, and Coniston.",
+    url,
+    geo: { "@type": "GeoCoordinates", latitude: 54.4298, longitude: -2.9622 },
+    address: { "@type": "PostalAddress", addressLocality: "Ambleside", postalCode: "LA22 0DB", addressCountry: "GB" },
+    image: {
+      "@type": "ImageObject",
+      url: "https://images.unsplash.com/photo-1546430498-f6b45e5b35ca?w=1400&q=80",
+      width: 1400,
+      height: 900,
+    },
+  },
+  {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
@@ -39,7 +55,6 @@ const pageJsonLd = [
     ],
   },
   {
-    "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faqs.map(({ q, a }) => ({
       "@type": "Question",
@@ -47,16 +62,8 @@ const pageJsonLd = [
       acceptedAnswer: { "@type": "Answer", text: a },
     })),
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    name: "Ambleside",
-    description: "Ambleside is the walking hub of the Lake District, a small market town at the northern tip of Windermere giving direct access to the central fells, Langdale, and Coniston.",
-    url,
-    geo: { "@type": "GeoCoordinates", latitude: 54.4298, longitude: -2.9622 },
-    address: { "@type": "PostalAddress", addressLocality: "Ambleside", postalCode: "LA22 0DB", addressCountry: "GB" },
-  },
-];
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Ambleside | Restaurants, Walks & Complete Visitor Guide",

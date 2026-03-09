@@ -5,6 +5,59 @@ import { HERO_IMAGE_URL } from "@/lib/site-constants";
 import type { Metadata } from "next";
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
+const url = `${BASE_URL}/the-open-2026`;
+
+const pageJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Event",
+      "@id": "https://www.theopen.com/#event-2026",
+      name: "The Open Championship 2026",
+      description: "The 155th Open Championship at Royal Birkdale Golf Club, Southport, 12–19 July 2026.",
+      startDate: "2026-07-12",
+      endDate: "2026-07-19",
+      eventStatus: "https://schema.org/EventScheduled",
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      location: {
+        "@type": "Place",
+        name: "Royal Birkdale Golf Club",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Waterloo Road",
+          addressLocality: "Southport",
+          postalCode: "PR8 2LX",
+          addressCountry: "GB",
+        },
+        geo: { "@type": "GeoCoordinates", latitude: 53.6289, longitude: -3.0414 },
+      },
+      organizer: {
+        "@type": "Organization",
+        name: "The R&A",
+        url: "https://www.theopen.com",
+      },
+    },
+    {
+      "@type": "Article",
+      "@id": url + "#article",
+      headline: "The Open 2026 and the Lake District",
+      description: "Lake District accommodation for visitors during The Open Championship 2026 at Royal Birkdale. Stay in Keswick, Windermere, or Ambleside.",
+      url,
+      mainEntityOfPage: url,
+      datePublished: "2025-01-01",
+      dateModified: "2025-03-01",
+      author: { "@id": "https://www.churchtownmedia.co.uk/about#founder" },
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+        { "@type": "ListItem", position: 2, name: "The Open 2026", item: url },
+      ],
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "The Open 2026 and the Lake District | Accommodation | The Lakes Guide",
@@ -20,6 +73,8 @@ export const metadata: Metadata = {
 
 export default function TheOpen2026Page() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
     <div className="min-h-screen bg-[#EAEDE8]">
       <div className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
         <div className="absolute inset-0">
@@ -81,5 +136,6 @@ export default function TheOpen2026Page() {
         </div>
       </div>
     </div>
+    </>
   );
 }

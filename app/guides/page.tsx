@@ -5,23 +5,57 @@ import type { Metadata } from "next";
 import { GUIDES, GUIDE_CATEGORIES, type GuideCategory } from "@/lib/guides-config";
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
+const url = `${BASE_URL}/guides`;
 
 export const metadata: Metadata = {
   title: "Lake District Guides | The Lakes Guide",
   description:
     "Editorial guides to the Lake District. Villages, walks, practical info, and where to eat. Written by people who know the Lakes.",
-  alternates: { canonical: `${BASE_URL}/guides` },
+  alternates: { canonical: url },
   openGraph: {
     title: "Lake District Guides | The Lakes Guide",
     description: "Editorial guides to the Lake District. Villages, walks, practical info, and where to eat.",
-    url: `${BASE_URL}/guides`,
+    url,
   },
+};
+
+const pageJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": url,
+      name: "Lake District Guides",
+      description: "Editorial guides to the Lake District. Villages, walks, practical info, and where to eat.",
+      url,
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+        { "@type": "ListItem", position: 2, name: "Guides", item: url },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      name: "Lake District Guides",
+      itemListElement: GUIDES.filter((g) => g.status !== "coming-soon").map((g, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${BASE_URL}${g.canonicalPath ?? `/guides/${g.slug}`}`,
+        name: g.title,
+      })),
+    },
+  ],
 };
 
 const CATEGORY_ORDER: GuideCategory[] = ["walks-fells", "areas", "practical", "food-drink"];
 
 export default function GuidesIndexPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
     <div className="min-h-screen bg-[#EAEDE8]">
       <div className="bg-[#14231C] text-white py-16 px-4">
         <div className="container mx-auto max-w-4xl">
@@ -102,5 +136,6 @@ export default function GuidesIndexPage() {
         })}
       </div>
     </div>
+    </>
   );
 }
