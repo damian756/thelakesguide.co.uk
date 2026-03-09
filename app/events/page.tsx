@@ -172,8 +172,8 @@ export default async function EventsPage({
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventsJsonLd) }} />
     <div className="min-h-screen bg-[#FAF8F5]">
-      {/* Hero */}
-      <section className="relative bg-[#14231C] overflow-hidden">
+      {/* Hero — walks-style */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
         <div className="absolute inset-0">
           <Image
             src={HERO_IMAGE_URL}
@@ -181,15 +181,17 @@ export default async function EventsPage({
             fill
             priority
             sizes="100vw"
-            quality={70}
-            className="object-cover object-center opacity-30"
+            quality={80}
+            className="object-cover"
+            style={{ objectPosition: "center 20%" }}
           />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
         </div>
-        <div className="h-1 bg-gradient-to-r from-transparent via-[#C4782A] to-transparent relative z-10" />
-        <div className="relative z-10 container mx-auto px-4 py-14 md:py-20 max-w-5xl">
+        <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 text-white/60 hover:text-white text-sm mb-6 transition-colors"
+            className="inline-flex items-center gap-1.5 text-white/50 hover:text-white text-sm mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" /> Back to guide
           </Link>
@@ -197,13 +199,18 @@ export default async function EventsPage({
             <CalendarDays className="w-8 h-8 text-[#C4782A]" />
             <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest">Updated weekly</p>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
             What&apos;s On in the Lake District<br />
             <span className="text-[#C4782A]">2026 Events Calendar</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-xl">
+          <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-xl">
             {upcomingCount} upcoming events across the year — from free community events to festivals and races. Updated regularly.
           </p>
+        </div>
+        <div className="relative h-8 overflow-hidden">
+          <svg viewBox="0 0 1440 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none">
+            <path d="M0 32L360 16C720 0 1080 0 1440 16V32H0Z" fill="#FAF8F5" />
+          </svg>
         </div>
       </section>
 

@@ -15,34 +15,38 @@ export const metadata = {
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-[#EAEDE8]">
-      {/* ── Hero ───────────────────────────────────────────────────── */}
-      <section className="relative h-64 md:h-80 bg-[#1B2E4B] overflow-hidden">
-        <Image
-          src={HERO_IMAGE_URL}
-          alt="Lake District landscape"
-          fill
-          priority
-          sizes="100vw"
-          quality={80}
-          className="object-cover"
-          style={{ objectPosition: "center 55%" }}
-        />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1B2E4B]/50 via-[#1B2E4B]/30 to-[#1B2E4B]/80" />
-
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <div className="flex items-center gap-2 text-[#C4782A] mb-3">
+      {/* ── Hero — walks-style ─────────────────────────────────────── */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
+        <div className="absolute inset-0">
+          <Image
+            src={HERO_IMAGE_URL}
+            alt="Lake District landscape"
+            fill
+            priority
+            sizes="100vw"
+            quality={80}
+            className="object-cover"
+            style={{ objectPosition: "center 55%" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+        </div>
+        <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28 text-center">
+          <div className="flex items-center justify-center gap-2 text-[#C4782A] mb-3">
             <Newspaper className="w-5 h-5" />
             <span className="text-sm font-semibold tracking-widest uppercase">The Lakes Guide Blog</span>
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-3">
-            Local guides, tips &amp;&nbsp;
-            <br className="hidden sm:block" />
-            Lake District stories.
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+            Local guides, tips &amp; Lake District stories.
           </h1>
-          <p className="text-white/70 text-sm md:text-base max-w-md">
+          <p className="text-white/80 text-lg lg:text-xl max-w-md mx-auto drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)]">
             Written by someone who has walked the fells for decades. From the best restaurants to walks, villages, and practical local knowledge.
           </p>
+        </div>
+        <div className="relative h-8 overflow-hidden">
+          <svg viewBox="0 0 1440 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none">
+            <path d="M0 32L360 16C720 0 1080 0 1440 16V32H0Z" fill="#EAEDE8" />
+          </svg>
         </div>
       </section>
 

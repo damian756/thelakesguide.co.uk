@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Star, Utensils, Hotel, Beer, Coffee, MapPin, ShoppingBag, Dumbbell, ArrowRight, Music, CalendarDays, Newspaper } from "lucide-react";
 import { prisma } from "@/lib/prisma";
+import { HERO_IMAGE_URL } from "@/lib/site-constants";
 import { BLOG_POSTS, getBlogPostCategory, getUpcomingEvents } from "@/lib/lakes-data";
 import type { Metadata } from "next";
 
@@ -126,94 +127,80 @@ export default async function Home() {
     <div className="min-h-screen flex flex-col">
 
       {/* ══════════════════════════════════════════════════════
-          HERO — SPLIT LAYOUT
+          HERO — Walks-style full-bleed
       ══════════════════════════════════════════════════════ */}
-      <section className="bg-[#14231C] overflow-hidden">
-        {/* Bracken top accent */}
-        <div className="h-1 bg-gradient-to-r from-transparent via-[#C4782A] to-transparent" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
+        <div className="absolute inset-0">
+          <Image
+            src={HERO_IMAGE_URL}
+            alt="Lake District landscape"
+            fill
+            sizes="100vw"
+            quality={80}
+            className="object-cover"
+            style={{ objectPosition: "center 20%" }}
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+        </div>
 
-        <div className="flex flex-col md:flex-row md:min-h-[560px]">
-
-          {/* LEFT: Pier image — full colour, no heavy overlay */}
-          <div className="relative w-full h-60 sm:h-72 md:h-auto md:flex-none md:w-[58%] overflow-hidden">
-            <Image
-              src="/og-default.png"
-              alt="Lake District landscape"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 58vw"
-              quality={85}
-              className="object-cover object-center"
-            />
-            {/* Desktop: right-edge fade into the dark panel */}
-            <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#14231C]" />
-            {/* Mobile: bottom fade */}
-            <div className="md:hidden absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#14231C]" />
+        <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
+          <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full border border-emerald-400/25 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse inline-block" />
+            Updated Daily
           </div>
 
-          {/* RIGHT: Live pulse panel */}
-          <div className="flex-1 flex flex-col justify-center px-6 py-10 md:px-10 md:py-12">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+            Your Local Guide <span className="text-[#C4782A]">to the Lake District.</span>
+          </h1>
+          <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-xl mb-7">
+            Events, restaurants, <Link href="/things-to-do" className="text-white hover:text-[#C4782A] underline underline-offset-2 transition-colors">things to do</Link> — updated regularly by people who live here.
+          </p>
 
-            {/* Updated Daily badge */}
-            <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full border border-emerald-400/25 mb-5 self-start">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse inline-block" />
-              Updated Daily
-            </div>
-
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 leading-tight tracking-tight">
-              Your Local Guide<br />
-              <span className="text-[#C4782A]">to the Lake District.</span>
-            </h1>
-
-            <p className="text-white/60 text-sm md:text-base mb-7 leading-relaxed max-w-sm">
-              Events, restaurants, <Link href="/things-to-do" className="text-white/80 hover:text-[#C4782A] underline underline-offset-2 transition-colors">things to do</Link> — updated regularly by people who live here.
-            </p>
-
-            {/* Next 2 upcoming events */}
-            <div className="mb-6 w-full max-w-xs">
-              <p className="text-white/35 text-[10px] uppercase tracking-widest mb-2">Coming up</p>
-              <div className="space-y-2">
-                {upcomingEvents.slice(0, 2).map((event, i) => (
-                  <a
-                    key={i}
-                    href={event.link}
-                    target={event.link.startsWith("http") ? "_blank" : undefined}
-                    rel={event.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="flex items-center gap-3 bg-white/5 hover:bg-white/10 rounded-xl px-3 py-2.5 transition-colors group"
-                  >
-                    <span className="text-lg flex-none">{event.emoji}</span>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-white text-sm font-semibold truncate group-hover:text-[#C4782A] transition-colors">{event.title}</p>
-                      <p className="text-white/40 text-xs">{formatEventLabel(event)} · {event.venue}</p>
-                    </div>
-                    <ArrowRight className="w-3.5 h-3.5 text-white/25 group-hover:text-[#C4782A] flex-none transition-colors" />
-                  </a>
-                ))}
-              </div>
-              <Link href="/events" className="text-xs text-white/35 hover:text-[#C4782A] transition-colors mt-2 inline-block">
-                View full 2026 calendar →
-              </Link>
-            </div>
-
-            {/* Category pills */}
-            <div className="flex flex-wrap gap-2">
-              {CATEGORIES.slice(0, 6).map((cat) => (
-                <Link
-                  key={cat.slug}
-                  href={`/${cat.slug}`}
-                  className="flex items-center gap-1.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white/70 hover:text-white text-xs px-3 py-1.5 rounded-full transition-all"
+          {/* Next 2 upcoming events */}
+          <div className="mb-6 w-full max-w-xs">
+            <p className="text-white/50 text-[10px] uppercase tracking-widest mb-2">Coming up</p>
+            <div className="space-y-2">
+              {upcomingEvents.slice(0, 2).map((event, i) => (
+                <a
+                  key={i}
+                  href={event.link}
+                  target={event.link.startsWith("http") ? "_blank" : undefined}
+                  rel={event.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="flex items-center gap-3 bg-white/5 hover:bg-white/10 rounded-xl px-3 py-2.5 transition-colors group"
                 >
-                  <span>{cat.emoji}</span> {cat.label}
-                </Link>
+                  <span className="text-lg flex-none">{event.emoji}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-white text-sm font-semibold truncate group-hover:text-[#C4782A] transition-colors">{event.title}</p>
+                    <p className="text-white/40 text-xs">{formatEventLabel(event)} · {event.venue}</p>
+                  </div>
+                  <ArrowRight className="w-3.5 h-3.5 text-white/25 group-hover:text-[#C4782A] flex-none transition-colors" />
+                </a>
               ))}
             </div>
+            <Link href="/events" className="text-xs text-white/50 hover:text-[#C4782A] transition-colors mt-2 inline-block">
+              View full 2026 calendar →
+            </Link>
+          </div>
+
+          {/* Category pills */}
+          <div className="flex flex-wrap gap-2">
+            {CATEGORIES.slice(0, 6).map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/${cat.slug}`}
+                className="flex items-center gap-1.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white/70 hover:text-white text-xs px-3 py-1.5 rounded-full transition-all"
+              >
+                <span>{cat.emoji}</span> {cat.label}
+              </Link>
+            ))}
           </div>
         </div>
 
-        {/* Wave divider */}
-        <div className="h-10 overflow-hidden relative">
-          <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none">
-            <path d="M0 40L60 35C120 30 240 20 360 15C480 10 600 10 720 15C840 20 960 30 1080 32C1200 33 1320 25 1380 21L1440 17V40H0Z" fill="#EAEDE8"/>
+        <div className="relative h-8 overflow-hidden">
+          <svg viewBox="0 0 1440 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none">
+            <path d="M0 32L360 16C720 0 1080 0 1440 16V32H0Z" fill="#EAEDE8" />
           </svg>
         </div>
       </section>

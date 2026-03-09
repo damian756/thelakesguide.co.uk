@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { HERO_IMAGE_URL } from "@/lib/site-constants";
 import { COLLECTIONS, MIN_LISTINGS } from "@/lib/collections-config";
 import { prisma } from "@/lib/prisma";
@@ -67,29 +67,31 @@ export default async function CollectionsIndexPage() {
 
       <div className="min-h-screen bg-[#EAEDE8]">
 
-        {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <div className="relative bg-[#1B2E4B] text-white py-14 px-4 overflow-hidden">
+        {/* ── Hero — walks-style ───────────────────────────────────────── */}
+        <div className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
           <div className="absolute inset-0">
-            <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={70} className="object-cover object-center opacity-30" />
+            <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={80} className="object-cover" style={{ objectPosition: "center 20%" }} />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
           </div>
-          <div className="relative z-10 container mx-auto max-w-4xl">
-            <nav className="flex items-center gap-1.5 text-white/40 text-xs mb-6">
-              <Link href="/" className="hover:text-white/70 transition-colors">Home</Link>
-              <span className="text-white/20">›</span>
-              <span className="text-white/70">Collections</span>
+          <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
+            <nav className="flex items-center gap-1.5 text-white/50 text-sm mb-6">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <ChevronRight className="w-3.5 h-3.5" />
+              <span className="text-white font-medium">Collections</span>
             </nav>
             <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">The Lakes Guide</p>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
               Lake District Collections
             </h1>
-            <p className="text-white/70 text-lg leading-relaxed max-w-2xl">
+            <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-2xl">
               Filtered lists of Lake District businesses. Dog-friendly, family-friendly, lakeside, and more.
               No aggregator ranking. Just what&apos;s actually there, with a bit of honest context.
             </p>
           </div>
-          <div className="relative z-10 h-6 overflow-hidden mt-6">
-            <svg viewBox="0 0 1440 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" preserveAspectRatio="none">
-              <path d="M0 24L360 12C720 0 1080 0 1440 12V24H0Z" fill="#EAEDE8" />
+          <div className="relative h-8 overflow-hidden">
+            <svg viewBox="0 0 1440 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none">
+              <path d="M0 32L360 16C720 0 1080 0 1440 16V32H0Z" fill="#EAEDE8" />
             </svg>
           </div>
         </div>

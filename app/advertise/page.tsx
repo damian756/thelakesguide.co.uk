@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BarChart2, Star, Calendar, TrendingUp } from "lucide-react";
+import { HERO_IMAGE_URL } from "@/lib/site-constants";
 
 export const metadata = {
   title: "Advertise With Us | The Lakes Guide",
@@ -10,20 +12,33 @@ export const metadata = {
 export default function AdvertisePage() {
   return (
     <div className="min-h-screen bg-[#EAEDE8]">
-      <div className="bg-[#14231C] text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Advertise with The Lakes Guide</h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+      {/* Hero — walks-style */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
+        <div className="absolute inset-0">
+          <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={80} className="object-cover" style={{ objectPosition: "center 20%" }} />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+        </div>
+        <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+            Advertise with The Lakes Guide
+          </h1>
+          <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-2xl mb-8">
             Get in front of visitors searching for restaurants, accommodation, and things to do in the Lake District.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center mt-8">
-            <Link href="/pricing" className="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
+          <div className="flex flex-wrap gap-4">
+            <Link href="/pricing" className="bg-white text-[#14231C] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               View pricing
             </Link>
-            <Link href="/claim-listing" className="bg-[#245E3F] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#2A6B8A] border-2 border-white">
+            <Link href="/claim-listing" className="bg-[#245E3F] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#2A6B8A] border-2 border-white transition-colors">
               Claim free listing
             </Link>
           </div>
+        </div>
+        <div className="relative h-8 overflow-hidden">
+          <svg viewBox="0 0 1440 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none">
+            <path d="M0 32L360 16C720 0 1080 0 1440 16V32H0Z" fill="#EAEDE8" />
+          </svg>
         </div>
       </div>
       <div className="container mx-auto px-4 py-16">

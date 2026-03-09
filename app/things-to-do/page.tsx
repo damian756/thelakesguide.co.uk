@@ -439,54 +439,57 @@ export default function ThingsToDoPage() {
 
       <div className="min-h-screen bg-[#EAEDE8]">
 
-        {/* Hero */}
-        <div className="relative min-h-[80vh] flex items-end bg-[#14231C] text-white overflow-hidden">
+        {/* Hero — walks-style */}
+        <div className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
           <div className="absolute inset-0">
             <Image
               src={HERO_IMAGE_URL}
               alt="Lake District fells and landscape"
               fill
               sizes="100vw"
-              quality={90}
+              quality={80}
               className="object-cover"
               style={{ objectPosition: "center 40%" }}
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#14231C] via-[#14231C]/60 to-[#14231C]/20" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#14231C]/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
           </div>
 
-          <div className="relative container mx-auto px-4 pb-16 pt-32 max-w-7xl">
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-3 mb-5">
-                <span className="bg-[#C4782A] text-[#14231C] text-xs font-black px-3 py-1 rounded-full uppercase tracking-widest">
-                  The Complete Guide
-                </span>
-                <span className="text-white/50 text-sm font-medium">TheLakesGuide.co.uk</span>
-              </div>
-              <h1 className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-5">
-                Things to Do in the
-                <span className="block text-[#C4782A]">Lake District</span>
-              </h1>
-              <p className="text-white/75 text-xl max-w-2xl mb-8 leading-relaxed">
-                Most people come for the walking. The fells, the lakes, the views. But there&apos;s more. Wildlife at Haweswater.
-                Steamers on Windermere. Beatrix Potter and Wordsworth. This is the guide the tourism boards don&apos;t write.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href="#lakes"
-                  className="bg-[#C4782A] hover:bg-[#E8B87A] text-[#14231C] px-7 py-3.5 rounded-full font-bold text-sm transition-colors"
-                >
-                  Explore the Guide
-                </a>
-                <Link
-                  href="/events"
-                  className="bg-white/10 border border-white/25 text-white px-7 py-3.5 rounded-full font-semibold text-sm transition-colors hover:bg-white/20"
-                >
-                  Events →
-                </Link>
-              </div>
+          <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="bg-[#C4782A] text-[#14231C] text-xs font-black px-3 py-1 rounded-full uppercase tracking-widest">
+                The Complete Guide
+              </span>
+              <span className="text-white/50 text-sm font-medium">TheLakesGuide.co.uk</span>
             </div>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+              Things to Do in the <span className="text-[#C4782A]">Lake District</span>
+            </h1>
+            <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-2xl mb-8">
+              Most people come for the walking. The fells, the lakes, the views. But there&apos;s more. Wildlife at Haweswater.
+              Steamers on Windermere. Beatrix Potter and Wordsworth. This is the guide the tourism boards don&apos;t write.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="#lakes"
+                className="bg-[#C4782A] hover:bg-[#E8B87A] text-[#14231C] px-7 py-3.5 rounded-full font-bold text-sm transition-colors"
+              >
+                Explore the Guide
+              </a>
+              <Link
+                href="/events"
+                className="bg-white/10 border border-white/25 text-white px-7 py-3.5 rounded-full font-semibold text-sm transition-colors hover:bg-white/20"
+              >
+                Events →
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative h-8 overflow-hidden">
+            <svg viewBox="0 0 1440 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none">
+              <path d="M0 32L360 16C720 0 1080 0 1440 16V32H0Z" fill="#14231C" />
+            </svg>
           </div>
         </div>
 
