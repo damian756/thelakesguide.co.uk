@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { ChevronRight } from "lucide-react";
 import { getCategoryBySlug, isValidCategory } from "@/lib/config";
+import { HERO_IMAGE_URL } from "@/lib/site-constants";
 import { prisma } from "@/lib/prisma";
 import CategoryBrowser, { type BrowserBusiness } from "@/components/CategoryBrowser";
 import type { MapPin as MapPinType } from "@/components/CategoryMapTypes";
@@ -298,7 +299,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
       <div className={`relative overflow-hidden bg-gradient-to-br ${theme.gradient}`}>
         <div className="absolute inset-0">
           <Image
-            src={`/images/categories/${category}.webp`}
+            src={HERO_IMAGE_URL}
             alt="" fill sizes="100vw" quality={80}
             className="object-cover"
             style={{ objectPosition: theme.heroPos }}

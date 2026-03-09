@@ -19,6 +19,7 @@ import {
   Mountain,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { HERO_IMAGE_URL } from "@/lib/site-constants";
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
 
@@ -442,7 +443,7 @@ export default function ThingsToDoPage() {
         <div className="relative min-h-[80vh] flex items-end bg-[#1B2E4B] text-white overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85"
+              src={HERO_IMAGE_URL}
               alt="Lake District fells and landscape"
               fill
               sizes="100vw"

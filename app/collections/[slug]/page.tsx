@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { ChevronRight, Star, MapPin, ArrowRight } from "lucide-react";
+import { HERO_IMAGE_URL } from "@/lib/site-constants";
 import { getCollection, COLLECTIONS, MIN_LISTINGS } from "@/lib/collections-config";
 import { prisma } from "@/lib/prisma";
 
@@ -176,8 +178,11 @@ export default async function CollectionPage({ params }: Props) {
       <div className="min-h-screen bg-[#FAF8F5]">
 
         {/* ── Hero ─────────────────────────────────────────────────────────── */}
-        <div className="bg-[#1B2E4B] text-white">
-          <div className="container mx-auto px-4 max-w-6xl py-12 md:py-16">
+        <div className="relative bg-[#1B2E4B] text-white overflow-hidden">
+          <div className="absolute inset-0">
+            <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={70} className="object-cover object-center opacity-30" />
+          </div>
+          <div className="relative z-10 container mx-auto px-4 max-w-6xl py-12 md:py-16">
             <nav className="flex items-center gap-1.5 text-white/40 text-xs mb-6">
               <Link href="/" className="hover:text-white/70 transition-colors">Home</Link>
               <ChevronRight className="w-3 h-3" />
@@ -205,7 +210,7 @@ export default async function CollectionPage({ params }: Props) {
             </div>
           </div>
 
-          <div className="h-6 overflow-hidden">
+          <div className="relative z-10 h-6 overflow-hidden">
             <svg viewBox="0 0 1440 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" preserveAspectRatio="none">
               <path d="M0 24L360 12C720 0 1080 0 1440 12V24H0Z" fill="#FAF8F5" />
             </svg>

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import { HERO_IMAGE_URL } from "@/lib/site-constants";
 import Link from "next/link";
 import {
   Search,
@@ -110,11 +112,14 @@ export default function ClaimListingClient() {
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
       <div className="bg-[#1B2E4B] relative overflow-hidden">
-        <div className="h-1 bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent" />
+        <div className="absolute inset-0">
+          <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={70} className="object-cover object-center opacity-30" />
+        </div>
+        <div className="h-1 bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent relative z-10" />
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#C9A84C]/8 rounded-full -translate-y-16 translate-x-16 blur-3xl" />
         </div>
-        <div className="relative container mx-auto px-4 max-w-5xl py-12">
+        <div className="relative z-10 container mx-auto px-4 max-w-5xl py-12">
           <h1 className="font-display text-4xl font-bold text-white mb-2">
             Claim Your Listing
           </h1>
@@ -123,7 +128,7 @@ export default function ClaimListingClient() {
             visibility.
           </p>
         </div>
-        <div className="relative h-6 overflow-hidden">
+        <div className="relative z-10 h-6 overflow-hidden">
           <svg
             viewBox="0 0 1440 24"
             fill="none"

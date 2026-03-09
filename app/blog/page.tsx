@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HERO_IMAGE_URL } from "@/lib/site-constants";
 import { Suspense } from "react";
 import { Newspaper } from "lucide-react";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/lakes-data";
@@ -17,7 +18,7 @@ export default function BlogPage() {
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="relative h-64 md:h-80 bg-[#1B2E4B] overflow-hidden">
         <Image
-          src="/images/blog-hero.jpg"
+          src={HERO_IMAGE_URL}
           alt="Lake District landscape"
           fill
           priority

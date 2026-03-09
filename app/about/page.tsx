@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { HERO_IMAGE_URL } from "@/lib/site-constants";
 
 export const metadata = {
   title: "About The Lakes Guide | Your Independent Visitor Guide to the Lake District",
@@ -61,8 +62,11 @@ export default function AboutPage() {
 
       <div className="min-h-screen bg-gray-50">
         {/* Hero */}
-        <div className="bg-[#1B2E4B] text-white py-16 px-4">
-          <div className="container mx-auto max-w-3xl">
+        <div className="relative bg-[#1B2E4B] text-white py-16 px-4 overflow-hidden">
+          <div className="absolute inset-0">
+            <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={70} className="object-cover object-center opacity-30" />
+          </div>
+          <div className="relative z-10 container mx-auto max-w-3xl">
             <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-3">
               About this site
             </p>

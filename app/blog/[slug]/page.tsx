@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Clock, User } from "lucide-react";
+import HeroImageWithFallback from "../HeroImageWithFallback";
 import { BLOG_POSTS, getBlogPostCategory } from "@/lib/lakes-data";
 import { BLOG_CONTENT, ContentBlock } from "@/lib/blog-content";
 import { notFound } from "next/navigation";
@@ -280,7 +281,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero image */}
       <div className="relative h-72 md:h-[26rem] bg-[#1B2E4B]">
-        <Image
+        <HeroImageWithFallback
           src={post.image}
           alt={post.title}
           fill

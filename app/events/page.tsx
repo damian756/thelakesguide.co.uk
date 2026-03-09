@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CalendarDays, ArrowLeft, ExternalLink } from "lucide-react";
+import { HERO_IMAGE_URL } from "@/lib/site-constants";
 import { getEventsByMonth } from "@/lib/lakes-data";
 import { prisma } from "@/lib/prisma";
 import { Suspense } from "react";
@@ -175,7 +176,7 @@ export default async function EventsPage({
       <section className="relative bg-[#1B2E4B] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80"
+            src={HERO_IMAGE_URL}
             alt="Lake District"
             fill
             priority

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import { HERO_IMAGE_URL } from "@/lib/site-constants";
 import Link from "next/link";
 import { Send, CheckCircle, AlertCircle, MapPin, Clock } from "lucide-react";
 
@@ -42,15 +44,18 @@ export default function ContactClient() {
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
       <div className="bg-[#1B2E4B] relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={70} className="object-cover object-center opacity-30" />
+        </div>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#C9A84C]/8 rounded-full -translate-y-16 translate-x-16 blur-3xl" />
         </div>
-        <div className="h-1 bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent" />
-        <div className="relative container mx-auto px-4 max-w-5xl py-12">
+        <div className="h-1 bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent relative z-10" />
+        <div className="relative z-10 container mx-auto px-4 max-w-5xl py-12">
           <h1 className="font-display text-4xl font-bold text-white mb-2">Get in Touch</h1>
           <p className="text-white/60">List your business, advertise, or just say hello.</p>
         </div>
-        <div className="relative h-6 overflow-hidden">
+        <div className="relative z-10 h-6 overflow-hidden">
           <svg viewBox="0 0 1440 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none">
             <path d="M0 24L720 8L1440 24V24H0Z" fill="#FAF8F5"/>
           </svg>

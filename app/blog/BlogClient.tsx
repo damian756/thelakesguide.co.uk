@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Search, X } from "lucide-react";
 import type { BlogPost, BlogCategory } from "@/lib/lakes-data";
+import { HERO_IMAGE_URL } from "@/lib/site-constants";
 import { getBlogPostCategory } from "@/lib/lakes-data";
 
 function PostImage({ src, alt, sizes, quality, className }: {
@@ -20,7 +21,7 @@ function PostImage({ src, alt, sizes, quality, className }: {
       sizes={sizes}
       quality={quality}
       className={className}
-      onError={() => setImgSrc("/images/blog-hero.jpg")}
+      onError={() => setImgSrc(HERO_IMAGE_URL)}
     />
   );
 }
