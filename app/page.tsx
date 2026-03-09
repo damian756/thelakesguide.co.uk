@@ -22,14 +22,14 @@ export const metadata: Metadata = {
 
 // ── Category configuration ────────────────────────────────────────────────
 const CATEGORIES = [
-  { slug: "walks",         label: "Walks & Hiking",   icon: MapPin,      emoji: "🥾", gradient: "from-[#1A5C5B] to-[#2E8B7A]",  light: "#E8F5F3" },
-  { slug: "villages",      label: "Villages",         icon: MapPin,      emoji: "🏘️", gradient: "from-[#1A5C7A] to-[#1E8AB0]",  light: "#E8F4FA" },
-  { slug: "restaurants",   label: "Restaurants",      icon: Utensils,    emoji: "🍽️", gradient: "from-[#8B2635] to-[#C94B3B]",  light: "#FDF0EE" },
-  { slug: "cafes",         label: "Cafes",           icon: Coffee,      emoji: "☕", gradient: "from-[#6B3A1F] to-[#A06040]",  light: "#FAF0E8" },
-  { slug: "pubs",          label: "Pubs & Inns",     icon: Beer,        emoji: "🍺", gradient: "from-[#3D1A5C] to-[#6B3AA0]",  light: "#F3EEF9" },
-  { slug: "activities",    label: "Activities",      icon: Dumbbell,    emoji: "🏄", gradient: "from-[#0D6E6E] to-[#0F9B8E]",  light: "#E6F5F5" },
-  { slug: "accommodation", label: "Places to Stay",   icon: Hotel,       emoji: "🏨", gradient: "from-[#14231C] to-[#245E3F]",  light: "#E8EDE8" },
-  { slug: "shopping",      label: "Shopping",         icon: ShoppingBag, emoji: "🛍️", gradient: "from-[#8B2847] to-[#C45C6A]",  light: "#FAE8EC" },
+  { slug: "walks",         label: "Walks & Hiking",   icon: MapPin,      emoji: "🥾", gradient: "from-[#1A5C5B] to-[#2E8B7A]",  light: "#E8F5F3", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" },
+  { slug: "villages",      label: "Villages",         icon: MapPin,      emoji: "🏘️", gradient: "from-[#1A5C7A] to-[#1E8AB0]",  light: "#E8F4FA", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" },
+  { slug: "restaurants",   label: "Restaurants",      icon: Utensils,    emoji: "🍽️", gradient: "from-[#8B2635] to-[#C94B3B]",  light: "#FDF0EE", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" },
+  { slug: "cafes",         label: "Cafes",            icon: Coffee,      emoji: "☕", gradient: "from-[#6B3A1F] to-[#A06040]",  light: "#FAF0E8", image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" },
+  { slug: "pubs",          label: "Pubs & Inns",      icon: Beer,        emoji: "🍺", gradient: "from-[#3D1A5C] to-[#6B3AA0]",  light: "#F3EEF9", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" },
+  { slug: "activities",    label: "Activities",       icon: Dumbbell,    emoji: "🏄", gradient: "from-[#0D6E6E] to-[#0F9B8E]",  light: "#E6F5F5", image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" },
+  { slug: "accommodation", label: "Places to Stay",   icon: Hotel,       emoji: "🏨", gradient: "from-[#14231C] to-[#245E3F]",  light: "#E8EDE8", image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&q=80" },
+  { slug: "shopping",      label: "Shopping",         icon: ShoppingBag, emoji: "🛍️", gradient: "from-[#8B2847] to-[#C45C6A]",  light: "#FAE8EC", image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&q=80" },
 ];
 
 function getArea(address: string): string {
@@ -462,7 +462,7 @@ export default async function Home() {
                   className="group relative overflow-hidden rounded-2xl card-hover min-h-[120px] sm:min-h-[140px]"
                 >
                   <Image
-                    src={`/images/categories/${cat.slug}.webp`}
+                    src={cat.image}
                     alt=""
                     fill
                     sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
