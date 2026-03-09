@@ -7,7 +7,7 @@ import { prisma } from "@/lib/prisma";
 
 const BOOST_TYPES: Record<string, { pricePence: number; label: string }> = {
   standard: { pricePence: 1500, label: "Standard 7 days" },
-  weekend: { pricePence: 1000, label: "Weekend (Fri–Sun)" },
+  weekend: { pricePence: 1000, label: "Weekend (Fri/Sun)" },
   flower_show: { pricePence: 4900, label: "Flower Show Weekend" },
   air_show: { pricePence: 4900, label: "Air Show Weekend" },
   bank_holiday: { pricePence: 3500, label: "Bank Holiday Weekend" },
@@ -95,7 +95,7 @@ export async function POST(request: Request) {
 
   const baseUrl =
     process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
-  const productName = `SouthportGuide Boost — ${label?.trim() || config.label}`;
+  const productName = `Lakes Guide Boost | ${label?.trim() || config.label}`;
 
   const checkoutSession = await getStripe().checkout.sessions.create({
     mode: "payment",

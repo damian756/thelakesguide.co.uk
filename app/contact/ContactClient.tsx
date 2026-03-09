@@ -45,7 +45,7 @@ export default function ContactClient() {
       {/* Hero — walks-style */}
       <div className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
         <div className="absolute inset-0">
-          <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={80} className="object-cover" style={{ objectPosition: "center 20%" }} />
+          <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={80} className="object-cover" style={{ objectPosition: "center 20%" }} priority />
           <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
         </div>
@@ -83,7 +83,7 @@ export default function ContactClient() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Response time</p>
-                    <p className="text-[#14231C] text-sm font-medium">1–2 business days</p>
+                    <p className="text-[#14231C] text-sm font-medium">1 to 2 business days</p>
                   </div>
                 </div>
               </div>
@@ -105,7 +105,7 @@ export default function ContactClient() {
               <a href="https://churchtownmedia.co.uk" target="_blank" rel="noopener noreferrer" className="text-[#14231C] font-bold hover:text-[#C4782A] transition-colors">
                 Churchtown Media ↗
               </a>
-              <p className="text-gray-400 text-xs mt-1">Web & digital for Southport businesses</p>
+              <p className="text-gray-400 text-xs mt-1">Web & digital for Lake District businesses</p>
             </div>
           </div>
 
@@ -117,7 +117,7 @@ export default function ContactClient() {
                   <CheckCircle className="w-8 h-8 text-green-500" />
                 </div>
                 <h2 className="font-display text-2xl font-bold text-[#14231C] mb-2">Message sent!</h2>
-                <p className="text-gray-500 mb-6">We&apos;ll be in touch within 1–2 business days. Check your inbox for a confirmation.</p>
+                <p className="text-gray-500 mb-6">We&apos;ll be in touch within 1 to 2 business days. Check your inbox for a confirmation.</p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <button
                     onClick={() => { setForm({ name: "", email: "", subject: SUBJECTS[0], businessName: "", message: "" }); setStatus("idle"); }}

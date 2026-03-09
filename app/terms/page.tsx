@@ -33,7 +33,7 @@ export default function TermsPage() {
           <section>
             <h2 className="font-display text-xl font-bold text-[#1B2E4B] mb-4">1. Acceptance of terms</h2>
             <p className="text-gray-600 text-sm leading-relaxed">
-              By accessing or using SouthportGuide.co.uk (the &ldquo;Site&rdquo;), you agree to be bound by these Terms &amp; Conditions. If you do not agree, please do not use the Site. If you are using the Site on behalf of a business, you confirm that you have authority to bind that business to these terms.
+              By accessing or using TheLakesGuide.co.uk (the &ldquo;Site&rdquo;), you agree to be bound by these Terms &amp; Conditions. If you do not agree, please do not use the Site. If you are using the Site on behalf of a business, you confirm that you have authority to bind that business to these terms.
             </p>
           </section>
 

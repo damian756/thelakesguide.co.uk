@@ -149,7 +149,7 @@ export default function PrivacyPage() {
                 <tbody>
                   {[
                     ["Essential", "Site functionality (session, security)", "Yes"],
-                    ["Analytics (Plausible)", "Understanding how visitors use the site", "No — cookieless, no consent needed"],
+                    ["Analytics (Plausible)", "Understanding how visitors use the site", "No (cookieless, no consent needed)"],
                   ].map(([type, purpose, required]) => (
                     <tr key={type}>
                       <td className="p-3 border border-gray-100 text-gray-700 font-medium">{type}</td>
@@ -211,8 +211,8 @@ export default function PrivacyPage() {
                 <tbody className="divide-y divide-gray-50">
                   {[
                     ["Necessary", "Session management and security.", "No — always active"],
-                    ["Analytics", "Plausible Analytics — aggregated page views, traffic sources, device types. Privacy-friendly and cookieless.", "No — does not require consent"],
-                    ["Marketing / Affiliate", "Booking.com and other affiliate partner tracking cookies. Set when you click through to a partner booking site.", "Yes — optional"],
+                    ["Analytics", "Plausible Analytics: aggregated page views, traffic sources, device types. Privacy-friendly and cookieless.", "No (does not require consent)"],
+                    ["Marketing / Affiliate", "Booking.com and other affiliate partner tracking cookies. Set when you click through to a partner booking site.", "Yes (optional)"],
                   ].map(([cat, purpose, req]) => (
                     <tr key={cat}>
                       <td className="px-4 py-3 font-semibold text-[#1B2E4B] align-top whitespace-nowrap">{cat}</td>

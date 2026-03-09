@@ -155,7 +155,7 @@ export default async function Home() {
             Your Local Guide <span className="text-[#C4782A]">to the Lake District.</span>
           </h1>
           <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-xl mb-7">
-            Events, restaurants, <Link href="/things-to-do" className="text-white hover:text-[#C4782A] underline underline-offset-2 transition-colors">things to do</Link> — updated regularly by people who live here.
+            Events, restaurants, <Link href="/things-to-do" className="text-white hover:text-[#C4782A] underline underline-offset-2 transition-colors">things to do</Link>, updated regularly by people who live here.
           </p>
 
           {/* Next 2 upcoming events */}

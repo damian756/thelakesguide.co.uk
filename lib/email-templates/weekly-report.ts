@@ -65,13 +65,13 @@ export function generateWeeklyEmail(
       ? `${trendNum(curr, last) >= 0 ? "+" : ""}${trendNum(curr, last)}%`
       : curr > 0
         ? "+100%"
-        : "—";
+        : "n/a";
 
   const reviewLine =
     stats.rating != null && stats.reviewCount != null
       ? `${stats.rating.toFixed(1)} ★ (${stats.reviewCount.toLocaleString()} reviews)${
           stats.reviewDelta != null && stats.reviewDelta !== 0
-            ? ` — ${stats.reviewDelta > 0 ? "+" : ""}${stats.reviewDelta} since last check`
+            ? ` (${stats.reviewDelta > 0 ? "+" : ""}${stats.reviewDelta} since last check)`
             : stats.ratingDelta != null && stats.ratingDelta !== 0
               ? ` — ${stats.ratingDelta > 0 ? "+" : ""}${stats.ratingDelta.toFixed(1)} ★ since last check`
               : ""
@@ -95,7 +95,7 @@ export function generateWeeklyEmail(
       <tr>
         <td style="padding: 16px; color: white;">
           <strong style="color: #C9A84C;">Upcoming event</strong><br>
-          ${upcomingEvent.title} — ${upcomingEvent.dayLabel}<br>
+          ${upcomingEvent.title} | ${upcomingEvent.dayLabel}<br>
           ${upcomingEvent.impactEstimate ? `<span style="color: #C9A84C;">${upcomingEvent.impactEstimate}</span><br>` : ""}
           <a href="${boostsUrl}" style="color: #C9A84C; font-weight: bold;">Book a boost →</a>
         </td>

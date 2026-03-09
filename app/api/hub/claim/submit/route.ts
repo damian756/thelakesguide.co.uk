@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 import crypto from "crypto";
 import { prisma } from "@/lib/prisma";
 
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "SouthportGuide <noreply@thelakesguide.co.uk>";
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "The Lakes Guide <noreply@thelakesguide.co.uk>";
 const ADMIN_EMAIL = "damian@churchtownmedia.co.uk";
 const BASE_URL = process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
 
@@ -108,12 +108,12 @@ export async function POST(req: Request) {
   await getResend().emails.send({
     from: FROM_EMAIL,
     to: parsed.data.email,
-    subject: `We've received your claim request — ${business.name}`,
+    subject: `We've received your claim request | ${business.name}`,
     html: `
       <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 32px; border-radius: 8px;">
         <div style="border-bottom: 3px solid #C9A84C; padding-bottom: 16px; margin-bottom: 24px;">
           <h1 style="font-size: 24px; color: #1B2E4B; margin: 0;">
-            Southport<span style="color: #C9A84C;">Guide</span>.co.uk
+            The Lakes <span style="color: #C9A84C;">Guide</span>.co.uk
           </h1>
           <p style="color: #666; font-size: 13px; margin: 4px 0 0;">Claim request received</p>
         </div>
@@ -126,7 +126,7 @@ export async function POST(req: Request) {
           Once approved, you'll receive a link to set your password and access your Business Hub dashboard.
         </p>
         <p style="color: #999; font-size: 12px; margin-top: 32px;">
-          SouthportGuide.co.uk — Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>
+          TheLakesGuide.co.uk. Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>
         </p>
       </div>
     `,
@@ -136,12 +136,12 @@ export async function POST(req: Request) {
   await getResend().emails.send({
     from: FROM_EMAIL,
     to: ADMIN_EMAIL,
-    subject: `[SouthportGuide] New claim request — ${business.name}`,
+    subject: `[The Lakes Guide] New claim request | ${business.name}`,
     html: `
       <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 32px; border-radius: 8px;">
         <div style="border-bottom: 3px solid #C9A84C; padding-bottom: 16px; margin-bottom: 24px;">
           <h1 style="font-size: 24px; color: #1B2E4B; margin: 0;">
-            Southport<span style="color: #C9A84C;">Guide</span>.co.uk
+            The Lakes <span style="color: #C9A84C;">Guide</span>.co.uk
           </h1>
           <p style="color: #666; font-size: 13px; margin: 4px 0 0;">New claim request</p>
         </div>
@@ -183,7 +183,7 @@ export async function POST(req: Request) {
         </p>
 
         <p style="color: #999; font-size: 12px; margin-top: 24px;">
-          SouthportGuide.co.uk — Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>
+          TheLakesGuide.co.uk. Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>
         </p>
       </div>
     `,

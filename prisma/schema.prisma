@@ -1,4 +1,4 @@
-// Prisma schema for SouthportGuide.co.uk
+// Prisma schema for TheLakesGuide.co.uk
 
 generator client {
   provider = "prisma-client-js"

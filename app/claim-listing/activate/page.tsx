@@ -2,7 +2,7 @@ import { prisma } from "@/lib/prisma";
 import ActivateClient from "./ActivateClient";
 
 export const metadata = {
-  title: "Set Your Password | SouthportGuide",
+  title: "Set Your Password | The Lakes Guide",
   description: "Complete your listing claim.",
   robots: { index: false, follow: false },
 };

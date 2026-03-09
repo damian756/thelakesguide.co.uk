@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "The Lakes Guide — The Complete Visitor Guide to the Lake District",
+    default: "The Lakes Guide | The Complete Visitor Guide to the Lake District",
     template: "%s | The Lakes Guide",
   },
   description:
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/og-default.png`,
         width: 1200,
         height: 630,
-        alt: "The Lakes Guide — Discover the Lake District",
+        alt: "The Lakes Guide. Discover the Lake District",
       },
     ],
   },
@@ -256,7 +256,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
-          <p>&copy; 2026 The Lakes Guide — All rights reserved.</p>
+          <p>&copy; 2026 The Lakes Guide. All rights reserved.</p>
           <div className="flex flex-wrap gap-5">
             <Link href="/privacy" className="hover:text-white/70 transition">Privacy</Link>
             <Link href="/terms" className="hover:text-white/70 transition">Terms</Link>

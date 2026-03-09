@@ -62,7 +62,7 @@ export default function NavMenu() {
             <div className="grid grid-cols-3 gap-1.5 mb-4">
               <Link href="/things-to-do" onClick={() => setExploreOpen(false)}
                 className="col-span-3 flex items-center gap-2 px-3 py-2.5 rounded-xl bg-[#14231C] text-white text-sm hover:bg-[#245E3F] transition-colors">
-                <span className="font-semibold">Things to Do — Full Guide</span>
+                <span className="font-semibold">Things to Do: Full Guide</span>
               </Link>
               <Link href="/events" onClick={() => setExploreOpen(false)}
                 className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#EAEDE8] text-[#14231C] text-xs font-semibold hover:bg-gray-100 transition-colors">

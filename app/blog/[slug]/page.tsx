@@ -95,7 +95,7 @@ function renderBlock(block: ContentBlock, i: number) {
                   {hasLead ? (
                     <>
                       <strong className="text-[#14231C]">{item.slice(0, dashIdx)}</strong>
-                      {" — "}
+                      {": "}
                       {item.slice(dashIdx + 3)}
                     </>
                   ) : item}
@@ -128,7 +128,7 @@ function renderBlock(block: ContentBlock, i: number) {
       return (
         <blockquote key={i} className="border-l-4 border-[#C4782A] pl-5 py-1 my-7 italic text-gray-600 text-lg">
           &ldquo;{block.text}&rdquo;
-          {block.attr && <cite className="block text-sm not-italic text-gray-400 mt-2">— {block.attr}</cite>}
+          {block.attr && <cite className="block text-sm not-italic text-gray-400 mt-2">({block.attr})</cite>}
         </blockquote>
       );
     case "cta":
@@ -249,21 +249,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         }
       : {
           "@type": "Person",
-          "@id": "https://www.thelakesguide.co.uk/about#terry",
-          name: "Terry",
-          jobTitle: "Chief Editor",
+          "@id": "https://www.thelakesguide.co.uk/about#editor",
+          name: "The Lakes Guide",
+          jobTitle: "Editor",
           url: "https://www.thelakesguide.co.uk/about",
           worksFor: {
             "@type": "Organization",
             "@id": "https://www.thelakesguide.co.uk/#website",
-            name: "SouthportGuide.co.uk",
+            name: "TheLakesGuide.co.uk",
             url: "https://www.thelakesguide.co.uk",
           },
         },
     publisher: {
       "@type": "Organization",
       "@id": "https://www.thelakesguide.co.uk/#organization",
-      name: "SouthportGuide.co.uk",
+      name: "TheLakesGuide.co.uk",
       url: "https://www.thelakesguide.co.uk",
     },
     mainEntityOfPage: {
@@ -336,8 +336,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </div>
             )}
             <div>
-              <p className="font-semibold text-[#14231C] text-xs">{isDamian ? "Damian Roche" : "Terry"}</p>
-              <p className="text-[10px] text-gray-400">{isDamian ? "Founder, Churchtown Media" : "Chief Editor, SouthportGuide.co.uk"}</p>
+              <p className="font-semibold text-[#14231C] text-xs">{isDamian ? "Damian Roche" : "The Lakes Guide"}</p>
+              <p className="text-[10px] text-gray-400">{isDamian ? "Founder, Churchtown Media" : "Editor, TheLakesGuide.co.uk"}</p>
             </div>
           </div>
           <span className="text-gray-200 hidden sm:block">|</span>
@@ -381,11 +381,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   </div>
                 )}
                 <div>
-                  <p className="font-bold text-[#14231C] text-sm">{isDamian ? "Damian Roche" : "Terry"}</p>
+                  <p className="font-bold text-[#14231C] text-sm">{isDamian ? "Damian Roche" : "The Lakes Guide"}</p>
                   <p className="text-gray-400 text-xs leading-snug mt-0.5">
                     {isDamian
-                      ? "Founder, Churchtown Media. Builder of SouthportGuide.co.uk and SeftonCoastWildlife.co.uk. Based in Churchtown, Southport."
-                      : <>Chief Editor, SouthportGuide.co.uk — Lives in Churchtown with his wife,<br className="hidden sm:block" /> four kids, and Frank the bulldog.</>
+                      ? "Founder, Churchtown Media. Builder of TheLakesGuide.co.uk, TheLakesWildlife.co.uk, and HikeTheLakes.com. Southport-based. Regular Lakes visitor for decades."
+                      : <>Editor, TheLakesGuide.co.uk. Written by someone who knows the fells.</>
                     }
                   </p>
                 </div>
@@ -397,7 +397,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <div className="bg-amber-50 border border-amber-100 rounded-xl p-6 text-center">
                 <div className="text-3xl mb-3">✍️</div>
                 <h3 className="font-display text-xl font-bold text-[#14231C] mb-2">Full article coming soon</h3>
-                <p className="text-gray-500 text-sm">Check back shortly — Terry&apos;s working on it.</p>
+                <p className="text-gray-500 text-sm">Check back shortly. We&apos;re working on it.</p>
               </div>
             </>
           )}

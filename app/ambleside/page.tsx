@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ambleside",
+  title: "Ambleside | The Lakes Guide",
   description: "Ambleside guide. Coming soon.",
   robots: { index: false, follow: true },
 };

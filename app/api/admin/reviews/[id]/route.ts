@@ -77,7 +77,7 @@ export async function PATCH(
     try {
       const listingUrl = `${BASE_URL}/${review.business.category.slug}/${review.business.slug}`;
       await getResend().emails.send({
-        from: "SouthportGuide <hello@thelakesguide.co.uk>",
+        from: "The Lakes Guide <hello@thelakesguide.co.uk>",
         to: review.email,
         subject: `Your review of ${review.business.name} is live`,
         html: generateReviewApprovedEmail(review.firstName, review.business.name, listingUrl),
@@ -88,7 +88,7 @@ export async function PATCH(
     if (review.business.user?.email) {
       try {
         await getResend().emails.send({
-          from: "SouthportGuide <hello@thelakesguide.co.uk>",
+          from: "The Lakes Guide <hello@thelakesguide.co.uk>",
           to: review.business.user.email,
           subject: `New review for ${review.business.name}`,
           html: generateNewSiteReviewEmail(

@@ -15,7 +15,7 @@ const BATCH_SIZE = 10;
 const BATCH_DELAY_MS = 500;
 
 const FROM_EMAIL =
-  process.env.RESEND_FROM_EMAIL || "SouthportGuide <onboarding@resend.dev>";
+  process.env.RESEND_FROM_EMAIL || "The Lakes Guide <onboarding@resend.dev>";
 
 function getWeekBounds(): { thisWeekStart: Date; thisWeekEnd: Date; lastWeekStart: Date; lastWeekEnd: Date } {
   const now = new Date();
@@ -157,7 +157,7 @@ export async function GET(request: Request) {
         const { error } = await getResend().emails.send({
           from: FROM_EMAIL,
           to: user.email,
-          subject: `Your SouthportGuide week — ${business.name}`,
+          subject: `Your Lakes Guide week | ${business.name}`,
           html,
         });
 

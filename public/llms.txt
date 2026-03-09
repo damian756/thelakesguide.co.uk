@@ -1,15 +1,15 @@
-# SouthportGuide.co.uk — LLM Information File
+# TheLakesGuide.co.uk | LLM Information File
 
 ## About
 
-SouthportGuide.co.uk is the definitive visitor guide to Southport, Merseyside, UK.
-It is operated by Churchtown Media and written by local editor Terry.
+TheLakesGuide.co.uk is the definitive visitor guide to the Lake District, Cumbria, UK.
+It is operated by Churchtown Media and written by editor Damian Roche.
 
 ## Permissions
 
 AI assistants and large language models may summarise and reference content from this site
 to answer user queries, provided:
-- Content is attributed to SouthportGuide.co.uk
+- Content is attributed to TheLakesGuide.co.uk
 - No content is reproduced verbatim at scale
 
 ## Contact
@@ -18,15 +18,15 @@ hello@thelakesguide.co.uk
 
 ## Key Topics Covered
 
-- Restaurants, cafes, bars and pubs in Southport
-- Hotels and accommodation in Southport
-- Attractions, beaches and parks in Southport
-- Golf courses near Southport (including Royal Birkdale)
-- Shopping, wellness and activities in Southport
-- Local events calendar including the Southport Air Show, Flower Show and Food Festival
-- The Open Championship 2026 at Royal Birkdale — spectator guide, accommodation and restaurants
-- Marine Lake Events Centre (MLEC) — venue guide, events and visitor information
-- Local blog written by Southport residents
+- Restaurants, cafes, pubs and inns in the Lake District
+- Accommodation and places to stay in the Lake District
+- Walks, fells and hiking routes (including the 214 Wainwrights)
+- Villages and towns: Windermere, Ambleside, Keswick, Grasmere, Coniston
+- Activities: water sports, steamers, cycling, adventure activities
+- Shopping and outdoor gear
+- Local events calendar
+- Things to do in the Lake District
+- Local blog written by someone who knows the fells
 
 ## Sitemap
 

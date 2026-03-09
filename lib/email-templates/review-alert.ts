@@ -36,7 +36,7 @@ export function generateNewReviewEmail(
         Hi ${user.name || "there"},
       </p>
       <p style="color: #666; margin: 0 0 16px;">
-        Great news — ${business.name} has received a new Google review. Your listing now has <strong>${newCount.toLocaleString()}</strong> reviews with an average rating of <strong>${rating.toFixed(1)} ★</strong>.
+        Great news: ${business.name} has received a new Google review. Your listing now has <strong>${newCount.toLocaleString()}</strong> reviews with an average rating of <strong>${rating.toFixed(1)} ★</strong>.
       </p>
       <p style="margin: 0;">
         <a href="${baseUrl}/dashboard/reviews" style="display: inline-block; background: #C9A84C; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">View reviews →</a>

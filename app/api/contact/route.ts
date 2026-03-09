@@ -2,8 +2,8 @@ import { getResend } from "@/lib/resend";
 import { NextRequest, NextResponse } from "next/server";
 
 const TO_EMAIL = "damian@churchtownmedia.co.uk";
-// Once verified, change to: "SouthportGuide <contact@thelakesguide.co.uk>"
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "SouthportGuide <noreply@thelakesguide.co.uk>";
+// Once verified, change to: "The Lakes Guide <contact@thelakesguide.co.uk>"
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "The Lakes Guide <noreply@thelakesguide.co.uk>";
 
 export async function POST(req: NextRequest) {
   try {
@@ -31,12 +31,12 @@ export async function POST(req: NextRequest) {
       from: FROM_EMAIL,
       to: TO_EMAIL,
       replyTo: `${name} <${email}>`,
-      subject: `[SouthportGuide] ${subject}${businessName ? ` — ${businessName}` : ""}`,
+      subject: `[The Lakes Guide] ${subject}${businessName ? ` | ${businessName}` : ""}`,
       html: `
         <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 32px; border-radius: 8px;">
           <div style="border-bottom: 3px solid #C9A84C; padding-bottom: 16px; margin-bottom: 24px;">
             <h1 style="font-size: 24px; color: #1B2E4B; margin: 0;">
-              Southport<span style="color: #C9A84C;">Guide</span><span style="color: #999; font-size: 14px;">.co.uk</span>
+              The Lakes <span style="color: #C9A84C;">Guide</span><span style="color: #999; font-size: 14px;">.co.uk</span>
             </h1>
             <p style="color: #666; font-size: 13px; margin: 4px 0 0;">New contact form submission</p>
           </div>
@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
 
           <p style="color: #999; font-size: 12px; text-align: center;">
             Reply directly to this email to respond to ${name}.<br/>
-            SouthportGuide.co.uk — Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>
+            TheLakesGuide.co.uk. Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>
           </p>
         </div>
       `,
@@ -78,25 +78,25 @@ export async function POST(req: NextRequest) {
     await getResend().emails.send({
       from: FROM_EMAIL,
       to: email,
-      subject: "Thanks for getting in touch — SouthportGuide.co.uk",
+      subject: "Thanks for getting in touch | TheLakesGuide.co.uk",
       html: `
         <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 32px; border-radius: 8px;">
           <div style="border-bottom: 3px solid #C9A84C; padding-bottom: 16px; margin-bottom: 24px;">
             <h1 style="font-size: 24px; color: #1B2E4B; margin: 0;">
-              Southport<span style="color: #C9A84C;">Guide</span><span style="color: #999; font-size: 14px;">.co.uk</span>
+              The Lakes <span style="color: #C9A84C;">Guide</span><span style="color: #999; font-size: 14px;">.co.uk</span>
             </h1>
           </div>
           <p style="color: #1B2E4B; font-size: 16px;">Hi ${name},</p>
           <p style="color: #555; line-height: 1.7;">
-            Thanks for getting in touch! We've received your message and will get back to you within 1–2 business days.
+            Thanks for getting in touch! We've received your message and will get back to you within 1 to 2 business days.
           </p>
           <p style="color: #555; line-height: 1.7;">
             In the meantime, feel free to explore the guide at
             <a href="https://www.thelakesguide.co.uk" style="color: #C9A84C;">thelakesguide.co.uk</a>.
           </p>
-          <p style="color: #1B2E4B; margin-top: 24px;">The SouthportGuide Team</p>
+          <p style="color: #1B2E4B; margin-top: 24px;">The Lakes Guide Team</p>
           <p style="color: #999; font-size: 12px; margin-top: 24px;">
-            Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>, Southport
+            Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>
           </p>
         </div>
       `,

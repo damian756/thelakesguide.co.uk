@@ -44,7 +44,7 @@ export async function POST(
   await getResend().emails.send({
     from: FROM_EMAIL,
     to: claim.email,
-    subject: "Update on your listing claim — SouthportGuide",
+    subject: "Update on your listing claim | The Lakes Guide",
     html: getClaimRejectionHtml({
       name: claim.name,
       businessName: claim.business.name,

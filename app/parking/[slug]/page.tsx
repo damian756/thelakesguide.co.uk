@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { MapPin, Clock, Star, ChevronRight, Navigation } from "lucide-react";
 import { prisma } from "@/lib/prisma";
@@ -75,54 +76,54 @@ function getBusyGuide(name: string, tags: string[], postcode: string): BusyGuide
   const n = name.toLowerCase();
   const pc = postcode.toUpperCase();
 
-  if (n.includes("national trust") || n.includes("lifeboat road") || n.includes("victoria road woodland")) {
+  if (n.includes("national trust") || n.includes("grizedale") || n.includes("tarn hows")) {
     return {
       periods: [
         { label: "Summer weekends", level: "high" },
         { label: "Summer weekdays", level: "medium" },
         { label: "Winter", level: "low" },
       ],
-      note: "Often full by 10am on sunny summer weekends. Book via the NT app before you arrive — signal in the car park is patchy. Victoria Road is the overflow if Lifeboat Road is full.",
+      note: "Often full by 10am on sunny summer weekends. Book via the NT app before you arrive. Signal in the car park can be patchy.",
     };
   }
-  if (n.includes("marine drive") || n.includes("esplanade") || n.includes("promenade") || n.includes("seafront")) {
+  if (n.includes("windermere") || n.includes("bowness") || n.includes("lakeside")) {
     return {
       periods: [
         { label: "Summer weekends", level: "high" },
         { label: "Summer weekdays", level: "medium" },
         { label: "Winter", level: "low" },
       ],
-      note: "Gets very busy in summer, especially when events are on at Pleasureland or the Flower Show. Aim to arrive before 10am on sunny Saturdays.",
+      note: "Gets very busy in summer, especially when the steamers are running. Aim to arrive before 10am on sunny Saturdays.",
     };
   }
-  if (n.includes("ainsdale beach")) {
+  if (n.includes("keswick") || n.includes("derwentwater") || n.includes("catbells")) {
     return {
       periods: [
         { label: "Summer weekends", level: "high" },
         { label: "Summer weekdays", level: "medium" },
         { label: "Winter", level: "low" },
       ],
-      note: "Quieter than the Southport seafront but still fills up on good summer days. Informal overflow available on the approach road.",
+      note: "Popular fell walking base. Can fill early on bank holidays and during the Keswick Mountain Festival.",
     };
   }
-  if (n.includes("ncp") || n.includes("multi storey") || n.includes("multi-storey") || n.includes("tulketh")) {
+  if (n.includes("multi storey") || n.includes("multi-storey") || n.includes("town centre")) {
     return {
       periods: [
         { label: "Saturday daytime", level: "high" },
         { label: "Weekday daytime", level: "medium" },
         { label: "Evenings / Sunday", level: "low" },
       ],
-      note: "Busiest on Saturday mornings during peak shopping hours. Generally quieter evenings and Sundays. Covered, so reliable in all weathers.",
+      note: "Busiest on Saturday mornings during peak shopping hours. Generally quieter evenings and Sundays.",
     };
   }
-  if (pc.startsWith("PR8 1") || pc.startsWith("PR9 0")) {
+  if (pc.startsWith("LA22") || pc.startsWith("LA23") || pc.startsWith("CA12")) {
     return {
       periods: [
         { label: "Weekends / events", level: "medium" },
         { label: "Weekday daytime", level: "medium" },
         { label: "Evenings", level: "low" },
       ],
-      note: "Town centre parking can get competitive during events at Southport Theatre or the Flower Show. Worth checking for events before visiting in summer.",
+      note: "Lake District town and village parking. Can get competitive during events and peak season. Worth checking for festivals before visiting.",
     };
   }
   if (n.includes("station") || n.includes("park & ride") || n.includes("park and ride")) {
@@ -135,13 +136,13 @@ function getBusyGuide(name: string, tags: string[], postcode: string): BusyGuide
       note: "Mainly used by commuters on weekday mornings. Usually plenty of spaces at weekends.",
     };
   }
-  if (n.includes("rspb") || n.includes("marshside") || n.includes("botanic")) {
+  if (n.includes("rspb") || n.includes("haweswater") || n.includes("osprey")) {
     return {
       periods: [
         { label: "Weekend mornings", level: "medium" },
         { label: "Weekdays", level: "low" },
       ],
-      note: "Rarely fully packed but can be busier during organised events or birdwatching weekends. Generally easy to find a space.",
+      note: "Can be busier during osprey nesting season (April to August) and birdwatching weekends. Generally easy to find a space.",
     };
   }
   return null;
@@ -150,13 +151,14 @@ function getBusyGuide(name: string, tags: string[], postcode: string): BusyGuide
 // ── Nearby categories ─────────────────────────────────────────────────────────
 
 const CAT_EMOJI: Record<string, string> = {
-  restaurants:      "🍽️",
-  cafes:            "☕",
-  "bars-nightlife": "🍺",
-  attractions:      "🎡",
-  "beaches-parks":  "🏖️",
-  shopping:         "🛍️",
-  activities:       "🏄",
+  restaurants:   "🍽️",
+  cafes:         "☕",
+  pubs:          "🍺",
+  walks:         "🥾",
+  villages:      "🏘️",
+  shopping:      "🛍️",
+  activities:    "🏄",
+  accommodation: "🏨",
 };
 
 const FORMBY_CAT_EMOJI: Record<string, string> = {
@@ -173,15 +175,16 @@ const FORMBY_CAT_EMOJI: Record<string, string> = {
 // ── Meta helpers ─────────────────────────────────────────────────────────────
 
 const AREA_ORDER = [
-  "Birkdale", "Ainsdale", "Churchtown", "Crossens", "Marshside",
-  "Formby", "Ormskirk", "Scarisbrick", "Banks", "Halsall", "Burscough",
+  "Windermere", "Bowness", "Ambleside", "Grasmere", "Keswick",
+  "Coniston", "Glenridding", "Ullswater", "Hawkshead", "Grizedale",
+  "Buttermere", "Borrowdale", "Langdale", "Wasdale", "Cockermouth",
 ];
 
 function extractAreaMeta(address: string): string {
   for (const area of AREA_ORDER) {
     if (address.includes(area)) return area;
   }
-  return "Southport";
+  return "Lake District";
 }
 
 /** Detects auto-generated coordinate-based names like "Car Park (53.64, -3.00)" */
@@ -194,8 +197,8 @@ function isCoordinateName(name: string): boolean {
  * "Birkdale", "Ainsdale") add no meaningful signal on their own in a title.
  */
 function isGenericAreaName(name: string): boolean {
-  const generic = ["southport", "birkdale", "ainsdale", "formby", "churchtown",
-                   "ormskirk", "burscough", "crossens", "marshside"];
+  const generic = ["windermere", "ambleside", "keswick", "grasmere", "coniston",
+                   "bowness", "glenridding", "ullswater", "hawkshead", "grizedale"];
   return generic.includes(name.trim().toLowerCase());
 }
 
@@ -206,7 +209,7 @@ function isGenericAreaName(name: string): boolean {
  */
 function isGenericTypeName(name: string): boolean {
   // Strip trailing area qualifier ("Car Park, Southport" → "car park")
-  const core = name.trim().toLowerCase().replace(/,\s*(southport|birkdale|ainsdale|formby|churchtown|ormskirk|crossens|marshside)\s*$/i, "").trim();
+  const core = name.trim().toLowerCase().replace(/,\s*(windermere|ambleside|keswick|grasmere|coniston|bowness|glenridding|lake district)\s*$/i, "").trim();
   const generic = [
     "car park", "car parks", "parking", "parking area", "parking spaces",
     "parking space", "pay and display", "pay & display", "pay-and-display",
@@ -259,7 +262,7 @@ function buildParkingTitle(
 ): string {
   const cleanName = sanitizeMeta(name);
   const area      = extractAreaMeta(address);
-  const loc       = area === "Southport" ? "Southport" : `${area}, Southport`;
+  const loc       = area === "Lake District" ? "Lake District" : `${area}, Lake District`;
   const pc        = postcode || "";
   const free      = isFree(tags, priceRange);
   const prefix    = free ? "Free Car Park" : "Car Park";
@@ -267,25 +270,25 @@ function buildParkingTitle(
   // Coordinate-named listings — swap for a descriptive title
   if (isCoordinateName(cleanName)) {
     return pc
-      ? `${prefix}, ${loc} — ${pc} | SouthportGuide.co.uk`
-      : `${prefix}, ${loc} | SouthportGuide.co.uk`;
+      ? `${prefix}, ${loc} — ${pc} | TheLakesGuide.co.uk`
+      : `${prefix}, ${loc} | TheLakesGuide.co.uk`;
   }
 
   // Generic area-only names (e.g. listing literally named "Southport") — prefix with Car Park
   if (isGenericAreaName(cleanName)) {
     return pc
-      ? `${prefix} — ${loc}, ${pc} | SouthportGuide.co.uk`
-      : `${prefix} — ${loc} | SouthportGuide.co.uk`;
+      ? `${prefix} — ${loc}, ${pc} | TheLakesGuide.co.uk`
+      : `${prefix} — ${loc} | TheLakesGuide.co.uk`;
   }
 
   // Generic type-only names ("Car Park", "Parking", "Pay and Display" etc.)
   // — meaningless as a title; use street name + postcode to differentiate.
   if (isGenericTypeName(cleanName)) {
     const street = extractStreetName(address);
-    if (street && pc) return `${prefix}, ${street} — ${pc} | SouthportGuide.co.uk`;
-    if (street)       return `${prefix}, ${street}, ${loc} | SouthportGuide.co.uk`;
-    if (pc)           return `${prefix} — ${loc}, ${pc} | SouthportGuide.co.uk`;
-    return `${prefix} — ${loc} | SouthportGuide.co.uk`;
+    if (street && pc) return `${prefix}, ${street} — ${pc} | TheLakesGuide.co.uk`;
+    if (street)       return `${prefix}, ${street}, ${loc} | TheLakesGuide.co.uk`;
+    if (pc)           return `${prefix} — ${loc}, ${pc} | TheLakesGuide.co.uk`;
+    return `${prefix} — ${loc} | TheLakesGuide.co.uk`;
   }
 
   // Named car park. Avoid "X — Parking in Southport" when name already contains area.
@@ -295,21 +298,21 @@ function buildParkingTitle(
 
   if (nameContainsLoc) {
     // Name has location baked in — just add parking signal and postcode
-    const withPc  = pc ? `${cleanName} — ${pc} | SouthportGuide.co.uk` : `${cleanName} — Parking | SouthportGuide.co.uk`;
+    const withPc  = pc ? `${cleanName} — ${pc} | TheLakesGuide.co.uk` : `${cleanName} — Parking | TheLakesGuide.co.uk`;
     if (withPc.length <= 70) return withPc;
-    return `${cleanName} | SouthportGuide.co.uk`;
+    return `${cleanName} | TheLakesGuide.co.uk`;
   }
 
   // Standard: Name — Parking in Location, Postcode
   const withPc  = pc
-    ? `${cleanName} — Parking in ${loc}, ${pc} | SouthportGuide.co.uk`
-    : `${cleanName} — Parking in ${loc} | SouthportGuide.co.uk`;
+    ? `${cleanName} — Parking in ${loc}, ${pc} | TheLakesGuide.co.uk`
+    : `${cleanName} — Parking in ${loc} | TheLakesGuide.co.uk`;
   if (withPc.length <= 70) return withPc;
 
-  const shorter = `${cleanName} — Parking, ${loc} | SouthportGuide.co.uk`;
+  const shorter = `${cleanName} — Parking, ${loc} | TheLakesGuide.co.uk`;
   if (shorter.length <= 70) return shorter;
 
-  return `${cleanName} — ${loc} Parking | SouthportGuide.co.uk`;
+  return `${cleanName} — ${loc} Parking | TheLakesGuide.co.uk`;
 }
 
 function buildParkingMetaDesc(
@@ -326,7 +329,7 @@ function buildParkingMetaDesc(
   const paid     = isPaid(tags, priceRange);
   const hasEv    = tags.includes("ev-charging");
   const area     = extractAreaMeta(address);
-  const locLabel = area === "Southport" ? "Southport" : `${area}, Southport`;
+  const locLabel = area === "Lake District" ? "Lake District" : `${area}, Lake District`;
 
   // "Free parking" / "Pay-and-display" / "Car park" — avoid "Parking." which
   // creates the "Parking. ... Parking in" double-up in the fallback.
@@ -361,7 +364,7 @@ function buildParkingMetaDesc(
   } else {
     nameLabel = cleanName;
   }
-  const base = `${priceSignal}${pcPart}${evPart}${ratingPart} ${nameLabel} — get directions and see busy times on SouthportGuide.co.uk.`;
+  const base = `${priceSignal}${pcPart}${evPart}${ratingPart} ${nameLabel} — get directions and see busy times on TheLakesGuide.co.uk.`;
   return base.length <= 160 ? base : base.slice(0, 157) + "…";
 }
 
@@ -403,7 +406,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title, description: desc,
         url: canonicalUrl,
         type: "website",
-        siteName: "SouthportGuide.co.uk",
+        siteName: "TheLakesGuide.co.uk",
         locale: "en_GB",
         ...(b.images?.[0] ? { images: [{ url: b.images[0], width: 1200, height: 630, alt: cleanName }] } : {}),
       },
@@ -443,15 +446,9 @@ export default async function ParkingSlugPage({ params }: Props) {
     distance_m: number; priceRange: string | null;
   };
 
-  type FormbyNearbyPlace = {
-    slug: string; name: string; address: string;
-    categorySlug: string; categoryName: string; distance_m: number;
-  };
-
   let business: ParkingBusiness | null = null;
   let nearbyPlaces: NearbyPlace[] = [];
   let nearbyParking: NearbyParking[] = [];
-  let nearbyFormbyPlaces: FormbyNearbyPlace[] = [];
 
   try {
     const catRecord = await prisma.category.findFirst({ where: { slug: "parking" } });
@@ -483,7 +480,7 @@ export default async function ParkingSlugPage({ params }: Props) {
                  ))) AS distance_m
           FROM "Business" b
           JOIN "Category" c ON b."categoryId" = c.id
-          WHERE c.slug IN ('restaurants','cafes','bars-nightlife','attractions','beaches-parks','shopping','activities')
+          WHERE c.slug IN ('restaurants','cafes','pubs','activities','accommodation','shopping','walks','villages')
             AND b.lat IS NOT NULL AND b.lng IS NOT NULL
         ) sub
         WHERE sub.distance_m < 800
@@ -518,17 +515,6 @@ export default async function ParkingSlugPage({ params }: Props) {
     /* DB unavailable */
   }
 
-  // Fetch nearby FormbyGuide listings for Formby car parks
-  if (business?.lat && business?.lng && extractAreaMeta(business.address) === "Formby") {
-    try {
-      const fgUrl = `https://www.formbyguide.co.uk/api/nearby?lat=${business.lat}&lng=${business.lng}&radius=1500`;
-      const res = await fetch(fgUrl, { next: { revalidate: 3600 } });
-      if (res.ok) nearbyFormbyPlaces = (await res.json()) as FormbyNearbyPlace[];
-    } catch {
-      /* FormbyGuide unavailable */
-    }
-  }
-
   if (!business) notFound();
 
   const heroImage   = business.images?.[0] ?? null;
@@ -555,7 +541,7 @@ export default async function ParkingSlugPage({ params }: Props) {
   const schemaFree  = isFree(tags, business.priceRange);
   const schemaPaid  = isPaid(tags, business.priceRange);
   const schemaArea  = extractAreaMeta(business.address);
-  const schemaLocality = schemaArea === "Southport" ? "Southport" : schemaArea;
+  const schemaLocality = schemaArea === "Lake District" ? "Lake District" : schemaArea;
 
   // Build openingHoursSpecification from stored data (same logic as general listing page)
   let openingHoursSpec: unknown[] = [];
@@ -598,7 +584,7 @@ export default async function ParkingSlugPage({ params }: Props) {
       "@type": "PostalAddress",
       streetAddress: business.address.replace(/,?\s*(United Kingdom|UK)$/i, "").split(",")[0].trim(),
       addressLocality: schemaLocality,
-      addressRegion: "Merseyside",
+      addressRegion: "Cumbria",
       postalCode: business.postcode,
       addressCountry: "GB",
     },
@@ -642,8 +628,7 @@ export default async function ParkingSlugPage({ params }: Props) {
         {/* ── Street View hero strip ──────────────────────────────────────── */}
         <div className="relative w-full h-44 bg-[#1C3148] overflow-hidden">
           {heroImage ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={heroImage} alt={business.name} className="w-full h-full object-cover" />
+            <Image src={heroImage} alt={business.name} fill className="object-cover" sizes="100vw" unoptimized />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-7xl opacity-20 select-none">🅿️</span>
@@ -809,89 +794,6 @@ export default async function ParkingSlugPage({ params }: Props) {
                         </Link>
                       );
                     })}
-                  </div>
-                </div>
-              )}
-
-              {/* Nearby FormbyGuide listings — shown on Formby car park pages */}
-              {nearbyFormbyPlaces.length > 0 && (
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                  <div className="flex items-center justify-between mb-3">
-                    <h2 className="font-semibold text-gray-900 text-[15px]">
-                      📍 What&apos;s nearby
-                    </h2>
-                    <a
-                      href="https://www.formbyguide.co.uk"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-semibold text-[#2D6A4F] hover:underline"
-                    >
-                      FormbyGuide →
-                    </a>
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-2">
-                    {nearbyFormbyPlaces.map((place) => {
-                      const distM = Number(place.distance_m);
-                      const distLabel = distM < 100  ? "under 100m"
-                        : distM < 1000 ? `${Math.round(distM / 50) * 50}m`
-                        : `${(distM / 1000).toFixed(1)}km`;
-                      const emoji = FORMBY_CAT_EMOJI[place.categorySlug] ?? "📍";
-                      return (
-                        <a
-                          key={`${place.categorySlug}-${place.slug}`}
-                          href={`https://www.formbyguide.co.uk/${place.categorySlug}/${place.slug}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition group border border-gray-100"
-                        >
-                          <span className="text-base leading-none flex-shrink-0">{emoji}</span>
-                          <div className="flex-1 min-w-0">
-                            <p className="font-medium text-gray-900 group-hover:text-blue-600 transition text-sm truncate">
-                              {place.name}
-                            </p>
-                            <p className="text-xs text-gray-400 mt-0.5">{place.categoryName}</p>
-                          </div>
-                          <span className="flex-shrink-0 text-xs text-gray-400 font-medium tabular-nums">
-                            {distLabel}
-                          </span>
-                        </a>
-                      );
-                    })}
-                  </div>
-                  <a
-                    href="https://www.formbyguide.co.uk"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-center text-[#2D6A4F] text-xs font-bold mt-3 hover:underline"
-                  >
-                    Explore Formby on FormbyGuide →
-                  </a>
-                </div>
-              )}
-
-              {/* Fallback editorial callout when no nearby results — Formby pages only */}
-              {nearbyFormbyPlaces.length === 0 && extractAreaMeta(business.address) === "Formby" && (
-                <div className="bg-[#F0F7F2] rounded-xl border border-[#B8D9C4] p-5">
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#2D6A4F] mb-1">Visiting Formby?</p>
-                  <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                    FormbyGuide has the full local guide — the National Trust pinewoods, red squirrel trail, and Formby beach.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      { href: "https://www.formbyguide.co.uk/red-squirrels-formby", label: "Red Squirrel Trail" },
-                      { href: "https://www.formbyguide.co.uk/formby-beach", label: "Formby Beach" },
-                      { href: "https://www.formbyguide.co.uk/formby-pinewoods", label: "Formby Pinewoods" },
-                    ].map(({ href, label }) => (
-                      <a
-                        key={href}
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 bg-white border border-[#B8D9C4] text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors"
-                      >
-                        {label} →
-                      </a>
-                    ))}
                   </div>
                 </div>
               )}
@@ -1092,7 +994,7 @@ function OpeningHours({ data }: { data: unknown }) {
         {hours.periods.map((p, i) => (
           <li key={i} className="flex justify-between gap-2">
             <span>{DAY_NAMES[p.open.day]}</span>
-            <span>{fmt(p.open.time)}{p.close ? ` – ${fmt(p.close.time)}` : " (24h)"}</span>
+            <span>{fmt(p.open.time)}{p.close ? ` to ${fmt(p.close.time)}` : " (24h)"}</span>
           </li>
         ))}
       </ul>

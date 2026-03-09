@@ -68,64 +68,45 @@ const CATEGORY_GUIDES: Record<string, { href: string; label: string }[]> = {
 };
 
 const CATEGORY_CONTENT: Record<string, string[]> = {
+  "walks": [
+    "Most people come for the walking. The fells, the lakes, the views. Scafell Pike, Helvellyn, Catbells. The 214 Wainwrights draw completionists from around the world. There are routes for every level, from gentle lakeside strolls to serious mountain days.",
+    "The National Trust and Lake District National Park maintain paths and waymarking. Check conditions before heading onto the high fells. Weather changes fast. Grizedale Forest has family-friendly trails. Tarn Hows is a classic easy loop with proper views.",
+    "Worth knowing: popular routes like Catbells and Helvellyn get busy in summer. Go early or pick a quieter fell. The bus is a good way to avoid parking fees at the busiest spots.",
+  ],
+  "villages": [
+    "Ambleside, Keswick, Grasmere, Windermere, Bowness. Each has its own character. Ambleside is the walkers' hub. Keswick has the best outdoor shops and Derwentwater on the doorstep. Grasmere is Wordsworth and gingerbread. Windermere and Bowness are the busiest, with the steamers and most of the tourist infrastructure.",
+    "Smaller villages like Hawkshead, Coniston, and Glenridding are worth the drive. Hawkshead has Beatrix Potter connections. Coniston has the Old Man and the Ruskin Museum. Glenridding is the start of Helvellyn and the Ullswater steamer.",
+    "Worth knowing: village car parks fill early on summer weekends. Arrive before 10am or use the bus. The 555 runs the length of the A591 and connects the main centres.",
+  ],
   "restaurants": [
-    "Lord Street is the obvious starting point for eating out in Southport — it runs through the town centre and has a good mix of options at most price points. Bistrot Verite in Birkdale is the one that gets mentioned most when people want a proper meal, and it's worth booking ahead. Bistro Bar Med and The Vincent are solid choices if you want something central.",
-    "The town has more independent restaurants than you'd expect — particularly on and around Lord Street and Chapel Street. If you're after Indian or Asian food, you've got a decent range and most places are very reasonably priced.",
-    "Worth knowing: the busier spots on Lord Street fill up quickly at weekends, particularly if there's an event on at Southport Theatre. Book ahead or go early.",
-  ],
-  "hotels": [
-    "Southport has a good range of places to stay — from The Bold Hotel on Lord Street (the nicest in town by most accounts) to seafront B&Bs and a clutch of chain hotels near the retail park. The Scarisbrick Hotel is the historic option on Lord Street if you want somewhere with character.",
-    "If you're here for The Open 2026 at Royal Birkdale, accommodation books out fast — months in advance for tournament week. Get in early. Birkdale village (walking distance from the course) is the most practical base, but the whole town fills up.",
-    "For a quieter stay, Churchtown is worth considering — it's the old village end of Southport, much calmer than the seafront, and still only about 10 minutes from the town centre.",
-  ],
-  "bars-nightlife": [
-    "Southport's nightlife is mostly concentrated around Neville Street and the town centre — it's a proper night-out town when it gets going. Sinclairs is one of the long-standing locals' favourites. Thatch and Thistle is popular too, particularly earlier in the evening.",
-    "Lord Street has a good run of bars and restaurants that work well for a lower-key evening — cocktails and food rather than clubs. If you want to keep going later, the town centre has options.",
-    "Worth knowing: weekend nights in Southport get properly busy in summer. If you're visiting in peak season and want somewhere specific, arrive early or book where you can.",
+    "The Lake District has more good food than it gets credit for. Ambleside and Keswick have the best concentration of independents. The Drunken Duck, The Old Stamp House, and The Cottage in the Wood are the ones that get mentioned when people want a proper meal. Book ahead at weekends.",
+    "Village pubs do solid food. Many are walker-friendly with boots and dogs welcome. The bigger hotels (Gilpin, Linthwaite House) have restaurants that are worth the splurge if you're celebrating.",
+    "Worth knowing: the busier spots fill up quickly in peak season. Book ahead or eat early. Lunch is often easier than dinner if you're flexible.",
   ],
   "cafes": [
-    "Southport does good coffee. There are independent cafes along Lord Street and in the side streets around it — worth exploring if you're spending a day in town. Cibo on Lord Street comes up regularly as a local favourite.",
-    "Over at the seafront end, there are plenty of spots to grab a coffee with a sea view — quality varies but the setting makes up for a lot.",
-    "For tea rooms and a slower pace, Churchtown village is worth the short drive — it's got that quieter, more village feel that can be hard to find in the town centre on a busy day.",
+    "Every village has at least one decent café. Grasmere has the famous gingerbread shop. Ambleside and Keswick have the best coffee. The NT cafés at Tarn Hows and Grizedale are reliable for post-walk cake.",
+    "Tea rooms are everywhere. The slower pace suits the Lakes. Many are dog-friendly. Worth knowing: the popular ones get queues on rainy days. Go early or pick a quieter spot.",
+    "For a proper sit-down, the bigger villages have options. Ambleside's Zeffirellis does good vegetarian. Keswick has a solid range. Windermere and Bowness are busier and more tourist-focused.",
   ],
-  "attractions": [
-    "Southport has more to keep you busy than most people expect. The Botanic Gardens in Churchtown are free, genuinely lovely, and rarely crowded. Southport Pier is one of the longest in England — worth a walk, especially if the weather's decent.",
-    "Adventure Coast Southport (formerly Pleasureland) is the obvious family draw — fairground rides, free entry with pay-per-ride. Combine it with the beach and a walk along the seafront and you've got a solid day out without spending much.",
-    "The Atkinson on Lord Street is the arts centre and local museum — free entry, good exhibitions, and a decent café. Worth an hour if the weather turns.",
-  ],
-  "beaches-parks": [
-    "Southport Beach is broad, sandy, and free — you can drive onto part of it, which is very useful if you've got kids and a lot of kit. The sea goes out a long way at low tide; it's not always swimmable, but as a beach for walking and messing about on, it's brilliant.",
-    "Victoria Park hosts the big events — Southport Flower Show, air shows, the food festival. If one of those is on when you're visiting, the park is worth seeing at its best.",
-    "The Marine Lake is a calmer alternative to the open beach — separated from the sea by the promenade, much flatter water. Good for paddleboarding and kayaking; the Watersports Centre is based there.",
-  ],
-  "golf": [
-    "Southport is one of the best places to play golf in England — no exaggeration. Royal Birkdale is the headline act, one of the Open Championship venues and hosting The Open again in summer 2026. Getting on as a visitor requires forward planning and a handicap certificate, but it's possible.",
-    "Formby Golf Club is about 15 minutes south and considered one of the finest heathland links courses in the country — slightly more straightforward to book as a visitor than Royal Birkdale. Southport Old Links, Hillside Golf Club, and Southport & Ainsdale are all nearby and all serious courses.",
-    "If you're a golfer visiting the area, this stretch of the Sefton Coast is genuinely exceptional and underrated by most people outside the golfing community. Plan a few days and work your way around them.",
-  ],
-  "shopping": [
-    "Lord Street is the main shopping strip — a long Victorian boulevard with covered arcades, a mix of independents and some chains. It's one of the nicest high streets in the north west, worth a stroll even if you're not buying anything.",
-    "The Wayfarers Arcade is the best of the covered arcades — independent shops, antiques, a bit eclectic. Worth a browse on a rainy afternoon. The Market is useful for fresh food and local produce.",
-    "Cambridge Walks and the side streets off Lord Street are where you'll find most of the boutiques and independents. Hirshmans on Chapel Street has been going for years and is reliable for pharmacy and travel essentials.",
-  ],
-  "wellness": [
-    "Southport has a decent number of salons, spas and wellness places, mostly dotted around the town centre and Birkdale. If you're staying for a few days, booking a treatment is straightforward. The bigger hotels — The Bold, The Vincent — have spa facilities if you'd rather keep it all in one place.",
-    "Day spas and independent beauty salons are scattered throughout town. This directory lists what's available across all areas so you can find what you need based on where you're staying.",
+  "pubs": [
+    "The Lake District does pubs well. Walkers, dogs, muddy boots. The Kirkstile Inn, The Drunken Duck, The Mortal Man. Proper food, local ales, and the kind of atmosphere that makes you want to stay.",
+    "Keswick has a good run of pubs. Ambleside and Grasmere too. The smaller villages often have one standout. Worth booking at weekends in summer.",
+    "Worth knowing: many pubs stop serving food by 9pm. If you're coming off the fells late, call ahead. Dog-friendly is the norm, but always check if you're unsure.",
   ],
   "activities": [
-    "Things to do in Southport range from the obvious (beach, Pleasureland, the pier) to the less expected. The Marine Lake Watersports Centre does paddleboarding, kayaking and sailing — good fun for adults and kids, no experience needed for most sessions.",
-    "Southport is well set up for cycling — the coastal path runs along the seafront and bikes are available to hire locally. It's a flat, easy ride with proper sea views.",
-    "For families, Pleasureland is the main draw alongside the beach. The Botanic Gardens in Churchtown have a small zoo and play areas — free entry and much less busy than the seafront on peak days.",
+    "Walking is the main draw, but there's more. Windermere and Coniston have steamers. Ullswater too. Paddleboarding, kayaking, and sailing are available on the main lakes. Grizedale has mountain biking and Go Ape.",
+    "Brockhole on Windermere is the main family attraction. Adventure activities, gardens, lake access. The Ravenglass and Eskdale Railway is a proper day out. Honister Slate Mine does via ferrata for the adventurous.",
+    "Worth knowing: water sports and boat hire get booked up in summer. Book ahead. The steamers run year-round but with reduced schedules in winter.",
   ],
-  "transport": [
-    "Southport has a direct train link to Liverpool — about 45 minutes on the Merseyrail Northern line. It runs frequently and is the easiest way in if you're coming from Liverpool or Formby.",
-    "By road, the A565 is the main route from Liverpool and Formby. Parking in the town centre is mostly paid — there are car parks off Lord Street and near the seafront. The beach itself has paid parking with reasonable rates for a full day.",
-    "Getting around within Southport is straightforward on foot if you're based on Lord Street — the beach, Pleasureland and most of the town centre are walkable. For Churchtown and the golf courses, you'll want a car.",
+  "accommodation": [
+    "The Lake District has everything from bunkhouses to five-star hotels. Ambleside, Keswick, and Windermere have the biggest range. Grasmere and Coniston are quieter. The Gilpin and Linthwaite House are the splurge options. B&Bs and inns are the backbone.",
+    "If you're here for The Open 2026 at Royal Birkdale, accommodation in the Lakes fills up. It's a drive to the course but a lot of visitors base themselves here for the week. Book early.",
+    "Worth knowing: peak season (Easter, summer holidays, half terms) books out months ahead. Flexible on dates? Spring and autumn are quieter and often better for walking.",
   ],
-  "parking": [
-    "Parking in Southport is mostly paid and can get busy in summer — especially on the seafront and near Pleasureland. The Esplanade car park (Sefton Council) on the seafront is the main one. The NCP on London Street is useful for the town centre. There's also on-street parking off Lord Street if you're lucky with timing.",
-    "For the beach, the Marine Drive car parks are the most practical. They fill up early on hot Saturdays — arrive before 10am if you want a spot close to the sand. The Southport Marine Drive Car Park has pay-and-display all day.",
-    "Over in Formby, the National Trust car parks at Victoria Road (L37 1YH) and Lifeboat Road (L37 2EB) are the main options for the pinewoods and beach. Book via the NT app — the signal in the car park is patchy and there's no paper ticket option. Formby Station Park & Ride on Duke Street is a good alternative if the NT car parks are full.",
+  "shopping": [
+    "Keswick has the best outdoor shops. George Fisher, Cotswold Outdoor, and a cluster of independents. Ambleside has a good range too. If you need gear, that's where to go.",
+    "Grasmere has the gingerbread shop and a few independents. Hawkshead has Beatrix Potter connections and gift shops. Windermere and Bowness are more tourist-focused with the usual mix.",
+    "Worth knowing: the outdoor shops know their stuff. If you're unsure about a route or conditions, ask. They'll give you honest advice.",
   ],
 };
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Windermere",
+  title: "Windermere | The Lakes Guide",
   description: "Windermere guide. Coming soon.",
   robots: { index: false, follow: true },
 };

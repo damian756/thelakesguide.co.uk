@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Keswick",
+  title: "Keswick | The Lakes Guide",
   description: "Keswick guide. Coming soon.",
   robots: { index: false, follow: true },
 };

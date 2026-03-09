@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
 
     const rating = parseInt(starRating);
     if (isNaN(rating) || rating < 1 || rating > 5) {
-      return NextResponse.json({ error: "Star rating must be 1–5." }, { status: 400 });
+      return NextResponse.json({ error: "Star rating must be 1 to 5." }, { status: 400 });
     }
 
     if (body.trim().length < 20) {
@@ -155,7 +155,7 @@ export async function POST(req: NextRequest) {
     const verifyUrl = `${BASE_URL}/api/reviews/verify?token=${token}`;
 
     await getResend().emails.send({
-      from: "SouthportGuide <hello@thelakesguide.co.uk>",
+      from: "The Lakes Guide <hello@thelakesguide.co.uk>",
       to: email,
       subject: `Confirm your review of ${business.name}`,
       html: generateReviewVerificationEmail(business.name, verifyUrl),

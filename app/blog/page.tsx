@@ -8,7 +8,7 @@ import BlogClient from "./BlogClient";
 export const metadata = {
   title: "Blog | The Lakes Guide",
   description:
-    "Local guides, tips and Lake District stories — written by someone who knows the fells.",
+    "Local guides, tips and Lake District stories, written by someone who knows the fells.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/blog" },
 };
 

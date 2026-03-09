@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { MapPin, Phone, Globe, Clock, Star, ChevronRight, ShieldCheck, ShieldAlert, ShieldX, Shield } from "lucide-react";
 import { getCategoryBySlug, isValidCategory } from "@/lib/config";
@@ -432,8 +433,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
               <div className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
                 <div className="h-52 bg-gradient-to-br from-[#14231C] to-[#245E3F] flex items-center justify-center relative overflow-hidden">
                   {heroImage ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={heroImage} alt={business.name} className="w-full h-full object-cover" />
+                    <Image src={heroImage} alt={business.name} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 66vw" unoptimized />
                   ) : (
                     <>
                       <div className="absolute inset-0 bg-gradient-to-br from-[#14231C] to-[#245E3F]" />
@@ -784,12 +784,12 @@ function InfoRow({ icon, label, children }: { icon: React.ReactNode; label: stri
 
 // Hygiene rating config
 const HYGIENE_CONFIG: Record<string, { label: string; color: string; bg: string; border: string; icon: React.ReactNode; description: string }> = {
-  "5": { label: "5 – Very Good", color: "text-green-700", bg: "bg-green-50", border: "border-green-300", icon: <ShieldCheck className="w-5 h-5 text-green-600" />, description: "Top food hygiene standards" },
-  "4": { label: "4 – Good", color: "text-green-600", bg: "bg-green-50", border: "border-green-200", icon: <ShieldCheck className="w-5 h-5 text-green-500" />, description: "Good food hygiene standards" },
-  "3": { label: "3 – Generally Satisfactory", color: "text-yellow-700", bg: "bg-yellow-50", border: "border-yellow-300", icon: <Shield className="w-5 h-5 text-yellow-500" />, description: "Generally satisfactory hygiene" },
-  "2": { label: "2 – Improvement Necessary", color: "text-orange-700", bg: "bg-orange-50", border: "border-orange-300", icon: <ShieldAlert className="w-5 h-5 text-orange-500" />, description: "Improvement necessary" },
-  "1": { label: "1 – Major Improvement Required", color: "text-red-700", bg: "bg-red-50", border: "border-red-300", icon: <ShieldAlert className="w-5 h-5 text-red-500" />, description: "Major improvement required" },
-  "0": { label: "0 – Urgent Improvement Required", color: "text-red-900", bg: "bg-red-100", border: "border-red-400", icon: <ShieldX className="w-5 h-5 text-red-700" />, description: "Urgent improvement required" },
+  "5": { label: "5: Very Good", color: "text-green-700", bg: "bg-green-50", border: "border-green-300", icon: <ShieldCheck className="w-5 h-5 text-green-600" />, description: "Top food hygiene standards" },
+  "4": { label: "4: Good", color: "text-green-600", bg: "bg-green-50", border: "border-green-200", icon: <ShieldCheck className="w-5 h-5 text-green-500" />, description: "Good food hygiene standards" },
+  "3": { label: "3: Generally Satisfactory", color: "text-yellow-700", bg: "bg-yellow-50", border: "border-yellow-300", icon: <Shield className="w-5 h-5 text-yellow-500" />, description: "Generally satisfactory hygiene" },
+  "2": { label: "2: Improvement Necessary", color: "text-orange-700", bg: "bg-orange-50", border: "border-orange-300", icon: <ShieldAlert className="w-5 h-5 text-orange-500" />, description: "Improvement necessary" },
+  "1": { label: "1: Major Improvement Required", color: "text-red-700", bg: "bg-red-50", border: "border-red-300", icon: <ShieldAlert className="w-5 h-5 text-red-500" />, description: "Major improvement required" },
+  "0": { label: "0: Urgent Improvement Required", color: "text-red-900", bg: "bg-red-100", border: "border-red-400", icon: <ShieldX className="w-5 h-5 text-red-700" />, description: "Urgent improvement required" },
   "AwaitingInspection": { label: "Awaiting Inspection", color: "text-gray-600", bg: "bg-gray-50", border: "border-gray-300", icon: <Shield className="w-5 h-5 text-gray-400" />, description: "Not yet inspected" },
   "Exempt": { label: "Exempt", color: "text-gray-500", bg: "bg-gray-50", border: "border-gray-200", icon: <Shield className="w-5 h-5 text-gray-400" />, description: "Not required to be rated" },
 };
@@ -850,7 +850,7 @@ function HygieneCard({ name, rating, date, claimed, show, fhrsId }: {
         {/* Score box */}
         <div className={cn("w-20 h-20 rounded-xl flex flex-col items-center justify-center border-2 flex-shrink-0", cfg.bg, cfg.border)}>
           <span className={cn("text-3xl font-black leading-none", cfg.color)}>
-            {rating === "AwaitingInspection" || rating === "Exempt" ? "–" : rating}
+            {rating === "AwaitingInspection" || rating === "Exempt" ? "-" : rating}
           </span>
           {!isNaN(numRating) && <span className={cn("text-xs font-medium mt-0.5", cfg.color)}>/ 5</span>}
         </div>
@@ -994,7 +994,7 @@ function OpeningHours({ data }: { data: unknown }) {
         {hours.periods.map((p, i) => (
           <li key={i} className="flex justify-between text-sm text-gray-600">
             <span>{DAY_NAMES[p.open.day]}</span>
-            <span>{fmt(p.open.time)}{p.close ? ` – ${fmt(p.close.time)}` : " (24h)"}</span>
+            <span>{fmt(p.open.time)}{p.close ? ` to ${fmt(p.close.time)}` : " (24h)"}</span>
           </li>
         ))}
       </ul>
@@ -1016,7 +1016,7 @@ function getParkingBusyGuide(name: string, tags: string[], postcode: string): {
   const n = name.toLowerCase();
   const pc = postcode.toUpperCase();
 
-  // National Trust Formby — always in demand on weekends
+  // National Trust Formby: always in demand on weekends
   if (n.includes('national trust') || n.includes('lifeboat road') || n.includes('victoria road woodland')) {
     return {
       periods: [
@@ -1024,7 +1024,7 @@ function getParkingBusyGuide(name: string, tags: string[], postcode: string): {
         { label: "Summer weekday", level: "medium" },
         { label: "Winter weekend", level: "low" },
       ],
-      note: "Fills early on sunny weekends — often full by 10am in July and August. Book via the NT app in advance. Victoria Road car park is a good overflow if Lifeboat Road is full.",
+      note: "Fills early on sunny weekends, often full by 10am in July and August. Book via the NT app in advance. Victoria Road car park is a good overflow if Lifeboat Road is full.",
     };
   }
 

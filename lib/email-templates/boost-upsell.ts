@@ -52,5 +52,5 @@ export function getBoostUpsellHtml(params: {
 }
 
 export function getBoostUpsellSubject(): string {
-  return "You're trending on The Lakes Guide — now's a good time to boost";
+  return "You're trending on The Lakes Guide. Now's a good time to boost";
 }

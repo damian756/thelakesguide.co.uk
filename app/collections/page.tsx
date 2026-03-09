@@ -28,10 +28,10 @@ export const metadata: Metadata = {
 const COLLECTION_LD = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Southport Collections",
-  description: "Curated collections of Southport businesses — dog-friendly restaurants, hotels with parking, live music bars, and more.",
+  name: "Lake District Collections",
+  description: "Curated collections of Lake District businesses. Dog-friendly restaurants, hotels with parking, lakeside pubs, and more.",
   url: `${BASE_URL}/collections`,
-  publisher: { "@type": "Organization", name: "SouthportGuide.co.uk", url: BASE_URL },
+  publisher: { "@type": "Organization", name: "TheLakesGuide.co.uk", url: BASE_URL },
 };
 
 async function getCollectionCounts(): Promise<Record<string, number>> {
@@ -70,7 +70,7 @@ export default async function CollectionsIndexPage() {
         {/* ── Hero — walks-style ───────────────────────────────────────── */}
         <div className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
           <div className="absolute inset-0">
-            <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={80} className="object-cover" style={{ objectPosition: "center 20%" }} />
+            <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={80} className="object-cover" style={{ objectPosition: "center 20%" }} priority />
             <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
           </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Lake District Walks",
+  title: "Lake District Walks | The Lakes Guide",
   description: "Lake District walks guide. Coming soon.",
   robots: { index: false, follow: true },
 };

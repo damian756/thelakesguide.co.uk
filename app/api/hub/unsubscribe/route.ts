@@ -39,7 +39,7 @@ export async function GET(request: NextRequest) {
 </head>
 <body style="font-family: system-ui, -apple-system, sans-serif; max-width: 480px; margin: 48px auto; padding: 24px; text-align: center; background: #FAF8F5;">
   <h1 style="color: #1B2E4B; margin-bottom: 16px;">You've been unsubscribed</h1>
-  <p style="color: #666; margin: 0;">You will no longer receive weekly performance emails from SouthportGuide.</p>
+  <p style="color: #666; margin: 0;">You will no longer receive weekly performance emails from The Lakes Guide.</p>
   <p style="color: #888; font-size: 14px; margin-top: 24px;">You can re-enable them anytime in your <a href="${process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk"}/dashboard/settings" style="color: #C9A84C;">dashboard settings</a>.</p>
 </body>
 </html>`,

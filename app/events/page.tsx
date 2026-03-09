@@ -12,7 +12,7 @@ export const revalidate = 3600; // Refresh hourly so Eventbrite sync appears
 export const metadata = {
   title: "What's On in the Lake District 2026 | Events Calendar | The Lakes Guide",
   description:
-    "The complete guide to events in the Lake District in 2026. Festivals, races, and seasonal events — updated regularly.",
+    "The complete guide to events in the Lake District in 2026. Festivals, races, and seasonal events, updated regularly.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/events" },
 };
 
@@ -127,7 +127,7 @@ export default async function EventsPage({
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Lake District Events 2026",
-    description: "The complete guide to events in the Lake District in 2026 — festivals, races, and seasonal events.",
+    description: "The complete guide to events in the Lake District in 2026: festivals, races, and seasonal events.",
     url: "https://www.thelakesguide.co.uk/events",
     numberOfItems: allMergedEvents.length,
     itemListElement: allMergedEvents.map((event, i) => ({
@@ -204,7 +204,7 @@ export default async function EventsPage({
             <span className="text-[#C4782A]">2026 Events Calendar</span>
           </h1>
           <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-xl">
-            {upcomingCount} upcoming events across the year — from free community events to festivals and races. Updated regularly.
+            {upcomingCount} upcoming events across the year, from free community events to festivals and races. Updated regularly.
           </p>
         </div>
         <div className="relative h-8 overflow-hidden">
@@ -324,7 +324,7 @@ export default async function EventsPage({
         <div className="mt-16 bg-[#14231C] rounded-3xl p-8 text-center">
           <h3 className="font-display text-2xl font-bold text-white mb-2">Got an event to add?</h3>
           <p className="text-white/60 mb-6">
-            We update this calendar weekly. If you run a Southport event that&apos;s not listed, get in touch.
+            We update this calendar weekly. If you run a Lake District event that&apos;s not listed, get in touch.
           </p>
           <Link
             href="/contact"

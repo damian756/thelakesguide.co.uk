@@ -10,7 +10,7 @@ const BATCH_SIZE = 20;
 const BATCH_DELAY_MS = 200;
 
 const FROM_EMAIL =
-  process.env.RESEND_FROM_EMAIL || "SouthportGuide <onboarding@resend.dev>";
+  process.env.RESEND_FROM_EMAIL || "The Lakes Guide <onboarding@resend.dev>";
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
