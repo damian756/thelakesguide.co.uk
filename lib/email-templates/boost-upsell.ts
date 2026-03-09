@@ -16,21 +16,21 @@ export function getBoostUpsellHtml(params: {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You're trending on SouthportGuide</title>
+  <title>You're trending on The Lakes Guide</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5;">
   <div style="max-width: 560px; margin: 0 auto; padding: 24px;">
     <div style="background: white; border-radius: 12px; padding: 24px; border: 1px solid #eee;">
       <div style="background: #1B2E4B; padding: 12px 16px; border-radius: 8px; margin: -24px -24px 20px -24px;">
-        <span style="font-weight: bold; color: white;">Southport</span>
+        <span style="font-weight: bold; color: white;">The Lakes</span>
         <span style="color: #C9A84C; font-weight: bold;">Guide</span>
       </div>
-      <h2 style="color: #1B2E4B; margin: 0 0 16px;">You're trending on SouthportGuide</h2>
+      <h2 style="color: #1B2E4B; margin: 0 0 16px;">You're trending on The Lakes Guide</h2>
       <p style="color: #666; margin: 0 0 16px; line-height: 1.6;">
         Hi ${userName || "there"},
       </p>
       <p style="color: #666; margin: 0 0 16px; line-height: 1.6;">
-        <strong>${businessName}</strong> has had <strong>+${delta.toLocaleString()}</strong> more views this week compared to last week. That's one of the biggest spikes across all ${categoryName} listings in Southport.
+        <strong>${businessName}</strong> has had <strong>+${delta.toLocaleString()}</strong> more views this week compared to last week. That's one of the biggest spikes across all ${categoryName} listings in the Lake District.
       </p>
       <p style="color: #666; margin: 0 0 16px; line-height: 1.6;">
         When you're already trending, a boost puts you at the top of the page and keeps the momentum going. Boost credits are available in your dashboard.
@@ -39,10 +39,10 @@ export function getBoostUpsellHtml(params: {
         <a href="${boostsUrl}" style="display: inline-block; background: #C9A84C; color: #1B2E4B; font-weight: bold; padding: 14px 28px; border-radius: 8px; text-decoration: none;">Use a boost credit</a>
       </p>
       <p style="color: #888; font-size: 13px;">
-        The SouthportGuide Team
+        The The Lakes Guide Team
       </p>
       <p style="color: #999; font-size: 12px; margin-top: 16px;">
-        Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>, Southport
+        Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>, UK
       </p>
     </div>
   </div>
@@ -52,5 +52,5 @@ export function getBoostUpsellHtml(params: {
 }
 
 export function getBoostUpsellSubject(): string {
-  return "You're trending on SouthportGuide — now's a good time to boost";
+  return "You're trending on The Lakes Guide — now's a good time to boost";
 }

@@ -5,9 +5,9 @@ import bcrypt from "bcryptjs";
 import crypto from "crypto";
 import { prisma } from "@/lib/prisma";
 
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "SouthportGuide <noreply@southportguide.co.uk>";
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "SouthportGuide <noreply@thelakesguide.co.uk>";
 const ADMIN_EMAIL = "damian@churchtownmedia.co.uk";
-const BASE_URL = process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
+const BASE_URL = process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
 
 const Schema = z.object({
   businessId: z.string().uuid(),

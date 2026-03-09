@@ -249,7 +249,7 @@ export default function SiteReviewsTab({
       {reviews.length === 0 ? (
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 text-center">
           <Star className="w-10 h-10 mx-auto mb-3 text-gray-300" />
-          <p className="font-semibold text-gray-700 mb-1">No SouthportGuide reviews yet</p>
+          <p className="font-semibold text-gray-700 mb-1">No The Lakes Guide reviews yet</p>
           <p className="text-sm text-gray-500 mb-4">
             Reviews will appear here once visitors leave them on your listing and they&apos;re approved.
           </p>

@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import OutreachClient from "./OutreachClient";
 
 export const metadata = {
-  title: "Outreach | Admin | SouthportGuide",
+  title: "Outreach | Admin | The Lakes Guide",
   robots: { index: false, follow: false },
 };
 

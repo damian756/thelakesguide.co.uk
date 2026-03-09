@@ -162,7 +162,7 @@ def extract_emails_from_html(html, page_url):
 def fetch_url(url, timeout, session):
     """Fetch URL, return (html, final_url) or (None, None) on error."""
     headers = {
-        'User-Agent': 'Mozilla/5.0 (compatible; SouthportGuide/1.0; +https://southportguide.co.uk)',
+        'User-Agent': 'Mozilla/5.0 (compatible; LakesGuide/1.0; +https://thelakesguide.co.uk)',
         'Accept': 'text/html,application/xhtml+xml',
         'Accept-Language': 'en-GB,en;q=0.9',
     }

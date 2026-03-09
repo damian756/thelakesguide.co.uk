@@ -2,8 +2,8 @@ import { getResend } from "@/lib/resend";
 import { NextRequest, NextResponse } from "next/server";
 
 const TO_EMAIL = "damian@churchtownmedia.co.uk";
-// Once verified, change to: "SouthportGuide <contact@southportguide.co.uk>"
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "SouthportGuide <noreply@southportguide.co.uk>";
+// Once verified, change to: "SouthportGuide <contact@thelakesguide.co.uk>"
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "SouthportGuide <noreply@thelakesguide.co.uk>";
 
 export async function POST(req: NextRequest) {
   try {
@@ -92,7 +92,7 @@ export async function POST(req: NextRequest) {
           </p>
           <p style="color: #555; line-height: 1.7;">
             In the meantime, feel free to explore the guide at
-            <a href="https://www.southportguide.co.uk" style="color: #C9A84C;">southportguide.co.uk</a>.
+            <a href="https://www.thelakesguide.co.uk" style="color: #C9A84C;">thelakesguide.co.uk</a>.
           </p>
           <p style="color: #1B2E4B; margin-top: 24px;">The SouthportGuide Team</p>
           <p style="color: #999; font-size: 12px; margin-top: 24px;">

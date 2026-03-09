@@ -1,5 +1,5 @@
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "SouthportGuide <noreply@southportguide.co.uk>";
-const BASE_URL = process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "The Lakes Guide <noreply@thelakesguide.co.uk>";
+const BASE_URL = process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
 
 export function getClaimApprovalHtml(params: {
   name: string;
@@ -10,7 +10,7 @@ export function getClaimApprovalHtml(params: {
     <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 32px; border-radius: 8px;">
       <div style="border-bottom: 3px solid #C9A84C; padding-bottom: 16px; margin-bottom: 24px;">
         <h1 style="font-size: 24px; color: #1B2E4B; margin: 0;">
-          Southport<span style="color: #C9A84C;">Guide</span>.co.uk
+          The Lakes <span style="color: #C9A84C;">Guide</span>.co.uk
         </h1>
       </div>
       <p style="color: #1B2E4B; font-size: 16px;">Hi ${params.name},</p>
@@ -24,11 +24,11 @@ export function getClaimApprovalHtml(params: {
         </a>
       </p>
       <p style="color: #888; font-size: 13px;">
-        This link expires in 7 days. If you need a new link, contact hello@southportguide.co.uk.
+        This link expires in 7 days. If you need a new link, contact hello@thelakesguide.co.uk.
       </p>
-      <p style="color: #1B2E4B; margin-top: 24px;">The SouthportGuide Team</p>
+      <p style="color: #1B2E4B; margin-top: 24px;">The Lakes Guide Team</p>
       <p style="color: #999; font-size: 12px; margin-top: 24px;">
-        Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>, Southport
+        Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>, UK
       </p>
     </div>
   `;
@@ -42,7 +42,7 @@ export function getClaimRejectionHtml(params: {
     <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 32px; border-radius: 8px;">
       <div style="border-bottom: 3px solid #C9A84C; padding-bottom: 16px; margin-bottom: 24px;">
         <h1 style="font-size: 24px; color: #1B2E4B; margin: 0;">
-          Southport<span style="color: #C9A84C;">Guide</span>.co.uk
+          The Lakes <span style="color: #C9A84C;">Guide</span>.co.uk
         </h1>
       </div>
       <p style="color: #1B2E4B; font-size: 16px;">Hi ${params.name},</p>
@@ -52,9 +52,9 @@ export function getClaimRejectionHtml(params: {
       <p style="color: #555; line-height: 1.7;">
         If you think this is a mistake, reply to this email and we&apos;ll look into it.
       </p>
-      <p style="color: #1B2E4B; margin-top: 24px;">The SouthportGuide Team</p>
+      <p style="color: #1B2E4B; margin-top: 24px;">The Lakes Guide Team</p>
       <p style="color: #999; font-size: 12px; margin-top: 24px;">
-        Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>, Southport
+        Built by <a href="https://churchtownmedia.co.uk" style="color: #C9A84C;">Churchtown Media</a>, UK
       </p>
     </div>
   `;

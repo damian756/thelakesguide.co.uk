@@ -97,7 +97,7 @@ export default function HubShell({ user, business, children }: HubShellProps) {
   };
 
   const listingUrl = business
-    ? `https://www.southportguide.co.uk/${business.category.slug}/${business.slug}`
+    ? `https://www.thelakesguide.co.uk/${business.category.slug}/${business.slug}`
     : "#";
 
   return (
@@ -109,7 +109,7 @@ export default function HubShell({ user, business, children }: HubShellProps) {
           <div className="h-1 bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent" />
           <div className="px-4 py-5 flex items-center gap-2">
             <span className="font-display font-bold text-white">
-              Southport<span className="text-[#C9A84C]">Guide</span>
+              The Lakes <span className="text-[#C9A84C]">Guide</span>
             </span>
             <span className="text-white/40 text-xs font-normal">Business Portal</span>
           </div>
@@ -195,7 +195,7 @@ export default function HubShell({ user, business, children }: HubShellProps) {
           <Menu className="w-6 h-6" />
         </button>
         <span className="font-display font-bold text-white text-sm">
-          Southport<span className="text-[#C9A84C]">Guide</span>
+          The Lakes <span className="text-[#C9A84C]">Guide</span>
         </span>
         <div className="w-10 h-10 rounded-full bg-[#C9A84C]/20 text-[#C9A84C] font-bold flex items-center justify-center text-sm">
           {getInitials(user.name)}
@@ -284,7 +284,7 @@ export default function HubShell({ user, business, children }: HubShellProps) {
 
       {/* Main content */}
       <main className="flex-1 lg:pl-64 pt-14 lg:pt-0">
-        {user.email === "demo@southportguide.co.uk" && (
+        {user.email === "demo@thelakesguide.co.uk" && (
           <div className="bg-[#C9A84C] text-[#1B2E4B] text-sm font-semibold px-6 py-3 flex items-center justify-between gap-4">
             <span>
               🎭 <span className="font-bold">Demo account</span> — you&apos;re viewing The Sandgrounder. Data is illustrative only. Stripe payments are disabled.

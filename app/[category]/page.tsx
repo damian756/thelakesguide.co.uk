@@ -16,66 +16,53 @@ type Props = {
 // ── Category config ──────────────────────────────────────────────────────────
 
 const THEMES: Record<string, { gradient: string; accent: string; emoji: string; tagline: string; heroPos: string }> = {
-  restaurants:      { gradient: "from-[#8B2635] to-[#C94B3B]", accent: "#C94B3B", emoji: "🍽️", tagline: "The best places to eat in Southport", heroPos: "center 75%" },
-  hotels:           { gradient: "from-[#1B2E4B] to-[#2A4A73]", accent: "#1B2E4B", emoji: "🏨", tagline: "Where to stay in Southport", heroPos: "center" },
-  "bars-nightlife": { gradient: "from-[#3D1A5C] to-[#6B3AA0]", accent: "#5B2D8A", emoji: "🍺", tagline: "Pubs, bars and nightlife in Southport", heroPos: "center 5%" },
-  cafes:            { gradient: "from-[#6B3A1F] to-[#A06040]", accent: "#8B5E3C", emoji: "☕", tagline: "Great coffee, cafes and tea rooms", heroPos: "center 35%" },
-  attractions:      { gradient: "from-[#1A5C5B] to-[#2E8B7A]", accent: "#2E7D6E", emoji: "🎡", tagline: "Southport's attractions, venues and visitor experiences", heroPos: "center 20%" },
-  "beaches-parks":  { gradient: "from-[#1A5C7A] to-[#1E8AB0]", accent: "#1A6B8A", emoji: "🏖️", tagline: "Beautiful beaches and open spaces", heroPos: "center 15%" },
-  golf:             { gradient: "from-[#1A4020] to-[#2E6830]", accent: "#2C5F2E", emoji: "⛳", tagline: "World-class golf courses near Southport", heroPos: "center 20%" },
-  shopping:         { gradient: "from-[#8B2847] to-[#C45C6A]", accent: "#C45C6A", emoji: "🛍️", tagline: "Shops, boutiques and markets", heroPos: "center" },
-  wellness:         { gradient: "from-[#4A2060] to-[#7B3FAA]", accent: "#6B4C8B", emoji: "💆", tagline: "Spas, salons and wellness in Southport", heroPos: "center" },
-  activities:       { gradient: "from-[#0D6E6E] to-[#0F9B8E]", accent: "#0D6E6E", emoji: "🏄", tagline: "Sport, leisure and outdoor activities", heroPos: "center" },
-  transport:        { gradient: "from-[#2A3F5C] to-[#3A5070]", accent: "#3A4F6B", emoji: "🚌", tagline: "Getting around Southport", heroPos: "center" },
-  parking:          { gradient: "from-[#1C3148] to-[#2E4A6A]", accent: "#2E4A6A", emoji: "🅿️", tagline: "Car parks and parking across Southport and the Sefton Coast", heroPos: "center" },
+  walks:        { gradient: "from-[#1A4020] to-[#2E6830]", accent: "#2C5F2E", emoji: "🥾", tagline: "Walks and hiking routes in the Lake District", heroPos: "center 20%" },
+  villages:     { gradient: "from-[#2A3F5C] to-[#3A5070]", accent: "#3A4F6B", emoji: "🏘️", tagline: "Villages and towns in the Lake District", heroPos: "center" },
+  restaurants:  { gradient: "from-[#8B2635] to-[#C94B3B]", accent: "#C94B3B", emoji: "🍽️", tagline: "The best places to eat in the Lake District", heroPos: "center 75%" },
+  cafes:         { gradient: "from-[#6B3A1F] to-[#A06040]", accent: "#8B5E3C", emoji: "☕", tagline: "Great coffee, cafes and tea rooms", heroPos: "center 35%" },
+  pubs:         { gradient: "from-[#3D1A5C] to-[#6B3AA0]", accent: "#5B2D8A", emoji: "🍺", tagline: "Pubs and inns in the Lake District", heroPos: "center 5%" },
+  activities:   { gradient: "from-[#0D6E6E] to-[#0F9B8E]", accent: "#0D6E6E", emoji: "🏄", tagline: "Sport, leisure and outdoor activities", heroPos: "center" },
+  accommodation: { gradient: "from-[#1B2E4B] to-[#2A4A73]", accent: "#1B2E4B", emoji: "🏨", tagline: "Where to stay in the Lake District", heroPos: "center" },
+  shopping:     { gradient: "from-[#8B2847] to-[#C45C6A]", accent: "#C45C6A", emoji: "🛍️", tagline: "Shops, boutiques and markets", heroPos: "center" },
 };
 
 const CAT_ORDER = [
-  "restaurants", "hotels", "bars-nightlife", "cafes",
-  "attractions", "golf", "shopping", "beaches-parks",
-  "wellness", "activities", "transport", "parking",
+  "walks", "villages", "restaurants", "cafes", "pubs",
+  "activities", "accommodation", "shopping",
 ];
 
 const CATEGORY_GUIDES: Record<string, { href: string; label: string }[]> = {
-  "restaurants": [
-    { href: "/guides/southport-eateries", label: "Where to Eat in Southport" },
-    { href: "/guides/best-restaurants-southport", label: "Best Restaurants Guide" },
-    { href: "/guides/birkdale-village", label: "Birkdale Village" },
+  restaurants: [
+    { href: "/things-to-do", label: "Things to Do in the Lake District" },
+    { href: "/collections", label: "Collections" },
   ],
-  "cafes": [
-    { href: "/guides/best-cafes-southport", label: "Best Cafés Guide" },
-    { href: "/guides/southport-eateries", label: "Where to Eat in Southport" },
-    { href: "/guides/lord-street", label: "Lord Street" },
+  cafes: [
+    { href: "/things-to-do", label: "Things to Do in the Lake District" },
+    { href: "/collections", label: "Collections" },
   ],
-  "beaches-parks": [
-    { href: "/guides/southport-beach", label: "Southport Beach Guide" },
-    { href: "/guides/southport-pier", label: "Southport Pier Guide" },
+  pubs: [
+    { href: "/things-to-do", label: "Things to Do in the Lake District" },
+    { href: "/collections/dog-friendly-pubs-lake-district", label: "Dog-Friendly Pubs" },
   ],
-  "attractions": [
-    { href: "/things-to-do", label: "Things to Do in Southport" },
-    { href: "/guides/southport-pier", label: "Southport Pier Guide" },
-    { href: "/guides/southport-beach", label: "Southport Beach Guide" },
+  activities: [
+    { href: "/things-to-do", label: "Things to Do in the Lake District" },
+    { href: "/collections", label: "Collections" },
   ],
-  "golf": [
-    { href: "/the-open-2026", label: "The Open 2026 Visitor Guide" },
-    { href: "/guides/birkdale-village", label: "Birkdale Village" },
+  accommodation: [
+    { href: "/things-to-do", label: "Things to Do in the Lake District" },
+    { href: "/collections/accommodation-with-parking-lake-district", label: "Accommodation with Parking" },
   ],
-  "hotels": [
-    { href: "/the-open-2026/accommodation", label: "Open 2026 Accommodation Guide" },
-    { href: "/things-to-do", label: "Things to Do in Southport" },
-    { href: "/guides/birkdale-village", label: "Birkdale Village" },
+  shopping: [
+    { href: "/things-to-do", label: "Things to Do in the Lake District" },
+    { href: "/collections", label: "Collections" },
   ],
-  "parking": [
-    { href: "/guides/parking-southport", label: "Southport Parking Guide" },
-    { href: "/guides/free-parking-southport", label: "Free Parking in Southport" },
+  walks: [
+    { href: "/things-to-do", label: "Things to Do in the Lake District" },
+    { href: "/collections/free-things-to-do-lake-district", label: "Free Things to Do" },
   ],
-  "activities": [
-    { href: "/things-to-do", label: "Things to Do in Southport" },
-    { href: "/guides/southport-beach", label: "Southport Beach Guide" },
-  ],
-  "shopping": [
-    { href: "/guides/lord-street", label: "Lord Street Guide" },
-    { href: "/guides/birkdale-village", label: "Birkdale Village Guide" },
+  villages: [
+    { href: "/things-to-do", label: "Things to Do in the Lake District" },
+    { href: "/collections", label: "Collections" },
   ],
 };
 
@@ -141,18 +128,19 @@ const CATEGORY_CONTENT: Record<string, string[]> = {
   ],
 };
 
-const FOOD_CATS = new Set(["restaurants", "cafes", "bars-nightlife", "hotels", "activities"]);
+const FOOD_CATS = new Set(["restaurants", "cafes", "pubs", "accommodation", "activities"]);
 
 // ── Area definitions ─────────────────────────────────────────────────────────
 
 const AREAS: { key: string; label: string; test: (addr: string, pc: string) => boolean }[] = [
-  { key: "town-centre", label: "Town Centre", test: (_, pc) => pc.startsWith("PR8 1") || pc.startsWith("PR9 0") },
-  { key: "birkdale",    label: "Birkdale",    test: (addr, pc) => pc.startsWith("PR8 2") || addr.includes("Birkdale") },
-  { key: "ainsdale",    label: "Ainsdale",    test: (addr, pc) => pc.startsWith("PR8 3") || addr.includes("Ainsdale") },
-  { key: "seafront",    label: "Seafront",    test: (addr) => ["Promenade", "Marine Drive", "Esplanade", "Ocean Plaza"].some((s) => addr.toLowerCase().includes(s.toLowerCase())) },
-  { key: "churchtown",  label: "Churchtown",  test: (addr, pc) => pc.startsWith("PR9 7") || pc.startsWith("PR9 9") || addr.includes("Churchtown") },
-  { key: "crossens",    label: "Crossens",    test: (addr, pc) => pc.startsWith("PR9 8") || addr.includes("Crossens") || addr.includes("Marshside") },
-  { key: "formby",      label: "Formby",      test: (addr, pc) => addr.includes("Formby") || pc.startsWith("L37") || pc.startsWith("PR6") },
+  { key: "windermere", label: "Windermere", test: (addr, pc) => pc.startsWith("LA23") || addr.includes("Windermere") || addr.includes("Bowness") },
+  { key: "ambleside",  label: "Ambleside",  test: (addr, pc) => pc.startsWith("LA22") || addr.includes("Ambleside") },
+  { key: "keswick",    label: "Keswick",    test: (addr, pc) => pc.startsWith("CA12") || addr.includes("Keswick") },
+  { key: "grasmere",   label: "Grasmere",  test: (addr, pc) => addr.includes("Grasmere") },
+  { key: "coniston",   label: "Coniston",  test: (addr, pc) => pc.startsWith("LA21") || addr.includes("Coniston") },
+  { key: "hawkshead",  label: "Hawkshead", test: (addr, pc) => addr.includes("Hawkshead") },
+  { key: "kendal",     label: "Kendal",    test: (addr, pc) => pc.startsWith("LA9") || addr.includes("Kendal") },
+  { key: "glenridding", label: "Glenridding", test: (addr, pc) => addr.includes("Glenridding") || addr.includes("Patterdale") },
 ];
 
 function matchesArea(address: string, postcode: string, areaKey: string): boolean {
@@ -165,15 +153,13 @@ function matchesArea(address: string, postcode: string, areaKey: string): boolea
 
 export const dynamic = "force-dynamic";
 
-const BASE_URL = "https://www.southportguide.co.uk";
+const BASE_URL = "https://www.thelakesguide.co.uk";
 
 // Per-category meta description overrides — more specific than the generic template
 const CAT_META_DESCRIPTIONS: Partial<Record<string, string>> = {
-  parking: "Car parks and parking across Southport, Formby and the Sefton Coast. Free and paid options with postcodes, directions, and how busy they get on peak days — all on SouthportGuide.",
-  attractions: "Browse Southport's attractions — The Atkinson, Adventure Coast, Marine Lake, Southport Pier, Botanic Gardens, and more. Listings with Google ratings, opening times and directions.",
-  activities: "Watersports on Marine Lake, coastal cycling, walking the Sefton Coastal Path, horse riding, and outdoor leisure in Southport. Browse all activity listings with ratings and contact details.",
-  hotels: "Hotels in Southport — from The Vincent and The Bold Hotel on Lord Street to B&Bs in Birkdale and budget chains. Find every hotel with Google ratings, walking times from the beach, and availability. Booking early is essential for The Open 2026.",
-  restaurants: "Restaurants in Southport — Italian, Indian, seafood, brunch and Sunday lunch. Browse every restaurant with Google ratings, menus and booking links. From Bistrot Verite in Birkdale to Lord Street dining.",
+  activities: "Kayaking, sailing, walking, mountain biking in the Lake District. Browse all activity listings with ratings and contact details on TheLakesGuide.co.uk.",
+  accommodation: "Hotels, B&Bs and holiday lets in the Lake District. Find every place to stay with Google ratings and availability. Book early for summer.",
+  restaurants: "Restaurants in the Lake District. Italian, pub grub, fine dining. Browse every restaurant with Google ratings and booking links on TheLakesGuide.co.uk.",
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -181,14 +167,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cat = getCategoryBySlug(category);
   if (!cat) return { title: "Category" };
   const theme = THEMES[category];
-  const title = `${cat.name} in Southport`;
+  const title = `${cat.name} in the Lake District`;
   const description = CAT_META_DESCRIPTIONS[category]
-    ?? `${theme?.tagline || cat.description} — browse all listings with Google ratings, food hygiene scores and contact details on SouthportGuide.co.uk`;
+    ?? `${theme?.tagline || cat.description}. Browse all listings with Google ratings, food hygiene scores and contact details on TheLakesGuide.co.uk`;
   const url = `${BASE_URL}/${category}`;
   return {
     title, description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, type: "website", siteName: "SouthportGuide.co.uk" },
+    openGraph: { title, description, url, type: "website", siteName: "TheLakesGuide.co.uk" },
     twitter: { card: "summary", title, description },
   };
 }
@@ -334,7 +320,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
               <div className="text-5xl mb-4 drop-shadow-md">{theme.emoji}</div>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
                 <strong>{cat.name}</strong>
-                <span className="text-white/50 font-normal"> in Southport</span>
+                <span className="text-white/50 font-normal"> in the Lake District</span>
               </h1>
               <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-xl">{theme.tagline}</p>
             </div>
@@ -512,7 +498,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                 <div className="text-4xl mb-3">{theme.emoji}</div>
                 <h3 className="font-display text-2xl font-bold text-white mb-2">Own a business in this category?</h3>
                 <p className="text-white/70 text-sm mb-6 max-w-sm mx-auto">
-                  List for free and get discovered by thousands of visitors planning their Southport trip.
+                  List for free and get discovered by thousands of visitors planning their Lake District trip.
                 </p>
                 <Link href="/claim-listing" className="inline-block bg-[#C9A84C] hover:bg-[#E8C87A] text-white px-7 py-3 rounded-full font-bold text-sm transition-all hover:shadow-lg">
                   Add Your Business →

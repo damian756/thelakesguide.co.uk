@@ -199,7 +199,7 @@ export default function ListingEditorClient({ business }: Props) {
   const ratingOk = business.rating != null && business.rating >= 4;
   const isPro = business.hubTier === "pro";
 
-  const listingUrl = `https://www.southportguide.co.uk/${business.category.slug}/${business.slug}`;
+  const listingUrl = `https://www.thelakesguide.co.uk/${business.category.slug}/${business.slug}`;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">

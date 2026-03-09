@@ -2,7 +2,7 @@
 
 **The definitive local guide and business directory for Southport, Merseyside.**
 
-Live site: [southportguide.co.uk](https://www.southportguide.co.uk)
+Live site: [thelakesguide.co.uk](https://www.thelakesguide.co.uk)
 
 ---
 

@@ -49,30 +49,26 @@ function sanitize(str: string): string {
 // Using arrays so the entity is also a LocalBusiness (which IS supported), preserving
 // aggregateRating eligibility while retaining semantic accuracy.
 const SCHEMA_TYPES: Record<string, string | string[]> = {
-  restaurants:      "Restaurant",
-  hotels:           "LodgingBusiness",
-  "bars-nightlife": "BarOrPub",
-  cafes:            "CafeOrCoffeeShop",
-  golf:             "SportsClub",
-  shopping:         "Store",
-  wellness:         "BeautySalon",
-  attractions:      ["LocalBusiness", "TouristAttraction"],
-  "beaches-parks":  ["LocalBusiness", "Park"],
-  activities:       "LocalBusiness",
-  transport:        "LocalBusiness",
-  parking:          ["LocalBusiness", "ParkingFacility"],
+  restaurants:   "Restaurant",
+  accommodation: "LodgingBusiness",
+  pubs:          "BarOrPub",
+  cafes:         "CafeOrCoffeeShop",
+  shopping:      "Store",
+  walks:         "LocalBusiness",
+  villages:      "LocalBusiness",
+  activities:    "LocalBusiness",
 };
 
 // Categories that might have food hygiene ratings
-const FOOD_CATS = new Set(["restaurants", "cafes", "bars-nightlife", "hotels", "activities"]);
+const FOOD_CATS = new Set(["restaurants", "cafes", "pubs", "accommodation", "activities"]);
 
 function extractArea(address: string, _postcode: string): string {
-  const areas = ["Birkdale", "Ainsdale", "Churchtown", "Crossens", "Marshside",
-                 "Formby", "Ormskirk", "Scarisbrick", "Banks", "Halsall", "Burscough"];
+  const areas = ["Windermere", "Bowness", "Ambleside", "Keswick", "Grasmere", "Coniston",
+                 "Glenridding", "Hawkshead", "Cockermouth", "Ulverston", "Kendal"];
   for (const area of areas) {
     if (address.includes(area)) return area;
   }
-  return "Southport";
+  return "Lake District";
 }
 
 function formatAddress(address: string, postcode: string): string {
@@ -82,34 +78,21 @@ function formatAddress(address: string, postcode: string): string {
 }
 
 // Per-slug meta overrides for high-value listings with poor SERP CTR
-const LISTING_META_OVERRIDES: Record<string, { title?: string; description?: string }> = {
-  "restaurants/roberto-s-italian": {
-    title: "Roberto's Italian, Southport — Restaurant on Lord Street | SouthportGuide",
-    description: "Roberto's Italian is one of Southport's most visited restaurants — classic Italian food, good portions, relaxed atmosphere. Opening hours, contact details and directions on SouthportGuide.",
-  },
-  "restaurants/limoncello": {
-    title: "Limoncello, Birkdale — Italian Restaurant in Southport | SouthportGuide",
-    description: "Limoncello is a popular Italian restaurant in Birkdale Village, Southport. See Google rating, opening hours, contact details and directions — all in one place on SouthportGuide.",
-  },
-};
+const LISTING_META_OVERRIDES: Record<string, { title?: string; description?: string }> = {};
 
-// Short category labels for concise page titles (template appends " | SouthportGuide.co.uk")
+// Short category labels for concise page titles (template appends " | The Lakes Guide")
 const SHORT_CAT: Record<string, string> = {
-  restaurants:      "Restaurant",
-  hotels:           "Hotel",
-  "bars-nightlife": "Bar & Pub",
-  cafes:            "Café",
-  attractions:      "Attraction",
-  "beaches-parks":  "Park",
-  golf:             "Golf",
-  shopping:         "Shop",
-  wellness:         "Wellness",
-  activities:       "Activity",
-  transport:        "Transport",
-  parking:          "Car Park",
+  restaurants:   "Restaurant",
+  accommodation: "Hotel",
+  pubs:         "Bar & Pub",
+  cafes:        "Café",
+  walks:        "Walk",
+  villages:     "Village",
+  shopping:     "Shop",
+  activities:   "Activity",
 };
 
-// Budget: local part ≤47 chars so full <title> stays ≤70 with " | SouthportGuide.co.uk" (23 chars).
+// Budget: local part ≤47 chars so full <title> stays ≤70 with " | The Lakes Guide" (18 chars).
 // Three-tier fallback: Name — Cat, Location → Name — Cat → Name — Location → truncated Name.
 // For beaches-parks, detect "beach" in the name to label it correctly.
 function buildTitle(name: string, catSlug: string, area: string): string {
@@ -118,7 +101,7 @@ function buildTitle(name: string, catSlug: string, area: string): string {
   const catLabel  = catSlug === "beaches-parks"
     ? (isBeach ? "Beach" : "Park")
     : (SHORT_CAT[catSlug] ?? catSlug);
-  const location  = area === "Southport" ? "Southport" : `${area}, Southport`;
+  const location  = area === "Lake District" ? "Lake District" : `${area}, Lake District`;
 
   const withBoth = `${cleanName} — ${catLabel}, ${location}`;
   if (withBoth.length <= 47) return withBoth;
@@ -138,7 +121,7 @@ function buildMetaDescription(
   rating: number | null, reviewCount: number | null
 ): string {
   const cleanName = sanitize(name);
-  const locLabel  = area === "Southport" ? "Southport" : `${area}, Southport`;
+  const locLabel  = area === "Lake District" ? "Lake District" : `${area}, Lake District`;
 
   if (description) {
     const stripped = sanitize(description.replace(/\n+/g, " ").trim());
@@ -155,8 +138,8 @@ function buildMetaDescription(
       const cut = stripped.lastIndexOf(" ", 152);
       result = (cut > 100 ? stripped.slice(0, cut) : stripped.slice(0, 152)) + "…";
     }
-    // Inject a location signal if neither the area name nor "Southport" appear in the snippet.
-    if (!result.includes(area) && !result.includes("Southport")) {
+    // Inject a location signal if neither the area name nor "Lake District" appear in the snippet.
+    if (!result.includes(area) && !result.includes("Lake District")) {
       const suffix = ` ${locLabel}.`;
       if ((result + suffix).length <= 160) result += suffix;
     }
@@ -165,14 +148,14 @@ function buildMetaDescription(
 
   if (shortDescription) {
     const ratingPart = rating ? ` Rated ${rating}/5.` : "";
-    const locPart    = area !== "Southport" ? ` In ${area}, Southport.` : " In Southport.";
-    return `${cleanName} - ${sanitize(shortDescription)}${ratingPart}${locPart} Find address, opening hours & more on SouthportGuide.co.uk`.slice(0, 160);
+    const locPart    = area !== "Lake District" ? ` In ${area}, Lake District.` : " In the Lake District.";
+    return `${cleanName} - ${sanitize(shortDescription)}${ratingPart}${locPart} Find address, opening hours & more on TheLakesGuide.co.uk`.slice(0, 160);
   }
 
   const ratingStr = rating && reviewCount
     ? `Rated ${rating.toFixed(1)}/5 by ${reviewCount.toLocaleString()} reviewers. `
     : "";
-  return `${cleanName} - ${catName} in ${locLabel}. ${ratingStr}Find opening hours, directions and contact details on SouthportGuide.co.uk`.slice(0, 160);
+  return `${cleanName} - ${catName} in ${locLabel}. ${ratingStr}Find opening hours, directions and contact details on TheLakesGuide.co.uk`.slice(0, 160);
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -198,7 +181,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const desc      = override?.description ?? buildMetaDescription(cleanName, cat.name, area, b.description, b.shortDescription, b.rating, b.reviewCount);
     const imageUrl  = b.images?.[0] || null;
 
-    const canonicalUrl = `https://www.southportguide.co.uk/${category}/${slug}`;
+    const canonicalUrl = `https://www.thelakesguide.co.uk/${category}/${slug}`;
 
     return {
       title,
@@ -209,7 +192,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         description: desc,
         url: canonicalUrl,
         type: "website",
-        siteName: "SouthportGuide.co.uk",
+        siteName: "TheLakesGuide.co.uk",
         locale: "en_GB",
         ...(imageUrl ? { images: [{ url: imageUrl, width: 1200, height: 630, alt: cleanName }] } : {}),
       },
@@ -354,7 +337,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
       "@type": "PostalAddress",
       streetAddress: business.address.replace(/,?\s*(United Kingdom|UK)$/i, "").split(",")[0].trim(),
       addressLocality: area,
-      addressRegion: "Merseyside",
+      addressRegion: "Cumbria",
       postalCode: business.postcode,
       addressCountry: "GB",
     },
@@ -415,9 +398,9 @@ export default async function BusinessPage({ params, searchParams }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home",    item: "https://www.southportguide.co.uk" },
-      { "@type": "ListItem", position: 2, name: cat.name,  item: `https://www.southportguide.co.uk/${category}` },
-      { "@type": "ListItem", position: 3, name: business.name, item: `https://www.southportguide.co.uk/${category}/${slug}` },
+      { "@type": "ListItem", position: 1, name: "Home",    item: "https://www.thelakesguide.co.uk" },
+      { "@type": "ListItem", position: 2, name: cat.name,  item: `https://www.thelakesguide.co.uk/${category}` },
+      { "@type": "ListItem", position: 3, name: business.name, item: `https://www.thelakesguide.co.uk/${category}/${slug}` },
     ],
   };
 
@@ -575,29 +558,6 @@ export default async function BusinessPage({ params, searchParams }: Props) {
                 reviewVerifiedParam={reviewParam ?? null}
               />
 
-              {/* Open 2026 contextual callouts (Lakes: accommodation = hotels equivalent) */}
-              {(category === "restaurants" || category === "cafes" || category === "pubs") && (
-                <div className="rounded-2xl overflow-hidden border border-[#C9A84C]/30 bg-[#1B2E4B]">
-                  <div className="px-6 py-5">
-                    <div className="flex items-start gap-4">
-                      <span className="text-3xl flex-none">🍺</span>
-                      <div>
-                        <p className="text-[#C9A84C] font-bold text-sm uppercase tracking-wide mb-1">The Open Championship 2026</p>
-                        <p className="text-white font-semibold mb-1">Where to eat &amp; drink near Royal Birkdale</p>
-                        <p className="text-white/70 text-sm leading-relaxed mb-4">Heading to The Open? We&apos;ve picked the best restaurants, pubs, and cafés near the course — sorted by distance and atmosphere.</p>
-                        <div className="flex flex-wrap gap-2">
-                          <a href="/the-open-2026/restaurants" className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#e0ba66] text-[#1B2E4B] font-bold text-sm px-5 py-2.5 rounded-full transition-colors">
-                            Restaurants near Royal Birkdale →
-                          </a>
-                          <a href="/the-open-2026/pubs" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors">
-                            Best Open pubs →
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
               {/* Address + Hours */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
                 <div className="grid sm:grid-cols-2 gap-6">
@@ -669,7 +629,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
               {/* Related listings */}
               {related.length > 0 && (
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                  <h2 className="font-semibold text-gray-900 mb-4">More {cat.name} in Southport</h2>
+                  <h2 className="font-semibold text-gray-900 mb-4">More {cat.name} in the Lake District</h2>
                   <div className="grid sm:grid-cols-2 gap-3">
                     {related.map((r) => (
                       <Link
@@ -729,7 +689,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
                 )}
 
                 <InfoRow icon={<MapPin className="w-4 h-4 text-blue-500" />} label="Location">
-                  <span className="text-gray-800 text-sm">{area}{area !== "Southport" ? ", Southport" : ""}</span>
+                  <span className="text-gray-800 text-sm">{area}{area !== "Lake District" ? ", Lake District" : ""}</span>
                 </InfoRow>
 
                 {business.priceRange && (
@@ -1076,7 +1036,7 @@ function getParkingBusyGuide(name: string, tags: string[], postcode: string): {
         { label: "Summer weekday", level: "medium" },
         { label: "Winter", level: "low" },
       ],
-      note: "Can fill up fast on warm summer days, especially if there's an event on at Pleasureland or the Flower Show. Arrive before 10am on sunny Saturdays to be safe.",
+      note: "Can fill up fast on warm summer days, especially during events. Arrive before 10am on sunny Saturdays to be safe.",
     };
   }
 
@@ -1088,7 +1048,7 @@ function getParkingBusyGuide(name: string, tags: string[], postcode: string): {
         { label: "Summer weekday", level: "medium" },
         { label: "Winter", level: "low" },
       ],
-      note: "Quieter than Southport seafront but still gets busy on good summer days. Informal overflow parking available on the approach road.",
+      note: "Quieter than the main hubs but still gets busy on good summer days. Informal overflow parking available on the approach road.",
     };
   }
 
@@ -1112,7 +1072,7 @@ function getParkingBusyGuide(name: string, tags: string[], postcode: string): {
         { label: "Weekday daytime", level: "medium" },
         { label: "Evening", level: "low" },
       ],
-      note: "Town centre parking can be competitive during events at Southport Theatre or the Flower Show. Worth checking for events before you visit in summer.",
+      note: "Town centre parking can be competitive during events and festivals. Worth checking for events before you visit in summer.",
     };
   }
 

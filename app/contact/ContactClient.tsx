@@ -7,8 +7,6 @@ import { Send, CheckCircle, AlertCircle, MapPin, Clock } from "lucide-react";
 const SUBJECTS = [
   "Claim my listing",
   "Advertise / Featured listing",
-  "The Open 2026 package",
-  "MLEC partner opportunity",
   "Report an issue",
   "Media / press enquiry",
   "General enquiry",
@@ -73,7 +71,7 @@ export default function ContactClient() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Based in</p>
-                    <p className="text-[#1B2E4B] text-sm font-medium">Southport, Merseyside</p>
+                    <p className="text-[#1B2E4B] text-sm font-medium">Churchtown Media, UK</p>
                   </div>
                 </div>
                 <div className="flex gap-3">

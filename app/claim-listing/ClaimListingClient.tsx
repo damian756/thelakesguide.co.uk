@@ -220,7 +220,7 @@ export default function ClaimListingClient() {
                       minLength={2}
                       value={searchName}
                       onChange={(e) => setSearchName(e.target.value)}
-                      placeholder="e.g. The Grand Hotel"
+                      placeholder="e.g. The Old Dungeon Ghyll"
                       className={inputCls}
                     />
                   </div>
@@ -234,7 +234,7 @@ export default function ClaimListingClient() {
                       onChange={(e) =>
                         setSearchPostcode(e.target.value.toUpperCase())
                       }
-                      placeholder="e.g. PR8 1"
+                      placeholder="e.g. LA22 9JX"
                       className={inputCls}
                     />
                   </div>

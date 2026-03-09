@@ -29,7 +29,7 @@ async function searchCommons(query: string, offset = 0): Promise<string | null> 
   url.searchParams.set("origin", "*");
 
   const res = await fetch(url.toString(), {
-    headers: { "User-Agent": "SouthportGuide/1.0 (blog image fetch; https://www.southportguide.co.uk)" },
+    headers: { "User-Agent": "SouthportGuide/1.0 (blog image fetch; https://www.thelakesguide.co.uk)" },
   });
   if (!res.ok) return null;
   const data = (await res.json()) as {

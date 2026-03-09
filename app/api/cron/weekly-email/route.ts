@@ -114,7 +114,7 @@ export async function GET(request: Request) {
 
         const unsubscribeToken = signUnsubscribeToken(business.id);
         const baseUrl =
-          process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
+          process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
         const unsubscribeUrl = `${baseUrl}/api/hub/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}`;
 
         const html = generateWeeklyEmail(

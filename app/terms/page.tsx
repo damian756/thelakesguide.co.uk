@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ArrowLeft, FileText } from "lucide-react";
 
 export const metadata = {
-  title: "Terms & Conditions | SouthportGuide.co.uk",
-  description: "Terms and Conditions for use of SouthportGuide.co.uk, including business listing terms and subscription conditions.",
-  alternates: { canonical: "https://www.southportguide.co.uk/terms" },
+  title: "Terms & Conditions | The Lakes Guide",
+  description: "Terms and Conditions for use of TheLakesGuide.co.uk, including business listing terms and subscription conditions.",
+  alternates: { canonical: "https://www.thelakesguide.co.uk/terms" },
 };
 
 export default function TermsPage() {
@@ -40,7 +40,7 @@ export default function TermsPage() {
           <section>
             <h2 className="font-display text-xl font-bold text-[#1B2E4B] mb-4">2. About the Site</h2>
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
-              SouthportGuide.co.uk is a visitor guide and local business directory for Southport, Merseyside, operated by <strong>Churchtown Media</strong>. The Site provides information about local businesses, events, and attractions for the benefit of visitors and residents.
+              TheLakesGuide.co.uk is a visitor guide and local business directory for the Lake District, operated by <strong>Churchtown Media</strong>. The Site provides information about local businesses, events, and attractions for the benefit of visitors and residents.
             </p>
             <p className="text-gray-600 text-sm leading-relaxed">
               Contact: <a href="mailto:hello@churchtownmedia.co.uk" className="text-[#C9A84C] hover:underline">hello@churchtownmedia.co.uk</a>
@@ -115,7 +115,7 @@ export default function TermsPage() {
               <div>
                 <h3 className="font-semibold text-[#1B2E4B] text-sm mb-2">5.4 Removal of listings</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  We reserve the right to remove or suspend any listing, at any time and without notice, that we reasonably believe: contains false or misleading information; breaches these terms; is associated with unlawful activity; or is harmful to the reputation of SouthportGuide.co.uk or other listed businesses.
+                  We reserve the right to remove or suspend any listing, at any time and without notice, that we reasonably believe: contains false or misleading information; breaches these terms; is associated with unlawful activity; or is harmful to the reputation of TheLakesGuide.co.uk or other listed businesses.
                 </p>
               </div>
 

@@ -6,7 +6,7 @@ const globalForPrisma = globalThis as unknown as {
 }
 
 const connectionString =
-  process.env.DATABASE_URL || "postgresql://localhost:5432/southport_guide?schema=public"
+  process.env.DATABASE_URL || "postgresql://localhost:5432/lakes_guide?schema=public"
 
 const adapter = new PrismaNeon({ connectionString })
 

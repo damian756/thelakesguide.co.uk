@@ -48,7 +48,7 @@ export default async function HubLayout({
             Claim your listing →
           </Link>
           <a
-            href="mailto:hello@southportguide.co.uk"
+            href="mailto:hello@thelakesguide.co.uk"
             className="border border-gray-200 text-gray-600 hover:bg-gray-50 px-6 py-3 rounded-full font-medium text-sm transition-colors text-center"
           >
             Contact us

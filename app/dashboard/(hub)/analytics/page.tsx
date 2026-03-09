@@ -344,7 +344,7 @@ export default async function AnalyticsPage({ searchParams }: Props) {
               Upgrade to Pro to see how you compare
             </p>
             <p className="text-white/70 text-sm mb-4">
-              See your rank versus other {business.category.name} in Southport,
+              See your rank versus other {business.category.name} in the Lake District,
               and get category benchmarks.
             </p>
             <Link

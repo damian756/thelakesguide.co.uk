@@ -23,7 +23,7 @@ type WeekStats = {
   ratingDelta: number | null;
 };
 
-type SouthportEventForEmail = {
+type LakesEventForEmail = {
   title: string;
   isoDate: string;
   dayLabel: string;
@@ -35,10 +35,10 @@ export function generateWeeklyEmail(
   business: BusinessForEmail,
   user: UserForEmail,
   stats: WeekStats,
-  options: { unsubscribeUrl: string; upcomingEvent?: SouthportEventForEmail | null }
+  options: { unsubscribeUrl: string; upcomingEvent?: LakesEventForEmail | null }
 ): string {
   const { unsubscribeUrl, upcomingEvent } = options;
-  const baseUrl = process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
+  const baseUrl = process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
   const upgradeUrl = `${baseUrl}/dashboard/upgrade`;
   const boostsUrl = `${baseUrl}/dashboard/boosts`;
 
@@ -85,7 +85,7 @@ export function generateWeeklyEmail(
 
   const upgradeCta =
     business.hubTier !== "pro"
-      ? `Upgrade to Pro to see how you compare to other ${business.category.name} businesses in Southport. <a href="${upgradeUrl}" style="color: #C9A84C; font-weight: bold;">Learn more →</a>`
+      ? `Upgrade to Pro to see how you compare to other ${business.category.name} businesses in the Lake District. <a href="${upgradeUrl}" style="color: #C9A84C; font-weight: bold;">Learn more →</a>`
       : null;
 
   const eventBlock =
@@ -110,17 +110,17 @@ export function generateWeeklyEmail(
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your SouthportGuide week</title>
+  <title>Your Lakes Guide week</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background: #f5f5f5;">
   <div style="background: #1B2E4B; padding: 24px; text-align: center;">
-    <span style="font-size: 20px; font-weight: bold; color: white;">SouthportGuide</span>
+    <span style="font-size: 20px; font-weight: bold; color: white;">The Lakes Guide</span>
     <span style="color: #C9A84C; font-weight: bold;"> Business Portal</span>
   </div>
   <div style="background: #C9A84C; height: 4px;"></div>
   <div style="max-width: 600px; margin: 0 auto; padding: 24px; background: white;">
     <h2 style="color: #1B2E4B; margin: 0 0 8px;">Good morning ${user.name || "there"},</h2>
-    <p style="color: #666; margin: 0 0 24px;">Here's your SouthportGuide week at a glance.</p>
+    <p style="color: #666; margin: 0 0 24px;">Here's your The Lakes Guide week at a glance.</p>
 
     <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
       <tr>
@@ -175,7 +175,7 @@ export function generateWeeklyEmail(
 
     <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;">
     <p style="font-size: 12px; color: #888; margin: 0;">
-      SouthportGuide.co.uk · <a href="https://churchtownmedia.co.uk" style="color: #888;">Churchtown Media</a><br>
+      The Lakes Guide.co.uk · <a href="https://churchtownmedia.co.uk" style="color: #888;">Churchtown Media</a><br>
       <a href="${unsubscribeUrl}" style="color: #888;">Unsubscribe from weekly emails</a>
     </p>
   </div>

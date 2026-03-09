@@ -5,7 +5,7 @@ import type { Business } from "@prisma/client";
 import SiteAnalyticsClient from "./SiteAnalyticsClient";
 
 export const metadata = {
-  title: "Site Analytics | Admin | SouthportGuide",
+  title: "Site Analytics | Admin | The Lakes Guide",
   robots: { index: false, follow: false },
 };
 

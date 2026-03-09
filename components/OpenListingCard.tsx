@@ -17,11 +17,11 @@ type Props = {
 };
 
 function getAreaLabel(address: string): string {
-  const areas = ["Birkdale", "Ainsdale", "Churchtown", "Crossens", "Marshside"];
+  const areas = ["Windermere", "Bowness", "Ambleside", "Keswick", "Grasmere", "Coniston", "Hawkshead", "Kendal"];
   for (const a of areas) {
     if (address.includes(a)) return a;
   }
-  return "Southport";
+  return "Lake District";
 }
 
 export default function OpenListingCard({
@@ -84,7 +84,7 @@ export default function OpenListingCard({
         </h3>
         <p className="flex items-center gap-1 text-gray-400 text-xs mb-2">
           <MapPin className="w-3 h-3 flex-shrink-0" />
-          {areaLabel}{areaLabel !== "Southport" ? ", Southport" : ""}
+          {areaLabel}{areaLabel !== "Lake District" ? ", Lake District" : ""}
         </p>
         {shortDescription ? (
           <p className="text-gray-500 text-sm line-clamp-2 flex-1 mb-3 leading-relaxed">{shortDescription}</p>

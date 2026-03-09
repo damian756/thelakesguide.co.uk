@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { BLOG_POSTS } from "@/lib/lakes-data";
 
-const BASE_URL = "https://www.southportguide.co.uk";
+const BASE_URL = "https://www.thelakesguide.co.uk";
 
 function toRfc2822(dateStr: string): string {
   const d = new Date(dateStr);

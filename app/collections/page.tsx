@@ -7,19 +7,19 @@ import { prisma } from "@/lib/prisma";
 // Revalidate every hour so tag counts stay fresh
 export const revalidate = 3600;
 
-const BASE_URL = "https://www.southportguide.co.uk";
+const BASE_URL = "https://www.thelakesguide.co.uk";
 
 export const metadata: Metadata = {
-  title: "Collections | Curated Lists of Southport Businesses | SouthportGuide",
+  title: "Collections | Curated Lists of Lake District Businesses | The Lakes Guide",
   description:
-    "Curated collections of Southport businesses — dog-friendly restaurants, hotels with parking, live music bars, and more. Filtered, local, and honest.",
+    "Curated collections of Lake District businesses. Dog-friendly restaurants, hotels with parking, lakeside pubs, and more. Filtered, local, and honest.",
   alternates: { canonical: `${BASE_URL}/collections` },
   openGraph: {
-    title: "Collections | SouthportGuide.co.uk",
-    description: "Curated Southport business collections — dog-friendly, family-friendly, outdoor seating, late night, and more.",
+    title: "Collections | The Lakes Guide",
+    description: "Curated Lake District business collections. Dog-friendly, family-friendly, lakeside, and more.",
     url: `${BASE_URL}/collections`,
     type: "website",
-    siteName: "SouthportGuide.co.uk",
+    siteName: "TheLakesGuide.co.uk",
   },
 };
 
@@ -73,12 +73,12 @@ export default async function CollectionsIndexPage() {
               <span className="text-white/20">›</span>
               <span className="text-white/70">Collections</span>
             </nav>
-            <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-3">SouthportGuide.co.uk</p>
+            <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest mb-3">The Lakes Guide</p>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              Southport Collections
+              Lake District Collections
             </h1>
             <p className="text-white/70 text-lg leading-relaxed max-w-2xl">
-              Filtered lists of Southport businesses — dog-friendly, family-friendly, outdoor seating, and more. 
+              Filtered lists of Lake District businesses. Dog-friendly, family-friendly, lakeside, and more.
               No aggregator ranking. Just what&apos;s actually there, with a bit of honest context.
             </p>
           </div>
@@ -133,7 +133,7 @@ export default async function CollectionsIndexPage() {
 
           <div className="mt-14 bg-[#1B2E4B] rounded-2xl p-8 text-center">
             <h2 className="font-display text-xl font-bold text-white mb-2">
-              Own a business in Southport?
+              Own a business in the Lake District?
             </h2>
             <p className="text-white/60 text-sm mb-5 max-w-sm mx-auto">
               List your business and we&apos;ll include you in relevant collections automatically.

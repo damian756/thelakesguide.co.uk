@@ -14,7 +14,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: "https://www.southportguide.co.uk/sitemap.xml",
-    host: "https://www.southportguide.co.uk",
+    sitemap: "https://www.thelakesguide.co.uk/sitemap.xml",
+    host: "https://www.thelakesguide.co.uk",
   };
 }

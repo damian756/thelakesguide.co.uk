@@ -42,7 +42,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
       <aside className="hidden lg:flex flex-col w-64 bg-[#1B2E4B] text-white flex-shrink-0">
         <div className="p-5 border-b border-white/10">
           <p className="font-display font-bold text-lg">Admin</p>
-          <p className="text-white/60 text-xs mt-0.5">SouthportGuide</p>
+          <p className="text-white/60 text-xs mt-0.5">The Lakes Guide</p>
         </div>
         <nav className="flex-1 p-3 space-y-1">
           {NAV.map(({ href, label, icon: Icon }) => {

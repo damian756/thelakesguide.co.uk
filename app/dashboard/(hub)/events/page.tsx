@@ -108,7 +108,7 @@ export default async function EventsPage() {
           Event Intel
         </h1>
         <p className="text-sm text-gray-500 mt-1">
-          Upcoming events near Southport and their estimated impact on{" "}
+          Upcoming events in the Lake District and their estimated impact on{" "}
           <strong>{business.category.name}</strong> searches.
         </p>
       </div>

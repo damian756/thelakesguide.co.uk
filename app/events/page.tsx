@@ -9,10 +9,10 @@ import MonthFilter from "./MonthFilter";
 export const revalidate = 3600; // Refresh hourly so Eventbrite sync appears
 
 export const metadata = {
-  title: "What's On in Southport 2026 | Events Calendar | Southport Guide",
+  title: "What's On in the Lake District 2026 | Events Calendar | The Lakes Guide",
   description:
-    "The complete guide to events in Southport in 2026. From The Open Championship to the Flower Show, Comedy Festival and more — updated regularly.",
-  alternates: { canonical: "https://www.southportguide.co.uk/events" },
+    "The complete guide to events in the Lake District in 2026. Festivals, races, and seasonal events — updated regularly.",
+  alternates: { canonical: "https://www.thelakesguide.co.uk/events" },
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -125,9 +125,9 @@ export default async function EventsPage({
   const eventsJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Southport Events 2026",
-    description: "The complete guide to events in Southport in 2026 — from The Open Championship to the Flower Show, Comedy Festival and more.",
-    url: "https://www.southportguide.co.uk/events",
+    name: "Lake District Events 2026",
+    description: "The complete guide to events in the Lake District in 2026 — festivals, races, and seasonal events.",
+    url: "https://www.thelakesguide.co.uk/events",
     numberOfItems: allMergedEvents.length,
     itemListElement: allMergedEvents.map((event, i) => ({
       "@type": "ListItem",
@@ -135,7 +135,7 @@ export default async function EventsPage({
         item: {
           "@type": "Event",
           name: event.title,
-          description: `${event.title} at ${event.venue}, Southport.`,
+          description: `${event.title} at ${event.venue}, Lake District.`,
           startDate: event.isoDate,
           endDate: event.endIsoDate ?? event.isoDate,
           eventStatus: "https://schema.org/EventScheduled",
@@ -145,8 +145,8 @@ export default async function EventsPage({
             name: event.venue,
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Southport",
-              addressRegion: "Merseyside",
+              addressLocality: event.venue,
+              addressRegion: "Cumbria",
               addressCountry: "GB",
             },
           },
@@ -155,13 +155,13 @@ export default async function EventsPage({
             "@type": "Offer",
             availability: "https://schema.org/InStock",
             ...(event.free ? { price: "0", priceCurrency: "GBP" } : {}),
-            url: event.link.startsWith("http") ? event.link : `https://www.southportguide.co.uk${event.link}`,
+            url: event.link.startsWith("http") ? event.link : `https://www.thelakesguide.co.uk${event.link}`,
           },
-          url: event.link.startsWith("http") ? event.link : `https://www.southportguide.co.uk${event.link}`,
+          url: event.link.startsWith("http") ? event.link : `https://www.thelakesguide.co.uk${event.link}`,
           organizer: {
             "@type": "Organization",
-            name: "SouthportGuide.co.uk",
-            url: "https://www.southportguide.co.uk",
+            name: "The Lakes Guide",
+            url: "https://www.thelakesguide.co.uk",
           },
         },
     })),
@@ -175,8 +175,8 @@ export default async function EventsPage({
       <section className="relative bg-[#1B2E4B] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/southport-pier.webp"
-            alt="Southport"
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80"
+            alt="Lake District"
             fill
             priority
             sizes="100vw"
@@ -197,11 +197,11 @@ export default async function EventsPage({
             <p className="text-[#C9A84C] text-xs font-bold uppercase tracking-widest">Updated weekly</p>
           </div>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-            What&apos;s On in Southport<br />
+            What&apos;s On in the Lake District<br />
             <span className="text-[#C9A84C]">2026 Events Calendar</span>
           </h1>
           <p className="text-white/60 text-lg max-w-xl">
-            {upcomingCount} upcoming events across the year — from free community events to world-class festivals. Updated regularly by locals.
+            {upcomingCount} upcoming events across the year — from free community events to festivals and races. Updated regularly.
           </p>
         </div>
       </section>

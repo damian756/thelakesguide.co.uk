@@ -8,7 +8,7 @@ import { prisma } from "@/lib/prisma";
 // Revalidate every hour so new tags appear without a code push
 export const revalidate = 3600;
 
-const BASE_URL = "https://www.southportguide.co.uk";
+const BASE_URL = "https://www.thelakesguide.co.uk";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const url = `${BASE_URL}/collections/${slug}`;
   return {
-    title: `${collection.title} | SouthportGuide.co.uk`,
+    title: `${collection.title} | The Lakes Guide`,
     description: collection.metaDescription,
     alternates: { canonical: url },
     openGraph: {
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: collection.metaDescription,
       url,
       type: "website",
-      siteName: "SouthportGuide.co.uk",
+      siteName: "TheLakesGuide.co.uk",
     },
     twitter: { card: "summary", title: collection.title, description: collection.metaDescription },
   };
@@ -56,13 +56,13 @@ type CollectionBusiness = {
   photoUrl: string | null;
 };
 
-const AREAS = ["Birkdale", "Ainsdale", "Churchtown", "Crossens", "Marshside", "Banks", "Halsall"];
+const AREAS = ["Windermere", "Bowness", "Ambleside", "Keswick", "Grasmere", "Coniston", "Glenridding", "Hawkshead", "Cockermouth", "Ulverston"];
 
 function extractArea(address: string): string {
   for (const area of AREAS) {
     if (address.includes(area)) return area;
   }
-  return "Southport";
+  return "Lake District";
 }
 
 function formatReviewCount(n: number): string {
@@ -263,7 +263,7 @@ export default async function CollectionPage({ params }: Props) {
               Own a business that belongs here?
             </h3>
             <p className="text-white/60 text-sm mb-5 max-w-sm mx-auto">
-              List your business and get featured in relevant collections across SouthportGuide.
+              List your business and get featured in relevant collections across The Lakes Guide.
             </p>
             <Link
               href="/claim-listing"
@@ -284,7 +284,7 @@ export default async function CollectionPage({ params }: Props) {
 function BusinessCard({ business: b }: { business: CollectionBusiness }) {
   const snippet = b.shortDescription || b.description?.slice(0, 120) || null;
   const area = extractArea(b.address);
-  const areaLabel = area === "Southport" ? "Southport" : `${area}, Southport`;
+  const areaLabel = area === "Lake District" ? "Lake District" : `${area}, Lake District`;
 
   return (
     <Link

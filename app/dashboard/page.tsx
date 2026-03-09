@@ -4,8 +4,8 @@ import { authOptions } from "@/lib/auth";
 import DashboardLoginClient from "./DashboardLoginClient";
 
 export const metadata = {
-  title: "Business Dashboard | SouthportGuide",
-  description: "Manage your business listing on SouthportGuide.",
+  title: "Business Dashboard | The Lakes Guide",
+  description: "Manage your business listing on The Lakes Guide.",
   robots: { index: false, follow: false },
 };
 

@@ -32,7 +32,7 @@ export async function POST(req: Request) {
     const resetUrl = `${process.env.NEXTAUTH_URL}/dashboard/reset-password?token=${record.token}`;
 
     await getResend().emails.send({
-      from: process.env.RESEND_FROM_EMAIL ?? "SouthportGuide <noreply@southportguide.co.uk>",
+      from: process.env.RESEND_FROM_EMAIL ?? "SouthportGuide <noreply@thelakesguide.co.uk>",
       to: normalised,
       subject: "Reset your SouthportGuide password",
       html: `
@@ -61,7 +61,7 @@ export async function POST(req: Request) {
             </p>
             <hr style="border: none; border-top: 1px solid #ddd; margin: 24px 0;" />
             <p style="color: #aaa; font-size: 12px; margin: 0;">
-              SouthportGuide Business Hub · southportguide.co.uk
+              SouthportGuide Business Hub · thelakesguide.co.uk
             </p>
           </div>
         </div>

@@ -5,10 +5,10 @@ import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/lakes-data";
 import BlogClient from "./BlogClient";
 
 export const metadata = {
-  title: "Blog | Southport Guide | SouthportGuide.co.uk",
+  title: "Blog | The Lakes Guide",
   description:
-    "Local guides, tips and Southport stories — written by people who actually live here.",
-  alternates: { canonical: "https://www.southportguide.co.uk/blog" },
+    "Local guides, tips and Lake District stories — written by someone who knows the fells.",
+  alternates: { canonical: "https://www.thelakesguide.co.uk/blog" },
 };
 
 export default function BlogPage() {
@@ -18,7 +18,7 @@ export default function BlogPage() {
       <section className="relative h-64 md:h-80 bg-[#1B2E4B] overflow-hidden">
         <Image
           src="/images/blog-hero.jpg"
-          alt="Lord Street, Southport"
+          alt="Lake District landscape"
           fill
           priority
           sizes="100vw"
@@ -32,15 +32,15 @@ export default function BlogPage() {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
           <div className="flex items-center gap-2 text-[#C9A84C] mb-3">
             <Newspaper className="w-5 h-5" />
-            <span className="text-sm font-semibold tracking-widest uppercase">Southport Guide Blog</span>
+            <span className="text-sm font-semibold tracking-widest uppercase">The Lakes Guide Blog</span>
           </div>
           <h1 className="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-3">
             Local guides, tips &amp;&nbsp;
             <br className="hidden sm:block" />
-            Southport stories.
+            Lake District stories.
           </h1>
           <p className="text-white/70 text-sm md:text-base max-w-md">
-            Written by people who live here. From the best restaurants to hidden gems, events, and local knowledge.
+            Written by someone who has walked the fells for decades. From the best restaurants to walks, villages, and practical local knowledge.
           </p>
         </div>
       </section>

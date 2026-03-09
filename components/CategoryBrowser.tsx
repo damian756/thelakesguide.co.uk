@@ -67,10 +67,10 @@ function getSnippet(b: BrowserBusiness): string | null {
 }
 
 function getAreaLabel(address: string): string {
-  const areas = ["Birkdale", "Ainsdale", "Churchtown", "Crossens", "Marshside",
-    "Formby", "Ormskirk", "Scarisbrick", "Banks", "Halsall", "Burscough"];
+  const areas = ["Windermere", "Bowness", "Ambleside", "Keswick", "Grasmere", "Coniston",
+    "Glenridding", "Hawkshead", "Cockermouth", "Ulverston", "Kendal"];
   for (const a of areas) { if (address.includes(a)) return a; }
-  return "Southport";
+  return "Lake District";
 }
 
 function hygieneStyle(r: string) {
@@ -150,7 +150,7 @@ export default function CategoryBrowser({
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder={`Search ${category} in Southport…`}
+          placeholder={`Search ${category} in the Lake District…`}
           className="w-full pl-11 pr-11 py-3.5 text-sm bg-white border border-gray-200 rounded-2xl shadow-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all placeholder:text-gray-400"
           style={{ "--tw-ring-color": accentColor } as React.CSSProperties}
         />

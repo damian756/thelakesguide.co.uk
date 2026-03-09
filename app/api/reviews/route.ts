@@ -7,7 +7,7 @@ import { put } from "@vercel/blob";
 
 export const runtime = "nodejs";
 
-const BASE_URL = process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
+const BASE_URL = process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
 const MAX_PHOTO_SIZE = 8 * 1024 * 1024;
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
@@ -155,7 +155,7 @@ export async function POST(req: NextRequest) {
     const verifyUrl = `${BASE_URL}/api/reviews/verify?token=${token}`;
 
     await getResend().emails.send({
-      from: "SouthportGuide <hello@southportguide.co.uk>",
+      from: "SouthportGuide <hello@thelakesguide.co.uk>",
       to: email,
       subject: `Confirm your review of ${business.name}`,
       html: generateReviewVerificationEmail(business.name, verifyUrl),

@@ -11,25 +11,21 @@ import {
 import { GUIDES, GUIDE_CATEGORIES, type GuideCategory } from "@/lib/guides-config";
 
 const CATEGORIES = [
-  { slug: "restaurants",    label: "Restaurants",     icon: Utensils,    color: "text-red-500" },
-  { slug: "hotels",         label: "Hotels",          icon: Hotel,       color: "text-blue-600" },
-  { slug: "bars-nightlife", label: "Bars & Pubs",     icon: Beer,        color: "text-purple-500" },
-  { slug: "cafes",          label: "Cafes",           icon: Coffee,      color: "text-amber-600" },
-  { slug: "attractions",    label: "Attractions",     icon: MapPin,      color: "text-teal-600" },
-  { slug: "shopping",       label: "Shopping",        icon: ShoppingBag, color: "text-rose-500" },
-  { slug: "golf",           label: "Golf",            icon: Flag,        color: "text-green-600" },
-  { slug: "beaches-parks",  label: "Beaches & Parks", icon: Waves,       color: "text-sky-500" },
-  { slug: "wellness",       label: "Wellness",        icon: Sparkles,    color: "text-violet-500" },
-  { slug: "activities",     label: "Activities",      icon: Dumbbell,    color: "text-orange-500" },
-  { slug: "transport",      label: "Transport",       icon: Car,         color: "text-slate-500" },
-  { slug: "parking",        label: "Parking",         icon: Car,         color: "text-blue-700" },
+  { slug: "walks",         label: "Walks",          icon: MapPin,      color: "text-green-600" },
+  { slug: "villages",     label: "Villages",       icon: MapPin,     color: "text-teal-600" },
+  { slug: "restaurants",  label: "Restaurants",    icon: Utensils,   color: "text-red-500" },
+  { slug: "cafes",        label: "Cafes",          icon: Coffee,     color: "text-amber-600" },
+  { slug: "pubs",         label: "Pubs & Inns",    icon: Beer,       color: "text-purple-500" },
+  { slug: "activities",   label: "Activities",     icon: Dumbbell,   color: "text-orange-500" },
+  { slug: "accommodation", label: "Places to Stay", icon: Hotel,      color: "text-blue-600" },
+  { slug: "shopping",     label: "Shopping",       icon: ShoppingBag, color: "text-rose-500" },
 ];
 
 const FEATURED_COLLECTIONS = [
-  { href: "/collections/dog-friendly-restaurants-southport", label: "Dog-friendly",    emoji: "🐾" },
-  { href: "/collections/lord-street-restaurants-southport",  label: "Lord Street",     emoji: "🍽️" },
-  { href: "/collections/hotels-near-royal-birkdale",         label: "Near Birkdale",   emoji: "⛳" },
-  { href: "/collections/free-things-to-do-southport",        label: "Free to do",      emoji: "🎟️" },
+  { href: "/collections/dog-friendly-restaurants-lake-district", label: "Dog-friendly", emoji: "🐾" },
+  { href: "/collections/lakeside-restaurants-lake-district",     label: "Lakeside",     emoji: "🍽️" },
+  { href: "/collections/accommodation-with-parking-lake-district", label: "With parking", emoji: "🏨" },
+  { href: "/collections/free-things-to-do-lake-district",       label: "Free to do",   emoji: "🎟️" },
 ];
 
 // Shared nav link style — uppercase editorial feel
@@ -71,10 +67,6 @@ export default function NavMenu() {
               <Link href="/events" onClick={() => setExploreOpen(false)}
                 className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#FAF8F5] text-[#1B2E4B] text-xs font-semibold hover:bg-gray-100 transition-colors">
                 📅 Events
-              </Link>
-              <Link href="/mlec" onClick={() => setExploreOpen(false)}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-purple-50 text-purple-800 text-xs font-semibold hover:bg-purple-100 transition-colors">
-                🎭 MLEC
               </Link>
               <Link href="/blog" onClick={() => setExploreOpen(false)}
                 className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#FAF8F5] text-[#1B2E4B] text-xs font-semibold hover:bg-gray-100 transition-colors">
@@ -161,14 +153,6 @@ export default function NavMenu() {
           </div>
         </div>
 
-        {/* THE OPEN 2026 — single prominent link */}
-        <div className="w-px h-4 bg-gray-200 mx-2" />
-        <Link href="/the-open-2026"
-          className="text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-2 text-[#C9A84C] hover:text-[#B8972A] transition-colors">
-          🏌️ The Open 2026
-        </Link>
-        <div className="w-px h-4 bg-gray-200 mx-2" />
-
         {/* Hub — icon only */}
         <Link href="/dashboard" title="Business Hub Login"
           className="p-2 text-[#1B2E4B]/35 hover:text-[#1B2E4B] transition-colors">
@@ -199,26 +183,18 @@ export default function NavMenu() {
           <div className="space-y-1.5">
             <Link href="/things-to-do" onClick={() => setMobileOpen(false)}
               className="flex items-center gap-2.5 px-4 py-3.5 rounded-xl bg-[#1B2E4B] text-white text-sm font-semibold">
-              Things to Do in Southport
+              Things to Do in the Lake District
             </Link>
-            <div className="grid grid-cols-3 gap-1.5">
+            <div className="grid grid-cols-2 gap-1.5">
               <Link href="/events" onClick={() => setMobileOpen(false)}
                 className="flex items-center justify-center gap-1 px-3 py-2.5 rounded-xl bg-[#FAF8F5] text-[#1B2E4B] text-xs font-semibold">
                 📅 Events
-              </Link>
-              <Link href="/mlec" onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center gap-1 px-3 py-2.5 rounded-xl bg-purple-50 text-purple-800 text-xs font-semibold">
-                🎭 MLEC
               </Link>
               <Link href="/blog" onClick={() => setMobileOpen(false)}
                 className="flex items-center justify-center gap-1 px-3 py-2.5 rounded-xl bg-[#FAF8F5] text-[#1B2E4B] text-xs font-semibold">
                 ✍️ Blog
               </Link>
             </div>
-            <Link href="/the-open-2026" onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 px-4 py-3 rounded-xl bg-amber-50 text-[#B8972A] text-sm font-bold">
-              🏌️ The Open Championship 2026 — Royal Birkdale
-            </Link>
           </div>
 
           {/* Categories */}

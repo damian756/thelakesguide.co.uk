@@ -112,7 +112,7 @@ export async function POST(request: Request) {
   ]);
 
   const baseUrl =
-    process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
+    process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
 
   return NextResponse.json({
     url: `${baseUrl}/dashboard/boosts?boosted=true`,

@@ -3,10 +3,10 @@ import { Check, Minus, ChevronDown } from "lucide-react";
 import PricingFAQ from "./PricingFAQ";
 
 export const metadata = {
-  title: "Pricing | List Your Business on SouthportGuide",
+  title: "Pricing | List Your Business on The Lakes Guide",
   description:
-    "Pricing for business listings on SouthportGuide.co.uk. Free and Pro plans, plus category boosts.",
-  alternates: { canonical: "https://www.southportguide.co.uk/pricing" },
+    "Pricing for business listings on TheLakesGuide.co.uk. Free and Pro plans, plus category boosts.",
+  alternates: { canonical: "https://www.thelakesguide.co.uk/pricing" },
 };
 
 const FEATURES = [
@@ -26,11 +26,11 @@ const FEATURES = [
 const BOOSTS = [
   { type: "Standard 7 days", price: "£15", pence: 1500 },
   { type: "Weekend (Fri–Sun)", price: "£10", pence: 1000 },
-  { type: "Flower Show Weekend", price: "£49", pence: 4900 },
-  { type: "Air Show Weekend", price: "£49", pence: 4900 },
+  { type: "Festival Weekend", price: "£49", pence: 4900 },
+  { type: "Summer Event Weekend", price: "£49", pence: 4900 },
   { type: "Bank Holiday Weekend", price: "£35", pence: 3500 },
   { type: "Christmas Markets Month", price: "£99", pence: 9900 },
-  { type: "The Open 2026 Fortnight", price: "£149", pence: 14900 },
+  { type: "Peak Season Fortnight", price: "£149", pence: 14900 },
 ] as const;
 
 export default function PricingPage() {
@@ -47,7 +47,7 @@ export default function PricingPage() {
             Simple, transparent pricing
           </h1>
           <p className="text-white/60 max-w-xl">
-            Join hundreds of Southport businesses. Choose Free or Pro, then add
+            Join Lake District businesses on the guide. Choose Free or Pro, then add
             boosts when you need extra visibility.
           </p>
         </div>

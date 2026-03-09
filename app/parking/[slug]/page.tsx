@@ -8,7 +8,7 @@ import { PostcodeCopy } from "./PostcodeCopy";
 
 type Props = { params: Promise<{ slug: string }> };
 
-const BASE_URL = "https://www.southportguide.co.uk";
+const BASE_URL = "https://www.thelakesguide.co.uk";
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 

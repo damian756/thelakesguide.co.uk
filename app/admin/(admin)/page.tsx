@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { formatDistanceToNow } from "date-fns";
 
 export const metadata = {
-  title: "Admin | SouthportGuide",
+  title: "Admin | The Lakes Guide",
   description: "Admin dashboard.",
   robots: { index: false, follow: false },
 };

@@ -14,7 +14,7 @@ export function generateReviewVerificationEmail(
   <div style="max-width: 560px; margin: 0 auto; padding: 24px;">
     <div style="background: white; border-radius: 12px; padding: 24px; border: 1px solid #eee;">
       <div style="background: #1B2E4B; padding: 12px 16px; border-radius: 8px; margin: -24px -24px 20px -24px;">
-        <span style="font-weight: bold; color: white;">SouthportGuide</span>
+        <span style="font-weight: bold; color: white;">The Lakes Guide</span>
         <span style="color: #C9A84C; font-weight: bold;">.co.uk</span>
       </div>
       <h2 style="color: #1B2E4B; margin: 0 0 12px;">Confirm your review</h2>
@@ -51,12 +51,12 @@ export function generateReviewApprovedEmail(
   <div style="max-width: 560px; margin: 0 auto; padding: 24px;">
     <div style="background: white; border-radius: 12px; padding: 24px; border: 1px solid #eee;">
       <div style="background: #1B2E4B; padding: 12px 16px; border-radius: 8px; margin: -24px -24px 20px -24px;">
-        <span style="font-weight: bold; color: white;">SouthportGuide</span>
+        <span style="font-weight: bold; color: white;">The Lakes Guide</span>
         <span style="color: #C9A84C; font-weight: bold;">.co.uk</span>
       </div>
       <h2 style="color: #1B2E4B; margin: 0 0 12px;">Your review is live</h2>
       <p style="color: #666; margin: 0 0 16px;">
-        Hi ${reviewerName}, your review of <strong>${businessName}</strong> has been approved and is now live on SouthportGuide.
+        Hi ${reviewerName}, your review of <strong>${businessName}</strong> has been approved and is now live on The Lakes Guide.
       </p>
       <p style="margin: 0;">
         <a href="${businessUrl}" style="display: inline-block; background: #C9A84C; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">View listing →</a>
@@ -75,7 +75,7 @@ export function generateNewSiteReviewEmail(
   starRating: number,
   reviewBody: string
 ): string {
-  const baseUrl = process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
+  const baseUrl = process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
   const stars = "★".repeat(starRating) + "☆".repeat(5 - starRating);
 
   return `
@@ -90,7 +90,7 @@ export function generateNewSiteReviewEmail(
   <div style="max-width: 560px; margin: 0 auto; padding: 24px;">
     <div style="background: white; border-radius: 12px; padding: 24px; border: 1px solid #eee;">
       <div style="background: #1B2E4B; padding: 12px 16px; border-radius: 8px; margin: -24px -24px 20px -24px;">
-        <span style="font-weight: bold; color: white;">SouthportGuide</span>
+        <span style="font-weight: bold; color: white;">The Lakes Guide</span>
         <span style="color: #C9A84C; font-weight: bold;"> Review Alert</span>
       </div>
       <h2 style="color: #1B2E4B; margin: 0 0 12px;">New review for ${businessName}</h2>

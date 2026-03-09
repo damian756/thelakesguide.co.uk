@@ -1,7 +1,7 @@
 {
-  "name": "SouthportGuide.co.uk",
-  "short_name": "SouthportGuide",
-  "description": "Your definitive guide to eating, staying and exploring Southport",
+  "name": "The Lakes Guide",
+  "short_name": "Lakes Guide",
+  "description": "Your guide to eating, staying and exploring the Lake District",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1B2E4B",

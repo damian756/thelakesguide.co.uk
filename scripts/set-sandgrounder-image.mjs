@@ -5,7 +5,7 @@ const client = new Client({ connectionString: process.env.DATABASE_URL });
 await client.connect();
 const r = await client.query(
   `UPDATE "Business" SET images = $1, "updatedAt" = NOW() WHERE slug = 'the-sandgrounder' RETURNING id, name, images`,
-  [['https://www.southportguide.co.uk/images/dashboard/sandgrounder-listing.jpg']]
+  [['https://www.thelakesguide.co.uk/images/dashboard/sandgrounder-listing.jpg']]
 );
 console.log(r.rows);
 await client.end();

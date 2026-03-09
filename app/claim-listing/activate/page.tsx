@@ -25,10 +25,10 @@ export default async function ActivatePage({ searchParams }: Props) {
             This link is missing or invalid. Check your email for the correct
             activation link, or contact{" "}
             <a
-              href="mailto:hello@southportguide.co.uk"
+              href="mailto:hello@thelakesguide.co.uk"
               className="text-[#C9A84C] font-semibold"
             >
-              hello@southportguide.co.uk
+              hello@thelakesguide.co.uk
             </a>
             .
           </p>
@@ -70,10 +70,10 @@ export default async function ActivatePage({ searchParams }: Props) {
           <p className="text-gray-500 text-sm mb-6">
             This link has expired. Contact{" "}
             <a
-              href="mailto:hello@southportguide.co.uk"
+              href="mailto:hello@thelakesguide.co.uk"
               className="text-[#C9A84C] font-semibold"
             >
-              hello@southportguide.co.uk
+              hello@thelakesguide.co.uk
             </a>{" "}
             to request a new one.
           </p>

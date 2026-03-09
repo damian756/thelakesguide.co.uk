@@ -397,7 +397,7 @@ export default async function HubHomePage() {
             ) : (
               <p className="text-sm text-gray-500">
                 Not connected yet.{" "}
-                <a href="mailto:hello@southportguide.co.uk" className="text-[#C9A84C] font-semibold">
+                <a href="mailto:hello@thelakesguide.co.uk" className="text-[#C9A84C] font-semibold">
                   Contact us
                 </a>{" "}
                 to link your Google listing.

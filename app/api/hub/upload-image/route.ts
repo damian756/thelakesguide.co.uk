@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
   }
 
   // Demo guard
-  if (session.user.email === "demo@southportguide.co.uk") {
+  if (session.user.email === "demo@thelakesguide.co.uk") {
     return NextResponse.json(
       { error: "Photo upload is disabled in the demo account." },
       { status: 403 }
@@ -80,7 +80,7 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
   }
 
-  if (session.user.email === "demo@southportguide.co.uk") {
+  if (session.user.email === "demo@thelakesguide.co.uk") {
     return NextResponse.json({ error: "Disabled in demo." }, { status: 403 });
   }
 

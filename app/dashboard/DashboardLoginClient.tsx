@@ -15,7 +15,7 @@ export default function DashboardLoginClient() {
   const [loading, setLoading] = useState(false);
   const [demoFilled, setDemoFilled] = useState(false);
 
-  const DEMO_EMAIL = "demo@southportguide.co.uk";
+  const DEMO_EMAIL = "demo@thelakesguide.co.uk";
   const DEMO_PASSWORD = "Demo1234";
 
   function fillDemo() {
@@ -78,7 +78,7 @@ export default function DashboardLoginClient() {
               <LayoutDashboard className="w-4 h-4 text-[#C9A84C]" />
             </div>
             <span className="font-display font-bold text-white">
-              Southport<span className="text-[#C9A84C]">Guide</span>
+              The Lakes <span className="text-[#C9A84C]">Guide</span>
               <span className="text-white/40 font-normal text-sm ml-2">Business Portal</span>
             </span>
             <Link
@@ -232,7 +232,7 @@ export default function DashboardLoginClient() {
       <div className="hidden lg:block lg:w-[52%] xl:w-[55%] relative overflow-hidden flex-shrink-0">
         <img
           src="/images/dashboard/login-hero.jpg"
-          alt="Lord Street, Southport"
+          alt="Lake District"
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Overlay gradient */}
@@ -240,7 +240,7 @@ export default function DashboardLoginClient() {
         {/* Caption */}
         <div className="absolute bottom-0 left-0 right-0 p-10">
           <p className="font-display text-3xl font-bold text-white leading-snug mb-2">
-            Your business,<br />on Southport&apos;s guide.
+            Your business,<br />on the Lake District&apos;s guide.
           </p>
           <p className="text-white/70 text-sm">
             Manage your listing, track clicks, and get in front of thousands of visitors every week.

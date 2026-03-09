@@ -14,7 +14,7 @@ export function generateNewReviewEmail(
   rating: number
 ): string {
   const baseUrl =
-    process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
+    process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
 
   return `
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ export function generateNewReviewEmail(
   <div style="max-width: 560px; margin: 0 auto; padding: 24px;">
     <div style="background: white; border-radius: 12px; padding: 24px; border: 1px solid #eee;">
       <div style="background: #1B2E4B; padding: 12px 16px; border-radius: 8px; margin: -24px -24px 20px -24px;">
-        <span style="font-weight: bold; color: white;">SouthportGuide</span>
+        <span style="font-weight: bold; color: white;">The Lakes Guide</span>
         <span style="color: #C9A84C; font-weight: bold;"> Review Alert</span>
       </div>
       <h2 style="color: #1B2E4B; margin: 0 0 16px;">New review for ${business.name}</h2>
@@ -55,7 +55,7 @@ export function generateRatingChangeEmail(
   newRating: number
 ): string {
   const baseUrl =
-    process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
+    process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
 
   return `
 <!DOCTYPE html>
@@ -69,7 +69,7 @@ export function generateRatingChangeEmail(
   <div style="max-width: 560px; margin: 0 auto; padding: 24px;">
     <div style="background: white; border-radius: 12px; padding: 24px; border: 1px solid #eee;">
       <div style="background: #1B2E4B; padding: 12px 16px; border-radius: 8px; margin: -24px -24px 20px -24px;">
-        <span style="font-weight: bold; color: white;">SouthportGuide</span>
+        <span style="font-weight: bold; color: white;">The Lakes Guide</span>
         <span style="color: #C9A84C; font-weight: bold;"> Review Alert</span>
       </div>
       <h2 style="color: #1B2E4B; margin: 0 0 16px;">Rating update for ${business.name}</h2>

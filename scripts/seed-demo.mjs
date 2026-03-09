@@ -15,7 +15,7 @@ const { Client } = pg;
 if (!process.env.DATABASE_URL) { console.error('DATABASE_URL not set'); process.exit(1); }
 const DB = process.env.DATABASE_URL;
 
-const DEMO_EMAIL    = 'demo@southportguide.co.uk';
+const DEMO_EMAIL    = 'demo@thelakesguide.co.uk';
 const DEMO_PASSWORD = 'demo2026';
 const CATEGORY_ID   = 'dc9cd60c-409e-473f-b76a-7175cf65fb52'; // bars-nightlife
 const CATEGORY_SLUG = 'bars-nightlife';
@@ -212,6 +212,6 @@ if (parseInt(existingBoosts.rows[0].count) > 0) {
 await client.end();
 
 console.log('\n✅ Demo seeding complete.');
-console.log('   Login: demo@southportguide.co.uk / demo2026');
+console.log('   Login: demo@thelakesguide.co.uk / demo2026');
 console.log('   Business: The Sandgrounder (bars-nightlife)');
 console.log('   Tier: Pro | Boost credits: 2');

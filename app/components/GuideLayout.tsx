@@ -129,7 +129,7 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
           <div className="container mx-auto px-4 max-w-7xl py-16">
             <div className="mb-8">
               <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-bold mb-2">
-                Southport Businesses
+                Lake District Businesses
               </p>
               <h2 className="font-display text-2xl md:text-3xl font-bold text-[#1B2E4B]">
                 Relevant Listings
@@ -274,7 +274,7 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
             Get Your Business in These Guides
           </h2>
           <p className="text-white/60 text-base max-w-xl mx-auto mb-8 leading-relaxed">
-            SouthportGuide.co.uk reaches visitors actively planning a trip. 
+            TheLakesGuide.co.uk reaches visitors actively planning a trip. 
             List your business and appear in relevant guides automatically.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">

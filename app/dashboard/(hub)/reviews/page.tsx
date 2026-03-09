@@ -9,7 +9,7 @@ import SiteReviewsTab from "./SiteReviewsTab";
 
 export const metadata = {
   title: "Reviews | Business Hub",
-  description: "Google reviews and SouthportGuide ratings.",
+  description: "Google reviews and The Lakes Guide ratings.",
   robots: { index: false, follow: false },
 };
 
@@ -94,7 +94,7 @@ export default async function ReviewsPage({
       <div className="flex gap-1 bg-gray-100 p-1 rounded-xl w-fit">
         {[
           { id: "google", label: "Google Reviews" },
-          { id: "site", label: `SouthportGuide Reviews${siteReviews.length > 0 ? ` (${siteReviews.length})` : ""}` },
+          { id: "site", label: `The Lakes Guide Reviews${siteReviews.length > 0 ? ` (${siteReviews.length})` : ""}` },
         ].map((t) => (
           <Link
             key={t.id}
@@ -155,14 +155,14 @@ export default async function ReviewsPage({
                 {!business.placeId && (
                   <p className="text-xs text-gray-400 mt-3">
                     Want a direct link to your Google listing?{" "}
-                    <a href="mailto:hello@southportguide.co.uk" className="text-[#C9A84C] font-medium hover:underline">Contact us to connect it.</a>
+                    <a href="mailto:hello@thelakesguide.co.uk" className="text-[#C9A84C] font-medium hover:underline">Contact us to connect it.</a>
                   </p>
                 )}
               </>
             ) : (
               <p className="text-sm text-gray-500">
                 Google Reviews not connected.{" "}
-                <a href="mailto:hello@southportguide.co.uk" className="text-[#C9A84C] font-semibold hover:underline">Contact us</a>{" "}
+                <a href="mailto:hello@thelakesguide.co.uk" className="text-[#C9A84C] font-semibold hover:underline">Contact us</a>{" "}
                 to link your Google listing.
               </p>
             )}

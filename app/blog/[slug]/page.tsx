@@ -222,7 +222,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const content = BLOG_CONTENT[slug];
 
   const isoDate = toIso(post.date);
-  const canonicalUrl = `https://www.southportguide.co.uk/blog/${slug}`;
+  const canonicalUrl = `https://www.thelakesguide.co.uk/blog/${slug}`;
 
   const isDamian = post.author === "damian";
 
@@ -233,7 +233,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     description: post.excerpt,
     image: post.image.startsWith("http")
       ? post.image
-      : `https://www.southportguide.co.uk${post.image}`,
+      : `https://www.thelakesguide.co.uk${post.image}`,
     datePublished: isoDate,
     dateModified: isoDate,
     url: canonicalUrl,
@@ -248,22 +248,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         }
       : {
           "@type": "Person",
-          "@id": "https://www.southportguide.co.uk/about#terry",
+          "@id": "https://www.thelakesguide.co.uk/about#terry",
           name: "Terry",
           jobTitle: "Chief Editor",
-          url: "https://www.southportguide.co.uk/about",
+          url: "https://www.thelakesguide.co.uk/about",
           worksFor: {
             "@type": "Organization",
-            "@id": "https://www.southportguide.co.uk/#website",
+            "@id": "https://www.thelakesguide.co.uk/#website",
             name: "SouthportGuide.co.uk",
-            url: "https://www.southportguide.co.uk",
+            url: "https://www.thelakesguide.co.uk",
           },
         },
     publisher: {
       "@type": "Organization",
-      "@id": "https://www.southportguide.co.uk/#organization",
+      "@id": "https://www.thelakesguide.co.uk/#organization",
       name: "SouthportGuide.co.uk",
-      url: "https://www.southportguide.co.uk",
+      url: "https://www.thelakesguide.co.uk",
     },
     mainEntityOfPage: {
       "@type": "WebPage",

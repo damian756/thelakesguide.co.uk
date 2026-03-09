@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ArrowLeft, Shield } from "lucide-react";
 
 export const metadata = {
-  title: "Privacy Policy | SouthportGuide.co.uk",
-  description: "Privacy Policy for SouthportGuide.co.uk — how we collect, use and protect your personal data in accordance with UK GDPR.",
-  alternates: { canonical: "https://www.southportguide.co.uk/privacy" },
+  title: "Privacy Policy | The Lakes Guide",
+  description: "Privacy Policy for TheLakesGuide.co.uk. How we collect, use and protect your personal data in accordance with UK GDPR.",
+  alternates: { canonical: "https://www.thelakesguide.co.uk/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="font-display text-xl font-bold text-[#1B2E4B] mb-4">1. Who we are</h2>
             <p className="text-gray-600 leading-relaxed mb-3">
-              SouthportGuide.co.uk is operated by <strong>Churchtown Media</strong>, a digital media company based in Southport, Merseyside, England.
+              TheLakesGuide.co.uk is operated by <strong>Churchtown Media</strong>, a digital media company based in the UK.
             </p>
             <p className="text-gray-600 leading-relaxed mb-3">
               We are committed to protecting your personal data in accordance with the <strong>UK General Data Protection Regulation (UK GDPR)</strong> and the Data Protection Act 2018.

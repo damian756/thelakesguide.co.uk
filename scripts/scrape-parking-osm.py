@@ -100,7 +100,7 @@ def fetch_osm():
                 url,
                 data={'data': OVERPASS_QUERY},
                 timeout=90,
-                headers={'User-Agent': 'SouthportGuide-ParkingScraper/1.0 (southportguide.co.uk)'}
+                headers={'User-Agent': 'SouthportGuide-ParkingScraper/1.0 (thelakesguide.co.uk)'}
             )
             r.raise_for_status()
             print(f"  Success from: {url}")

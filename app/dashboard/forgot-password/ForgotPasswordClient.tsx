@@ -43,7 +43,7 @@ export default function ForgotPasswordClient() {
             <LayoutDashboard className="w-4 h-4 text-[#C9A84C]" />
           </div>
           <span className="font-display font-bold text-white">
-            Southport<span className="text-[#C9A84C]">Guide</span>
+            The Lakes <span className="text-[#C9A84C]">Guide</span>
             <span className="text-white/40 font-normal text-sm ml-2">Business Portal</span>
           </span>
           <Link

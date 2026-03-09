@@ -29,7 +29,7 @@ export async function POST(request: Request) {
   if (!session?.user?.id) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  if (session.user.email === "demo@southportguide.co.uk") {
+  if (session.user.email === "demo@thelakesguide.co.uk") {
     return NextResponse.json({ error: "Stripe payments are disabled in the demo account." }, { status: 403 });
   }
 
@@ -94,7 +94,7 @@ export async function POST(request: Request) {
   }
 
   const baseUrl =
-    process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
+    process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
   const productName = `SouthportGuide Boost — ${label?.trim() || config.label}`;
 
   const checkoutSession = await getStripe().checkout.sessions.create({

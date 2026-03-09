@@ -2,9 +2,9 @@ import Link from "next/link";
 import { BarChart2, Star, Calendar, TrendingUp } from "lucide-react";
 
 export const metadata = {
-  title: "Advertise With Us | SouthportGuide",
-  description: "List your business on SouthportGuide. Free and premium listing options for Southport businesses.",
-  alternates: { canonical: "https://www.southportguide.co.uk/advertise" },
+  title: "Advertise With Us | The Lakes Guide",
+  description: "List your business on The Lakes Guide. Free and premium listing options for Lake District businesses.",
+  alternates: { canonical: "https://www.thelakesguide.co.uk/advertise" },
 };
 
 export default function AdvertisePage() {
@@ -12,9 +12,9 @@ export default function AdvertisePage() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-blue-900 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Advertise with SouthportGuide</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Advertise with The Lakes Guide</h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Get in front of visitors searching for restaurants, hotels, and things to do in Southport.
+            Get in front of visitors searching for restaurants, accommodation, and things to do in the Lake District.
           </p>
           <div className="flex flex-wrap gap-4 justify-center mt-8">
             <Link href="/pricing" className="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
@@ -41,7 +41,7 @@ export default function AdvertisePage() {
           <div className="bg-white rounded-xl shadow p-6 text-center">
             <Calendar className="w-10 h-10 text-blue-600 mx-auto mb-3" />
             <h2 className="font-bold text-gray-900 mb-2">Event packages</h2>
-            <p className="text-gray-600 text-sm">The Open 2026 and MLEC partner packages for high-intent visitors.</p>
+            <p className="text-gray-600 text-sm">Seasonal and event packages for high-intent visitors.</p>
           </div>
           <div className="bg-white rounded-xl shadow p-6 text-center">
             <TrendingUp className="w-10 h-10 text-blue-600 mx-auto mb-3" />

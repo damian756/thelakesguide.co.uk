@@ -10,7 +10,7 @@ import {
 } from "@/lib/email-templates/review-verify";
 
 export const runtime = "nodejs";
-const BASE_URL = process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
+const BASE_URL = process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
 
 function displayName(review: { displayName: string | null; firstName: string; lastName: string }) {
   if (review.displayName) return review.displayName;
@@ -77,7 +77,7 @@ export async function PATCH(
     try {
       const listingUrl = `${BASE_URL}/${review.business.category.slug}/${review.business.slug}`;
       await getResend().emails.send({
-        from: "SouthportGuide <hello@southportguide.co.uk>",
+        from: "SouthportGuide <hello@thelakesguide.co.uk>",
         to: review.email,
         subject: `Your review of ${review.business.name} is live`,
         html: generateReviewApprovedEmail(review.firstName, review.business.name, listingUrl),
@@ -88,7 +88,7 @@ export async function PATCH(
     if (review.business.user?.email) {
       try {
         await getResend().emails.send({
-          from: "SouthportGuide <hello@southportguide.co.uk>",
+          from: "SouthportGuide <hello@thelakesguide.co.uk>",
           to: review.business.user.email,
           subject: `New review for ${review.business.name}`,
           html: generateNewSiteReviewEmail(

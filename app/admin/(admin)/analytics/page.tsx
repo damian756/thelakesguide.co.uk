@@ -3,7 +3,7 @@ import { Eye, Globe, Phone, MapPin, TrendingUp, BarChart2, ExternalLink } from "
 import { prisma } from "@/lib/prisma";
 
 export const metadata = {
-  title: "Analytics | Admin | SouthportGuide",
+  title: "Analytics | Admin | The Lakes Guide",
   robots: { index: false, follow: false },
 };
 

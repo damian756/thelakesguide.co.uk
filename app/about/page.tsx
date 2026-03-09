@@ -2,17 +2,17 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "About SouthportGuide | Your Independent Visitor Guide to Southport",
+  title: "About The Lakes Guide | Your Independent Visitor Guide to the Lake District",
   description:
-    "SouthportGuide.co.uk is an independent visitor guide to Southport, published by Churchtown Media. Find out who writes it, how it works, and why we built it.",
-  alternates: { canonical: "https://www.southportguide.co.uk/about" },
+    "The Lakes Guide is an independent visitor guide to the Lake District, published by Churchtown Media. Find out who writes it, how it works, and why we built it.",
+  alternates: { canonical: "https://www.thelakesguide.co.uk/about" },
   openGraph: {
-    title: "About SouthportGuide.co.uk",
+    title: "About The Lakes Guide",
     description:
-      "Independent visitor guide to Southport — published by Churchtown Media, written by locals.",
-    url: "https://www.southportguide.co.uk/about",
+      "Independent visitor guide to the Lake District — published by Churchtown Media, written by someone who knows the fells.",
+    url: "https://www.thelakesguide.co.uk/about",
     type: "website",
-    siteName: "SouthportGuide.co.uk",
+    siteName: "The Lakes Guide",
   },
 };
 
@@ -20,30 +20,17 @@ const schemaData = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://www.southportguide.co.uk/#website",
-    name: "SouthportGuide.co.uk",
-    url: "https://www.southportguide.co.uk",
+    "@id": "https://www.thelakesguide.co.uk/#website",
+    name: "The Lakes Guide",
+    url: "https://www.thelakesguide.co.uk",
     description:
-      "Independent visitor guide to Southport — restaurants, hotels, events, things to do, and everything visitors need.",
+      "Independent visitor guide to the Lake District — restaurants, accommodation, walks, things to do, and everything visitors need.",
     publisher: {
       "@type": "Organization",
-      "@id": "https://www.southportguide.co.uk/#organization",
-      name: "SouthportGuide.co.uk",
-      url: "https://www.southportguide.co.uk",
+      "@id": "https://www.thelakesguide.co.uk/#organization",
+      name: "The Lakes Guide",
+      url: "https://www.thelakesguide.co.uk",
     },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://www.southportguide.co.uk/about#terry",
-    name: "Terry",
-    jobTitle: "Chief Editor, SouthportGuide.co.uk",
-    description:
-      "Editorial voice of SouthportGuide.co.uk — written from the perspective of a Southport local of over 40 years covering restaurants, hotels, events and everything visitors need to know.",
-    worksFor: {
-      "@id": "https://www.southportguide.co.uk/#website",
-    },
-    url: "https://www.southportguide.co.uk/about",
   },
   {
     "@context": "https://schema.org",
@@ -51,6 +38,11 @@ const schemaData = [
     "@id": "https://www.churchtownmedia.co.uk/about#founder",
     name: "Damian Roche",
     jobTitle: "Founder, Churchtown Media",
+    description:
+      "Editorial voice of The Lakes Guide — written from the perspective of someone who has walked the fells for decades and knows the Lake District.",
+    worksFor: {
+      "@id": "https://www.thelakesguide.co.uk/#website",
+    },
     url: "https://www.churchtownmedia.co.uk/about",
     sameAs: [
       "https://www.linkedin.com/in/damian-roche-7ba8293a5/",
@@ -75,12 +67,12 @@ export default function AboutPage() {
               About this site
             </p>
             <h1 className="font-display text-4xl md:text-5xl font-bold mb-5 leading-tight">
-              About SouthportGuide
+              About The Lakes Guide
             </h1>
             <p className="text-white/70 text-lg leading-relaxed max-w-2xl">
-              An independent visitor guide to Southport — restaurants, hotels, events, things to do,
-              and everything else you need to plan a visit. No official body funds this. No council
-              budget. Just a site built by someone who lives here.
+              An independent visitor guide to the Lake District — restaurants, accommodation, walks, things to do,
+              and everything else you need to plan a visit. No official body funds this. Just a site built by
+              someone who has been coming here for decades.
             </p>
           </div>
         </div>
@@ -93,34 +85,25 @@ export default function AboutPage() {
             <div className="bg-white rounded-2xl border border-gray-100 p-8">
               <div className="flex items-start gap-5 mb-6">
                 <div className="w-14 h-14 rounded-full bg-[#1B2E4B] flex items-center justify-center flex-shrink-0">
-                  <span className="text-[#C9A84C] font-display font-bold text-xl">T</span>
+                  <span className="text-[#C9A84C] font-display font-bold text-xl">D</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-[#1B2E4B] text-lg">Terry — Chief Editor</p>
-                  <p className="text-gray-500 text-sm">Southport local · 40+ years</p>
+                  <p className="font-semibold text-[#1B2E4B] text-lg">Damian — Editor</p>
+                  <p className="text-gray-500 text-sm">Ex-army · Fell walker · 20+ years in the Lakes</p>
                 </div>
               </div>
               <p className="text-gray-700 leading-relaxed mb-4">
-                SouthportGuide is written in the voice of Terry — a composite editorial persona built
-                from genuine local knowledge, reader feedback, and decades of experience living in the
-                town. Terry reflects the perspective of someone who has eaten in most of the
-                restaurants, walked every part of the seafront, and knows which car parks fill up
-                first on a summer Saturday.
+                The Lakes Guide is written in the voice of Damian Roche — founder of Churchtown Media.
+                He has walked the fells for decades, fished the tarns, and brought the kids. The content
+                is practical and honest. If a route is brutal in mist, we say so. If somewhere is
+                overpriced, we mention it. No paid editorial placements, no sponsored content disguised
+                as a review. Businesses can pay for featured placement in listings — that&apos;s how the
+                site stays free to use — but that has no influence on what gets written.
               </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                The content is honest. If something isn&apos;t worth the journey, we say so. If
-                somewhere is overpriced, we mention it. No paid editorial placements, no sponsored
-                content disguised as a review. Businesses can pay for featured placement in
-                listings — that&apos;s how the site stays free to use — but that has no influence on
-                what gets written.
+              <p className="text-gray-700 leading-relaxed">
+                The content is honest. If something isn&apos;t worth the effort, we say so. We name specifics —
+                the car park postcode, the trail, the café, the price. No fluff, no brochure-speak.
               </p>
-              <div className="bg-[#FAF8F5] rounded-xl px-5 py-4 border border-[#E8E3D8]">
-                <p className="text-sm text-gray-600">
-                  <span className="font-semibold text-[#1B2E4B]">A note on transparency:</span>{" "}
-                  Terry is an editorial voice, not a named individual. The real person behind
-                  SouthportGuide is Damian Roche, founder of Churchtown Media — see below.
-                </p>
-              </div>
             </div>
           </section>
 
@@ -152,23 +135,19 @@ export default function AboutPage() {
                     — Company No. 16960442
                   </p>
                   <p className="text-gray-700 leading-relaxed mb-3">
-                    Damian is a 20-year web and SEO professional based in Churchtown, Southport.
-                    He built SouthportGuide because he couldn&apos;t find a genuinely useful,
-                    editorially independent visitor guide to his own town — and because The Open
-                    Championship coming to Royal Birkdale in 2026 and the Marine Lake Events Centre
-                    opening in 2027 represent a once-in-a-generation opportunity for the town that
-                    deserved proper coverage.
+                    Damian is a 20-year web and SEO professional. He built The Lakes Guide because he
+                    couldn&apos;t find a genuinely useful, editorially independent visitor guide to the
+                    Lake District — one that was honest about conditions, effort, and value.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    SouthportGuide is part of the{" "}
+                    The Lakes Guide is part of{" "}
                     <a
-                      href="https://seftoncoast.network"
+                      href="https://thelakes.network"
                       className="text-[#C9A84C] hover:underline font-medium"
                     >
-                      Sefton Coast Network
+                      The Lakes Network
                     </a>{" "}
-                    — four independent editorial guides covering Southport, Formby, links golf, and
-                    coastal wildlife.
+                    — independent editorial guides covering the Lake District, wildlife, and fell walking.
                   </p>
                   <a
                     href="https://www.linkedin.com/in/damian-roche-7ba8293a5/"
@@ -188,12 +167,12 @@ export default function AboutPage() {
             <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-5">What we cover</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { label: "Restaurants & Cafés", desc: "Independent reviews and a full directory of places to eat and drink across Southport and Birkdale." },
-                { label: "Hotels & Accommodation", desc: "Hotels, B&Bs, and self-catering — from budget to boutique. Includes Open 2026 availability notes." },
-                { label: "Things To Do", desc: "Attractions, activities, nature, beaches and everything else to fill a day in Southport." },
-                { label: "Events", desc: "What's on calendar — from the Flower Show to the Airshow to The Open Championship." },
-                { label: "The Open 2026", desc: "The complete visitor hub for The Open Championship at Royal Birkdale, July 2026." },
-                { label: "MLEC Guide", desc: "The Marine Lake Events Centre — what it is, what's on, and what it means for Southport." },
+                { label: "Restaurants & Cafés", desc: "Independent reviews and a full directory of places to eat and drink across the Lake District." },
+                { label: "Accommodation", desc: "Hotels, B&Bs, and self-catering — from budget to boutique, in Keswick, Ambleside, Windermere and beyond." },
+                { label: "Walks & Hiking", desc: "Fell walks, valley routes, and practical guides for the Wainwrights and beyond." },
+                { label: "Villages & Towns", desc: "Keswick, Ambleside, Windermere, Coniston, Grasmere — what to expect and where to stop." },
+                { label: "Things To Do", desc: "Water sports, cycling, Grizedale Forest, attractions and everything else to fill a day." },
+                { label: "Events", desc: "What&apos;s on calendar — festivals, races, and seasonal events across the Lake District." },
               ].map(({ label, desc }) => (
                 <div key={label} className="bg-white rounded-xl border border-gray-100 p-5">
                   <p className="font-semibold text-[#1B2E4B] mb-1">{label}</p>
@@ -208,7 +187,7 @@ export default function AboutPage() {
             <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-5">How it&apos;s funded</h2>
             <div className="bg-white rounded-2xl border border-gray-100 p-8">
               <p className="text-gray-700 leading-relaxed mb-4">
-                SouthportGuide is free to use. It&apos;s funded by featured placement — businesses can pay
+                The Lakes Guide is free to use. It&apos;s funded by featured placement — businesses can pay
                 for premium positioning in listings and categories. This is clearly disclosed on the site.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
