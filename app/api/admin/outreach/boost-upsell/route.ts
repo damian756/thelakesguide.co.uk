@@ -1,12 +1,11 @@
+import { getResend } from "@/lib/resend";
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { Resend } from "resend";
 import { prisma } from "@/lib/prisma";
 import { getBoostUpsellHtml, getBoostUpsellSubject } from "@/lib/email-templates/boost-upsell";
 import { FROM_EMAIL } from "@/lib/email-templates/claim-approval";
 import { authOptions } from "@/lib/auth";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const COOLDOWN_DAYS = 14;
 
 export async function POST(req: Request) {
@@ -74,7 +73,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const { error } = await resend.emails.send({
+  const { error } = await getResend().emails.send({
     from: FROM_EMAIL,
     to: userEmail,
     subject: getBoostUpsellSubject(),

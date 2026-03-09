@@ -1,8 +1,7 @@
+import { getResend } from "@/lib/resend";
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
 import { prisma } from "@/lib/prisma";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
@@ -32,7 +31,7 @@ export async function POST(req: Request) {
 
     const resetUrl = `${process.env.NEXTAUTH_URL}/dashboard/reset-password?token=${record.token}`;
 
-    await resend.emails.send({
+    await getResend().emails.send({
       from: process.env.RESEND_FROM_EMAIL ?? "SouthportGuide <noreply@southportguide.co.uk>",
       to: normalised,
       subject: "Reset your SouthportGuide password",

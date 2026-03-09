@@ -1,5 +1,5 @@
+import { getResend } from "@/lib/resend";
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
 import { prisma } from "@/lib/prisma";
 import {
   generateNewReviewEmail,
@@ -9,7 +9,6 @@ import {
 const BATCH_SIZE = 20;
 const BATCH_DELAY_MS = 200;
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const FROM_EMAIL =
   process.env.RESEND_FROM_EMAIL || "SouthportGuide <onboarding@resend.dev>";
 
@@ -102,7 +101,7 @@ export async function GET(request: Request) {
                 newReviewCount,
                 newRating ?? 0
               );
-              const { error } = await resend.emails.send({
+              const { error } = await getResend().emails.send({
                 from: FROM_EMAIL,
                 to: user.email,
                 subject: `New Google review for ${business.name}`,
@@ -121,7 +120,7 @@ export async function GET(request: Request) {
                 oldRating,
                 newRating
               );
-              const { error } = await resend.emails.send({
+              const { error } = await getResend().emails.send({
                 from: FROM_EMAIL,
                 to: user.email,
                 subject: `Rating update for ${business.name}`,

@@ -1,11 +1,9 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { Resend } from "resend";
+import { getResend } from "@/lib/resend";
 import { prisma } from "@/lib/prisma";
 import { getClaimRejectionHtml, FROM_EMAIL } from "@/lib/email-templates/claim-approval";
 import { authOptions } from "@/lib/auth";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(
   _req: Request,
@@ -43,7 +41,7 @@ export async function POST(
     },
   });
 
-  await resend.emails.send({
+  await getResend().emails.send({
     from: FROM_EMAIL,
     to: claim.email,
     subject: "Update on your listing claim — SouthportGuide",

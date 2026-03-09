@@ -1,5 +1,5 @@
+import { getResend } from "@/lib/resend";
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
 import { prisma } from "@/lib/prisma";
 import {
   getClicksForPeriod,
@@ -14,7 +14,6 @@ import { getEventImpactEstimate } from "@/lib/event-intel";
 const BATCH_SIZE = 10;
 const BATCH_DELAY_MS = 500;
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const FROM_EMAIL =
   process.env.RESEND_FROM_EMAIL || "SouthportGuide <onboarding@resend.dev>";
 
@@ -155,7 +154,7 @@ export async function GET(request: Request) {
           }
         );
 
-        const { error } = await resend.emails.send({
+        const { error } = await getResend().emails.send({
           from: FROM_EMAIL,
           to: user.email,
           subject: `Your SouthportGuide week — ${business.name}`,

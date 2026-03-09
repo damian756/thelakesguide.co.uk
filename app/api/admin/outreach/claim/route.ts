@@ -1,12 +1,11 @@
+import { getResend } from "@/lib/resend";
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { Resend } from "resend";
 import { prisma } from "@/lib/prisma";
 import { getClaimOutreachHtml, getClaimOutreachSubject } from "@/lib/email-templates/claim-outreach";
 import { FROM_EMAIL, BASE_URL } from "@/lib/email-templates/claim-approval";
 import { authOptions } from "@/lib/auth";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const COOLDOWN_DAYS = 30;
 
 export async function POST(req: Request) {
@@ -78,7 +77,7 @@ export async function POST(req: Request) {
 
   const claimUrl = `${BASE_URL}/claim-listing`;
 
-  const { error } = await resend.emails.send({
+  const { error } = await getResend().emails.send({
     from: FROM_EMAIL,
     to: email,
     subject: getClaimOutreachSubject(business.name, viewCount),

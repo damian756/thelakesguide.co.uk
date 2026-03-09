@@ -1,11 +1,9 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { Resend } from "resend";
+import { getResend } from "@/lib/resend";
 import { prisma } from "@/lib/prisma";
 import { getClaimApprovalHtml, FROM_EMAIL, BASE_URL } from "@/lib/email-templates/claim-approval";
 import { authOptions } from "@/lib/auth";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(
   _req: Request,
@@ -64,7 +62,7 @@ export async function POST(
 
   const activateUrl = `${BASE_URL}/claim-listing/activate?token=${token}`;
 
-  await resend.emails.send({
+  await getResend().emails.send({
     from: FROM_EMAIL,
     to: claim.user.email,
     subject: `Your claim for ${claim.business.name} has been approved — SouthportGuide`,

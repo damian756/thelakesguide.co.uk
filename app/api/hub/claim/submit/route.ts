@@ -1,11 +1,10 @@
+import { getResend } from "@/lib/resend";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import bcrypt from "bcryptjs";
 import crypto from "crypto";
-import { Resend } from "resend";
 import { prisma } from "@/lib/prisma";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "SouthportGuide <noreply@southportguide.co.uk>";
 const ADMIN_EMAIL = "damian@churchtownmedia.co.uk";
 const BASE_URL = process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
@@ -106,7 +105,7 @@ export async function POST(req: Request) {
   });
 
   // Confirmation to claimant
-  await resend.emails.send({
+  await getResend().emails.send({
     from: FROM_EMAIL,
     to: parsed.data.email,
     subject: `We've received your claim request — ${business.name}`,
@@ -134,7 +133,7 @@ export async function POST(req: Request) {
   });
 
   // Notification to admin
-  await resend.emails.send({
+  await getResend().emails.send({
     from: FROM_EMAIL,
     to: ADMIN_EMAIL,
     subject: `[SouthportGuide] New claim request — ${business.name}`,

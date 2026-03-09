@@ -1,13 +1,12 @@
+import { getResend } from "@/lib/resend";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { Resend } from "resend";
 import { generateReviewVerificationEmail } from "@/lib/email-templates/review-verify";
 import { randomUUID } from "crypto";
 import { put } from "@vercel/blob";
 
 export const runtime = "nodejs";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const BASE_URL = process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
 const MAX_PHOTO_SIZE = 8 * 1024 * 1024;
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
@@ -155,7 +154,7 @@ export async function POST(req: NextRequest) {
 
     const verifyUrl = `${BASE_URL}/api/reviews/verify?token=${token}`;
 
-    await resend.emails.send({
+    await getResend().emails.send({
       from: "SouthportGuide <hello@southportguide.co.uk>",
       to: email,
       subject: `Confirm your review of ${business.name}`,

@@ -1,13 +1,12 @@
+import { getResend } from "@/lib/resend";
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { Resend } from "resend";
 import { prisma } from "@/lib/prisma";
 import { getUpgradeNudgeHtml, getUpgradeNudgeSubject } from "@/lib/email-templates/upgrade-nudge";
 import { FROM_EMAIL } from "@/lib/email-templates/claim-approval";
 import { getClicksForPeriod, getCategoryTotalClicks } from "@/lib/hub-analytics";
 import { authOptions } from "@/lib/auth";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const COOLDOWN_DAYS = 60;
 
 export async function POST(req: Request) {
@@ -98,7 +97,7 @@ export async function POST(req: Request) {
   const categorySharePercent =
     categoryTotal > 0 && viewCount > 0 ? Math.round((viewCount / categoryTotal) * 100) : null;
 
-  const { error } = await resend.emails.send({
+  const { error } = await getResend().emails.send({
     from: FROM_EMAIL,
     to: userEmail,
     subject: getUpgradeNudgeSubject(business.name, viewCount),

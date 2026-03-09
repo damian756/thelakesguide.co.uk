@@ -1,7 +1,6 @@
+import { getResend } from "@/lib/resend";
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const TO_EMAIL = "damian@churchtownmedia.co.uk";
 // Once verified, change to: "SouthportGuide <contact@southportguide.co.uk>"
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "SouthportGuide <noreply@southportguide.co.uk>";
@@ -28,7 +27,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Message is too long (max 3000 characters)." }, { status: 400 });
     }
 
-    const { error } = await resend.emails.send({
+    const { error } = await getResend().emails.send({
       from: FROM_EMAIL,
       to: TO_EMAIL,
       replyTo: `${name} <${email}>`,
@@ -76,7 +75,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Auto-reply to sender
-    await resend.emails.send({
+    await getResend().emails.send({
       from: FROM_EMAIL,
       to: email,
       subject: "Thanks for getting in touch — SouthportGuide.co.uk",

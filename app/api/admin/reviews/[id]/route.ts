@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { prisma } from "@/lib/prisma";
 import { authOptions } from "@/lib/auth";
-import { Resend } from "resend";
+import { getResend } from "@/lib/resend";
 import { del } from "@vercel/blob";
 import {
   generateReviewApprovedEmail,
@@ -10,8 +10,6 @@ import {
 } from "@/lib/email-templates/review-verify";
 
 export const runtime = "nodejs";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 const BASE_URL = process.env.NEXTAUTH_URL || "https://www.southportguide.co.uk";
 
 function displayName(review: { displayName: string | null; firstName: string; lastName: string }) {
@@ -78,7 +76,7 @@ export async function PATCH(
     // Notify reviewer
     try {
       const listingUrl = `${BASE_URL}/${review.business.category.slug}/${review.business.slug}`;
-      await resend.emails.send({
+      await getResend().emails.send({
         from: "SouthportGuide <hello@southportguide.co.uk>",
         to: review.email,
         subject: `Your review of ${review.business.name} is live`,
@@ -89,7 +87,7 @@ export async function PATCH(
     // Notify business owner if listing is claimed
     if (review.business.user?.email) {
       try {
-        await resend.emails.send({
+        await getResend().emails.send({
           from: "SouthportGuide <hello@southportguide.co.uk>",
           to: review.business.user.email,
           subject: `New review for ${review.business.name}`,
