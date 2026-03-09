@@ -575,25 +575,8 @@ export default async function BusinessPage({ params, searchParams }: Props) {
                 reviewVerifiedParam={reviewParam ?? null}
               />
 
-              {/* Open 2026 contextual callouts */}
-              {category === "hotels" && (
-                <div className="rounded-2xl overflow-hidden border border-[#C9A84C]/30 bg-[#1B2E4B]">
-                  <div className="px-6 py-5">
-                    <div className="flex items-start gap-4">
-                      <span className="text-3xl flex-none">⛳</span>
-                      <div>
-                        <p className="text-[#C9A84C] font-bold text-sm uppercase tracking-wide mb-1">The Open Championship 2026</p>
-                        <p className="text-white font-semibold mb-1">Royal Birkdale, 12–19 July 2026</p>
-                        <p className="text-white/70 text-sm leading-relaxed mb-4">Attending The Open? We&apos;ve ranked every hotel and B&amp;B in Southport by walking distance to the course — with prices, transport times, and availability links.</p>
-                        <a href="/the-open-2026/accommodation" className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#e0ba66] text-[#1B2E4B] font-bold text-sm px-5 py-2.5 rounded-full transition-colors">
-                          View Open 2026 accommodation guide →
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {(category === "restaurants" || category === "cafes" || category === "bars-nightlife") && (
+              {/* Open 2026 contextual callouts (Lakes: accommodation = hotels equivalent) */}
+              {(category === "restaurants" || category === "cafes" || category === "pubs") && (
                 <div className="rounded-2xl overflow-hidden border border-[#C9A84C]/30 bg-[#1B2E4B]">
                   <div className="px-6 py-5">
                     <div className="flex items-start gap-4">
@@ -615,58 +598,6 @@ export default async function BusinessPage({ params, searchParams }: Props) {
                   </div>
                 </div>
               )}
-              {category === "golf" && (
-                <div className="rounded-2xl overflow-hidden border border-[#C9A84C]/30 bg-[#1B2E4B]">
-                  <div className="px-6 py-5">
-                    <div className="flex items-start gap-4">
-                      <span className="text-3xl flex-none">⛳</span>
-                      <div>
-                        <p className="text-[#C9A84C] font-bold text-sm uppercase tracking-wide mb-1">The Open Championship 2026</p>
-                        <p className="text-white font-semibold mb-1">Royal Birkdale hosts The Open — 12–19 July 2026</p>
-                        <p className="text-white/70 text-sm leading-relaxed mb-4">Southport is links golf country. See our full Open 2026 guide for tickets, accommodation, transport, and everything else you need.</p>
-                        <a href="/the-open-2026" className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#e0ba66] text-[#1B2E4B] font-bold text-sm px-5 py-2.5 rounded-full transition-colors">
-                          Open 2026 hub →
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {category === "parking" && (
-                <div className="rounded-2xl overflow-hidden border border-[#C9A84C]/30 bg-[#1B2E4B]">
-                  <div className="px-6 py-5">
-                    <div className="flex items-start gap-4">
-                      <span className="text-3xl flex-none">⛳</span>
-                      <div>
-                        <p className="text-[#C9A84C] font-bold text-sm uppercase tracking-wide mb-1">The Open Championship 2026</p>
-                        <p className="text-white font-semibold mb-1">Parking near Royal Birkdale</p>
-                        <p className="text-white/70 text-sm leading-relaxed mb-4">Attending The Open at Royal Birkdale in July 2026? Parking fills up fast on tournament days. Our guide covers the official park &amp; ride, nearby car parks, and practical transport alternatives.</p>
-                        <a href="/the-open-2026/getting-there" className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#e0ba66] text-[#1B2E4B] font-bold text-sm px-5 py-2.5 rounded-full transition-colors">
-                          Getting to The Open →
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {category === "transport" && (
-                <div className="rounded-2xl overflow-hidden border border-[#C9A84C]/30 bg-[#1B2E4B]">
-                  <div className="px-6 py-5">
-                    <div className="flex items-start gap-4">
-                      <span className="text-3xl flex-none">🚆</span>
-                      <div>
-                        <p className="text-[#C9A84C] font-bold text-sm uppercase tracking-wide mb-1">Getting to The Open 2026</p>
-                        <p className="text-white font-semibold mb-1">Royal Birkdale, 12–19 July 2026</p>
-                        <p className="text-white/70 text-sm leading-relaxed mb-4">Train, bus, taxi or park &amp; ride — we&apos;ve laid out every transport option to get you to and from Royal Birkdale during Open week.</p>
-                        <a href="/the-open-2026/getting-there" className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#e0ba66] text-[#1B2E4B] font-bold text-sm px-5 py-2.5 rounded-full transition-colors">
-                          Transport guide →
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
               {/* Address + Hours */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
                 <div className="grid sm:grid-cols-2 gap-6">
@@ -806,41 +737,6 @@ export default async function BusinessPage({ params, searchParams }: Props) {
                     <span className="text-gray-800 text-sm">{business.priceRange}</span>
                   </InfoRow>
                 )}
-
-                {/* Parking-specific sidebar info */}
-                {category === "parking" && (() => {
-                  const tags = business.tags ?? [];
-                  const isFree = tags.includes("free-parking");
-                  const isPaid = tags.includes("pay-and-display") || tags.includes("paid-parking");
-                  const hasEV  = tags.some((t) => t.includes("ev"));
-                  const type   = tags.find((t) => ["car-park","surface","multi-storey","layby","informal","cycle-parking"].includes(t));
-                  const typeLabels: Record<string, string> = {
-                    "car-park": "Car park", "surface": "Surface car park",
-                    "multi-storey": "Multi-storey", "layby": "Layby",
-                    "informal": "Informal / roadside", "cycle-parking": "Cycle parking",
-                  };
-                  return (
-                    <>
-                      {type && (
-                        <InfoRow icon={<span className="text-blue-500 text-base leading-none">🅿️</span>} label="Type">
-                          <span className="text-gray-800 text-sm">{typeLabels[type] ?? type}</span>
-                        </InfoRow>
-                      )}
-                      {(isFree || isPaid || business.priceRange) && (
-                        <InfoRow icon={<span className="w-4 h-4 text-blue-500 text-sm font-bold leading-none mt-0.5">£</span>} label="Cost">
-                          <span className="text-gray-800 text-sm">
-                            {business.priceRange || (isFree ? "Free" : "Paid — check signs")}
-                          </span>
-                        </InfoRow>
-                      )}
-                      {hasEV && (
-                        <InfoRow icon={<span className="text-green-600 text-sm leading-none">⚡</span>} label="EV charging">
-                          <span className="text-gray-800 text-sm">Available on site</span>
-                        </InfoRow>
-                      )}
-                    </>
-                  );
-                })()}
 
                 {business.rating && (
                   <InfoRow icon={<Star className="w-4 h-4 text-amber-400 fill-amber-400" />} label="Google rating">
