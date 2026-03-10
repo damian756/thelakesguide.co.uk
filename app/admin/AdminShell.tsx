@@ -10,14 +10,11 @@ import {
   Building2,
   CalendarDays,
   Mail,
-  BarChart2,
   LogOut,
   Menu,
   X,
   ExternalLink,
   Star,
-  Activity,
-  Send,
 } from "lucide-react";
 
 const NAV = [
@@ -25,11 +22,8 @@ const NAV = [
   { href: "/admin/claims", label: "Claims", icon: FileCheck },
   { href: "/admin/reviews", label: "Reviews", icon: Star },
   { href: "/admin/businesses", label: "Businesses", icon: Building2 },
-  { href: "/admin/analytics", label: "Analytics", icon: BarChart2 },
-  { href: "/admin/site-analytics", label: "Site Analytics", icon: Activity },
   { href: "/admin/events", label: "Events", icon: CalendarDays },
   { href: "/admin/email-logs", label: "Email logs", icon: Mail },
-  { href: "/admin/outreach", label: "Outreach", icon: Send },
 ];
 
 export default function AdminShell({ children }: { children: React.ReactNode }) {

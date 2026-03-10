@@ -52,7 +52,6 @@ model Business {
   emailLogs             WeeklyEmailLog[]
   claimRequests         ClaimRequest[]
   reviews               Review[]
-  outreachLogs          OutreachLog[]
   createdAt             DateTime        @default(now())
   updatedAt             DateTime        @updatedAt
 
@@ -404,17 +403,3 @@ model PageView {
   @@index([createdAt])
 }
 
-model OutreachLog {
-  id         String   @id @default(uuid())
-  businessId String
-  business   Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
-  type       String   // "claim_invite" | "upgrade_nudge" | "boost_upsell"
-  sentTo     String
-  sentAt     DateTime @default(now())
-  sentBy     String?  // admin userId
-  note       String?
-
-  @@index([businessId])
-  @@index([type])
-  @@index([sentAt])
-}

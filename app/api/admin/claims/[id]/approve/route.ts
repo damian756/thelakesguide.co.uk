@@ -19,7 +19,7 @@ export async function POST(
   const claim = await prisma.claimRequest.findUnique({
     where: { id },
     include: {
-      business: true,
+      business: { include: { category: { select: { slug: true } } } },
       user: { select: { id: true, email: true, name: true } },
     },
   });
@@ -72,6 +72,28 @@ export async function POST(
       activateUrl,
     }),
   });
+
+  const webhookUrl = process.env.COMMAND_CENTRE_WEBHOOK_URL;
+  const webhookSecret = process.env.COMMAND_CENTRE_WEBHOOK_SECRET;
+  if (webhookUrl && webhookSecret) {
+    const baseUrl = process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
+    const listingUrl = `${baseUrl}/${claim.business.category.slug}/${claim.business.slug}`;
+    fetch(webhookUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-webhook-secret": webhookSecret,
+      },
+      body: JSON.stringify({
+        listingId: claim.businessId,
+        businessName: claim.business.name,
+        email: claim.user.email,
+        claimedAt: new Date().toISOString(),
+        listingUrl,
+        site: "thelakesguide",
+      }),
+    }).catch(() => {});
+  }
 
   return NextResponse.json({ ok: true });
 }

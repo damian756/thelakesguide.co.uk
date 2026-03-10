@@ -26,8 +26,7 @@ export function middleware(req: NextRequest, event: NextFetchEvent) {
   // - Initial load: Accept header contains text/html
   // - App Router client navigation: Next-Router-State-Tree header present
   const accept = req.headers.get("accept") ?? "";
-  const isPageRequest =
-    accept.includes("text/html") || req.headers.has("next-router-state-tree");
+  const isPageRequest = accept.includes("text/html");
   if (!isPageRequest) return NextResponse.next();
 
   if (
