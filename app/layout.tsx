@@ -5,8 +5,6 @@ import Link from "next/link";
 import NavMenu from "./components/NavMenu";
 import { ConditionalNav, ConditionalFooter } from "./components/ConditionalShell";
 import { Analytics } from "@vercel/analytics/next";
-import { SiteTracker } from "@/components/SiteTracker";
-
 const lora = Lora({
   subsets: ["latin"],
   variable: "--font-lora",
@@ -106,7 +104,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ConditionalNav><Navigation /></ConditionalNav>
         <main className="overflow-x-hidden">{children}</main>
         <ConditionalFooter><Footer /></ConditionalFooter>
-        <SiteTracker />
         <Analytics />
       </body>
     </html>
