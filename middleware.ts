@@ -22,8 +22,17 @@ function getReferrerDomain(referer: string | null): string | null {
 export function middleware(req: NextRequest, event: NextFetchEvent) {
   const { pathname } = req.nextUrl;
 
+  // Only track genuine page requests:
+  // - Initial load: Accept header contains text/html
+  // - App Router client navigation: Next-Router-State-Tree header present
+  const accept = req.headers.get("accept") ?? "";
+  const isPageRequest =
+    accept.includes("text/html") || req.headers.has("next-router-state-tree");
+  if (!isPageRequest) return NextResponse.next();
+
   if (
     pathname.startsWith("/_next") ||
+    pathname.startsWith("/_vercel") ||
     pathname.startsWith("/api") ||
     pathname.startsWith("/admin") ||
     pathname.startsWith("/dashboard") ||
