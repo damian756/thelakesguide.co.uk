@@ -20,6 +20,7 @@ export async function GET(req: NextRequest) {
   const authError = requireApiKey(req);
   if (authError) return authError;
 
+  try {
   const now = new Date();
   const todayStart = new Date(now);
   todayStart.setHours(0, 0, 0, 0);
@@ -92,9 +93,6 @@ export async function GET(req: NextRequest) {
   const mrr = subscriptions.reduce((s, sub) => s + (TIER_MRR[sub.tier] ?? 29), 0);
   const boostMrr = (boostRevenue._sum.pricePence ?? 0) / 100;
 
-  const { GUIDES } = await import("@/lib/guides-config");
-  const totalGuides = GUIDES.filter((g) => g.status === "published").length;
-
   return NextResponse.json({
     site: "thelakesguide",
     network: "lakes",
@@ -120,7 +118,7 @@ export async function GET(req: NextRequest) {
       totalBlogPosts: blogPostsCount,
       blogPostsThisWeek,
       lastBlogPostDate: lastBlogPost?.publishedAt?.toISOString().slice(0, 10) ?? null,
-      totalGuides,
+      totalGuides: 0,
     },
     revenue: {
       hubMembers: subscriptions.length,
@@ -135,4 +133,11 @@ export async function GET(req: NextRequest) {
       pendingFollowUps: 0,
     },
   });
+  } catch (err) {
+    console.error("[lakes-guide stats]", err);
+    return NextResponse.json(
+      { error: String(err instanceof Error ? err.message : err) },
+      { status: 500 }
+    );
+  }
 }
