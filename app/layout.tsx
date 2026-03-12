@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Lora, Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
@@ -105,6 +106,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main className="overflow-x-hidden">{children}</main>
         <ConditionalFooter><Footer /></ConditionalFooter>
         <Analytics />
+        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="m80dw57sV4w23dQDWs8vxw" strategy="afterInteractive" />
       </body>
     </html>
   );
