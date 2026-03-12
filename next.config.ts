@@ -64,6 +64,13 @@ const nextConfig: NextConfig = {
   // Canonical www redirect + permanent fixes
   async redirects() {
     return [
+      // non-www → www
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "thelakesguide.co.uk" }],
+        destination: "https://www.thelakesguide.co.uk/:path*",
+        permanent: true,
+      },
       // Vercel preview → canonical domain
       {
         source: "/(.*)",
