@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Lora, Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
@@ -100,13 +99,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="m60dw57sV4w23dQDWs8vxw" async></script>
       </head>
       <body className={`${lora.variable} ${inter.variable} font-sans antialiased bg-[#EAEDE8]`}>
         <ConditionalNav><Navigation /></ConditionalNav>
         <main className="overflow-x-hidden">{children}</main>
         <ConditionalFooter><Footer /></ConditionalFooter>
         <Analytics />
-        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="m60dw57sV4w23dQDWs8vxw" strategy="afterInteractive" />
       </body>
     </html>
   );
