@@ -106,7 +106,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main className="overflow-x-hidden">{children}</main>
         <ConditionalFooter><Footer /></ConditionalFooter>
         <Analytics />
-        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="m80dw57sV4w23dQDWs8vxw" strategy="afterInteractive" />
+        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="m60dw57sV4w23dQDWs8vxw" strategy="afterInteractive" />
       </body>
     </html>
   );
