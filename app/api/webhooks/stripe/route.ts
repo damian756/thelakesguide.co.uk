@@ -38,19 +38,27 @@ export async function POST(request: Request) {
               ? session.payment_intent
               : session.payment_intent?.id ?? null;
 
-          await prisma.listingBoost.create({
-            data: {
-              businessId,
-              categoryId,
-              type: boostType,
-              label: label || null,
-              startsAt: new Date(startsAt),
-              endsAt: new Date(endsAt),
-              pricePence: parseInt(pricePence, 10),
-              stripePaymentIntentId: paymentIntentId,
-              status: "active",
-            },
-          });
+          const boostData = {
+            businessId,
+            categoryId,
+            type: boostType,
+            label: label || null,
+            startsAt: new Date(startsAt),
+            endsAt: new Date(endsAt),
+            pricePence: parseInt(pricePence, 10),
+            stripePaymentIntentId: paymentIntentId,
+            status: "active",
+          };
+
+          if (paymentIntentId) {
+            await prisma.listingBoost.upsert({
+              where: { stripePaymentIntentId: paymentIntentId },
+              create: boostData,
+              update: {},
+            });
+          } else {
+            await prisma.listingBoost.create({ data: boostData });
+          }
         }
       }
     }
