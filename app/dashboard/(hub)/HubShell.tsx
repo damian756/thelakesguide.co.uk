@@ -287,7 +287,7 @@ export default function HubShell({ user, business, children }: HubShellProps) {
         {user.email === "demo@thelakesguide.co.uk" && (
           <div className="bg-[#C9A84C] text-[#1B2E4B] text-sm font-semibold px-6 py-3 flex items-center justify-between gap-4">
             <span>
-              🎭 <span className="font-bold">Demo account</span> — you&apos;re viewing The Sandgrounder. Data is illustrative only. Stripe payments are disabled.
+              <span className="font-bold">Demo account.</span> Data is illustrative only. Stripe payments are disabled.
             </span>
             <a
               href="/claim-listing"
