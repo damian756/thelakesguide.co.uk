@@ -4,7 +4,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { ChevronRight } from "lucide-react";
 import { getCategoryBySlug, isValidCategory } from "@/lib/config";
-import { HERO_IMAGE_URL } from "@/lib/site-constants";
+import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-constants";
 import { prisma } from "@/lib/prisma";
 import CategoryBrowser, { type BrowserBusiness } from "@/components/CategoryBrowser";
 import type { MapPin as MapPinType } from "@/components/CategoryMapTypes";
@@ -16,16 +16,16 @@ type Props = {
 
 // ── Category config ──────────────────────────────────────────────────────────
 
-const THEMES: Record<string, { gradient: string; accent: string; emoji: string; tagline: string; heroPos: string }> = {
-  walks:        { gradient: "from-[#2A6B8A] to-[#245E3F]", accent: "#245E3F", emoji: "🥾", tagline: "Walks and hiking routes in the Lake District", heroPos: "center 20%" },
-  villages:     { gradient: "from-[#2A3F5C] to-[#3A5070]", accent: "#3A4F6B", emoji: "🏘️", tagline: "Villages and towns in the Lake District", heroPos: "center" },
-  restaurants:  { gradient: "from-[#8B2635] to-[#C94B3B]", accent: "#C94B3B", emoji: "🍽️", tagline: "Places to eat in the Lake District", heroPos: "center 75%" },
-  cafes:         { gradient: "from-[#6B3A1F] to-[#A06040]", accent: "#8B5E3C", emoji: "☕", tagline: "Cafes and tea rooms in the Lake District", heroPos: "center 35%" },
-  pubs:         { gradient: "from-[#3D1A5C] to-[#6B3AA0]", accent: "#5B2D8A", emoji: "🍺", tagline: "Pubs and inns in the Lake District", heroPos: "center 5%" },
-  activities:   { gradient: "from-[#0D6E6E] to-[#0F9B8E]", accent: "#0D6E6E", emoji: "🏄", tagline: "Sport, leisure and outdoor activities", heroPos: "center" },
-  attractions:  { gradient: "from-[#5C2A6B] to-[#8B3AA0]", accent: "#6B3A7A", emoji: "🏛️", tagline: "Dove Cottage, Hill Top, Brockhole, Lakes Aquarium and more", heroPos: "center" },
-  accommodation: { gradient: "from-[#14231C] to-[#245E3F]", accent: "#245E3F", emoji: "🏨", tagline: "Where to stay in the Lake District", heroPos: "center" },
-  shopping:     { gradient: "from-[#8B2847] to-[#C45C6A]", accent: "#C45C6A", emoji: "🛍️", tagline: "Shops, boutiques and markets", heroPos: "center" },
+const THEMES: Record<string, { gradient: string; accent: string; emoji: string; tagline: string }> = {
+  walks:        { gradient: "from-[#2A6B8A] to-[#245E3F]", accent: "#245E3F", emoji: "🥾", tagline: "Walks and hiking routes in the Lake District" },
+  villages:     { gradient: "from-[#2A3F5C] to-[#3A5070]", accent: "#3A4F6B", emoji: "🏘️", tagline: "Villages and towns in the Lake District" },
+  restaurants:  { gradient: "from-[#8B2635] to-[#C94B3B]", accent: "#C94B3B", emoji: "🍽️", tagline: "Places to eat in the Lake District" },
+  cafes:         { gradient: "from-[#6B3A1F] to-[#A06040]", accent: "#8B5E3C", emoji: "☕", tagline: "Cafes and tea rooms in the Lake District" },
+  pubs:         { gradient: "from-[#3D1A5C] to-[#6B3AA0]", accent: "#5B2D8A", emoji: "🍺", tagline: "Pubs and inns in the Lake District" },
+  activities:   { gradient: "from-[#0D6E6E] to-[#0F9B8E]", accent: "#0D6E6E", emoji: "🏄", tagline: "Sport, leisure and outdoor activities" },
+  attractions:  { gradient: "from-[#5C2A6B] to-[#8B3AA0]", accent: "#6B3A7A", emoji: "🏛️", tagline: "Dove Cottage, Hill Top, Brockhole, Lakes Aquarium and more" },
+  accommodation: { gradient: "from-[#14231C] to-[#245E3F]", accent: "#245E3F", emoji: "🏨", tagline: "Where to stay in the Lake District" },
+  shopping:     { gradient: "from-[#8B2847] to-[#C45C6A]", accent: "#C45C6A", emoji: "🛍️", tagline: "Shops, boutiques and markets" },
 };
 
 const CAT_ORDER = [
@@ -312,13 +312,13 @@ export default async function CategoryPage({ params, searchParams }: Props) {
         <div className="absolute inset-0">
           <Image
             src={HERO_IMAGE_URL}
-            alt="" fill sizes="100vw" quality={80}
+            alt={HERO_IMAGE_ALT} fill sizes="100vw" quality={80}
             className="object-cover"
-            style={{ objectPosition: theme.heroPos }}
+            style={{ objectPosition: HERO_IMAGE_POSITION }}
             priority
           />
           <div className={`absolute inset-0 bg-gradient-to-br ${theme.gradient} opacity-50`} />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/50 pointer-events-none" />
         </div>
 
         <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">

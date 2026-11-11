@@ -320,7 +320,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           className="object-cover"
           style={{ objectPosition: "center 35%" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#14231C]/50 via-[#14231C]/20 to-[#14231C]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#14231C]/55 via-[#14231C]/45 to-[#14231C]/95" />
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 max-w-3xl mx-auto">
           <Link
             href="/blog"

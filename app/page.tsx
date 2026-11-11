@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Star, Utensils, Hotel, Beer, Coffee, MapPin, ShoppingBag, Dumbbell, ArrowRight, Music, CalendarDays, Newspaper } from "lucide-react";
 import { prisma } from "@/lib/prisma";
-import { HERO_IMAGE_URL } from "@/lib/site-constants";
+import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-constants";
 import { BLOG_POSTS, getBlogPostCategory, getUpcomingEvents } from "@/lib/lakes-data";
 import type { Metadata } from "next";
 import AdSlot from "@/components/AdSlot";
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
 
 // ── Category configuration ────────────────────────────────────────────────
 const CATEGORIES = [
-  { slug: "walks",         label: "Walks & Hiking",   icon: MapPin,      gradient: "from-[#1A5C5B] to-[#2E8B7A]",  light: "#E8F5F3", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" },
-  { slug: "villages",      label: "Villages",         icon: MapPin,      gradient: "from-[#1A5C7A] to-[#1E8AB0]",  light: "#E8F4FA", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" },
-  { slug: "restaurants",   label: "Restaurants",      icon: Utensils,    gradient: "from-[#8B2635] to-[#C94B3B]",  light: "#FDF0EE", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" },
-  { slug: "cafes",         label: "Cafes",            icon: Coffee,      gradient: "from-[#6B3A1F] to-[#A06040]",  light: "#FAF0E8", image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" },
-  { slug: "pubs",          label: "Pubs & Inns",      icon: Beer,        gradient: "from-[#3D1A5C] to-[#6B3AA0]",  light: "#F3EEF9", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" },
-  { slug: "activities",    label: "Activities",       icon: Dumbbell,    gradient: "from-[#0D6E6E] to-[#0F9B8E]",  light: "#E6F5F5", image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" },
-  { slug: "accommodation", label: "Places to Stay",   icon: Hotel,       gradient: "from-[#14231C] to-[#245E3F]",  light: "#E8EDE8", image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&q=80" },
-  { slug: "shopping",      label: "Shopping",         icon: ShoppingBag, gradient: "from-[#8B2847] to-[#C45C6A]",  light: "#FAE8EC", image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&q=80" },
+  { slug: "walks",         label: "Walks & Hiking",   icon: MapPin,      gradient: "from-[#1A5C5B] to-[#2E8B7A]",  light: "#E8F5F3", image: "/images/illustrations/card-walks-800.webp" },
+  { slug: "villages",      label: "Villages",         icon: MapPin,      gradient: "from-[#1A5C7A] to-[#1E8AB0]",  light: "#E8F4FA", image: "/images/illustrations/card-villages-800.webp" },
+  { slug: "restaurants",   label: "Restaurants",      icon: Utensils,    gradient: "from-[#8B2635] to-[#C94B3B]",  light: "#FDF0EE", image: "/images/illustrations/card-restaurants-800.webp" },
+  { slug: "cafes",         label: "Cafes",            icon: Coffee,      gradient: "from-[#6B3A1F] to-[#A06040]",  light: "#FAF0E8", image: "/images/illustrations/card-cafes-800.webp" },
+  { slug: "pubs",          label: "Pubs & Inns",      icon: Beer,        gradient: "from-[#3D1A5C] to-[#6B3AA0]",  light: "#F3EEF9", image: "/images/illustrations/card-pubs-800.webp" },
+  { slug: "activities",    label: "Activities",       icon: Dumbbell,    gradient: "from-[#0D6E6E] to-[#0F9B8E]",  light: "#E6F5F5", image: "/images/illustrations/card-activities-800.webp" },
+  { slug: "accommodation", label: "Places to Stay",   icon: Hotel,       gradient: "from-[#14231C] to-[#245E3F]",  light: "#E8EDE8", image: "/images/illustrations/card-stay-800.webp" },
+  { slug: "shopping",      label: "Shopping",         icon: ShoppingBag, gradient: "from-[#8B2847] to-[#C45C6A]",  light: "#FAE8EC", image: "/images/illustrations/card-shopping-800.webp" },
 ];
 
 function getArea(address: string): string {
@@ -145,16 +145,16 @@ export default async function Home() {
         <div className="absolute inset-0">
           <Image
             src={HERO_IMAGE_URL}
-            alt="Mountain peaks above a sea of cloud at sunset"
+            alt={HERO_IMAGE_ALT}
             fill
             sizes="100vw"
             quality={80}
             className="object-cover"
-            style={{ objectPosition: "center 20%" }}
+            style={{ objectPosition: HERO_IMAGE_POSITION }}
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/50 pointer-events-none" />
         </div>
 
         <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
@@ -476,7 +476,7 @@ export default async function Home() {
                     quality={80}
                     className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
 
                   <div className="relative p-5 flex flex-col justify-end h-full text-center">
                     <h3 className="text-white font-bold text-sm leading-tight mb-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">{cat.label}</h3>

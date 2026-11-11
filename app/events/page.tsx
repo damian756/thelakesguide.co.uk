@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CalendarDays, ArrowLeft, ExternalLink } from "lucide-react";
-import { HERO_IMAGE_URL } from "@/lib/site-constants";
+import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-constants";
 import { getEventsByMonth } from "@/lib/lakes-data";
 import { prisma } from "@/lib/prisma";
 import { Suspense } from "react";
@@ -181,16 +181,16 @@ export default async function EventsPage({
         <div className="absolute inset-0">
           <Image
             src={HERO_IMAGE_URL}
-            alt="Lake District"
+            alt={HERO_IMAGE_ALT}
             fill
             priority
             sizes="100vw"
             quality={80}
             className="object-cover"
-            style={{ objectPosition: "center 20%" }}
+            style={{ objectPosition: HERO_IMAGE_POSITION }}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/50 pointer-events-none" />
         </div>
         <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
           <Link

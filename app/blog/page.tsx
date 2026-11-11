@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HERO_IMAGE_URL } from "@/lib/site-constants";
+import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-constants";
 import { Suspense } from "react";
 import { Newspaper } from "lucide-react";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/lakes-data";
@@ -20,16 +20,16 @@ export default function BlogPage() {
         <div className="absolute inset-0">
           <Image
             src={HERO_IMAGE_URL}
-            alt="Lake District landscape"
+            alt={HERO_IMAGE_ALT}
             fill
             priority
             sizes="100vw"
             quality={80}
             className="object-cover"
-            style={{ objectPosition: "center 55%" }}
+            style={{ objectPosition: HERO_IMAGE_POSITION }}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/50 pointer-events-none" />
         </div>
         <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28 text-center">
           <div className="flex items-center justify-center gap-2 text-[#C4782A] mb-3">

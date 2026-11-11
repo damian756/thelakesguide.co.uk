@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { ChevronRight, Star, MapPin, ArrowRight } from "lucide-react";
-import { HERO_IMAGE_URL } from "@/lib/site-constants";
+import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-constants";
 import { getCollection, COLLECTIONS, MIN_LISTINGS } from "@/lib/collections-config";
 import { prisma } from "@/lib/prisma";
 import { collectionWhere } from "@/lib/listing-presence";
@@ -178,9 +178,9 @@ export default async function CollectionPage({ params }: Props) {
         {/* ── Hero — walks-style ───────────────────────────────────────────── */}
         <div className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
           <div className="absolute inset-0">
-            <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={80} className="object-cover" style={{ objectPosition: "center 20%" }} priority />
+            <Image src={HERO_IMAGE_URL} alt={HERO_IMAGE_ALT} fill sizes="100vw" quality={80} className="object-cover" style={{ objectPosition: HERO_IMAGE_POSITION }} priority />
             <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/50 pointer-events-none" />
           </div>
           <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
             <nav className="flex items-center gap-1.5 text-white/50 text-sm mb-6">

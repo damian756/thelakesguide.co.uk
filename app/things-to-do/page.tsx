@@ -19,7 +19,7 @@ import {
   Mountain,
 } from "lucide-react";
 import type { Metadata } from "next";
-import { HERO_IMAGE_URL } from "@/lib/site-constants";
+import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-constants";
 import AdSlot from "@/components/AdSlot";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
@@ -448,16 +448,16 @@ export default function ThingsToDoPage() {
           <div className="absolute inset-0">
             <Image
               src={HERO_IMAGE_URL}
-              alt="Lake District fells and landscape"
+              alt={HERO_IMAGE_ALT}
               fill
               sizes="100vw"
               quality={80}
               className="object-cover"
-              style={{ objectPosition: "center 40%" }}
+              style={{ objectPosition: HERO_IMAGE_POSITION }}
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/50 pointer-events-none" />
           </div>
 
           <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
