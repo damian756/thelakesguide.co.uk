@@ -17,14 +17,26 @@ export default async function ReviewSection({
   categorySlug,
   reviewVerifiedParam,
 }: Props) {
-  const reviews = await prisma.review.findMany({
+  // Only the fields a review card shows. Everything here is sent to the visitor's
+  // browser, so never the reviewer's email, tokens, IP, receipt or full surname.
+  const rows = await prisma.review.findMany({
     where: { businessId, status: "approved" },
-    include: {
-      images: { orderBy: { sortOrder: "asc" } },
-      response: true,
+    select: {
+      id: true,
+      firstName: true,
+      lastName: true,
+      displayName: true,
+      starRating: true,
+      title: true,
+      body: true,
+      verifiedType: true,
+      approvedAt: true,
+      images: { select: { id: true, imageUrl: true }, orderBy: { sortOrder: "asc" } },
+      response: { select: { id: true, body: true } },
     },
     orderBy: { approvedAt: "desc" },
   });
+  const reviews = rows.map((r) => ({ ...r, lastName: r.lastName.charAt(0) }));
 
   const rejected = await prisma.review.findMany({
     where: { businessId, status: "rejected", removalNote: { not: null } },
