@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   creator: "Churchtown Media",
   publisher: "The Lakes Guide",
 
-  // Canonical & feeds
+  // Feeds. No canonical or og:url here: each indexable page sets its own, and a
+  // page without one (a 404, the Business Hub) must not claim the home page's address.
   alternates: {
-    canonical: BASE_URL,
     types: {
       "application/rss+xml": `${BASE_URL}/feed`,
     },
@@ -47,7 +47,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GB",
-    url: BASE_URL,
     siteName: "The Lakes Guide",
     title: "The Lakes Guide: Lake District Visitor Guide",
     description:
@@ -62,12 +61,9 @@ export const metadata: Metadata = {
     ],
   },
 
-  // Twitter / X
+  // Twitter / X: title, description and image come from each page's Open Graph tags.
   twitter: {
     card: "summary_large_image",
-    title: "The Lakes Guide: Lake District Visitor Guide",
-    description: "Restaurants, pubs, walks, villages and things to do in the Lake District, with the practical details for planning a visit.",
-    images: [`${BASE_URL}/og-default.png`],
     creator: "@TheLakesGuide",
   },
 

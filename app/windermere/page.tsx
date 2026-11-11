@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Train, Clock, Anchor, ArrowRight } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
+import { pageOpenGraph } from "@/lib/seo";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
   title: "Windermere | Restaurants, Things to Do & Visitor Guide",
   description: "Windermere and Bowness: restaurants, lake cruises, accommodation, parking, and things to do on England's largest natural lake.",
   alternates: { canonical: url },
-  openGraph: { title: "Windermere Guide | The Lakes Guide", description: "Visiting Windermere and Bowness-on-Windermere: restaurants, walks, lake cruises and accommodation.", url, siteName: "The Lakes Guide" },
+  openGraph: pageOpenGraph({ title: "Windermere Guide | The Lakes Guide", description: "Visiting Windermere and Bowness-on-Windermere: restaurants, walks, lake cruises and accommodation.", url }),
 };
 
 export default function WindermerePage() {

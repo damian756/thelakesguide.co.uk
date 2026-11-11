@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import GuideLayout from "@/app/components/GuideLayout";
 import { getGuideOptional, GUIDES, GUIDE_CATEGORIES } from "@/lib/guides-config";
+import { pageOpenGraph } from "@/lib/seo";
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
 
@@ -23,12 +24,12 @@ export async function generateMetadata({
     title: guide.metaTitle ?? guide.title,
     description: guide.metaDescription ?? guide.excerpt,
     alternates: { canonical: `${BASE_URL}/guides/${slug}` },
-    openGraph: {
+    openGraph: pageOpenGraph({
       title: guide.metaTitle ?? guide.title,
       description: guide.metaDescription ?? guide.excerpt,
       url: `${BASE_URL}/guides/${slug}`,
       images: [{ url: `${BASE_URL}${guide.heroImage}` }],
-    },
+    }),
     robots: guide.status === "coming-soon" ? { index: false, follow: true } : undefined,
   };
 }

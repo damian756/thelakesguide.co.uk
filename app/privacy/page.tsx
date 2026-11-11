@@ -1,10 +1,15 @@
 import Link from "next/link";
 import { ArrowLeft, Shield } from "lucide-react";
+import { pageOpenGraph } from "@/lib/seo";
+
+const description =
+  "Privacy Policy for TheLakesGuide.co.uk. How we collect, use and protect your personal data in accordance with UK GDPR.";
 
 export const metadata = {
   title: "Privacy Policy",
-  description: "Privacy Policy for TheLakesGuide.co.uk. How we collect, use and protect your personal data in accordance with UK GDPR.",
+  description,
   alternates: { canonical: "https://www.thelakesguide.co.uk/privacy" },
+  openGraph: pageOpenGraph({ title: "Privacy Policy | The Lakes Guide", description, url: "https://www.thelakesguide.co.uk/privacy" }),
 };
 
 export default function PrivacyPage() {

@@ -6,6 +6,7 @@ import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-
 import { BLOG_POSTS, getBlogPostCategory, getUpcomingEvents } from "@/lib/lakes-data";
 import type { Metadata } from "next";
 import AdSlot from "@/components/AdSlot";
+import { pageOpenGraph } from "@/lib/seo";
 
 export const revalidate = 3600; // Regenerate at most once per hour so events stay current
 
@@ -13,12 +14,11 @@ export const metadata: Metadata = {
   title: "Lake District Visitor Guide | Restaurants, Walks & Things to Do | The Lakes Guide",
   description: "A guide to the Lake District: restaurants, pubs, walks, villages and things to do, with the practical details for planning a visit.",
   alternates: { canonical: "https://www.thelakesguide.co.uk" },
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "Lake District Visitor Guide | The Lakes Guide",
     description: "A guide to the Lake District: restaurants, pubs, walks, villages and things to do.",
     url: "https://www.thelakesguide.co.uk",
-    images: [{ url: "https://www.thelakesguide.co.uk/og-default.png" }],
-  },
+  }),
 };
 
 // ── Category configuration ────────────────────────────────────────────────

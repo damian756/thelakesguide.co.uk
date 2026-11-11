@@ -1,20 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-constants";
+import { pageOpenGraph } from "@/lib/seo";
 
 export const metadata = {
   title: "About The Lakes Guide | Who Publishes It and How It Works",
   description:
     "The Lakes Guide is a visitor guide to the Lake District, published by Churchtown Media Ltd. Who edits it, how it is paid for and what we stand for.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/about" },
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "About The Lakes Guide",
     description:
       "A visitor guide to the Lake District, published by Churchtown Media Ltd.",
     url: "https://www.thelakesguide.co.uk/about",
-    type: "website",
-    siteName: "The Lakes Guide",
-  },
+  }),
 };
 
 const schemaData = [

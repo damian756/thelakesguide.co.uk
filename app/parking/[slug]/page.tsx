@@ -6,6 +6,7 @@ import { MapPin, Clock, Star, ChevronRight, Navigation } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { ViewTracker } from "@/components/ViewTracker";
 import { PostcodeCopy } from "./PostcodeCopy";
+import { pageOpenGraph } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -402,14 +403,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description: desc,
       alternates: { canonical: canonicalUrl },
-      openGraph: {
+      openGraph: pageOpenGraph({
         title, description: desc,
         url: canonicalUrl,
-        type: "website",
-        siteName: "TheLakesGuide.co.uk",
-        locale: "en_GB",
         ...(b.images?.[0] ? { images: [{ url: b.images[0], width: 1200, height: 630, alt: cleanName }] } : {}),
-      },
+      }),
       twitter: {
         card: "summary_large_image",
         title, description: desc,

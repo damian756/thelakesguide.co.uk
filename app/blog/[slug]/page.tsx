@@ -8,6 +8,7 @@ import { BLOG_CONTENT, ContentBlock } from "@/lib/blog-content";
 import { notFound } from "next/navigation";
 import AdSlot from "@/components/AdSlot";
 import { slotForPost } from "@/lib/ad-slots";
+import { pageOpenGraph } from "@/lib/seo";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -34,13 +35,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: post.title,
     description: post.excerpt,
     alternates: { canonical: `https://www.thelakesguide.co.uk/blog/${slug}` },
-    openGraph: {
+    openGraph: pageOpenGraph({
       type: "article",
       title: post.title,
       description: post.excerpt,
       url: `https://www.thelakesguide.co.uk/blog/${slug}`,
       images: [{ url: post.image, alt: post.imageAlt ?? post.title }],
-    },
+    }),
   };
 }
 

@@ -8,6 +8,7 @@ import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-
 import { prisma } from "@/lib/prisma";
 import CategoryBrowser, { type BrowserBusiness } from "@/components/CategoryBrowser";
 import type { MapPin as MapPinType } from "@/components/CategoryMapTypes";
+import { pageOpenGraph } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ category: string }>;
@@ -166,7 +167,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title, description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, type: "website", siteName: "TheLakesGuide.co.uk" },
+    openGraph: pageOpenGraph({ title, description, url }),
     twitter: { card: "summary", title, description },
   };
 }

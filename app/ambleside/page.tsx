@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Bus, Clock, ArrowRight } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
+import { pageOpenGraph } from "@/lib/seo";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
   title: "Ambleside | Restaurants, Walks & Visitor Guide",
   description: "Ambleside in the Lake District: a walking base for the central fells, with restaurants, accommodation, Loughrigg Fell, Stock Ghyll Force and the Fairfield Horseshoe.",
   alternates: { canonical: url },
-  openGraph: { title: "Ambleside Guide | The Lakes Guide", description: "Ambleside: walking routes, restaurants, accommodation, and using it as a base for the central fells.", url, siteName: "The Lakes Guide" },
+  openGraph: pageOpenGraph({ title: "Ambleside Guide | The Lakes Guide", description: "Ambleside: walking routes, restaurants, accommodation, and using it as a base for the central fells.", url }),
 };
 
 export default function AmblesidePage() {

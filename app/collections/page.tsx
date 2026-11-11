@@ -5,6 +5,7 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-constants";
 import { COLLECTIONS, MIN_LISTINGS } from "@/lib/collections-config";
 import { prisma } from "@/lib/prisma";
+import { pageOpenGraph } from "@/lib/seo";
 
 // Revalidate every hour so tag counts stay fresh
 export const revalidate = 3600;
@@ -16,13 +17,11 @@ export const metadata: Metadata = {
   description:
     "Lists of Lake District businesses by what they offer: dog-friendly restaurants, places to stay with parking, lakeside pubs and more.",
   alternates: { canonical: `${BASE_URL}/collections` },
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "Collections | The Lakes Guide",
     description: "Curated Lake District business collections. Dog-friendly, family-friendly, lakeside, and more.",
     url: `${BASE_URL}/collections`,
-    type: "website",
-    siteName: "TheLakesGuide.co.uk",
-  },
+  }),
 };
 
 const COLLECTION_LD = {

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Clock, ArrowRight, Anchor } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
+import { pageOpenGraph } from "@/lib/seo";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
   title: "Coniston | Ruskin, Old Man & Visitor Guide",
   description: "Coniston in the Lake District: the Old Man walk, Brantwood, Coniston Water boat trips and Tarn Hows, with places to eat, accommodation and practical information.",
   alternates: { canonical: url },
-  openGraph: { title: "Coniston Guide | The Lakes Guide", description: "Coniston Old Man, Brantwood, Coniston Water and Tarn Hows: a visitor guide to the southern Lake District village.", url, siteName: "The Lakes Guide" },
+  openGraph: pageOpenGraph({ title: "Coniston Guide | The Lakes Guide", description: "Coniston Old Man, Brantwood, Coniston Water and Tarn Hows: a visitor guide to the southern Lake District village.", url }),
 };
 
 export default function ConistonPage() {

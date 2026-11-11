@@ -1,10 +1,15 @@
 import Link from "next/link";
 import { ArrowLeft, FileText } from "lucide-react";
+import { pageOpenGraph } from "@/lib/seo";
+
+const description =
+  "Terms and Conditions for use of TheLakesGuide.co.uk, including business listing terms and subscription conditions.";
 
 export const metadata = {
   title: "Terms & Conditions",
-  description: "Terms and Conditions for use of TheLakesGuide.co.uk, including business listing terms and subscription conditions.",
+  description,
   alternates: { canonical: "https://www.thelakesguide.co.uk/terms" },
+  openGraph: pageOpenGraph({ title: "Terms & Conditions | The Lakes Guide", description, url: "https://www.thelakesguide.co.uk/terms" }),
 };
 
 export default function TermsPage() {

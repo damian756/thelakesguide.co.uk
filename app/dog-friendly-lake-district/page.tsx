@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
+import { pageOpenGraph } from "@/lib/seo";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -73,13 +74,12 @@ export const metadata: Metadata = {
   description:
     "The dog-friendly Lake District guide. Best walks with dogs, which pubs welcome dogs, dog-friendly accommodation, and practical advice on fells, livestock, and lake shores.",
   alternates: { canonical: url },
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "Dog-Friendly Lake District | The Lakes Guide",
     description:
       "Walks, pubs, accommodation and practical advice for visiting the Lake District with your dog.",
     url,
-    siteName: "The Lakes Guide",
-  },
+  }),
 };
 
 export default function DogFriendlyLakeDistrictPage() {

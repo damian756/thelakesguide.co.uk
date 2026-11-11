@@ -3,6 +3,7 @@ import Image from "next/image";
 import { BookOpen } from "lucide-react";
 import type { Metadata } from "next";
 import { GUIDES, GUIDE_CATEGORIES, type GuideCategory } from "@/lib/guides-config";
+import { pageOpenGraph } from "@/lib/seo";
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
 const url = `${BASE_URL}/guides`;
@@ -12,11 +13,11 @@ export const metadata: Metadata = {
   description:
     "Guides to the Lake District: villages, walks, practical information and where to eat.",
   alternates: { canonical: url },
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "Lake District Guides | The Lakes Guide",
     description: "Editorial guides to the Lake District. Villages, walks, practical info, and where to eat.",
     url,
-  },
+  }),
 };
 
 const pageJsonLd = {

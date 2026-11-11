@@ -8,6 +8,7 @@ import { prisma } from "@/lib/prisma";
 import { cn } from "@/lib/utils";
 import { ViewTracker } from "@/components/ViewTracker";
 import ReviewSection from "@/components/ReviewSection";
+import { pageOpenGraph } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ category: string; slug: string }>;
@@ -189,15 +190,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description: desc,
       alternates: { canonical: canonicalUrl },
-      openGraph: {
+      openGraph: pageOpenGraph({
         title,
         description: desc,
         url: canonicalUrl,
-        type: "website",
-        siteName: "TheLakesGuide.co.uk",
-        locale: "en_GB",
         ...(imageUrl ? { images: [{ url: imageUrl, width: 1200, height: 630, alt: cleanName }] } : {}),
-      },
+      }),
       twitter: {
         card: "summary_large_image",
         title,

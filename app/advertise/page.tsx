@@ -3,12 +3,16 @@ import type { Metadata } from "next";
 import { Check } from "lucide-react";
 import { AD_OPTIONS, FOUNDING_OFFER, type AdOption } from "@/lib/ad-options";
 import { getAdSlot } from "@/lib/ad-slots";
+import { pageOpenGraph } from "@/lib/seo";
+
+const description =
+  "Advertising on The Lakes Guide: a home page card, guide sponsorships, sponsored articles, a winter package and a Lakes network bundle. Prices plus VAT, paid by invoice.";
 
 export const metadata: Metadata = {
   title: "Advertise With Us",
-  description:
-    "Advertising on The Lakes Guide: a home page card, guide sponsorships, sponsored articles, a winter package and a Lakes network bundle. Prices plus VAT, paid by invoice.",
+  description,
   alternates: { canonical: "https://www.thelakesguide.co.uk/advertise" },
+  openGraph: pageOpenGraph({ title: "Advertise With Us | The Lakes Guide", description, url: "https://www.thelakesguide.co.uk/advertise" }),
 };
 
 function OptionCard({ o, active, wide = false }: { o: AdOption; active: boolean; wide?: boolean }) {

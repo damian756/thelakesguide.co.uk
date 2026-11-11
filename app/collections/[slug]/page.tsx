@@ -7,6 +7,7 @@ import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-
 import { getCollection, COLLECTIONS, MIN_LISTINGS } from "@/lib/collections-config";
 import { prisma } from "@/lib/prisma";
 import { collectionWhere } from "@/lib/listing-presence";
+import { pageOpenGraph } from "@/lib/seo";
 
 // Revalidate every hour so new tags appear without a code push
 export const revalidate = 3600;
@@ -29,13 +30,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: collection.title,
     description: collection.metaDescription,
     alternates: { canonical: url },
-    openGraph: {
+    openGraph: pageOpenGraph({
       title: collection.title,
       description: collection.metaDescription,
       url,
-      type: "website",
-      siteName: "TheLakesGuide.co.uk",
-    },
+    }),
     twitter: { card: "summary", title: collection.title, description: collection.metaDescription },
   };
 }

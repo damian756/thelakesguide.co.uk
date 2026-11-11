@@ -6,14 +6,18 @@ import { getEventsByMonth } from "@/lib/lakes-data";
 import { prisma } from "@/lib/prisma";
 import { Suspense } from "react";
 import MonthFilter from "./MonthFilter";
+import { pageOpenGraph } from "@/lib/seo";
 
 export const revalidate = 3600; // Refresh hourly so Eventbrite sync appears
 
+const description =
+  "Events in the Lake District: festivals, races, shows and seasonal events, with dates and a link to each organiser.";
+
 export const metadata = {
   title: "What's On in the Lake District | Events Calendar",
-  description:
-    "Events in the Lake District: festivals, races, shows and seasonal events, with dates and a link to each organiser.",
+  description,
   alternates: { canonical: "https://www.thelakesguide.co.uk/events" },
+  openGraph: pageOpenGraph({ title: "What's On in the Lake District | The Lakes Guide", description, url: "https://www.thelakesguide.co.uk/events" }),
 };
 
 const CATEGORY_COLORS: Record<string, string> = {

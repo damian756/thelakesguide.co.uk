@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mountain, AlertTriangle, MapPin, Clock, ArrowUpRight, CheckCircle2, ArrowRight } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
+import { pageOpenGraph } from "@/lib/seo";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -222,7 +223,7 @@ export const metadata: Metadata = {
   title: "Lake District Walks | Best Routes for All Abilities",
   description: "The best walks in the Lake District. Easy family walks, beginner fells, and serious mountain days. Practical routes for Scafell Pike, Helvellyn, Catbells, and the Fairfield Horseshoe.",
   alternates: { canonical: url },
-  openGraph: { title: "Lake District Walks | The Lakes Guide", description: "Best Lake District walks for all abilities. Routes, practical info, and what to bring.", url, siteName: "The Lakes Guide" },
+  openGraph: pageOpenGraph({ title: "Lake District Walks | The Lakes Guide", description: "Best Lake District walks for all abilities. Routes, practical info, and what to bring.", url }),
 };
 
 export default function LakeDistrictWalksPage() {

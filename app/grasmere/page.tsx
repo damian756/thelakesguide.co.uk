@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Clock, ArrowRight, BookOpen } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
+import { pageOpenGraph } from "@/lib/seo";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -69,7 +70,7 @@ export const metadata: Metadata = {
   title: "Grasmere | Wordsworth, Gingerbread & Visitor Guide",
   description: "Grasmere in the Lake District: Dove Cottage, the Wordsworth Museum, Grasmere Gingerbread, Helm Crag and Easedale Tarn, with practical information for a visit.",
   alternates: { canonical: url },
-  openGraph: { title: "Grasmere Guide | The Lakes Guide", description: "Wordsworth, gingerbread, and one of the most beautiful lakes in the Lake District: a visitor guide.", url, siteName: "The Lakes Guide" },
+  openGraph: pageOpenGraph({ title: "Grasmere Guide | The Lakes Guide", description: "Wordsworth, gingerbread, and one of the most beautiful lakes in the Lake District: a visitor guide.", url }),
 };
 
 export default function GrasmerePage() {

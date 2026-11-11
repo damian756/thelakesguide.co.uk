@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
+import { pageOpenGraph } from "@/lib/seo";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -73,13 +74,12 @@ export const metadata: Metadata = {
   description:
     "What to do in the Lake District when it rains. Museums, indoor activities for kids, wet weather walks, and where to eat.",
   alternates: { canonical: url },
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "Rainy Day Lake District | The Lakes Guide",
     description:
       "What to do in the Lake District on a rainy day. Museums, indoor activities, wet weather walks and places to eat.",
     url,
-    siteName: "The Lakes Guide",
-  },
+  }),
 };
 
 export default function RainyDayLakeDistrictPage() {

@@ -4,12 +4,16 @@ import { Suspense } from "react";
 import { Newspaper } from "lucide-react";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/lakes-data";
 import BlogClient from "./BlogClient";
+import { pageOpenGraph } from "@/lib/seo";
+
+const description =
+  "Guides and practical notes for visiting the Lake District: walks, villages, food, where to stay and what to expect.";
 
 export const metadata = {
   title: "Blog",
-  description:
-    "Guides and practical notes for visiting the Lake District: walks, villages, food, where to stay and what to expect.",
+  description,
   alternates: { canonical: "https://www.thelakesguide.co.uk/blog" },
+  openGraph: pageOpenGraph({ title: "Blog | The Lakes Guide", description, url: "https://www.thelakesguide.co.uk/blog" }),
 };
 
 export default function BlogPage() {

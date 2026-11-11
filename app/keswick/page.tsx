@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Clock, ArrowRight, Mountain } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
+import { pageOpenGraph } from "@/lib/seo";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
   title: "Keswick | Restaurants, Walks & Visitor Guide",
   description: "Keswick in the Lake District: restaurants, walking routes, accommodation, Derwentwater, Catbells, and what to see and do in the northern Lakes.",
   alternates: { canonical: url },
-  openGraph: { title: "Keswick Guide | The Lakes Guide", description: "Visiting Keswick: restaurants, walking, Derwentwater lake cruises, accommodation and what to do.", url, siteName: "The Lakes Guide" },
+  openGraph: pageOpenGraph({ title: "Keswick Guide | The Lakes Guide", description: "Visiting Keswick: restaurants, walking, Derwentwater lake cruises, accommodation and what to do.", url }),
 };
 
 export default function KeswickPage() {

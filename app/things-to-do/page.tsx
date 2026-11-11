@@ -21,6 +21,7 @@ import {
 import type { Metadata } from "next";
 import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-constants";
 import AdSlot from "@/components/AdSlot";
+import { pageOpenGraph } from "@/lib/seo";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -34,13 +35,12 @@ export const metadata: Metadata = {
   keywords:
     "things to do in the Lake District, things to do Lake District, Lake District attractions, Lake District walks, Lake District with kids, free things to do Lake District, things to do in Cumbria",
   alternates: { canonical: `${BASE_URL}/things-to-do` },
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "Things to Do in the Lake District",
     description:
       "From Helvellyn to Grizedale red squirrels and Windermere cruises: things to do in the Lake District, with the practical details.",
     url: `${BASE_URL}/things-to-do`,
-    images: [{ url: `${BASE_URL}/og-default.png` }],
-  },
+  }),
 };
 
 const QUICK_LINKS = [

@@ -5,6 +5,7 @@ import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-
 import { prisma } from "@/lib/prisma";
 import type { Metadata } from "next";
 import AdSlot from "@/components/AdSlot";
+import { pageOpenGraph } from "@/lib/seo";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -16,11 +17,11 @@ export const metadata: Metadata = {
   description:
     "Lake District parking guide. Car park postcodes, pay-and-display, free parking, and where to park for walks. Keswick, Ambleside, Windermere, and more.",
   alternates: { canonical: `${BASE_URL}/parking` },
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "Lake District Parking | The Lakes Guide",
     description: "Car park postcodes and parking tips for the Lake District. Where to park for walks, villages, and attractions.",
     url: `${BASE_URL}/parking`,
-  },
+  }),
 };
 
 function isFree(tags: string[], priceRange: string | null): boolean {

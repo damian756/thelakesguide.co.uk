@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-constants";
 import type { Metadata } from "next";
+import { pageOpenGraph } from "@/lib/seo";
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
 const url = `${BASE_URL}/the-open-2026`;
@@ -64,11 +65,11 @@ export const metadata: Metadata = {
   description:
     "The Open Championship 2026 at Royal Birkdale. Lake District accommodation for visitors during Open week. Stay in the Lakes and drive to the course.",
   alternates: { canonical: `${BASE_URL}/the-open-2026` },
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "The Open 2026 and the Lake District | The Lakes Guide",
     description: "Lake District accommodation for The Open 2026. Stay in Keswick, Windermere, or Ambleside during Open week.",
     url: `${BASE_URL}/the-open-2026`,
-  },
+  }),
 };
 
 export default function TheOpen2026Page() {

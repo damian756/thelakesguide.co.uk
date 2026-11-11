@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-constants";
 import type { Metadata } from "next";
+import { pageOpenGraph } from "@/lib/seo";
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
 const WILDLIFE_URL = "https://www.thelakeswildlife.co.uk";
@@ -12,11 +13,11 @@ export const metadata: Metadata = {
   description:
     "Lake District wildlife: ospreys at Foulshaw Moss, red deer in Martindale, red squirrels in Grizedale and Whinlatter, and where to see them.",
   alternates: { canonical: `${BASE_URL}/lake-district-wildlife` },
-  openGraph: {
+  openGraph: pageOpenGraph({
     title: "Lake District Wildlife | The Lakes Guide",
     description: "Ospreys, red deer and red squirrels: wildlife in the Lake District and where to see it.",
     url: `${BASE_URL}/lake-district-wildlife`,
-  },
+  }),
 };
 
 export default function LakeDistrictWildlifePage() {

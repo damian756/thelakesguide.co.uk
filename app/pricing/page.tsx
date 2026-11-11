@@ -3,17 +3,21 @@ import type { Metadata } from "next";
 import { Check, Clock } from "lucide-react";
 import { getAdOption } from "@/lib/ad-options";
 import PricingFAQ from "./PricingFAQ";
+import { pageOpenGraph } from "@/lib/seo";
 
 // /pricing while the directory is opening (stage B, approved by Damian on 11 Nov 2026).
 // Today: a free listing on request, and advertising (prices plus VAT, by invoice).
 // Once a listing is live: Business Hub and Pro, with Pro's prices exactly as
 // checkout charges them. No boosts, no "instead of" comparison, no feature table.
 
+const description =
+  "What a Lake District business can have on The Lakes Guide: a free listing on request, and advertising from £35 a month plus VAT. Business Hub and Pro open once your listing is live.";
+
 export const metadata: Metadata = {
   title: "Pricing for Businesses",
-  description:
-    "What a Lake District business can have on The Lakes Guide: a free listing on request, and advertising from £35 a month plus VAT. Business Hub and Pro open once your listing is live.",
+  description,
   alternates: { canonical: "https://www.thelakesguide.co.uk/pricing" },
+  openGraph: pageOpenGraph({ title: "Pricing for Businesses | The Lakes Guide", description, url: "https://www.thelakesguide.co.uk/pricing" }),
 };
 
 const LISTING_POINTS = [
