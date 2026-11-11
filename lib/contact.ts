@@ -74,10 +74,12 @@ export function buildEnquiryEmail(input: {
   };
 }
 
-// Logs the error's name and message only: never the enquirer's details.
+// Logs the error's name and message only: never the enquirer's details. Any
+// email address inside the message (Resend can echo one) is replaced.
 export function logSendError(error: unknown, label = "Contact email") {
   const e = (error ?? {}) as { name?: unknown; message?: unknown };
-  console.error(`${label} failed:`, String(e.name ?? "Error"), String(e.message ?? ""));
+  const redact = (v: unknown) => String(v ?? "").replace(/[^\s@<>"'`,;:()]+@[^\s@<>"'`,;:()]+/g, "[address]");
+  console.error(`${label} failed:`, redact(e.name ?? "Error"), redact(e.message));
 }
 
 // For mail that must not fail the request it belongs to (the record is already

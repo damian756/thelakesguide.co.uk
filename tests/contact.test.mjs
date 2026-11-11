@@ -102,7 +102,6 @@ test("no address of ours is printed on any page, public file or mail text", () =
   // and the public demo account's login name. Anything else fails.
   const allowed = {
     "lib/contact.ts": ["damian@churchtownmedia.co.uk", "noreply@southportguide.co.uk"],
-    "app/api/auth/forgot-password/route.ts": ["noreply@thelakesguide.co.uk"],
     "app/dashboard/DashboardLoginClient.tsx": ["demo@thelakesguide.co.uk"],
     "app/dashboard/(hub)/HubShell.tsx": ["demo@thelakesguide.co.uk"],
     "app/api/hub/upload-image/route.ts": ["demo@thelakesguide.co.uk", "demo@thelakesguide.co.uk"],
@@ -131,6 +130,7 @@ test("hub mail (claims, reviews) sends from the stand-in sender and checks every
     "app/api/admin/claims/[id]/reject/route.ts",
     "app/api/reviews/route.ts",
     "app/api/admin/reviews/[id]/route.ts",
+    "app/api/auth/forgot-password/route.ts",
   ];
   for (const f of files) {
     const src = read(f);
@@ -173,4 +173,35 @@ test("hub mail templates escape the names and text people type", () => {
   for (const line of read("app/api/hub/claim/submit/route.ts").split("\n").filter((l) => l.includes("${business.name}"))) {
     assert.match(line, /^\s*subject:/, line);
   }
+});
+
+test("password reset: the send goes through sendChecked with FROM_EMAIL and the answer never depends on it", () => {
+  const src = read("app/api/auth/forgot-password/route.ts");
+  assert.match(src, /import \{ FROM_EMAIL, sendChecked \} from "@\/lib\/contact"/);
+  assert.match(src, /\n\s*await sendChecked\(\(\) => getResend\(\)\.emails\.send\(\{\s*from: FROM_EMAIL,/, "send must be wrapped and its result unused");
+  assert.doesNotMatch(src, /(const|let|if\s*\(|return)\s*[^\n]*sendChecked/, "the route must not branch on the send result");
+  // Every answer the route can give: the same ok for a known or unknown address,
+  // 400 for no address, 500 only for an error before the send (sendChecked never throws).
+  const answers = [...src.matchAll(/NextResponse\.json\(([^;]*)\);/g)].map((m) => m[1].replace(/\s+/g, " "));
+  assert.deepEqual(answers, [
+    '{ error: "Email required." }, { status: 400 }',
+    "{ ok: true }",
+    "{ ok: true }",
+    '{ error: "Something went wrong." }, { status: 500 }',
+  ]);
+  const okAfterSend = src.lastIndexOf("NextResponse.json({ ok: true })");
+  assert.ok(okAfterSend > src.indexOf("sendChecked(() =>"), "the ok answer must follow the send unconditionally");
+});
+
+test("a failed send's log never contains an email address", () => {
+  const calls = [];
+  const orig = console.error;
+  console.error = (...args) => calls.push(args.join(" "));
+  try {
+    logSendError({ name: "validation_error", message: "Invalid `to` field: someone@example.co.uk is not allowed" }, "Password reset email");
+  } finally {
+    console.error = orig;
+  }
+  assert.match(calls[0], /Password reset email failed: validation_error Invalid `to` field: \[address\] is not allowed/);
+  assert.doesNotMatch(calls[0], /someone@example/);
 });

@@ -1,6 +1,7 @@
 import { getResend } from "@/lib/resend";
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { FROM_EMAIL, sendChecked } from "@/lib/contact";
 
 
 export async function POST(req: Request) {
@@ -31,8 +32,10 @@ export async function POST(req: Request) {
 
     const resetUrl = `${process.env.NEXTAUTH_URL}/dashboard/reset-password?token=${record.token}`;
 
-    await getResend().emails.send({
-      from: process.env.RESEND_FROM_EMAIL ?? "The Lakes Guide <noreply@thelakesguide.co.uk>",
+    // A failed send is logged (error name and message only) and the answer
+    // below stays the same, so it never shows whether an account exists.
+    await sendChecked(() => getResend().emails.send({
+      from: FROM_EMAIL,
       to: normalised,
       subject: "Reset your Lakes Guide password",
       html: `
@@ -66,7 +69,7 @@ export async function POST(req: Request) {
           </div>
         </div>
       `,
-    });
+    }), "Password reset email");
 
     return NextResponse.json({ ok: true });
   } catch (err) {
