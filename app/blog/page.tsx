@@ -6,7 +6,7 @@ import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/lakes-data";
 import BlogClient from "./BlogClient";
 
 export const metadata = {
-  title: "Blog | The Lakes Guide",
+  title: "Blog",
   description:
     "Guides and practical notes for visiting the Lake District: walks, villages, food, where to stay and what to expect.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/blog" },

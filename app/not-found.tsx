@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Page Not Found | The Lakes Guide",
+  title: "Page Not Found",
   description: "The page you're looking for doesn't exist. Explore restaurants, walks, things to do and more in the Lake District.",
 };
 

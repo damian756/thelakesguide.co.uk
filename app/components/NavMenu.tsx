@@ -134,7 +134,7 @@ export default function NavMenu() {
                     {label}
                   </p>
                   {catGuides.map((g) => (
-                    <Link key={g.slug} href={`/guides/${g.slug}`}
+                    <Link key={g.slug} href={g.canonicalPath ?? `/guides/${g.slug}`}
                       onClick={() => setGuidesOpen(false)}
                       className="flex items-center px-2 py-1.5 rounded-lg text-sm text-[#14231C] hover:bg-[#EAEDE8] hover:text-[#C4782A] transition-colors truncate">
                       {g.shortTitle ?? g.title}
@@ -154,7 +154,7 @@ export default function NavMenu() {
         </div>
 
         {/* Hub — icon only */}
-        <Link href="/dashboard" title="Business Hub Login"
+        <Link href="/dashboard" title="Business Hub Login" aria-label="Business Hub Login"
           className="p-2 text-[#14231C]/35 hover:text-[#14231C] transition-colors">
           <LayoutDashboard className="w-4 h-4" />
         </Link>
@@ -231,7 +231,7 @@ export default function NavMenu() {
                   </p>
                   <div className="grid grid-cols-2 gap-1">
                     {catGuides.map((g) => (
-                      <Link key={g.slug} href={`/guides/${g.slug}`} onClick={() => setMobileOpen(false)}
+                      <Link key={g.slug} href={g.canonicalPath ?? `/guides/${g.slug}`} onClick={() => setMobileOpen(false)}
                         className="flex items-center px-3 py-2.5 rounded-xl bg-[#EAEDE8] text-[#14231C] text-xs font-medium truncate">
                         {g.shortTitle ?? g.title}
                       </Link>

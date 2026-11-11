@@ -12,7 +12,7 @@ export const revalidate = 3600;
 const BASE_URL = "https://www.thelakesguide.co.uk";
 
 export const metadata: Metadata = {
-  title: "Collections | Lists of Lake District Businesses | The Lakes Guide",
+  title: "Collections | Lists of Lake District Businesses",
   description:
     "Lists of Lake District businesses by what they offer: dog-friendly restaurants, places to stay with parking, lakeside pubs and more.",
   alternates: { canonical: `${BASE_URL}/collections` },

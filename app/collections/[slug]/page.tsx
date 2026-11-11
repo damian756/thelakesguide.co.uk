@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const url = `${BASE_URL}/collections/${slug}`;
   return {
-    title: `${collection.title} | The Lakes Guide`,
+    title: collection.title,
     description: collection.metaDescription,
     alternates: { canonical: url },
     openGraph: {

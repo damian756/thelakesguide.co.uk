@@ -24,7 +24,7 @@ import { HERO_IMAGE_URL } from "@/lib/site-constants";
 const BASE_URL = "https://www.thelakesguide.co.uk";
 
 export const metadata: Metadata = {
-  title: "Things to Do in the Lake District | The Lakes Guide",
+  title: "Things to Do in the Lake District",
   description:
     "Things to do in the Lake District: Windermere, Keswick, Ambleside, Coniston, Scafell Pike, the Wainwrights, water sports, Grizedale Forest and more, with the practical details.",
   keywords:
@@ -905,7 +905,7 @@ export default function ThingsToDoPage() {
                 <h3 className="font-display font-bold text-[#14231C] text-lg mb-1 group-hover:text-[#C4782A] transition-colors">Restaurants</h3>
                 <p className="text-gray-500 text-sm">From pub grub to fine dining. Book ahead at weekends.</p>
               </Link>
-              <Link href="/hotels" className="group flex flex-col items-center text-center p-6 rounded-xl hover:bg-[#EAEDE8] transition">
+              <Link href="/accommodation" className="group flex flex-col items-center text-center p-6 rounded-xl hover:bg-[#EAEDE8] transition">
                 <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition">
                   <Users className="w-7 h-7 text-blue-600" />
                 </div>

@@ -411,7 +411,7 @@ export default async function Home() {
             <div className="flex-1 text-white">
               <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-2">214 Wainwright fells</p>
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
-                <Link href="/guides/lake-district-walks" className="hover:text-[#C4782A] transition-colors">
+                <Link href="/lake-district-walks" className="hover:text-[#C4782A] transition-colors">
                   Lake District Walks
                 </Link>
               </h2>
@@ -420,7 +420,7 @@ export default async function Home() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
-                  href="/guides/lake-district-walks"
+                  href="/lake-district-walks"
                   className="inline-flex items-center gap-2 bg-[#C4782A] hover:bg-[#E8B87A] text-[#14231C] px-6 py-3 rounded-full font-bold text-sm transition-all"
                 >
                   Lake District Walks Guide <ArrowRight className="w-4 h-4" />

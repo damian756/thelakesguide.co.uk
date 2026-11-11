@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 const BASE_URL = "https://www.thelakesguide.co.uk";
 
 export const metadata: Metadata = {
-  title: "Lake District Parking | Car Parks, Postcodes & Tips | The Lakes Guide",
+  title: "Lake District Parking | Car Parks, Postcodes & Tips",
   description:
     "Lake District parking guide. Car park postcodes, pay-and-display, free parking, and where to park for walks. Keswick, Ambleside, Windermere, and more.",
   alternates: { canonical: `${BASE_URL}/parking` },

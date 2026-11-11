@@ -4,7 +4,7 @@ import { BarChart2, Star, Calendar, TrendingUp } from "lucide-react";
 import { HERO_IMAGE_URL } from "@/lib/site-constants";
 
 export const metadata = {
-  title: "Advertise With Us | The Lakes Guide",
+  title: "Advertise With Us",
   description: "List your business on The Lakes Guide. Free and premium listing options for Lake District businesses.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/advertise" },
 };

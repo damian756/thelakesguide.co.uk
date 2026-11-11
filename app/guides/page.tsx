@@ -8,7 +8,7 @@ const BASE_URL = "https://www.thelakesguide.co.uk";
 const url = `${BASE_URL}/guides`;
 
 export const metadata: Metadata = {
-  title: "Lake District Guides | The Lakes Guide",
+  title: "Lake District Guides",
   description:
     "Guides to the Lake District: villages, walks, practical information and where to eat.",
   alternates: { canonical: url },

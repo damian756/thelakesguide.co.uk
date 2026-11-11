@@ -8,7 +8,7 @@ const BASE_URL = "https://www.thelakesguide.co.uk";
 const WILDLIFE_URL = "https://www.thelakeswildlife.co.uk";
 
 export const metadata: Metadata = {
-  title: "Lake District Wildlife | Ospreys, Red Deer, Red Squirrels | The Lakes Guide",
+  title: "Lake District Wildlife | Ospreys, Red Deer, Red Squirrels",
   description:
     "Lake District wildlife: ospreys at Foulshaw Moss, red deer in Martindale, red squirrels in Grizedale and Whinlatter, and where to see them.",
   alternates: { canonical: `${BASE_URL}/lake-district-wildlife` },

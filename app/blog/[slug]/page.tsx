@@ -29,6 +29,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: post.title,
     description: post.excerpt,
     alternates: { canonical: `https://www.thelakesguide.co.uk/blog/${slug}` },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt,
+      url: `https://www.thelakesguide.co.uk/blog/${slug}`,
+      images: [{ url: post.image, alt: post.imageAlt ?? post.title }],
+    },
   };
 }
 
@@ -294,7 +301,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1.5 text-white/70 hover:text-white text-sm mb-4 transition-colors"
+            className="flex w-fit items-center gap-1.5 text-white/70 hover:text-white text-sm mb-4 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" /> All posts
           </Link>

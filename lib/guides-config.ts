@@ -88,7 +88,7 @@ export const GUIDES: Guide[] = [
     tags: ["walks", "hiking", "fells", "wainwrights"],
     status: "published",
     canonicalPath: "/lake-district-walks",
-    metaTitle: "Lake District Walks | The Lakes Guide",
+    metaTitle: "Lake District Walks",
     metaDescription: "Walking in the Lake District: fell routes for all abilities, the Wainwrights, and what you need to bring.",
   },
 
@@ -154,7 +154,7 @@ export const GUIDES: Guide[] = [
     tags: ["grasmere", "wordsworth", "central-lakes", "dove-cottage"],
     status: "published",
     canonicalPath: "/grasmere",
-    metaTitle: "Grasmere | Visitor Guide | The Lakes Guide",
+    metaTitle: "Grasmere | Visitor Guide",
     metaDescription: "Wordsworth, gingerbread, and one of the most beautiful lakes in the Lake District: a visitor guide to Grasmere.",
   },
   {
@@ -188,7 +188,7 @@ export const GUIDES: Guide[] = [
     tags: ["parking", "practical"],
     status: "coming-soon",
     listingFilter: { categorySlugs: ["accommodation"] },
-    metaTitle: "Parking in the Lake District | The Lakes Guide",
+    metaTitle: "Parking in the Lake District",
     metaDescription: "Where to park in the Lake District. Which car parks to use, which fill early, and how to plan your visit.",
   },
   {
@@ -204,7 +204,7 @@ export const GUIDES: Guide[] = [
     tags: ["dog-friendly", "walks", "practical", "pubs"],
     status: "published",
     canonicalPath: "/dog-friendly-lake-district",
-    metaTitle: "Dog-Friendly Lake District | The Lakes Guide",
+    metaTitle: "Dog-Friendly Lake District",
     metaDescription: "Dog-friendly Lake District. Walks, pubs, and accommodation that welcomes dogs. Practical notes on fell walking with dogs.",
   },
   {
@@ -220,7 +220,7 @@ export const GUIDES: Guide[] = [
     tags: ["family", "kids", "practical", "activities"],
     status: "published",
     canonicalPath: "/lake-district-with-kids",
-    metaTitle: "Lake District with Kids | The Lakes Guide",
+    metaTitle: "Lake District with Kids",
     metaDescription: "Lake District with kids. Family walks, boat trips, and activities for children of different ages.",
   },
   {
@@ -236,7 +236,7 @@ export const GUIDES: Guide[] = [
     tags: ["indoor", "rainy-day", "practical", "museums"],
     status: "published",
     canonicalPath: "/rainy-day-lake-district",
-    metaTitle: "Rainy Day in the Lake District | The Lakes Guide",
+    metaTitle: "Rainy Day in the Lake District",
     metaDescription: "What to do in the Lake District when it rains. Museums, indoor activities, and walks still worth doing in bad weather.",
   },
 
@@ -254,7 +254,7 @@ export const GUIDES: Guide[] = [
     tags: ["restaurants", "food", "dining"],
     status: "coming-soon",
     listingFilter: { categorySlugs: ["restaurants"] },
-    metaTitle: "Restaurants in the Lake District | The Lakes Guide",
+    metaTitle: "Restaurants in the Lake District",
     metaDescription: "Restaurants in the Lake District: where they are and what they serve, across every area of the national park.",
   },
   {
@@ -270,7 +270,7 @@ export const GUIDES: Guide[] = [
     tags: ["cafes", "coffee", "food"],
     status: "coming-soon",
     listingFilter: { categorySlugs: ["cafes"] },
-    metaTitle: "Cafés in the Lake District | The Lakes Guide",
+    metaTitle: "Cafés in the Lake District",
     metaDescription: "Cafés in the Lake District: coffee stops and tea rooms across the national park.",
   },
   {
@@ -286,7 +286,7 @@ export const GUIDES: Guide[] = [
     tags: ["pubs", "inns", "food", "real-ale"],
     status: "coming-soon",
     listingFilter: { categorySlugs: ["pubs"] },
-    metaTitle: "Pubs in the Lake District | The Lakes Guide",
+    metaTitle: "Pubs in the Lake District",
     metaDescription: "Pubs in the Lake District: walkers' pubs and inns, where they are and what they offer.",
   },
 ];

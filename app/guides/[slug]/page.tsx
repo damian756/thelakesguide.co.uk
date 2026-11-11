@@ -1,4 +1,4 @@
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Image from "next/image";
 import type { Metadata } from "next";
 import GuideLayout from "@/app/components/GuideLayout";
@@ -20,7 +20,7 @@ export async function generateMetadata({
   if (!guide) return {};
 
   return {
-    title: guide.metaTitle ?? `${guide.title} | The Lakes Guide`,
+    title: guide.metaTitle ?? guide.title,
     description: guide.metaDescription ?? guide.excerpt,
     alternates: { canonical: `${BASE_URL}/guides/${slug}` },
     openGraph: {
@@ -40,7 +40,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   if (!guide) notFound();
 
   // Guides with their own standalone page redirect there permanently.
-  if (guide.canonicalPath) redirect(guide.canonicalPath);
+  if (guide.canonicalPath) permanentRedirect(guide.canonicalPath);
 
   return (
     <GuideLayout guide={guide}>

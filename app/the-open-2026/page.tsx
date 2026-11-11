@@ -60,7 +60,7 @@ const pageJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "The Open 2026 and the Lake District | Accommodation | The Lakes Guide",
+  title: "The Open 2026 and the Lake District | Accommodation",
   description:
     "The Open Championship 2026 at Royal Birkdale. Lake District accommodation for visitors during Open week. Stay in the Lakes and drive to the course.",
   alternates: { canonical: `${BASE_URL}/the-open-2026` },

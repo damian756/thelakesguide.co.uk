@@ -222,7 +222,7 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
               {relatedGuides.map((related) => (
                 <Link
                   key={related.slug}
-                  href={`/guides/${related.slug}`}
+                  href={related.canonicalPath ?? `/guides/${related.slug}`}
                   className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#C4782A]/30 transition-all group overflow-hidden"
                 >
                   <div className="relative h-32 overflow-hidden">

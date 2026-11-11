@@ -10,7 +10,7 @@ import MonthFilter from "./MonthFilter";
 export const revalidate = 3600; // Refresh hourly so Eventbrite sync appears
 
 export const metadata = {
-  title: "What's On in the Lake District | Events Calendar | The Lakes Guide",
+  title: "What's On in the Lake District | Events Calendar",
   description:
     "Events in the Lake District: festivals, races, shows and seasonal events, with dates and a link to each organiser.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/events" },
@@ -64,13 +64,16 @@ async function getMergedEventsByMonth(): Promise<
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  const dbEvents = await prisma.event.findMany({
-    where: {
-      status: "approved",
-      OR: [{ dateEnd: { gte: today } }, { dateEnd: null, dateStart: { gte: today } }],
-    },
-    orderBy: { dateStart: "asc" },
-  });
+  // If the database is unavailable the page still shows the static calendar.
+  const dbEvents = await prisma.event
+    .findMany({
+      where: {
+        status: "approved",
+        OR: [{ dateEnd: { gte: today } }, { dateEnd: null, dateStart: { gte: today } }],
+      },
+      orderBy: { dateStart: "asc" },
+    })
+    .catch(() => []);
 
   const merged = { ...staticByMonth } as Record<
     string,
@@ -165,11 +168,6 @@ export default async function EventsPage({
             url: event.link.startsWith("http") ? event.link : `https://www.thelakesguide.co.uk${event.link}`,
           },
           url: event.link.startsWith("http") ? event.link : `https://www.thelakesguide.co.uk${event.link}`,
-          organizer: {
-            "@type": "Organization",
-            name: "The Lakes Guide",
-            url: "https://www.thelakesguide.co.uk",
-          },
         },
     })),
   };
