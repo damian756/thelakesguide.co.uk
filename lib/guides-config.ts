@@ -184,9 +184,11 @@ export const GUIDES: Guide[] = [
     heroImage: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
     seoPriority: 0.85,
     datePublished: "2026-03-09",
-    dateUpdated: "2026-03-09",
+    dateUpdated: "2026-11-11",
     tags: ["parking", "practical"],
-    status: "coming-soon",
+    // The parking guide is /parking (seven car parks, checked 11 Nov 2026); before this it had no link from any page.
+    status: "published",
+    canonicalPath: "/parking",
     listingFilter: { categorySlugs: ["accommodation"] },
     metaTitle: "Parking in the Lake District",
     metaDescription: "Where to park in the Lake District. Which car parks to use, which fill early, and how to plan your visit.",
