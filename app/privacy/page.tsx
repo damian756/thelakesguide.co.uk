@@ -22,7 +22,7 @@ export default function PrivacyPage() {
             <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest">Legal</p>
           </div>
           <h1 className="font-display text-4xl font-bold text-white mb-2">Privacy Policy</h1>
-          <p className="text-white/50 text-sm">Last updated: 18 February 2026</p>
+          <p className="text-white/50 text-sm">Last updated: 11 November 2026</p>
         </div>
       </section>
 
@@ -65,7 +65,15 @@ export default function PrivacyPage() {
                 },
                 {
                   title: "Usage data",
-                  desc: "Privacy-friendly, cookieless page view analytics via Plausible. No personal data or IP addresses are collected or stored.",
+                  desc: "Ahrefs Web Analytics: page view statistics without cookies. It records the page, referrer, browser, device, language, screen size and approximate location (city level), and counts visitors with a daily pseudonymous identifier that is not kept across days.",
+                },
+                {
+                  title: "Page counts",
+                  desc: "We also count page views ourselves. For each page we store the page address, the day and a running count. Nothing about you is stored: no IP address, cookie, browser or device details.",
+                },
+                {
+                  title: "Maps and listing photos",
+                  desc: "Business listing pages show a Google map, and some listing photos are loaded from Google. Category pages show maps made from OpenStreetMap tiles. When your browser loads these, Google or OpenStreetMap receives your IP address, and Google may set its own cookies.",
                 },
                 {
                   title: "Cookies",
@@ -115,7 +123,7 @@ export default function PrivacyPage() {
             <ul className="space-y-2 text-gray-600 text-sm">
               <li className="flex gap-3"><span className="text-[#C4782A]">→</span> Contact form submissions: <strong>12 months</strong></li>
               <li className="flex gap-3"><span className="text-[#C4782A]">→</span> Business listing data: <strong>for the duration of your listing plus 6 months</strong></li>
-              <li className="flex gap-3"><span className="text-[#C4782A]">→</span> Analytics data: <strong>aggregated, no personal data retained</strong> (Plausible Analytics)</li>
+              <li className="flex gap-3"><span className="text-[#C4782A]">→</span> Page counts: <strong>the page, the day and a count only</strong>, with nothing about the visitor</li>
             </ul>
           </section>
 
@@ -123,7 +131,8 @@ export default function PrivacyPage() {
             <h2 className="font-display text-xl font-bold text-[#1B2E4B] mb-4">5. Third parties we share data with</h2>
             <div className="space-y-3">
               {[
-                { name: "Plausible (Analytics)", detail: "Privacy-friendly, cookieless analytics. All data is aggregated and processed in the EU. No personal data is collected." },
+                { name: "Ahrefs (Analytics)", detail: "Ahrefs Web Analytics: page view statistics without cookies. It records the page, referrer, browser, device, language, screen size and approximate location (city level), and counts visitors with a daily pseudonymous identifier that is not kept across days." },
+                { name: "Google and OpenStreetMap (maps and listing photos)", detail: "Maps and some listing photos are loaded from Google, and category maps from OpenStreetMap. They receive your IP address when your browser loads them. Subject to their own privacy policies." },
                 { name: "Stripe", detail: "Payment processing for paid business listings. Subject to Stripe's own privacy policy." },
                 { name: "Vercel", detail: "Website hosting infrastructure. Data is processed in UK/EU-region data centres where possible." },
               ].map(({ name, detail }) => (
@@ -149,8 +158,10 @@ export default function PrivacyPage() {
                 </thead>
                 <tbody>
                   {[
-                    ["Essential", "Site functionality (session, security)", "Yes"],
-                    ["Analytics (Plausible)", "Understanding how visitors use the site", "No (cookieless, no consent needed)"],
+                    ["Sign-in (next-auth.session-token)", "Keeps a business owner signed in to the Business Hub", "Yes, when you sign in"],
+                    ["Sign-in (next-auth.csrf-token)", "Protects the Business Hub sign-in form from forged requests", "Yes, when you sign in"],
+                    ["Sign-in (next-auth.callback-url)", "Returns you to the right page after signing in", "Yes, when you sign in"],
+                    ["Analytics (Ahrefs Web Analytics)", "Page view statistics", "No cookies set"],
                   ].map(([type, purpose, required]) => (
                     <tr key={type}>
                       <td className="p-3 border border-gray-100 text-gray-700 font-medium">{type}</td>
@@ -161,7 +172,7 @@ export default function PrivacyPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-gray-500 text-sm mt-3">No advertising or cross-site tracking cookies are used.</p>
+            <p className="text-gray-500 text-sm mt-3">The sign-in cookies are set only when a business owner signs in to the Business Hub; on the live site their names start with __Secure- or __Host-. The Business Hub also keeps one flag in your browser&apos;s session storage after an upgrade, to show a confirmation once. The site sets no advertising or tracking cookies. Google may set its own cookies when its maps load on listing pages.</p>
           </section>
 
           <section>
@@ -199,7 +210,7 @@ export default function PrivacyPage() {
           <section id="cookies">
             <h2 className="font-display text-xl font-bold text-[#1B2E4B] mb-4">8. Cookies</h2>
             <p className="text-gray-600 text-sm leading-relaxed mb-4">
-              We use cookies and similar tracking technologies to operate the site and support affiliate revenue when you click through to partner booking sites. Plausible Analytics is cookieless by design and does not require consent.
+              The site sets cookies only to keep business owners signed in to the Business Hub. Ahrefs Web Analytics does not use cookies, and our own page counts store nothing about you.
             </p>
             <div className="overflow-x-auto rounded-xl border border-gray-100">
               <table className="w-full text-sm">
@@ -212,9 +223,8 @@ export default function PrivacyPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-50">
                   {[
-                    ["Necessary", "Session management and security.", "No: always active"],
-                    ["Analytics", "Plausible Analytics: aggregated page views, traffic sources, device types. Privacy-friendly and cookieless.", "No (does not require consent)"],
-                    ["Marketing / Affiliate", "Booking.com and other affiliate partner tracking cookies. Set when you click through to a partner booking site.", "Yes (optional)"],
+                    ["Necessary", "Business Hub sign-in: next-auth.session-token, next-auth.csrf-token and next-auth.callback-url, set only when you sign in.", "No: needed to sign in"],
+                    ["Analytics", "Ahrefs Web Analytics: page view statistics without cookies. It records the page, referrer, browser, device, language, screen size and approximate location (city level), and counts visitors with a daily pseudonymous identifier that is not kept across days.", "No (no cookies)"],
                   ].map(([cat, purpose, req]) => (
                     <tr key={cat}>
                       <td className="px-4 py-3 font-semibold text-[#1B2E4B] align-top whitespace-nowrap">{cat}</td>
@@ -226,7 +236,7 @@ export default function PrivacyPage() {
               </table>
             </div>
             <p className="text-gray-500 text-xs mt-3">
-              Affiliate cookies are set by partner sites (e.g. Booking.com) when you click through from our links. You can control cookies via your browser settings.
+              Google may set its own cookies when its maps load on business listing pages. You can control cookies via your browser settings.
             </p>
           </section>
 
