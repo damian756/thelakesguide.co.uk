@@ -113,7 +113,7 @@ export default function PrivacyPage() {
                 <tbody>
                   {[
                     ["Contact enquiries", "Legitimate interest and your consent"],
-                    ["Business listings", "Performance of a contract (your listing agreement)"],
+                    ["Business listings", "Legitimate interests (publishing the free listing you asked us for and keeping it accurate)"],
                     ["Payment processing", "Performance of a contract"],
                     ["Analytics", "Legitimate interest in understanding site usage"],
                   ].map(([purpose, basis]) => (
