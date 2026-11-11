@@ -5,8 +5,13 @@ import { AD_OPTIONS, FOUNDING_OFFER, type AdOption } from "@/lib/ad-options";
 import { getAdSlot } from "@/lib/ad-slots";
 import { pageOpenGraph } from "@/lib/seo";
 
+// The cheapest monthly advert, from lib/ad-options.ts like every price on this page.
+const fromMonthly = AD_OPTIONS.filter((o) => o.per === "a month")
+  .map((o) => o.price)
+  .sort((a, b) => Number(a.slice(1)) - Number(b.slice(1)))[0];
+
 const description =
-  "Advertising for Lake District businesses on The Lakes Guide: a home page card, guide sponsorships and sponsored articles, from £35 a month plus VAT.";
+  `Advertising for Lake District businesses on The Lakes Guide: a home page card, guide sponsorships and sponsored articles, from ${fromMonthly} a month plus VAT.`;
 
 export const metadata: Metadata = {
   title: "Advertise With Us",
