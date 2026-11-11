@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useMemo, useEffect, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Search, X } from "lucide-react";
@@ -31,11 +30,18 @@ interface Props {
   categories: BlogCategory[];
 }
 
+// The category filter lives in ?category=. It is read from the address bar in the browser
+// only: with useSearchParams the static page rendered just a loading spinner, so the HTML
+// that search engines fetch had no links to the posts. The server renders every post.
+function subscribeToAddress(onChange: () => void) {
+  window.addEventListener("popstate", onChange);
+  return () => window.removeEventListener("popstate", onChange);
+}
+const categoryInAddress = () => new URLSearchParams(window.location.search).get("category") ?? "";
+
 export default function BlogClient({ posts, categories }: Props) {
   const getCategoryForPost = getBlogPostCategory;
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const activeCategory = searchParams.get("category") ?? "";
+  const activeCategory = useSyncExternalStore(subscribeToAddress, categoryInAddress, () => "");
 
   const [query, setQuery] = useState("");
 
@@ -45,13 +51,15 @@ export default function BlogClient({ posts, categories }: Props) {
   }, [activeCategory]);
 
   function selectCategory(slug: string) {
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(window.location.search);
     if (slug) {
       params.set("category", slug);
     } else {
       params.delete("category");
     }
-    router.push(`/blog?${params.toString()}`);
+    const qs = params.toString();
+    window.history.pushState(null, "", qs ? `/blog?${qs}` : "/blog");
+    window.dispatchEvent(new PopStateEvent("popstate"));
   }
 
   const filtered = useMemo(() => {
