@@ -39,10 +39,11 @@ export default function PrivacyPage() {
               We are committed to protecting your personal data in accordance with the <strong>UK General Data Protection Regulation (UK GDPR)</strong> and the Data Protection Act 2018.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              <strong>Contact:</strong>{" "}
-              <a href="mailto:damian@churchtownmedia.co.uk" className="text-[#C4782A] hover:underline">
-                damian@churchtownmedia.co.uk
-              </a>
+              <strong>Contact:</strong> use the{" "}
+              <Link href="/contact" className="text-[#C4782A] hover:underline">
+                contact form
+              </Link>
+              , or write to Churchtown Media Ltd, Suite RA01, 195-197 Wood Street, London, E17 3NU.
             </p>
           </section>
 
@@ -184,10 +185,11 @@ export default function PrivacyPage() {
               ))}
             </div>
             <p className="text-gray-600 text-sm mt-4">
-              To exercise any of these rights, email{" "}
-              <a href="mailto:damian@churchtownmedia.co.uk" className="text-[#C4782A] hover:underline">
-                damian@churchtownmedia.co.uk
-              </a>. You may also lodge a complaint with the{" "}
+              To exercise any of these rights, use the{" "}
+              <Link href="/contact" className="text-[#C4782A] hover:underline">
+                contact form
+              </Link>{" "}
+              or write to Churchtown Media Ltd, Suite RA01, 195-197 Wood Street, London, E17 3NU. You may also lodge a complaint with the{" "}
               <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#C4782A] hover:underline">
                 Information Commissioner&apos;s Office (ICO)
               </a>.

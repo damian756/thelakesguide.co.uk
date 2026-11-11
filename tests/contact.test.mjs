@@ -1,0 +1,128 @@
+// Contact form checks (11 Nov 2026). Run: npm run test:contact
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { readFileSync, readdirSync, statSync } from "node:fs";
+import { join } from "node:path";
+import {
+  DELIVERY_EMAIL,
+  FROM_EMAIL,
+  ENQUIRY_TYPES,
+  buildEnquiryEmail,
+  escapeHtml,
+  isValidEmail,
+  logSendError,
+  normaliseEnquiryType,
+} from "../lib/contact.ts";
+
+const root = new URL("..", import.meta.url);
+const read = (p) => readFileSync(new URL(p, root), "utf8");
+const walk = (dir) =>
+  readdirSync(new URL(dir, root)).flatMap((name) => {
+    const rel = join(dir, name).split(String.fromCharCode(92)).join("/");
+    return statSync(new URL(rel, root)).isDirectory() ? walk(rel + "/") : [rel];
+  });
+const base = { name: "n", email: "e@x.co", subject: "General enquiry", message: "m" };
+
+test("the form delivers to damian@churchtownmedia.co.uk from the verified stand-in sender", () => {
+  assert.equal(DELIVERY_EMAIL, "damian@churchtownmedia.co.uk");
+  assert.equal(FROM_EMAIL, "The Lakes Guide <noreply@southportguide.co.uk>");
+  const mail = buildEnquiryEmail(base);
+  assert.deepEqual(mail.to, [DELIVERY_EMAIL]);
+  assert.equal(mail.from, FROM_EMAIL);
+});
+
+test("the route builds the mail in lib/contact.ts, checks the send result and fails loudly", () => {
+  const src = read("app/api/contact/route.ts");
+  assert.match(src, /from "@\/lib\/contact"/);
+  assert.match(src, /const\s*\{\s*error\s*\}\s*=\s*await\s+getResend\(\)\.emails\.send\(\s*buildEnquiryEmail\(/);
+  assert.match(src, /if\s*\(error\)\s*\{\s*logSendError\(error\);\s*return NextResponse\.json\([\s\S]*?status:\s*502/);
+  assert.match(src, /catch\s*\(err\)\s*\{\s*logSendError\(err\);/);
+  assert.match(src, /isValidEmail\(email\)/);
+  assert.match(src, /HONEYPOT_FIELD/);
+  assert.doesNotMatch(src, /RESEND_FROM_EMAIL/, "the sender must be the constant, not an env override");
+});
+
+test("the client form never imports lib/contact.ts (keeps the address out of the browser bundle)", () => {
+  assert.doesNotMatch(read("app/contact/ContactClient.tsx"), /from\s+["'](?:@\/|\.\.\/)+lib\/contact["']/);
+});
+
+test("the form's enquiry types match what the route accepts", () => {
+  const cf = read("app/contact/ContactClient.tsx");
+  const block = cf.match(/const SUBJECTS = \[([\s\S]*?)\]/)[1];
+  assert.deepEqual([...block.matchAll(/"([^"]+)"/g)].map((m) => m[1]), [...ENQUIRY_TYPES]);
+  assert.equal(normaliseEnquiryType("Report an issue"), "Report an issue");
+  assert.equal(normaliseEnquiryType("<b>spam</b>"), "General enquiry");
+  assert.match(cf, /name="website"/, "honeypot field missing from the form");
+});
+
+test("every typed value is escaped in the html", () => {
+  assert.equal(escapeHtml(`&<>"'`), "&amp;&lt;&gt;&quot;&#39;");
+  const evil = "<script>x</script>&";
+  for (const field of ["name", "email", "subject", "message", "businessName"]) {
+    const html = buildEnquiryEmail({ ...base, [field]: evil }).html;
+    assert.ok(!html.includes("<script>"), field + " not escaped");
+    assert.ok(html.includes("&lt;script&gt;x&lt;/script&gt;&amp;"), field + " missing escaped text");
+  }
+  assert.ok(buildEnquiryEmail({ ...base, message: "a\nb" }).html.includes("a<br>b"));
+});
+
+test("replyTo is the enquirer's address; unsafe addresses are rejected", () => {
+  assert.equal(buildEnquiryEmail({ ...base, email: "visitor@example.com" }).replyTo, "visitor@example.com");
+  for (const bad of ["a@b.co, c@d.co", "a@b.co\nBcc: x@y.co", "a b@c.co", "<a@b.co>", "nodomain", "a@b", "x".repeat(250) + "@b.co"]) {
+    assert.equal(isValidEmail(bad), false, bad);
+    assert.equal(buildEnquiryEmail({ ...base, email: bad }).replyTo, undefined, bad);
+  }
+});
+
+test("the subject has no CR or LF", () => {
+  const { subject } = buildEnquiryEmail({ ...base, name: "a\r\nBcc: x", businessName: "b\nc" });
+  assert.doesNotMatch(subject, /[\r\n]/);
+});
+
+test("logSendError logs only the error's name and message", () => {
+  const calls = [];
+  const orig = console.error;
+  console.error = (...args) => calls.push(args);
+  try {
+    logSendError({ name: "validation_error", message: "domain not verified", to: "secret@x.co", body: "private text" });
+  } finally {
+    console.error = orig;
+  }
+  assert.equal(calls.length, 1);
+  const out = calls[0].join(" ");
+  assert.match(out, /validation_error/);
+  assert.match(out, /domain not verified/);
+  assert.doesNotMatch(out, /secret@x\.co|private text/);
+});
+
+test("no address of ours is printed on any page, public file or mail text", () => {
+  const ours = /[A-Za-z0-9._%+-]+@(?:[a-z0-9-]+\.)*(?:thelakes\.network|thelakesguide\.co\.uk|hikethelakes\.com|thelakeswildlife\.co\.uk|churchtownmedia\.co\.uk|southportguide\.co\.uk)/gi;
+  // Server-side senders and recipients that a visitor never sees on a page,
+  // and the public demo account's login name. Anything else fails.
+  const allowed = {
+    "lib/contact.ts": ["damian@churchtownmedia.co.uk", "noreply@southportguide.co.uk"],
+    "app/api/hub/claim/submit/route.ts": ["noreply@thelakesguide.co.uk", "damian@churchtownmedia.co.uk"],
+    "lib/email-templates/claim-approval.ts": ["noreply@thelakesguide.co.uk"],
+    "app/api/reviews/route.ts": ["hello@thelakesguide.co.uk"],
+    "app/api/admin/reviews/[id]/route.ts": ["hello@thelakesguide.co.uk", "hello@thelakesguide.co.uk"],
+    "app/api/auth/forgot-password/route.ts": ["noreply@thelakesguide.co.uk"],
+    "app/dashboard/DashboardLoginClient.tsx": ["demo@thelakesguide.co.uk"],
+    "app/dashboard/(hub)/HubShell.tsx": ["demo@thelakesguide.co.uk"],
+    "app/api/hub/upload-image/route.ts": ["demo@thelakesguide.co.uk", "demo@thelakesguide.co.uk"],
+    "app/api/hub/create-pro-checkout/route.ts": ["demo@thelakesguide.co.uk"],
+    "app/api/hub/create-boost-checkout/route.ts": ["demo@thelakesguide.co.uk"],
+  };
+  const files = [...walk("app/"), ...walk("components/"), ...walk("lib/"), ...walk("public/")].filter((f) =>
+    /\.(ts|tsx|js|mjs|json|txt|xml|md|html)$/.test(f),
+  );
+  for (const f of files) {
+    const src = read(f).replace(/^\s*\/\/.*$/gm, "");
+    const found = (src.match(ours) ?? []).map((a) => a.toLowerCase());
+    assert.deepEqual(found, allowed[f] ?? [], `${f} prints ${found.join(", ")}`);
+  }
+});
+
+test("no route or helper can fall back to Resend's test sender (resend.dev)", () => {
+  const files = [...walk("app/"), ...walk("lib/"), ...walk("components/")].filter((f) => /\.(ts|tsx|js|mjs)$/.test(f));
+  for (const f of files) assert.ok(!read(f).replace(/^\s*\/\/.*$/gm, "").includes("resend.dev"), `${f} mentions resend.dev`);
+});

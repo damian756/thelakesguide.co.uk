@@ -9,8 +9,11 @@ import {
 const BATCH_SIZE = 20;
 const BATCH_DELAY_MS = 200;
 
-const FROM_EMAIL =
-  process.env.RESEND_FROM_EMAIL || "The Lakes Guide <onboarding@resend.dev>";
+// No fallback sender: Resend's test sender only reaches the account owner, so
+// a fallback to it fails silently. With RESEND_FROM_EMAIL unset, alerts are
+// skipped (11 Nov 2026; whether to send from the verified stand-in sender in
+// lib/contact.ts is the owner's decision).
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL;
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -94,7 +97,7 @@ export async function GET(request: Request) {
             });
 
             const user = business.user;
-            if (user?.email && process.env.RESEND_API_KEY) {
+            if (user?.email && process.env.RESEND_API_KEY && FROM_EMAIL) {
               const html = generateNewReviewEmail(
                 { name: business.name },
                 { name: user.name, email: user.email },
@@ -113,7 +116,7 @@ export async function GET(request: Request) {
 
           if (ratingDecreased && oldRating != null && newRating != null) {
             const user = business.user;
-            if (user?.email && process.env.RESEND_API_KEY) {
+            if (user?.email && process.env.RESEND_API_KEY && FROM_EMAIL) {
               const html = generateRatingChangeEmail(
                 { name: business.name },
                 { name: user.name, email: user.email },

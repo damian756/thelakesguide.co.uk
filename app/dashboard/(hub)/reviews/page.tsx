@@ -155,14 +155,14 @@ export default async function ReviewsPage({
                 {!business.placeId && (
                   <p className="text-xs text-gray-400 mt-3">
                     Want a direct link to your Google listing?{" "}
-                    <a href="mailto:hello@thelakesguide.co.uk" className="text-[#C9A84C] font-medium hover:underline">Contact us to connect it.</a>
+                    <Link href="/contact" className="text-[#C9A84C] font-medium hover:underline">Contact us to connect it.</Link>
                   </p>
                 )}
               </>
             ) : (
               <p className="text-sm text-gray-500">
                 Google Reviews not connected.{" "}
-                <a href="mailto:hello@thelakesguide.co.uk" className="text-[#C9A84C] font-semibold hover:underline">Contact us</a>{" "}
+                <Link href="/contact" className="text-[#C9A84C] font-semibold hover:underline">Contact us</Link>{" "}
                 to link your Google listing.
               </p>
             )}
@@ -170,7 +170,7 @@ export default async function ReviewsPage({
 
           {/* Rating trend */}
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-            <h2 className="font-display text-lg font-bold text-[#1B2E4B] mb-4">Rating trend — last 90 days</h2>
+            <h2 className="font-display text-lg font-bold text-[#1B2E4B] mb-4">Rating trend: last 90 days</h2>
             {chartSnapshots.length >= 2 ? (
               <div className="overflow-x-auto">
                 <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full max-w-lg" style={{ height: svgHeight }}>

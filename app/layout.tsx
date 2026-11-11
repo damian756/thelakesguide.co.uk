@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: BASE_URL,
     siteName: "The Lakes Guide",
-    title: "The Lakes Guide — The Complete Visitor Guide to the Lake District",
+    title: "The Lakes Guide: The Complete Visitor Guide to the Lake District",
     description:
       "Discover the best restaurants, pubs, walks, villages and things to do in the Lake District. Your complete local guide.",
     images: [
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   // Twitter / X
   twitter: {
     card: "summary_large_image",
-    title: "The Lakes Guide — The Complete Visitor Guide to the Lake District",
+    title: "The Lakes Guide: The Complete Visitor Guide to the Lake District",
     description: "Discover the best restaurants, pubs, walks, villages and things to do in the Lake District.",
     images: [`${BASE_URL}/og-default.png`],
     creator: "@TheLakesGuide",
@@ -160,12 +160,12 @@ function Footer() {
                 </li>
                 <li>
                   <a href="https://www.thelakeswildlife.co.uk" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C4782A] transition" title="Lake District wildlife, species and reserves">
-                    The Lakes Wildlife — species & reserves ↗
+                    The Lakes Wildlife: species & reserves ↗
                   </a>
                 </li>
                 <li>
                   <a href="https://www.hikethelakes.com" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C4782A] transition" title="Wainwright fells and walking routes">
-                    Hike The Lakes — 214 fells & routes ↗
+                    Hike The Lakes: 214 fells & routes ↗
                   </a>
                 </li>
                 <li>
@@ -238,8 +238,8 @@ function Footer() {
           <span>Part of the <a href="https://thelakes.network" target="_blank" rel="noopener" className="hover:text-white/60 transition">Lakes Network</a></span>
           <div className="flex flex-wrap gap-5">
             <a href="https://www.thelakesguide.co.uk" target="_blank" rel="noopener" className="hover:text-white/60 transition">The Lakes Guide</a>
-            <a href="https://www.thelakeswildlife.co.uk" target="_blank" rel="noopener" className="hover:text-white/60 transition">The Lakes Wildlife — species & reserves</a>
-            <a href="https://www.hikethelakes.com" target="_blank" rel="noopener" className="hover:text-white/60 transition">Hike The Lakes — 214 fells</a>
+            <a href="https://www.thelakeswildlife.co.uk" target="_blank" rel="noopener" className="hover:text-white/60 transition">The Lakes Wildlife: species & reserves</a>
+            <a href="https://www.hikethelakes.com" target="_blank" rel="noopener" className="hover:text-white/60 transition">Hike The Lakes: 214 fells</a>
             <a href="https://thelakes.network" target="_blank" rel="noopener" className="hover:text-white/60 transition">TheLakes.network</a>
           </div>
         </div>
@@ -249,9 +249,9 @@ function Footer() {
             Lake District business?{" "}
             <span className="text-[#C4782A] font-semibold">Partner with the Lakes Network</span>
           </p>
-          <a href="mailto:hello@thelakes.network" className="text-[#C4782A] hover:text-white transition font-medium text-sm">
-            hello@thelakes.network →
-          </a>
+          <Link href="/contact" className="text-[#C4782A] hover:text-white transition font-medium text-sm">
+            Use the contact form →
+          </Link>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">

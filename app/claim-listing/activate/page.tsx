@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import ActivateClient from "./ActivateClient";
 
@@ -23,13 +24,10 @@ export default async function ActivatePage({ searchParams }: Props) {
           </h1>
           <p className="text-gray-500 text-sm mb-6">
             This link is missing or invalid. Check your email for the correct
-            activation link, or contact{" "}
-            <a
-              href="mailto:hello@thelakesguide.co.uk"
-              className="text-[#C9A84C] font-semibold"
-            >
-              hello@thelakesguide.co.uk
-            </a>
+            activation link, or use the{" "}
+            <Link href="/contact" className="text-[#C9A84C] font-semibold">
+              contact form
+            </Link>
             .
           </p>
           <a
@@ -68,13 +66,10 @@ export default async function ActivatePage({ searchParams }: Props) {
             Link expired
           </h1>
           <p className="text-gray-500 text-sm mb-6">
-            This link has expired. Contact{" "}
-            <a
-              href="mailto:hello@thelakesguide.co.uk"
-              className="text-[#C9A84C] font-semibold"
-            >
-              hello@thelakesguide.co.uk
-            </a>{" "}
+            This link has expired. Use the{" "}
+            <Link href="/contact" className="text-[#C9A84C] font-semibold">
+              contact form
+            </Link>{" "}
             to request a new one.
           </p>
           <a

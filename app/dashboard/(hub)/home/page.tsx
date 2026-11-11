@@ -397,9 +397,9 @@ export default async function HubHomePage() {
             ) : (
               <p className="text-sm text-gray-500">
                 Not connected yet.{" "}
-                <a href="mailto:hello@thelakesguide.co.uk" className="text-[#C9A84C] font-semibold">
+                <Link href="/contact" className="text-[#C9A84C] font-semibold">
                   Contact us
-                </a>{" "}
+                </Link>{" "}
                 to link your Google listing.
               </p>
             )}
@@ -467,7 +467,7 @@ export default async function HubHomePage() {
                 ⚡ Event Intelligence
               </h2>
               <p className="font-semibold mb-1">
-                {nextEvent.name} —{" "}
+                {nextEvent.name}:{" "}
                 {new Date(nextEvent.dateStart).toLocaleDateString("en-GB", {
                   day: "numeric",
                   month: "short",

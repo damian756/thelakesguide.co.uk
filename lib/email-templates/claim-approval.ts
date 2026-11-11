@@ -24,7 +24,7 @@ export function getClaimApprovalHtml(params: {
         </a>
       </p>
       <p style="color: #888; font-size: 13px;">
-        This link expires in 7 days. If you need a new link, contact hello@thelakesguide.co.uk.
+        This link expires in 7 days. If you need a new link, use the contact form at ${BASE_URL}/contact.
       </p>
       <p style="color: #1B2E4B; margin-top: 24px;">The Lakes Guide Team</p>
       <p style="color: #999; font-size: 12px; margin-top: 24px;">

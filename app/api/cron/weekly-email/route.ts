@@ -14,8 +14,11 @@ import { getEventImpactEstimate } from "@/lib/event-intel";
 const BATCH_SIZE = 10;
 const BATCH_DELAY_MS = 500;
 
-const FROM_EMAIL =
-  process.env.RESEND_FROM_EMAIL || "The Lakes Guide <onboarding@resend.dev>";
+// No fallback sender: Resend's test sender only reaches the account owner, so
+// a fallback to it fails silently. With RESEND_FROM_EMAIL unset, the job stops
+// before sending (11 Nov 2026; whether to send from the verified stand-in
+// sender in lib/contact.ts is the owner's decision).
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL;
 
 function getWeekBounds(): { thisWeekStart: Date; thisWeekEnd: Date; lastWeekStart: Date; lastWeekEnd: Date } {
   const now = new Date();
@@ -52,6 +55,14 @@ export async function GET(request: Request) {
       { status: 500 }
     );
   }
+
+  if (!FROM_EMAIL) {
+    return NextResponse.json(
+      { error: "RESEND_FROM_EMAIL not configured" },
+      { status: 500 }
+    );
+  }
+  const from: string = FROM_EMAIL;
 
   const businesses = await prisma.business.findMany({
     where: {
@@ -155,7 +166,7 @@ export async function GET(request: Request) {
         );
 
         const { error } = await getResend().emails.send({
-          from: FROM_EMAIL,
+          from,
           to: user.email,
           subject: `Your Lakes Guide week | ${business.name}`,
           html,

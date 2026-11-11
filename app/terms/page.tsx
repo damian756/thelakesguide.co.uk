@@ -43,7 +43,7 @@ export default function TermsPage() {
               TheLakesGuide.co.uk is a visitor guide and local business directory for the Lake District, operated by <strong>Churchtown Media</strong>. The Site provides information about local businesses, events, and attractions for the benefit of visitors and residents.
             </p>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Contact: <a href="mailto:damian@churchtownmedia.co.uk" className="text-[#C4782A] hover:underline">damian@churchtownmedia.co.uk</a>
+              Contact: use the <Link href="/contact" className="text-[#C4782A] hover:underline">contact form</Link>, or write to Churchtown Media Ltd, Suite RA01, 195-197 Wood Street, London, E17 3NU.
             </p>
           </section>
 
