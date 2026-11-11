@@ -135,7 +135,7 @@ export default function AboutPage() {
                   <p className="text-gray-500 text-sm mb-3">
                     Founder,{" "}
                     <a
-                      href="https://churchtownmedia.co.uk"
+                      href="https://www.churchtownmedia.co.uk/"
                       className="text-[#C4782A] hover:underline font-medium"
                     >
                       Churchtown Media Ltd
@@ -149,7 +149,7 @@ export default function AboutPage() {
                   <p className="text-gray-700 leading-relaxed">
                     The Lakes Guide is part of{" "}
                     <a
-                      href="https://thelakes.network"
+                      href="https://www.thelakes.network/"
                       className="text-[#C4782A] hover:underline font-medium"
                     >
                       The Lakes Network

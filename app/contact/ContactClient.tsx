@@ -104,7 +104,7 @@ export default function ContactClient({ initialSubject }: { initialSubject?: str
 
             <div className="bg-white rounded-2xl border border-gray-100 p-6">
               <p className="text-xs text-gray-400 uppercase tracking-wider mb-3">Built by</p>
-              <a href="https://churchtownmedia.co.uk" target="_blank" rel="noopener noreferrer" className="text-[#14231C] font-bold hover:text-[#C4782A] transition-colors">
+              <a href="https://www.churchtownmedia.co.uk/" target="_blank" rel="noopener noreferrer" className="text-[#14231C] font-bold hover:text-[#C4782A] transition-colors">
                 Churchtown Media ↗
               </a>
               <p className="text-gray-400 text-xs mt-1">Web & digital for Lake District businesses</p>

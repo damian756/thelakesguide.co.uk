@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "Restaurants, pubs, walks, villages and things to do in the Lake District, with the practical details for planning a visit.",
   keywords:
     "Lake District, Lake District restaurants, Lake District walks, things to do Lake District, visitor guide, Lakes Guide",
-  authors: [{ name: "Churchtown Media", url: "https://churchtownmedia.co.uk" }],
+  authors: [{ name: "Churchtown Media", url: "https://www.churchtownmedia.co.uk/" }],
   creator: "Churchtown Media",
   publisher: "The Lakes Guide",
 
@@ -142,7 +142,7 @@ function Footer() {
               Where to eat, stay and walk in the Lake District, with the practical details.
             </p>
             <div className="flex gap-3">
-              <a href="https://churchtownmedia.co.uk" className="text-xs text-[#C4782A] hover:text-[#E8B87A] transition">
+              <a href="https://www.churchtownmedia.co.uk/" className="text-xs text-[#C4782A] hover:text-[#E8B87A] transition">
                 Built by Churchtown Media ↗
               </a>
             </div>
@@ -163,7 +163,7 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://thelakes.network" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C4782A] transition">
+                  <a href="https://www.thelakes.network/" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/70 hover:text-[#C4782A] transition">
                     TheLakes.network ↗
                   </a>
                 </li>
@@ -229,12 +229,12 @@ function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 pb-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/35">
-          <span>Part of the <a href="https://thelakes.network" target="_blank" rel="noopener" className="hover:text-white/60 transition">Lakes Network</a></span>
+          <span>Part of the <a href="https://www.thelakes.network/" target="_blank" rel="noopener" className="hover:text-white/60 transition">Lakes Network</a></span>
           <div className="flex flex-wrap gap-5">
             <a href="https://www.thelakesguide.co.uk" target="_blank" rel="noopener" className="hover:text-white/60 transition">The Lakes Guide</a>
             <a href="https://www.thelakeswildlife.co.uk" target="_blank" rel="noopener" className="hover:text-white/60 transition">The Lakes Wildlife: species & reserves</a>
             <a href="https://www.hikethelakes.com" target="_blank" rel="noopener" className="hover:text-white/60 transition">Hike The Lakes: 214 fells</a>
-            <a href="https://thelakes.network" target="_blank" rel="noopener" className="hover:text-white/60 transition">TheLakes.network</a>
+            <a href="https://www.thelakes.network/" target="_blank" rel="noopener" className="hover:text-white/60 transition">TheLakes.network</a>
           </div>
         </div>
 
