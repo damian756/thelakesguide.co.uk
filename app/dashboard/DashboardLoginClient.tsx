@@ -95,8 +95,8 @@ export default function DashboardLoginClient() {
         <div className="bg-[#C9A84C]/10 border-b border-[#C9A84C]/30 px-6 py-3 flex items-start gap-3">
           <FlaskConical className="w-4 h-4 text-[#C9A84C] flex-shrink-0 mt-0.5" />
           <p className="text-sm text-[#1B2E4B] leading-snug">
-            <span className="font-bold">Final testing in progress.</span>{" "}
-            The Business Hub launches in a few days. Right now, only the demo account is active — real business claims will be approved at launch.
+            <span className="font-bold">The Business Hub opens when listings do.</span>{" "}
+            If you have asked to be listed, we will tell you when you can sign in.
           </p>
         </div>
 
