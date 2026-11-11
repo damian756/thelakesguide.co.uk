@@ -40,8 +40,8 @@ export default function PrivacyPage() {
             </p>
             <p className="text-gray-600 leading-relaxed">
               <strong>Contact:</strong>{" "}
-              <a href="mailto:hello@churchtownmedia.co.uk" className="text-[#C4782A] hover:underline">
-                hello@churchtownmedia.co.uk
+              <a href="mailto:damian@churchtownmedia.co.uk" className="text-[#C4782A] hover:underline">
+                damian@churchtownmedia.co.uk
               </a>
             </p>
           </section>
@@ -185,8 +185,8 @@ export default function PrivacyPage() {
             </div>
             <p className="text-gray-600 text-sm mt-4">
               To exercise any of these rights, email{" "}
-              <a href="mailto:hello@churchtownmedia.co.uk" className="text-[#C4782A] hover:underline">
-                hello@churchtownmedia.co.uk
+              <a href="mailto:damian@churchtownmedia.co.uk" className="text-[#C4782A] hover:underline">
+                damian@churchtownmedia.co.uk
               </a>. You may also lodge a complaint with the{" "}
               <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#C4782A] hover:underline">
                 Information Commissioner&apos;s Office (ICO)
@@ -210,7 +210,7 @@ export default function PrivacyPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-50">
                   {[
-                    ["Necessary", "Session management and security.", "No — always active"],
+                    ["Necessary", "Session management and security.", "No: always active"],
                     ["Analytics", "Plausible Analytics: aggregated page views, traffic sources, device types. Privacy-friendly and cookieless.", "No (does not require consent)"],
                     ["Marketing / Affiliate", "Booking.com and other affiliate partner tracking cookies. Set when you click through to a partner booking site.", "Yes (optional)"],
                   ].map(([cat, purpose, req]) => (
