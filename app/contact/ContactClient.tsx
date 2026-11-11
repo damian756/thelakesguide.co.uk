@@ -96,7 +96,7 @@ export default function ContactClient() {
                 <p className="font-display font-bold text-white mb-2">Want to list your business?</p>
                 <p className="text-white/60 text-sm mb-4">It&apos;s free to get started. Upgrade anytime for more visibility.</p>
                 <Link href="/claim-listing" className="block text-center bg-[#C4782A] text-white px-4 py-2.5 rounded-full font-bold text-sm hover:bg-[#E8B87A] transition">
-                  Claim Your Free Listing →
+                  Ask to Be Listed →
                 </Link>
               </div>
             </div>

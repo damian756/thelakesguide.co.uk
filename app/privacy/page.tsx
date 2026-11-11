@@ -140,7 +140,7 @@ export default function PrivacyPage() {
                 { name: "Google and OpenStreetMap (maps and listing photos)", detail: "Maps and some listing photos are loaded from Google, and category maps from OpenStreetMap. They receive your IP address when your browser loads them. Subject to their own privacy policies." },
                 { name: "Stripe", detail: "Payment processing for paid business listings. Subject to Stripe's own privacy policy." },
                 { name: "Vercel", detail: "Website hosting infrastructure, and storage for review photos and receipt images. Data is processed in UK/EU-region data centres where possible." },
-                { name: "Resend (email)", detail: "Sends the site's emails: contact form messages to us, listing claim and review confirmation emails, and password resets. It receives the email address and message needed to send each one. Subject to Resend's own privacy policy." },
+                { name: "Resend (email)", detail: "Sends the site's emails, such as contact form messages to us, emails about listing claims and reviews, and password resets. It receives the email address and message needed to send each one. Subject to Resend's own privacy policy." },
               ].map(({ name, detail }) => (
                 <div key={name} className="bg-[#EAEDE8] rounded-xl p-4">
                   <p className="font-semibold text-[#1B2E4B] text-sm mb-1">{name}</p>

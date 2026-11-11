@@ -76,7 +76,7 @@ const LAKES = [
       "Five miles long, Coniston is where Donald Campbell set his world water speed records. The Steam Yacht Gondola runs from Coniston Pier. The village has a proper local feel. Good for a quieter day on the water.",
     practical: [
       "Coniston village, LA21 8EH. Pay and display car parks.",
-      "The Steam Yacht Gondola sails from spring to the end of October. The Coniston Launch sails all year, with fewer sailings from November to February.",
+      "The National Trust's Steam Yacht Gondola sails to a seasonal timetable, so check the National Trust's page before you go. The Coniston Launch sails all year, with fewer sailings from November to February.",
       "Kayak and canoe hire from Coniston Boating Centre.",
       "The Old Man of Coniston looms above. Combine a lake day with a fell walk.",
     ],
@@ -268,7 +268,7 @@ const CULTURE = [
     name: "Abbot Hall",
     tag: "Art gallery",
     detail:
-      "Kendal. A Georgian art gallery run by Lakeland Arts, open Wednesday to Saturday, 10am to 4pm, but closed from 9 to 19 November and from 23 November to 1 December 2026. Check before you go.",
+      "Kendal. A Georgian art gallery run by Lakeland Arts, open Wednesday to Saturday, 10am to 4pm, but closed from 9 to 19 November and from 23 November to 1 December 2026, and its car park is closed from 9 November to 1 December. Check before you go.",
     href: "/attractions",
     emoji: "🖼️",
   },

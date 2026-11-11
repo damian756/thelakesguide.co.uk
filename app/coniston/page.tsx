@@ -214,7 +214,7 @@ export default function ConistonPage() {
               Coniston Water is 5 miles long and one of the quieter major lakes. There is no road along most of the western shore, giving it a more remote feel than Windermere. The Coniston Launch sails from the pier at Coniston village to Brantwood and other points, all year, with fewer sailings from November to February.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              The steam yacht Gondola, operated by the National Trust, runs from May to October. One of the most comfortable ways to see the lake. The lake is good for wildlife in winter: goldeneye and goosander both occur, and red squirrels are present in the woodland above the western shore.
+              The steam yacht Gondola, operated by the National Trust, sails to a seasonal timetable: check the National Trust&apos;s page before you go. One of the most comfortable ways to see the lake. The lake is good for wildlife in winter: goldeneye and goosander both occur, and red squirrels are present in the woodland above the western shore.
             </p>
           </section>
 

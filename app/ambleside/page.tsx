@@ -86,14 +86,14 @@ export default function AmblesidePage() {
             fill priority sizes="100vw"
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/40" />
           <div className="relative w-full max-w-3xl mx-auto px-4 pb-12 pt-32">
             <nav className="flex items-center gap-1.5 text-xs text-white/50 mb-4">
               <Link href="/" className="hover:text-white transition">Home</Link>
               <span>/</span>
               <span className="text-white/80">Ambleside</span>
             </nav>
-            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">Village guide · Central Lake District · LA22</p>
+            <p className="text-[#E8B87A] text-xs font-bold uppercase tracking-widest mb-3">Village guide · Central Lake District · LA22</p>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Ambleside</h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-2xl mb-8">
               The walking hub of the Lake District. A small market town at the northern tip of Windermere that gives direct access to Langdale, the Fairfield Horseshoe, and most of the central fells without significant driving. If walking is the priority, this is the base.
@@ -153,7 +153,7 @@ export default function AmblesidePage() {
               {[
                 { name: "Bridge House", location: "Stock Beck · National Trust", desc: "A tiny cottage built on a bridge over Stock Beck, owned by the National Trust since 1926. You can see it from the street at any time." },
                 { name: "Stock Ghyll Force", location: "20 min walk from market", desc: "The waterfall above the town. The path up through the Victorian woodland takes 20 minutes from the market place and reaches a series of falls that drop about 70 feet." },
-                { name: "The Armitt Museum", location: "Rydal Road, LA22 9BL · Charged", desc: "Beatrix Potter watercolours, John Ruskin material, and a fossil collection." },
+                { name: "The Armitt Museum", location: "Rydal Road, LA22 9BL · Charged", desc: "A museum and library with exhibitions, including Beatrix Potter and Kurt Schwitters." },
                 { name: "Waterhead Pier", location: "LA22 0EY", desc: "The Windermere Lake Cruises ferry arrives and departs from Waterhead, half a mile south of the town centre. A pleasant walk from the pier into town." },
               ].map(({ name, location, desc }) => (
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
