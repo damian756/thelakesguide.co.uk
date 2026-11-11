@@ -65,7 +65,7 @@ const pageJsonLd = {
 export const metadata: Metadata = {
   title: "Dog-Friendly Lake District | Walks, Pubs and Accommodation",
   description:
-    "The dog-friendly Lake District guide. Best walks with dogs, which pubs welcome dogs, dog-friendly accommodation, and practical advice on fells, livestock, and lake shores.",
+    "Dog-friendly Lake District: walks with dogs, pubs that welcome dogs, dog-friendly places to stay, and advice on fells, livestock and lake shores.",
   alternates: { canonical: url },
   openGraph: pageOpenGraph({
     title: "Dog-Friendly Lake District | The Lakes Guide",

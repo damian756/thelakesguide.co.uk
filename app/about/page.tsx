@@ -5,7 +5,7 @@ import { pageOpenGraph, SITE_URL } from "@/lib/seo";
 import { ORGANIZATION, CHURCHTOWN_MEDIA, FOUNDER, ORG_ID, WEBSITE_ID } from "@/lib/schema";
 
 export const metadata = {
-  title: "About The Lakes Guide | Who Publishes It and How It Works",
+  title: "About Us: Who Publishes the Guide and How It Works",
   description:
     "The Lakes Guide is a visitor guide to the Lake District, published by Churchtown Media Ltd. Who edits it, how it is paid for and what we stand for.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/about" },

@@ -31,7 +31,7 @@ const BASE_URL = "https://www.thelakesguide.co.uk";
 export const metadata: Metadata = {
   title: "Things to Do in the Lake District",
   description:
-    "Things to do in the Lake District: Windermere, Keswick, Ambleside, Coniston, Scafell Pike, the Wainwrights, water sports, Grizedale Forest and more, with the practical details.",
+    "Things to do in the Lake District: Windermere, Keswick, Ambleside, Coniston, Scafell Pike, the Wainwrights, water sports, Grizedale Forest and more.",
   keywords:
     "things to do in the Lake District, things to do Lake District, Lake District attractions, Lake District walks, Lake District with kids, free things to do Lake District, things to do in Cumbria",
   alternates: { canonical: `${BASE_URL}/things-to-do` },

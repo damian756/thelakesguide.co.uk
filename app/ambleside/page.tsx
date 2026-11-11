@@ -59,7 +59,7 @@ const pageJsonLd = {
 
 export const metadata: Metadata = {
   title: "Ambleside | Restaurants, Walks & Visitor Guide",
-  description: "Ambleside in the Lake District: a walking base for the central fells, with restaurants, accommodation, Loughrigg Fell, Stock Ghyll Force and the Fairfield Horseshoe.",
+  description: "Ambleside in the Lake District: a base for the central fells, with restaurants, accommodation, Loughrigg Fell, Stock Ghyll Force and the Fairfield Horseshoe.",
   alternates: { canonical: url },
   openGraph: pageOpenGraph({ title: "Ambleside Guide | The Lakes Guide", description: "Ambleside: walking routes, restaurants, accommodation, and using it as a base for the central fells.", url }),
 };

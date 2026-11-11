@@ -10,10 +10,10 @@ const description =
   "Guides and practical notes for visiting the Lake District: walks, villages, food, where to stay and what to expect.";
 
 export const metadata = {
-  title: "Blog",
+  title: "Lake District Blog: Guides and Practical Tips",
   description,
   alternates: { canonical: "https://www.thelakesguide.co.uk/blog" },
-  openGraph: pageOpenGraph({ title: "Blog | The Lakes Guide", description, url: "https://www.thelakesguide.co.uk/blog" }),
+  openGraph: pageOpenGraph({ title: "Lake District Blog: Guides and Practical Tips", description, url: "https://www.thelakesguide.co.uk/blog" }),
 };
 
 export default function BlogPage() {

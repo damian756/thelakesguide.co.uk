@@ -145,6 +145,10 @@ export interface BlogPost {
   date: string;
   /** "D Mon YYYY": the day the post last changed. Shown as "updated", and used for dateModified and the sitemap. */
   updated?: string;
+  /** Search title, when the visible title is too long or too thin for results. The page H1 keeps `title`. */
+  metaTitle?: string;
+  /** Search description, when the excerpt is too long for results. Cards keep `excerpt`. */
+  metaDescription?: string;
   /** Omit for default Damian author. Set to "terry" for posts written by Terry. */
   author?: "terry" | "damian";
   /**
@@ -165,6 +169,8 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-winter-fells-2400.webp",
     imageAlt: "Illustration of snow-covered fells above a frozen tarn, with a stone wall, bare trees and a farmhouse",
     date: "11 Nov 2026",
+    metaTitle: "The Lake District in Winter: What to Expect",
+    metaDescription: "Short days, snow on the high fells and quiet valleys: daylight hours, fell top reports, winter kit, boats and roads in the Lake District, December to February.",
     author: "damian",
   },
   {
@@ -186,6 +192,8 @@ export const BLOG_POSTS: BlogPost[] = [
     imageAlt: "Illustration of a village street of stone cottages with slate roofs and colourful doors, with fells behind",
     date: "9 Mar 2026",
     updated: "11 Nov 2026",
+    metaTitle: "Eating Out in Keswick: Where to Eat in Town and Nearby",
+    metaDescription: "Places to eat in Keswick and nearby, from a craft bakery on Main Street and a pub on Lake Road to a hotel restaurant on Derwentwater, with addresses.",
     author: "damian",
   },
   {
@@ -197,6 +205,7 @@ export const BLOG_POSTS: BlogPost[] = [
     imageAlt: "Illustration of a whitewashed country pub with a slate roof and its door open, with pints of ale on a picnic bench outside",
     date: "9 Mar 2026",
     updated: "11 Nov 2026",
+    metaDescription: "Pubs in and near Ambleside, from Smithy Brow to Barngates and Great Langdale: where they are, what they serve and which welcome dogs.",
     author: "damian",
   },
   {
@@ -219,6 +228,7 @@ export const BLOG_POSTS: BlogPost[] = [
     imageAlt: "Illustration of a stone path climbing a grassy fellside to a summit cairn, with a lake and ridges beyond",
     date: "9 Mar 2026",
     updated: "11 Nov 2026",
+    metaDescription: "Walking Scafell Pike: the Wasdale, Langdale and Corridor routes, where to park, what to bring, and the mistake most people make on England's highest mountain.",
     author: "damian",
   },
   {
@@ -241,6 +251,7 @@ export const BLOG_POSTS: BlogPost[] = [
     imageAlt: "Illustration of a village street of stone cottages with slate roofs and colourful doors, with fells behind",
     date: "9 Mar 2026",
     updated: "11 Nov 2026",
+    metaDescription: "Grasmere or Ambleside as a base: Grasmere is quieter, with Dove Cottage and the central fells close by; Ambleside is a town with more to do on a rainy day.",
     author: "damian",
   },
   {
@@ -340,6 +351,7 @@ export const BLOG_POSTS: BlogPost[] = [
     imageAlt: "Illustration of a lake cruise boat moored at a wooden pier, with rowing boats, a wooded shore and fells behind",
     date: "9 Mar 2026",
     updated: "11 Nov 2026",
+    metaTitle: "Ullswater by Boat: Steamers, Piers and Journey Times",
     author: "damian",
   },
 ];

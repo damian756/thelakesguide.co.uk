@@ -37,11 +37,11 @@ const pageJsonLd = {
 export const metadata: Metadata = {
   title: "The Open 2026 and the Lake District | Accommodation",
   description:
-    "The Open Championship 2026 at Royal Birkdale. Lake District accommodation for visitors during Open week. Stay in the Lakes and drive to the course.",
+    "The Open 2026 was played at Royal Birkdale in July. This page, written beforehand on staying in the Lake District for Open week, is kept for reference.",
   alternates: { canonical: `${BASE_URL}/the-open-2026` },
   openGraph: pageOpenGraph({
     title: "The Open 2026 and the Lake District | The Lakes Guide",
-    description: "Lake District accommodation for The Open 2026. Stay in Keswick, Windermere, or Ambleside during Open week.",
+    description: "Written before The Open 2026 at Royal Birkdale: the Lake District as a base for Open week. Kept for reference.",
     url: `${BASE_URL}/the-open-2026`,
   }),
 };

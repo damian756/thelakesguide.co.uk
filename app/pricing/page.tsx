@@ -11,7 +11,7 @@ import { pageOpenGraph } from "@/lib/seo";
 // checkout charges them. No boosts, no "instead of" comparison, no feature table.
 
 const description =
-  "What a Lake District business can have on The Lakes Guide: a free listing on request, and advertising from £35 a month plus VAT. Business Hub and Pro open once your listing is live.";
+  "What a Lake District business can have on The Lakes Guide: a free listing on request, and advertising from £35 a month plus VAT.";
 
 export const metadata: Metadata = {
   title: "Pricing for Businesses",

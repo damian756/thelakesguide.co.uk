@@ -6,7 +6,7 @@ import { getAdSlot } from "@/lib/ad-slots";
 import { pageOpenGraph } from "@/lib/seo";
 
 const description =
-  "Advertising on The Lakes Guide: a home page card, guide sponsorships, sponsored articles, a winter package and a Lakes network bundle. Prices plus VAT, paid by invoice.";
+  "Advertising for Lake District businesses on The Lakes Guide: a home page card, guide sponsorships and sponsored articles, from £35 a month plus VAT.";
 
 export const metadata: Metadata = {
   title: "Advertise With Us",

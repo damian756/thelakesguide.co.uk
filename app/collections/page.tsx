@@ -16,11 +16,11 @@ const BASE_URL = "https://www.thelakesguide.co.uk";
 export const metadata: Metadata = {
   title: "Collections | Lists of Lake District Businesses",
   description:
-    "Lists of Lake District businesses by what they offer: dog-friendly restaurants, places to stay with parking, lakeside pubs and more.",
+    "Lists of Lake District businesses by what they offer, such as dog-friendly or lakeside. The directory is opening, so the lists fill as businesses join.",
   alternates: { canonical: `${BASE_URL}/collections` },
   openGraph: pageOpenGraph({
     title: "Collections | The Lakes Guide",
-    description: "Curated Lake District business collections. Dog-friendly, family-friendly, lakeside, and more.",
+    description: "Lake District businesses by what they offer. The directory is opening, so the lists fill as businesses join.",
     url: `${BASE_URL}/collections`,
   }),
 };

@@ -225,7 +225,7 @@ const pageJsonLd = [
 
 export const metadata: Metadata = {
   title: "Lake District Walks | Best Routes for All Abilities",
-  description: "The best walks in the Lake District. Easy family walks, beginner fells, and serious mountain days. Practical routes for Scafell Pike, Helvellyn, Catbells, and the Fairfield Horseshoe.",
+  description: "Lake District walks for all abilities: easy family walks, beginner fells and big mountain days, with routes for Scafell Pike, Helvellyn, Catbells and Fairfield.",
   alternates: { canonical: url },
   openGraph: pageOpenGraph({ title: "Lake District Walks | The Lakes Guide", description: "Best Lake District walks for all abilities. Routes, practical info, and what to bring.", url }),
 };

@@ -33,13 +33,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) return {};
   return {
-    title: post.title,
-    description: post.excerpt,
+    // The search title and description, where a post has them; the page and share card keep the full title.
+    title: post.metaTitle ?? post.title,
+    description: post.metaDescription ?? post.excerpt,
     alternates: { canonical: `https://www.thelakesguide.co.uk/blog/${slug}` },
     openGraph: pageOpenGraph({
       type: "article",
       title: post.title,
-      description: post.excerpt,
+      description: post.metaDescription ?? post.excerpt,
       url: `https://www.thelakesguide.co.uk/blog/${slug}`,
       images: [{ url: post.image, alt: post.imageAlt ?? post.title }],
     }),
