@@ -236,7 +236,7 @@ export default function BlogClient({ posts, categories }: Props) {
               {query ? `No posts found for "${query}"` : "No posts in this category yet"}
             </h3>
             <p className="text-gray-500 text-sm">
-              {query ? "Try a different search term." : "We're adding new posts every week."}
+              {query ? "Try a different search term." : "Try another category."}
             </p>
             <button
               onClick={() => { setQuery(""); selectCategory(""); }}

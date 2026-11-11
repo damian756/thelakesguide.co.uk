@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { signIn, getSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { HERO_IMAGE_URL, HERO_IMAGE_ALT } from "@/lib/site-constants";
 import { Mail, Lock, Eye, EyeOff, LayoutDashboard, AlertCircle, ArrowLeft, FlaskConical, ClipboardCopy, Check } from "lucide-react";
 
 export default function DashboardLoginClient() {
@@ -231,8 +232,8 @@ export default function DashboardLoginClient() {
       {/* Right — hero image panel, hidden on mobile */}
       <div className="hidden lg:block lg:w-[52%] xl:w-[55%] relative overflow-hidden flex-shrink-0">
         <img
-          src="/images/dashboard/login-hero.jpg"
-          alt="Lake District"
+          src={HERO_IMAGE_URL}
+          alt={HERO_IMAGE_ALT}
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Overlay gradient */}
@@ -243,7 +244,7 @@ export default function DashboardLoginClient() {
             Your business,<br />on the Lake District&apos;s guide.
           </p>
           <p className="text-white/70 text-sm">
-            Manage your listing, track clicks, and get in front of thousands of visitors every week.
+            Update your listing and see how many people view it and click through, once the Business Hub opens.
           </p>
         </div>
       </div>
