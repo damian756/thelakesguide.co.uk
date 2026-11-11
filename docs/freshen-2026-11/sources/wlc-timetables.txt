@@ -1,0 +1,106 @@
+https://www.windermere-lakecruises.co.uk/timetables
+
+Timetables
+Webcam
+Discover
+About us
+Contact us
+Find Us
+Service Status
+£0.00
+Our Cruises
+Self Drive Boats
+Groups + Schools
+Private Hire
+Book a Ticket
+Service Status
+£0.00
+Call us
+Menu
+Webcam
+Our Cruises
+Self Drive Boats
+Groups + Schools
+Private Hire
+Book a Ticket
+Timetables
+Routemaps
+Discover
+About us
+Contact us
+Find Us
+Explore Windermere
+Cruise
+Self-drive
+Choose your ideal cruise from one of our piers:
+Depart from
+Bowness
+Ambleside (Waterhead)
+Lakeside
+Ash Landing
+Wray
+Brockhole
+Break your journey with some fantastic local attractions for the perfect day out:
+Include Attraction
+No Attraction
+Lakeside & Haverthwaite Railway
+Windermere Jetty Museum
+Lakes Aquarium
+Lakeland Motor Museum
+Treetop Nets
+Hill Top
+Find my Cruise
+Choose your boat:
+Motor Boat
+Rowing Boat
+Select your departure & hire date
+Depart from
+on this date
+Find my boat
+Map
+Book a Ticket
+a]:opacity-80">
+Timetables
+Timetables
+Find a timetable here.
+We try to stick to our advertised timetable as closely as possible,
+but sometimes we may have to change the vessel on the day.
+Depart from
+Arrive at
+%}
+On this date
+Selected Timetable
+From {* timetable.depPier *}
+Depart {* selectedTimetable ? selectedTimetable.depPier : '' *} Arrive {* selectedTimetable ? selectedTimetable.arrPier : '' *} Vessel Cruise
+{* row.depTime *} {* row.arrTime *}
+{* row.vesselType *}
+0" class="text-base">({* row.title *})
+Accessible cruise - click for accessibility info
+{* row.cruiseName *}
+{* message *}
+Download a timetable
+Off-peak Timetable (2 Nov to 24 Dec 2026)
+Off-peak Timetable (26 Dec 2026 to 3 Jan 2027)
+Off-peak Timetable (4 Jan to 5 Feb 2027)
+Off-peak Timetable (6 Feb to 12 Feb 2027)
+Off-peak Timetable (13 Feb to 23 March 2027)
+Windermere Lake Cruises
+the most popular attraction in Cumbria
+Sign up to our Newsletter for news on Cruises & Events
+Name
+Email
+Submit
+Contact
+Cruises & Fares
+Timetables
+Webcams
+News & Press
+About Us
+Recruitment
+Leaflet library
+Privacy Policy
+Terms & Conditions
+Frequently Asked Questions
+Accessibilty
+© Copyright 2025 Windermere Lake Cruises. All rights reserved.
+Website by

@@ -1,0 +1,285 @@
+https://www.honister.com/
+
+Lake District Adventure Destination | Honister Slate Mine
+Skip to main content
+Return to homepage
+About us
+Open About us dropdown
+About Honister and History
+Our Team
+Regenerative Tourism
+Film & Media
+Adventures
+Your visit
+Open Your visit dropdown
+What to Expect
+Food & Drink
+Slate Shop
+Overnight Parking
+Live Web Cam
+FAQs
+Groups
+Open Groups dropdown
+Corporate Groups
+Educational Groups
+Stag & Hen Groups
+Kids Parties
+Scouts & Guides
+Charities
+Events
+Gift vouchers
+About us
+Open About us menu
+Adventures
+Your visit
+Open Your visit menu
+Groups
+Open Groups menu
+Events
+Gift vouchers
+Back to menu
+About us
+About Honister and History
+Our Team
+Regenerative Tourism
+Film & Media
+Back to menu
+Your visit
+What to Expect
+Food & Drink
+Slate Shop
+Overnight Parking
+Live Web Cam
+FAQs
+Back to menu
+Groups
+Corporate Groups
+Educational Groups
+Stag & Hen Groups
+Kids Parties
+Scouts & Guides
+Charities
+Book now
+Book now
+Home of Adventure
+Unforgettable experiences rooted in the untamed beauty of the Lake District. Life feels good on the edge. Now it's your turn.
+All Adventures
+Gift Vouchers
+Santas Secret Grotto
+From £30
+Jolly
+1.5 Hours
+Age: All Ages
+Learn more
+The Honister Pass
+From £175
+Full on
+8 Hours
+Age: 10+
+Learn more
+Adrenaline Pass
+From £110
+Full on
+4 Hours
+Age: 10+
+Learn more
+Via Ferrata Xtreme
+From £70
+Full on
+3 Hours
+Age: 10+
+Learn more
+Honister Aerial Flight
+From £90
+Full on
+1.5 Hours
+Age: 10+
+Learn more
+The Infinity Bridge
+From £30
+Adventurous
+1.5 Hours
+Age: 8+
+Learn more
+Climb the Mine
+From £70
+Adventurous
+2.5 Hours
+Age: 8+
+Learn more
+Via Ferrata Classic
+From £55
+Adventurous
+3 Hours
+Age: 10+
+Learn more
+Mine Tours
+From £25
+Chilled
+1.5 Hours
+Age: All Ages
+Learn more
+Slate Mine Ghost Tour
+From £25
+Spooky
+1.5 Hours
+Age: All Ages
+Learn more
+The Ultimate Adventure
+Via Ferrata
+Explore More
+Journey deep in the mine
+Climb The Mine
+Explore More
+A formidable agenda
+Adrenaline Pass
+Explore More
+Real people. Real memories.
+Stories from the summit
+"It's the scariest, but best thing I've ever done."
+Andrea C via TripAdvisor · ★★★★★
+= 3) {
+$refs.preview.play().catch(() => {});
+} else {
+previewLoading = true;
+$refs.preview.addEventListener('canplay', () => { previewLoading = false }, { once: true });
+$refs.preview.play().catch(() => {});
+}
+"
+@mouseleave="
+previewLoading = false;
+$refs.preview.pause();
+$refs.preview.currentTime = 0
+"
+>
+= 3) {
+$refs.preview.play().catch(() => {});
+} else {
+previewLoading = true;
+$refs.preview.addEventListener('canplay', () => { previewLoading = false }, { once: true });
+$refs.preview.play().catch(() => {});
+}
+"
+@mouseleave="
+previewLoading = false;
+$refs.preview.pause();
+$refs.preview.currentTime = 0
+"
+>
+= 3) {
+$refs.preview.play().catch(() => {});
+} else {
+previewLoading = true;
+$refs.preview.addEventListener('canplay', () => { previewLoading = false }, { once: true });
+$refs.preview.play().catch(() => {});
+}
+"
+@mouseleave="
+previewLoading = false;
+$refs.preview.pause();
+$refs.preview.currentTime = 0
+"
+>
+= 3) {
+$refs.preview.play().catch(() => {});
+} else {
+previewLoading = true;
+$refs.preview.addEventListener('canplay', () => { previewLoading = false }, { once: true });
+$refs.preview.play().catch(() => {});
+}
+"
+@mouseleave="
+previewLoading = false;
+$refs.preview.pause();
+$refs.preview.currentTime = 0
+"
+>
+= 3) {
+$refs.preview.play().catch(() => {});
+} else {
+previewLoading = true;
+$refs.preview.addEventListener('canplay', () => { previewLoading = false }, { once: true });
+$refs.preview.play().catch(() => {});
+}
+"
+@mouseleave="
+previewLoading = false;
+$refs.preview.pause();
+$refs.preview.currentTime = 0
+"
+>
+= 3) {
+$refs.preview.play().catch(() => {});
+} else {
+previewLoading = true;
+$refs.preview.addEventListener('canplay', () => { previewLoading = false }, { once: true });
+$refs.preview.play().catch(() => {});
+}
+"
+@mouseleave="
+previewLoading = false;
+$refs.preview.pause();
+$refs.preview.currentTime = 0
+"
+>
+= 3) {
+$refs.preview.play().catch(() => {});
+} else {
+previewLoading = true;
+$refs.preview.addEventListener('canplay', () => { previewLoading = false }, { once: true });
+$refs.preview.play().catch(() => {});
+}
+"
+@mouseleave="
+previewLoading = false;
+$refs.preview.pause();
+$refs.preview.currentTime = 0
+"
+>
+= 3) {
+$refs.preview.play().catch(() => {});
+} else {
+previewLoading = true;
+$refs.preview.addEventListener('canplay', () => { previewLoading = false }, { once: true });
+$refs.preview.play().catch(() => {});
+}
+"
+@mouseleave="
+previewLoading = false;
+$refs.preview.pause();
+$refs.preview.currentTime = 0
+"
+>
+Reviews
+Real people. Real memories. Check out what people are saying about their adventures at Honister.
+5/5
+5/5
+Visited recently? Why not leave a review on Google or Trip Advisor .
+Newsletter
+Adventure news, updates, and offers straight from Honister Pass.
+Sign up now
+About us
+Adventures
+Gift Vouchers
+Your Visit
+FAQs
+What to Expect
+Groups
+Events
+Contact
+Offers
+Blog
+Join our team
+Newsletter Sign Up
+Accessibility
+Slate Shop
+Yew Tree Pub
+Privacy Policy
+Terms And Conditions
+Manage cookies
+© 2019–2026 Honister Slate Mine. All rights reserved.  Company Registration Number: 0490270. Registered Address: Honister Slate Mine, Honister Pass, Borrowdale, Keswick, Cumbria CA12 5XN. Website by Honcho
+Twitter Page
+Facebook Page
+Youtube Page
+Instagram Page
+Return to homepage

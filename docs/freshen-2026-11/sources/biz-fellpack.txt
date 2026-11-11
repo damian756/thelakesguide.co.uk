@@ -1,0 +1,164 @@
+https://www.fellpack.co.uk/
+
+Hotels in the Lake District | Fellpack Hotels
+Book
+Menu
+Book Now
+STAY
+Our Hotels
+Fellpack Skiddaw
+View hotel
+→
+Fellpack Keswick
+View hotel
+→
+Find Your Break
+Hiking Breaks
+Trail Running Breaks
+Plan Your Stay
+Eat & Drink
+Go Adventure
+Contact
+Eat & Drink
+Discover our restaurants
+Three distinctive places to eat in Keswick, from our
+seasonal bistro to our exciting pizzeria and famous
+burger bar.
+The Round
+Keswick’s famous burgers
+Discover The Round
+→
+Eight Pizza
+Pizzas too good to share
+Discover Eight Pizza
+→
+The Fellpack Restaurant
+A place to celebrate
+Discover The Fellpack Restaurant
+→
+Offers & Packages
+Go Adventure
+EXPLORE WALKING
+TRAIL RUNNING
+CYCLING
+MOUNTAIN KIT LIST
+LOCAL AREA POST-WALK PUBS
+FAVOURITE VIEWS
+FAVOURITE PLACES
+OUR RACE CALENDAR
+About Fellpack
+Contact
+What would you like to book?
+Book a room
+→
+Book a table
+→
+Back
+Book a stay at Keswick
+→
+Book a stay at Skiddaw
+→
+Back
+Fellpack Restaurant at Skiddaw
+→
+45) close()"
+@click="handleNavClick($event)"
+>
+Menu
+×
+STAY Our Hotels Fellpack Skiddaw
+Fellpack Keswick
+Find Your Break Hiking Breaks
+Trail Running Breaks
+Plan Your Stay Eat & Drink
+Go Adventure
+Contact
+Eat & Drink The Round
+Eight
+The Fellpack Restaurant
+Offers & Packages
+Go Adventure Explore WALKING
+TRAIL RUNNING
+CYCLING
+MOUNTAIN KIT LIST
+Local Area
+What's On
+Blog
+About Fellpack
+Contact
+Scroll
+Scroll
+Scroll
+Scroll
+Where the trail ends, your story begins
+Welcome To Fellpack
+At Fellpack, we believe your experiences should be celebrated. Our boutique hotels in the Lake District are places to unwind, inspire exploration and toast to your days on the fells.
+Situated on the flanks of Skiddaw and in the heart of vibrant Keswick, expect beautiful rooms and suites, dazzling views and award-winning dining that’s worth savouring.
+The perfect base for excursions of all kinds, find your Fellpack and begin.
+OUR HOTELS
+Escape to the fells
+Skiddaw
+Escape to the fells
+Fellpack Skiddaw
+Sheltered by Skiddaw’s mighty slopes, just a short journey from Keswick, discover the gateway to the fells. A place to hunker down after a day exploring, you’ll find cosy, characterful rooms, sweeping vistas and warm Lakeland hospitality. Make yourself at home.
+Discover Fellpack Skiddaw
+Discover Fellpack Skiddaw
+Keswick's perfect hideaway
+Keswick
+Keswick's perfect hideaway
+Fellpack Keswick
+Perfectly positioned between Keswick’s vibrant charm and the wild spirit of the Northern Lakes, our boutique townhouse blends bold character with relaxed luxury. Unwind from the trails, recharge, or simply lose yourself in the quiet comfort of our library.
+Discover Fellpack Keswick
+Discover Fellpack Keswick
+A PLACE TO CELEBRATE
+A PLACE TO CELEBRATE
+Fellpack Restaurant
+Made for celebrations, our signature, award-winning restaurant near Keswick blends a relaxed style with incredible food and unparalled views over the fells.
+Discover Fellpack Restaurant
+Discover Fellpack Restaurant
+PIZZAS TOO GOOD TO SHARE
+PIZZAS TOO GOOD TO SHARE
+Eight Pizza
+Puffy crusts, flavours that excite. Pizza perfection in the heart of Keswick. Just eight pizzas on the menu at one time - which one will you choose?
+Discover Eight Pizza
+Discover Eight Pizza
+KESWICK'S FAMOUS BURGERS
+KESWICK'S FAMOUS BURGERS
+The Round
+Crowd-pleasing burgers, alongside seasonal specials, in the heart of Keswick's Market Square. The ultimate post-adventure pit stop.
+Discover The Round
+Discover The Round
+EXPLORE
+Escape to our Lake District hotels and discover a stunning mix of history, incredible views and wild terrain. From dramatic mountains to crystal clear lakes, this natural playground is built for adventure.
+Go Adventure
+About Us
+Our purpose is simple. We celebrate Lake District adventures. It all started in June 2017 with a small restaurant on Lake Road in Keswick. As we’ve grown, opened new doors and welcomed new faces to the team, that same passion continues to unite us all.
+Discover More
+Frequently Asked Questions
+Where are your hotels located?
+Fellpack Skiddaw sits on the lower slopes of Skiddaw in a hamlet called Underskiddaw, close to Keswick. Fellpack Keswick is located on The Heads, in Keswick town. Both offer excellent bases for Lakeland adventures.
+How many bedrooms are there at Fellpack Hotels?
+You’ll find 25 bedrooms and suites at Fellpack Skiddaw and 11 bedrooms and suites at Fellpack Keswick.
+Do your hotels have restaurants?
+Fellpack Skiddaw is home to the award-winning Fellpack Restaurant. The Round and Eight Pizza are based in Keswick, a stone’s throw from Fellpack Keswick.
+Do I need to book at the restaurants?
+We advise booking at Fellpack Restaurant. The Round and Eight Pizza are walk-in only, but our tables turn over quickly, so we’ll always be able to fit you in.
+What time do you serve food?
+At Fellpack Restaurant, food is served from 12 pm - 9 pm all week.
+At The Round, food is served from 3 pm - 9 pm Monday to Friday, 12 pm - 9 pm Saturday and 12 pm - 6 pm Sunday.
+At Eight Pizza, food is served from 12 pm - 9 pm all week.
+Is there a spa?
+We don’t have a spa at our hotels, but we’ve partnered with The Spa at Underscar to offer access to its luxury spa and leisure facilities, the perfect way to wind down after a day exploring.
+Are your Lake District hotels dog-friendly?
+We don’t allow dogs at either of our Lake District hotels.
+Do you have any special offers?
+Please visit our offers page for more information.
+Newsletter Sign up
+Join our mailing list
+Name
+Email Address
+Submit
+Sign up to our newsletter to receive updates and correspondence from us. We never sell on data or contact details.
+©2026 Fellpack | All Rights Reserved.
+Website Powered by
+Clockwork Marketing
