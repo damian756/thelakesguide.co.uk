@@ -70,7 +70,7 @@ const CATEGORY_GUIDES: Record<string, { href: string; label: string }[]> = {
   ],
   attractions: [
     { href: "/things-to-do", label: "Things to Do in the Lake District" },
-    { href: "/guides/lake-district-with-kids", label: "Lake District with Kids" },
+    { href: "/lake-district-with-kids", label: "Lake District with Kids" },
   ],
 };
 
