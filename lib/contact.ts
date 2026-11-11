@@ -75,7 +75,27 @@ export function buildEnquiryEmail(input: {
 }
 
 // Logs the error's name and message only: never the enquirer's details.
-export function logSendError(error: unknown) {
+export function logSendError(error: unknown, label = "Contact email") {
   const e = (error ?? {}) as { name?: unknown; message?: unknown };
-  console.error("Contact email failed:", String(e.name ?? "Error"), String(e.message ?? ""));
+  console.error(`${label} failed:`, String(e.name ?? "Error"), String(e.message ?? ""));
+}
+
+// For mail that must not fail the request it belongs to (the record is already
+// saved): sends, checks Resend's answer, logs a failure (name and message only)
+// and returns whether Resend accepted it. Never throws.
+export async function sendChecked(
+  send: () => Promise<{ error: unknown }>,
+  label: string,
+): Promise<boolean> {
+  try {
+    const { error } = await send();
+    if (error) {
+      logSendError(error, label);
+      return false;
+    }
+    return true;
+  } catch (err) {
+    logSendError(err, label);
+    return false;
+  }
 }

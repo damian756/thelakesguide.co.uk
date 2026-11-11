@@ -2,6 +2,7 @@ import { getResend } from "@/lib/resend";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { generateReviewVerificationEmail } from "@/lib/email-templates/review-verify";
+import { FROM_EMAIL, sendChecked } from "@/lib/contact";
 import { randomUUID } from "crypto";
 import { put } from "@vercel/blob";
 
@@ -154,12 +155,13 @@ export async function POST(req: NextRequest) {
 
     const verifyUrl = `${BASE_URL}/api/reviews/verify?token=${token}`;
 
-    await getResend().emails.send({
-      from: "The Lakes Guide <hello@thelakesguide.co.uk>",
+    // The review is saved above; a failed email is logged, not hidden.
+    await sendChecked(() => getResend().emails.send({
+      from: FROM_EMAIL,
       to: email,
       subject: `Confirm your review of ${business.name}`,
       html: generateReviewVerificationEmail(business.name, verifyUrl),
-    });
+    }), "Review verification email");
 
     return NextResponse.json({ success: true, reviewId: review.id });
   } catch (err) {

@@ -12,6 +12,7 @@ import {
   isValidEmail,
   logSendError,
   normaliseEnquiryType,
+  sendChecked,
 } from "../lib/contact.ts";
 
 const root = new URL("..", import.meta.url);
@@ -101,10 +102,6 @@ test("no address of ours is printed on any page, public file or mail text", () =
   // and the public demo account's login name. Anything else fails.
   const allowed = {
     "lib/contact.ts": ["damian@churchtownmedia.co.uk", "noreply@southportguide.co.uk"],
-    "app/api/hub/claim/submit/route.ts": ["noreply@thelakesguide.co.uk", "damian@churchtownmedia.co.uk"],
-    "lib/email-templates/claim-approval.ts": ["noreply@thelakesguide.co.uk"],
-    "app/api/reviews/route.ts": ["hello@thelakesguide.co.uk"],
-    "app/api/admin/reviews/[id]/route.ts": ["hello@thelakesguide.co.uk", "hello@thelakesguide.co.uk"],
     "app/api/auth/forgot-password/route.ts": ["noreply@thelakesguide.co.uk"],
     "app/dashboard/DashboardLoginClient.tsx": ["demo@thelakesguide.co.uk"],
     "app/dashboard/(hub)/HubShell.tsx": ["demo@thelakesguide.co.uk"],
@@ -125,4 +122,55 @@ test("no address of ours is printed on any page, public file or mail text", () =
 test("no route or helper can fall back to Resend's test sender (resend.dev)", () => {
   const files = [...walk("app/"), ...walk("lib/"), ...walk("components/")].filter((f) => /\.(ts|tsx|js|mjs)$/.test(f));
   for (const f of files) assert.ok(!read(f).replace(/^\s*\/\/.*$/gm, "").includes("resend.dev"), `${f} mentions resend.dev`);
+});
+
+test("hub mail (claims, reviews) sends from the stand-in sender and checks every send", () => {
+  const files = [
+    "app/api/hub/claim/submit/route.ts",
+    "app/api/admin/claims/[id]/approve/route.ts",
+    "app/api/admin/claims/[id]/reject/route.ts",
+    "app/api/reviews/route.ts",
+    "app/api/admin/reviews/[id]/route.ts",
+  ];
+  for (const f of files) {
+    const src = read(f);
+    const sends = (src.match(/emails\.send\(/g) ?? []).length;
+    const checked = (src.match(/sendChecked\(\(\) => getResend\(\)\.emails\.send\(/g) ?? []).length;
+    assert.ok(sends > 0, f);
+    assert.equal(checked, sends, `${f}: every send must go through sendChecked`);
+    assert.doesNotMatch(src, /RESEND_FROM_EMAIL|from:\s*"/, `${f}: sender must be FROM_EMAIL from lib/contact.ts`);
+  }
+  assert.match(read("lib/email-templates/claim-approval.ts"), /import \{ FROM_EMAIL, escapeHtml \} from "@\/lib\/contact"/);
+});
+
+test("sendChecked reports a refused or thrown send without throwing", async () => {
+  const calls = [];
+  const orig = console.error;
+  console.error = (...args) => calls.push(args.join(" "));
+  try {
+    assert.equal(await sendChecked(async () => ({ error: null }), "X"), true);
+    assert.equal(await sendChecked(async () => ({ error: { name: "validation_error", message: "nope" } }), "Claim email"), false);
+    assert.equal(await sendChecked(() => { throw new Error("RESEND_API_KEY is not set"); }, "Review email"), false);
+  } finally {
+    console.error = orig;
+  }
+  assert.equal(calls.length, 2);
+  assert.match(calls[0], /Claim email failed: validation_error nope/);
+  assert.match(calls[1], /Review email failed: Error RESEND_API_KEY is not set/);
+});
+
+test("hub mail templates escape the names and text people type", () => {
+  const raw = {
+    "lib/email-templates/claim-approval.ts": ["${params.name}", "${params.businessName}"],
+    "lib/email-templates/review-verify.ts": ["${businessName}", "${reviewerName}", "${reviewerDisplay}", '${ownerName || "there"}', "${reviewBody.slice(0, 300)}"],
+    "app/api/hub/claim/submit/route.ts": ["${parsed.data.name}", "${parsed.data.email}", "${message}", "${message.replace"],
+  };
+  for (const [f, list] of Object.entries(raw)) {
+    const src = read(f);
+    for (const r of list) assert.ok(!src.includes(r), `${f} interpolates ${r} without escaping`);
+  }
+  // business.name only appears raw in subject lines, which are not HTML.
+  for (const line of read("app/api/hub/claim/submit/route.ts").split("\n").filter((l) => l.includes("${business.name}"))) {
+    assert.match(line, /^\s*subject:/, line);
+  }
 });

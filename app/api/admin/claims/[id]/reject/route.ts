@@ -4,6 +4,7 @@ import { getResend } from "@/lib/resend";
 import { prisma } from "@/lib/prisma";
 import { getClaimRejectionHtml, FROM_EMAIL } from "@/lib/email-templates/claim-approval";
 import { authOptions } from "@/lib/auth";
+import { sendChecked } from "@/lib/contact";
 
 export async function POST(
   _req: Request,
@@ -41,7 +42,7 @@ export async function POST(
     },
   });
 
-  await getResend().emails.send({
+  await sendChecked(() => getResend().emails.send({
     from: FROM_EMAIL,
     to: claim.email,
     subject: "Update on your listing claim | The Lakes Guide",
@@ -49,7 +50,7 @@ export async function POST(
       name: claim.name,
       businessName: claim.business.name,
     }),
-  });
+  }), "Claim rejection email");
 
   return NextResponse.json({ ok: true });
 }

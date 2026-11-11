@@ -4,9 +4,7 @@ import { z } from "zod";
 import bcrypt from "bcryptjs";
 import crypto from "crypto";
 import { prisma } from "@/lib/prisma";
-
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "The Lakes Guide <noreply@thelakesguide.co.uk>";
-const ADMIN_EMAIL = "damian@churchtownmedia.co.uk";
+import { DELIVERY_EMAIL, FROM_EMAIL, escapeHtml, sendChecked } from "@/lib/contact";
 const BASE_URL = process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
 
 const Schema = z.object({
@@ -104,8 +102,18 @@ export async function POST(req: Request) {
     },
   });
 
+  const esc = {
+    business: escapeHtml(business.name),
+    address: escapeHtml(`${business.address}, ${business.postcode}`),
+    category: escapeHtml(business.category.name),
+    name: escapeHtml(parsed.data.name),
+    email: escapeHtml(parsed.data.email),
+    message: escapeHtml(message),
+  };
+
+  // The claim is saved above, so a failed email is logged and never fails the claim.
   // Confirmation to claimant
-  await getResend().emails.send({
+  await sendChecked(() => getResend().emails.send({
     from: FROM_EMAIL,
     to: parsed.data.email,
     subject: `We've received your claim request | ${business.name}`,
@@ -117,10 +125,10 @@ export async function POST(req: Request) {
           </h1>
           <p style="color: #666; font-size: 13px; margin: 4px 0 0;">Claim request received</p>
         </div>
-        <p style="color: #1B2E4B; font-size: 16px;">Hi ${parsed.data.name},</p>
+        <p style="color: #1B2E4B; font-size: 16px;">Hi ${esc.name},</p>
         <p style="color: #444; line-height: 1.7;">
-          Thanks for submitting a claim request for <strong>${business.name}</strong>.
-          We'll review it and get back to you by email — usually within 1–2 business days.
+          Thanks for submitting a claim request for <strong>${esc.business}</strong>.
+          We'll review it and reply by email, usually within 1 to 2 business days.
         </p>
         <p style="color: #444; line-height: 1.7;">
           Once approved, you'll receive a link to set your password and access your Business Hub dashboard.
@@ -130,12 +138,12 @@ export async function POST(req: Request) {
         </p>
       </div>
     `,
-  });
+  }), "Claim confirmation email");
 
   // Notification to admin
-  await getResend().emails.send({
+  await sendChecked(() => getResend().emails.send({
     from: FROM_EMAIL,
-    to: ADMIN_EMAIL,
+    to: DELIVERY_EMAIL,
     subject: `[The Lakes Guide] New claim request | ${business.name}`,
     html: `
       <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background: #FAF8F5; padding: 32px; border-radius: 8px;">
@@ -149,30 +157,30 @@ export async function POST(req: Request) {
         <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
           <tr>
             <td style="padding: 8px 0; color: #888; font-size: 13px; width: 120px; vertical-align: top;">Business</td>
-            <td style="padding: 8px 0; color: #1B2E4B; font-weight: bold;">${business.name}</td>
+            <td style="padding: 8px 0; color: #1B2E4B; font-weight: bold;">${esc.business}</td>
           </tr>
           <tr>
             <td style="padding: 8px 0; color: #888; font-size: 13px; vertical-align: top;">Address</td>
-            <td style="padding: 8px 0; color: #1B2E4B;">${business.address}, ${business.postcode}</td>
+            <td style="padding: 8px 0; color: #1B2E4B;">${esc.address}</td>
           </tr>
           <tr>
             <td style="padding: 8px 0; color: #888; font-size: 13px; vertical-align: top;">Category</td>
-            <td style="padding: 8px 0; color: #1B2E4B;">${business.category.name}</td>
+            <td style="padding: 8px 0; color: #1B2E4B;">${esc.category}</td>
           </tr>
           <tr>
             <td style="padding: 8px 0; color: #888; font-size: 13px; vertical-align: top;">Claimant</td>
-            <td style="padding: 8px 0; color: #1B2E4B;">${parsed.data.name}</td>
+            <td style="padding: 8px 0; color: #1B2E4B;">${esc.name}</td>
           </tr>
           <tr>
             <td style="padding: 8px 0; color: #888; font-size: 13px; vertical-align: top;">Email</td>
-            <td style="padding: 8px 0;"><a href="mailto:${parsed.data.email}" style="color: #C9A84C;">${parsed.data.email}</a></td>
+            <td style="padding: 8px 0;"><a href="mailto:${esc.email}" style="color: #C9A84C;">${esc.email}</a></td>
           </tr>
         </table>
 
         ${message ? `
           <div style="background: white; border: 1px solid #e5e7eb; border-radius: 6px; padding: 20px; margin-bottom: 24px;">
             <p style="color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 12px;">Message</p>
-            <p style="color: #1B2E4B; line-height: 1.7; margin: 0; white-space: pre-wrap;">${message.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p>
+            <p style="color: #1B2E4B; line-height: 1.7; margin: 0; white-space: pre-wrap;">${esc.message}</p>
           </div>
         ` : ""}
 
@@ -187,7 +195,7 @@ export async function POST(req: Request) {
         </p>
       </div>
     `,
-  });
+  }), "Claim notification email");
 
   return NextResponse.json({ ok: true });
 }

@@ -3,6 +3,7 @@ import { getServerSession } from "next-auth";
 import { prisma } from "@/lib/prisma";
 import { authOptions } from "@/lib/auth";
 import { getResend } from "@/lib/resend";
+import { FROM_EMAIL, sendChecked } from "@/lib/contact";
 import { del } from "@vercel/blob";
 import {
   generateReviewApprovedEmail,
@@ -73,33 +74,31 @@ export async function PATCH(
       } catch { /* non-fatal */ }
     }
 
-    // Notify reviewer
-    try {
-      const listingUrl = `${BASE_URL}/${review.business.category.slug}/${review.business.slug}`;
-      await getResend().emails.send({
-        from: "The Lakes Guide <hello@thelakesguide.co.uk>",
-        to: review.email,
-        subject: `Your review of ${review.business.name} is live`,
-        html: generateReviewApprovedEmail(review.firstName, review.business.name, listingUrl),
-      });
-    } catch { /* non-fatal */ }
+    // Notify reviewer (non-fatal: a failure is logged)
+    const listingUrl = `${BASE_URL}/${review.business.category.slug}/${review.business.slug}`;
+    await sendChecked(() => getResend().emails.send({
+      from: FROM_EMAIL,
+      to: review.email,
+      subject: `Your review of ${review.business.name} is live`,
+      html: generateReviewApprovedEmail(review.firstName, review.business.name, listingUrl),
+    }), "Review approved email");
 
     // Notify business owner if listing is claimed
-    if (review.business.user?.email) {
-      try {
-        await getResend().emails.send({
-          from: "The Lakes Guide <hello@thelakesguide.co.uk>",
-          to: review.business.user.email,
-          subject: `New review for ${review.business.name}`,
-          html: generateNewSiteReviewEmail(
-            review.business.user.name,
-            review.business.name,
-            displayName(review),
-            review.starRating,
-            review.body
-          ),
-        });
-      } catch { /* non-fatal */ }
+    const owner = review.business.user;
+    if (owner?.email) {
+      const ownerEmail = owner.email;
+      await sendChecked(() => getResend().emails.send({
+        from: FROM_EMAIL,
+        to: ownerEmail,
+        subject: `New review for ${review.business.name}`,
+        html: generateNewSiteReviewEmail(
+          owner.name,
+          review.business.name,
+          displayName(review),
+          review.starRating,
+          review.body
+        ),
+      }), "New review email");
     }
 
     return NextResponse.json({ success: true, status: "approved" });

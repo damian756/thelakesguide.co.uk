@@ -1,4 +1,5 @@
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "The Lakes Guide <noreply@thelakesguide.co.uk>";
+import { FROM_EMAIL, escapeHtml } from "@/lib/contact";
+
 const BASE_URL = process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk";
 
 export function getClaimApprovalHtml(params: {
@@ -13,9 +14,9 @@ export function getClaimApprovalHtml(params: {
           The Lakes <span style="color: #C9A84C;">Guide</span>.co.uk
         </h1>
       </div>
-      <p style="color: #1B2E4B; font-size: 16px;">Hi ${params.name},</p>
+      <p style="color: #1B2E4B; font-size: 16px;">Hi ${escapeHtml(params.name)},</p>
       <p style="color: #555; line-height: 1.7;">
-        Your claim for <strong>${params.businessName}</strong> has been approved. 
+        Your claim for <strong>${escapeHtml(params.businessName)}</strong> has been approved. 
         Set your password and access your Business Hub dashboard:
       </p>
       <p style="margin: 24px 0;">
@@ -45,12 +46,12 @@ export function getClaimRejectionHtml(params: {
           The Lakes <span style="color: #C9A84C;">Guide</span>.co.uk
         </h1>
       </div>
-      <p style="color: #1B2E4B; font-size: 16px;">Hi ${params.name},</p>
+      <p style="color: #1B2E4B; font-size: 16px;">Hi ${escapeHtml(params.name)},</p>
       <p style="color: #555; line-height: 1.7;">
-        We weren&apos;t able to verify your claim for <strong>${params.businessName}</strong> at this time.
+        We weren&apos;t able to verify your claim for <strong>${escapeHtml(params.businessName)}</strong> at this time.
       </p>
       <p style="color: #555; line-height: 1.7;">
-        If you think this is a mistake, reply to this email and we&apos;ll look into it.
+        If you think this is a mistake, use the contact form at ${BASE_URL}/contact and we&apos;ll look into it.
       </p>
       <p style="color: #1B2E4B; margin-top: 24px;">The Lakes Guide Team</p>
       <p style="color: #999; font-size: 12px; margin-top: 24px;">

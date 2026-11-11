@@ -4,6 +4,7 @@ import { getResend } from "@/lib/resend";
 import { prisma } from "@/lib/prisma";
 import { getClaimApprovalHtml, FROM_EMAIL, BASE_URL } from "@/lib/email-templates/claim-approval";
 import { authOptions } from "@/lib/auth";
+import { sendChecked } from "@/lib/contact";
 
 export async function POST(
   _req: Request,
@@ -62,7 +63,7 @@ export async function POST(
 
   const activateUrl = `${BASE_URL}/claim-listing/activate?token=${token}`;
 
-  await getResend().emails.send({
+  await sendChecked(() => getResend().emails.send({
     from: FROM_EMAIL,
     to: claim.user.email,
     subject: `Your claim for ${claim.business.name} has been approved | The Lakes Guide`,
@@ -71,7 +72,7 @@ export async function POST(
       businessName: claim.business.name,
       activateUrl,
     }),
-  });
+  }), "Claim approval email");
 
   const webhookUrl = process.env.COMMAND_CENTRE_WEBHOOK_URL;
   const webhookSecret = process.env.COMMAND_CENTRE_WEBHOOK_SECRET;
