@@ -64,9 +64,6 @@ export const STATIC_PATHS: readonly string[] = [
 
 const STATIC_SET = new Set(STATIC_PATHS);
 
-/** A business slug as the importers make them. */
-const LISTING_SLUG = /^[a-z0-9_-]{1,150}$/;
-
 export type KnownRoutes = {
   /** Slugs from BLOG_POSTS (lib/lakes-data.ts). */
   blogSlugs: ReadonlySet<string>;
@@ -82,9 +79,13 @@ export type KnownRoutes = {
 
 /**
  * True only for a page the site has: a fixed page, a blog post or blog
- * category, a category, a collection, a guide, a car park, or
- * /<category>/<listing-slug> under a real category. Anything else is not
- * counted, so made-up paths cannot fill the table.
+ * category, a category, a collection or a guide. Anything else is not counted,
+ * so made-up paths cannot fill the table.
+ *
+ * Listing pages (/<category>/<slug> and /parking/<slug>) are not counted while
+ * the directory has no listings (Nov 2026). When listings arrive, restore them
+ * with a lookup of real slugs (e.g. a cached set of Business.slug by category),
+ * not a pattern, so only listings that exist are counted.
  */
 export function isKnownPath(path: string, known: KnownRoutes): boolean {
   if (STATIC_SET.has(path)) return true;
@@ -98,8 +99,7 @@ export function isKnownPath(path: string, known: KnownRoutes): boolean {
   if (first === "blog") return known.blogSlugs.has(second);
   if (first === "collections") return known.collectionSlugs.has(second);
   if (first === "guides") return known.guideSlugs.has(second);
-  if (first === "parking") return LISTING_SLUG.test(second);
-  return known.categorySlugs.has(first) && LISTING_SLUG.test(second);
+  return false;
 }
 
 /**

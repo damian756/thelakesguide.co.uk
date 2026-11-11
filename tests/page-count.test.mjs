@@ -58,8 +58,6 @@ test("known pages are counted", () => {
   assert.equal(isKnownPath(`/blog/${BLOG_POSTS[0].slug}`, KNOWN), true, "a blog post");
   assert.equal(isKnownPath(`/blog/category/${BLOG_CATEGORIES[0].slug}`, KNOWN), true, "a blog category");
   assert.equal(isKnownPath("/restaurants", KNOWN), true, "a category");
-  assert.equal(isKnownPath("/restaurants/some-place-keswick", KNOWN), true, "a listing under a real category");
-  assert.equal(isKnownPath("/parking/some-car-park", KNOWN), true, "a car park");
   assert.equal(isKnownPath(`/collections/${COLLECTIONS[0].slug}`, KNOWN), true, "a collection");
   assert.equal(isKnownPath(`/guides/${GUIDE_SLUGS[0]}`, KNOWN), true, "a guide");
 });
@@ -71,6 +69,8 @@ test("made-up paths are not counted", () => {
     "/blog/category/not-a-category",
     "/collections/not-a-collection",
     "/not-a-category/some-place",
+    "/restaurants/some-place-keswick",
+    "/parking/some-car-park",
     "/restaurants/Some-Place",
     "/restaurants/a/b",
     "/guides/not-a-guide",

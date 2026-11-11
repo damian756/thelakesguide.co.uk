@@ -6,6 +6,7 @@ import { ChevronRight, Star, MapPin, ArrowRight } from "lucide-react";
 import { HERO_IMAGE_URL } from "@/lib/site-constants";
 import { getCollection, COLLECTIONS, MIN_LISTINGS } from "@/lib/collections-config";
 import { prisma } from "@/lib/prisma";
+import { collectionWhere } from "@/lib/listing-presence";
 
 // Revalidate every hour so new tags appear without a code push
 export const revalidate = 3600;
@@ -82,10 +83,7 @@ export default async function CollectionPage({ params }: Props) {
 
   try {
     const rawResults = await prisma.business.findMany({
-      where: {
-        category: { slug: { in: collection.categorySlugs } },
-        tags: { hasEvery: collection.tags },
-      },
+      where: collectionWhere(collection),
       select: {
         id: true,
         slug: true,

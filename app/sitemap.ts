@@ -2,7 +2,12 @@ import { MetadataRoute } from "next";
 import { CATEGORIES } from "@/lib/config";
 import { BLOG_POSTS } from "@/lib/lakes-data";
 import { GUIDES } from "@/lib/guides-config";
-import { COLLECTIONS } from "@/lib/collections-config";
+import { COLLECTIONS, MIN_LISTINGS } from "@/lib/collections-config";
+import { countCategoryBusinesses, countCollectionBusinesses } from "@/lib/listing-presence";
+import { LISTING_ONLY_CATEGORY_SLUGS, includeCategoryPage, includeCollectionPage } from "@/lib/sitemap-rules";
+
+// Rebuilt hourly, so a page that gains listings rejoins the sitemap by itself.
+export const revalidate = 3600;
 
 const BASE = "https://www.thelakesguide.co.uk";
 
@@ -66,12 +71,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // ── Category listing pages ───────────────────────────────────
-  const categoryPages: MetadataRoute.Sitemap = CATEGORIES.map((c) => ({
-    url: `${BASE}/${c.slug}`,
-    lastModified: D.feb15,
-    changeFrequency: "weekly" as const,
-    priority: 0.85,
-  }));
+  // Listing-only categories (walks, villages) join once they have listings.
+  const categoryCounts = new Map<string, number>();
+  for (const slug of LISTING_ONLY_CATEGORY_SLUGS) categoryCounts.set(slug, await countCategoryBusinesses(slug));
+  const categoryPages: MetadataRoute.Sitemap = CATEGORIES
+    .filter((c) => includeCategoryPage(c.slug, categoryCounts.get(c.slug) ?? 0))
+    .map((c) => ({
+      url: `${BASE}/${c.slug}`,
+      lastModified: D.feb15,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+    }));
 
   // ── Blog posts ───────────────────────────────────────────────
   const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
@@ -107,12 +117,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const collectionIndexPage: MetadataRoute.Sitemap = [
     { url: `${BASE}/collections`, lastModified: D.feb15, changeFrequency: "weekly" as const, priority: 0.8 },
   ];
-  const collectionPages: MetadataRoute.Sitemap = COLLECTIONS.map((c) => ({
-    url: `${BASE}/collections/${c.slug}`,
-    lastModified: D.feb15,
-    changeFrequency: "monthly" as const,
-    priority: c.priority,
-  }));
+  // A collection joins once it has enough listings to be indexed (the page is noindex below that).
+  const collectionCounts = await Promise.all(COLLECTIONS.map((c) => countCollectionBusinesses(c)));
+  const collectionPages: MetadataRoute.Sitemap = COLLECTIONS
+    .filter((_, i) => includeCollectionPage(collectionCounts[i], MIN_LISTINGS))
+    .map((c) => ({
+      url: `${BASE}/collections/${c.slug}`,
+      lastModified: D.feb15,
+      changeFrequency: "monthly" as const,
+      priority: c.priority,
+    }));
 
   return [...staticPages, ...guidePages, ...categoryPages, ...blogPages, ...businessPages, ...collectionIndexPage, ...collectionPages];
 }
