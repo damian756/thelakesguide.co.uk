@@ -422,4 +422,82 @@ Screenshots `illus-*` (home, Keswick, blog index, the winter post, the Ambleside
 
 ## 14. SEO pass
 
-To follow as its own push once this is live, by an agent that did not write the pages (brief: `lakes-seo-pass-brief.md` in the coordinating notes). It adds its findings, the sitemap count, the URLs for Damian to submit and "Traffic: what to do next" here.
+Done on 11 Nov 2026 (night) by an agent that did not write the pages, to the brief `lakes-seo-pass-brief.md` (traffic first, see the preamble). Checked by script over a served build on port 3111 (built with the site's settings): the sitemap, every URL in it, and extra addresses (query strings, redirects, 404s, noindex pages, the hub). On top of `6b71ea7`.
+
+`6b71ea7`: a claim with an existing account's email no longer overwrites that account's name and password (the fault found on Southport Guide tonight); test added.
+
+### Commits
+
+| Commit | What changed |
+|---|---|
+| `c27ffdb` | Sitemap: the nine `/guides/<slug>` addresses that only 308 to the town and topic pages are out; lastmod is the day each page last changed (11 Nov 2026 for all 49, from git), not 1 Jan, 1 Feb or 15 Feb. The 15 older posts carry `updated: "11 Nov 2026"` (every one had its text, title or excerpt, and header image changed tonight): used for lastmod, the Article `dateModified` and the byline, "9 Mar 2026, updated 11 Nov 2026" |
+| `5320440` | Canonicals and share tags: the root layout set `canonical` and `og:url` to the home page, so 404s and the Business Hub had canonical = home, and /advertise, /advertise?space=, /pricing, /blog, /events, /privacy and /terms had og:url = home. Now each public page's og:url is its own canonical (`lib/seo.ts`), with the site name, en_GB and the default share image (32 pages had no og:image). X cards use each page's own title, description and image, not the home page's |
+| `1b975ae` | Schema (below) |
+| `4c07d54` | Titles and descriptions (below) |
+| `d68d446` | Links to https://www.thelakes.network/ and https://www.churchtownmedia.co.uk/ directly (the bare hosts answer 307) |
+| `b84476f` | Hub sign-in notice, text only: "The Business Hub opens when listings do. If you have asked to be listed, we will tell you when you can sign in." (was "Final testing in progress… launches in a few days… only the demo account is active", with an em dash) |
+| `eef6de5` | The advertise description takes its "from" price from `lib/ad-options.ts` (`tests/ads.test.mjs` forbids a written £ on that page) |
+| `9e5d83f` | Attractions page links straight to /lake-district-with-kids, not through a redirect |
+| `6396d6c` | Blog index: the served HTML of /blog was a loading spinner (`useSearchParams` in the post list made the static page render its Suspense fallback), so crawlers saw no link to any post, and eight posts had no link from any served page. The category filter now reads `?category=` in the browser; the HTML lists all 17 posts. Filter, address and Back checked in a browser, no console errors |
+| `a7bacb5` | Parking: /parking (in the sitemap) had no link from any page: the guides index pointed at a "coming soon" noindex placeholder and the Guides menu left parking out. The guide entry now points at /parking, so both link to it, and `/guides/parking-lake-district` redirects there |
+| `83a52f5`, `199a3d5`, `68369d6` | Screenshots `seo-*`: a post's byline, the hub sign-in notice, /blog and /guides, at 1440, 1024, 768 and 390 |
+| privacy commit (last) | Section 3 legal basis for business listings: "Legitimate interests (publishing the free listing you asked us for and keeping it accurate)", so privacy agrees with terms 5.1 (a free listing is not a contract). No other privacy wording changed |
+
+None of these has to go before the privacy commit; the privacy commit is last, as asked.
+
+### Sitemap and robots
+
+- **https://www.thelakesguide.co.uk/sitemap.xml**: 49 URLs once this push is live (58 live now: the nine redirects go). On the served build all 49 answer 200, none is noindex, each has one canonical pointing at itself on the www host, og:url equals the canonical, and lastmod is 2026-11-11 throughout (fixed dates, not the time of the request).
+- **robots.txt** (unchanged): `Sitemap: https://www.thelakesguide.co.uk/sitemap.xml`; allows `/` and `/_next/image`, so CSS and JS are open; disallows `/api/`, `/dashboard/`, `/admin/`.
+- Unchanged by decision: the 15 empty collections (noindex), `/walks` and `/villages` stay out until they have listings; the seven category pages with guide text stay in (restaurants, cafes, pubs, activities, attractions, accommodation, shopping). Listing (`/<category>/<slug>`) and parking (`/parking/<slug>`) addresses answer 404, and no page or sitemap entry links to one.
+
+### Canonicals
+
+- Query strings canonicalise to the clean address: `/advertise?space=guide-keswick` to /advertise, `/contact?type=advertising` and `?type=listing` to /contact, `/blog?category=…` to /blog. Their titles repeat the clean page's, which the canonical covers.
+- No canonical points at a redirect, 404 or noindex page. 404s and hub pages now have none (they had home).
+- No hreflang on this site (English only, no locale routing).
+
+### Schema
+
+- **Organization and WebSite** (`lib/schema.ts`): described once on the home page; /about is an AboutPage about the Organization; everything else refers by `@id`. The Organization's `sameAs` listed the Wildlife, Hike and network sites, Churchtown Media's LinkedIn and its site: those are sister sites and the publisher, not profiles of this organisation. Now Churchtown Media Ltd (with the `@id` churchtownmedia.co.uk uses, and its Companies House record, number shown on /about) is the `parentOrganization`, and the footer keeps the plain links. The Companies House link moved off Damian's Person (a company record is not a profile of a person). The WebSite's ReadAction pointing at /things-to-do went; there is no SearchAction.
+- **Posts**: Article with `datePublished` (the post date) and `dateModified` (11 Nov 2026), author Damian Roche as the byline shows, publisher "The Lakes Guide" (was "TheLakesGuide.co.uk" under the same `@id`).
+- **Guide pages** (dog-friendly, with kids, rainy day, walks, The Open 2026): Article dates were invented (published 2024-06-01 or 2025-01-01, modified 2025-03-01; the site began on 9 Mar 2026). Now 9 Mar 2026 and 11 Nov 2026, and the author is the site, as these pages show no byline.
+- **Town pages**: TouristDestination (was TouristAttraction), without the Unsplash image (not of the town) or a single postcode for a whole town. FAQPage stays: every question is on the page.
+- **Removed**: the Open 2026 Event (past, at Royal Birkdale, Southport); empty ItemLists on /events and the empty collections (an ItemList now appears only when there is something in it); AggregateRating on listing and parking pages (Google's ratings, not reviews written here; no rows exist today). BreadcrumbList removed where no breadcrumb shows (the five towns, three guides, things to do) and added where one does (/collections, /parking, /lake-district-wildlife, the category pages).
+- Every block on every sitemap page parses; no AggregateRating, Review, LocalBusiness or SearchAction on any of them; all `@id` and URL values for this site are on the www host.
+
+### Titles and descriptions
+
+- Script over the served pages: no duplicate title or description among the 49 sitemap URLs; the site name appears once in each title.
+- **/advertise**: title kept, "Advertise With Us | The Lakes Guide"; canonical /advertise; index, follow. Description now true of the page: "Advertising for Lake District businesses on The Lakes Guide: a home page card, guide sponsorships and sponsored articles, from £35 a month plus VAT." The H1 is "Advertise on The Lakes Guide" since stage B (was "Advertise with…"); left, as the words are the same.
+- **Parking titles** (shown once car parks exist) added "| TheLakesGuide.co.uk" before the layout's " | The Lakes Guide": fixed, with the length limit adjusted.
+- /about lost the doubled site name ("About Us: Who Publishes the Guide and How It Works"); /blog was "Blog", now "Lake District Blog: Guides and Practical Tips".
+- Search titles (the H1 is unchanged): the winter post, 69 characters before the site name, now "The Lake District in Winter: What to Expect"; "Eating Out in Keswick: Where to Eat in Town and Nearby"; "Ullswater by Boat: Steamers, Piers and Journey Times". Each keeps its live title's main phrase at the front.
+- Descriptions over 160 characters shortened: six pages (advertise, pricing, dog-friendly, walks, things to do, Ambleside) and five posts (search description only; the cards keep the excerpt). The Open 2026 page now says it is past instead of selling accommodation for Open week; /collections says the lists fill as businesses join.
+- The home title (63 characters before the site name) and /lake-district-with-kids (63) are live titles and were left.
+- No em dash in any title, description, JSON-LD or body text of the 49 sitemap pages (script check); none in any changed customer-facing string.
+
+### Checks
+
+tsc 0 errors; eslint: no problem on any line this pass wrote (the 28 in the 40 changed code files, 13 errors and 15 warnings, all predate it); `next build` passes; `npm run test:contact` 16/16; `node --test tests/*.test.mjs` 44/44.
+
+### For Damian
+
+1. **Search Console**: the verification line in `app/layout.tsx` is still commented out. Verify the site, submit the sitemap, and read which queries already show the site: there is no other evidence of search traffic (below).
+2. **Hub pages** (hub code, left): titles show the site name twice on /dashboard, /dashboard/forgot-password and /claim-listing/activate (all noindex). The hub sign-in page's side photo is Southport's Lord Street ("Southport Books"), and its caption says "get in front of thousands of visitors every week", a traffic claim nothing supports.
+3. **Damian's LinkedIn**: this site's schema and about page use `/in/damian-roche-7ba8293a5/`; churchtownmedia.co.uk's own schema uses `/in/damian-roche/`. Say which is right.
+4. **Empty collections** carry two robots tags (the layout's "index, follow" and the page's "noindex, nofollow"). Search engines apply the stricter, so they are noindex as intended; left because `tests/sitemap-rules.test.mjs` pins the page's rule.
+5. **The parking guide card** on /guides (now a live link) uses the stock scuba-diver photo; it was already shown on the "coming soon" card. Part of the stock photo replacement (section 5, item 1).
+6. **The Open 2026**: /the-open-2026 has no link from any other page and both it and its post are about a past Southport event. Redirecting the page to the post (section 5, item 3) still stands.
+
+## Traffic: what to do next
+
+**Evidence.** There is none to estimate visits from. The Lakes Guide kept no page-view log (nothing called `/api/p`; `PageCount` began tonight); Ahrefs was not reachable from here; a web search on 11 Nov for the site by name and with `site:` returned none of its pages. So the list below is ranked by reasoning, not numbers: the size of each set of pages, how much people search for its subject, and how little each needs.
+
+1. **Hike The Lakes' fell guide batches (193 placeholder fells) and The Lakes Wildlife's species rewrite (about 250 entries).** The largest sets of pages in the network, each one a fell or species people search by name. On this site: as each batch lands, link the matching fells from /lake-district-walks and the Helvellyn, Scafell Pike and Wainwrights posts (which already link to Hike), and species from /lake-district-wildlife.
+2. **Search Console first** (For Damian, item 1): the only way to see what already ranks before changing any title.
+3. **Pages one edit away: internal links.** Eight posts have one link to them, from /blog only: autumn, family days out, dog walking, Keswick market, the rainy day post, The Open post, the week itinerary, where to stay in Windermere. Grasmere vs Ambleside, Ullswater by Boat and the Wainwrights post have three. Link each from its town or topic page: Keswick to the market post and Eating Out; Windermere to Where to Stay; Ambleside and Grasmere to Grasmere vs Ambleside and the pubs post; /dog-friendly-lake-district to the dog walking post; /lake-district-with-kids to family days out; /things-to-do to Ullswater by Boat and the itinerary; /lake-district-walks to the Wainwrights post.
+4. **Pages competing for one search**: /rainy-day-lake-district and the post "Rainy Day in the Lake District" target the same words, as do the dog-friendly and with-kids pages and their posts. Give each post its own angle in its title (for example the rainy-day post as a one-day plan), or merge the post into the page with a redirect.
+5. **Search terms not covered yet**, as posts: the six in section 9 (Windermere boat trips, the Keswick Launch and Derwentwater, the Tarn Hows walk, Aira Force, Castlerigg Stone Circle, the Lake District in spring), then Christmas and New Year in the Lakes (searched now, before December), Hill Top and Beatrix Potter, Honister and the Buttermere valley, and the best time to visit. Each one a place or season people name in a search, checked against the operator's or National Park's own page.
+6. **Thin pages**: the seven category pages in the sitemap have short guide text and descriptions of 88 to 118 characters while the directory is empty (section 13, item 9). Fuller sourced text on each, starting with restaurants, pubs and accommodation, the most searched.
+7. **Posts a month**: two, one a fortnight as in section 9, each checked against official pages; four if there is time to check them. The checking is what keeps them ranking; volume without it would repeat tonight's corrections.
