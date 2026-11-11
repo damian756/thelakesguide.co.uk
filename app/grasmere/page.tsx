@@ -34,26 +34,13 @@ const pageJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
   {
-    "@type": "TouristAttraction",
-    "@id": url,
+    "@type": "TouristDestination",
+    "@id": `${url}#place`,
     name: "Grasmere",
     description: "Grasmere is a small village and lake in the central Lake District, most famous as Wordsworth's home and for Sarah Nelson's Grasmere Gingerbread.",
     url,
     geo: { "@type": "GeoCoordinates", latitude: 54.4597, longitude: -3.025 },
-    address: { "@type": "PostalAddress", addressLocality: "Grasmere", postalCode: "LA22 9QT", addressCountry: "GB" },
-    image: {
-      "@type": "ImageObject",
-      url: "https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=1400&q=80",
-      width: 1400,
-      height: 900,
-    },
-  },
-  {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
-      { "@type": "ListItem", position: 2, name: "Grasmere", item: url },
-    ],
+    address: { "@type": "PostalAddress", addressLocality: "Grasmere", addressCountry: "GB" },
   },
   {
     "@type": "FAQPage",

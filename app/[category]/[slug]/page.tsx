@@ -346,15 +346,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
     ...(business.lat && business.lng ? {
       geo: { "@type": "GeoCoordinates", latitude: business.lat, longitude: business.lng },
     } : {}),
-    ...(business.rating && business.reviewCount ? {
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: business.rating.toFixed(1),
-        reviewCount: business.reviewCount,
-        bestRating: "5",
-        worstRating: "1",
-      },
-    } : {}),
+    // No aggregateRating: the rating shown is Google's, not reviews written on this site.
     ...(business.priceRange ? { priceRange: business.priceRange } : {}),
     ...(business.description || business.shortDescription ? {
       description: business.description || business.shortDescription,

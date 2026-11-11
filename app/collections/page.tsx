@@ -6,6 +6,7 @@ import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-
 import { COLLECTIONS, MIN_LISTINGS } from "@/lib/collections-config";
 import { prisma } from "@/lib/prisma";
 import { pageOpenGraph } from "@/lib/seo";
+import { ORG_REF, breadcrumbList } from "@/lib/schema";
 
 // Revalidate every hour so tag counts stay fresh
 export const revalidate = 3600;
@@ -26,11 +27,17 @@ export const metadata: Metadata = {
 
 const COLLECTION_LD = {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "Lake District Collections",
-  description: "Curated collections of Lake District businesses. Dog-friendly restaurants, hotels with parking, lakeside pubs, and more.",
-  url: `${BASE_URL}/collections`,
-  publisher: { "@type": "Organization", name: "TheLakesGuide.co.uk", url: BASE_URL },
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${BASE_URL}/collections`,
+      name: "Lake District Collections",
+      description: "Lists of Lake District businesses by what they offer: dog-friendly, family-friendly, lakeside, and more. The directory is opening, so these lists fill as businesses join.",
+      url: `${BASE_URL}/collections`,
+      publisher: ORG_REF,
+    },
+    breadcrumbList([["Home", BASE_URL], ["Collections", `${BASE_URL}/collections`]]),
+  ],
 };
 
 async function getCollectionCounts(): Promise<Record<string, number>> {

@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react";
 import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-constants";
 import type { Metadata } from "next";
 import { pageOpenGraph } from "@/lib/seo";
+import { breadcrumbList } from "@/lib/schema";
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
 const WILDLIFE_URL = "https://www.thelakeswildlife.co.uk";
@@ -20,9 +21,13 @@ export const metadata: Metadata = {
   }),
 };
 
+// The breadcrumb the page shows.
+const BREADCRUMB_LD = { "@context": "https://schema.org", ...breadcrumbList([["Home", BASE_URL], ["Lake District Wildlife", `${BASE_URL}/lake-district-wildlife`]]) };
+
 export default function LakeDistrictWildlifePage() {
   return (
     <div className="min-h-screen bg-[#EAEDE8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_LD) }} />
       <div className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
         <div className="absolute inset-0">
           <Image src={HERO_IMAGE_URL} alt={HERO_IMAGE_ALT} fill sizes="100vw" quality={80} className="object-cover" style={{ objectPosition: HERO_IMAGE_POSITION }} priority />

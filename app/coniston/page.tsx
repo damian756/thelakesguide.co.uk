@@ -38,26 +38,13 @@ const pageJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
   {
-    "@type": "TouristAttraction",
-    "@id": url,
+    "@type": "TouristDestination",
+    "@id": `${url}#place`,
     name: "Coniston",
     description: "Coniston is a village at the foot of Coniston Old Man on the western shore of Coniston Water. Known for John Ruskin's Brantwood, the Swallows and Amazons legacy, and Donald Campbell's water speed record attempts.",
     url,
     geo: { "@type": "GeoCoordinates", latitude: 54.3693, longitude: -3.0723 },
-    address: { "@type": "PostalAddress", addressLocality: "Coniston", postalCode: "LA21 8EH", addressCountry: "GB" },
-    image: {
-      "@type": "ImageObject",
-      url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1400&q=80",
-      width: 1400,
-      height: 900,
-    },
-  },
-  {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
-      { "@type": "ListItem", position: 2, name: "Coniston", item: url },
-    ],
+    address: { "@type": "PostalAddress", addressLocality: "Coniston", addressCountry: "GB" },
   },
   {
     "@type": "FAQPage",

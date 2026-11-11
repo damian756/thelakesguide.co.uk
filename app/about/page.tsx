@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { HERO_IMAGE_URL, HERO_IMAGE_ALT, HERO_IMAGE_POSITION } from "@/lib/site-constants";
-import { pageOpenGraph } from "@/lib/seo";
+import { pageOpenGraph, SITE_URL } from "@/lib/seo";
+import { ORGANIZATION, CHURCHTOWN_MEDIA, FOUNDER, ORG_ID, WEBSITE_ID } from "@/lib/schema";
 
 export const metadata = {
   title: "About The Lakes Guide | Who Publishes It and How It Works",
@@ -16,40 +17,24 @@ export const metadata = {
   }),
 };
 
-const schemaData = [
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://www.thelakesguide.co.uk/#website",
-    name: "The Lakes Guide",
-    url: "https://www.thelakesguide.co.uk",
-    description:
-      "Visitor guide to the Lake District: restaurants, accommodation, walks and things to do.",
-    publisher: {
-      "@type": "Organization",
-      "@id": "https://www.thelakesguide.co.uk/#organization",
-      name: "The Lakes Guide",
-      url: "https://www.thelakesguide.co.uk",
+// The page is about the site's Organization, published by Churchtown Media Ltd and edited by Damian Roche (lib/schema.ts).
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": `${SITE_URL}/about#webpage`,
+      url: `${SITE_URL}/about`,
+      name: "About The Lakes Guide",
+      isPartOf: { "@id": WEBSITE_ID },
+      about: { "@id": ORG_ID },
+      inLanguage: "en-GB",
     },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://www.churchtownmedia.co.uk/about#founder",
-    name: "Damian Roche",
-    jobTitle: "Founder, Churchtown Media",
-    description:
-      "Founder of Churchtown Media Ltd, which publishes The Lakes Guide.",
-    worksFor: {
-      "@id": "https://www.thelakesguide.co.uk/#website",
-    },
-    url: "https://www.churchtownmedia.co.uk/about",
-    sameAs: [
-      "https://www.linkedin.com/in/damian-roche-7ba8293a5/",
-      "https://find-and-update.company-information.service.gov.uk/company/16960442",
-    ],
-  },
-];
+    ORGANIZATION,
+    CHURCHTOWN_MEDIA,
+    FOUNDER,
+  ],
+};
 
 export default function AboutPage() {
   return (

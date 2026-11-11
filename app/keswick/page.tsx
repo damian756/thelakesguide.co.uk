@@ -38,26 +38,13 @@ const pageJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
   {
-    "@type": "TouristAttraction",
-    "@id": url,
+    "@type": "TouristDestination",
+    "@id": `${url}#place`,
     name: "Keswick",
     description: "Keswick is the capital of the northern Lake District. A market town on the shore of Derwentwater with direct access to Skiddaw, Blencathra, and Catbells.",
     url,
     geo: { "@type": "GeoCoordinates", latitude: 54.6014, longitude: -3.1342 },
-    address: { "@type": "PostalAddress", addressLocality: "Keswick", postalCode: "CA12 5JB", addressCountry: "GB" },
-    image: {
-      "@type": "ImageObject",
-      url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=80",
-      width: 1400,
-      height: 900,
-    },
-  },
-  {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
-      { "@type": "ListItem", position: 2, name: "Keswick", item: url },
-    ],
+    address: { "@type": "PostalAddress", addressLocality: "Keswick", addressCountry: "GB" },
   },
   {
     "@type": "FAQPage",

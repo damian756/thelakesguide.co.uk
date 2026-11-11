@@ -9,6 +9,7 @@ import { notFound } from "next/navigation";
 import AdSlot from "@/components/AdSlot";
 import { slotForPost } from "@/lib/ad-slots";
 import { pageOpenGraph } from "@/lib/seo";
+import { FOUNDER, ORG_REF } from "@/lib/schema";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -262,41 +263,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     dateModified: isoUpdated,
     url: canonicalUrl,
     ...(sponsor ? { sponsor: { "@type": "Organization", name: sponsor.name, url: sponsor.url } } : {}),
-    author: sponsor
-      ? {
-          "@type": "Organization",
-          "@id": "https://www.thelakesguide.co.uk/#organization",
-          name: "TheLakesGuide.co.uk",
-          url: "https://www.thelakesguide.co.uk",
-        }
-      : isDamian
-      ? {
-          "@type": "Person",
-          "@id": "https://www.churchtownmedia.co.uk/about#founder",
-          name: "Damian Roche",
-          jobTitle: "Founder, Churchtown Media",
-          url: "https://www.churchtownmedia.co.uk/about",
-          sameAs: ["https://www.linkedin.com/in/damian-roche-7ba8293a5/"],
-        }
-      : {
-          "@type": "Person",
-          "@id": "https://www.thelakesguide.co.uk/about#editor",
-          name: "The Lakes Guide",
-          jobTitle: "Editor",
-          url: "https://www.thelakesguide.co.uk/about",
-          worksFor: {
-            "@type": "Organization",
-            "@id": "https://www.thelakesguide.co.uk/#website",
-            name: "TheLakesGuide.co.uk",
-            url: "https://www.thelakesguide.co.uk",
-          },
-        },
-    publisher: {
-      "@type": "Organization",
-      "@id": "https://www.thelakesguide.co.uk/#organization",
-      name: "TheLakesGuide.co.uk",
-      url: "https://www.thelakesguide.co.uk",
-    },
+    // Damian's byline, or the site itself for a sponsored post or one signed "The Lakes Guide".
+    author: isDamian ? FOUNDER : ORG_REF,
+    publisher: ORG_REF,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": canonicalUrl,

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
 import { pageOpenGraph } from "@/lib/seo";
+import { ORG_REF } from "@/lib/schema";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -45,18 +46,10 @@ const pageJsonLd = {
       "Where to walk, stay, eat, and explore in the Lake District with your dog. Practical advice on dog-friendly fells, pubs, accommodation, and lake shores.",
     url,
     mainEntityOfPage: url,
-    datePublished: "2024-06-01",
-    dateModified: "2025-03-01",
-    author: { "@id": "https://www.churchtownmedia.co.uk/about#founder" },
-    publisher: { "@id": `${BASE_URL}/#organization` },
-  },
-  {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
-      { "@type": "ListItem", position: 2, name: "Guides", item: `${BASE_URL}/guides` },
-      { "@type": "ListItem", position: 3, name: "Dog-Friendly Lake District", item: url },
-    ],
+    datePublished: "2026-03-09",
+    dateModified: "2026-11-11",
+    author: ORG_REF,
+    publisher: ORG_REF,
   },
   {
     "@type": "FAQPage",

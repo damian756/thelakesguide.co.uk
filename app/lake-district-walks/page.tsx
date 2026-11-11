@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Mountain, AlertTriangle, MapPin, Clock, ArrowUpRight, CheckCircle2, ArrowRight } from "lucide-react";
 import AdSlot from "@/components/AdSlot";
 import { pageOpenGraph } from "@/lib/seo";
+import { ORG_REF } from "@/lib/schema";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -205,8 +206,11 @@ const pageJsonLd = [
     headline: "Lake District Walks Guide",
     description: "The best walks in the Lake District. Routes for beginners, family walks, and serious fell days. Practical information on what to bring, how to prepare, and where to start.",
     url,
-    author: { "@type": "Person", name: "Damian Roche", url: BASE_URL },
-    publisher: { "@type": "Organization", name: "The Lakes Guide", url: BASE_URL },
+    mainEntityOfPage: url,
+    datePublished: "2026-03-09",
+    dateModified: "2026-11-11",
+    author: ORG_REF,
+    publisher: ORG_REF,
   },
   {
     "@context": "https://schema.org",

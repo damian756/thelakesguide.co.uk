@@ -9,6 +9,7 @@ import { prisma } from "@/lib/prisma";
 import CategoryBrowser, { type BrowserBusiness } from "@/components/CategoryBrowser";
 import type { MapPin as MapPinType } from "@/components/CategoryMapTypes";
 import { pageOpenGraph } from "@/lib/seo";
+import { breadcrumbList } from "@/lib/schema";
 
 type Props = {
   params: Promise<{ category: string }>;
@@ -301,8 +302,12 @@ export default async function CategoryPage({ params, searchParams }: Props) {
         }
       : null;
 
+  // The breadcrumb the page shows.
+  const breadcrumbLd = { "@context": "https://schema.org", ...breadcrumbList([["Home", BASE_URL], [cat.name, `${BASE_URL}/${category}`]]) };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       {itemListLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
       )}

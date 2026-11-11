@@ -7,6 +7,7 @@ import { BLOG_POSTS, getBlogPostCategory, getUpcomingEvents } from "@/lib/lakes-
 import type { Metadata } from "next";
 import AdSlot from "@/components/AdSlot";
 import { pageOpenGraph } from "@/lib/seo";
+import { WEBSITE, ORGANIZATION, CHURCHTOWN_MEDIA } from "@/lib/schema";
 
 export const revalidate = 3600; // Regenerate at most once per hour so events stay current
 
@@ -84,53 +85,10 @@ export default async function Home() {
   function formatEventLabel(event: { isoDate: string; dayLabel: string }) {
     return event.isoDate === todayISO ? "Today" : event.dayLabel;
   }
+  // The site's WebSite and Organization (lib/schema.ts); other pages refer to them by @id.
   const orgJsonLd = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://www.thelakesguide.co.uk/#website",
-        url: "https://www.thelakesguide.co.uk",
-        name: "The Lakes Guide",
-        description: "A guide to the Lake District: restaurants, pubs, walks, villages and things to do.",
-        publisher: { "@id": "https://www.thelakesguide.co.uk/#organization" },
-        inLanguage: "en-GB",
-        potentialAction: {
-          "@type": "ReadAction",
-          target: "https://www.thelakesguide.co.uk/things-to-do",
-        },
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://www.thelakesguide.co.uk/#organization",
-        name: "The Lakes Guide",
-        url: "https://www.thelakesguide.co.uk",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.thelakesguide.co.uk/og-default.png",
-          width: 1200,
-          height: 630,
-        },
-        sameAs: [
-          "https://www.thelakeswildlife.co.uk",
-          "https://www.hikethelakes.com",
-          "https://thelakes.network",
-          "https://www.linkedin.com/company/churchtownmedia",
-          "https://churchtownmedia.co.uk",
-        ],
-      },
-      {
-        "@type": "Person",
-        "@id": "https://www.churchtownmedia.co.uk/about#founder",
-        name: "Damian Roche",
-        jobTitle: "Founder, Churchtown Media",
-        url: "https://www.churchtownmedia.co.uk/about",
-        sameAs: [
-          "https://www.linkedin.com/in/damian-roche-7ba8293a5/",
-          "https://find-and-update.company-information.service.gov.uk/company/16960442",
-        ],
-      },
-    ],
+    "@graph": [WEBSITE, ORGANIZATION, CHURCHTOWN_MEDIA],
   };
 
   return (

@@ -6,6 +6,7 @@ import { prisma } from "@/lib/prisma";
 import type { Metadata } from "next";
 import AdSlot from "@/components/AdSlot";
 import { pageOpenGraph } from "@/lib/seo";
+import { breadcrumbList } from "@/lib/schema";
 
 // Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
 export const revalidate = 3600;
@@ -28,6 +29,9 @@ function isFree(tags: string[], priceRange: string | null): boolean {
   return (tags ?? []).includes("free-parking") ||
     (!!priceRange && priceRange.toLowerCase() === "free");
 }
+
+// The breadcrumb the page shows.
+const BREADCRUMB_LD = { "@context": "https://schema.org", ...breadcrumbList([["Home", BASE_URL], ["Parking", `${BASE_URL}/parking`]]) };
 
 export default async function ParkingIndexPage() {
   let parkings: { slug: string; name: string; address: string; postcode: string; priceRange: string | null; tags: string[] }[] = [];
@@ -55,6 +59,7 @@ export default async function ParkingIndexPage() {
 
   return (
     <div className="min-h-screen bg-[#EAEDE8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_LD) }} />
       <div className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
         <div className="absolute inset-0">
           <Image src={HERO_IMAGE_URL} alt={HERO_IMAGE_ALT} fill sizes="100vw" quality={80} className="object-cover" style={{ objectPosition: HERO_IMAGE_POSITION }} priority />

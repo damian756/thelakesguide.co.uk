@@ -137,7 +137,8 @@ export default async function CollectionPage({ params }: Props) {
   const url = `${BASE_URL}/collections/${slug}`;
 
   // ── Structured data ──────────────────────────────────────────────────────
-  const itemListSchema = {
+  // An ItemList only once the collection has businesses in it: an empty one would imply listings.
+  const itemListSchema = count === 0 ? null : {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: collection.title,
@@ -169,7 +170,7 @@ export default async function CollectionPage({ params }: Props) {
         <meta name="robots" content="noindex, nofollow" />
       )}
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+      {itemListSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <div className="min-h-screen bg-[#EAEDE8]">

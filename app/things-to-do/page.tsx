@@ -415,15 +415,6 @@ const PAGE_LD = {
   geo: { "@type": "GeoCoordinates", latitude: 54.4609, longitude: -3.0886 },
 };
 
-const BREADCRUMB_LD = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
-    { "@type": "ListItem", position: 2, name: "Things to Do in the Lake District", item: `${BASE_URL}/things-to-do` },
-  ],
-};
-
 const FAQ_LD = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -438,7 +429,6 @@ export default function ThingsToDoPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PAGE_LD) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_LD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_LD) }} />
 
       <div className="min-h-screen bg-[#EAEDE8]">

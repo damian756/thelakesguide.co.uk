@@ -136,7 +136,8 @@ export default async function EventsPage({
   const allMergedEvents = Object.values(eventsByMonth)
     .flat()
     .filter((e) => new Date(e.endIsoDate ?? e.isoDate) >= todayStart);
-  const eventsJsonLd = {
+  // An ItemList only when there are upcoming events to list.
+  const eventsJsonLd = allMergedEvents.length === 0 ? null : {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Lake District Events",
@@ -178,7 +179,7 @@ export default async function EventsPage({
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventsJsonLd) }} />
+      {eventsJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventsJsonLd) }} />}
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero — walks-style */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">

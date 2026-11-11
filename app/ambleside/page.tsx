@@ -38,26 +38,13 @@ const pageJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
   {
-    "@type": "TouristAttraction",
-    "@id": url,
+    "@type": "TouristDestination",
+    "@id": `${url}#place`,
     name: "Ambleside",
     description: "Ambleside is the walking hub of the Lake District, a small market town at the northern tip of Windermere giving direct access to the central fells, Langdale, and Coniston.",
     url,
     geo: { "@type": "GeoCoordinates", latitude: 54.4298, longitude: -2.9622 },
-    address: { "@type": "PostalAddress", addressLocality: "Ambleside", postalCode: "LA22 0DB", addressCountry: "GB" },
-    image: {
-      "@type": "ImageObject",
-      url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=80",
-      width: 1400,
-      height: 900,
-    },
-  },
-  {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
-      { "@type": "ListItem", position: 2, name: "Ambleside", item: url },
-    ],
+    address: { "@type": "PostalAddress", addressLocality: "Ambleside", addressCountry: "GB" },
   },
   {
     "@type": "FAQPage",

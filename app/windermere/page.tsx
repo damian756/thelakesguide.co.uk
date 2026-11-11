@@ -38,26 +38,13 @@ const pageJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
   {
-    "@type": "TouristAttraction",
-    "@id": url,
+    "@type": "TouristDestination",
+    "@id": `${url}#place`,
     name: "Windermere",
     description: "Windermere is England's largest natural lake and the main visitor hub for the Lake District. The town and Bowness-on-Windermere sit on the eastern shore.",
     url,
     geo: { "@type": "GeoCoordinates", latitude: 54.3774, longitude: -2.9074 },
-    address: { "@type": "PostalAddress", addressLocality: "Windermere", postalCode: "LA23 1AQ", addressCountry: "GB" },
-    image: {
-      "@type": "ImageObject",
-      url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80",
-      width: 1400,
-      height: 900,
-    },
-  },
-  {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
-      { "@type": "ListItem", position: 2, name: "Windermere", item: url },
-    ],
+    address: { "@type": "PostalAddress", addressLocality: "Windermere", addressCountry: "GB" },
   },
   {
     "@type": "FAQPage",
