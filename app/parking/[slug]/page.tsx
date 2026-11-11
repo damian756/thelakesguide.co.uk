@@ -270,25 +270,25 @@ function buildParkingTitle(
   // Coordinate-named listings — swap for a descriptive title
   if (isCoordinateName(cleanName)) {
     return pc
-      ? `${prefix}, ${loc} — ${pc} | TheLakesGuide.co.uk`
+      ? `${prefix}, ${loc}, ${pc} | TheLakesGuide.co.uk`
       : `${prefix}, ${loc} | TheLakesGuide.co.uk`;
   }
 
   // Generic area-only names (e.g. listing literally named "Southport") — prefix with Car Park
   if (isGenericAreaName(cleanName)) {
     return pc
-      ? `${prefix} — ${loc}, ${pc} | TheLakesGuide.co.uk`
-      : `${prefix} — ${loc} | TheLakesGuide.co.uk`;
+      ? `${prefix}: ${loc}, ${pc} | TheLakesGuide.co.uk`
+      : `${prefix}: ${loc} | TheLakesGuide.co.uk`;
   }
 
   // Generic type-only names ("Car Park", "Parking", "Pay and Display" etc.)
   // — meaningless as a title; use street name + postcode to differentiate.
   if (isGenericTypeName(cleanName)) {
     const street = extractStreetName(address);
-    if (street && pc) return `${prefix}, ${street} — ${pc} | TheLakesGuide.co.uk`;
+    if (street && pc) return `${prefix}, ${street}, ${pc} | TheLakesGuide.co.uk`;
     if (street)       return `${prefix}, ${street}, ${loc} | TheLakesGuide.co.uk`;
-    if (pc)           return `${prefix} — ${loc}, ${pc} | TheLakesGuide.co.uk`;
-    return `${prefix} — ${loc} | TheLakesGuide.co.uk`;
+    if (pc)           return `${prefix}: ${loc}, ${pc} | TheLakesGuide.co.uk`;
+    return `${prefix}: ${loc} | TheLakesGuide.co.uk`;
   }
 
   // Named car park. Avoid "X — Parking in Southport" when name already contains area.
@@ -298,21 +298,21 @@ function buildParkingTitle(
 
   if (nameContainsLoc) {
     // Name has location baked in — just add parking signal and postcode
-    const withPc  = pc ? `${cleanName} — ${pc} | TheLakesGuide.co.uk` : `${cleanName} — Parking | TheLakesGuide.co.uk`;
+    const withPc  = pc ? `${cleanName}, ${pc} | TheLakesGuide.co.uk` : `${cleanName}: Parking | TheLakesGuide.co.uk`;
     if (withPc.length <= 70) return withPc;
     return `${cleanName} | TheLakesGuide.co.uk`;
   }
 
   // Standard: Name — Parking in Location, Postcode
   const withPc  = pc
-    ? `${cleanName} — Parking in ${loc}, ${pc} | TheLakesGuide.co.uk`
-    : `${cleanName} — Parking in ${loc} | TheLakesGuide.co.uk`;
+    ? `${cleanName}: Parking in ${loc}, ${pc} | TheLakesGuide.co.uk`
+    : `${cleanName}: Parking in ${loc} | TheLakesGuide.co.uk`;
   if (withPc.length <= 70) return withPc;
 
-  const shorter = `${cleanName} — Parking, ${loc} | TheLakesGuide.co.uk`;
+  const shorter = `${cleanName}: Parking, ${loc} | TheLakesGuide.co.uk`;
   if (shorter.length <= 70) return shorter;
 
-  return `${cleanName} — ${loc} Parking | TheLakesGuide.co.uk`;
+  return `${cleanName}: ${loc} Parking | TheLakesGuide.co.uk`;
 }
 
 function buildParkingMetaDesc(
@@ -364,7 +364,7 @@ function buildParkingMetaDesc(
   } else {
     nameLabel = cleanName;
   }
-  const base = `${priceSignal}${pcPart}${evPart}${ratingPart} ${nameLabel} — get directions and see busy times on TheLakesGuide.co.uk.`;
+  const base = `${priceSignal}${pcPart}${evPart}${ratingPart} ${nameLabel}: get directions and see busy times on TheLakesGuide.co.uk.`;
   return base.length <= 160 ? base : base.slice(0, 157) + "…";
 }
 
@@ -811,7 +811,7 @@ export default async function ParkingSlugPage({ params }: Props) {
                     src={mapSrc}
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    title={`Map — ${business.name}`}
+                    title={`Map of ${business.name}`}
                   />
                 </div>
               )}
@@ -829,7 +829,7 @@ export default async function ParkingSlugPage({ params }: Props) {
                     src={mapSrc}
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    title={`Map — ${business.name}`}
+                    title={`Map of ${business.name}`}
                   />
                   <div className="p-4">
                     <a

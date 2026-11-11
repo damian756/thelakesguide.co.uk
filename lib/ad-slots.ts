@@ -55,8 +55,8 @@ export const AD_SLOTS: Record<string, AdSlotConfig> = {
   // The winter guide (a post), sold as the winter package.
   "guide-lake-district-in-winter": { option: "winter-package", title: "Sponsor of The Lake District in Winter", kind: "guide", sponsor: null },
 
-  // End of the travel and seasonal posts in POST_END_SLUGS: one sponsor for all of them.
-  "post-end": { option: "guide-sponsor", title: "Sponsor of our travel and seasonal posts", kind: "post", sponsor: null },
+  // End of the posts in POST_END_SLUGS (today only the car-free travel guide).
+  "post-end": { option: "guide-sponsor", title: "Sponsor of The Lake District Without a Car", kind: "post", sponsor: null },
 };
 
 /**
@@ -66,10 +66,10 @@ export const AD_SLOTS: Record<string, AdSlotConfig> = {
  * the market, the Ullswater boats).
  */
 export const POST_END_SLUGS: readonly string[] = [
+  // Only posts that name no businesses. The itinerary, Grasmere vs Ambleside
+  // and autumn posts recommend named places to eat and stay, so they carry no
+  // advert (review, 11 Nov 2026).
   "lake-district-without-a-car",
-  "week-itinerary-lake-district",
-  "grasmere-vs-ambleside",
-  "autumn-in-the-lake-district",
 ];
 
 /** The winter guide: its own space, sold as the winter package. */

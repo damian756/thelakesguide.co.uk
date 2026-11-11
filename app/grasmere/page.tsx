@@ -86,14 +86,14 @@ export default function GrasmerePage() {
             fill priority sizes="100vw"
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/40" />
           <div className="relative w-full max-w-3xl mx-auto px-4 pb-12 pt-32">
             <nav className="flex items-center gap-1.5 text-xs text-white/50 mb-4">
               <Link href="/" className="hover:text-white transition">Home</Link>
               <span>/</span>
               <span className="text-white/80">Grasmere</span>
             </nav>
-            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">Village guide · Central Lake District · LA22</p>
+            <p className="text-[#E8B87A] text-xs font-bold uppercase tracking-widest mb-3">Village guide · Central Lake District · LA22</p>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Grasmere</h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-2xl mb-8">
               Simultaneously one of the most visited and most beautiful places in the Lake District. Wordsworth lived here. The gingerbread is made to a recipe from 1854. The lake is outstanding. The village in August can feel overwhelmed, but the surrounding fells always offer a way out.

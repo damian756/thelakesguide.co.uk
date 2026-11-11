@@ -40,9 +40,9 @@ export const AD_OPTIONS: AdOption[] = [
     term: "3 months minimum",
     points: [
       "One sponsor per guide: Keswick, Ambleside, Windermere, Grasmere, Coniston, Things to Do, Rainy Days, With Kids, Dog-friendly, Walks or Parking",
-      "Or one sponsor for the end of our travel and seasonal posts",
+      "Or the end of our guide to the Lake District without a car",
       "Your card shown once at the end, labelled Sponsor",
-      "Never inside the text, and paying does not change what we write",
+      "Never inside the text, and paying does not change what we write in our own guides and posts",
     ],
     cardPrice: "From £35 a month plus VAT",
   },

@@ -108,7 +108,7 @@ export default function AboutPage() {
                 {[
                   {
                     term: "Independent",
-                    desc: "Churchtown Media Ltd pays for the guide, and local businesses can advertise on it. Every advert, sponsor and sponsored article is labelled on the page, and paying for a space does not change what we write.",
+                    desc: "Churchtown Media Ltd pays for the guide, and local businesses can advertise on it. Every advert, sponsor and sponsored article is labelled on the page, and paying for a space does not change what we write in our own guides and posts.",
                   },
                   {
                     term: "Checked",

@@ -478,7 +478,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                       className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C4782A]/30 hover:shadow-md transition-all flex"
                     >
                       <div className="relative w-24 flex-none overflow-hidden">
-                        <Image src={related.image} alt={related.title} fill sizes="96px" quality={60} className="object-cover" />
+                        <Image src={related.image} alt="" fill sizes="96px" quality={60} className="object-cover" />
                       </div>
                       <div className="p-4 flex flex-col justify-center">
                         <span className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: relatedCat?.color }}>{related.sponsor ? `Sponsored · ${relatedCat?.label ?? ""}` : relatedCat?.label}</span>
@@ -506,7 +506,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C4782A]/30 hover:shadow-md transition-all flex"
                 >
                   <div className="relative w-24 flex-none overflow-hidden">
-                    <Image src={related.image} alt={related.title} fill sizes="96px" quality={60} className="object-cover" />
+                    <Image src={related.image} alt="" fill sizes="96px" quality={60} className="object-cover" />
                   </div>
                   <div className="p-4 flex flex-col justify-center">
                     <span className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: relatedCat?.color }}>{related.sponsor ? `Sponsored · ${relatedCat?.label ?? ""}` : relatedCat?.label}</span>

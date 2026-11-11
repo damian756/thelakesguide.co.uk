@@ -105,13 +105,13 @@ function buildTitle(name: string, catSlug: string, area: string): string {
     : (SHORT_CAT[catSlug] ?? catSlug);
   const location  = area === "Lake District" ? "Lake District" : `${area}, Lake District`;
 
-  const withBoth = `${cleanName} — ${catLabel}, ${location}`;
+  const withBoth = `${cleanName}: ${catLabel}, ${location}`;
   if (withBoth.length <= 47) return withBoth;
 
-  const catOnly = `${cleanName} — ${catLabel}`;
+  const catOnly = `${cleanName}: ${catLabel}`;
   if (catOnly.length <= 47) return catOnly;
 
-  const locOnly = `${cleanName} — ${location}`;
+  const locOnly = `${cleanName}: ${location}`;
   if (locOnly.length <= 47) return locOnly;
 
   return cleanName.length <= 44 ? cleanName : cleanName.slice(0, 44) + "…";

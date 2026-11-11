@@ -270,7 +270,7 @@ test("the about page says adverts are labelled, and no longer that there are non
   const about = read("app/about/page.tsx");
   assert.ok(
     about.includes(
-      "Every advert, sponsor and sponsored article is labelled on the page, and paying for a space does not change what we write.",
+      "Every advert, sponsor and sponsored article is labelled on the page, and paying for a space does not change what we write in our own guides and posts.",
     ),
   );
   assert.doesNotMatch(about, /no adverts or paid placements/);

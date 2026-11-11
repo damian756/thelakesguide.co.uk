@@ -6,11 +6,11 @@ import { ChevronDown } from "lucide-react";
 const FAQ_ITEMS = [
   {
     q: "What is featured placement?",
-    a: "Your listing appears above standard listings in your category on the public site, with a prominent Featured badge.",
+    a: "Part of Pro, once it opens: your listing shown above standard listings in its category, with a Featured badge. Pro is not on sale yet.",
   },
   {
-    q: "Can I cancel anytime?",
-    a: "Yes.",
+    q: "Can I cancel Pro at any time?",
+    a: "Yes. Pro ends when you cancel. Adverts have the minimum term shown on the advertise page.",
   },
 ] as const;
 

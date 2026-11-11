@@ -86,18 +86,18 @@ export default function KeswickPage() {
         <section className="relative min-h-[480px] flex items-end text-white overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=80"
-            alt="Derwentwater and the northern fells above Keswick"
+            alt="Snow-capped mountain peaks above a sea of cloud"
             fill priority sizes="100vw"
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/40" />
           <div className="relative w-full max-w-3xl mx-auto px-4 pb-12 pt-32">
             <nav className="flex items-center gap-1.5 text-xs text-white/50 mb-4">
               <Link href="/" className="hover:text-white transition">Home</Link>
               <span>/</span>
               <span className="text-white/80">Keswick</span>
             </nav>
-            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">Village guide · Northern Lake District · CA12</p>
+            <p className="text-[#E8B87A] text-xs font-bold uppercase tracking-widest mb-3">Village guide · Northern Lake District · CA12</p>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Keswick</h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-2xl mb-8">
               The capital of the northern Lakes. A proper market town with good restaurants, an excellent market on Thursdays and Saturdays, Derwentwater at the bottom of the high street, and Skiddaw visible from most of it. This is where you come to base yourself for the northern fells.
@@ -157,7 +157,7 @@ export default function KeswickPage() {
               <div className="relative h-52 md:h-auto md:w-64 flex-none">
                 <Image
                   src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80"
-                  alt="Derwentwater from Friars Crag near Keswick"
+                  alt="Snow-capped mountain peaks above a sea of cloud"
                   fill sizes="(max-width: 768px) 100vw, 256px"
                   className="object-cover"
                 />

@@ -66,7 +66,7 @@ export default async function AdvertisePage({
           <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">Advertise on The Lakes Guide</h1>
           <p className="text-white/80 text-lg max-w-2xl">
             Simple options at local prices. Every advert is labelled on the page, and paying for a space does not change
-            what we write.
+            what we write in our own guides and posts.
           </p>
         </div>
       </div>
