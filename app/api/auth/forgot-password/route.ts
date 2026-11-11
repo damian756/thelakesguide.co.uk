@@ -30,7 +30,7 @@ export async function POST(req: Request) {
       data: { email: normalised, expiresAt },
     });
 
-    const resetUrl = `${process.env.NEXTAUTH_URL}/dashboard/reset-password?token=${record.token}`;
+    const resetUrl = `${process.env.NEXTAUTH_URL || "https://www.thelakesguide.co.uk"}/dashboard/reset-password?token=${record.token}`;
 
     // A failed send is logged (error name and message only) and the answer
     // below stays the same, so it never shows whether an account exists.

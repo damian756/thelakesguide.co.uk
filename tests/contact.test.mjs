@@ -193,6 +193,16 @@ test("password reset: the send goes through sendChecked with FROM_EMAIL and the 
   assert.ok(okAfterSend > src.indexOf("sendChecked(() =>"), "the ok answer must follow the send unconditionally");
 });
 
+test("password reset: the link always starts with the site address, never \"undefined\"", () => {
+  const src = read("app/api/auth/forgot-password/route.ts");
+  const line = src.split(/\r?\n/).find((l) => l.includes("/dashboard/reset-password?token="));
+  assert.ok(line, "the reset link is built in the route");
+  assert.match(line, /process\.env\.NEXTAUTH_URL \|\| "https:\/\/www\.thelakesguide\.co\.uk"/, "NEXTAUTH_URL has a fallback");
+  const build = (base) => `${base || "https://www.thelakesguide.co.uk"}/dashboard/reset-password?token=t`;
+  assert.ok(!build(undefined).startsWith("undefined"));
+  assert.ok(build(undefined).startsWith("https://www.thelakesguide.co.uk/"));
+});
+
 test("a failed send's log never contains an email address", () => {
   const calls = [];
   const orig = console.error;
