@@ -22,7 +22,7 @@ export default function TermsPage() {
             <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest">Legal</p>
           </div>
           <h1 className="font-display text-4xl font-bold text-white mb-2">Terms &amp; Conditions</h1>
-          <p className="text-white/50 text-sm">Last updated: 18 February 2026</p>
+          <p className="text-white/50 text-sm">Last updated: 11 November 2026</p>
         </div>
       </section>
 
@@ -91,11 +91,8 @@ export default function TermsPage() {
                 <h3 className="font-semibold text-[#1B2E4B] text-sm mb-2">5.2 Paid subscriptions</h3>
                 <ul className="space-y-2">
                   {[
-                    "Paid subscriptions are billed monthly in advance via Stripe",
-                    "Subscriptions may be cancelled at any time; cancellation takes effect at the end of the current billing period",
-                    "No refund is given for the unused portion of a current billing period",
-                    "We reserve the right to change subscription pricing with 30 days' written notice",
-                    "Failure to pay will result in suspension and, after 14 days, removal of the enhanced listing",
+                    "Pro, the paid Business Hub plan, is not on sale yet. Its terms will be published here before it opens",
+                    "Advertising is agreed by email and paid by invoice, with the minimum term shown on the advertise page",
                   ].map((item) => (
                     <li key={item} className="flex gap-3 text-sm text-gray-600">
                       <span className="text-[#C4782A] flex-none mt-0.5">•</span>
