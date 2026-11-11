@@ -26,7 +26,7 @@ export async function GET() {
       .map(
         (p) => `
     <item>
-      <title>${escapeXml(p.title)}</title>
+      <title>${escapeXml(p.sponsor ? `Sponsored: ${p.title}` : p.title)}</title>
       <link>${BASE_URL}/blog/${p.slug}</link>
       <guid isPermaLink="true">${BASE_URL}/blog/${p.slug}</guid>
       <description>${escapeXml(p.excerpt)}</description>

@@ -15,8 +15,9 @@ const SUBJECTS = [
   "General enquiry",
 ];
 
-export default function ContactClient() {
-  const [form, setForm] = useState({ name: "", email: "", subject: SUBJECTS[0], businessName: "", message: "", website: "" });
+export default function ContactClient({ initialSubject }: { initialSubject?: string }) {
+  const subject = initialSubject && SUBJECTS.includes(initialSubject) ? initialSubject : SUBJECTS[0];
+  const [form, setForm] = useState({ name: "", email: "", subject, businessName: "", message: "", website: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 

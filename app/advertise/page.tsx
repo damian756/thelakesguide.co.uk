@@ -1,80 +1,135 @@
 import Link from "next/link";
-import Image from "next/image";
-import { BarChart2, Star, Calendar, TrendingUp } from "lucide-react";
-import { HERO_IMAGE_URL } from "@/lib/site-constants";
+import type { Metadata } from "next";
+import { Check } from "lucide-react";
+import { AD_OPTIONS, FOUNDING_OFFER, type AdOption } from "@/lib/ad-options";
+import { getAdSlot } from "@/lib/ad-slots";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Advertise With Us",
-  description: "List your business on The Lakes Guide. Free and premium listing options for Lake District businesses.",
+  description:
+    "Advertising on The Lakes Guide: a home page card, guide sponsorships, sponsored articles, a winter package and a Lakes network bundle. Prices plus VAT, paid by invoice.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/advertise" },
 };
 
-export default function AdvertisePage() {
+function OptionCard({ o, active, wide = false }: { o: AdOption; active: boolean; wide?: boolean }) {
   return (
-    <div className="min-h-screen bg-[#EAEDE8]">
-      {/* Hero — walks-style */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
-        <div className="absolute inset-0">
-          <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={80} className="object-cover" style={{ objectPosition: "center 20%" }} priority />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
-        </div>
-        <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
-            Advertise with The Lakes Guide
-          </h1>
-          <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-2xl mb-8">
-            Get in front of visitors searching for restaurants, accommodation, and things to do in the Lake District.
+    <div
+      id={o.id}
+      className={`scroll-mt-24 bg-white rounded-2xl border p-6 flex flex-col ${
+        active ? "border-[#C4782A] ring-2 ring-[#C4782A]/30" : "border-gray-200"
+      } ${wide ? "md:flex-row md:items-start md:gap-10" : ""}`}
+    >
+      <div className={wide ? "md:w-72 md:flex-none" : ""}>
+        <h2 className="font-display text-2xl font-bold text-[#14231C] mb-2">{o.name}</h2>
+        <p className="mb-1">
+          <span className="text-3xl font-bold text-[#A35F1C]">{o.price}</span>{" "}
+          <span className="text-[#14231C]/70 text-sm">{o.per}, plus VAT</span>
+        </p>
+        <p className="text-[#14231C]/60 text-sm mb-4">{o.term}</p>
+      </div>
+      <div className={`flex flex-col flex-1 ${wide ? "md:pt-1" : ""}`}>
+        <ul className="space-y-2 text-sm text-[#14231C]/80 mb-6 flex-1">
+          {o.points.map((pt) => (
+            <li key={pt} className="flex gap-2">
+              <Check className="w-4 h-4 text-[#245E3F] flex-shrink-0 mt-0.5" aria-hidden="true" />
+              <span>{pt}</span>
+            </li>
+          ))}
+        </ul>
+        <Link
+          href="/contact?type=advertising"
+          className="self-start bg-[#14231C] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#245E3F] transition-colors"
+        >
+          Ask about this
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export default async function AdvertisePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ space?: string | string[] }>;
+}) {
+  const { space } = await searchParams;
+  const slot = typeof space === "string" ? getAdSlot(space) : undefined;
+  const activeOption = slot?.option;
+  const main = AD_OPTIONS.filter((o) => o.id !== "network-bundle");
+  const bundle = AD_OPTIONS.find((o) => o.id === "network-bundle");
+
+  return (
+    <div className="min-h-screen bg-[#EAEDE8] text-pretty">
+      <div className="bg-[#14231C] text-white">
+        <div className="container mx-auto px-4 max-w-5xl py-14">
+          <p className="text-[#E8B87A] text-xs font-bold uppercase tracking-widest mb-3">Advertising</p>
+          <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">Advertise on The Lakes Guide</h1>
+          <p className="text-white/80 text-lg max-w-2xl">
+            Simple options at local prices. Every advert is labelled on the page, and paying for a space does not change
+            what we write.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/pricing" className="bg-white text-[#14231C] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              View pricing
-            </Link>
-            <Link href="/claim-listing" className="bg-[#245E3F] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#2A6B8A] border-2 border-white transition-colors">
-              List your business
-            </Link>
-          </div>
-        </div>
-        <div className="relative h-8 overflow-hidden">
-          <svg viewBox="0 0 1440 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none">
-            <path d="M0 32L360 16C720 0 1080 0 1440 16V32H0Z" fill="#EAEDE8" />
-          </svg>
         </div>
       </div>
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <div className="bg-white rounded-xl shadow p-6 text-center">
-            <BarChart2 className="w-10 h-10 text-[#245E3F] mx-auto mb-3" />
-            <h2 className="font-bold text-gray-900 mb-2">More visibility</h2>
-            <p className="text-gray-600 text-sm">Featured listings are labelled and shown first in their category.</p>
+
+      <div className="container mx-auto px-4 max-w-5xl py-12">
+        {slot && (
+          <div className="rounded-2xl bg-[#14231C]/5 border border-[#14231C]/10 px-6 py-4 mb-8 text-[#14231C]">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#8A5418] mb-1">You asked about</p>
+            <p className="font-display text-xl font-bold">{slot.title}</p>
+            <p className="text-sm text-[#14231C]/70 mt-1">The option that covers it is highlighted below.</p>
           </div>
-          <div className="bg-white rounded-xl shadow p-6 text-center">
-            <Star className="w-10 h-10 text-[#245E3F] mx-auto mb-3" />
-            <h2 className="font-bold text-gray-900 mb-2">Stand out</h2>
-            <p className="text-gray-600 text-sm">A Featured badge and placement at the top of your category.</p>
-          </div>
-          <div className="bg-white rounded-xl shadow p-6 text-center">
-            <Calendar className="w-10 h-10 text-[#245E3F] mx-auto mb-3" />
-            <h2 className="font-bold text-gray-900 mb-2">Event packages</h2>
-            <p className="text-gray-600 text-sm">Seasonal and event packages for high-intent visitors.</p>
-          </div>
-          <div className="bg-white rounded-xl shadow p-6 text-center">
-            <TrendingUp className="w-10 h-10 text-[#245E3F] mx-auto mb-3" />
-            <h2 className="font-bold text-gray-900 mb-2">Track results</h2>
-            <p className="text-gray-600 text-sm">Views and clicks on your listing in the Business Hub dashboard.</p>
-          </div>
+        )}
+
+        <div className="rounded-2xl border border-[#C4782A]/40 bg-white p-6 mb-10">
+          <p className="font-display text-xl font-bold text-[#14231C] mb-1">Founding advertisers</p>
+          <p className="text-[#14231C]/75 text-sm leading-relaxed">{FOUNDING_OFFER}</p>
         </div>
-        <div className="bg-white rounded-xl shadow-md p-8 max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to get started?</h2>
-          <p className="text-gray-600 mb-6">
-            The Lakes Guide is opening its directory. Ask to be listed through the contact form, and we&apos;ll help you get set up.
-          </p>
-          <Link href="/claim-listing" className="inline-block bg-[#245E3F] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#2A6B8A] mr-4">
-            List your business
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {main.map((o) => (
+            <OptionCard key={o.id} o={o} active={o.id === activeOption} />
+          ))}
+        </div>
+        {bundle && (
+          <div className="mt-6">
+            <OptionCard o={bundle} active={bundle.id === activeOption} wide />
+          </div>
+        )}
+
+        <div className="mt-10 bg-white rounded-2xl border border-gray-200 p-6 flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
+          <div>
+            <h2 className="font-display text-xl font-bold text-[#14231C] mb-1">A listing in the guide: free, on request</h2>
+            <p className="text-sm text-[#14231C]/75">
+              Your business added to its category, with the details checked with you first. Ask through the contact
+              form, with &ldquo;Claim my listing&rdquo; as the enquiry type.
+            </p>
+          </div>
+          <Link
+            href="/contact?type=listing"
+            className="self-start sm:self-center flex-none bg-[#245E3F] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#14231C] transition-colors"
+          >
+            Ask to be listed
           </Link>
-          <Link href="/contact" className="inline-block bg-gray-100 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-200">
-            Contact us
-          </Link>
+        </div>
+
+        <div className="mt-6 grid md:grid-cols-2 gap-6 text-sm text-[#14231C]/80">
+          <div className="bg-white rounded-2xl border border-gray-200 p-6">
+            <h2 className="font-display text-xl font-bold text-[#14231C] mb-3">How it works</h2>
+            <p className="mb-2">
+              Tell us which option you would like through the contact form, with &ldquo;Advertise / Featured
+              listing&rdquo; as the enquiry type. We reply by email, agree the wording and photo with you, and send an
+              invoice. Your advert goes live once it is paid.
+            </p>
+            <p>No checkout, and no contract beyond the minimum term.</p>
+          </div>
+          <div className="bg-white rounded-2xl border border-gray-200 p-6">
+            <h2 className="font-display text-xl font-bold text-[#14231C] mb-3">Where adverts never appear</h2>
+            <p>
+              Not on business listings, reviews or category pages, the posts that describe businesses (Eating Out in
+              Keswick, and Pubs in and around Ambleside), or the about, contact, privacy, terms, pricing and claim your
+              listing pages. Never inside the text of a guide or post, and never more than one advert on a page.
+            </p>
+          </div>
         </div>
       </div>
     </div>

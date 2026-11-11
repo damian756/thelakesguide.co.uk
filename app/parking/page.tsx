@@ -4,6 +4,10 @@ import { ChevronRight, MapPin } from "lucide-react";
 import { HERO_IMAGE_URL } from "@/lib/site-constants";
 import { prisma } from "@/lib/prisma";
 import type { Metadata } from "next";
+import AdSlot from "@/components/AdSlot";
+
+// Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
+export const revalidate = 3600;
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
 
@@ -126,6 +130,8 @@ export default async function ParkingIndexPage() {
             ))}
           </div>
         )}
+
+        <AdSlot id="guide-parking" className="mt-10" />
       </div>
     </div>
   );

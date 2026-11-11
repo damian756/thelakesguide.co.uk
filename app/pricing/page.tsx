@@ -1,177 +1,152 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Check, Minus, ChevronDown } from "lucide-react";
-import { HERO_IMAGE_URL } from "@/lib/site-constants";
+import type { Metadata } from "next";
+import { Check, Clock } from "lucide-react";
+import { getAdOption } from "@/lib/ad-options";
 import PricingFAQ from "./PricingFAQ";
 
-export const metadata = {
-  title: "Pricing | List Your Business on The Lakes Guide",
+// /pricing while the directory is opening (stage B, approved by Damian on 11 Nov 2026).
+// Today: a free listing on request, and advertising (prices plus VAT, by invoice).
+// Once a listing is live: Business Hub and Pro, with Pro's prices exactly as
+// checkout charges them. No boosts, no "instead of" comparison, no feature table.
+
+export const metadata: Metadata = {
+  title: "Pricing for Businesses",
   description:
-    "Pricing for business listings on TheLakesGuide.co.uk. Free and Pro plans, plus category boosts.",
+    "What a Lake District business can have on The Lakes Guide: a free listing on request, and advertising from £35 a month plus VAT. Business Hub and Pro open once your listing is live.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/pricing" },
 };
 
-const FEATURES = [
-  { label: "Claim & manage listing", free: true, pro: true },
-  { label: "Analytics dashboard", free: true, pro: true },
-  { label: "Monday morning email", free: true, pro: true },
-  { label: "Visibility score", free: true, pro: true },
-  { label: "Google review alerts", free: true, pro: true },
-  { label: "Milestone notifications", free: true, pro: true },
-  { label: "Category benchmarks", free: false, pro: true },
-  { label: "Compare vs competitors", free: false, pro: true },
-  { label: "Event intelligence", free: false, pro: true },
-  { label: "Featured listing placement", free: false, pro: true },
-  { label: "1 boost credit per month", free: false, pro: true },
-] as const;
+const LISTING_POINTS = [
+  "Your business added to its category: name, what you offer, address, opening times, a link to your site and a map",
+  "We check the details with you before it goes live",
+  "No card and no account needed to ask",
+];
 
-const BOOSTS = [
-  { type: "Standard 7 days", price: "£15", pence: 1500 },
-  { type: "Weekend (Fri/Sun)", price: "£10", pence: 1000 },
-  { type: "Festival Weekend", price: "£49", pence: 4900 },
-  { type: "Summer Event Weekend", price: "£49", pence: 4900 },
-  { type: "Bank Holiday Weekend", price: "£35", pence: 3500 },
-  { type: "Christmas Markets Month", price: "£99", pence: 9900 },
-  { type: "Peak Season Fortnight", price: "£149", pence: 14900 },
-] as const;
+// The advertising options summarised here, in this order, with prices from lib/ad-options.ts.
+const ADVERT_LINES: { id: string; label: string }[] = [
+  { id: "home-card", label: "Home page card" },
+  { id: "guide-sponsor", label: "Sponsor a town or topic guide" },
+  { id: "sponsored-article", label: "Sponsored article" },
+  { id: "network-bundle", label: "Network bundle across three sites" },
+];
+
+function advertLine({ id, label }: { id: string; label: string }): string {
+  const o = getAdOption(id);
+  if (!o) return label;
+  // Non-breaking spaces keep "£35 a month" on one line.
+  const per = o.per === "a month" ? "\u00a0a\u00a0month" : "";
+  return `${label}, ${o.price}${per} plus VAT`;
+}
+
+function Point({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="flex gap-2">
+      <Check className="w-4 h-4 text-[#245E3F] flex-shrink-0 mt-0.5" aria-hidden="true" />
+      <span>{children}</span>
+    </li>
+  );
+}
+
+function OpensLater() {
+  return (
+    <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#14231C]/60 mb-2">
+      <Clock className="w-4 h-4" aria-hidden="true" /> Opens later
+    </p>
+  );
+}
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-[#FAF8F5]">
-      {/* Hero — walks-style */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-[#2A6B8A] to-[#245E3F]">
-        <div className="absolute inset-0">
-          <Image src={HERO_IMAGE_URL} alt="" fill sizes="100vw" quality={80} className="object-cover" style={{ objectPosition: "center 20%" }} priority />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#2A6B8A] to-[#245E3F] opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
-        </div>
-        <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
-            Simple, transparent pricing
-          </h1>
-          <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-xl">
-            Join Lake District businesses on the guide. Choose Free or Pro, then add boosts when you need extra visibility.
+    <div className="min-h-screen bg-[#FAF8F5] text-pretty">
+      <div className="bg-[#14231C] text-white">
+        <div className="container mx-auto px-4 max-w-5xl py-14">
+          <p className="text-[#E8B87A] text-xs font-bold uppercase tracking-widest mb-3">For businesses</p>
+          <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">What your business can have</h1>
+          <p className="text-white/80 text-lg max-w-2xl">
+            The Lakes Guide is opening its directory. Here is what you can have today, and what opens once your
+            listing is live.
           </p>
-        </div>
-        <div className="relative h-8 overflow-hidden">
-          <svg viewBox="0 0 1440 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none">
-            <path d="M0 32L360 16C720 0 1080 0 1440 16V32H0Z" fill="#FAF8F5" />
-          </svg>
         </div>
       </div>
 
       <div className="container mx-auto px-4 max-w-5xl py-12 space-y-12">
-        {/* Free vs Pro table */}
         <section>
-          <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">
-            Free vs Pro
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-              <thead>
-                <tr className="border-b border-gray-100">
-                  <th className="text-left py-5 px-6 text-gray-600 font-semibold">
-                    Feature
-                  </th>
-                  <th className="text-center py-5 px-6 text-gray-600 font-semibold">
-                    Free
-                  </th>
-                  <th className="text-center py-5 px-6 bg-[#C4782A]/10 border-l border-[#C4782A]/20 font-semibold text-[#14231C]">
-                    Pro
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {FEATURES.map((f, i) => (
-                  <tr
-                    key={f.label}
-                    className={
-                      i % 2 === 1 ? "bg-gray-50/50" : ""
-                    }
-                  >
-                    <td className="py-4 px-6 text-gray-700">{f.label}</td>
-                    <td className="py-4 px-6 text-center">
-                      {f.free ? (
-                        <Check className="w-5 h-5 text-emerald-600 inline" />
-                      ) : (
-                        <Minus className="w-5 h-5 text-gray-300 inline" />
-                      )}
-                    </td>
-                    <td className="py-4 px-6 text-center bg-[#C4782A]/5">
-                      {f.pro ? (
-                        <Check className="w-5 h-5 text-emerald-600 inline" />
-                      ) : (
-                        <Minus className="w-5 h-5 text-gray-300 inline" />
-                      )}
-                    </td>
-                  </tr>
+          <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">Today</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col">
+              <h3 className="font-display text-xl font-bold text-[#14231C] mb-1">A listing in the guide</h3>
+              <p className="mb-4">
+                <span className="text-3xl font-bold text-[#245E3F]">Free</span>
+              </p>
+              <ul className="space-y-2 text-sm text-[#14231C]/80 mb-6 flex-1">
+                {LISTING_POINTS.map((t) => (
+                  <Point key={t}>{t}</Point>
                 ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        {/* Annual banner */}
-        <div className="bg-[#C4782A]/15 border border-[#C4782A]/30 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <h3 className="font-display font-bold text-[#14231C] text-lg">
-              Pay annually and save 2 months
-            </h3>
-            <p className="text-gray-600 text-sm mt-0.5">
-              £390/year instead of £468
-            </p>
-          </div>
-          <Link
-            href="/dashboard"
-            className="bg-[#C4782A] hover:bg-[#A86C2A] text-white px-6 py-3 rounded-full font-bold text-sm transition-colors whitespace-nowrap"
-          >
-            Go to Business Hub →
-          </Link>
-        </div>
-
-        {/* Boosts section */}
-        <section>
-          <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">
-            Category boosts
-          </h2>
-          <p className="text-gray-600 mb-6 max-w-2xl">
-            Appear at the top of your category for a set period. Pro subscribers
-            get one free credit per month.
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {BOOSTS.map((b) => (
-              <div
-                key={b.type}
-                className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm"
+              </ul>
+              <Link
+                href="/contact?type=listing"
+                className="self-start bg-[#245E3F] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#14231C] transition-colors"
               >
-                <p className="font-semibold text-[#14231C]">{b.type}</p>
-                <p className="text-2xl font-bold text-[#C4782A] mt-2">{b.price}</p>
-              </div>
-            ))}
+                Ask to be listed
+              </Link>
+            </div>
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col">
+              <h3 className="font-display text-xl font-bold text-[#14231C] mb-1">Advertising</h3>
+              <p className="mb-4">
+                <span className="text-3xl font-bold text-[#A35F1C]">from £35</span>{" "}
+                <span className="text-sm text-[#14231C]/70">a month, plus VAT</span>
+              </p>
+              <ul className="space-y-2 text-sm text-[#14231C]/80 mb-6 flex-1">
+                {ADVERT_LINES.map((line) => (
+                  <Point key={line.id}>{advertLine(line)}</Point>
+                ))}
+              </ul>
+              <Link
+                href="/advertise"
+                className="self-start bg-[#14231C] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#245E3F] transition-colors"
+              >
+                See advertising options
+              </Link>
+            </div>
           </div>
         </section>
 
-        {/* The Open 2026 */}
-        <div className="bg-[#14231C] rounded-2xl p-6 text-white">
-          <h3 className="font-display font-bold text-lg mb-2 flex items-center gap-2">
-            🏌️ The Open 2026, Royal Birkdale
-          </h3>
-          <p className="text-white/80 text-sm">
-            Limited to one slot per category. 6 of 11 category slots available.
-          </p>
-          <Link
-            href="/dashboard"
-            className="inline-block mt-4 border border-[#C4782A]/40 text-[#C4782A] px-4 py-2 rounded-full font-bold text-sm hover:bg-[#C4782A]/10 transition"
-          >
-            Book your boost →
-          </Link>
-        </div>
-
-        {/* FAQ */}
         <section>
-          <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">
-            FAQ
-          </h2>
+          <h2 className="font-display text-2xl font-bold text-[#14231C] mb-2">Once your listing is live</h2>
+          <p className="text-[#14231C]/70 text-sm mb-5 max-w-2xl">
+            These open when your business is listed and you have claimed it. We will tell you when they are available.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white/60 rounded-2xl border border-dashed border-gray-300 p-6">
+              <OpensLater />
+              <h3 className="font-display text-xl font-bold text-[#14231C] mb-1">Business Hub</h3>
+              <p className="text-sm text-[#14231C]/80">
+                Sign in to update your listing and see how many people view it and click through. Free with your
+                listing.
+              </p>
+            </div>
+            <div className="bg-white/60 rounded-2xl border border-dashed border-gray-300 p-6">
+              <OpensLater />
+              <h3 className="font-display text-xl font-bold text-[#14231C] mb-1">Pro, £39 a month or £390 a year</h3>
+              <p className="text-sm text-[#14231C]/80">
+                Extra tools in the Business Hub, and a Featured place at the top of your category once it has several
+                businesses. Paid by card when it opens.
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-[#14231C]/10 bg-[#14231C]/5 px-6 py-4">
+            <p className="text-sm text-[#14231C]/80">Already have an account? Sign in to the Business Hub.</p>
+            <Link
+              href="/dashboard"
+              className="self-start sm:self-center flex-none bg-[#C4782A] hover:bg-[#A86C2A] text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-colors"
+            >
+              Go to Business Hub →
+            </Link>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">FAQ</h2>
           <PricingFAQ />
         </section>
       </div>

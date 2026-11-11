@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { HERO_IMAGE_URL } from "@/lib/site-constants";
 import { BLOG_POSTS, getBlogPostCategory, getUpcomingEvents } from "@/lib/lakes-data";
 import type { Metadata } from "next";
+import AdSlot from "@/components/AdSlot";
 
 export const revalidate = 3600; // Regenerate at most once per hour so events stay current
 
@@ -331,7 +332,7 @@ export default async function Home() {
                       </div>
                     </div>
                     <div className="p-6 flex flex-col flex-1">
-                      <p className="text-gray-400 text-xs mb-2">{formatPostDate(featPost.date)}</p>
+                      <p className="text-gray-400 text-xs mb-2">{featPost.sponsor ? "Sponsored · " : ""}{formatPostDate(featPost.date)}</p>
                       <h3 className="font-display font-bold text-[#14231C] text-xl leading-snug mb-3 group-hover:text-[#C4782A] transition-colors line-clamp-2">
                         {featPost.title}
                       </h3>
@@ -379,7 +380,7 @@ export default async function Home() {
                             {post.title}
                           </h3>
                           <div className="flex items-center justify-between text-xs text-gray-400 mt-auto">
-                            <span>{formatPostDate(post.date)}</span>
+                            <span>{post.sponsor ? "Sponsored · " : ""}{formatPostDate(post.date)}</span>
                             <span className="text-[#C4782A] font-semibold">Read →</span>
                           </div>
                         </div>
@@ -436,6 +437,13 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Advertising space (lib/ad-slots.ts): one card, before "Explore the Lake District" */}
+      <div className="bg-[#EAEDE8] py-8">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <AdSlot id="home-card" />
+        </div>
+      </div>
 
       {/* ══════════════════════════════════════════════════════
           EXPLORE CATEGORIES

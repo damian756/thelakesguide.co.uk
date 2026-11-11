@@ -108,7 +108,7 @@ export default function AboutPage() {
                 {[
                   {
                     term: "Independent",
-                    desc: "Churchtown Media Ltd pays for the guide. There are no adverts or paid placements on the site today. Paying for a space does not change what we write.",
+                    desc: "Churchtown Media Ltd pays for the guide, and local businesses can advertise on it. Every advert, sponsor and sponsored article is labelled on the page, and paying for a space does not change what we write.",
                   },
                   {
                     term: "Checked",
@@ -210,11 +210,15 @@ export default function AboutPage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">How it&apos;s paid for</h2>
             <div className="bg-white rounded-2xl border border-gray-100 p-8">
               <p className="text-gray-700 leading-relaxed mb-4">
-                The Lakes Guide is free to use. Churchtown Media Ltd pays for it. The business directory is
-                opening and has no listings yet, and there are no adverts or paid placements on the site today.
+                The Lakes Guide is free to use. Churchtown Media Ltd pays for it, and local businesses can{" "}
+                <Link href="/advertise" className="text-[#C4782A] font-semibold hover:underline">
+                  advertise on it
+                </Link>
+                . The business directory is opening and has no listings yet.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Paying for a space does not change what we write.
+                Every advert, sponsor and sponsored article is labelled on the page, and paying for a space does not
+                change what we write.
               </p>
             </div>
           </section>

@@ -20,6 +20,10 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import { HERO_IMAGE_URL } from "@/lib/site-constants";
+import AdSlot from "@/components/AdSlot";
+
+// Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
+export const revalidate = 3600;
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
 
@@ -940,6 +944,8 @@ export default function ThingsToDoPage() {
               ))}
             </div>
           </section>
+
+          <AdSlot id="guide-things-to-do" />
 
           {/* CTA */}
           <section className="bg-[#14231C] rounded-2xl p-8 md:p-12 text-center text-white">

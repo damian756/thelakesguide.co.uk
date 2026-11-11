@@ -145,6 +145,12 @@ export interface BlogPost {
   date: string;
   /** Omit for default Damian author. Set to "terry" for posts written by Terry. */
   author?: "terry" | "damian";
+  /**
+   * Set only for a sponsored article (see /advertise). The post is labelled
+   * Sponsored, its byline is "Sponsored by <name>" with no author box, its
+   * outbound links carry rel="sponsored noopener", and it shows no other advert.
+   */
+  sponsor?: { name: string; url: string };
 }
 
 export const BLOG_POSTS: BlogPost[] = [

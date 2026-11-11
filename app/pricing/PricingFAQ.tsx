@@ -10,15 +10,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Can I cancel anytime?",
-    a: "Yes. Your Pro benefits continue until the end of the billing period.",
-  },
-  {
-    q: "What is a boost credit?",
-    a: "One free category boost per month (worth £15), included with Pro. Use it anytime or let it accumulate.",
-  },
-  {
-    q: "How do boosts work?",
-    a: "A boost puts your listing at the top of your category for the chosen period. You choose the dates and optional label (e.g. \"Bank Holiday Weekend\").",
+    a: "Yes.",
   },
 ] as const;
 

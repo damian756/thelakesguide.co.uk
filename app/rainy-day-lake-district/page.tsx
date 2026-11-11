@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import AdSlot from "@/components/AdSlot";
+
+// Hourly, so an advert past its "until" date (lib/ad-slots.ts) drops off.
+export const revalidate = 3600;
 
 const BASE_URL = "https://www.thelakesguide.co.uk";
 const url = `${BASE_URL}/rainy-day-lake-district`;
@@ -377,6 +381,8 @@ export default function RainyDayLakeDistrictPage() {
               ))}
             </div>
           </section>
+
+          <AdSlot id="guide-rainy-day-lake-district" />
 
           <section className="border-t border-gray-100 pt-8">
             <h2 className="font-display text-xl font-bold text-[#14231C] mb-5">Explore More Guides</h2>
