@@ -103,7 +103,7 @@ export default function GuidesIndexPage() {
                     <div className="relative h-40 overflow-hidden">
                       <Image
                         src={guide.heroImage}
-                        alt={guide.title}
+                        alt={guide.heroAlt ?? guide.title}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"

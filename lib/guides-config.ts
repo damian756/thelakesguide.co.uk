@@ -24,6 +24,8 @@ export interface Guide {
   excerpt: string;
   category: GuideCategory;
   heroImage: string;
+  /** Alt text when the card image is an illustration; otherwise the card uses the title. */
+  heroAlt?: string;
   /** 0–1 for sitemap priority */
   seoPriority: number;
   datePublished: string;
@@ -181,7 +183,9 @@ export const GUIDES: Guide[] = [
     description: "Where to park and when to arrive: car parks across the national park.",
     excerpt: "Parking in the Lake District. Which car parks to use, which fill early, and how to avoid the summer gridlock. Practical advice for every major destination.",
     category: "practical",
-    heroImage: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
+    // Was a stock photo of a scuba diver; now the site's generated hero illustration.
+    heroImage: "/images/illustrations/site-hero-2400.webp",
+    heroAlt: "Illustration of a Lake District lake with a wooded shore, a small rowing boat and a village of stone cottages below green fells",
     seoPriority: 0.85,
     datePublished: "2026-03-09",
     dateUpdated: "2026-11-11",
