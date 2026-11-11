@@ -219,7 +219,7 @@ export default function AboutPage() {
               </p>
               <p className="text-gray-700 leading-relaxed">
                 Every advert, sponsor and sponsored article is labelled on the page, and paying for a space does not
-                change what we write.
+                change what we write in our own guides and posts.
               </p>
             </div>
           </section>

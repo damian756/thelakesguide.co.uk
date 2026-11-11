@@ -27,7 +27,7 @@ function emptyCopy(slot: AdSlotConfig) {
     return {
       kicker: "Sponsor this space",
       title,
-      body: "One business at the end of our travel and seasonal posts, labelled Sponsor. Sponsors never appear inside a post's text.",
+      body: "One business at the end of this guide, labelled Sponsor. Sponsors never appear inside the guide's text.",
     };
   }
   return {
