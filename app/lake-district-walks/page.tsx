@@ -590,6 +590,11 @@ export default function LakeDistrictWalksPage() {
 
           {/* ── Related guides ── */}
           <section className="border-t border-gray-100 pt-12">
+            <p className="text-gray-600 leading-relaxed mb-8">
+              For the 214 Wainwright fells and the routes up them, see{" "}
+              <a href="https://www.hikethelakes.com/fells" className="text-[#C4782A] font-semibold hover:underline">Hike The Lakes</a>,
+              our sister site in the Lakes Network.
+            </p>
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">Related Guides</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
