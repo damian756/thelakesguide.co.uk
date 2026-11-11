@@ -50,7 +50,7 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     label: "Food & Drink",
     color: "#8B2635",
     emoji: "🍽️",
-    description: "Restaurant reviews, cafe guides, and food news from across the Lake District.",
+    description: "Where to eat and drink across the Lake District.",
     siteCategory: "restaurants",
   },
   {
@@ -66,7 +66,7 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     label: "Pubs & Inns",
     color: "#3D1A5C",
     emoji: "🍺",
-    description: "The best pubs, inns, and post-walk watering holes in the Lake District.",
+    description: "Pubs and inns across the Lake District, with what each one offers.",
     siteCategory: "pubs",
   },
   {
@@ -114,14 +114,14 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     label: "Local Guides",
     color: "#5C3A1A",
     emoji: "📍",
-    description: "In-depth guides written by locals who know the Lake District.",
+    description: "Practical guides to planning a visit to the Lake District.",
   },
   {
     slug: "events",
     label: "Events",
     color: "#8B5A1A",
     emoji: "🎉",
-    description: "Event previews, reviews, and what's on in the Lake District.",
+    description: "What's on in the Lake District.",
   },
   {
     slug: "for-business",
@@ -140,49 +140,66 @@ export interface BlogPost {
   excerpt: string;
   categorySlug: string;
   image: string;
+  /** Describes the picture itself (alt text). Falls back to the title. */
+  imageAlt?: string;
   date: string;
   /** Omit for default Damian author. Set to "terry" for posts written by Terry. */
   author?: "terry" | "damian";
-  /** Pin this post to the homepage blog section. Up to 3 featured posts are shown; extras are ignored. */
-  featured?: boolean;
 }
 
 export const BLOG_POSTS: BlogPost[] = [
   // ── Lakes Guide Editorial Posts ────────────────────────────────────────────
   {
+    slug: "lake-district-in-winter",
+    title: "The Lake District in Winter: What to Expect from December to February",
+    excerpt: "Short days, snow on the high fells and quieter valleys. Daylight hours, fell top reports, winter kit, boats and roads in the Lake District from December to February.",
+    categorySlug: "local-guides",
+    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80",
+    imageAlt: "Snow-covered mountain ridges under a starry night sky",
+    date: "11 Nov 2026",
+    author: "damian",
+  },
+  {
+    slug: "lake-district-without-a-car",
+    title: "The Lake District Without a Car: Trains, Buses and Boats",
+    excerpt: "How to get to and around the Lake District without a car: the Lakes Line to Windermere, the 555 and other buses, bus fares, lake boats and the Windermere ferry.",
+    categorySlug: "local-guides",
+    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80",
+    imageAlt: "A rowing boat on a clear green lake below steep wooded mountains",
+    date: "11 Nov 2026",
+    author: "damian",
+  },
+  {
     slug: "best-restaurants-keswick",
-    title: "Best Restaurants in Keswick",
-    excerpt: "Where to eat in Keswick. The honest guide to the town's best restaurants, from post-walk dinners to proper lunches. No filler, just the places worth your time.",
+    title: "Eating Out in Keswick",
+    excerpt: "Places to eat in and around Keswick, from a craft bakery on Main Street to pubs on Lake Road and restaurants by Derwentwater, with addresses and what each serves.",
     categorySlug: "food-drink",
     image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
     date: "9 Mar 2026",
     author: "damian",
-    featured: true,
   },
   {
     slug: "best-pubs-ambleside",
-    title: "Best Pubs in Ambleside",
-    excerpt: "The best pubs in Ambleside for a post-walk pint or a proper evening meal. Practical details on which ones to use, when to book, and what to order.",
+    title: "Pubs in and around Ambleside",
+    excerpt: "Pubs in Ambleside and Great Langdale: where they are, what they serve, and which welcome dogs, from each pub's own website.",
     categorySlug: "pubs",
     image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
     date: "9 Mar 2026",
     author: "damian",
-    featured: true,
   },
   {
     slug: "helvellyn-what-to-expect",
     title: "Helvellyn: What to Expect",
-    excerpt: "The honest guide to walking Helvellyn. Striding Edge, conditions, what to bring, when to go, and what most people get wrong on their first attempt.",
+    excerpt: "Walking Helvellyn: Striding Edge, Swirral Edge and the Grisedale route, conditions, what to bring, and what most people get wrong on their first attempt.",
     categorySlug: "walks",
     image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80",
     date: "9 Mar 2026",
     author: "damian",
-    featured: true,
   },
   {
     slug: "scafell-pike-complete-guide",
-    title: "Scafell Pike: The Complete Guide",
-    excerpt: "Everything you need to know before walking Scafell Pike. Routes, conditions, gear, parking, and the one mistake most people make on England's highest mountain.",
+    title: "Scafell Pike: Routes, Parking and What to Bring",
+    excerpt: "Before you walk Scafell Pike: the Wasdale, Langdale and Corridor routes, where to park, what to bring, and the one mistake most people make on England's highest mountain.",
     categorySlug: "walks",
     image: "https://images.unsplash.com/photo-1486879688101-1eed0c70c50f?w=800&q=80",
     date: "9 Mar 2026",
@@ -191,7 +208,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "where-to-stay-windermere",
     title: "Where to Stay in Windermere",
-    excerpt: "Hotels, B&Bs, and self-catering options in Windermere and Bowness. Practical advice on which area to base yourself and what each option actually costs.",
+    excerpt: "Hotels, B&Bs and self-catering in Windermere and Bowness, and how the two places differ as a base.",
     categorySlug: "where-to-stay",
     image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80",
     date: "9 Mar 2026",
@@ -200,7 +217,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "grasmere-vs-ambleside",
     title: "Grasmere vs Ambleside: Where to Base Yourself",
-    excerpt: "Two different experiences five minutes apart. Grasmere is quieter, more literary, and better positioned for the central fells. Ambleside is a proper town with more to do on a rainy day. Which one suits you?",
+    excerpt: "Two different bases four miles apart. Grasmere is quieter, with Dove Cottage and the central fells on the doorstep. Ambleside is a town with more to do on a rainy day. Which one suits you?",
     categorySlug: "local-guides",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     date: "9 Mar 2026",
@@ -208,8 +225,8 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "best-family-days-out-lake-district",
-    title: "Best Family Days Out in the Lake District",
-    excerpt: "Field-tested family days out in the Lakes. What actually works with children, what to avoid, and the activities that justify the drive.",
+    title: "Family Days Out in the Lake District",
+    excerpt: "Family days out in the Lakes: an easy tarn walk, boat and steam train trips, waterfalls, and indoor options for wet days, with postcodes and winter opening notes.",
     categorySlug: "local-guides",
     image: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=80",
     date: "9 Mar 2026",
@@ -218,7 +235,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "autumn-in-the-lake-district",
     title: "Autumn in the Lake District",
-    excerpt: "October and November in the Lakes. The crowds thin, the colours are extraordinary, the deer rut is on, and the pubs are better than ever. Why autumn is the best time to visit.",
+    excerpt: "October and November in the Lakes: autumn colour, the red deer rut in Martindale, shorter days on the fells, and pubs with open fires.",
     categorySlug: "local-guides",
     image: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=80",
     date: "9 Mar 2026",
@@ -227,7 +244,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "the-open-2026-staying-lake-district",
     title: "The Open 2026: Staying in the Lake District",
-    excerpt: "Royal Birkdale is 45 minutes from the southern Lakes. If Southport and Formby are full, the Lake District is a genuine option for Open week accommodation. Here is what you need to know.",
+    excerpt: "Written before The Open at Royal Birkdale in July 2026: how the southern Lakes worked as a base for the championship. Kept for reference.",
     categorySlug: "events",
     image: "https://images.unsplash.com/photo-1561117002-b95b4c78d3a5?w=800&q=80",
     date: "9 Mar 2026",
@@ -236,7 +253,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "week-itinerary-lake-district",
     title: "One Week in the Lake District: An Itinerary",
-    excerpt: "Seven days in the Lakes, day by day. A practical itinerary covering the best fells, villages, boat trips, and pubs, designed for someone who wants to see the Lakes properly.",
+    excerpt: "Seven days in the Lakes, day by day: Catbells, Langdale, Grasmere, Helvellyn, Coniston and Ullswater, with boat trips and places to eat along the way.",
     categorySlug: "local-guides",
     image: "https://images.unsplash.com/photo-1546430498-f6b45e5b35ca?w=800&q=80",
     date: "9 Mar 2026",
@@ -245,7 +262,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "wainwrights-beginners-guide",
     title: "The Wainwrights: A Beginner's Guide",
-    excerpt: "214 fells, one obsession. What the Wainwrights are, where to start, how long it takes to complete them, and why people who begin never quite stop.",
+    excerpt: "What the Wainwrights are, which of the 214 fells suit a beginner, how people go about completing them, and the books that describe them.",
     categorySlug: "walks",
     image: "https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800&q=80",
     date: "9 Mar 2026",
@@ -254,7 +271,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "dog-walking-lake-district",
     title: "Dog Walking in the Lake District",
-    excerpt: "Where to walk with dogs, which pubs let them in, and the practical things you need to know. Sheep, ticks, midges, and the best fell routes for dogs.",
+    excerpt: "Where to walk with dogs, which pubs say dogs are welcome, and the practical things you need to know about sheep, ticks and blue-green algae.",
     categorySlug: "local-guides",
     image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80",
     date: "9 Mar 2026",
@@ -263,7 +280,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "rainy-day-lake-district-guide",
     title: "Rainy Day in the Lake District",
-    excerpt: "It will rain. Here is the plan. The best museums, indoor activities, wet weather walks, and where to eat when the clouds come in and refuse to shift.",
+    excerpt: "It will rain. Here is the plan: museums, indoor options, wet-weather walks and pubs with open fires, with winter opening notes.",
     categorySlug: "local-guides",
     image: "https://images.unsplash.com/photo-1511225070847-8c58a0a29c07?w=800&q=80",
     date: "9 Mar 2026",
@@ -271,8 +288,8 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "keswick-market-guide",
-    title: "Keswick Market: The Honest Guide",
-    excerpt: "Keswick market runs Thursday and Saturday on the Market Square. What is there, what is worth buying, and how long you actually need. No fluff.",
+    title: "Keswick Market: Days, Stalls and Parking",
+    excerpt: "Keswick's street market is on the Market Square every Thursday and Saturday. When it runs, what is sold, and where to park.",
     categorySlug: "shopping",
     image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80",
     date: "9 Mar 2026",
@@ -281,7 +298,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ullswater-by-boat",
     title: "Ullswater by Boat",
-    excerpt: "Taking the Ullswater Steamers. Routes, timetables, how to combine a boat trip with a walk, and why the Howtown to Glenridding approach is one of the best days out in the Lakes.",
+    excerpt: "Ullswater by boat: the piers, journey times, dogs, winter sailings, and the lakeshore walk from Howtown back to Glenridding.",
     categorySlug: "activities",
     image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
     date: "9 Mar 2026",

@@ -8,7 +8,7 @@ import BlogClient from "./BlogClient";
 export const metadata = {
   title: "Blog | The Lakes Guide",
   description:
-    "Local guides, tips and Lake District stories, written by someone who knows the fells.",
+    "Guides and practical notes for visiting the Lake District: walks, villages, food, where to stay and what to expect.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/blog" },
 };
 
@@ -37,10 +37,10 @@ export default function BlogPage() {
             <span className="text-sm font-semibold tracking-widest uppercase">The Lakes Guide Blog</span>
           </div>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
-            Local guides, tips &amp; Lake District stories.
+            Lake District guides and practical tips
           </h1>
           <p className="text-white/80 text-lg lg:text-xl max-w-md mx-auto drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)]">
-            Written by someone who has walked the fells for decades. From the best restaurants to walks, villages, and practical local knowledge.
+            Walks, villages, where to eat, where to stay, and the practical details that help you plan a visit.
           </p>
         </div>
         <div className="relative h-8 overflow-hidden">
@@ -65,7 +65,7 @@ export default function BlogPage() {
       {/* ── Footer CTA ──────────────────────────────────────────────── */}
       <div className="max-w-6xl mx-auto px-4 pb-16 text-center border-t border-gray-100 pt-12">
         <p className="text-gray-400 text-sm max-w-sm mx-auto mb-5">
-          New guides added every week. Open 2026, local food, what&rsquo;s on, and everything in between.
+          Planning a visit? The events calendar lists what is on, and the guide covers places to eat, stay and walk.
         </p>
         <div className="flex justify-center gap-4">
           <a

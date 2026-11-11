@@ -119,7 +119,6 @@ function renderBlock(block: ContentBlock, i: number) {
       return (
         <div key={i} className="bg-[#EAEDE8] border-l-4 border-[#C4782A] rounded-r-xl px-5 py-4 my-7">
           <p className="text-[#14231C] font-medium leading-relaxed">
-            <span className="mr-2">{block.emoji}</span>
             {block.text}
           </p>
         </div>
@@ -283,7 +282,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <div className="relative h-72 md:h-[26rem] bg-[#14231C]">
         <HeroImageWithFallback
           src={post.image}
-          alt={post.title}
+          alt={post.imageAlt ?? post.title}
           fill
           priority
           sizes="100vw"
@@ -384,8 +383,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <p className="font-bold text-[#14231C] text-sm">{isDamian ? "Damian Roche" : "The Lakes Guide"}</p>
                   <p className="text-gray-400 text-xs leading-snug mt-0.5">
                     {isDamian
-                      ? "Founder, Churchtown Media. Builder of TheLakesGuide.co.uk, TheLakesWildlife.co.uk, and HikeTheLakes.com. Southport-based. Regular Lakes visitor for decades."
-                      : <>Editor, TheLakesGuide.co.uk. Written by someone who knows the fells.</>
+                      ? "Founder, Churchtown Media, which publishes TheLakesGuide.co.uk, TheLakesWildlife.co.uk and HikeTheLakes.com."
+                      : <>Editor, TheLakesGuide.co.uk.</>
                     }
                   </p>
                 </div>
@@ -395,7 +394,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">{post.excerpt}</p>
               <div className="bg-amber-50 border border-amber-100 rounded-xl p-6 text-center">
-                <div className="text-3xl mb-3">✍️</div>
                 <h3 className="font-display text-xl font-bold text-[#14231C] mb-2">Full article coming soon</h3>
                 <p className="text-gray-500 text-sm">Check back shortly. We&apos;re working on it.</p>
               </div>

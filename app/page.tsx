@@ -10,11 +10,11 @@ export const revalidate = 3600; // Regenerate at most once per hour so events st
 
 export const metadata: Metadata = {
   title: "Lake District Visitor Guide | Restaurants, Walks & Things to Do | The Lakes Guide",
-  description: "The independent guide to the Lake District. Restaurants, pubs, walks, villages and things to do. Written by locals who know the Lakes.",
+  description: "A guide to the Lake District: restaurants, pubs, walks, villages and things to do, with the practical details for planning a visit.",
   alternates: { canonical: "https://www.thelakesguide.co.uk" },
   openGraph: {
     title: "Lake District Visitor Guide | The Lakes Guide",
-    description: "The independent guide to the Lake District. Restaurants, pubs, walks, villages and things to do.",
+    description: "A guide to the Lake District: restaurants, pubs, walks, villages and things to do.",
     url: "https://www.thelakesguide.co.uk",
     images: [{ url: "https://www.thelakesguide.co.uk/og-default.png" }],
   },
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
 
 // ── Category configuration ────────────────────────────────────────────────
 const CATEGORIES = [
-  { slug: "walks",         label: "Walks & Hiking",   icon: MapPin,      emoji: "🥾", gradient: "from-[#1A5C5B] to-[#2E8B7A]",  light: "#E8F5F3", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" },
-  { slug: "villages",      label: "Villages",         icon: MapPin,      emoji: "🏘️", gradient: "from-[#1A5C7A] to-[#1E8AB0]",  light: "#E8F4FA", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" },
-  { slug: "restaurants",   label: "Restaurants",      icon: Utensils,    emoji: "🍽️", gradient: "from-[#8B2635] to-[#C94B3B]",  light: "#FDF0EE", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" },
-  { slug: "cafes",         label: "Cafes",            icon: Coffee,      emoji: "☕", gradient: "from-[#6B3A1F] to-[#A06040]",  light: "#FAF0E8", image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" },
-  { slug: "pubs",          label: "Pubs & Inns",      icon: Beer,        emoji: "🍺", gradient: "from-[#3D1A5C] to-[#6B3AA0]",  light: "#F3EEF9", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" },
-  { slug: "activities",    label: "Activities",       icon: Dumbbell,    emoji: "🏄", gradient: "from-[#0D6E6E] to-[#0F9B8E]",  light: "#E6F5F5", image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" },
-  { slug: "accommodation", label: "Places to Stay",   icon: Hotel,       emoji: "🏨", gradient: "from-[#14231C] to-[#245E3F]",  light: "#E8EDE8", image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&q=80" },
-  { slug: "shopping",      label: "Shopping",         icon: ShoppingBag, emoji: "🛍️", gradient: "from-[#8B2847] to-[#C45C6A]",  light: "#FAE8EC", image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&q=80" },
+  { slug: "walks",         label: "Walks & Hiking",   icon: MapPin,      gradient: "from-[#1A5C5B] to-[#2E8B7A]",  light: "#E8F5F3", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" },
+  { slug: "villages",      label: "Villages",         icon: MapPin,      gradient: "from-[#1A5C7A] to-[#1E8AB0]",  light: "#E8F4FA", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" },
+  { slug: "restaurants",   label: "Restaurants",      icon: Utensils,    gradient: "from-[#8B2635] to-[#C94B3B]",  light: "#FDF0EE", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" },
+  { slug: "cafes",         label: "Cafes",            icon: Coffee,      gradient: "from-[#6B3A1F] to-[#A06040]",  light: "#FAF0E8", image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" },
+  { slug: "pubs",          label: "Pubs & Inns",      icon: Beer,        gradient: "from-[#3D1A5C] to-[#6B3AA0]",  light: "#F3EEF9", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" },
+  { slug: "activities",    label: "Activities",       icon: Dumbbell,    gradient: "from-[#0D6E6E] to-[#0F9B8E]",  light: "#E6F5F5", image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" },
+  { slug: "accommodation", label: "Places to Stay",   icon: Hotel,       gradient: "from-[#14231C] to-[#245E3F]",  light: "#E8EDE8", image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&q=80" },
+  { slug: "shopping",      label: "Shopping",         icon: ShoppingBag, gradient: "from-[#8B2847] to-[#C45C6A]",  light: "#FAE8EC", image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&q=80" },
 ];
 
 function getArea(address: string): string {
@@ -66,8 +66,8 @@ export default async function Home() {
     `;
   } catch { /* DB unavailable */ }
 
-  const catMeta: Record<string, { gradient: string; light: string; emoji: string }> =
-    Object.fromEntries(CATEGORIES.map((c) => [c.slug, { gradient: c.gradient, light: c.light, emoji: c.emoji }]));
+  const catMeta: Record<string, { gradient: string }> =
+    Object.fromEntries(CATEGORIES.map((c) => [c.slug, { gradient: c.gradient }]));
 
   const upcomingEvents = getUpcomingEvents(12);
   const today = new Date();
@@ -91,7 +91,7 @@ export default async function Home() {
         "@id": "https://www.thelakesguide.co.uk/#website",
         url: "https://www.thelakesguide.co.uk",
         name: "The Lakes Guide",
-        description: "The independent guide to the Lake District. Restaurants, pubs, walks, villages and things to do.",
+        description: "A guide to the Lake District: restaurants, pubs, walks, villages and things to do.",
         publisher: { "@id": "https://www.thelakesguide.co.uk/#organization" },
         inLanguage: "en-GB",
         potentialAction: {
@@ -144,7 +144,7 @@ export default async function Home() {
         <div className="absolute inset-0">
           <Image
             src={HERO_IMAGE_URL}
-            alt="Lake District landscape"
+            alt="Mountain peaks above a sea of cloud at sunset"
             fill
             sizes="100vw"
             quality={80}
@@ -157,19 +157,15 @@ export default async function Home() {
         </div>
 
         <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
-          <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full border border-emerald-400/25 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse inline-block" />
-            Updated Daily
-          </div>
-
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
-            Your Local Guide <span className="text-[#C4782A]">to the Lake District.</span>
+            A Visitor Guide <span className="text-[#C4782A]">to the Lake District</span>
           </h1>
           <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-xl mb-7">
-            Events, restaurants, <Link href="/things-to-do" className="text-white hover:text-[#C4782A] underline underline-offset-2 transition-colors">things to do</Link>, updated regularly by people who live here.
+            Where to eat, where to stay, <Link href="/things-to-do" className="text-white hover:text-[#C4782A] underline underline-offset-2 transition-colors">things to do</Link>, and the practical details for planning a visit.
           </p>
 
-          {/* Next 2 upcoming events */}
+          {/* Next 2 upcoming events (hidden when none are listed) */}
+          {upcomingEvents.length > 0 && (
           <div className="mb-6 w-full max-w-xs">
             <p className="text-white/50 text-[10px] uppercase tracking-widest mb-2">Coming up</p>
             <div className="space-y-2">
@@ -181,7 +177,6 @@ export default async function Home() {
                   rel={event.link.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="flex items-center gap-3 bg-white/5 hover:bg-white/10 rounded-xl px-3 py-2.5 transition-colors group"
                 >
-                  <span className="text-lg flex-none">{event.emoji}</span>
                   <div className="flex-1 min-w-0">
                     <p className="text-white text-sm font-semibold truncate group-hover:text-[#C4782A] transition-colors">{event.title}</p>
                     <p className="text-white/40 text-xs">{formatEventLabel(event)} · {event.venue}</p>
@@ -191,9 +186,10 @@ export default async function Home() {
               ))}
             </div>
             <Link href="/events" className="text-xs text-white/50 hover:text-[#C4782A] transition-colors mt-2 inline-block">
-              View full 2026 calendar →
+              View the events calendar →
             </Link>
           </div>
+          )}
 
           {/* Category pills */}
           <div className="flex flex-wrap gap-2">
@@ -203,7 +199,7 @@ export default async function Home() {
                 href={`/${cat.slug}`}
                 className="flex items-center gap-1.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white/70 hover:text-white text-xs px-3 py-1.5 rounded-full transition-all"
               >
-                <span>{cat.emoji}</span> {cat.label}
+                <cat.icon className="w-3.5 h-3.5" aria-hidden="true" /> {cat.label}
               </Link>
             ))}
           </div>
@@ -224,7 +220,7 @@ export default async function Home() {
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="flex items-end justify-between mb-6">
               <div>
-                <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-1">Updated weekly</p>
+                <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-1">Events</p>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-[#14231C] flex items-center gap-2">
                   <CalendarDays className="w-6 h-6 text-[#C4782A]" />
                   What&apos;s On in the Lake District
@@ -246,7 +242,6 @@ export default async function Home() {
                   className="flex-none w-44 snap-start bg-white rounded-2xl p-4 border border-gray-100 hover:border-[#C4782A]/40 hover:shadow-md transition-all group cursor-pointer"
                 >
                   <div className="text-[10px] font-bold text-[#C4782A] uppercase tracking-widest mb-2">{formatEventLabel(event)}</div>
-                  <div className="text-2xl mb-2">{event.emoji}</div>
                   <h3 className="font-bold text-[#14231C] text-sm leading-tight mb-1 group-hover:text-[#C4782A] transition-colors line-clamp-2">{event.title}</h3>
                   <p className="text-gray-400 text-xs mb-3 line-clamp-1">{event.venue}</p>
                   <div className="flex items-center justify-between">
@@ -265,13 +260,13 @@ export default async function Home() {
                 className="flex-none w-44 snap-start bg-[#14231C] rounded-2xl p-4 flex flex-col items-center justify-center text-center group hover:bg-[#C4782A] transition-colors"
               >
                 <CalendarDays className="w-8 h-8 text-[#C4782A] group-hover:text-white mb-3 transition-colors" />
-                <span className="font-bold text-white text-sm">Full 2026 Calendar</span>
+                <span className="font-bold text-white text-sm">Events calendar</span>
                 <span className="text-white/50 group-hover:text-white/80 text-xs mt-1 transition-colors">All events →</span>
               </Link>
             </div>
 
             <Link href="/events" className="mt-4 text-sm text-[#C4782A] font-semibold sm:hidden block text-center">
-              View full 2026 calendar →
+              View the events calendar →
             </Link>
           </div>
         </section>
@@ -281,13 +276,10 @@ export default async function Home() {
           LATEST FROM THE BLOG
       ══════════════════════════════════════════════════════ */}
       {(() => {
-        const featured = BLOG_POSTS.filter((p) => p.featured);
-        const latestPosts = (() => {
-          if (featured.length >= 3) return featured.slice(0, 3);
-          const usedSlugs = new Set(featured.map((p) => p.slug));
-          const rest = [...BLOG_POSTS].reverse().filter((p) => !usedSlugs.has(p.slug));
-          return [...featured, ...rest].slice(0, 3);
-        })();
+        // The newest three posts by date, so the strip never goes stale.
+        const latestPosts = [...BLOG_POSTS]
+          .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
+          .slice(0, 3);
         const featPost = latestPosts[0];
         const featCat = featPost ? getBlogPostCategory(featPost) : null;
         return (
@@ -317,7 +309,7 @@ export default async function Home() {
                     <div className="relative h-52 md:h-64 overflow-hidden flex-none">
                       <Image
                         src={featPost.image}
-                        alt={featPost.title}
+                        alt={featPost.imageAlt ?? featPost.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 66vw"
                         quality={85}
@@ -366,7 +358,7 @@ export default async function Home() {
                         <div className="relative h-36 overflow-hidden flex-none">
                           <Image
                             src={post.image}
-                            alt={post.title}
+                            alt={post.imageAlt ?? post.title}
                             fill
                             sizes="(max-width: 768px) 100vw, 33vw"
                             quality={75}
@@ -424,13 +416,8 @@ export default async function Home() {
                 </Link>
               </h2>
               <p className="text-white/70 leading-relaxed mb-5 max-w-lg">
-                From Scafell Pike to Catbells. Walks for every level. The complete guide to fell walking in the Lake District.
+                From Scafell Pike to Catbells, with routes for different abilities and what to know before you set off.
               </p>
-              <div className="flex flex-wrap gap-3 text-sm mb-5">
-                <span className="bg-white/10 text-white/80 rounded-full px-3 py-1">16 lakes</span>
-                <span className="bg-white/10 text-white/80 rounded-full px-3 py-1">214 fells</span>
-                <span className="bg-white/10 text-white/80 rounded-full px-3 py-1">All abilities</span>
-              </div>
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/guides/lake-district-walks"
@@ -456,11 +443,12 @@ export default async function Home() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-2">Everything in one place</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C] mb-3">Explore the Lake District</h2>
-            <p className="text-gray-400 text-sm">
-              {totalBusinesses.toLocaleString() || "999"} local businesses across {CATEGORIES.length} categories
-            </p>
+            {totalBusinesses > 0 && (
+              <p className="text-gray-400 text-sm">
+                {totalBusinesses.toLocaleString()} local businesses across {CATEGORIES.length} categories
+              </p>
+            )}
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
@@ -511,9 +499,9 @@ export default async function Home() {
         <section className="py-16 bg-[#EAEDE8]">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-12">
-              <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-2">Verified by Google</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C] mb-3">Top Rated in the Lake District</h2>
-              <p className="text-gray-400 text-sm">The highest-rated businesses based on thousands of Google reviews</p>
+              <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-2">From Google reviews</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C] mb-3">Highly Rated on Google</h2>
+              <p className="text-gray-400 text-sm">Places with a high Google rating from more than 100 reviews</p>
             </div>
 
             {/* Asymmetric magazine grid */}
@@ -530,15 +518,10 @@ export default async function Home() {
                   >
                     <div className={`absolute inset-0 bg-gradient-to-br ${theme?.gradient || "from-[#14231C] to-[#245E3F]"}`} />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                    <div className="absolute top-4 right-4">
-                      <span className="bg-[#C4782A] text-white text-xs font-bold px-3 py-1 rounded-full">
-                        #{1} Rated
-                      </span>
-                    </div>
                     <div className="relative p-7 flex flex-col justify-end h-full min-h-[260px]">
                       <div className="mt-auto">
                         <span className="text-white/60 text-xs uppercase tracking-wider">
-                          {theme?.emoji} {b.category.slug.replace("-", " ")} · {area}
+                          {b.category.slug.replace("-", " ")} · {area}
                         </span>
                         <h3 className="font-display text-2xl md:text-3xl font-bold text-white mt-1 mb-2 group-hover:text-[#C4782A] transition-colors">
                           {b.name}
@@ -564,7 +547,7 @@ export default async function Home() {
 
               {/* Two smaller cards */}
               <div className="grid grid-rows-2 gap-4">
-                {featured.slice(1, 3).map((b, i) => {
+                {featured.slice(1, 3).map((b) => {
                   const theme = catMeta[b.category.slug];
                   const area = getArea(b.address);
                   return (
@@ -575,14 +558,9 @@ export default async function Home() {
                     >
                       <div className={`absolute inset-0 bg-gradient-to-br ${theme?.gradient || "from-[#14231C] to-[#245E3F]"}`} />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                      <div className="absolute top-3 right-3">
-                        <span className="bg-[#C4782A] text-white text-xs font-bold px-2.5 py-0.5 rounded-full">
-                          #{i + 2}
-                        </span>
-                      </div>
                       <div className="relative p-5 flex flex-col justify-end min-h-[118px]">
                         <div className="mt-auto">
-                          <span className="text-white/50 text-xs">{theme?.emoji} {area}</span>
+                          <span className="text-white/50 text-xs">{area}</span>
                           <h3 className="font-display font-bold text-white text-lg leading-tight group-hover:text-[#C4782A] transition-colors line-clamp-1">
                             {b.name}
                           </h3>
@@ -599,8 +577,7 @@ export default async function Home() {
               </div>
 
               {/* Bottom row — 4 more */}
-              {featured.slice(3, 7).map((b, i) => {
-                const theme = catMeta[b.category.slug];
+              {featured.slice(3, 7).map((b) => {
                 const area = getArea(b.address);
                 return (
                   <Link
@@ -608,15 +585,9 @@ export default async function Home() {
                     href={`/${b.category.slug}/${b.slug}`}
                     className="group bg-white rounded-2xl p-5 border border-gray-100 hover:border-[#C4782A]/30 card-hover flex flex-col"
                   >
-                    <div className="flex items-start justify-between mb-3">
-                      <span
-                        className="text-xs font-bold px-2.5 py-1 rounded-full"
-                        style={{ backgroundColor: theme?.light || "#EAEDE8", color: "#14231C" }}
-                      >
-                        {theme?.emoji} {b.category.slug.replace(/-/g, " ")}
-                      </span>
-                      <span className="text-[#C4782A] text-xs font-bold">#{i + 4}</span>
-                    </div>
+                    <p className="text-xs font-semibold text-[#14231C]/60 uppercase tracking-wider mb-2">
+                      {b.category.slug.replace(/-/g, " ")}
+                    </p>
                     <h3 className="font-display font-bold text-[#14231C] text-base group-hover:text-[#C4782A] transition-colors mb-1 line-clamp-2 flex-1">
                       {b.name}
                     </h3>
@@ -648,14 +619,14 @@ export default async function Home() {
             <span className="text-[#C4782A]">It&apos;s Free.</span>
           </div>
           <p className="text-white/60 text-lg mb-10 leading-relaxed">
-            Join {totalBusinesses.toLocaleString() || "999"}+ businesses on the Lake District&apos;s fastest-growing guide. Get discovered by visitors planning their trip.
+            The Lakes Guide is opening its directory. Run a Lake District business? Ask to be listed through the contact form.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/claim-listing"
+              href="/contact"
               className="bg-[#C4782A] hover:bg-[#E8B87A] text-white px-8 py-4 rounded-full font-bold text-base transition-all hover:shadow-lg hover:shadow-[#C4782A]/30"
             >
-              Claim Your Free Listing →
+              Ask to be listed →
             </Link>
             <Link
               href="/pricing"

@@ -181,7 +181,7 @@ export default function BlogClient({ posts, categories }: Props) {
               <div className="relative h-56 md:h-72 md:w-[45%] overflow-hidden flex-none">
                 <PostImage
                   src={featuredPost.image}
-                  alt={featuredPost.title}
+                  alt={featuredPost.imageAlt ?? featuredPost.title}
                   sizes="(max-width: 768px) 100vw, 45vw"
                   quality={85}
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -251,7 +251,7 @@ export default function BlogClient({ posts, categories }: Props) {
                   <div className="relative h-48 overflow-hidden bg-[#14231C] flex-none">
                     <PostImage
                       src={post.image}
-                      alt={post.title}
+                      alt={post.imageAlt ?? post.title}
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       quality={70}
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -297,12 +297,7 @@ export default function BlogClient({ posts, categories }: Props) {
                   onClick={() => selectCategory(cat.slug)}
                   className="flex flex-col items-start p-4 bg-white border border-gray-100 rounded-2xl hover:border-[#C4782A]/30 hover:shadow-md transition-all text-left group"
                 >
-                  <div
-                    className="w-9 h-9 rounded-xl mb-3 flex-none flex items-center justify-center text-lg"
-                    style={{ backgroundColor: cat.color + "25" }}
-                  >
-                    {cat.emoji}
-                  </div>
+                  <span className="w-6 h-1 rounded-full mb-3 flex-none" style={{ backgroundColor: cat.color }} aria-hidden="true" />
                   <span className="font-semibold text-[#14231C] text-sm leading-tight group-hover:text-[#C4782A] transition-colors">{cat.label}</span>
                   <span className="text-xs text-gray-400 mt-1">{count} post{count !== 1 ? "s" : ""}</span>
                 </button>
