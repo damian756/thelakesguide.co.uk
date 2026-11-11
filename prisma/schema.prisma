@@ -403,3 +403,13 @@ model PageView {
   @@index([createdAt])
 }
 
+
+// Plain daily page counts: the page, the day and a number. Nothing about the
+// visitor. Created by prisma/sql/2026-11-page-count.sql (not by db push).
+model PageCount {
+  path  String
+  day   DateTime @db.Date
+  count Int      @default(0)
+
+  @@id([path, day])
+}

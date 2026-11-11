@@ -4,7 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import NavMenu from "./components/NavMenu";
 import { ConditionalNav, ConditionalFooter } from "./components/ConditionalShell";
-import { Analytics } from "@vercel/analytics/next";
+import PageCountBeacon from "@/components/PageCountBeacon";
 const lora = Lora({
   subsets: ["latin"],
   variable: "--font-lora",
@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "The Lakes Guide | The Complete Visitor Guide to the Lake District",
+    default: "The Lakes Guide | Lake District Visitor Guide",
     template: "%s | The Lakes Guide",
   },
   description:
-    "Discover the best restaurants, pubs, walks, villages and things to do in the Lake District. Your complete local guide.",
+    "Restaurants, pubs, walks, villages and things to do in the Lake District, with the practical details for planning a visit.",
   keywords:
     "Lake District, Lake District restaurants, Lake District walks, things to do Lake District, visitor guide, Lakes Guide",
   authors: [{ name: "Churchtown Media", url: "https://churchtownmedia.co.uk" }],
@@ -49,15 +49,15 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: BASE_URL,
     siteName: "The Lakes Guide",
-    title: "The Lakes Guide: The Complete Visitor Guide to the Lake District",
+    title: "The Lakes Guide: Lake District Visitor Guide",
     description:
-      "Discover the best restaurants, pubs, walks, villages and things to do in the Lake District. Your complete local guide.",
+      "Restaurants, pubs, walks, villages and things to do in the Lake District, with the practical details for planning a visit.",
     images: [
       {
         url: `${BASE_URL}/og-default.png`,
         width: 1200,
         height: 630,
-        alt: "The Lakes Guide. Discover the Lake District",
+        alt: "The Lakes Guide",
       },
     ],
   },
@@ -65,8 +65,8 @@ export const metadata: Metadata = {
   // Twitter / X
   twitter: {
     card: "summary_large_image",
-    title: "The Lakes Guide: The Complete Visitor Guide to the Lake District",
-    description: "Discover the best restaurants, pubs, walks, villages and things to do in the Lake District.",
+    title: "The Lakes Guide: Lake District Visitor Guide",
+    description: "Restaurants, pubs, walks, villages and things to do in the Lake District, with the practical details for planning a visit.",
     images: [`${BASE_URL}/og-default.png`],
     creator: "@TheLakesGuide",
   },
@@ -106,7 +106,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ConditionalNav><Navigation /></ConditionalNav>
         <main className="overflow-x-hidden">{children}</main>
         <ConditionalFooter><Footer /></ConditionalFooter>
-        <Analytics />
+        <PageCountBeacon />
       </body>
     </html>
   );
@@ -145,7 +145,7 @@ function Footer() {
               <span className="text-white/40 text-sm font-normal ml-1">.co.uk</span>
             </div>
             <p className="text-sm leading-relaxed text-white/60 mb-4 max-w-xs">
-              Your definitive guide to eating, staying, and exploring the Lake District.
+              Where to eat, stay and walk in the Lake District, with the practical details.
             </p>
             <div className="flex gap-3">
               <a href="https://churchtownmedia.co.uk" className="text-xs text-[#C4782A] hover:text-[#E8B87A] transition">
@@ -204,11 +204,11 @@ function Footer() {
               {[
                 ["Fishing", "/activities"],
                 ["Cycling", "/activities"],
-                ["Wildlife", "/activities"],
+                ["Wildlife", "/lake-district-wildlife"],
                 ["Events", "/events"],
                 ["Shopping", "/shopping"],
               ].map(([label, href]) => (
-                <li key={href}>
+                <li key={label}>
                   <Link href={href} className="text-white/60 hover:text-[#C4782A] transition">{label}</Link>
                 </li>
               ))}
