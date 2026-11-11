@@ -143,6 +143,8 @@ export interface BlogPost {
   /** Describes the picture itself (alt text). Falls back to the title. */
   imageAlt?: string;
   date: string;
+  /** "D Mon YYYY": the day the post last changed. Shown as "updated", and used for dateModified and the sitemap. */
+  updated?: string;
   /** Omit for default Damian author. Set to "terry" for posts written by Terry. */
   author?: "terry" | "damian";
   /**
@@ -183,6 +185,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-village-street-2400.webp",
     imageAlt: "Illustration of a village street of stone cottages with slate roofs and colourful doors, with fells behind",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -193,6 +196,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-pub-2400.webp",
     imageAlt: "Illustration of a whitewashed country pub with a slate roof and its door open, with pints of ale on a picnic bench outside",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -203,6 +207,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-fell-walk-2400.webp",
     imageAlt: "Illustration of a stone path climbing a grassy fellside to a summit cairn, with a lake and ridges beyond",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -213,6 +218,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-fell-walk-2400.webp",
     imageAlt: "Illustration of a stone path climbing a grassy fellside to a summit cairn, with a lake and ridges beyond",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -223,6 +229,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-lake-boat-2400.webp",
     imageAlt: "Illustration of a lake cruise boat moored at a wooden pier, with rowing boats, a wooded shore and fells behind",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -233,6 +240,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-village-street-2400.webp",
     imageAlt: "Illustration of a village street of stone cottages with slate roofs and colourful doors, with fells behind",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -243,6 +251,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-family-lake-2400.webp",
     imageAlt: "Illustration of a picnic on a grassy lakeshore, with a parent and two children paddling at the water's edge and a kayak on the lake",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -253,6 +262,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-autumn-woodland-2400.webp",
     imageAlt: "Illustration of autumn woodland in copper and gold, with a leafy path and a beck with stepping stones",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -263,6 +273,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-bus-train-2400.webp",
     imageAlt: "Illustration of a small steam train on a stone bridge and a green country bus on a lakeside road in a valley",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -273,6 +284,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-lake-boat-2400.webp",
     imageAlt: "Illustration of a lake cruise boat moored at a wooden pier, with rowing boats, a wooded shore and fells behind",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -283,6 +295,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-fell-walk-2400.webp",
     imageAlt: "Illustration of a stone path climbing a grassy fellside to a summit cairn, with a lake and ridges beyond",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -293,6 +306,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-dog-tarn-2400.webp",
     imageAlt: "Illustration of a walker and their dog on a path beside a small upland tarn among the fells",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -303,6 +317,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-rainy-day-2400.webp",
     imageAlt: "Illustration of a museum gallery with display cases and paintings, and rain on a tall window looking out to the fells",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -313,6 +328,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-village-street-2400.webp",
     imageAlt: "Illustration of a village street of stone cottages with slate roofs and colourful doors, with fells behind",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
   {
@@ -323,6 +339,7 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "/images/illustrations/post-lake-boat-2400.webp",
     imageAlt: "Illustration of a lake cruise boat moored at a wooden pier, with rowing boats, a wooded shore and fells behind",
     date: "9 Mar 2026",
+    updated: "11 Nov 2026",
     author: "damian",
   },
 ];

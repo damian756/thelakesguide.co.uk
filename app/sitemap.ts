@@ -23,47 +23,44 @@ function parsePostDate(dateStr: string): Date {
   return isNaN(d.getTime()) ? new Date("2026-02-01") : d;
 }
 
-// Stable reference dates — update these when the relevant pages change meaningfully
+// The day each page last changed (from git). Update the date when a page's content changes;
+// never use "now", which would tell search engines every page changed on every request.
 const D = {
-  today:    new Date("2026-11-11"), // last deploy / significant update
-  feb26:    new Date("2026-02-26"),
-  feb20:    new Date("2026-02-20"),
-  feb15:    new Date("2026-02-15"),
-  feb01:    new Date("2026-02-01"),
-  jan01:    new Date("2026-01-01"),
+  nov11:    new Date("2026-11-11"), // freshen-up, advertising and SEO pass: every page below changed
 };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // ── Static / editorial pages ────────────────────────────────
   const staticPages: MetadataRoute.Sitemap = [
-    { url: BASE,                           lastModified: D.today,  changeFrequency: "weekly",   priority: 1.0 },
-    { url: `${BASE}/events`,               lastModified: D.today,  changeFrequency: "daily",    priority: 0.9 },
-    { url: `${BASE}/blog`,                 lastModified: D.today,  changeFrequency: "weekly",   priority: 0.9 },
-    { url: `${BASE}/things-to-do`,         lastModified: D.today,  changeFrequency: "monthly",  priority: 0.95 },
-    { url: `${BASE}/claim-listing`,        lastModified: D.feb01,  changeFrequency: "monthly",  priority: 0.8  },
-    { url: `${BASE}/advertise`,            lastModified: D.feb01,  changeFrequency: "monthly",  priority: 0.75 },
-    { url: `${BASE}/pricing`,              lastModified: D.feb01,  changeFrequency: "monthly",  priority: 0.75 },
-    { url: `${BASE}/windermere`,           lastModified: D.today,  changeFrequency: "monthly",  priority: 0.85 },
-    { url: `${BASE}/keswick`,              lastModified: D.today,  changeFrequency: "monthly",  priority: 0.85 },
-    { url: `${BASE}/ambleside`,            lastModified: D.today,  changeFrequency: "monthly",  priority: 0.85 },
-    { url: `${BASE}/grasmere`,             lastModified: D.today,  changeFrequency: "monthly",  priority: 0.85 },
-    { url: `${BASE}/coniston`,             lastModified: D.today,  changeFrequency: "monthly",  priority: 0.85 },
-    { url: `${BASE}/lake-district-walks`,       lastModified: D.today,  changeFrequency: "monthly",  priority: 0.9  },
-    { url: `${BASE}/dog-friendly-lake-district`, lastModified: D.today,  changeFrequency: "monthly",  priority: 0.85 },
-    { url: `${BASE}/lake-district-with-kids`,    lastModified: D.today,  changeFrequency: "monthly",  priority: 0.85 },
-    { url: `${BASE}/rainy-day-lake-district`,    lastModified: D.today,  changeFrequency: "monthly",  priority: 0.82 },
-    { url: `${BASE}/guides`,               lastModified: D.feb15,  changeFrequency: "monthly",  priority: 0.90 },
-    { url: `${BASE}/about`,                lastModified: D.feb01,  changeFrequency: "monthly",  priority: 0.5  },
-    { url: `${BASE}/contact`,              lastModified: D.feb01,  changeFrequency: "monthly",  priority: 0.5  },
-    { url: `${BASE}/privacy`,              lastModified: D.jan01,  changeFrequency: "yearly",   priority: 0.2  },
-    { url: `${BASE}/terms`,                lastModified: D.jan01,  changeFrequency: "yearly",   priority: 0.2  },
-    { url: `${BASE}/the-open-2026`,        lastModified: D.today,  changeFrequency: "yearly",   priority: 0.3  },
-    { url: `${BASE}/lake-district-wildlife`, lastModified: D.today, changeFrequency: "monthly",  priority: 0.85 },
-    { url: `${BASE}/parking`,              lastModified: D.today,  changeFrequency: "weekly",   priority: 0.85 },
+    { url: BASE,                           lastModified: D.nov11,  changeFrequency: "weekly",   priority: 1.0 },
+    { url: `${BASE}/events`,               lastModified: D.nov11,  changeFrequency: "daily",    priority: 0.9 },
+    { url: `${BASE}/blog`,                 lastModified: D.nov11,  changeFrequency: "weekly",   priority: 0.9 },
+    { url: `${BASE}/things-to-do`,         lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.95 },
+    { url: `${BASE}/claim-listing`,        lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.8  },
+    { url: `${BASE}/advertise`,            lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.75 },
+    { url: `${BASE}/pricing`,              lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.75 },
+    { url: `${BASE}/windermere`,           lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.85 },
+    { url: `${BASE}/keswick`,              lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.85 },
+    { url: `${BASE}/ambleside`,            lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.85 },
+    { url: `${BASE}/grasmere`,             lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.85 },
+    { url: `${BASE}/coniston`,             lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.85 },
+    { url: `${BASE}/lake-district-walks`,       lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.9  },
+    { url: `${BASE}/dog-friendly-lake-district`, lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.85 },
+    { url: `${BASE}/lake-district-with-kids`,    lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.85 },
+    { url: `${BASE}/rainy-day-lake-district`,    lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.82 },
+    { url: `${BASE}/guides`,               lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.90 },
+    { url: `${BASE}/about`,                lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.5  },
+    { url: `${BASE}/contact`,              lastModified: D.nov11,  changeFrequency: "monthly",  priority: 0.5  },
+    { url: `${BASE}/privacy`,              lastModified: D.nov11,  changeFrequency: "yearly",   priority: 0.2  },
+    { url: `${BASE}/terms`,                lastModified: D.nov11,  changeFrequency: "yearly",   priority: 0.2  },
+    { url: `${BASE}/the-open-2026`,        lastModified: D.nov11,  changeFrequency: "yearly",   priority: 0.3  },
+    { url: `${BASE}/lake-district-wildlife`, lastModified: D.nov11, changeFrequency: "monthly",  priority: 0.85 },
+    { url: `${BASE}/parking`,              lastModified: D.nov11,  changeFrequency: "weekly",   priority: 0.85 },
   ];
 
   // ── Guide pages (generated from config) ─────────────────────
-  const guidePages: MetadataRoute.Sitemap = GUIDES.filter((g) => g.status === "published").map((g) => ({
+  // A guide with a canonicalPath lives at that address (listed above); /guides/<slug> only redirects there.
+  const guidePages: MetadataRoute.Sitemap = GUIDES.filter((g) => g.status === "published" && !g.canonicalPath).map((g) => ({
     url: `${BASE}/guides/${g.slug}`,
     lastModified: new Date(g.dateUpdated),
     changeFrequency: (g.tags.includes("events") ? "weekly" : "monthly") as "weekly" | "monthly",
@@ -78,7 +75,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .filter((c) => includeCategoryPage(c.slug, categoryCounts.get(c.slug) ?? 0))
     .map((c) => ({
       url: `${BASE}/${c.slug}`,
-      lastModified: D.feb15,
+      lastModified: D.nov11,
       changeFrequency: "weekly" as const,
       priority: 0.85,
     }));
@@ -86,7 +83,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // ── Blog posts ───────────────────────────────────────────────
   const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
     url: `${BASE}/blog/${post.slug}`,
-    lastModified: parsePostDate(post.date),
+    lastModified: parsePostDate(post.updated ?? post.date),
     changeFrequency: "monthly" as const,
     priority: 0.75,
   }));
@@ -115,7 +112,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // ── Collection pages ─────────────────────────────────────────
   const collectionIndexPage: MetadataRoute.Sitemap = [
-    { url: `${BASE}/collections`, lastModified: D.feb15, changeFrequency: "weekly" as const, priority: 0.8 },
+    { url: `${BASE}/collections`, lastModified: D.nov11, changeFrequency: "weekly" as const, priority: 0.8 },
   ];
   // A collection joins once it has enough listings to be indexed (the page is noindex below that).
   const collectionCounts = await Promise.all(COLLECTIONS.map((c) => countCollectionBusinesses(c)));
@@ -123,7 +120,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .filter((_, i) => includeCollectionPage(collectionCounts[i], MIN_LISTINGS))
     .map((c) => ({
       url: `${BASE}/collections/${c.slug}`,
-      lastModified: D.feb15,
+      lastModified: D.nov11,
       changeFrequency: "monthly" as const,
       priority: c.priority,
     }));

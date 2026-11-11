@@ -241,6 +241,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const content = BLOG_CONTENT[slug];
 
   const isoDate = toIso(post.date);
+  const isoUpdated = post.updated ? toIso(post.updated) : isoDate;
   const canonicalUrl = `https://www.thelakesguide.co.uk/blog/${slug}`;
 
   // A sponsored article: labelled Sponsored, byline "Sponsored by X", no author box.
@@ -257,7 +258,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       ? post.image
       : `https://www.thelakesguide.co.uk${post.image}`,
     datePublished: isoDate,
-    dateModified: isoDate,
+    dateModified: isoUpdated,
     url: canonicalUrl,
     ...(sponsor ? { sponsor: { "@type": "Organization", name: sponsor.name, url: sponsor.url } } : {}),
     author: sponsor
@@ -390,7 +391,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <span className="text-gray-200 hidden sm:block">|</span>
           <div className="flex items-center gap-1.5">
             <Clock className="w-3.5 h-3.5" />
-            {post.date}
+            {post.updated && post.updated !== post.date ? `${post.date}, updated ${post.updated}` : post.date}
           </div>
           {cat && (
             <>
