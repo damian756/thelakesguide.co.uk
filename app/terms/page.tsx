@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, FileText } from "lucide-react";
 
 export const metadata = {
-  title: "Terms & Conditions | The Lakes Guide",
+  title: "Terms & Conditions",
   description: "Terms and Conditions for use of TheLakesGuide.co.uk, including business listing terms and subscription conditions.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/terms" },
 };

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, Shield } from "lucide-react";
 
 export const metadata = {
-  title: "Privacy Policy | The Lakes Guide",
+  title: "Privacy Policy",
   description: "Privacy Policy for TheLakesGuide.co.uk. How we collect, use and protect your personal data in accordance with UK GDPR.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/privacy" },
 };
@@ -58,6 +58,10 @@ export default function PrivacyPage() {
                 {
                   title: "Business listing submissions",
                   desc: "Business name, address, phone number, website URL, and description when you claim or submit a listing.",
+                },
+                {
+                  title: "Reviews",
+                  desc: "If you write a review of a listed business, we keep your first and last name, the name you choose to show, your email address (to confirm the review), your rating and words, any photos you add (published with the review), and any receipt image you upload to show you visited (not published). We also record your IP address to prevent abuse, and replace it with a one-way hash after 30 days.",
                 },
                 {
                   title: "Billing information",
@@ -123,6 +127,7 @@ export default function PrivacyPage() {
             <ul className="space-y-2 text-gray-600 text-sm">
               <li className="flex gap-3"><span className="text-[#C4782A]">→</span> Contact form submissions: <strong>12 months</strong></li>
               <li className="flex gap-3"><span className="text-[#C4782A]">→</span> Business listing data: <strong>for the duration of your listing plus 6 months</strong></li>
+              <li className="flex gap-3"><span className="text-[#C4782A]">→</span> IP addresses on reviews: <strong>replaced with a one-way hash after 30 days</strong></li>
               <li className="flex gap-3"><span className="text-[#C4782A]">→</span> Page counts: <strong>the page, the day and a count only</strong>, with nothing about the visitor</li>
             </ul>
           </section>
@@ -134,7 +139,8 @@ export default function PrivacyPage() {
                 { name: "Ahrefs (Analytics)", detail: "Ahrefs Web Analytics: page view statistics without cookies. It records the page, referrer, browser, device, language, screen size and approximate location (city level), and counts visitors with a daily pseudonymous identifier that is not kept across days." },
                 { name: "Google and OpenStreetMap (maps and listing photos)", detail: "Maps and some listing photos are loaded from Google, and category maps from OpenStreetMap. They receive your IP address when your browser loads them. Subject to their own privacy policies." },
                 { name: "Stripe", detail: "Payment processing for paid business listings. Subject to Stripe's own privacy policy." },
-                { name: "Vercel", detail: "Website hosting infrastructure. Data is processed in UK/EU-region data centres where possible." },
+                { name: "Vercel", detail: "Website hosting infrastructure, and storage for review photos and receipt images. Data is processed in UK/EU-region data centres where possible." },
+                { name: "Resend (email)", detail: "Sends the site's emails: contact form messages to us, listing claim and review confirmation emails, and password resets. It receives the email address and message needed to send each one. Subject to Resend's own privacy policy." },
               ].map(({ name, detail }) => (
                 <div key={name} className="bg-[#EAEDE8] rounded-xl p-4">
                   <p className="font-semibold text-[#1B2E4B] text-sm mb-1">{name}</p>
