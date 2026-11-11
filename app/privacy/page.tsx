@@ -69,7 +69,7 @@ export default function PrivacyPage() {
                 },
                 {
                   title: "Usage data",
-                  desc: "Ahrefs Web Analytics: page view statistics without cookies. It records the page, referrer, browser, device, language, screen size and approximate location (city level), and counts visitors with a daily pseudonymous identifier that is not kept across days.",
+                  desc: "Ahrefs Web Analytics: page view statistics without cookies. It records the page address (including any query string), the referring page, your browser, operating system and device, screen size and language, and when a link is clicked or a form is sent. It uses your IP address to work out your approximate location (city level) and a daily visitor ID that cannot be linked across days; the IP address itself is discarded, not stored.",
                 },
                 {
                   title: "Page counts",
@@ -136,7 +136,7 @@ export default function PrivacyPage() {
             <h2 className="font-display text-xl font-bold text-[#1B2E4B] mb-4">5. Third parties we share data with</h2>
             <div className="space-y-3">
               {[
-                { name: "Ahrefs (Analytics)", detail: "Ahrefs Web Analytics: page view statistics without cookies. It records the page, referrer, browser, device, language, screen size and approximate location (city level), and counts visitors with a daily pseudonymous identifier that is not kept across days." },
+                { name: "Ahrefs (Analytics)", detail: "Ahrefs Web Analytics: page view statistics without cookies. It records the page address (including any query string), the referring page, your browser, operating system and device, screen size and language, and when a link is clicked or a form is sent. It uses your IP address to work out your approximate location (city level) and a daily visitor ID that cannot be linked across days; the IP address itself is discarded, not stored." },
                 { name: "Google and OpenStreetMap (maps and listing photos)", detail: "Maps and some listing photos are loaded from Google, and category maps from OpenStreetMap. They receive your IP address when your browser loads them. Subject to their own privacy policies." },
                 { name: "Stripe", detail: "Payment processing for paid business listings. Subject to Stripe's own privacy policy." },
                 { name: "Vercel", detail: "Website hosting infrastructure, and storage for review photos and receipt images. Data is processed in UK/EU-region data centres where possible." },
@@ -230,7 +230,7 @@ export default function PrivacyPage() {
                 <tbody className="divide-y divide-gray-50">
                   {[
                     ["Necessary", "Business Hub sign-in: next-auth.session-token, next-auth.csrf-token and next-auth.callback-url, set only when you sign in.", "No: needed to sign in"],
-                    ["Analytics", "Ahrefs Web Analytics: page view statistics without cookies. It records the page, referrer, browser, device, language, screen size and approximate location (city level), and counts visitors with a daily pseudonymous identifier that is not kept across days.", "No (no cookies)"],
+                    ["Analytics", "Ahrefs Web Analytics: page view statistics without cookies. It records the page address (including any query string), the referring page, your browser, operating system and device, screen size and language, and when a link is clicked or a form is sent. It uses your IP address to work out your approximate location (city level) and a daily visitor ID that cannot be linked across days; the IP address itself is discarded, not stored.", "No (no cookies)"],
                   ].map(([cat, purpose, req]) => (
                     <tr key={cat}>
                       <td className="px-4 py-3 font-semibold text-[#1B2E4B] align-top whitespace-nowrap">{cat}</td>
