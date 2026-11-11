@@ -271,18 +271,17 @@ export default async function GuideLayout({ guide, children }: GuideLayoutProps)
             Lake District Business?
           </p>
           <h2 className="font-display text-2xl md:text-3xl font-bold mb-3">
-            Get Your Business in These Guides
+            List Your Business
           </h2>
           <p className="text-white/60 text-base max-w-xl mx-auto mb-8 leading-relaxed">
-            TheLakesGuide.co.uk reaches visitors actively planning a trip. 
-            List your business and appear in relevant guides automatically.
+            The Lakes Guide is opening its directory. Ask to be listed through the contact form.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
-              href="/claim-listing"
+              href="/contact"
               className="bg-[#C4782A] hover:bg-[#E8B87A] text-[#14231C] px-8 py-3.5 rounded-full font-bold transition-colors"
             >
-              List Your Business
+              Ask to be listed
             </Link>
             <Link
               href="/advertise"

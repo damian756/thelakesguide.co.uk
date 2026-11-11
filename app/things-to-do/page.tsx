@@ -944,17 +944,17 @@ export default function ThingsToDoPage() {
           {/* CTA */}
           <section className="bg-[#14231C] rounded-2xl p-8 md:p-12 text-center text-white">
             <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">Lake District Business?</p>
-            <h2 className="font-display text-3xl font-bold mb-4">Get Your Business in Front of Visitors</h2>
+            <h2 className="font-display text-3xl font-bold mb-4">List Your Business</h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-              TheLakesGuide.co.uk is a visitor guide to the Lake District. List your restaurant,
-              hotel, or activity and reach people actively planning a visit.
+              The Lakes Guide is opening its directory. Run a restaurant, hotel or activity? Ask to be listed
+              through the contact form.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
-                href="/claim-listing"
+                href="/contact"
                 className="bg-[#C4782A] hover:bg-[#E8B87A] text-[#14231C] px-8 py-3.5 rounded-full font-bold transition-colors"
               >
-                List Your Business
+                Ask to be listed
               </Link>
               <Link
                 href="/advertise"

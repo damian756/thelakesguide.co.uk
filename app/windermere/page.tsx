@@ -96,13 +96,13 @@ export default function WindermerePage() {
             <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">Village guide · Southern Lakes · LA23</p>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Windermere</h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-2xl mb-8">
-              England&rsquo;s largest natural lake and the busiest tourist destination in the Lake District. That is not necessarily a criticism. Windermere handles the crowds better than most places and there is genuinely a lot to do here. The trick is knowing what is worth your time.
+              England&rsquo;s largest natural lake and the busiest tourist destination in the Lake District. That is not necessarily a criticism. Windermere handles the crowds better than most places and there is a lot to do here. The trick is knowing what is worth your time.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
               {[
                 { icon: MapPin, stat: "LA23 1AQ", label: "Town postcode" },
                 { icon: Anchor, stat: "10.5 miles", label: "Lake length" },
-                { icon: Train, stat: "Direct train", label: "From London (2.5 hrs)" },
+                { icon: Train, stat: "Change at Oxenholme", label: "From London by train" },
                 { icon: Clock, stat: "Year-round", label: "Open for visitors" },
               ].map(({ icon: Icon, stat, label }) => (
                 <div key={label} className="bg-black/40 backdrop-blur rounded-xl px-3 py-2.5 border border-white/20">
@@ -163,7 +163,7 @@ export default function WindermerePage() {
                 {[
                   { label: "Length", value: "10.5 miles", desc: "England&rsquo;s longest natural lake" },
                   { label: "Max depth", value: "67 metres", desc: "Deeper than it looks from shore" },
-                  { label: "Steamers", value: "Year-round", desc: "From Bowness, Ambleside, Lakeside" },
+                  { label: "Lake cruises", value: "Year-round", desc: "From Bowness, Ambleside, Lakeside" },
                 ].map(({ label, value, desc }) => (
                   <div key={label} className="text-center">
                     <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-1">{label}</p>
@@ -221,7 +221,7 @@ export default function WindermerePage() {
             <div className="bg-gray-50 rounded-xl p-6">
               <div className="flex items-start justify-between gap-2 mb-3">
                 <h2 className="font-display text-xl font-bold text-[#14231C]">Windermere Jetty Museum</h2>
-                <span className="text-xs font-bold bg-[#14231C] text-white px-2.5 py-1 rounded-full flex-none">Worth 90 min</span>
+                <span className="text-xs font-bold bg-[#14231C] text-white px-2.5 py-1 rounded-full flex-none">Allow 90 min</span>
               </div>
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
                 Rayrigg Road, Bowness, LA23 1BN. Entrance charged. A museum of historic boats from the lake, run by Lakeland Arts, about a 12-minute walk from Bowness pier.
@@ -262,8 +262,8 @@ export default function WindermerePage() {
                   <h3 className="font-semibold text-[#14231C]">By Train</h3>
                 </div>
                 <ul className="space-y-1.5 text-sm text-gray-600">
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> London Euston, change at Oxenholme (approx. 2.5 hours)</li>
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Manchester Piccadilly via Oxenholme (approx. 1.5 hours)</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> London Euston to Oxenholme (about 2 hours 45 minutes), then the Lakes Line</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Northern runs direct trains from Manchester to Windermere</li>
                   <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> 555 bus from Windermere station to Bowness and Ambleside</li>
                 </ul>
               </div>
@@ -273,8 +273,8 @@ export default function WindermerePage() {
                   <h3 className="font-semibold text-[#14231C]">Parking</h3>
                 </div>
                 <ul className="space-y-1.5 text-sm text-gray-600">
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <strong>Braithwaite Fold (LA23 3LH)</strong>: large, 5 min walk from Bowness</li>
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <strong>Rayrigg Road (LA23 1DG)</strong>: smaller, closer to the waterfront</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <span><strong>Braithwaite Fold (LA23 3LH)</strong>: large, 5 min walk from Bowness</span></li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <span><strong>Rayrigg Road (LA23 1DG)</strong>: smaller, closer to the waterfront</span></li>
                   <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Car parks fill early on summer weekends.</li>
                 </ul>
               </div>

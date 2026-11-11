@@ -231,7 +231,7 @@ export default function ClaimListingClient() {
                       onChange={(e) =>
                         setSearchPostcode(e.target.value.toUpperCase())
                       }
-                      placeholder="e.g. LA22 9JX"
+                      placeholder="e.g. LA22 9JY"
                       className={inputCls}
                     />
                   </div>

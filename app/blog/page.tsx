@@ -40,7 +40,7 @@ export default function BlogPage() {
             Lake District guides and practical tips
           </h1>
           <p className="text-white/80 text-lg lg:text-xl max-w-md mx-auto drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)]">
-            Walks, villages, where to eat, where to stay, and the practical details that help you plan a visit.
+            Walks, villages, food, places to stay and the practical details for a visit.
           </p>
         </div>
         <div className="relative h-8 overflow-hidden">

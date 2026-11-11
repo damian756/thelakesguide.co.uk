@@ -103,7 +103,7 @@ export default function AmblesidePage() {
                 { icon: MapPin, stat: "LA22 0DB", label: "Postcode" },
                 { icon: Clock, stat: "8 miles", label: "To Langdale" },
                 { icon: Bus, stat: "555 Bus", label: "Windermere to Keswick" },
-                { icon: Clock, stat: "35 min", label: "Ferry from Bowness" },
+                { icon: Clock, stat: "35 min", label: "Boat from Bowness" },
               ].map(({ icon: Icon, stat, label }) => (
                 <div key={label} className="bg-black/40 backdrop-blur rounded-xl px-3 py-2.5 border border-white/20">
                   <div className="flex items-center gap-1.5 mb-0.5">

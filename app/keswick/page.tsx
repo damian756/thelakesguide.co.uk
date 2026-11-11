@@ -103,7 +103,7 @@ export default function KeswickPage() {
                 { icon: MapPin, stat: "CA12 5JB", label: "Postcode" },
                 { icon: Clock, stat: "Thu & Sat", label: "Market days" },
                 { icon: Mountain, stat: "May", label: "Mountain Festival" },
-                { icon: Clock, stat: "35 min", label: "From Penrith by bus" },
+                { icon: Clock, stat: "45 min", label: "From Penrith by bus" },
               ].map(({ icon: Icon, stat, label }) => (
                 <div key={label} className="bg-black/40 backdrop-blur rounded-xl px-3 py-2.5 border border-white/20">
                   <div className="flex items-center gap-1.5 mb-0.5">
@@ -252,8 +252,8 @@ export default function KeswickPage() {
               <div className="bg-gray-50 rounded-xl p-5">
                 <h3 className="font-semibold text-[#14231C] mb-3">Parking</h3>
                 <ul className="space-y-1.5 text-sm text-gray-600">
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <strong>Lakeside (CA12 5DJ)</strong>: council car park, 253 spaces, by the boat landing</li>
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <strong>Headlands (CA12 5ER)</strong>: a short walk from the market</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <span><strong>Lakeside (CA12 5DJ)</strong>: council car park, 253 spaces, by the boat landing</span></li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <span><strong>Headlands (CA12 5ER)</strong>: a short walk from the market</span></li>
                   <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Car parks fill early on summer weekends.</li>
                 </ul>
               </div>
