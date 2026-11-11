@@ -57,7 +57,7 @@ export default function ClaimListingClient() {
       }
       setResults(data);
       if (Array.isArray(data) && data.length === 0) {
-        setSearchError("No matches found. Try a different name or postcode.");
+        setSearchError("No listing matches that name and postcode. The directory is opening and has no listings yet, so ask to be listed instead.");
       } else {
         setSearchError("");
       }
@@ -139,15 +139,13 @@ export default function ClaimListingClient() {
           <div className="md:col-span-2 space-y-5">
             <div className="bg-white rounded-2xl border border-gray-100 p-6">
               <h2 className="font-display font-bold text-[#14231C] mb-4">
-                What you get
+                Once your business is listed
               </h2>
               <ul className="space-y-3">
                 {[
                   "Update your name, address & contact details",
                   "Add or correct opening hours",
                   "Manage your food hygiene rating display",
-                  "Respond to your listing",
-                  "Upgrade to Featured for more visibility",
                 ].map((item) => (
                   <li
                     key={item}
@@ -166,14 +164,14 @@ export default function ClaimListingClient() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#C4782A]/10 rounded-full -translate-y-8 translate-x-8 blur-2xl" />
               <div className="relative">
                 <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-2">
-                  Featured listing
+                  Business Hub
                 </p>
                 <p className="font-display font-bold text-white mb-2">
-                  More visibility with Pro
+                  Tools for listed businesses
                 </p>
                 <p className="text-white/60 text-sm mb-4">
-                  Appear at the top of your category and get a prominent featured
-                  badge.
+                  Once your business is listed, the Business Hub shows your listing&apos;s views and
+                  clicks. The Pro plan adds more tools.
                 </p>
                 <Link
                   href="/pricing"
@@ -185,13 +183,13 @@ export default function ClaimListingClient() {
             </div>
 
             <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-center">
-              <p className="text-sm font-semibold text-[#14231C] mb-1">Can&apos;t find your business?</p>
-              <p className="text-xs text-gray-500 mb-3">If your business isn&apos;t listed yet, get in touch and we&apos;ll add it for you.</p>
+              <p className="text-sm font-semibold text-[#14231C] mb-1">Not listed yet?</p>
+              <p className="text-xs text-gray-500 mb-3">The directory is opening. Ask to be listed through the contact form, choosing &ldquo;Claim my listing&rdquo; as the enquiry type.</p>
               <Link
                 href="/contact"
                 className="inline-block bg-[#14231C] text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-[#245E3F] transition"
               >
-                Contact us →
+                Ask to be listed →
               </Link>
             </div>
           </div>
@@ -243,9 +241,9 @@ export default function ClaimListingClient() {
                       </div>
                       {results !== null && results.length === 0 && (
                         <div className="border-t border-amber-200 pt-3 flex items-center justify-between gap-3">
-                          <p className="text-amber-700 text-xs">Can&apos;t find your business? We&apos;ll add it for you.</p>
+                          <p className="text-amber-700 text-xs">Use the contact form and choose &ldquo;Claim my listing&rdquo; as the enquiry type.</p>
                           <Link href="/contact" className="flex-shrink-0 text-xs font-bold text-amber-700 underline hover:text-amber-900">
-                            Contact us →
+                            Ask to be listed →
                           </Link>
                         </div>
                       )}

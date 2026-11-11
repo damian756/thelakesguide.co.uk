@@ -141,7 +141,7 @@ const FAMILY = [
     name: "Brockhole",
     sub: "On the shore of Windermere",
     detail:
-      "Between Windermere and Ambleside. The National Park opened Brockhole as its visitor centre in 1969 and in 2025 offered the site on a long-term lease. The Brockhole website now lists BeWILDerwood as coming soon, so check what is open before you go.",
+      "Between Windermere and Ambleside. The National Park opened Brockhole as its visitor centre in 1969, and in 2025 its members agreed to market the site on a long-term lease. The Brockhole website now lists BeWILDerwood as coming soon, so check what is open before you go.",
     practical: "Brockhole, LA23 1LJ. Car park open 9am to 6pm, charged.",
     emoji: "🏡",
     href: "/attractions",
@@ -268,7 +268,7 @@ const CULTURE = [
     name: "Abbot Hall",
     tag: "Art gallery",
     detail:
-      "Kendal. A Georgian art gallery run by Lakeland Arts, open Wednesday to Saturday, 10am to 4pm, with some closed weeks (23 November to 1 December 2026). Check before you go.",
+      "Kendal. A Georgian art gallery run by Lakeland Arts, open Wednesday to Saturday, 10am to 4pm, but closed from 9 to 19 November and from 23 November to 1 December 2026. Check before you go.",
     href: "/attractions",
     emoji: "🖼️",
   },

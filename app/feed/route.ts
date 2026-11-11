@@ -16,9 +16,9 @@ export async function GET() {
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SouthportGuide.co.uk — Blog</title>
+    <title>The Lakes Guide: Blog</title>
     <link>${BASE_URL}/blog</link>
-    <description>Local guides, tips and stories from Southport — restaurants, hotels, things to do and The Open 2026.</description>
+    <description>Guides and practical notes for visiting the Lake District: walks, villages, food, where to stay and what to expect.</description>
     <language>en-gb</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${BASE_URL}/feed" rel="self" type="application/rss+xml"/>

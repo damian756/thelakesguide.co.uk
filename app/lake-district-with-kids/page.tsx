@@ -37,7 +37,7 @@ const pageJsonLd = {
     "@id": url + "#article",
     headline: "Lake District with Kids: Family Guide to Walks, Activities and Days Out",
     description:
-      "Field-tested guide to the Lake District with children. Best family walks, indoor activities, lake boat trips, wildlife spotting, and practical advice for parents.",
+      "A guide to the Lake District with children: family walks, indoor activities, lake boat trips, wildlife spotting, and practical advice for parents.",
     url,
     mainEntityOfPage: url,
     datePublished: "2024-06-01",
@@ -67,12 +67,12 @@ const pageJsonLd = {
 export const metadata: Metadata = {
   title: "Lake District with Kids | Family Walks, Activities and Days Out",
   description:
-    "The family guide to the Lake District. Best walks for children, indoor activities for rainy days, lake boat trips, and where to stay with kids. Practical and honest.",
+    "The family guide to the Lake District. Walks for children, indoor activities for rainy days, lake boat trips, and where to stay with kids.",
   alternates: { canonical: url },
   openGraph: {
     title: "Lake District with Kids | The Lakes Guide",
     description:
-      "Best family walks, activities, and days out in the Lake District with children. Practical and honest.",
+      "Family walks, activities and days out in the Lake District with children.",
     url,
     siteName: "The Lakes Guide",
   },
@@ -150,7 +150,7 @@ export default function LakeDistrictWithKidsPage() {
             <p className="text-gray-700 leading-relaxed mb-4">
               The Lake District is a better destination for children than most adults expect,
               and a harder one than the marketing suggests. The mountains are real mountains.
-              The weather is genuinely unpredictable. A child who moans about walking will
+              The weather is unpredictable. A child who moans about walking will
               not stop moaning because they are in a beautiful valley. Plan accordingly.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">

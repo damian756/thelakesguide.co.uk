@@ -67,11 +67,11 @@ export default function NavMenu() {
               </Link>
               <Link href="/events" onClick={() => setExploreOpen(false)}
                 className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#EAEDE8] text-[#14231C] text-xs font-semibold hover:bg-gray-100 transition-colors">
-                📅 Events
+                Events
               </Link>
               <Link href="/blog" onClick={() => setExploreOpen(false)}
                 className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#EAEDE8] text-[#14231C] text-xs font-semibold hover:bg-gray-100 transition-colors">
-                ✍️ Blog
+                Blog
               </Link>
             </div>
 
@@ -188,11 +188,11 @@ export default function NavMenu() {
             <div className="grid grid-cols-2 gap-1.5">
               <Link href="/events" onClick={() => setMobileOpen(false)}
                 className="flex items-center justify-center gap-1 px-3 py-2.5 rounded-xl bg-[#EAEDE8] text-[#14231C] text-xs font-semibold">
-                📅 Events
+                Events
               </Link>
               <Link href="/blog" onClick={() => setMobileOpen(false)}
                 className="flex items-center justify-center gap-1 px-3 py-2.5 rounded-xl bg-[#EAEDE8] text-[#14231C] text-xs font-semibold">
-                ✍️ Blog
+                Blog
               </Link>
             </div>
           </div>

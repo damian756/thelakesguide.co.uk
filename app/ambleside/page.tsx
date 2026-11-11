@@ -42,7 +42,7 @@ const pageJsonLd = {
     address: { "@type": "PostalAddress", addressLocality: "Ambleside", postalCode: "LA22 0DB", addressCountry: "GB" },
     image: {
       "@type": "ImageObject",
-      url: "https://images.unsplash.com/photo-1546430498-f6b45e5b35ca?w=1400&q=80",
+      url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=80",
       width: 1400,
       height: 900,
     },
@@ -81,8 +81,8 @@ export default function AmblesidePage() {
         {/* Hero */}
         <section className="relative min-h-[480px] flex items-end text-white overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1546430498-f6b45e5b35ca?w=1400&q=80"
-            alt=""
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=80"
+            alt="A valley of pine trees below snow-capped mountains"
             fill priority sizes="100vw"
             className="object-cover object-center"
           />
@@ -151,9 +151,9 @@ export default function AmblesidePage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">What to See in Ambleside</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { name: "Bridge House", location: "Stock Beck · National Trust", desc: "A tiny cottage built on a bridge over Stock Beck, owned by the National Trust since 1926. You can see it from the street at any time; the inside opens only on tours run by the Armitt." },
+                { name: "Bridge House", location: "Stock Beck · National Trust", desc: "A tiny cottage built on a bridge over Stock Beck, owned by the National Trust since 1926. You can see it from the street at any time." },
                 { name: "Stock Ghyll Force", location: "20 min walk from market", desc: "The waterfall above the town. The path up through the Victorian woodland takes 20 minutes from the market place and reaches a series of falls that drop about 70 feet." },
-                { name: "The Armitt Museum", location: "Rydal Road, LA22 0BZ · Charged", desc: "Beatrix Potter watercolours, John Ruskin material, and a fossil collection." },
+                { name: "The Armitt Museum", location: "Rydal Road, LA22 9BL · Charged", desc: "Beatrix Potter watercolours, John Ruskin material, and a fossil collection." },
                 { name: "Waterhead Pier", location: "LA22 0EY", desc: "The Windermere Lake Cruises ferry arrives and departs from Waterhead, half a mile south of the town centre. A pleasant walk from the pier into town." },
               ].map(({ name, location, desc }) => (
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
@@ -177,7 +177,7 @@ export default function AmblesidePage() {
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <div className="flex items-center gap-3 mb-2">
                     <h3 className="font-semibold text-[#14231C]">{name}</h3>
-                    <span className="text-xs text-gray-400 bg-white rounded-full px-2 py-0.5 border border-gray-100">{stats}</span>
+                    <span className="text-xs text-gray-400">{stats}</span>
                   </div>
                   <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
                 </div>
@@ -202,7 +202,7 @@ export default function AmblesidePage() {
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <div className="flex items-start justify-between gap-2 mb-1">
                     <h3 className="font-semibold text-[#14231C]">{name}</h3>
-                    <span className="text-[10px] font-bold bg-[#14231C] text-white px-2 py-0.5 rounded-full flex-none">{tag}</span>
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 flex-none">{tag}</span>
                   </div>
                   <p className="text-xs text-gray-400 mb-2">{location}</p>
                   <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>

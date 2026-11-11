@@ -230,7 +230,7 @@ export default function ConistonPage() {
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <div className="flex items-start justify-between gap-2 mb-1">
                     <h3 className="font-semibold text-[#14231C]">{name}</h3>
-                    <span className="text-[10px] font-bold bg-[#14231C] text-white px-2 py-0.5 rounded-full flex-none">{tag}</span>
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 flex-none">{tag}</span>
                   </div>
                   <p className="text-xs text-gray-400 mb-2">{location}</p>
                   <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
@@ -273,7 +273,7 @@ export default function ConistonPage() {
             <h2 className="font-display text-xl font-bold text-[#14231C] mb-5">Explore Nearby</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { href: "/ambleside", label: "Ambleside", desc: "8 miles north, central Lakes hub", image: "https://images.unsplash.com/photo-1546430498-f6b45e5b35ca?w=400&q=80" },
+                { href: "/ambleside", label: "Ambleside", desc: "8 miles north, central Lakes hub", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80" },
                 { href: "/windermere", label: "Windermere", desc: "England's largest lake", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" },
                 { href: "/grasmere", label: "Grasmere", desc: "Wordsworth country, 12 miles north", image: "https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=400&q=80" },
                 { href: "/keswick", label: "Keswick", desc: "Northern Lakes capital", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" },

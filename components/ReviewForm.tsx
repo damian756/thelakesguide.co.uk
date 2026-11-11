@@ -128,7 +128,7 @@ export default function ReviewForm({ businessId, businessName }: Props) {
         <div className="border border-dashed border-[#C9A84C]/60 rounded-xl p-5 text-center space-y-2">
           <Receipt className="w-7 h-7 text-[#C9A84C] mx-auto" />
           <p className="font-semibold text-gray-800 text-sm">Want a Verified Purchase badge?</p>
-          <p className="text-xs text-gray-500">Upload a receipt or transaction screenshot to prove your visit. It won&apos;t be published — we check it privately then delete it.</p>
+          <p className="text-xs text-gray-500">Upload a receipt or transaction screenshot to prove your visit. It won&apos;t be published: we check it privately, then delete it.</p>
 
           {receiptDone ? (
             <p className="text-sm font-semibold text-emerald-700">Receipt uploaded. Thanks!</p>
@@ -170,7 +170,7 @@ export default function ReviewForm({ businessId, businessName }: Props) {
           onClick={() => setStep("done")}
           className="text-sm text-gray-500 hover:text-gray-700 underline"
         >
-          Skip — continue without receipt
+          Skip and continue without a receipt
         </button>
       </div>
     );

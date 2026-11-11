@@ -66,7 +66,7 @@ const easyWalks = [
     distance: "1.5 miles",
     ascent: "70m",
     time: "45 mins",
-    image: "https://images.unsplash.com/photo-1546430498-f6b45e5b35ca?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80",
     description: "A short woodland waterfall walk from Ambleside market place. The falls drop about 70 feet through mature Victorian-era woodland. A good morning warm-up before moving on. Not a destination in itself but worth the legs for the falls.",
     note: "20 minutes from Ambleside market place.",
   },
@@ -178,7 +178,7 @@ const bigDays = [
     distance: "13 miles",
     ascent: "1,200m",
     time: "7–8 hrs",
-    image: "https://images.unsplash.com/photo-1546430498-f6b45e5b35ca?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80",
     description: "The full traverse of the far eastern fells: Yoke, Ill Bell, Froswick, Thornthwaite Crag, High Street, Mardale Ill Bell, Harter Fell, Kentmere Pike. Consistently excellent high-level ridge walking in the least-visited part of the national park.",
     warning: "Remote. Limited escape routes. Plan the route and check the forecast carefully.",
   },
@@ -251,7 +251,7 @@ export default function LakeDistrictWalksPage() {
               Lake District Walks
             </h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-2xl mb-8">
-              I have walked in the Lakes in every season, in every kind of weather, with kids, with dogs, and on my own. The walking here is exceptional. It also requires genuine preparation. This guide covers the routes worth doing and the things worth knowing before you go.
+              The walking in the Lakes runs from flat lake shores to serious mountain days, and the high fells need preparation in any season. This guide covers the routes and the things to know before you go.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
               {[
@@ -595,9 +595,9 @@ export default function LakeDistrictWalksPage() {
               {[
                 { href: "/dog-friendly-lake-district", label: "Dog-Friendly Lake District", desc: "Walks, pubs, and practical advice with a dog", image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80" },
                 { href: "/lake-district-with-kids", label: "Lake District with Kids", desc: "What actually works with children", image: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=400&q=80" },
-                { href: "/rainy-day-lake-district", label: "Rainy Day Options", desc: "When the weather turns: the plan", image: "https://images.unsplash.com/photo-1511225070847-8c58a0a29c07?w=400&q=80" },
+                { href: "/rainy-day-lake-district", label: "Rainy Day Options", desc: "When the weather turns: the plan", image: "https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=400&q=80" },
                 { href: "/keswick", label: "Keswick", desc: "Catbells, Derwentwater, Skiddaw", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" },
-                { href: "/ambleside", label: "Ambleside", desc: "Best walking base in the Lakes", image: "https://images.unsplash.com/photo-1546430498-f6b45e5b35ca?w=400&q=80" },
+                { href: "/ambleside", label: "Ambleside", desc: "Best walking base in the Lakes", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80" },
                 { href: "/coniston", label: "Coniston", desc: "Old Man, Brantwood, Tarn Hows", image: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=400&q=80" },
               ].map(({ href, label, desc, image }) => (
                 <Link key={href} href={href} className="group relative h-36 rounded-2xl overflow-hidden block">

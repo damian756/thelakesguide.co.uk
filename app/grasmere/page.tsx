@@ -92,7 +92,7 @@ export default function GrasmerePage() {
             <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">Village guide · Central Lake District · LA22</p>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Grasmere</h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-2xl mb-8">
-              Simultaneously one of the most visited and most genuinely beautiful places in the Lake District. Wordsworth lived here. The gingerbread is made to a recipe from 1854. The lake is outstanding. The village in August can feel overwhelmed, but the surrounding fells always offer a way out.
+              Simultaneously one of the most visited and most beautiful places in the Lake District. Wordsworth lived here. The gingerbread is made to a recipe from 1854. The lake is outstanding. The village in August can feel overwhelmed, but the surrounding fells always offer a way out.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
               {[
@@ -160,10 +160,6 @@ export default function GrasmerePage() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-3">
                   LA22 9SH, entrance charged. A 17th-century farmhouse on the old road to Ambleside, half a mile from the village centre. The cottage is small and gives a clear impression of how Wordsworth&rsquo;s household lived.
                 </p>
-                <div className="flex flex-wrap gap-2 text-xs font-semibold">
-                  <span className="bg-[#14231C] text-white px-3 py-1.5 rounded-full">Guided tours</span>
-                  <span className="bg-white border border-gray-200 text-[#14231C] px-3 py-1.5 rounded-full">First slot for smallest crowds</span>
-                </div>
               </div>
             </div>
           </section>
@@ -173,7 +169,7 @@ export default function GrasmerePage() {
             <div className="bg-gray-50 rounded-xl p-6">
               <div className="flex items-start justify-between gap-2 mb-3">
                 <h2 className="font-display text-xl font-bold text-[#14231C]">Grasmere Gingerbread</h2>
-                <span className="text-xs font-bold bg-[#C4782A] text-white px-2.5 py-1 rounded-full flex-none">Since 1854</span>
+                <span className="text-xs font-semibold text-[#C4782A] flex-none">Since 1854</span>
               </div>
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
                 Sarah Nelson&rsquo;s Grasmere Gingerbread shop is at the corner of the churchyard (LA22 9SW). The recipe has been made to the same formula since 1854. It is not gingerbread in the conventional sense: it is harder and drier, and spiced differently.
@@ -208,7 +204,7 @@ export default function GrasmerePage() {
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <div className="flex items-center gap-3 mb-2">
                     <h3 className="font-semibold text-[#14231C]">{name}</h3>
-                    <span className="text-xs text-gray-400 bg-white rounded-full px-2 py-0.5 border border-gray-100">{stats}</span>
+                    <span className="text-xs text-gray-400">{stats}</span>
                   </div>
                   <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
                 </div>
@@ -228,7 +224,7 @@ export default function GrasmerePage() {
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <div className="flex items-start justify-between gap-2 mb-1">
                     <h3 className="font-semibold text-[#14231C]">{name}</h3>
-                    <span className="text-[10px] font-bold bg-[#14231C] text-white px-2 py-0.5 rounded-full flex-none">{tag}</span>
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 flex-none">{tag}</span>
                   </div>
                   <p className="text-xs text-gray-400 mb-2">{location}</p>
                   <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
@@ -271,7 +267,7 @@ export default function GrasmerePage() {
             <h2 className="font-display text-xl font-bold text-[#14231C] mb-5">Explore Nearby</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { href: "/ambleside", label: "Ambleside", desc: "4 miles south, the walking hub", image: "https://images.unsplash.com/photo-1546430498-f6b45e5b35ca?w=400&q=80" },
+                { href: "/ambleside", label: "Ambleside", desc: "4 miles south, the walking hub", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80" },
                 { href: "/keswick", label: "Keswick", desc: "15 miles north on the 555", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" },
                 { href: "/windermere", label: "Windermere", desc: "England's largest lake", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" },
                 { href: "/coniston", label: "Coniston", desc: "Coniston Water, Ruskin, Old Man", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&q=80" },

@@ -11,7 +11,7 @@ export default function CategoryError({ reset }: { reset: () => void }) {
           Something went wrong
         </h1>
         <p className="text-gray-500 text-sm mb-8 leading-relaxed">
-          We had trouble loading this page. This is usually a temporary issue — try again in a moment.
+          We had trouble loading this page. This is usually a temporary issue, so try again in a moment.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <button

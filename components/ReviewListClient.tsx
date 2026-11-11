@@ -177,7 +177,7 @@ export default function ReviewListClient({
         ))}
         {rejected.map((r) => (
           <div key={r.id} className="bg-gray-50 rounded-xl border border-gray-100 px-5 py-4 text-sm text-gray-400 italic">
-            One review removed — {r.removalNote}
+            One review removed: {r.removalNote}
           </div>
         ))}
       </div>

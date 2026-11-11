@@ -67,7 +67,7 @@ const pageJsonLd = {
 export const metadata: Metadata = {
   title: "Rainy Day Lake District | What to Do When It Rains",
   description:
-    "What to do in the Lake District when it rains. Best museums, indoor activities for kids, wet weather walks, and where to eat. Practical and honest.",
+    "What to do in the Lake District when it rains. Museums, indoor activities for kids, wet weather walks, and where to eat.",
   alternates: { canonical: url },
   openGraph: {
     title: "Rainy Day Lake District | The Lakes Guide",
@@ -90,8 +90,8 @@ export default function RainyDayLakeDistrictPage() {
         {/* Hero */}
         <section className="relative min-h-[480px] flex items-end text-white overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1504266106287-1659872e6590?w=1400&q=80"
-            alt=""
+            src="https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=1400&q=80"
+            alt="A walker sitting on a rock above misty hills at sunrise"
             fill priority sizes="100vw"
             className="object-cover object-center"
           />

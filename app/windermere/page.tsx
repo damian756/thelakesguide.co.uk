@@ -207,11 +207,7 @@ export default function WindermerePage() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   Alfred Wainwright first saw the Lakes from Orrest Head in 1930 and it changed his life. The view from the summit takes in the full length of Windermere with the Coniston Fells and central Lake District peaks behind. 45 minutes return from Windermere station. 238 metres above sea level. Not difficult.
                 </p>
-                <div className="flex flex-wrap gap-2 text-xs font-semibold">
-                  <span className="bg-[#14231C] text-white px-3 py-1.5 rounded-full">45 min return</span>
-                  <span className="bg-white border border-gray-200 text-[#14231C] px-3 py-1.5 rounded-full">Starts opposite the station</span>
-                  <span className="bg-white border border-gray-200 text-[#14231C] px-3 py-1.5 rounded-full">Free, no car needed</span>
-                </div>
+                <p className="text-xs font-semibold text-[#14231C]">45 min return · Starts opposite the station · Free, no car needed</p>
               </div>
             </div>
           </section>
@@ -221,7 +217,7 @@ export default function WindermerePage() {
             <div className="bg-gray-50 rounded-xl p-6">
               <div className="flex items-start justify-between gap-2 mb-3">
                 <h2 className="font-display text-xl font-bold text-[#14231C]">Windermere Jetty Museum</h2>
-                <span className="text-xs font-bold bg-[#14231C] text-white px-2.5 py-1 rounded-full flex-none">Allow 90 min</span>
+                <span className="text-xs font-semibold text-gray-500 flex-none">Allow 90 min</span>
               </div>
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
                 Rayrigg Road, Bowness, LA23 1BN. Entrance charged. A museum of historic boats from the lake, run by Lakeland Arts, about a 12-minute walk from Bowness pier.
@@ -243,7 +239,7 @@ export default function WindermerePage() {
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <div className="flex items-start justify-between gap-2 mb-1">
                     <h3 className="font-semibold text-[#14231C]">{name}</h3>
-                    <span className="text-[10px] font-bold bg-[#14231C] text-white px-2 py-0.5 rounded-full flex-none">{tag}</span>
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 flex-none">{tag}</span>
                   </div>
                   <p className="text-xs text-gray-400 mb-2">{location}</p>
                   <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
@@ -302,7 +298,7 @@ export default function WindermerePage() {
             <h2 className="font-display text-xl font-bold text-[#14231C] mb-5">Explore Nearby</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { href: "/ambleside", label: "Ambleside", desc: "3 miles north, the walking hub", image: "https://images.unsplash.com/photo-1546430498-f6b45e5b35ca?w=400&q=80" },
+                { href: "/ambleside", label: "Ambleside", desc: "3 miles north, the walking hub", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80" },
                 { href: "/grasmere", label: "Grasmere", desc: "Wordsworth country, 8 miles north", image: "https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=400&q=80" },
                 { href: "/coniston", label: "Coniston", desc: "Old Man, Brantwood, 8 miles west", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&q=80" },
                 { href: "/keswick", label: "Keswick", desc: "Northern capital, Derwentwater", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" },

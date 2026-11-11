@@ -29,9 +29,9 @@ export const COLLECTIONS: Collection[] = [
     slug: "dog-friendly-restaurants-lake-district",
     title: "Dog-Friendly Restaurants in the Lake District",
     metaDescription:
-      "Dog-friendly restaurants in the Lake District. Places that welcome dogs inside. Updated local list.",
+      "Dog-friendly restaurants in the Lake District: places that welcome dogs inside.",
     intro:
-      "Finding a restaurant that genuinely welcomes dogs takes a bit of research. These are the places in the Lake District that actually mean it. Worth phoning ahead for evening visits.",
+      "Restaurants in the Lake District that welcome dogs inside. Dog policies can differ between the bar and the dining room, so phone ahead for evening visits.",
     tags: ["dog-friendly"],
     categorySlugs: ["restaurants"],
     emoji: "🐾",
@@ -41,9 +41,9 @@ export const COLLECTIONS: Collection[] = [
     slug: "dog-friendly-pubs-lake-district",
     title: "Dog-Friendly Pubs in the Lake District",
     metaDescription:
-      "Dog-friendly pubs in the Lake District. Post-walk pubs that welcome dogs. The honest local list.",
+      "Dog-friendly pubs in the Lake District: post-walk pubs that welcome dogs.",
     intro:
-      "Post-walk pub visits with the dog in tow work much better when you know which pubs are genuinely on board. These are the Lake District's most reliably dog-welcoming pubs.",
+      "Lake District pubs that welcome dogs. Rules can differ between the bar and the dining room, so ask when you arrive.",
     tags: ["dog-friendly"],
     categorySlugs: ["pubs"],
     emoji: "🐶",
@@ -55,7 +55,7 @@ export const COLLECTIONS: Collection[] = [
     metaDescription:
       "Dog-friendly cafés in the Lake District. Independent coffee shops and tea rooms that welcome dogs.",
     intro:
-      "A decent coffee after a walk is non-negotiable. These Lake District cafés are the ones that mean it when they say dogs are welcome.",
+      "Lake District cafés and tea rooms that welcome dogs.",
     tags: ["dog-friendly"],
     categorySlugs: ["cafes"],
     emoji: "☕",
@@ -69,7 +69,7 @@ export const COLLECTIONS: Collection[] = [
     metaDescription:
       "Family-friendly restaurants in the Lake District. Places with kids' menus and space for families.",
     intro:
-      "Family dining in the Lake District. These are the restaurants that actively cater for families.",
+      "Lake District restaurants with children's menus and space for families.",
     tags: ["family-friendly"],
     categorySlugs: ["restaurants"],
     emoji: "👨‍👩‍👧‍👦",
@@ -81,7 +81,7 @@ export const COLLECTIONS: Collection[] = [
     metaDescription:
       "Family-friendly activities in the Lake District. Walks, attractions, and things to do with kids.",
     intro:
-      "The Lake District is genuinely good for families. These are the activities that are actually worth the trip with kids in tow.",
+      "Activities in the Lake District that suit families with children.",
     tags: ["family-friendly"],
     categorySlugs: ["activities", "walks"],
     emoji: "🎡",
@@ -95,7 +95,7 @@ export const COLLECTIONS: Collection[] = [
     metaDescription:
       "Pubs with lake views in the Lake District. Post-walk drinks by the water.",
     intro:
-      "Pubs with a view of the water. These are the Lake District pubs where you can sit outside and look at the lake.",
+      "Lake District pubs with a view of the water.",
     tags: ["lakeside"],
     categorySlugs: ["pubs"],
     emoji: "🏞️",
@@ -119,7 +119,7 @@ export const COLLECTIONS: Collection[] = [
     metaDescription:
       "Cafés and tea rooms with lake views in the Lake District. Coffee with a view.",
     intro:
-      "Cafés where you can sit with a coffee and look at the water. The Lake District has a few. Worth seeking out.",
+      "Lake District cafés where you can sit with a coffee and look at the water.",
     tags: ["lake-views"],
     categorySlugs: ["cafes"],
     emoji: "☕",
@@ -129,9 +129,9 @@ export const COLLECTIONS: Collection[] = [
     slug: "pubs-after-a-walk-lake-district",
     title: "Pubs After a Walk in the Lake District",
     metaDescription:
-      "Post-walk pubs in the Lake District. Boots-off, beer-in-hand. The honest list.",
+      "Post-walk pubs in the Lake District that welcome walkers.",
     intro:
-      "The best part of a day on the fells is the pub afterwards. These Lake District pubs are the ones walkers actually use. Boots off, beer in hand.",
+      "Lake District pubs that welcome walkers after a day on the fells.",
     tags: ["post-walk"],
     categorySlugs: ["pubs"],
     emoji: "🥾",
@@ -143,7 +143,7 @@ export const COLLECTIONS: Collection[] = [
     metaDescription:
       "Fine dining restaurants in the Lake District. Michelin and high-end dining.",
     intro:
-      "The Lake District has a handful of serious restaurants. Book ahead. Dress code varies. These are the places for a proper treat.",
+      "Fine dining restaurants in the Lake District. Book ahead; dress codes vary.",
     tags: ["fine-dining"],
     categorySlugs: ["restaurants"],
     emoji: "✨",
@@ -157,7 +157,7 @@ export const COLLECTIONS: Collection[] = [
     metaDescription:
       "Places to stay with parking in the Lake District. B&Bs, hotels, and holiday lets with on-site parking.",
     intro:
-      "Parking in the Lake District can be a hassle. These places have their own parking or direct access to nearby car parks.",
+      "Places to stay in the Lake District with their own parking or a car park close by.",
     tags: ["parking"],
     categorySlugs: ["accommodation"],
     emoji: "🏨",
@@ -169,7 +169,7 @@ export const COLLECTIONS: Collection[] = [
     metaDescription:
       "Budget accommodation in the Lake District. Affordable places to stay.",
     intro:
-      "The Lake District has a solid range of budget accommodation. These are the affordable options that are still worth staying in.",
+      "Affordable places to stay in the Lake District.",
     tags: ["budget"],
     categorySlugs: ["accommodation"],
     emoji: "💷",
@@ -181,7 +181,7 @@ export const COLLECTIONS: Collection[] = [
     metaDescription:
       "Places to stay near Windermere. B&Bs, hotels, and holiday lets in Windermere, Bowness, and the surrounding area.",
     intro:
-      "Windermere and Bowness are the busiest bases in the Lakes. Good transport, plenty of options. These are the places to stay if you want to be near the lake.",
+      "Places to stay in Windermere and Bowness, near the lake, the station and the boats.",
     tags: ["windermere"],
     categorySlugs: ["accommodation"],
     emoji: "🏨",
@@ -193,7 +193,7 @@ export const COLLECTIONS: Collection[] = [
     metaDescription:
       "Places to stay near Keswick. B&Bs, hotels, and holiday lets for the northern fells.",
     intro:
-      "Keswick is the gateway to the northern fells. Skiddaw, Blencathra, Catbells. These are the places to stay if you want to walk from the door.",
+      "Places to stay in and around Keswick, for walking from the door to Skiddaw, Blencathra and Catbells.",
     tags: ["keswick"],
     categorySlugs: ["accommodation"],
     emoji: "🏔️",
@@ -207,7 +207,7 @@ export const COLLECTIONS: Collection[] = [
     metaDescription:
       "Free things to do in the Lake District. Walks, views, and attractions that cost nothing.",
     intro:
-      "The Lake District has more free things to do than most places. The fells, the lakes, the views. These are the activities that genuinely cost nothing.",
+      "Free things to do in the Lake District: the fells, the lake shores and the views.",
     tags: ["free"],
     categorySlugs: ["walks", "activities"],
     emoji: "🎟️",

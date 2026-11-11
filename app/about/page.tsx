@@ -108,7 +108,7 @@ export default function AboutPage() {
                 {[
                   {
                     term: "Independent",
-                    desc: "Churchtown Media Ltd pays for the guide. Businesses can pay for a Featured place in the listings, and every paid listing is labelled Featured. Paying for a listing does not change what we write.",
+                    desc: "Churchtown Media Ltd pays for the guide. There are no adverts or paid placements on the site today. Paying for a space does not change what we write.",
                   },
                   {
                     term: "Checked",
@@ -139,12 +139,11 @@ export default function AboutPage() {
               <div className="flex flex-col sm:flex-row gap-6 items-start">
                 <div className="flex-shrink-0">
                   <Image
-                    src="https://www.churchtownmedia.co.uk/images/about/damian-headshot.jpg"
+                    src="/images/blog/damian-headshot.jpg"
                     alt="Damian Roche, Founder of Churchtown Media"
                     width={96}
                     height={96}
                     className="rounded-2xl"
-                    unoptimized
                   />
                 </div>
                 <div>
@@ -191,8 +190,8 @@ export default function AboutPage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">What we cover</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { label: "Restaurants & Cafés", desc: "A directory of places to eat and drink across the Lake District." },
-                { label: "Accommodation", desc: "Hotels, B&Bs, hostels and self-catering in Keswick, Ambleside, Windermere and beyond." },
+                { label: "Restaurants & Cafés", desc: "Where to eat and drink, in our town guides and posts, with each place described from its own website." },
+                { label: "Accommodation", desc: "Where to base yourself: Keswick, Ambleside, Windermere, Grasmere and beyond." },
                 { label: "Walks & Hiking", desc: "Fell walks, valley routes, and practical guides for the Wainwrights and beyond." },
                 { label: "Villages & Towns", desc: "Keswick, Ambleside, Windermere, Coniston, Grasmere: what to expect and where to stop." },
                 { label: "Things To Do", desc: "Boat trips, water sports, cycling, Grizedale Forest, museums and other attractions." },
@@ -211,12 +210,11 @@ export default function AboutPage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">How it&apos;s paid for</h2>
             <div className="bg-white rounded-2xl border border-gray-100 p-8">
               <p className="text-gray-700 leading-relaxed mb-4">
-                The Lakes Guide is free to use. Churchtown Media Ltd pays for it. Businesses can pay for a
-                Pro listing or a boost, which gives them more room and more visibility in the directory.
+                The Lakes Guide is free to use. Churchtown Media Ltd pays for it. The business directory is
+                opening and has no listings yet, and there are no adverts or paid placements on the site today.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Paid listings are labelled Featured. Paying for one does not buy a mention in our guides or
-                posts, and does not change what we write.
+                Paying for a space does not change what we write.
               </p>
             </div>
           </section>
@@ -226,8 +224,8 @@ export default function AboutPage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">Get in touch</h2>
             <div className="bg-white rounded-2xl border border-gray-100 p-8">
               <p className="text-gray-700 leading-relaxed mb-6">
-                To list your business, ask about a Featured listing, or report anything that looks
-                wrong, use the contact form.
+                To ask for your business to be listed, or to report anything that looks wrong, use the
+                contact form.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -235,12 +233,6 @@ export default function AboutPage() {
                   className="inline-flex items-center justify-center bg-[#14231C] text-white font-semibold px-6 py-3 rounded-xl hover:bg-[#C4782A] transition-colors"
                 >
                   Contact us
-                </Link>
-                <Link
-                  href="/claim-listing"
-                  className="inline-flex items-center justify-center border border-[#14231C] text-[#14231C] font-semibold px-6 py-3 rounded-xl hover:bg-[#14231C] hover:text-white transition-colors"
-                >
-                  Claim your listing
                 </Link>
               </div>
             </div>

@@ -100,12 +100,12 @@ const CATEGORY_CONTENT: Record<string, string[]> = {
   ],
   "activities": [
     "Walking is the main draw, but there's more. Boats run on Windermere, Coniston Water, Derwentwater and Ullswater. Paddleboarding, kayaking, and sailing are available on the main lakes. Grizedale has mountain biking and Go Ape.",
-    "The Ravenglass and Eskdale Railway is a heritage railway in the west of the National Park. Honister Slate Mine has mine tours and a via ferrata. At Brockhole on Windermere, the National Park leased the site in 2025 and BeWILDerwood is listed as coming soon.",
+    "The Ravenglass and Eskdale Railway is a heritage railway in the west of the National Park. Honister Slate Mine has mine tours and a via ferrata. At Brockhole on Windermere, the National Park agreed in 2025 to market the site on a long-term lease, and BeWILDerwood is listed as coming soon.",
     "Worth knowing: water sports and boat hire get booked up in summer. Book ahead. The boats on Windermere and Ullswater run through the winter on reduced timetables; the Keswick Launch does not sail in December and January.",
   ],
   "attractions": [
     "Dove Cottage, Hill Top, Brockhole, Lakes Aquarium, Haverthwaite Railway, World of Beatrix Potter, Honister Slate Mine. The Lake District has a mix of heritage and family attractions.",
-    "Dove Cottage in Grasmere is Wordsworth's home. Hill Top near Sawrey is Beatrix Potter's. Both need booking. Lakes Aquarium at the southern end of Windermere is indoors.",
+    "Dove Cottage in Grasmere is Wordsworth's home. Hill Top near Sawrey is Beatrix Potter's. Check the Wordsworth Trust and National Trust websites for opening and booking before you go. Lakes Aquarium at the southern end of Windermere is indoors.",
     "Worth knowing: the heritage sites get busy in summer, and several have shorter winter hours. Check before you go. Honister Slate Mine has mine tours and a via ferrata.",
   ],
   "accommodation": [
@@ -376,8 +376,8 @@ export default async function CategoryPage({ params, searchParams }: Props) {
             })}
           </div>
         </div>
-        {/* Mobile editorial */}
-        {CATEGORY_CONTENT[category] && (
+        {/* Mobile editorial (when there are no listings, the main column already shows this text) */}
+        {hasListings && CATEGORY_CONTENT[category] && (
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-4 mb-4">
             <div className="space-y-2.5">
               {CATEGORY_CONTENT[category].map((para, i) => (
