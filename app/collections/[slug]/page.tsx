@@ -193,7 +193,6 @@ export default async function CollectionPage({ params }: Props) {
               <span className="text-white font-medium">{collection.title}</span>
             </nav>
 
-            <div className="text-5xl mb-4 drop-shadow-md">{collection.emoji}</div>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
               {collection.title}
             </h1>
@@ -201,15 +200,17 @@ export default async function CollectionPage({ params }: Props) {
               {collection.intro}
             </p>
 
-            <div className="flex items-center gap-3 text-sm text-white/70">
-              <span className="font-semibold text-[#C4782A] text-2xl">{count}</span>
-              <span>{count === 1 ? "listing" : "listings"} found</span>
-              {!isIndexable && (
-                <span className="ml-2 text-amber-400 text-xs font-semibold uppercase tracking-wider">
-                  · Building — more coming soon
-                </span>
-              )}
-            </div>
+            {count > 0 && (
+              <div className="flex items-center gap-3 text-sm text-white/70">
+                <span className="font-semibold text-[#C4782A] text-2xl">{count}</span>
+                <span>{count === 1 ? "listing" : "listings"} found</span>
+                {!isIndexable && (
+                  <span className="ml-2 text-amber-400 text-xs font-semibold uppercase tracking-wider">
+                    · Few listings so far
+                  </span>
+                )}
+              </div>
+            )}
           </div>
 
           <div className="relative h-8 overflow-hidden">
@@ -224,16 +225,16 @@ export default async function CollectionPage({ params }: Props) {
 
           {count === 0 ? (
             <div className="text-center py-20">
-              <p className="text-5xl mb-4">🔍</p>
-              <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-2">Building this list</h2>
-              <p className="text-gray-500 max-w-sm mx-auto">
-                We&apos;re working through our database to tag businesses for this collection. Check back soon.
+              <h2 className="font-display text-2xl font-bold text-[#1B2E4B] mb-2">No businesses in this list yet</h2>
+              <p className="text-gray-500 max-w-md mx-auto">
+                The Lakes Guide is opening its directory, and this list fills as businesses join. If you run a
+                business that belongs here, ask to be listed through the contact form.
               </p>
               <Link
-                href={`/${collection.categorySlugs[0]}`}
+                href="/contact"
                 className="inline-flex items-center gap-2 mt-6 text-[#C4782A] font-semibold hover:underline"
               >
-                Browse all in this category <ArrowRight className="w-4 h-4" />
+                Ask to be listed <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           ) : (
@@ -264,7 +265,8 @@ export default async function CollectionPage({ params }: Props) {
             </div>
           )}
 
-          {/* ── CTA ──────────────────────────────────────────────────── */}
+          {/* ── CTA (the empty state above already carries it) ─────────── */}
+          {count > 0 && (
           <div className="mt-14 bg-[#1B2E4B] rounded-2xl p-8 text-center">
             <h3 className="font-display text-xl font-bold text-white mb-2">
               Own a business that belongs here?
@@ -279,6 +281,7 @@ export default async function CollectionPage({ params }: Props) {
               Add Your Business →
             </Link>
           </div>
+          )}
 
         </div>
       </div>

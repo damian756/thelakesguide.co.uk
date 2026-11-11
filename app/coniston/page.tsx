@@ -13,19 +13,19 @@ const faqs = [
   },
   {
     q: "What is the best walk near Coniston?",
-    a: "Coniston Old Man from the village is the most popular — around 5.5 miles return with 750 metres of ascent. The circuit via Dow Crag and Goat's Water is a better day. For a shorter walk, the circuit of Tarn Hows (3 miles, flat) is one of the most scenic easy walks in the Lake District.",
+    a: "Coniston Old Man from the village is the most popular: around 5.5 miles return with 750 metres of ascent. The circuit via Dow Crag and Goat's Water is a longer day. For a shorter walk, the path round Tarn Hows is about 2 miles, with some slopes as steep as 1 in 5.",
   },
   {
-    q: "Is Brantwood worth visiting?",
-    a: "Yes. Brantwood (LA21 8AD, entrance charged) is John Ruskin's house on the eastern shore of Coniston Water. The house has a significant art collection and the gardens, designed by Ruskin, are excellent. The setting above the lake is exceptional. Allow 2 to 3 hours.",
+    q: "What is Brantwood?",
+    a: "Brantwood (LA21 8AD) is John Ruskin's house on the eastern shore of Coniston Water, with gardens he designed. From 16 November it opens Wednesday to Sunday. An adult ticket is £16.50 and gives a year's entry; children 16 and under go free. Allow 2 to 3 hours.",
   },
   {
     q: "How do I get to Coniston without a car?",
-    a: "The 505 bus runs from Ambleside and Windermere to Coniston. The Coniston Launch boat service runs from Coniston pier to Brantwood and other stopping points on the lake. The combination of bus and boat gives access to Coniston and the lake without a car.",
+    a: "The 505 bus runs from Ambleside and Windermere to Coniston. The Coniston Launch boat service runs from Coniston pier to Brantwood and other stopping points on the lake. The launch sails all year, with fewer sailings from November to February.",
   },
   {
     q: "Where should I eat in Coniston?",
-    a: "The Black Bull on Yewdale Road is the main pub — it brews its own beer and does solid food. The Sun Hotel also serves food. For a quick lunch, the Bluebird Cafe near the pier gives views over the lake and is a reasonable option.",
+    a: "The Black Bull is a coaching inn with rooms that serves food; Coniston Brewing Co brews its beer next door. The Bluebird Cafe on Lake Road is on the shore by the launches and is open daily from 9.30am to 4pm between November and March.",
   },
 ];
 
@@ -66,10 +66,10 @@ const pageJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Coniston | Ruskin, Old Man & Complete Visitor Guide",
-  description: "Complete guide to Coniston. Coniston Old Man walk, Brantwood house and gardens, Coniston Water boat trips, Tarn Hows. Restaurants, accommodation and practical information.",
+  title: "Coniston | Ruskin, Old Man & Visitor Guide",
+  description: "Coniston in the Lake District: the Old Man walk, Brantwood, Coniston Water boat trips and Tarn Hows, with places to eat, accommodation and practical information.",
   alternates: { canonical: url },
-  openGraph: { title: "Coniston Guide | The Lakes Guide", description: "Coniston Old Man, Brantwood, Coniston Water and Tarn Hows. Complete visitor guide for the southern Lake District village.", url, siteName: "The Lakes Guide" },
+  openGraph: { title: "Coniston Guide | The Lakes Guide", description: "Coniston Old Man, Brantwood, Coniston Water and Tarn Hows: a visitor guide to the southern Lake District village.", url, siteName: "The Lakes Guide" },
 };
 
 export default function ConistonPage() {
@@ -82,7 +82,7 @@ export default function ConistonPage() {
         <section className="relative min-h-[480px] flex items-end text-white overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=1400&q=80"
-            alt="Coniston Water with the fells above the southern Lake District"
+            alt=""
             fill priority sizes="100vw"
             className="object-cover object-center"
           />
@@ -140,7 +140,7 @@ export default function ConistonPage() {
           <section className="mb-12">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">About Coniston</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Coniston is a small village in the southern Lake District, sitting at the foot of Coniston Old Man with the lake, Coniston Water, stretching south. It is a working village as much as a tourist one — there was copper mining here for centuries, and the Old Man is covered in the remains of the industry.
+              Coniston is a small village in the southern Lake District, sitting at the foot of Coniston Old Man with the lake, Coniston Water, stretching south. It is a working village as much as a tourist one: there was copper mining here for centuries, and the Old Man is covered in the remains of the industry.
             </p>
             <p className="text-gray-600 leading-relaxed">
               The three figures who define Coniston&rsquo;s cultural identity are John Ruskin, Arthur Ransome, and Donald Campbell. Ruskin lived at Brantwood on the eastern shore from 1872 until his death in 1900. Ransome set key parts of his Swallows and Amazons books here. Campbell died in 1967, attempting the world water speed record on Bluebird K7. His body and the remains of the boat were recovered from the lake in 2001.
@@ -153,7 +153,7 @@ export default function ConistonPage() {
               <div className="relative h-52 md:h-auto md:w-64 flex-none">
                 <Image
                   src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80"
-                  alt="Coniston Old Man rising above the village"
+                  alt="Two walkers with rucksacks on a mountain path below snow-capped peaks"
                   fill sizes="(max-width: 768px) 100vw, 256px"
                   className="object-cover"
                 />
@@ -175,7 +175,7 @@ export default function ConistonPage() {
               <div className="bg-gray-50 rounded-xl p-4">
                 <h3 className="font-semibold text-[#14231C] mb-1 text-sm">Dow Crag circuit</h3>
                 <p className="text-xs text-gray-400 mb-1.5">7 miles · 900m ascent · 5-6 hrs</p>
-                <p className="text-gray-600 text-sm">A significantly better day. Via Goat&rsquo;s Water under the east face of Dow Crag, one of the great cliff faces in the southern Lakes, then over the ridge to the Old Man.</p>
+                <p className="text-gray-600 text-sm">A longer day. Via Goat&rsquo;s Water under the east face of Dow Crag, one of the great cliff faces in the southern Lakes, then over the ridge to the Old Man.</p>
               </div>
             </div>
           </section>
@@ -187,11 +187,11 @@ export default function ConistonPage() {
               Brantwood (LA21 8AD, entrance charged) is on the eastern shore of Coniston Water, accessible by road via the B5285 from Coniston village or by boat on the Coniston Launch. John Ruskin bought the house in 1871 and spent the last 28 years of his life here, extending the house, creating the gardens, and producing some of his later writing on economics, art criticism, and social reform.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              The house contains original furniture and artworks, including Ruskin&rsquo;s own drawings and paintings. The gardens, which Ruskin designed with an unconventional approach that included terraced bog gardens and a wild fell garden above the house, are excellent in spring and summer.
+              The house contains original furniture and artworks, including Ruskin&rsquo;s own drawings and paintings. The gardens, which Ruskin designed with an unconventional approach that included terraced bog gardens and a wild fell garden above the house, are open with the house.
             </p>
             <div className="bg-gray-50 rounded-xl p-4">
               <p className="font-semibold text-[#14231C] text-sm mb-1">Practical notes</p>
-              <p className="text-gray-600 text-sm">Allow 2 to 3 hours for the house, garden, and lake shore walk from the jetty. The Coniston Launch runs from Coniston pier to Brantwood regularly. The cafe at Brantwood is reasonable. Combining the boat trip with the Brantwood visit removes the need to drive the eastern shore road.</p>
+              <p className="text-gray-600 text-sm">Allow 2 to 3 hours for the house, garden, and lake shore walk from the jetty. The Coniston Launch runs from Coniston pier to Brantwood. Brantwood has a cafe. Combining the boat trip with the Brantwood visit removes the need to drive the eastern shore road.</p>
             </div>
           </section>
 
@@ -199,7 +199,7 @@ export default function ConistonPage() {
           <section id="tarn-hows" className="mb-12 scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">Tarn Hows</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Tarn Hows (LA21 8DP, National Trust, charged parking) is 3 miles north-east of Coniston and is one of the most visited National Trust locations in England. The tarn is artificial — created in the Victorian era by damming a series of small tarns — but the setting is outstanding. The circuit path around the tarn is about 3 miles on mostly flat, good-quality paths. Suitable for wheelchairs and pushchairs on the main circuit.
+              Tarn Hows (main car park LA22 0PW) is north-east of Coniston. The tarn is man-made: it was created in the Victorian era by damming a series of small tarns. The path round the tarn is 3.29 km (about 2 miles) on a smooth, compacted stone surface. The National Park lists it as a Miles without Stiles route graded &ldquo;for some&rdquo; wheelchair and pushchair users, with some slopes as steep as 1 in 5.
             </p>
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
               <p className="font-semibold text-amber-800 text-sm mb-1">When to visit</p>
@@ -211,7 +211,7 @@ export default function ConistonPage() {
           <section id="the-lake" className="mb-12 scroll-mt-20">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">Coniston Water</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Coniston Water is 5 miles long and one of the quieter major lakes. There is no road along most of the western shore, giving it a more remote feel than Windermere. The Coniston Launch runs regular cruises from the pier at Coniston village (LA21 8AJ) to Brantwood and other points. A circuit cruise takes about 90 minutes.
+              Coniston Water is 5 miles long and one of the quieter major lakes. There is no road along most of the western shore, giving it a more remote feel than Windermere. The Coniston Launch sails from the pier at Coniston village to Brantwood and other points, all year, with fewer sailings from November to February.
             </p>
             <p className="text-gray-600 leading-relaxed">
               The steam yacht Gondola, operated by the National Trust, runs from May to October. One of the most comfortable ways to see the lake. The lake is good for wildlife in winter: goldeneye and goosander both occur, and red squirrels are present in the woodland above the western shore.
@@ -223,9 +223,9 @@ export default function ConistonPage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">Where to Eat and Drink</h2>
             <div className="space-y-3">
               {[
-                { name: "The Black Bull Inn", location: "Yewdale Road, LA21 8DU", tag: "Best pub", desc: "The most important pub in Coniston. Brewed its own beer since 2003, starting with Bluebird Bitter and expanding to a range of Coniston ales. Honest pub food done consistently well." },
-                { name: "Yew Tree Farm", location: "Near Tarn Hows, LA21 8DP", tag: "Most characterful", desc: "One of the most characterful farm cafe settings in the southern Lakes. Serves teas and does accommodation. The right stop after Tarn Hows." },
-                { name: "Bluebird Cafe", location: "Near the pier, LA21 8AJ", tag: "Before a boat trip", desc: "Lake views and a reasonable option for lunch before boarding the Coniston Launch or Gondola." },
+                { name: "The Black Bull Inn", location: "Coniston, LA21 8DU", tag: "Inn", desc: "A coaching inn with 11 bedrooms, serving food. Coniston Brewing Co, which it started in 1995, brews next door; its beers include Bluebird Bitter." },
+                { name: "Yew Tree Farm", location: "Coniston, LA21 8DP", tag: "Farm", desc: "A working farm with a farmhouse built in 1690, a self-catering house and its own butchery. Its Herdwicks Cafe and Bistro is in Coniston village." },
+                { name: "Bluebird Cafe", location: "Lake Road, LA21 8AN", tag: "Café", desc: "On the shore of Coniston Water beside the boating centre and the launches. Open daily 9.30am to 4pm from November to March; no bookings." },
               ].map(({ name, location, tag, desc }) => (
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <div className="flex items-start justify-between gap-2 mb-1">
@@ -244,10 +244,10 @@ export default function ConistonPage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">Getting There</h2>
             <div className="bg-gray-50 rounded-xl p-5">
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                The 505 bus runs from Ambleside and Windermere to Coniston roughly every 90 minutes to 2 hours. By car, Coniston is on the A593 from Ambleside or via the B5285 from Hawkshead.
+                The 505 bus runs from Windermere and Ambleside to Coniston via Hawkshead, and runs in winter; Ambleside to Coniston takes about 38 minutes. By car, Coniston is on the A593 from Ambleside or via the B5285 from Hawkshead.
               </p>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Main car parking is in the village car park on Yewdale Road (LA21 8EH, pay and display). It fills on summer weekends — arrive early.
+                Main car parking is in the village car park on Yewdale Road (LA21 8EH, pay and display). It fills on summer weekends, so arrive early.
               </p>
             </div>
           </section>

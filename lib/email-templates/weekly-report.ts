@@ -73,7 +73,7 @@ export function generateWeeklyEmail(
           stats.reviewDelta != null && stats.reviewDelta !== 0
             ? ` (${stats.reviewDelta > 0 ? "+" : ""}${stats.reviewDelta} since last check)`
             : stats.ratingDelta != null && stats.ratingDelta !== 0
-              ? ` — ${stats.ratingDelta > 0 ? "+" : ""}${stats.ratingDelta.toFixed(1)} ★ since last check`
+              ? ` (rating ${stats.ratingDelta > 0 ? "+" : ""}${stats.ratingDelta.toFixed(1)} ★ since last check)`
               : ""
         }`
       : "No rating data yet";

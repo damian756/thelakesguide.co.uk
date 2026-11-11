@@ -9,19 +9,19 @@ const url = `${BASE_URL}/ambleside`;
 const faqs = [
   {
     q: "What is there to do in Ambleside?",
-    a: "Walking is the main draw — Ambleside is the best base in the Lakes for accessing the central fells. Loughrigg Fell above the town is a classic starter. Stock Ghyll Force waterfall is a 20-minute walk. Bridge House, the tiny National Trust building on a bridge, is worth a quick look. The Armitt Museum covers local history and art.",
+    a: "Walking is the main draw: Ambleside is a good base for the central fells. Loughrigg Fell above the town is a classic starter. Stock Ghyll Force waterfall is a 20-minute walk. Bridge House, the tiny National Trust building on a bridge over Stock Beck, can be seen from the street. The Armitt Museum covers local history and art.",
   },
   {
     q: "Is Ambleside good as a walking base?",
-    a: "It is probably the best base in the Lake District for walking. Langdale is 8 miles west. Coniston is 8 miles south. The Fairfield Horseshoe starts from the edge of town. Rydal Water and Grasmere are within easy reach. Dozens of walks start within a mile of the market cross.",
+    a: "Yes. It is one of the most convenient walking bases in the Lake District. Langdale is 8 miles west. Coniston is 8 miles south. The Fairfield Horseshoe starts from the edge of town. Rydal Water and Grasmere are within easy reach. Dozens of walks start within a mile of the market cross.",
   },
   {
     q: "Where should I eat in Ambleside?",
-    a: "Zeffirellis on Compston Road is consistently good — a cinema-restaurant combination with Italian and vegetarian food, good wine. The Golden Rule on Smithy Brow is the best pub for a straightforward pint in unpretentious surroundings. Fellpack near the old Market Hall is good for lunch.",
+    a: "Zeffirellis on Compston Road is a cinema and vegetarian restaurant, with pizza and pasta on the menu. The Golden Rule on Smithy Brow is a traditional pub that serves drinks but no meals. The Apple Pie on Rydal Road is a café and bakery serving breakfast and lunch.",
   },
   {
     q: "How do I get to Ambleside without a car?",
-    a: "The 555 bus runs between Windermere station and Keswick via Ambleside, Rydal, and Grasmere. It runs roughly hourly. The Windermere Lake Cruises also run from Bowness to Waterhead pier in Ambleside (35 minutes). Both are reliable and allow car-free access to the central Lakes.",
+    a: "The 555 bus runs between Windermere station and Keswick via Ambleside, Rydal, and Grasmere. It runs roughly hourly. Windermere Lake Cruises also sail from Bowness to Waterhead pier in Ambleside (35 minutes), every day except Christmas Day.",
   },
   {
     q: "Is Ambleside or Windermere better as a base?",
@@ -66,10 +66,10 @@ const pageJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Ambleside | Restaurants, Walks & Complete Visitor Guide",
-  description: "Complete guide to Ambleside in the Lake District. The best walking base in the Lakes. Restaurants, accommodation, Loughrigg Fell, Stock Ghyll Force, and the Fairfield Horseshoe.",
+  title: "Ambleside | Restaurants, Walks & Visitor Guide",
+  description: "Ambleside in the Lake District: a walking base for the central fells, with restaurants, accommodation, Loughrigg Fell, Stock Ghyll Force and the Fairfield Horseshoe.",
   alternates: { canonical: url },
-  openGraph: { title: "Ambleside Guide | The Lakes Guide", description: "Everything you need for Ambleside. Walking routes, restaurants, accommodation, and how to use it as a base for the central fells.", url, siteName: "The Lakes Guide" },
+  openGraph: { title: "Ambleside Guide | The Lakes Guide", description: "Ambleside: walking routes, restaurants, accommodation, and using it as a base for the central fells.", url, siteName: "The Lakes Guide" },
 };
 
 export default function AmblesidePage() {
@@ -82,7 +82,7 @@ export default function AmblesidePage() {
         <section className="relative min-h-[480px] flex items-end text-white overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1546430498-f6b45e5b35ca?w=1400&q=80"
-            alt="Ambleside — the walking hub of the central Lake District"
+            alt=""
             fill priority sizes="100vw"
             className="object-cover object-center"
           />
@@ -139,10 +139,10 @@ export default function AmblesidePage() {
           <section className="mb-12">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">About Ambleside</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Ambleside has been a market town since the 16th century. It sits at the head of Windermere, where Stock Beck flows down from the fells through the middle of the town. The town is compact — you can walk from one end to the other in 10 minutes — and is built in the grey Lakeland slate that characterises the central Lakes.
+              Ambleside has been a market town since the 16th century. It sits at the head of Windermere, where Stock Beck flows down from the fells through the middle of the town. The town is compact (you can walk from one end to the other in 10 minutes) and is built in the grey Lakeland slate that characterises the central Lakes.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              The town&rsquo;s position makes it the best walking base in the Lake District. Langdale is 8 miles west. The Fairfield Horseshoe, one of the most celebrated circuit walks in the eastern Lakes, starts and ends here. Rydal Water is a short walk north. Grasmere is 4 miles north on the 555 bus. Coniston is 8 miles south.
+              The town&rsquo;s position makes it a convenient walking base. Langdale is 8 miles west. The Fairfield Horseshoe, one of the most celebrated circuit walks in the eastern Lakes, starts and ends here. Rydal Water is a short walk north. Grasmere is 4 miles north on the 555 bus. Coniston is 8 miles south.
             </p>
           </section>
 
@@ -151,10 +151,10 @@ export default function AmblesidePage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">What to See in Ambleside</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { name: "Bridge House", location: "Stock Beck, LA22 0EF · Free", desc: "The building that appears on more Lake District postcards than almost anything else. A tiny, two-room cottage built on a bridge over Stock Beck. Worth five minutes." },
+                { name: "Bridge House", location: "Stock Beck · National Trust", desc: "A tiny cottage built on a bridge over Stock Beck, owned by the National Trust since 1926. You can see it from the street at any time; the inside opens only on tours run by the Armitt." },
                 { name: "Stock Ghyll Force", location: "20 min walk from market", desc: "The waterfall above the town. The path up through the Victorian woodland takes 20 minutes from the market place and reaches a series of falls that drop about 70 feet." },
-                { name: "The Armitt Museum", location: "Rydal Road, LA22 0BZ · Charged", desc: "Beatrix Potter watercolours, John Ruskin material, and a fossil collection. Smaller and more interesting than its modest appearance suggests." },
-                { name: "Waterhead Pier", location: "LA22 0BB", desc: "The Windermere Lake Cruises ferry arrives and departs from Waterhead, half a mile south of the town centre. A pleasant walk from the pier into town." },
+                { name: "The Armitt Museum", location: "Rydal Road, LA22 0BZ · Charged", desc: "Beatrix Potter watercolours, John Ruskin material, and a fossil collection." },
+                { name: "Waterhead Pier", location: "LA22 0EY", desc: "The Windermere Lake Cruises ferry arrives and departs from Waterhead, half a mile south of the town centre. A pleasant walk from the pier into town." },
               ].map(({ name, location, desc }) => (
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <h3 className="font-semibold text-[#14231C] mb-1">{name}</h3>
@@ -172,7 +172,7 @@ export default function AmblesidePage() {
               {[
                 { name: "Loughrigg Fell", stats: "335m · 40 min to summit", desc: "The local hill, directly above the town. A fine summit view over Windermere, Elterwater, and back into the central fells. The path from Rothay Park takes around 40 minutes. The right walk for a late afternoon or first visit to get oriented." },
                 { name: "The Fairfield Horseshoe", stats: "10 miles · 900m ascent · 6-7 hrs", desc: "The classic big walk from Ambleside. A circuit via Nab Scar, Heron Pike, Great Rigg, Fairfield, Dove Crag, and Low Pike, returning through the valley. Start south through the town to the path at Rydal village." },
-                { name: "Langdale from Ambleside", stats: "Drive or 516 bus west", desc: "Old Dungeon Ghyll at the head of Great Langdale (LA22 9JU) is the departure point for Scafell Pike via Esk Hause, Bowfell, and most of the southern high fells." },
+                { name: "Langdale from Ambleside", stats: "Drive or 516 bus west", desc: "Old Dungeon Ghyll at the head of Great Langdale (LA22 9JY) is the departure point for Scafell Pike via Esk Hause, Bowfell, and most of the southern high fells." },
               ].map(({ name, stats, desc }) => (
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <div className="flex items-center gap-3 mb-2">
@@ -195,9 +195,9 @@ export default function AmblesidePage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">Where to Eat and Drink</h2>
             <div className="space-y-3">
               {[
-                { name: "Zeffirellis", location: "Compston Road, LA22 0BT", tag: "Best restaurant", desc: "A cinema and restaurant combined, with an Italian and vegetarian menu that is genuinely good. The price point is reasonable for the quality. Book ahead on weekends." },
-                { name: "Fellpack", location: "Near the old Market Hall, LA22 0BT", tag: "Best lunch", desc: "A light, modern menu with local ingredients. The kind of place you eat well without spending a lot. Suitable for walkers returning off the fell who want something beyond a pub sandwich." },
-                { name: "The Golden Rule", location: "Smithy Brow, LA22 9AS", tag: "Best pub", desc: "No music, no slot machines, no food — just good real ale in unpretentious surroundings. It is a pub that respects what it is and does not try to be something else." },
+                { name: "Zeffirellis", location: "Compston Road, LA22 9AD", tag: "Cinema and restaurant", desc: "A vegetarian restaurant, terrace café, jazz bar and two-screen cinema, with pizza and pasta on the menu." },
+                { name: "The Apple Pie", location: "Rydal Road, LA22 9AN", tag: "Café and bakery", desc: "An independent, family-run café and bakery, open since 1975, serving breakfast and lunch." },
+                { name: "The Golden Rule", location: "Smithy Brow, LA22 9AS", tag: "Pub", desc: "A Grade II listed, traditional pub with several rooms, run by Robinsons. No background music and no meals; an open fire, a beer garden, and dogs welcome throughout." },
               ].map(({ name, location, tag, desc }) => (
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <div className="flex items-start justify-between gap-2 mb-1">
@@ -218,9 +218,9 @@ export default function AmblesidePage() {
               <div className="bg-gray-50 rounded-xl p-5">
                 <h3 className="font-semibold text-[#14231C] mb-3">By Bus or Boat</h3>
                 <ul className="space-y-1.5 text-sm text-gray-600">
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> 555 bus — Windermere to Keswick via Ambleside (hourly)</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> 555 bus: Windermere to Keswick via Ambleside, about hourly</li>
                   <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Windermere Lake Cruises from Bowness (35 min) to Waterhead</li>
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Day Rider tickets give unlimited travel on connecting routes</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Stagecoach&rsquo;s North West Explorer ticket covers a day on its buses here (£12.50 adult)</li>
                 </ul>
               </div>
               <div className="bg-gray-50 rounded-xl p-5">

@@ -119,10 +119,11 @@ export default function ClaimListingClient() {
         </div>
         <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
-            Claim Your Listing
+            List Your Business
           </h1>
           <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-xl">
-            Update your details, manage your food hygiene display, and get more visibility.
+            The Lakes Guide is opening its directory. If your business is not listed yet, ask to be added through the{" "}
+            <Link href="/contact" className="underline underline-offset-2 hover:text-white">contact form</Link>.
           </p>
         </div>
         <div className="relative h-8 overflow-hidden">
@@ -168,7 +169,7 @@ export default function ClaimListingClient() {
                   Featured listing
                 </p>
                 <p className="font-display font-bold text-white mb-2">
-                  More visibility from £29/mo
+                  More visibility with Pro
                 </p>
                 <p className="text-white/60 text-sm mb-4">
                   Appear at the top of your category and get a prominent featured

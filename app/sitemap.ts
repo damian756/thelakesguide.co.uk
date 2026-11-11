@@ -20,7 +20,7 @@ function parsePostDate(dateStr: string): Date {
 
 // Stable reference dates — update these when the relevant pages change meaningfully
 const D = {
-  today:    new Date("2026-03-02"), // last deploy / significant update
+  today:    new Date("2026-11-11"), // last deploy / significant update
   feb26:    new Date("2026-02-26"),
   feb20:    new Date("2026-02-20"),
   feb15:    new Date("2026-02-15"),
@@ -52,7 +52,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/contact`,              lastModified: D.feb01,  changeFrequency: "monthly",  priority: 0.5  },
     { url: `${BASE}/privacy`,              lastModified: D.jan01,  changeFrequency: "yearly",   priority: 0.2  },
     { url: `${BASE}/terms`,                lastModified: D.jan01,  changeFrequency: "yearly",   priority: 0.2  },
-    { url: `${BASE}/the-open-2026`,        lastModified: D.today,  changeFrequency: "monthly",  priority: 0.8  },
+    { url: `${BASE}/the-open-2026`,        lastModified: D.today,  changeFrequency: "yearly",   priority: 0.3  },
     { url: `${BASE}/lake-district-wildlife`, lastModified: D.today, changeFrequency: "monthly",  priority: 0.85 },
     { url: `${BASE}/parking`,              lastModified: D.today,  changeFrequency: "weekly",   priority: 0.85 },
   ];

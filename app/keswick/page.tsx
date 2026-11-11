@@ -9,23 +9,23 @@ const url = `${BASE_URL}/keswick`;
 const faqs = [
   {
     q: "What is there to do in Keswick?",
-    a: "Walking is the main activity — Catbells, Skiddaw, and Blencathra are within easy reach. Derwentwater lake cruises. The market on Saturday and Thursday. Good restaurants, outdoor shops, and the Keswick Museum. The Pencil Museum is niche but surprisingly interesting.",
+    a: "Walking is the main activity: Catbells, Skiddaw and Blencathra are within easy reach. The Keswick Launch sails round Derwentwater (not in December and January). The market is on Thursdays and Saturdays. There are restaurants, outdoor shops, Theatre by the Lake and Keswick Museum.",
   },
   {
     q: "What is the best walk from Keswick?",
-    a: "Catbells is the most popular and with good reason — excellent views over Derwentwater with relatively modest effort. The Latrigg walk above the town is shorter and good for a morning. For a serious day, Skiddaw via the tourist path or Blencathra via Hall's Fell Ridge are the main options.",
+    a: "Catbells is the most popular, with wide views over Derwentwater for relatively modest effort. The Latrigg walk above the town is shorter and good for a morning. For a serious day, Skiddaw via the tourist path or Blencathra via Hall's Fell Ridge are the main options.",
   },
   {
     q: "Where should I stay in Keswick?",
-    a: "Keswick has a wide range of accommodation from youth hostels to boutique hotels. The Lodore Falls Hotel on Derwentwater is the grand option. More central options include the Derwentwater Independent Hostel and many Victorian B&Bs on the main streets. Book well ahead for weekends and the Keswick Mountain Festival in May.",
+    a: "Keswick has a wide range of accommodation, from hostels to hotels. The Lodore Falls Hotel & Spa is on the shore of Derwentwater in Borrowdale. In the town there are many Victorian B&Bs on the main streets. Book well ahead for weekends and the Keswick Mountain Festival in May.",
   },
   {
     q: "Is Keswick easy to get to without a car?",
-    a: "Manageable but requires planning. There is no direct train to Keswick. The nearest station is Penrith (30 minutes by bus) or Windermere (buses run via Ambleside and Grasmere on the 555/X4/X5). The 554 bus from Penrith is the most direct public transport route.",
+    a: "Yes, with some planning. Keswick has no railway station. The nearest main-line station is Penrith, 45 minutes away on the X4/X5 bus, which runs seven days a week all year, except Christmas Day and New Year's Day. The 555 bus runs about every hour from Windermere station via Ambleside and Grasmere.",
   },
   {
     q: "When is the Keswick market?",
-    a: "Keswick market is held every Thursday and Saturday in the Market Place. A traditional street market with local producers, crafts, and general goods. The Mountain Festival in May brings additional food and specialist markets. Saturday is the bigger of the two regular market days.",
+    a: "Keswick market is held every Thursday and Saturday on the Market Square. Cumberland Council runs it, with some 65 to 70 stalls selling food, clothes and homeware.",
   },
 ];
 
@@ -66,10 +66,10 @@ const pageJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Keswick | Restaurants, Walks & Complete Visitor Guide",
-  description: "Complete guide to Keswick in the Lake District. Restaurants, walking routes, accommodation, Derwentwater, Catbells, and what to see and do in the northern Lakes.",
+  title: "Keswick | Restaurants, Walks & Visitor Guide",
+  description: "Keswick in the Lake District: restaurants, walking routes, accommodation, Derwentwater, Catbells, and what to see and do in the northern Lakes.",
   alternates: { canonical: url },
-  openGraph: { title: "Keswick Guide | The Lakes Guide", description: "Everything you need for a visit to Keswick. Restaurants, walking, Derwentwater lake cruises, accommodation and what to do.", url, siteName: "The Lakes Guide" },
+  openGraph: { title: "Keswick Guide | The Lakes Guide", description: "Visiting Keswick: restaurants, walking, Derwentwater lake cruises, accommodation and what to do.", url, siteName: "The Lakes Guide" },
 };
 
 export default function KeswickPage() {
@@ -140,10 +140,10 @@ export default function KeswickPage() {
           <section className="mb-12">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">About Keswick</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Keswick sits in the northern Lake District on the River Greta, with Derwentwater at the foot of the town and Skiddaw rising directly to the north. It has been a market town since the 13th century. The Victorian tourism boom transformed it — the railway arrived in 1865, though the line has since closed, and the infrastructure built for that era is still visible in the Victorian B&Bs and hotels that line the main streets.
+              Keswick sits in the northern Lake District on the River Greta, with Derwentwater at the foot of the town and Skiddaw rising directly to the north. It has been a market town since the 13th century. The Victorian tourism boom transformed it: the railway arrived in 1865, though the line has since closed, and the infrastructure built for that era is still visible in the Victorian B&Bs and hotels that line the main streets.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              George Fisher&rsquo;s outdoor shop on Borrowdale Road has been there since 1957 and is one of the best-stocked independent outdoor shops in England. Keswick&rsquo;s main street has a good range of outdoor retailers, cafes, and restaurants, plus the market twice a week. It is a functional town as well as a tourist destination.
+              Keswick&rsquo;s main streets have outdoor shops, cafes and restaurants, plus the market twice a week. It is a functional town as well as a tourist destination.
             </p>
           </section>
 
@@ -162,12 +162,12 @@ export default function KeswickPage() {
                 <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-2">10 min walk from the market</p>
                 <h2 className="font-display text-xl font-bold text-[#14231C] mb-3">Derwentwater</h2>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Not the largest lake — about 3 miles long — but the setting is exceptional. Catbells and the Newlands fells to the west, Borrowdale to the south, Skiddaw and Blencathra to the north. The Keswick Launch (CA12 5DJ) runs a regular circuit with seven stopping points. Worth doing at least once.
+                  Not the largest lake, at about 3 miles long, but the setting is exceptional. Catbells and the Newlands fells to the west, Borrowdale to the south, Skiddaw and Blencathra to the north. The Keswick Launch (CA12 5DJ) sails a circuit of the lake calling at seven jetties. It does not sail in December and January.
                 </p>
               </div>
             </div>
             <p className="text-gray-600 leading-relaxed">
-              Friars Crag, a short walk from the town centre along the lake shore, gives the classic view of Derwentwater that has been painted and photographed for 200 years. John Ruskin described the view here as one of the three most beautiful in Europe. It is genuinely as good as the pictures suggest. Managed by the National Trust.
+              Friars Crag, a short walk from the town centre along the lake shore, gives the classic view of Derwentwater that has been painted and photographed for 200 years. John Ruskin described the view here as one of the three most beautiful in Europe. Managed by the National Trust.
             </p>
           </section>
 
@@ -177,8 +177,8 @@ export default function KeswickPage() {
             <div className="space-y-3">
               {[
                 { name: "Catbells", stats: "451m · 1.5 hrs return from Hawes End", desc: "The walk. Extraordinary views over Derwentwater for relatively modest effort. The final scramble to the summit is hands-on but not technical. Access Hawes End by Keswick Launch. One of the best introductions to fell walking for beginners." },
-                { name: "Latrigg", stats: "369m · 30 min from car park", desc: "Directly above the town. Quick, accessible, and the summit gives a panoramic view of Skiddaw, Derwentwater, and the Borrowdale valley that surprises most people who do it. Start from the Latrigg car park (CA12 5JR, free). Good for early mornings in autumn." },
-                { name: "Skiddaw", stats: "931m · 8 miles · Full day", desc: "The fourth-highest fell in England. The tourist path from the Latrigg car park takes the direct line to the summit. Around 900 metres of ascent. A good long day with serious views across the northern Lakes." },
+                { name: "Latrigg", stats: "369m · 30 min from car park", desc: "Directly above the town. Quick, accessible, and the summit gives a panoramic view of Skiddaw, Derwentwater, and the Borrowdale valley that surprises most people who do it. Start from the Latrigg car park. Good for early mornings in autumn." },
+                { name: "Skiddaw", stats: "931m · 8 miles · Full day", desc: "At 931m, one of the highest fells in England. The tourist path from the Latrigg car park takes the direct line to the summit. Around 900 metres of ascent. A good long day with serious views across the northern Lakes." },
                 { name: "Blencathra", stats: "868m · Via Hall's Fell Ridge", desc: "The dramatic alternative to Skiddaw. Hall's Fell Ridge is one of the finest ridge walks in the northern Lakes. The approach from Threlkeld (CA12 4TF) gives the best line. Harder than Skiddaw but significantly more interesting." },
               ].map(({ name, stats, desc }) => (
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
@@ -201,10 +201,10 @@ export default function KeswickPage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">Where to Eat and Drink</h2>
             <div className="space-y-3">
               {[
-                { name: "Morrels", location: "Lake Road, CA12 5BX", tag: "Best evening meal", desc: "Modern British, locally sourced, with a wine list that actually has thought put into it. The consistently recommended restaurant in Keswick." },
-                { name: "The Square Orange", location: "St John's Street, CA12 5AG", tag: "Best breakfast", desc: "The most reliable cafe in Keswick for breakfast and lunch. Full English breakfasts, good coffee, reliable food. Often busy — arrive early or expect a wait." },
-                { name: "The Dog and Gun", location: "Lake Road, CA12 5AT", tag: "Best pub", desc: "Proper Cumbrian pub food, real ale, and a layout that works for walkers and families. No pretensions, no disappointing food. The right pub." },
-                { name: "Pheasant Inn", location: "Bassenthwaite Lake, CA13 9YE", tag: "Worth the drive", desc: "About 6 miles north. Worth it for Sunday lunch — a proper Cumbrian country pub with food that matches." },
+                { name: "Bryson's", location: "42 Main Street, CA12 5JD", tag: "Bakery and tea rooms", desc: "A craft bakery and tea rooms, trading in Keswick since 1947." },
+                { name: "The Square Orange", location: "20 St John's Street, CA12 5AS", tag: "Café bar", desc: "Stone-baked Roman-style pizza, tapas and desserts, with coffee, wine and beer. No reservations; dogs welcome." },
+                { name: "The Dog & Gun", location: "2 Lake Road, CA12 5BT", tag: "Pub", desc: "Pub food, known for its homemade Hungarian goulash. Walk-ins only, no advance bookings. Dog friendly." },
+                { name: "The Pheasant Inn", location: "Bassenthwaite Lake, CA13 9YE", tag: "Inn with rooms", desc: "A 17th-century coaching inn with a bar and restaurant, part of The Inn Collection Group. Dog friendly." },
               ].map(({ name, location, tag, desc }) => (
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <div className="flex items-start justify-between gap-2 mb-1">
@@ -223,10 +223,10 @@ export default function KeswickPage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">What to See</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { name: "Castlerigg Stone Circle", location: "CA12 4RN · Free · National Trust", desc: "3 miles east of Keswick. 38 standing stones in a field with a 360-degree fell panorama. Neolithic, predating Stonehenge. Worth 30 minutes at any time of year." },
-                { name: "Keswick Museum", location: "Station Road, CA12 4NF · Free", desc: "Good collection covering local history, the pencil and graphite industry, and the area's literary connections — Wordsworth, Coleridge, and Southey all had connections here." },
-                { name: "The Pencil Museum", location: "Southey Works, CA12 5NG · Charged", desc: "The story of the world's pencil industry having its origins in the graphite deposits of Borrowdale is genuinely interesting. Worth an hour if it is raining." },
-                { name: "Keswick Market", location: "Market Place · Thu & Sat", desc: "Local producers with meat, cheese, and vegetables. The Saturday market is the bigger of the two. The Mountain Festival in May adds specialist stalls." },
+                { name: "Castlerigg Stone Circle", location: "CA12 4RN · Free · English Heritage", desc: "East of Keswick. 38 stones in a field with a fell panorama all round. English Heritage, which looks after it with the National Trust, says its exact age is uncertain. Allow 30 minutes at any time of year." },
+                { name: "Keswick Museum", location: "Station Road, CA12 4NF · Charged", desc: "Local history and collections. Adults £8.50, under-5s free. Closed from 24 December 2026 to 31 January 2027." },
+                { name: "The Pencil Museum", location: "Southey Works, CA12 5NG · Closed", desc: "The Derwent Pencil Museum is closed while it moves to a new site." },
+                { name: "Keswick Market", location: "Market Square, CA12 5JR · Thu & Sat", desc: "Run by Cumberland Council, with some 65 to 70 stalls selling food, clothes and homeware." },
               ].map(({ name, location, desc }) => (
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <h3 className="font-semibold text-[#14231C] mb-1">{name}</h3>
@@ -244,17 +244,17 @@ export default function KeswickPage() {
               <div className="bg-gray-50 rounded-xl p-5">
                 <h3 className="font-semibold text-[#14231C] mb-3">By Bus</h3>
                 <ul className="space-y-1.5 text-sm text-gray-600">
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> 554 from Penrith station — most direct route, 35 min</li>
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> 555 from Windermere via Ambleside and Grasmere</li>
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> No direct train. Penrith (WCML) is the nearest station.</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> X4/X5 from Penrith station: about 45 minutes, daily except Christmas Day and New Year&apos;s Day</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> 555 from Windermere station via Ambleside and Grasmere, about hourly</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> No railway station. Penrith, on the West Coast Main Line, is the nearest.</li>
                 </ul>
               </div>
               <div className="bg-gray-50 rounded-xl p-5">
                 <h3 className="font-semibold text-[#14231C] mb-3">Parking</h3>
                 <ul className="space-y-1.5 text-sm text-gray-600">
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <strong>Lakeside (CA12 5DJ)</strong> — large, near boat landing</li>
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <strong>Headlands (CA12 5ER)</strong> — short walk from market</li>
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Fills by 10am on summer weekends. Arrive before 9am.</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <strong>Lakeside (CA12 5DJ)</strong>: council car park, 253 spaces, by the boat landing</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <strong>Headlands (CA12 5ER)</strong>: a short walk from the market</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Car parks fill early on summer weekends.</li>
                 </ul>
               </div>
             </div>

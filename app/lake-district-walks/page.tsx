@@ -32,17 +32,17 @@ const faqs = [
 const easyWalks = [
   {
     name: "Tarn Hows Circuit",
-    start: "LA21 8DP",
-    distance: "3 miles",
-    ascent: "Minimal",
+    start: "LA22 0PW",
+    distance: "2 miles",
+    ascent: "Some slopes",
     time: "1.5 hrs",
     image: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80",
-    description: "A 3-mile circuit around an artificial tarn near Coniston, in a setting of mature woodland and fell views. Mostly flat and suitable for pushchairs on the main path. The autumn colours are exceptional.",
-    note: "NT car park. Fills early on summer weekends.",
+    description: "A 3.29 km (about 2-mile) circuit around a man-made tarn near Coniston, in a setting of mature woodland and fell views. The National Park grades it as a Miles without Stiles route for some wheelchair and pushchair users, with some slopes as steep as 1 in 5. The autumn colours are exceptional.",
+    note: "Main car park LA22 0PW. Fills early on summer weekends.",
   },
   {
     name: "Grasmere Lake Circuit",
-    start: "LA22 9QT",
+    start: "LA22 9SW",
     distance: "4 miles",
     ascent: "Minimal",
     time: "2 hrs",
@@ -52,11 +52,11 @@ const easyWalks = [
   },
   {
     name: "Easedale Tarn",
-    start: "LA22 9QT",
+    start: "LA22 9SW",
     distance: "3.5 miles",
     ascent: "280m",
     time: "2.5 hrs",
-    image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80",
     description: "The ideal family introduction to the mountains. The path climbs steadily up Easedale Valley with Sour Milk Gill waterfall midway. The tarn at 280 metres is the destination. The children will want to throw stones in the tarn. Let them.",
     note: "From Grasmere village. Clear, signed path throughout.",
   },
@@ -82,7 +82,7 @@ const beginnerFells = [
     time: "2.5 hrs",
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80",
     description: "The introductory fell walk. The path is clear and the final scramble to the summit requires hands but not technical ability. Views over Derwentwater from the ridge are outstanding. Take the Keswick Launch across Derwentwater to Hawes End for the classic approach.",
-    note: "Go early on summer weekends — busy by 10am.",
+    note: "Go early on summer weekends: busy by 10am.",
   },
   {
     name: "Loughrigg Fell",
@@ -121,7 +121,7 @@ const classicFells = [
   },
   {
     name: "Langdale Pikes",
-    start: "Old Dungeon Ghyll, LA22 9JX",
+    start: "Old Dungeon Ghyll, LA22 9JY",
     distance: "5.5 miles",
     ascent: "750m",
     time: "5–6 hrs",
@@ -185,12 +185,12 @@ const bigDays = [
 ];
 
 const gearItems = [
-  { icon: "🧥", title: "Waterproofs", desc: "Jacket and overtrousers. Not a shower jacket. Proper waterproofs that will hold in sustained rain." },
-  { icon: "👟", title: "Walking boots", desc: "Not trainers. Ankle support and a sole that grips wet rock. The two things that prevent most incidents on the fells." },
-  { icon: "🗺️", title: "OS Map + compass", desc: "1:25,000 OS Explorer: OL4, OL5, OL6, OL7 cover the national park. Harvey Superwalker maps are an alternative. Printed." },
-  { icon: "🌤️", title: "Weather forecast", desc: "MWIS at mwis.org.uk gives the best fell-specific forecast. Check it the morning of your walk, not the day before." },
-  { icon: "💧", title: "Water", desc: "1 litre per person minimum for a half-day. 2 litres for a full day. More in warm conditions." },
-  { icon: "🎒", title: "Food + warm layer", desc: "Enough food for the planned duration plus an unplanned hour. A fleece or down jacket for summits and rest stops." },
+  { title: "Waterproofs", desc: "Jacket and overtrousers. Not a shower jacket. Proper waterproofs that will hold in sustained rain." },
+  { title: "Walking boots", desc: "Not trainers. Ankle support and a sole that grips wet rock. The two things that prevent most incidents on the fells." },
+  { title: "OS Map + compass", desc: "1:25,000 OS Explorer: OL4, OL5, OL6, OL7 cover the national park. Harvey Superwalker maps are an alternative. Printed." },
+  { title: "Weather forecast", desc: "MWIS at mwis.org.uk gives the best fell-specific forecast. Check it the morning of your walk, not the day before." },
+  { title: "Water", desc: "1 litre per person minimum for a half-day. 2 litres for a full day. More in warm conditions." },
+  { title: "Food + warm layer", desc: "Enough food for the planned duration plus an unplanned hour. A fleece or down jacket for summits and rest stops." },
 ];
 
 const pageJsonLd = [
@@ -302,10 +302,10 @@ export default function LakeDistrictWalksPage() {
                 <div>
                   <h3 className="font-semibold text-amber-900 text-lg mb-3">The Lake District fells are not a walk in the park</h3>
                   <ul className="space-y-2 text-sm text-amber-900">
-                    <li className="flex gap-2"><span className="font-bold">⚡</span><span><strong>Weather changes fast.</strong> A clear morning can produce mist and rain by afternoon, turning a straightforward ridge into a navigation problem.</span></li>
-                    <li className="flex gap-2"><span className="font-bold">🗺️</span><span><strong>Navigation matters on the high tops.</strong> Phone GPS is unreliable in mist and runs out of charge. Carry a printed OS map and know how to use a compass.</span></li>
-                    <li className="flex gap-2"><span className="font-bold">🌡️</span><span><strong>Check MWIS</strong> (mwis.org.uk) the morning of your walk — not the day before. It gives fell-specific forecasts broken down by area of the national park.</span></li>
-                    <li className="flex gap-2"><span className="font-bold">👟</span><span><strong>Proper boots, not trainers.</strong> The ankle support and sole grip on wet rock matter. This is the single most common thing that turns a good day bad.</span></li>
+                    <li className="flex gap-2"><span className="font-bold text-[#C4782A]">•</span><span><strong>Weather changes fast.</strong> A clear morning can produce mist and rain by afternoon, turning a straightforward ridge into a navigation problem.</span></li>
+                    <li className="flex gap-2"><span className="font-bold text-[#C4782A]">•</span><span><strong>Navigation matters on the high tops.</strong> Phone GPS is unreliable in mist and runs out of charge. Carry a printed OS map and know how to use a compass.</span></li>
+                    <li className="flex gap-2"><span className="font-bold text-[#C4782A]">•</span><span><strong>Check MWIS</strong> (mwis.org.uk) the morning of your walk, not the day before. It gives fell-specific forecasts broken down by area of the national park.</span></li>
+                    <li className="flex gap-2"><span className="font-bold text-[#C4782A]">•</span><span><strong>Proper boots, not trainers.</strong> The ankle support and sole grip on wet rock matter. This is the single most common thing that turns a good day bad.</span></li>
                   </ul>
                 </div>
               </div>
@@ -540,7 +540,6 @@ export default function LakeDistrictWalksPage() {
               {gearItems.map((item) => (
                 <div key={item.title} className="bg-white rounded-2xl border border-gray-100 p-5">
                   <div className="flex items-start gap-3">
-                    <span className="text-2xl flex-shrink-0">{item.icon}</span>
                     <div>
                       <h3 className="font-semibold text-[#14231C] text-base mb-1">{item.title}</h3>
                       <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
@@ -596,7 +595,7 @@ export default function LakeDistrictWalksPage() {
               {[
                 { href: "/dog-friendly-lake-district", label: "Dog-Friendly Lake District", desc: "Walks, pubs, and practical advice with a dog", image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80" },
                 { href: "/lake-district-with-kids", label: "Lake District with Kids", desc: "What actually works with children", image: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=400&q=80" },
-                { href: "/rainy-day-lake-district", label: "Rainy Day Options", desc: "When the weather turns — the plan", image: "https://images.unsplash.com/photo-1511225070847-8c58a0a29c07?w=400&q=80" },
+                { href: "/rainy-day-lake-district", label: "Rainy Day Options", desc: "When the weather turns: the plan", image: "https://images.unsplash.com/photo-1511225070847-8c58a0a29c07?w=400&q=80" },
                 { href: "/keswick", label: "Keswick", desc: "Catbells, Derwentwater, Skiddaw", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" },
                 { href: "/ambleside", label: "Ambleside", desc: "Best walking base in the Lakes", image: "https://images.unsplash.com/photo-1546430498-f6b45e5b35ca?w=400&q=80" },
                 { href: "/coniston", label: "Coniston", desc: "Old Man, Brantwood, Tarn Hows", image: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=400&q=80" },

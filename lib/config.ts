@@ -1,7 +1,7 @@
 export const CATEGORIES = [
   { slug: "walks", name: "Walks & Hiking", description: "Walks and hiking routes in the Lake District" },
   { slug: "villages", name: "Villages", description: "Villages and towns in the Lake District" },
-  { slug: "restaurants", name: "Restaurants", description: "Best restaurants in the Lake District" },
+  { slug: "restaurants", name: "Restaurants", description: "Restaurants in the Lake District" },
   { slug: "cafes", name: "Cafes & Tea Rooms", description: "Cafes and tea rooms in the Lake District" },
   { slug: "pubs", name: "Pubs & Inns", description: "Pubs and inns in the Lake District" },
   { slug: "activities", name: "Activities", description: "Tours, rentals and activities" },

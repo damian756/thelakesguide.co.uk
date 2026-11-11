@@ -24,16 +24,16 @@ import { HERO_IMAGE_URL } from "@/lib/site-constants";
 const BASE_URL = "https://www.thelakesguide.co.uk";
 
 export const metadata: Metadata = {
-  title: "Things to Do in the Lake District | The Complete Guide | The Lakes Guide",
+  title: "Things to Do in the Lake District | The Lakes Guide",
   description:
-    "The definitive guide to things to do in the Lake District. Windermere, Keswick, Ambleside, Coniston, Scafell Pike, Wainwrights, water sports, Grizedale Forest, and more. Written by someone who actually walks the fells.",
+    "Things to do in the Lake District: Windermere, Keswick, Ambleside, Coniston, Scafell Pike, the Wainwrights, water sports, Grizedale Forest and more, with the practical details.",
   keywords:
     "things to do in the Lake District, things to do Lake District, Lake District attractions, Lake District walks, Lake District with kids, free things to do Lake District, things to do in Cumbria",
   alternates: { canonical: `${BASE_URL}/things-to-do` },
   openGraph: {
-    title: "Things to Do in the Lake District | The Complete Guide",
+    title: "Things to Do in the Lake District",
     description:
-      "From Helvellyn to Haweswater ospreys, Grizedale red squirrels to Windermere cruises. The guide the tourism boards don't write.",
+      "From Helvellyn to Grizedale red squirrels and Windermere cruises: things to do in the Lake District, with the practical details.",
     url: `${BASE_URL}/things-to-do`,
     images: [{ url: `${BASE_URL}/og-default.png` }],
   },
@@ -60,9 +60,9 @@ const LAKES = [
       "Ten and a half miles long, Windermere is England's largest natural lake. Bowness-on-Windermere and Ambleside sit at either end. Cruises run year-round. Kayaking, paddleboarding, and sailing are all available. The western shore is quieter than the Bowness side.",
     practical: [
       "Boat hire from Bowness, Ambleside, and Waterhead.",
-      "Windermere Lake Cruises run regular services. Check times before you go.",
+      "Windermere Lake Cruises sail every day except Christmas Day, on reduced timetables in winter.",
       "Parking fills early in summer. Arrive before 10am or use the bus.",
-      "Dogs allowed on most cruises. Check with the operator.",
+      "Well-behaved dogs travel free on Windermere Lake Cruises.",
     ],
     gradient: "from-[#2A6B8A] to-[#1E8AB0]",
     emoji: "🛶",
@@ -76,7 +76,7 @@ const LAKES = [
       "Five miles long, Coniston is where Donald Campbell set his world water speed records. The Steam Yacht Gondola runs from Coniston Pier. The village has a proper local feel. Good for a quieter day on the water.",
     practical: [
       "Coniston village, LA21 8EH. Pay and display car parks.",
-      "Gondola runs March to October. Book ahead at weekends.",
+      "The Steam Yacht Gondola sails from spring to the end of October. The Coniston Launch sails all year, with fewer sailings from November to February.",
       "Kayak and canoe hire from Coniston Boating Centre.",
       "The Old Man of Coniston looms above. Combine a lake day with a fell walk.",
     ],
@@ -91,10 +91,10 @@ const LAKES = [
     description:
       "Keswick sits at the north end. Derwentwater has four islands, a launch service that runs to them, and some of the best views in the Lakes. Catbells rises from the western shore. A circuit of the lake is about 10 miles on foot.",
     practical: [
-      "Keswick launch runs from the town pier. Hourly in season.",
-      "Parking at Keswick or use the bus from Penrith.",
-      "The Borrowdale road runs along the east shore. Stunning drive.",
-      "Dogs welcome on the launches. Check times in winter.",
+      "The Keswick Launch sails from Keswick round the lake. It does not sail in December and January.",
+      "Parking at Keswick or use the X4/X5 bus from Penrith.",
+      "The Borrowdale road runs along the east shore.",
+      "Check the launch's winter dates before you plan a boat-and-walk day.",
     ],
     gradient: "from-[#2A3F5C] to-[#3A5070]",
     emoji: "🏔️",
@@ -105,11 +105,11 @@ const LAKES = [
     tag: "Second longest",
     highlight: "Steamers and Helvellyn views",
     description:
-      "Nine miles long, Ullswater is often cited as the most beautiful of the lakes. The Ullswater Steamers run from Glenridding and Pooley Bridge. Aira Force waterfall is on the western shore. Helvellyn dominates the skyline.",
+      "Nine miles long, Ullswater is often cited as the most beautiful of the lakes. The Ullswater 'Steamers' sail between Glenridding, Howtown and Pooley Bridge. Aira Force waterfall is on the western shore. Helvellyn dominates the skyline.",
     practical: [
       "Glenridding and Pooley Bridge have car parks. Fill early.",
-      "Steamers run year-round. Reduced service in winter.",
-      "Aira Force: National Trust. Pay and display. Worth the stop.",
+      "The boats sail 363 days a year (not 24 or 25 December), on seasonal timetables. Dogs £1.50.",
+      "Aira Force: National Trust pay and display car park and a seasonal tearoom.",
       "The Kirkstone Pass road from Ambleside is dramatic. Check conditions in winter.",
     ],
     gradient: "from-[#1A4020] to-[#2E6830]",
@@ -139,10 +139,10 @@ const FAMILY = [
   },
   {
     name: "Brockhole",
-    sub: "Lake District Visitor Centre",
+    sub: "On the shore of Windermere",
     detail:
-      "Between Windermere and Ambleside. Free entry to the grounds. Adventure playground, treetop nets, mini golf. Café and shop. Good for a half-day with kids.",
-    practical: "Brockhole, LA23 1LJ. Pay and display. Café and toilets.",
+      "Between Windermere and Ambleside. The National Park opened Brockhole as its visitor centre in 1969 and in 2025 offered the site on a long-term lease. The Brockhole website now lists BeWILDerwood as coming soon, so check what is open before you go.",
+    practical: "Brockhole, LA23 1LJ. Car park open 9am to 6pm, charged.",
     emoji: "🏡",
     href: "/attractions",
   },
@@ -150,8 +150,8 @@ const FAMILY = [
     name: "Lakeside & Haverthwaite Railway",
     sub: "Steam train",
     detail:
-      "Heritage steam railway from Haverthwaite to Lakeside. Connects with Windermere cruises. Kids love it. Runs seasonally.",
-    practical: "Haverthwaite, LA12 8AL. Check timetable. Combines well with a boat trip.",
+      "Heritage steam railway from Haverthwaite to Lakeside. Connects with Windermere cruises. The 2026 season has ended; Tinsel Trains run on December weekends, and the next main season is 24 March to 31 October 2027.",
+    practical: "Haverthwaite, LA12 8AL. Check the timetable. Combines with a boat trip.",
     emoji: "🚂",
     href: "/attractions",
   },
@@ -169,7 +169,7 @@ const FAMILY = [
     sub: "Bowness attraction",
     detail:
       "In Bowness. Indoor attraction bringing the stories to life. Popular with younger children. Can get busy in school holidays.",
-    practical: "Bowness, LA23 3BX. Check opening times. Book ahead at peak.",
+    practical: "Crag Brow, Bowness, LA23 3BX. Open every day. Book ahead at peak times.",
     emoji: "🐰",
     href: "/attractions",
   },
@@ -177,16 +177,16 @@ const FAMILY = [
 
 const NATURE = [
   {
-    name: "RSPB Haweswater",
-    org: "Royal Society for the Protection of Birds",
-    vol: "Ospreys. Free hide. Best viewing April to September",
+    name: "Wild Haweswater",
+    org: "RSPB and United Utilities",
+    vol: "Landscape restoration at the head of Haweswater",
     story:
-      "The ospreys at Haweswater are the reason to go. Reintroduced in 2010, they breed here and can be seen from the hide. Get there before 10am if you want a decent spot. Take binoculars. The drive over the pass from Ambleside is dramatic.",
+      "Wild Haweswater is a partnership between the RSPB and United Utilities in the eastern Lake District. There are no trails, visitor centre, toilets, café or public hides, and no set viewpoints: bring a map and explore. Wildlife hides and events can be booked in advance.",
     tips: [
-      "Mardale Head, CA10 2RP. Free parking. RSPB members get priority at the hide.",
-      "Best months: April to September when the birds are present.",
-      "Dawn and dusk are the best times for activity.",
-      "The hide is small. Arrive early at weekends.",
+      "Park at Mardale Head car park, at the southern end of Haweswater Reservoir. It is open at all times, with no overnight parking.",
+      "A donation cairn in the car park suggests £2, cash only.",
+      "The RSPB office at Naddle Farm has no public parking except for pre-booked hides and visits.",
+      "From Mardale Head, paths lead up High Street, Harter Fell and the Nan Bield Pass.",
     ],
     color: "blue",
     emoji: "🦅",
@@ -213,7 +213,7 @@ const NATURE = [
     story:
       "Just outside the National Park, near Silverdale. Bitterns, marsh harriers, bearded tits. The reserve is a proper day out. Bring binoculars. The hides are well placed. Café on site.",
     tips: [
-      "Middleton Road, LA5 0SW. RSPB members free. Non-members pay.",
+      "Myers Farm, Storrs Lane, Carnforth, LA5 0SW. RSPB members free; non-member adults £10.",
       "Bitterns are easiest in spring. Marsh harriers year-round.",
       "Allow at least half a day. Several hides to work through.",
       "Café and shop. Toilets. Accessible paths to some hides.",
@@ -228,7 +228,7 @@ const CULTURE = [
     name: "Dove Cottage",
     tag: "Wordsworth's home",
     detail:
-      "William Wordsworth lived here from 1799 to 1808. Grasmere. The museum and garden are worth a visit. Book ahead for the house tour.",
+      "William Wordsworth lived here from 1799 to 1808. Grasmere. Museum and garden. Book ahead for the house tour.",
     href: "/attractions",
     emoji: "📜",
   },
@@ -236,7 +236,7 @@ const CULTURE = [
     name: "Hill Top",
     tag: "Beatrix Potter's farm",
     detail:
-      "Near Sawrey. The house where Beatrix Potter wrote many of her books. National Trust. Book ahead. Timed entry. Small house, big queues if you don't plan.",
+      "Near Sawrey. The house where Beatrix Potter wrote many of her books, now run by the National Trust. Check the Trust's website for opening dates and booking.",
     href: "/attractions",
     emoji: "🐰",
   },
@@ -244,7 +244,7 @@ const CULTURE = [
     name: "Castlerigg Stone Circle",
     tag: "Neolithic. Free",
     detail:
-      "Near Keswick. One of the earliest stone circles in Britain. Free to visit. The views are as good as the stones. Allow 30 minutes.",
+      "Near Keswick. 38 stones, looked after by English Heritage with the National Trust. Free to visit. Allow 30 minutes.",
     href: "/attractions",
     emoji: "🪨",
   },
@@ -252,7 +252,7 @@ const CULTURE = [
     name: "Brantwood",
     tag: "Ruskin's home",
     detail:
-      "Coniston. John Ruskin's house. Art, gardens, and lake views. Good for a rainy afternoon. Café.",
+      "Coniston. John Ruskin's house, with gardens and lake views. Open Wednesday to Sunday in winter. Café.",
     href: "/attractions",
     emoji: "🎨",
   },
@@ -260,7 +260,7 @@ const CULTURE = [
     name: "Theatre by the Lake",
     tag: "Keswick",
     detail:
-      "Professional theatre on the lake shore. Year-round programme. Worth booking for an evening if you're staying in Keswick.",
+      "Theatre on the shore of Derwentwater in Keswick (CA12 5DJ), with shows through the winter. A Christmas Carol runs from 13 November 2026 to 3 January 2027.",
     href: "/attractions",
     emoji: "🎭",
   },
@@ -268,7 +268,7 @@ const CULTURE = [
     name: "Abbot Hall",
     tag: "Art gallery",
     detail:
-      "Kendal. Georgian art gallery with a strong collection. Good for a half-day when the weather turns.",
+      "Kendal. A Georgian art gallery run by Lakeland Arts, open Wednesday to Saturday, 10am to 4pm, with some closed weeks (23 November to 1 December 2026). Check before you go.",
     href: "/attractions",
     emoji: "🖼️",
   },
@@ -368,7 +368,7 @@ const EVENTS = [
 const FAQS = [
   {
     q: "What is there to do in the Lake District?",
-    a: "Walking the fells, cruising the lakes, wildlife at Haweswater and Grizedale, culture at Dove Cottage and Hill Top, water sports on Windermere and Coniston, and village-hopping between Ambleside, Keswick, and Grasmere. The Lakes has more than most people fit into one trip.",
+    a: "Walking the fells, cruising the lakes, wildlife at Grizedale and Foulshaw Moss, culture at Dove Cottage and Hill Top, water sports on Windermere and Coniston, and village-hopping between Ambleside, Keswick, and Grasmere. The Lakes has more than most people fit into one trip.",
   },
   {
     q: "Is the Lake District good for families?",
@@ -384,7 +384,7 @@ const FAQS = [
   },
   {
     q: "How far is Keswick from Windermere?",
-    a: "About 25 miles by road, roughly 45 minutes. The A591 runs through the middle. Ambleside and Grasmere are on the way. Allow longer in summer when the roads are busy.",
+    a: "About 20 miles on the A591, which runs through the middle. Ambleside and Grasmere are on the way. Allow longer in summer when the roads are busy.",
   },
   {
     q: "What is free to do in the Lake District?",
@@ -459,7 +459,7 @@ export default function ThingsToDoPage() {
           <div className="relative container mx-auto px-4 max-w-7xl py-14 md:py-20 lg:py-28">
             <div className="flex items-center gap-3 mb-5">
               <span className="bg-[#C4782A] text-[#14231C] text-xs font-black px-3 py-1 rounded-full uppercase tracking-widest">
-                The Complete Guide
+                Visitor guide
               </span>
               <span className="text-white/50 text-sm font-medium">TheLakesGuide.co.uk</span>
             </div>
@@ -467,8 +467,8 @@ export default function ThingsToDoPage() {
               Things to Do in the <span className="text-[#C4782A]">Lake District</span>
             </h1>
             <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-2xl mb-8">
-              Most people come for the walking. The fells, the lakes, the views. But there&apos;s more. Wildlife at Haweswater.
-              Steamers on Windermere. Beatrix Potter and Wordsworth. This is the guide the tourism boards don&apos;t write.
+              Most people come for the walking. The fells, the lakes, the views. But there&apos;s more. Red squirrels at Grizedale.
+              Boats on Windermere and Ullswater. Beatrix Potter and Wordsworth.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -546,10 +546,10 @@ export default function ThingsToDoPage() {
                   I&apos;ve walked Helvellyn a dozen times. Striding Edge in mist is not a joke. Go early, check the forecast, and bring layers. The summit can be brutal even in summer. But when the conditions are right, there&apos;s nowhere better.
                 </p>
                 <p>
-                  The Lakes isn&apos;t just about the big fells. The ospreys at Haweswater are worth the drive. Grizedale has red squirrels and a sculpture trail that works for families. Windermere cruises are touristy but the views are genuinely good. And the villages, Ambleside, Keswick, Grasmere, each have their own character.
+                  The Lakes isn&apos;t just about the big fells. Ospreys nest at Foulshaw Moss in summer. Grizedale has red squirrels and a sculpture trail that works for families. Boats run the length of Windermere and Ullswater. And the villages, Ambleside, Keswick, Grasmere, each have their own character.
                 </p>
                 <p>
-                  The guide below covers all of it. We&apos;ve been honest about what&apos;s worth your time and what isn&apos;t, and we&apos;ve included the practical details that the official tourism sites tend to leave out.
+                  The guide below covers all of it, with the practical details: postcodes, opening, parking and getting there.
                 </p>
               </div>
             </div>
@@ -574,7 +574,6 @@ export default function ThingsToDoPage() {
                         <span className="text-white/70 text-xs font-semibold uppercase tracking-wide">{lake.tag}</span>
                         <h3 className="font-display text-xl font-bold text-white mt-1">{lake.name}</h3>
                       </div>
-                      <span className="text-3xl">{lake.emoji}</span>
                     </div>
                   </div>
                   <div className="p-6">
@@ -633,7 +632,6 @@ export default function ThingsToDoPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {FAMILY.map((item) => (
                 <div key={item.name} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
-                  <div className="text-3xl mb-3">{item.emoji}</div>
                   <h3 className="font-display font-bold text-[#14231C] text-lg mb-0.5">{item.name}</h3>
                   <p className="text-[#C4782A] text-xs font-semibold mb-3">{item.sub}</p>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">{item.detail}</p>
@@ -654,7 +652,7 @@ export default function ThingsToDoPage() {
               <p className="text-xs uppercase tracking-widest text-[#C4782A] font-bold mb-2">Beyond the Fells</p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-[#14231C]">Nature &amp; Wildlife</h2>
               <p className="text-gray-600 mt-3 max-w-2xl text-lg leading-relaxed">
-                Ospreys, red squirrels, and one of the best wetland reserves in the North West.
+                Red squirrels, an upland restoration project, and a wetland reserve just outside the National Park.
               </p>
             </div>
 
@@ -665,7 +663,6 @@ export default function ThingsToDoPage() {
                     <span className="text-white/70 text-xs font-semibold uppercase tracking-wide">{item.org}</span>
                     <div className="flex items-center gap-3 mt-1">
                       <h3 className="font-display text-xl font-bold text-white">{item.name}</h3>
-                      <span className="text-3xl">{item.emoji}</span>
                     </div>
                     <p className="text-white/70 text-sm mt-1">{item.vol}</p>
                   </div>
@@ -703,7 +700,6 @@ export default function ThingsToDoPage() {
                   href={item.href}
                   className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md hover:border-[#C4782A]/30 transition-all group"
                 >
-                  <div className="text-3xl mb-3">{item.emoji}</div>
                   <p className="text-[#C4782A] text-[11px] font-bold uppercase tracking-wider mb-1">{item.tag}</p>
                   <h3 className="font-display font-bold text-[#14231C] text-lg mb-3 group-hover:text-[#C4782A] transition-colors">{item.name}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.detail}</p>
@@ -731,7 +727,6 @@ export default function ThingsToDoPage() {
                       <h3 className="font-display text-xl font-bold text-[#14231C] mt-2">{course.name}</h3>
                       <p className="text-[#C4782A] text-xs font-semibold mt-0.5">{course.rank}</p>
                     </div>
-                    <span className="text-3xl flex-shrink-0">{course.emoji}</span>
                   </div>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">{course.detail}</p>
                   <div className="flex items-center justify-between">
@@ -786,7 +781,6 @@ export default function ThingsToDoPage() {
                   href={item.link}
                   className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md hover:border-[#C4782A]/30 transition-all group"
                 >
-                  <div className="text-3xl mb-3">{item.emoji}</div>
                   <h3 className="font-display font-bold text-[#14231C] text-lg mb-2 group-hover:text-[#C4782A] transition-colors">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.detail}</p>
                 </Link>
@@ -817,7 +811,6 @@ export default function ThingsToDoPage() {
                   href={item.href}
                   className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md hover:border-[#C4782A]/30 transition-all group"
                 >
-                  <div className="text-3xl mb-3">{item.emoji}</div>
                   <p className="text-[#C4782A] text-[11px] font-bold uppercase tracking-wider mb-1">{item.sub}</p>
                   <h3 className="font-display font-bold text-[#14231C] text-lg mb-2 group-hover:text-[#C4782A] transition-colors">{item.name}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.detail}</p>
@@ -953,7 +946,7 @@ export default function ThingsToDoPage() {
             <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">Lake District Business?</p>
             <h2 className="font-display text-3xl font-bold mb-4">Get Your Business in Front of Visitors</h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-              TheLakesGuide.co.uk is the independent visitor guide to the Lake District. List your restaurant,
+              TheLakesGuide.co.uk is a visitor guide to the Lake District. List your restaurant,
               hotel, or activity and reach people actively planning a visit.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">

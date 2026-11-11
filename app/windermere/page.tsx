@@ -9,7 +9,7 @@ const url = `${BASE_URL}/windermere`;
 const faqs = [
   {
     q: "What is there to do in Windermere?",
-    a: "Lake cruises on the Windermere Steamers. Walking — Orrest Head for the classic view, or the Windermere Way around the lake. Good restaurants and pubs in both Windermere town and Bowness. The Windermere Jetty Museum for lake history.",
+    a: "Lake cruises with Windermere Lake Cruises, which sail every day except Christmas Day. Walking: Orrest Head for the classic view, or the Windermere Way around the lake. Restaurants and pubs in both Windermere town and Bowness. Windermere Jetty Museum for the lake's boats and history.",
   },
   {
     q: "Is Windermere a town or a lake?",
@@ -17,15 +17,15 @@ const faqs = [
   },
   {
     q: "Where should I stay in Windermere or Bowness?",
-    a: "Windermere town is quieter and has good transport links — the Windermere station is on the branch from Oxenholme. Bowness is on the lake, louder, with more hotels. Both have a wide range of accommodation from B&Bs to full hotels. Book ahead in summer.",
+    a: "Windermere town is quieter and has good transport links: Windermere station is at the end of the Lakes Line from Oxenholme. Bowness is on the lake, louder, with more hotels. Both have a wide range of accommodation from B&Bs to full hotels. Book ahead in summer.",
   },
   {
     q: "How do I get to Windermere without a car?",
-    a: "The Windermere branch line runs from Oxenholme on the West Coast Main Line. Regular services from London Euston change at Oxenholme. Trains also run from Leeds and Manchester via Oxenholme. The station is in Windermere town, about a mile from Bowness and the lake.",
+    a: "The Lakes Line runs from Oxenholme, on the West Coast Main Line, to Windermere, calling at Kendal, Burneside and Staveley. From London Euston, change at Oxenholme. Northern also runs direct trains from Manchester to Windermere. The station is in Windermere town, about a 25-minute walk from Bowness pier.",
   },
   {
     q: "What is the Windermere Jetty Museum?",
-    a: "The Windermere Jetty Museum is a boat museum on the lake shore in Bowness (LA23 3HQ). It houses a collection of historic wooden boats from the lake's history, including some of the oldest mechanically powered boats in the world. The building itself is architecturally interesting. Worth an hour or two.",
+    a: "Windermere Jetty Museum is a boat museum on the lake shore on Rayrigg Road, Bowness (LA23 1BN), run by Lakeland Arts. It houses historic boats from the lake's history and has a café. It is about a 12-minute walk from Bowness pier.",
   },
 ];
 
@@ -67,9 +67,9 @@ const pageJsonLd = {
 
 export const metadata: Metadata = {
   title: "Windermere | Restaurants, Things to Do & Visitor Guide",
-  description: "Complete visitor guide to Windermere and Bowness. Restaurants, lake cruises, accommodation, parking, and what to do in England's largest lake district town.",
+  description: "Windermere and Bowness: restaurants, lake cruises, accommodation, parking, and things to do on England's largest natural lake.",
   alternates: { canonical: url },
-  openGraph: { title: "Windermere Guide | The Lakes Guide", description: "Everything you need to visit Windermere and Bowness-on-Windermere. Restaurants, walks, lake cruises, accommodation.", url, siteName: "The Lakes Guide" },
+  openGraph: { title: "Windermere Guide | The Lakes Guide", description: "Visiting Windermere and Bowness-on-Windermere: restaurants, walks, lake cruises and accommodation.", url, siteName: "The Lakes Guide" },
 };
 
 export default function WindermerePage() {
@@ -82,7 +82,7 @@ export default function WindermerePage() {
         <section className="relative min-h-[480px] flex items-end text-white overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80"
-            alt="Windermere — England's largest lake"
+            alt=""
             fill priority sizes="100vw"
             className="object-cover object-center"
           />
@@ -141,8 +141,8 @@ export default function WindermerePage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">Windermere Town and Bowness</h2>
             <div className="grid sm:grid-cols-2 gap-4 mb-6">
               {[
-                { title: "Bowness-on-Windermere", desc: "The lakefront settlement. The piers, the boat hire, the ice cream, the Windermere Steamers. Noisier than Windermere town but closer to the water. The promenade and waterfront restaurants are the centre of activity." },
-                { title: "Windermere Town", desc: "The ridge above the lake, about a mile from the shore. Has the train station — the only railway into the national park. Quieter, more residential, with good cafes and restaurants. If you arrive by train, you start here." },
+                { title: "Bowness-on-Windermere", desc: "The lakefront settlement. The piers, the boat hire, the ice cream, Windermere Lake Cruises. Noisier than Windermere town but closer to the water. The promenade and waterfront restaurants are the centre of activity." },
+                { title: "Windermere Town", desc: "The ridge above the lake, about a mile from the shore. Has the train station, at the end of the Lakes Line from Oxenholme. Quieter, more residential, with cafes and restaurants. If you arrive by train, you start here." },
               ].map(({ title, desc }) => (
                 <div key={title} className="bg-gray-50 rounded-xl p-5">
                   <h3 className="font-semibold text-[#14231C] mb-2">{title}</h3>
@@ -176,13 +176,13 @@ export default function WindermerePage() {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="bg-gray-50 rounded-xl p-5">
                 <h3 className="font-semibold text-[#14231C] mb-2">Windermere Lake Cruises</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Services from Bowness pier (LA23 3HQ), Waterhead at Ambleside (LA22 0BB), and Lakeside (LA12 8AS). A day ticket covers unlimited travel the length of the lake. The cruise from Bowness to Ambleside (35 minutes) gives the best view of the western shore.</p>
+                <p className="text-gray-600 text-sm leading-relaxed">Services from Bowness pier (LA23 3HQ), Waterhead at Ambleside (LA22 0EY), and Lakeside (LA12 8AS), every day except Christmas Day, on reduced timetables in winter. Freedom tickets cover unlimited travel; from 2 November to 23 March the 48 Hour Freedom ticket is £35 for an adult. Bowness to Ambleside takes 35 minutes.</p>
               </div>
               <div className="bg-gray-50 rounded-xl p-5">
                 <h3 className="font-semibold text-[#14231C] mb-2">Water Activities</h3>
                 <ul className="space-y-1.5 text-sm text-gray-600">
                   <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Kayak and paddleboard hire from the Bowness foreshore</li>
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Electric boat hire — no licence required</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Electric boat hire, no licence required</li>
                   <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Wild swimming at Millerground (LA23 1QF)</li>
                   <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Ferry crossing to the quieter western shore</li>
                 </ul>
@@ -224,9 +224,9 @@ export default function WindermerePage() {
                 <span className="text-xs font-bold bg-[#14231C] text-white px-2.5 py-1 rounded-full flex-none">Worth 90 min</span>
               </div>
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                LA23 3HQ, entrance charged. Houses the national collection of historic boats from the lake, including Dolly, the world&rsquo;s oldest mechanically powered boat, built in 1850 and recovered from the lake bed in 1962. The architecture by Carmody Groarke is controversial locally but genuinely interesting.
+                Rayrigg Road, Bowness, LA23 1BN. Entrance charged. A museum of historic boats from the lake, run by Lakeland Arts, about a 12-minute walk from Bowness pier.
               </p>
-              <p className="text-gray-600 text-sm leading-relaxed">Worth 90 minutes if you have any interest in engineering, design, or social history. The cafe gives views over the lake.</p>
+              <p className="text-gray-600 text-sm leading-relaxed">The museum has a café looking over the lake.</p>
             </div>
           </section>
 
@@ -235,10 +235,10 @@ export default function WindermerePage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">Where to Eat</h2>
             <div className="space-y-3">
               {[
-                { name: "The Porthole", location: "Ash Street, Bowness, LA23 3EB", tag: "Best overall", desc: "Italian-influenced, locally sourced, good wine list. One of the better small restaurants in Bowness. Book ahead at weekends." },
-                { name: "Francine's", location: "Main Road, Windermere, LA23 1DX", tag: "Evening meal", desc: "Consistently good for an evening meal in Windermere town. Modern British with local ingredients. Better value than the Bowness equivalents." },
-                { name: "The Royal Oak", location: "Market Square, Windermere", tag: "Best pub", desc: "Reliable and unpretentious pub food in Windermere town. The pubs here are generally better than the Bowness equivalents for food quality." },
-                { name: "Jetty Museum Cafe", location: "Bowness, LA23 3HQ", tag: "Best cafe", desc: "Better than the average museum cafe, and the setting gives views over the lake. Worth knowing about for lunch." },
+                { name: "Porto Restaurant", location: "3 Ash Street, Bowness, LA23 3EB", tag: "Restaurant", desc: "A modern British restaurant with a rooftop terrace. It traded as The Porthole until it was renamed." },
+                { name: "The Royal Oak Inn", location: "Brantfell Road, Bowness, LA23 3EG", tag: "Inn", desc: "A traditional Lakeland inn, with the same owner since 1995, and the official finishing pub of the Dales Way since 1996." },
+                { name: "The Belsfield", location: "Kendal Road, Bowness, LA23 3EL", tag: "Hotel", desc: "A 4-star hotel with 62 bedrooms, a brasserie, an Art Deco bar and a terrace." },
+                { name: "Windermere Jetty Museum café", location: "Rayrigg Road, Bowness, LA23 1BN", tag: "Museum café", desc: "The café at the boat museum, looking over the lake." },
               ].map(({ name, location, tag, desc }) => (
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <div className="flex items-start justify-between gap-2 mb-1">
@@ -273,9 +273,9 @@ export default function WindermerePage() {
                   <h3 className="font-semibold text-[#14231C]">Parking</h3>
                 </div>
                 <ul className="space-y-1.5 text-sm text-gray-600">
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <strong>Braithwaite Fold (LA23 3LH)</strong> — large, 5 min walk from Bowness</li>
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <strong>Rayrigg Road (LA23 1DG)</strong> — smaller, closer to waterfront</li>
-                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Fills by 11am on summer weekends. Go early.</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <strong>Braithwaite Fold (LA23 3LH)</strong>: large, 5 min walk from Bowness</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> <strong>Rayrigg Road (LA23 1DG)</strong>: smaller, closer to the waterfront</li>
+                  <li className="flex gap-2"><span className="text-[#C4782A] font-bold">•</span> Car parks fill early on summer weekends.</li>
                 </ul>
               </div>
             </div>

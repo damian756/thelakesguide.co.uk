@@ -17,11 +17,11 @@ const faqs = [
   },
   {
     q: "Which Lake District pubs are dog-friendly?",
-    a: "Most walkers' pubs in the Lakes are dog-friendly. The Wasdale Head Inn, The Old Dungeon Ghyll in Langdale, The Kirkstone Pass Inn, the Travellers Rest near Grasmere, and the Dog and Gun in Keswick are all known for welcoming dogs. Call ahead if you are unsure and want to eat rather than just drink.",
+    a: "Many walkers' pubs in the Lakes welcome dogs. Pubs whose own websites say so include the Old Dungeon Ghyll in Great Langdale (in the Climbers Bar, not the dining room), the Golden Rule in Ambleside, the Dog & Gun in Keswick, the Pooley Bridge Inn and the Pheasant Inn at Bassenthwaite Lake. Call ahead if you want to eat rather than just drink.",
   },
   {
     q: "Can I take my dog to Windermere?",
-    a: "Yes. The eastern and western shores both have good walking with dogs. Boats operated by Windermere Lake Cruises allow dogs on board. Bowness itself is manageable with a dog. Narrow pavements in town can get very busy in summer. Early morning or evening is easier.",
+    a: "Yes. The eastern and western shores both have good walking with dogs. Well-behaved dogs travel free on Windermere Lake Cruises. Bowness itself is manageable with a dog. Narrow pavements in town can get very busy in summer. Early morning or evening is easier.",
   },
   {
     q: "Are there dog-friendly beaches in the Lake District?",
@@ -91,7 +91,7 @@ export default function DogFriendlyLakeDistrictPage() {
         <section className="relative min-h-[480px] flex items-end text-white overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=1400&q=80"
-            alt="Walking a dog through woodland in the Lake District"
+            alt="Dense conifer forest seen from above, with a road running through it"
             fill priority sizes="100vw"
             className="object-cover object-center"
           />
@@ -183,23 +183,22 @@ export default function DogFriendlyLakeDistrictPage() {
               Catbells, Derwentwater
             </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              One of the most popular Lake District walks and excellent with dogs.
+              One of the most popular Lake District walks, and a good one with dogs.
               The summit ridge is open fell land with no enclosed sheep fields en route
               from the Hawes End jetty (take the Keswick Launch). Two to three hours return.
               Views down Derwentwater are worth the effort and the ascent is manageable for
-              most dogs. The boat adds interest and dogs are welcome on the Keswick Launch
-              ferries.
+              most dogs. The Keswick Launch does not sail in December and January, so walk
+              from Keswick or park nearby then.
             </p>
 
             <h3 className="font-semibold text-lg text-[#14231C] mb-2">
               Tarn Hows, near Coniston
             </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              A National Trust site with a well-maintained circular trail around the tarns.
-              Almost flat. Dogs must be on leads around the grazing areas but the path itself
-              is easy walking for any dog, any age. The car park (LA21 8DP, National Trust,
-              charged) fills quickly on summer weekends. Go before 9am or after 4pm if you
-              want easy parking. The walk is around 1.5 miles round the main tarn.
+              A made path circles the tarn for 3.29 km (about 2 miles) on a smooth, compacted
+              stone surface, with some slopes as steep as 1 in 5. Dogs must be on leads around
+              the grazing areas. The main car park (LA22 0PW) fills quickly on summer weekends,
+              so go early or late in the day.
             </p>
 
             <h3 className="font-semibold text-lg text-[#14231C] mb-2">
@@ -209,7 +208,7 @@ export default function DogFriendlyLakeDistrictPage() {
               Haystacks was Wainwright's favourite fell, and it makes a brilliant dog walk.
               Park at Gatesgarth Farm (CA13 9XA, small car park, honesty box). The ascent
               follows a clear path via Scarth Gap. The summit area has several small tarns
-              and is genuinely beautiful. Dogs can run freely on the open tops. Around 4
+              and wide views. Dogs can run freely on the open tops. Around 4
               miles, 3 to 4 hours, 450m ascent. The Buttermere valley circuit below is
               flatter and equally good.
             </p>
@@ -221,8 +220,8 @@ export default function DogFriendlyLakeDistrictPage() {
               The path from Howtown to Patterdale along the eastern shore of Ullswater is one
               of the best low-level walks in the Lakes. Around 6 miles on a good path with the
               lake to one side and fells rising steeply to the other. Mostly open, some
-              livestock near Sandwick. Dogs welcome on the Ullswater Steamers, so you can
-              take the boat one way and walk back. The Howtown pier is the starting point for
+              livestock near Sandwick. Dogs travel on the Ullswater &lsquo;Steamers&rsquo; for
+              £1.50 each, so you can take the boat one way and walk back. The Howtown pier is the starting point for
               the classic walk; park at Glenridding (CA11 0PD) and use the steamer service.
             </p>
 
@@ -244,8 +243,8 @@ export default function DogFriendlyLakeDistrictPage() {
             <p className="text-gray-700 leading-relaxed mb-4">
               Forestry England manages Grizedale Forest between Windermere and Coniston. Dogs
               on leads on the main trails. The forest has good waymarked routes, red squirrels
-              in the upper sections, and a Go Ape facility if you have children in tow. The
-              car park is at Hawkshead (LA22 0QJ). Good for wet weather when you want tree
+              in the upper sections, and a Go Ape course if you have children in tow. The
+              visitor centre car park is at Grizedale (LA22 0QJ). Good for wet weather when you want tree
               cover.
             </p>
           </section>
@@ -255,27 +254,27 @@ export default function DogFriendlyLakeDistrictPage() {
               Dog-Friendly Pubs
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Post-walk pub access is a genuine priority with a dog. The majority of walkers'
-              pubs in the Lakes are dog-friendly, at least in the bar area. Some key ones:
+              Pub access matters after a walk with a dog. These pubs say on their own websites
+              that dogs are welcome (checked November 2026):
             </p>
             <ul className="space-y-3 text-gray-700">
               <li>
-                <strong className="text-[#14231C]">Wasdale Head Inn</strong> (CA20 1EX). As remote as it gets, dogs very welcome in the bar, and after Scafell Pike you will be glad it is there.
+                <strong className="text-[#14231C]">Old Dungeon Ghyll, Great Langdale</strong> (LA22 9JY). A historic hotel at the head of the valley. Well-behaved dogs are welcome in the hotel and the Climbers Bar, but not in the dining room.
               </li>
               <li>
-                <strong className="text-[#14231C]">Old Dungeon Ghyll, Langdale</strong> (LA22 9JU). The hikers' bar is legendary. Muddy boots and dogs are part of the furniture. No booking needed for the bar.
+                <strong className="text-[#14231C]">The Golden Rule, Ambleside</strong> (Smithy Brow, LA22 9AS). A traditional pub with an open fire. Dogs are welcome throughout. It serves no meals.
               </li>
               <li>
-                <strong className="text-[#14231C]">Kirkstone Pass Inn</strong> (LA23 1LU). England's third highest pub, on the pass between Windermere and Ullswater. Exposed and often cold. Dogs very welcome, open fires.
+                <strong className="text-[#14231C]">The Dog &amp; Gun, Keswick</strong> (2 Lake Road, CA12 5BT). A dog-friendly pub serving food, walk-ins only.
               </li>
               <li>
-                <strong className="text-[#14231C]">The Dog and Gun, Keswick</strong> (CA12 5JB). The name is a reasonable clue. Busy town pub, dogs in the bar, Keswick's best atmosphere on a wet evening.
+                <strong className="text-[#14231C]">Pooley Bridge Inn</strong> (Finkle Street, CA10 2NN). An inn with a traditional bar with open fires, at the north end of Ullswater. Dogs and children welcome.
               </li>
               <li>
-                <strong className="text-[#14231C]">Travellers Rest, Grasmere</strong> (LA22 9RR). On the A591 just north of Grasmere. Good beer garden for summer. Dogs welcome in the bar and the garden.
+                <strong className="text-[#14231C]">The Ullswater Inn, Glenridding</strong> (CA11 0PB). A hotel, formerly the Glenridding Hotel, with a dog-friendly pub serving food all day.
               </li>
               <li>
-                <strong className="text-[#14231C]">The Fish Inn, Buttermere</strong> (CA13 9XA). Village pub in one of the most beautiful valleys in the Lakes. Small, gets busy after a Haystacks day. Dogs in the bar.
+                <strong className="text-[#14231C]">The Pheasant Inn, Bassenthwaite Lake</strong> (CA13 9YE). A dog-friendly 17th-century coaching inn with rooms.
               </li>
             </ul>
             <p className="text-gray-700 leading-relaxed mt-4">
@@ -291,21 +290,21 @@ export default function DogFriendlyLakeDistrictPage() {
             <p className="text-gray-700 leading-relaxed mb-4">
               Dog-friendly accommodation in the Lakes is plentiful but fills fast in school
               holidays. Book early and be specific about your dog when booking. Most places
-              that accept dogs charge a small supplement (typically £10 to £20 per stay) and
-              have size restrictions or a limit on number of dogs.
+              that accept dogs charge a supplement and have size restrictions or a limit on
+              the number of dogs.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Self-catering is generally more straightforward than hotels or B&Bs. Cottages
-              through Sykes Cottages, Hoseasons, and direct local letting agencies often
-              accept dogs without the supplement that hotels charge. Check whether the garden
+              Self-catering is generally more straightforward than hotels or B&amp;Bs. Many
+              holiday cottages accept dogs; check the dog policy and any charge when you book. Check whether the garden
               is enclosed. In the Lakes, a dog bolting onto a road or into a field of sheep is
               a real risk with an open gate.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               Camping is straightforward. Most NT and Forestry England campsite grounds permit
-              dogs on leads. Wild camping (legal in the Lakes under the National Park access
-              provisions) is fine with dogs but requires the same responsibility: no
-              harassment of livestock, clean up after the dog.
+              dogs on leads. Wild camping is not permitted in the Lake District without the
+              landowner&apos;s permission, the National Park says, though it is often tolerated
+              above the highest fell wall for one night. With a dog, the same responsibility
+              applies: no harassment of livestock, clean up after the dog.
             </p>
             <p className="text-gray-700 leading-relaxed">
               YHA hostels have variable dog policies. Most do not accept dogs in sleeping
@@ -320,15 +319,15 @@ export default function DogFriendlyLakeDistrictPage() {
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               Dogs swimming in the Lakes is generally not a problem and most dogs will want
-              to. Water quality in the larger lakes is good. The main risks are strong
+              to. The main risks are strong
               currents at inflows and outflows (particularly at weirs and narrow channels),
               cold water shock in winter and early spring, and blue-green algae (cyanobacteria)
               in warm, still conditions in late summer. When algae warnings are posted on
               a lake, keep dogs out of the water. It can be fatal.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Blue-green algae warnings are posted on the YDNPA and Lake District National
-              Park Authority websites and social media during risk periods. Worth checking
+              Blue-green algae warnings are posted on the Lake District National Park
+              Authority&apos;s website and social media during risk periods. Worth checking
               before you go if it has been a hot, still August week.
             </p>
             <p className="text-gray-700 leading-relaxed">

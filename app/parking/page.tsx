@@ -79,8 +79,23 @@ export default async function ParkingIndexPage() {
 
       <div className="container mx-auto px-4 max-w-4xl py-12">
         {parkings.length === 0 ? (
-          <div className="text-center py-16">
-            <p className="text-gray-500">Parking listings are being added. Check back soon.</p>
+          <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8">
+            <p className="text-gray-600 leading-relaxed mb-5">
+              The car park directory is not built yet. These car parks have been checked against the
+              operators&apos; own pages (November 2026):
+            </p>
+            <ul className="space-y-3 text-sm text-gray-700">
+              <li><strong className="text-[#14231C]">Keswick, Lakeside car park</strong> (CA12 5DJ): Cumberland Council, 253 spaces, near Theatre by the Lake and the launches.</li>
+              <li><strong className="text-[#14231C]">Grasmere, Red Bank Road car park</strong> (LA22 9SW): Westmorland and Furness Council, charged 8am to 8pm, card or phone payment only.</li>
+              <li><strong className="text-[#14231C]">Glenridding, Beckside car park</strong> (CA11 0PD): Lake District National Park, for the Helvellyn routes from Glenridding.</li>
+              <li><strong className="text-[#14231C]">Aira Force</strong> (CA11 0JS): National Trust pay and display, about 130 spaces.</li>
+              <li><strong className="text-[#14231C]">Tarn Hows</strong> (main car park LA22 0PW): for the circuit of the tarn.</li>
+              <li><strong className="text-[#14231C]">Wasdale Head, Lake Head car park</strong> (CA20 1EX): pay and display, for Scafell Pike.</li>
+              <li><strong className="text-[#14231C]">Haweswater, Mardale Head</strong>: open at all times, no overnight parking; the RSPB asks for a £2 cash donation.</li>
+            </ul>
+            <p className="text-gray-500 text-sm mt-5">Car parks fill early on summer weekends. Buses are often the easier option: see{" "}
+              <Link href="/blog/lake-district-without-a-car" className="text-[#C4782A] font-semibold hover:underline">the Lake District without a car</Link>.
+            </p>
           </div>
         ) : (
           <div className="space-y-3">

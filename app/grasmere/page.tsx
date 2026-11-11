@@ -13,11 +13,11 @@ const faqs = [
   },
   {
     q: "Is Grasmere worth visiting?",
-    a: "Yes, particularly if you enjoy walking or have any interest in literary history. The village is compact and can be busy in summer, but the lake and the surrounding fells give it a quality that the gift shops and tea rooms can only partially obscure.",
+    a: "Yes, particularly if you enjoy walking or literary history. The village is compact and can be busy in summer, and the lake and the surrounding fells are a short walk away.",
   },
   {
     q: "What walks can you do from Grasmere?",
-    a: "Helm Crag (the Howitzer summit) is the classic walk directly above the village — a 2-hour return with a scramble to the highest point. Easedale Tarn is a popular 3-mile circular. The Fairfield Horseshoe from Grasmere is a longer day. The lake circuit is an easy 4-mile flat walk.",
+    a: "Helm Crag (the Howitzer summit) is the classic walk directly above the village: a 2-hour return with a scramble to the highest point. Easedale Tarn is a popular 3-mile circular. The Fairfield Horseshoe from Grasmere is a longer day. The lake circuit is an easy 4-mile flat walk.",
   },
   {
     q: "How far is Grasmere from Ambleside?",
@@ -63,9 +63,9 @@ const pageJsonLd = {
 
 export const metadata: Metadata = {
   title: "Grasmere | Wordsworth, Gingerbread & Visitor Guide",
-  description: "Complete guide to Grasmere. Dove Cottage, Wordsworth Museum, Grasmere Gingerbread, Helm Crag, Easedale Tarn. Everything you need to know for a visit to this central Lake District village.",
+  description: "Grasmere in the Lake District: Dove Cottage, the Wordsworth Museum, Grasmere Gingerbread, Helm Crag and Easedale Tarn, with practical information for a visit.",
   alternates: { canonical: url },
-  openGraph: { title: "Grasmere Guide | The Lakes Guide", description: "Wordsworth, gingerbread, and one of the most beautiful lakes in the Lake District. Complete visitor guide.", url, siteName: "The Lakes Guide" },
+  openGraph: { title: "Grasmere Guide | The Lakes Guide", description: "Wordsworth, gingerbread, and one of the most beautiful lakes in the Lake District: a visitor guide.", url, siteName: "The Lakes Guide" },
 };
 
 export default function GrasmerePage() {
@@ -78,7 +78,7 @@ export default function GrasmerePage() {
         <section className="relative min-h-[480px] flex items-end text-white overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=1400&q=80"
-            alt="Grasmere lake in the central Lake District"
+            alt=""
             fill priority sizes="100vw"
             className="object-cover object-center"
           />
@@ -136,7 +136,7 @@ export default function GrasmerePage() {
           <section className="mb-12">
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">About Grasmere</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Grasmere is a small village in the valley of the same name, with a lake of the same name directly beside it. The village, the lake, and the surrounding fells are all called Grasmere. The lake is small — about three-quarters of a mile long — but exceptionally beautiful, sitting between the steep fell sides of Helm Crag to the north and Silver How to the west.
+              Grasmere is a small village in the valley of the same name, with a lake of the same name directly beside it. The village, the lake, and the surrounding fells are all called Grasmere. The lake is small, about three-quarters of a mile long, but exceptionally beautiful, sitting between the steep fell sides of Helm Crag to the north and Silver How to the west.
             </p>
             <p className="text-gray-600 leading-relaxed">
               The literary history is the main draw for many visitors. William Wordsworth moved to Dove Cottage on the edge of the village in December 1799 with his sister Dorothy, and he lived here until 1808 writing some of the central work of English Romanticism. Dove Cottage is preserved by the Wordsworth Trust and is open for tours.
@@ -149,7 +149,7 @@ export default function GrasmerePage() {
               <div className="relative h-52 md:h-auto md:w-64 flex-none">
                 <Image
                   src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80"
-                  alt="Dove Cottage — Wordsworth's home in Grasmere"
+                  alt="Jagged mountain peaks lit red at sunset"
                   fill sizes="(max-width: 768px) 100vw, 256px"
                   className="object-cover"
                 />
@@ -158,7 +158,7 @@ export default function GrasmerePage() {
                 <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-2">Book ahead in summer</p>
                 <h2 className="font-display text-xl font-bold text-[#14231C] mb-3">Dove Cottage and the Wordsworth Museum</h2>
                 <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                  LA22 9SH, entrance charged. A 17th-century farmhouse on the old road to Ambleside, half a mile from the village centre. The cottage is small, darker than photographs suggest, and gives a clear impression of how Wordsworth&rsquo;s household actually lived. The tours are guided and well-informed.
+                  LA22 9SH, entrance charged. A 17th-century farmhouse on the old road to Ambleside, half a mile from the village centre. The cottage is small and gives a clear impression of how Wordsworth&rsquo;s household lived.
                 </p>
                 <div className="flex flex-wrap gap-2 text-xs font-semibold">
                   <span className="bg-[#14231C] text-white px-3 py-1.5 rounded-full">Guided tours</span>
@@ -176,10 +176,10 @@ export default function GrasmerePage() {
                 <span className="text-xs font-bold bg-[#C4782A] text-white px-2.5 py-1 rounded-full flex-none">Since 1854</span>
               </div>
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                Sarah Nelson&rsquo;s Grasmere Gingerbread shop is at the corner of the churchyard (LA22 9SW). The recipe has been made to the same formula since 1854. It is not gingerbread in the conventional sense — harder, drier, spiced differently, and genuinely unique.
+                Sarah Nelson&rsquo;s Grasmere Gingerbread shop is at the corner of the churchyard (LA22 9SW). The recipe has been made to the same formula since 1854. It is not gingerbread in the conventional sense: it is harder and drier, and spiced differently.
               </p>
               <p className="text-gray-600 text-sm leading-relaxed">
-                The shop is tiny and the queue on summer days can be 20 people long, but it moves quickly. Buy more than you think you need — it keeps well and the tin is reusable.
+                The shop is tiny and the queue on summer days can be 20 people long, but it moves quickly. It keeps well, and the tin is reusable.
               </p>
             </div>
           </section>
@@ -221,9 +221,9 @@ export default function GrasmerePage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">Where to Eat</h2>
             <div className="space-y-3">
               {[
-                { name: "The Jumble Room", location: "Langdale Road, LA22 9SU", tag: "Best restaurant", desc: "The most consistently well-regarded restaurant in Grasmere. Eclectic, independently owned, with a menu that changes regularly. Book ahead — it is small and fills up." },
-                { name: "The Travellers Rest", location: "A591 south of Grasmere, LA22 9RR", tag: "Best post-walk pub", desc: "The right post-walk pub for the Fairfield Horseshoe or any of the southern approaches. Good food, decent beer, reliable quality." },
-                { name: "The Rowan Tree", location: "Village centre", tag: "Good for lunch", desc: "A reliable lunch option with better food than the setting might suggest. Convenient for a break between Dove Cottage and the lake." },
+                { name: "The Jumble Room", location: "Langdale Road, LA22 9SU", tag: "Restaurant", desc: "A family-run restaurant. In October and November it opens Thursday to Saturday, and it is closed from 1 to 27 December." },
+                { name: "The Travellers Rest", location: "A591, Grasmere, LA22 9RR", tag: "Inn", desc: "An inn with rooms on the A591 on the outskirts of Grasmere, at the foot of Helvellyn." },
+                { name: "Grasmere Gingerbread", location: "Church Cottage, beside St Oswald's churchyard", tag: "Shop", desc: "Sarah Nelson's gingerbread, invented in 1854 and sold from Church Cottage, which is now the shop." },
               ].map(({ name, location, tag, desc }) => (
                 <div key={name} className="bg-gray-50 rounded-xl p-5">
                   <div className="flex items-start justify-between gap-2 mb-1">
@@ -242,10 +242,10 @@ export default function GrasmerePage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-4">Getting There</h2>
             <div className="bg-gray-50 rounded-xl p-5">
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                The 555 bus connects Grasmere with Windermere station, Ambleside, and Keswick roughly hourly. This is a reliable service and removes the parking problem in summer.
+                The 555 bus connects Grasmere with Windermere station, Ambleside and Keswick about every hour, and saves looking for a parking space in summer.
               </p>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Car parking is at the main car park on Red Bank Road (LA22 9QT, pay and display) or along Broadgate. Both fill early in summer. Arrive before 10am or use the bus.
+                Red Bank Road car park (LA22 9SW) is run by Westmorland and Furness Council. It charges from 8am to 8pm and takes card or phone payment only, not cash. There is also parking along Broadgate. Both fill early in summer, so arrive early or use the bus.
               </p>
             </div>
           </section>

@@ -3,14 +3,14 @@ import Image from "next/image";
 import { HERO_IMAGE_URL } from "@/lib/site-constants";
 
 export const metadata = {
-  title: "About The Lakes Guide | Your Independent Visitor Guide to the Lake District",
+  title: "About The Lakes Guide | Who Publishes It and How It Works",
   description:
-    "The Lakes Guide is an independent visitor guide to the Lake District, published by Churchtown Media. Find out who writes it, how it works, and why we built it.",
+    "The Lakes Guide is a visitor guide to the Lake District, published by Churchtown Media Ltd. Who edits it, how it is paid for and what we stand for.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/about" },
   openGraph: {
     title: "About The Lakes Guide",
     description:
-      "Independent visitor guide to the Lake District, published by Churchtown Media, written by someone who knows the fells.",
+      "A visitor guide to the Lake District, published by Churchtown Media Ltd.",
     url: "https://www.thelakesguide.co.uk/about",
     type: "website",
     siteName: "The Lakes Guide",
@@ -25,7 +25,7 @@ const schemaData = [
     name: "The Lakes Guide",
     url: "https://www.thelakesguide.co.uk",
     description:
-      "Independent visitor guide to the Lake District: restaurants, accommodation, walks, things to do, and everything visitors need.",
+      "Visitor guide to the Lake District: restaurants, accommodation, walks and things to do.",
     publisher: {
       "@type": "Organization",
       "@id": "https://www.thelakesguide.co.uk/#organization",
@@ -40,7 +40,7 @@ const schemaData = [
     name: "Damian Roche",
     jobTitle: "Founder, Churchtown Media",
     description:
-      "Editorial voice of The Lakes Guide, written from the perspective of someone who has walked the fells for decades and knows the Lake District.",
+      "Founder of Churchtown Media Ltd, which publishes The Lakes Guide.",
     worksFor: {
       "@id": "https://www.thelakesguide.co.uk/#website",
     },
@@ -74,9 +74,8 @@ export default function AboutPage() {
               About The Lakes Guide
             </h1>
             <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-2xl">
-              An independent visitor guide to the Lake District: restaurants, accommodation, walks, things to do,
-              and everything else you need to plan a visit. No official body funds this. Just a site built by
-              someone who has been coming here for decades.
+              A visitor guide to the Lake District: restaurants, accommodation, walks and things to do, with
+              the practical details for planning a visit. Published by Churchtown Media Ltd.
             </p>
           </div>
           <div className="relative h-8 overflow-hidden">
@@ -97,22 +96,39 @@ export default function AboutPage() {
                   <span className="text-[#C4782A] font-display font-bold text-xl">D</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-[#14231C] text-lg">Damian, Editor</p>
-                  <p className="text-gray-500 text-sm">Ex-army · Fell walker · 20+ years in the Lakes</p>
+                  <p className="font-semibold text-[#14231C] text-lg">Damian Roche, Editor</p>
+                  <p className="text-gray-500 text-sm">Founder, Churchtown Media Ltd</p>
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                The Lakes Guide is written in the voice of Damian Roche, founder of Churchtown Media.
-                He has walked the fells for decades, fished the tarns, and brought the kids. The content
-                is practical and honest. If a route is brutal in mist, we say so. If somewhere is
-                overpriced, we mention it. No paid editorial placements, no sponsored content disguised
-                as a review. Businesses can pay for featured placement in listings (that&apos;s how the
-                site stays free to use), but that has no influence on what gets written.
+              <p className="text-gray-700 leading-relaxed mb-6">
+                The Lakes Guide is published by Churchtown Media Ltd and edited by its founder, Damian Roche.
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                The content is honest. If something isn&apos;t worth the effort, we say so. We name specifics:
-                the car park postcode, the trail, the café, the price. No fluff, no brochure-speak.
-              </p>
+              <h3 className="font-display text-lg font-bold text-[#14231C] mb-4">What we stand for</h3>
+              <dl className="space-y-4">
+                {[
+                  {
+                    term: "Independent",
+                    desc: "Churchtown Media Ltd pays for the guide. Businesses can pay for a Featured place in the listings, and every paid listing is labelled Featured. Paying for a listing does not change what we write.",
+                  },
+                  {
+                    term: "Checked",
+                    desc: "We check opening times, parking, prices and postcodes against official sources when we write a page and when we revise it. If we can't confirm something, we leave it out.",
+                  },
+                  {
+                    term: "Useful",
+                    desc: "Built for the visitor making a decision: where to stay, where to eat, when to go, what to expect. Practical first, inspirational second.",
+                  },
+                  {
+                    term: "Focused",
+                    desc: "Three Lakes Network guides that cover only the Lake District: The Lakes Guide for visiting, Hike The Lakes for the fells and The Lakes Wildlife for species and reserves.",
+                  },
+                ].map(({ term, desc }) => (
+                  <div key={term}>
+                    <dt className="font-semibold text-[#14231C]">{term}</dt>
+                    <dd className="text-gray-700 leading-relaxed">{desc}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </section>
 
@@ -144,9 +160,8 @@ export default function AboutPage() {
                     (Company No. 16960442)
                   </p>
                   <p className="text-gray-700 leading-relaxed mb-3">
-                    Damian is a 20-year web and SEO professional. He built The Lakes Guide because he
-                    couldn&apos;t find a genuinely useful, editorially independent visitor guide to the
-                    Lake District, one that was honest about conditions, effort, and value.
+                    Damian runs Churchtown Media, which publishes guide sites for the Sefton Coast and the
+                    Lake District.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     The Lakes Guide is part of{" "}
@@ -155,8 +170,8 @@ export default function AboutPage() {
                       className="text-[#C4782A] hover:underline font-medium"
                     >
                       The Lakes Network
-                    </a>{" "}
-                    , independent editorial guides covering the Lake District, wildlife, and fell walking.
+                    </a>
+                    : The Lakes Guide, Hike The Lakes for the fells and walking routes, and The Lakes Wildlife for species and reserves.
                   </p>
                   <a
                     href="https://www.linkedin.com/in/damian-roche-7ba8293a5/"
@@ -176,12 +191,12 @@ export default function AboutPage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">What we cover</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { label: "Restaurants & Cafés", desc: "Independent reviews and a full directory of places to eat and drink across the Lake District." },
-                { label: "Accommodation", desc: "Hotels, B&Bs, and self-catering from budget to boutique in Keswick, Ambleside, Windermere and beyond." },
+                { label: "Restaurants & Cafés", desc: "A directory of places to eat and drink across the Lake District." },
+                { label: "Accommodation", desc: "Hotels, B&Bs, hostels and self-catering in Keswick, Ambleside, Windermere and beyond." },
                 { label: "Walks & Hiking", desc: "Fell walks, valley routes, and practical guides for the Wainwrights and beyond." },
                 { label: "Villages & Towns", desc: "Keswick, Ambleside, Windermere, Coniston, Grasmere: what to expect and where to stop." },
-                { label: "Things To Do", desc: "Water sports, cycling, Grizedale Forest, attractions and everything else to fill a day." },
-                { label: "Events", desc: "What&apos;s on calendar: festivals, races, and seasonal events across the Lake District." },
+                { label: "Things To Do", desc: "Boat trips, water sports, cycling, Grizedale Forest, museums and other attractions." },
+                { label: "Events", desc: "A calendar of festivals, races and seasonal events across the Lake District." },
               ].map(({ label, desc }) => (
                 <div key={label} className="bg-white rounded-xl border border-gray-100 p-5">
                   <p className="font-semibold text-[#14231C] mb-1">{label}</p>
@@ -193,20 +208,15 @@ export default function AboutPage() {
 
           {/* How we make money */}
           <section className="mb-14">
-            <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">How it&apos;s funded</h2>
+            <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">How it&apos;s paid for</h2>
             <div className="bg-white rounded-2xl border border-gray-100 p-8">
               <p className="text-gray-700 leading-relaxed mb-4">
-                The Lakes Guide is free to use. It&apos;s funded by featured placement (businesses can pay
-                for a Pro listing or a boost). This is clearly disclosed on the site.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Featured placement does not influence editorial content. A restaurant that pays for a
-                featured listing doesn&apos;t get a better review, it gets better visibility in the
-                directory. If anything is sponsored, it will be explicitly labelled.
+                The Lakes Guide is free to use. Churchtown Media Ltd pays for it. Businesses can pay for a
+                Pro listing or a boost, which gives them more room and more visibility in the directory.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                We may also earn affiliate commissions from some booking links. These are disclosed
-                where they appear.
+                Paid listings are labelled Featured. Paying for one does not buy a mention in our guides or
+                posts, and does not change what we write.
               </p>
             </div>
           </section>
@@ -216,8 +226,8 @@ export default function AboutPage() {
             <h2 className="font-display text-2xl font-bold text-[#14231C] mb-5">Get in touch</h2>
             <div className="bg-white rounded-2xl border border-gray-100 p-8">
               <p className="text-gray-700 leading-relaxed mb-6">
-                To list your business, enquire about featured placement, or report anything that
-                looks wrong, use the contact form or email us directly.
+                To list your business, ask about a Featured listing, or report anything that looks
+                wrong, use the contact form.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link

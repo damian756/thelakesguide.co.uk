@@ -10,11 +10,11 @@ const WILDLIFE_URL = "https://www.thelakeswildlife.co.uk";
 export const metadata: Metadata = {
   title: "Lake District Wildlife | Ospreys, Red Deer, Red Squirrels | The Lakes Guide",
   description:
-    "Lake District wildlife guide. Ospreys at Haweswater, red deer in Martindale, red squirrels in Grizedale. The complete guide to wildlife in the Lakes.",
+    "Lake District wildlife: ospreys at Foulshaw Moss, red deer in Martindale, red squirrels in Grizedale and Whinlatter, and where to see them.",
   alternates: { canonical: `${BASE_URL}/lake-district-wildlife` },
   openGraph: {
     title: "Lake District Wildlife | The Lakes Guide",
-    description: "Ospreys, red deer, red squirrels. The complete guide to wildlife in the Lake District.",
+    description: "Ospreys, red deer and red squirrels: wildlife in the Lake District and where to see it.",
     url: `${BASE_URL}/lake-district-wildlife`,
   },
 };
@@ -39,7 +39,7 @@ export default function LakeDistrictWildlifePage() {
             Lake District Wildlife
           </h1>
           <p className="text-white/80 text-lg max-w-2xl">
-            Ospreys at Haweswater. Red deer in Martindale. Red squirrels in Grizedale. The Lake District has some of the best wildlife watching in England.
+            Ospreys at Foulshaw Moss. Red deer in Martindale. Red squirrels in Grizedale. The Lake District has some of the best wildlife watching in England.
           </p>
         </div>
         <div className="relative h-8 overflow-hidden">
@@ -52,7 +52,7 @@ export default function LakeDistrictWildlifePage() {
       <div className="container mx-auto px-4 max-w-3xl py-12">
         <div className="prose prose-slate max-w-none text-[#3C4E42] space-y-6">
           <p>
-            The Lake District is one of the best places in England for wildlife. Ospreys breed at RSPB Haweswater and Foulshaw Moss. Red deer rut in Martindale in October. Red squirrels are in Grizedale and Whinlatter. Otters are on the rivers. Peregrines nest on the crags.
+            The Lake District is one of the best places in England for wildlife. Ospreys breed at Foulshaw Moss, a Cumbria Wildlife Trust reserve. Red deer rut in Martindale in October. Red squirrels are in Grizedale and Whinlatter. Otters are on the rivers. Peregrines nest on the crags.
           </p>
           <p>
             For the full guide to Lake District wildlife, where to see each species, and when to go, visit The Lakes Wildlife.

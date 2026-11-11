@@ -9,7 +9,7 @@ const url = `${BASE_URL}/lake-district-with-kids`;
 const faqs = [
   {
     q: "What is the best Lake District walk for kids?",
-    a: "Tarn Hows near Coniston (flat, short, dramatic) and Easedale Tarn from Grasmere (a waterfall, a tarn, manageable ascent) are the two best starter walks. Catbells above Keswick works for older children who can manage 450m of ascent. The Ullswater lakeshore path from Howtown is flat and has the boat journey to add to the experience.",
+    a: "Tarn Hows near Coniston (about 2 miles on a made path) and Easedale Tarn from Grasmere (a waterfall, a tarn, manageable ascent) are two good starter walks. Catbells above Keswick works for older children who can manage 450m of ascent. The Ullswater lakeshore path from Howtown starts with a boat journey.",
   },
   {
     q: "What age can children go on Lake District fells?",
@@ -17,15 +17,15 @@ const faqs = [
   },
   {
     q: "Are there activities for kids in the Lake District when it is raining?",
-    a: "Several. The Pencil Museum in Keswick is a surprisingly good couple of hours. The Windermere Jetty Museum near Bowness is excellent for anything over about 8. Go Ape has a site at Grizedale Forest. The World of Beatrix Potter in Bowness is aimed at under-8s. Rheged near Penrith has a cinema and climbing wall. None of them are cheap.",
+    a: "Several. Windermere Jetty Museum in Bowness has the lake's historic boats and a café. Go Ape at Grizedale Forest runs in most weather. The World of Beatrix Potter in Bowness is open every day. Rheged near Penrith has a cinema and indoor play for under-8s in booked sessions. The Derwent Pencil Museum in Keswick is closed while it moves to a new site.",
   },
   {
     q: "What is the best Lake District destination for families?",
-    a: "Keswick is the most practical family base. It has the best range of accommodation, is central for both the northern and southern Lakes, has good supermarkets, a leisure centre with a pool, and Derwentwater is walkable from the town. Bowness on Windermere is busier and more commercial but closer to more attractions.",
+    a: "Keswick is a practical family base. It has a wide range of accommodation and supermarkets, and Derwentwater is a short walk from the town. Bowness on Windermere is busier and more commercial but closer to more attractions.",
   },
   {
     q: "Can children go on the Windermere lake cruises?",
-    a: "Yes. Windermere Lake Cruises operates year-round between Ambleside, Bowness, and Lakeside. Children under 5 travel free. The boats are covered with outdoor deck space. A round trip from Bowness to Ambleside takes about 40 minutes each way and is a good activity for most ages.",
+    a: "Yes. Windermere Lake Cruises sail every day except Christmas Day between Ambleside, Bowness and Lakeside, on reduced timetables in winter. Children under 5 travel free. Bowness to Ambleside takes 35 minutes each way.",
   },
 ];
 
@@ -91,7 +91,7 @@ export default function LakeDistrictWithKidsPage() {
         <section className="relative min-h-[480px] flex items-end text-white overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80"
-            alt="Windermere lake — a classic Lake District family day out"
+            alt=""
             fill priority sizes="100vw"
             className="object-cover object-center"
           />
@@ -105,7 +105,7 @@ export default function LakeDistrictWithKidsPage() {
             <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest mb-3">Family guide · Lake District</p>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Lake District with Kids</h1>
             <p className="text-white/80 text-lg leading-relaxed max-w-2xl mb-8">
-              I have brought my kids here since they were small. The Lakes works for families, but only if you pick the right things to do. Here is what actually works.
+              The Lakes works for families if you pick the right things to do. Here is what works, with the practical details.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
               {[
@@ -176,22 +176,21 @@ export default function LakeDistrictWithKidsPage() {
               Tarn Hows, near Coniston (all ages)
             </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              The easiest serious walk in the Lake District. A well-maintained circular path
-              around a dramatic tarn, almost entirely flat, 1.5 miles, accessible for
-              pushchairs on the main path. The National Trust car park is at LA21 8DP. Charged,
-              fills fast in summer. The setting is genuinely stunning and even very young
-              children get something from it. Bring stale bread and expect to encounter
-              waterfowl. No waterfall, but the visual payoff is immediate.
+              A made path circles the tarn for 3.29 km (about 2 miles) on a smooth, compacted
+              stone surface. The National Park grades it as a Miles without Stiles route
+              &ldquo;for some&rdquo; wheelchair and pushchair users, with some slopes as steep
+              as 1 in 5. The main car park is LA22 0PW and fills fast in summer. Even very
+              young children get something from it. No waterfall, but the view is immediate.
             </p>
 
             <h3 className="font-semibold text-lg text-[#14231C] mb-2">
               Easedale Tarn, Grasmere (5+, about 3 hours)
             </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Park in Grasmere village (LA22 9RR). Walk out along Easedale Beck, passing
+              Park in Grasmere village (Red Bank Road car park, LA22 9SW). Walk out along Easedale Beck, passing
               Sourmilk Gill waterfall, to the tarn above. Around 3 miles return, 190m ascent.
               The waterfall is about 30 minutes in and provides an intermediate goal that
-              keeps children motivated. The tarn above is genuinely dramatic. The descent is
+              keeps children motivated. The tarn above sits in a bowl of fells. The descent is
               straightforward. A child of 5 or 6 who likes walking can manage this. It is one
               of the best short routes in the Lakes.
             </p>
@@ -236,10 +235,10 @@ export default function LakeDistrictWithKidsPage() {
               Aira Force, Ullswater (all ages)
             </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              National Trust site near Glenridding. A series of waterfalls in a ravine, with
-              good paths and bridges. Short circular walk of about 2 miles from the NT car
-              park (CA11 0JS). Spectacular after heavy rain. Café on site. One of the most
-              visited NT sites in the Lakes for good reason. Go on a weekday if possible.
+              National Trust site on the western shore of Ullswater. A series of waterfalls in
+              a ravine, with paths and bridges, from the pay and display car park (CA11 0JS).
+              Fullest after heavy rain. There is a seasonal tearoom. Go on a weekday if
+              possible.
             </p>
           </section>
 
@@ -253,7 +252,7 @@ export default function LakeDistrictWithKidsPage() {
               a boat for two hours with no complaint.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Windermere Lake Cruises operates the most extensive service, with boats between
+              Windermere Lake Cruises run boats every day except Christmas Day between
               Ambleside (Waterhead pier, LA22 0EY), Bowness, and Lakeside at the south end.
               Year-round timetable. Under-5s free, children's fare for 5 to 15. The Lakeside
               and Haverthwaite Railway connects at the south end for a steam train section.
@@ -267,10 +266,10 @@ export default function LakeDistrictWithKidsPage() {
               for the experience alone.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Keswick Launch covers Derwentwater with seven stopping points around the lake.
-              Short sectors of 10 to 15 minutes between piers. You can hop on and off, which
-              gives flexibility for a day combining a short walk with a lake section. Hawes
-              End jetty is the starting point for Catbells.
+              The Keswick Launch calls at seven jetties around Derwentwater. You can hop on and
+              off, which gives flexibility for a day combining a short walk with a lake
+              section. Hawes End jetty is the starting point for Catbells. The launch does not
+              sail in December and January.
             </p>
           </section>
 
@@ -279,26 +278,23 @@ export default function LakeDistrictWithKidsPage() {
               Indoor and Wet Weather Activities
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              It will rain. Have a plan. The following are worth your time:
+              It will rain. Have a plan. Some options:
             </p>
             <ul className="space-y-4 text-gray-700">
               <li>
-                <strong className="text-[#14231C]">Windermere Jetty Museum</strong> (LA23 3JH). A serious museum about Windermere's maritime history, opening onto the lake. The building itself is worth visiting. Good for 8 and above. Excellent on a wet afternoon. Admission charged.
+                <strong className="text-[#14231C]">Windermere Jetty Museum</strong> (Rayrigg Road, Bowness, LA23 1BN). A museum of the lake&apos;s historic boats, run by Lakeland Arts, with a café looking over the water. Admission charged.
               </li>
               <li>
-                <strong className="text-[#14231C]">Pencil Museum, Keswick</strong> (CA12 5NG). Unexpectedly good. The story of Cumberland graphite and pencil manufacturing from the 16th century. Children enjoy the giant pencil. Two hours, reasonably priced. Better than you expect.
+                <strong className="text-[#14231C]">Derwent Pencil Museum, Keswick</strong> (Southey Works, CA12 5NG). Closed while it moves to a new site.
               </li>
               <li>
-                <strong className="text-[#14231C]">World of Beatrix Potter, Bowness</strong> (LA23 3BX). Directly aimed at under-8s and the Peter Rabbit audience. An indoor walk-through attraction with the Potter characters and scenes. Short. Works well for young children, less so for older ones.
+                <strong className="text-[#14231C]">World of Beatrix Potter, Bowness</strong> (Crag Brow, LA23 3BX). An indoor walk-through attraction with Beatrix Potter&apos;s characters and scenes. Open every day.
               </li>
               <li>
-                <strong className="text-[#14231C]">Go Ape, Grizedale Forest</strong> (LA22 0QJ). Treetop aerial adventure with zip lines and rope walks. Minimum height restrictions apply (1m for junior course, 1.4m for adult). Book in advance, particularly in school holidays. Forestry England site. Several hours.
+                <strong className="text-[#14231C]">Go Ape, Grizedale Forest</strong> (LA22 0QJ). Treetop aerial adventure with zip lines and rope walks. Height and age limits apply, so check the course details. It runs in most weather, closing only for thick ice, thunderstorms or gales; check winter opening days and book in advance. In Forestry England's Grizedale Forest.
               </li>
               <li>
-                <strong className="text-[#14231C]">Rheged, near Penrith</strong> (CA11 0DQ). A large arts and retail complex built into a hillside near Junction 40 of the M6. Has a cinema, climbing wall, and soft play area. Useful if you are arriving or departing via the M6.
-              </li>
-              <li>
-                <strong className="text-[#14231C]">Keswick leisure centre</strong> (CA12 5NB). A public leisure centre with a 25m pool. Family swim sessions. Not glamorous, but useful if you are based in Keswick for several days.
+                <strong className="text-[#14231C]">Rheged, near Penrith</strong> (CA11 0DQ). A large arts and retail complex built into a hillside near Junction 40 of the M6. Has a cinema, and indoor play for under-8s in booked sessions. Useful if you are arriving or departing via the M6.
               </li>
             </ul>
           </section>
@@ -309,17 +305,16 @@ export default function LakeDistrictWithKidsPage() {
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               Wildlife spotting works well with children if you set realistic expectations.
-              Red squirrels in the Lake District are genuinely possible at several sites.
-              Dodd Wood above Bassenthwaite Lake (CA12 4QE) has a red squirrel trail through
-              the conifer woodland with feeders. Go in the morning, move quietly, and there is
-              a real chance of seeing them at close range. Children find this more exciting
-              than any manufactured attraction.
+              Red squirrels live at several sites in the Lake District, including Forestry
+              England&rsquo;s Dodd Wood above Bassenthwaite Lake (CA12 4QE) and Grizedale.
+              Go in the morning and move quietly.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Osprey season at Dodd Wood runs April to August. The RSPB and Forestry England
-              staff a telescope viewpoint at the Dodd Wood car park where the nest is visible.
-              Trained staff explain what is happening. A child who has watched an osprey
-              return to a nest with a fish will not forget it.
+              Ospreys are in the Lake District from about April to early September. Until
+              recently you could watch the nest above Bassenthwaite from the Dodd Wood
+              viewpoint, but the National Park says the birds now nest somewhere less
+              visible. At Foulshaw Moss, a Cumbria Wildlife Trust reserve near the A590, a
+              pair breeds in summer and can be seen from the viewing platform.
             </p>
             <p className="text-gray-700 leading-relaxed">
               Deer in the Martindale valley, on the far side of Ullswater, are reliable for
@@ -342,10 +337,8 @@ export default function LakeDistrictWithKidsPage() {
               valley fill extremely fast.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              For practical family hotels, Keswick offers the widest choice. The Keswick
-              Country House Hotel and the Inn on the Square both have family rooms and are
-              central. Both allow dogs, which simplifies matters if you are combining a dog
-              trip with a family trip.
+              Keswick has a wide choice of hotels. Check for family rooms, and the dog
+              policy if you are bringing one, when you book.
             </p>
             <p className="text-gray-700 leading-relaxed">
               YHA hostels in the Lakes are a good family option if your children will sleep
@@ -377,11 +370,10 @@ export default function LakeDistrictWithKidsPage() {
               </li>
               <li>
                 Midges are real in July and August, particularly at dawn and dusk in sheltered
-                valleys. Avon Skin So Soft is the standard local repellent. DEET works but
-                is not recommended for young children's skin.
+                valleys. Pack a repellent suitable for children&apos;s skin.
               </li>
               <li>
-                Car parks at popular sites (Tarn Hows, Aira Force, Haweswater) fill by 10am
+                Car parks at popular sites (Tarn Hows, Aira Force) fill by 10am
                 on summer weekends. Start early or accept a longer walk from overflow parking.
               </li>
             </ul>
@@ -411,7 +403,7 @@ export default function LakeDistrictWithKidsPage() {
                 { href: "/lake-district-walks", label: "Lake District Walks", desc: "Routes for every ability", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&q=80" },
                 { href: "/dog-friendly-lake-district", label: "Dog-Friendly Lakes", desc: "Bringing the dog too", image: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=400&q=80" },
                 { href: "/windermere", label: "Windermere", desc: "Lake cruises, Jetty Museum", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" },
-                { href: "/keswick", label: "Keswick", desc: "Best family base in the Lakes", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" },
+                { href: "/keswick", label: "Keswick", desc: "A practical family base", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" },
               ].map(({ href, label, desc, image }) => (
                 <Link key={href} href={href} className="group relative h-32 rounded-2xl overflow-hidden block">
                   <Image src={image} alt={label} fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />

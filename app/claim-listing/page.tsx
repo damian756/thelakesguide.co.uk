@@ -5,11 +5,11 @@ const BASE_URL = "https://www.thelakesguide.co.uk";
 
 export const metadata: Metadata = {
   title: "Claim Your Business Listing | The Lakes Guide",
-  description: "Is your Lake District business on our guide? Claim your free listing to update your details, opening hours, and get more visibility for visitors.",
+  description: "List your Lake District business on The Lakes Guide. The directory is opening: search for your business, or ask to be listed through the contact form.",
   alternates: { canonical: `${BASE_URL}/claim-listing` },
   openGraph: {
     title: "Claim Your Business Listing | The Lakes Guide",
-    description: "Claim your free Lake District business listing. Update your details, opening hours, and upgrade for featured placement.",
+    description: "List your Lake District business on The Lakes Guide. The directory is opening, and businesses can ask to be listed through the contact form.",
     url: `${BASE_URL}/claim-listing`,
   },
 };

@@ -85,8 +85,8 @@ export default async function CollectionsIndexPage() {
               Lake District Collections
             </h1>
             <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-2xl">
-              Filtered lists of Lake District businesses. Dog-friendly, family-friendly, lakeside, and more.
-              No aggregator ranking. Just what&apos;s actually there, with a bit of honest context.
+              Lists of Lake District businesses by what they offer: dog-friendly, family-friendly, lakeside, and more.
+              The directory is opening, so these lists fill as businesses join.
             </p>
           </div>
           <div className="relative h-8 overflow-hidden">
@@ -106,7 +106,6 @@ export default async function CollectionsIndexPage() {
                 href={`/collections/${c.slug}`}
                 className="group bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:shadow-md hover:-translate-y-0.5 transition-all"
               >
-                <div className="text-3xl mb-3">{c.emoji}</div>
                 <h2 className="font-display font-bold text-[#1B2E4B] text-base leading-snug mb-2 group-hover:text-[#C4782A] transition-colors">
                   {c.title}
                 </h2>
@@ -123,14 +122,13 @@ export default async function CollectionsIndexPage() {
           {/* Coming soon — collapsed, not linked */}
           {comingSoon.length > 0 && (
             <div className="mt-10">
-              <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Coming soon</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Waiting for their first businesses</p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
                 {comingSoon.map((c) => (
                   <div
                     key={c.slug}
                     className="bg-white/60 rounded-xl border border-gray-100 border-dashed p-4 opacity-60"
                   >
-                    <span className="text-2xl mb-2 block">{c.emoji}</span>
                     <p className="font-semibold text-[#1B2E4B] text-sm leading-snug">{c.title}</p>
                   </div>
                 ))}
@@ -143,13 +141,13 @@ export default async function CollectionsIndexPage() {
               Own a business in the Lake District?
             </h2>
             <p className="text-white/60 text-sm mb-5 max-w-sm mx-auto">
-              List your business and we&apos;ll include you in relevant collections automatically.
+              Ask to be listed through the contact form. Listed businesses appear in the collections that fit.
             </p>
             <Link
-              href="/claim-listing"
+              href="/contact"
               className="inline-block bg-[#C4782A] hover:bg-[#E8C87A] text-white px-7 py-3 rounded-full font-bold text-sm transition-all"
             >
-              Add Your Business →
+              Ask to be listed →
             </Link>
           </div>
         </div>

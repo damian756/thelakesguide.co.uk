@@ -10,7 +10,7 @@ const url = `${BASE_URL}/guides`;
 export const metadata: Metadata = {
   title: "Lake District Guides | The Lakes Guide",
   description:
-    "Editorial guides to the Lake District. Villages, walks, practical info, and where to eat. Written by people who know the Lakes.",
+    "Guides to the Lake District: villages, walks, practical information and where to eat.",
   alternates: { canonical: url },
   openGraph: {
     title: "Lake District Guides | The Lakes Guide",
@@ -78,7 +78,7 @@ export default function GuidesIndexPage() {
             </div>
           </div>
           <p className="text-white/70 text-lg leading-relaxed max-w-2xl mb-6">
-            Villages, walks, where to eat, and the practical stuff. Written by people who know the Lakes.
+            Villages, walks, where to eat, and the practical details: parking, transport and what to expect.
           </p>
         </div>
       </div>
@@ -89,8 +89,7 @@ export default function GuidesIndexPage() {
           if (guidesInCat.length === 0) return null;
           return (
             <section key={cat} id={cat} className="mb-16">
-              <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6 flex items-center gap-2">
-                <span>{GUIDE_CATEGORIES[cat].emoji}</span>
+              <h2 className="font-display text-2xl font-bold text-[#14231C] mb-6">
                 {GUIDE_CATEGORIES[cat].label}
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

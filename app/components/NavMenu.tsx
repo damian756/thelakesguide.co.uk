@@ -23,10 +23,10 @@ const CATEGORIES = [
 ];
 
 const FEATURED_COLLECTIONS = [
-  { href: "/collections/dog-friendly-restaurants-lake-district", label: "Dog-friendly", emoji: "🐾" },
-  { href: "/collections/lakeside-restaurants-lake-district",     label: "Lakeside",     emoji: "🍽️" },
-  { href: "/collections/accommodation-with-parking-lake-district", label: "With parking", emoji: "🏨" },
-  { href: "/collections/free-things-to-do-lake-district",       label: "Free to do",   emoji: "🎟️" },
+  { href: "/collections/dog-friendly-restaurants-lake-district", label: "Dog-friendly" },
+  { href: "/collections/lakeside-restaurants-lake-district",     label: "Lakeside" },
+  { href: "/collections/accommodation-with-parking-lake-district", label: "With parking" },
+  { href: "/collections/free-things-to-do-lake-district",       label: "Free to do" },
 ];
 
 // Shared nav link style — uppercase editorial feel
@@ -91,16 +91,15 @@ export default function NavMenu() {
             {/* Curated lists */}
             <div className="border-t border-gray-100 pt-3">
               <div className="flex items-center justify-between mb-2 px-1">
-                <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-gray-400">Curated Lists</p>
+                <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-gray-400">Collections</p>
                 <Link href="/collections" onClick={() => setExploreOpen(false)}
                   className="text-[#C4782A] text-[10px] font-bold hover:text-[#14231C] transition-colors">All collections →</Link>
               </div>
               <div className="grid grid-cols-2 gap-0.5">
-                {FEATURED_COLLECTIONS.map(({ href, label, emoji }) => (
+                {FEATURED_COLLECTIONS.map(({ href, label }) => (
                   <Link key={href} href={href}
                     onClick={() => setExploreOpen(false)}
                     className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg hover:bg-[#EAEDE8] text-[#14231C] text-xs font-medium transition-colors group">
-                    <span className="text-sm leading-none flex-none">{emoji}</span>
                     <span className="group-hover:text-[#C4782A] transition-colors truncate">{label}</span>
                   </Link>
                 ))}
@@ -128,11 +127,11 @@ export default function NavMenu() {
                 .filter((g) => g.category === cat)
                 .sort((a, b) => b.seoPriority - a.seoPriority);
               if (catGuides.length === 0) return null;
-              const { label, emoji } = GUIDE_CATEGORIES[cat];
+              const { label } = GUIDE_CATEGORIES[cat];
               return (
                 <div key={cat} className="px-2 mb-1">
                   <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-gray-400 px-2 pt-1 pb-0.5">
-                    {emoji} {label}
+                    {label}
                   </p>
                   {catGuides.map((g) => (
                     <Link key={g.slug} href={`/guides/${g.slug}`}
@@ -224,11 +223,11 @@ export default function NavMenu() {
                 .filter((g) => g.category === cat)
                 .sort((a, b) => b.seoPriority - a.seoPriority);
               if (catGuides.length === 0) return null;
-              const { label, emoji } = GUIDE_CATEGORIES[cat];
+              const { label } = GUIDE_CATEGORIES[cat];
               return (
                 <div key={cat} className="mb-3">
                   <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-gray-400 px-1 mb-1">
-                    {emoji} {label}
+                    {label}
                   </p>
                   <div className="grid grid-cols-2 gap-1">
                     {catGuides.map((g) => (
@@ -246,15 +245,15 @@ export default function NavMenu() {
           {/* Collections */}
           <div className="border-t border-gray-100 pt-4">
             <div className="flex items-center justify-between mb-2 px-1">
-              <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-gray-400">Curated Lists</p>
+              <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-gray-400">Collections</p>
               <Link href="/collections" onClick={() => setMobileOpen(false)}
                 className="text-[#C4782A] text-[10px] font-bold">All →</Link>
             </div>
             <div className="grid grid-cols-2 gap-1">
-              {FEATURED_COLLECTIONS.map(({ href, label, emoji }) => (
+              {FEATURED_COLLECTIONS.map(({ href, label }) => (
                 <Link key={href} href={href} onClick={() => setMobileOpen(false)}
                   className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-[#EAEDE8] text-[#14231C] text-xs font-medium">
-                  <span className="text-base leading-none">{emoji}</span> {label}
+                  {label}
                 </Link>
               ))}
             </div>

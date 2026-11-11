@@ -19,8 +19,8 @@ type Props = {
 const THEMES: Record<string, { gradient: string; accent: string; emoji: string; tagline: string; heroPos: string }> = {
   walks:        { gradient: "from-[#2A6B8A] to-[#245E3F]", accent: "#245E3F", emoji: "🥾", tagline: "Walks and hiking routes in the Lake District", heroPos: "center 20%" },
   villages:     { gradient: "from-[#2A3F5C] to-[#3A5070]", accent: "#3A4F6B", emoji: "🏘️", tagline: "Villages and towns in the Lake District", heroPos: "center" },
-  restaurants:  { gradient: "from-[#8B2635] to-[#C94B3B]", accent: "#C94B3B", emoji: "🍽️", tagline: "The best places to eat in the Lake District", heroPos: "center 75%" },
-  cafes:         { gradient: "from-[#6B3A1F] to-[#A06040]", accent: "#8B5E3C", emoji: "☕", tagline: "Great coffee, cafes and tea rooms", heroPos: "center 35%" },
+  restaurants:  { gradient: "from-[#8B2635] to-[#C94B3B]", accent: "#C94B3B", emoji: "🍽️", tagline: "Places to eat in the Lake District", heroPos: "center 75%" },
+  cafes:         { gradient: "from-[#6B3A1F] to-[#A06040]", accent: "#8B5E3C", emoji: "☕", tagline: "Cafes and tea rooms in the Lake District", heroPos: "center 35%" },
   pubs:         { gradient: "from-[#3D1A5C] to-[#6B3AA0]", accent: "#5B2D8A", emoji: "🍺", tagline: "Pubs and inns in the Lake District", heroPos: "center 5%" },
   activities:   { gradient: "from-[#0D6E6E] to-[#0F9B8E]", accent: "#0D6E6E", emoji: "🏄", tagline: "Sport, leisure and outdoor activities", heroPos: "center" },
   attractions:  { gradient: "from-[#5C2A6B] to-[#8B3AA0]", accent: "#6B3A7A", emoji: "🏛️", tagline: "Dove Cottage, Hill Top, Brockhole, Lakes Aquarium and more", heroPos: "center" },
@@ -75,48 +75,48 @@ const CATEGORY_GUIDES: Record<string, { href: string; label: string }[]> = {
 const CATEGORY_CONTENT: Record<string, string[]> = {
   "walks": [
     "Most people come for the walking. The fells, the lakes, the views. Scafell Pike, Helvellyn, Catbells. The 214 Wainwrights draw completionists from around the world. There are routes for every level, from gentle lakeside strolls to serious mountain days.",
-    "The National Trust and Lake District National Park maintain paths and waymarking. Check conditions before heading onto the high fells. Weather changes fast. Grizedale Forest has family-friendly trails. Tarn Hows is a classic easy loop with proper views.",
+    "The National Trust and Lake District National Park maintain paths and waymarking. Check conditions before heading onto the high fells. Weather changes fast. Grizedale Forest has family-friendly trails. Tarn Hows is an easy loop of about 2 miles.",
     "Worth knowing: popular routes like Catbells and Helvellyn get busy in summer. Go early or pick a quieter fell. The bus is a good way to avoid parking fees at the busiest spots.",
   ],
   "villages": [
-    "Ambleside, Keswick, Grasmere, Windermere, Bowness. Each has its own character. Ambleside is the walkers' hub. Keswick has the best outdoor shops and Derwentwater on the doorstep. Grasmere is Wordsworth and gingerbread. Windermere and Bowness are the busiest, with the steamers and most of the tourist infrastructure.",
+    "Ambleside, Keswick, Grasmere, Windermere, Bowness. Each has its own character. Ambleside is the walkers' hub. Keswick has outdoor shops and Derwentwater on the doorstep. Grasmere is Wordsworth and gingerbread. Windermere and Bowness are the busiest, with the lake cruises and most of the tourist infrastructure.",
     "Smaller villages like Hawkshead, Coniston, and Glenridding are worth the drive. Hawkshead has Beatrix Potter connections. Coniston has the Old Man and the Ruskin Museum. Glenridding is the start of Helvellyn and the Ullswater steamer.",
     "Worth knowing: village car parks fill early on summer weekends. Arrive before 10am or use the bus. The 555 runs the length of the A591 and connects the main centres.",
   ],
   "restaurants": [
-    "The Lake District has more good food than it gets credit for. Ambleside and Keswick have the best concentration of independents. The Drunken Duck, The Old Stamp House, and The Cottage in the Wood are the ones that get mentioned when people want a proper meal. Book ahead at weekends.",
-    "Village pubs do solid food. Many are walker-friendly with boots and dogs welcome. The bigger hotels (Gilpin, Linthwaite House) have restaurants that are worth the splurge if you're celebrating.",
-    "Worth knowing: the busier spots fill up quickly in peak season. Book ahead or eat early. Lunch is often easier than dinner if you're flexible.",
+    "Ambleside and Keswick have the most places to eat, from cafés and pubs to restaurants. A place's own website has its current opening hours.",
+    "Many village pubs serve food. Policies on boots and dogs differ, so check with the pub.",
+    "Worth knowing: the busier places fill up quickly in peak season. Book ahead or eat early. Hours are shorter in winter, and some places close for part of January.",
   ],
   "cafes": [
-    "Every village has at least one decent café. Grasmere has the famous gingerbread shop. Ambleside and Keswick have the best coffee. The NT cafés at Tarn Hows and Grizedale are reliable for post-walk cake.",
+    "Most villages have at least one café or tea room. Grasmere has the gingerbread shop. Ambleside and Keswick have the most choice, and the Grizedale Forest visitor centre has a café.",
     "Tea rooms are everywhere. The slower pace suits the Lakes. Many are dog-friendly. Worth knowing: the popular ones get queues on rainy days. Go early or pick a quieter spot.",
-    "For a proper sit-down, the bigger villages have options. Ambleside's Zeffirellis does good vegetarian. Keswick has a solid range. Windermere and Bowness are busier and more tourist-focused.",
+    "For a sit-down meal, the bigger villages have more options. Zeffirellis in Ambleside is a vegetarian restaurant with a terrace café. Keswick, Windermere and Bowness have a wide range.",
   ],
   "pubs": [
-    "The Lake District does pubs well. Walkers, dogs, muddy boots. The Kirkstile Inn, The Drunken Duck, The Mortal Man. Proper food, local ales, and the kind of atmosphere that makes you want to stay.",
-    "Keswick has a good run of pubs. Ambleside and Grasmere too. The smaller villages often have one standout. Worth booking at weekends in summer.",
-    "Worth knowing: many pubs stop serving food by 9pm. If you're coming off the fells late, call ahead. Dog-friendly is the norm, but always check if you're unsure.",
+    "The Lake District has many walkers' pubs and inns, from town pubs to valley-head hotels. A pub's own website has its food times and dog policy.",
+    "Keswick, Ambleside and Grasmere have several pubs each, and many smaller villages have one. Book at weekends in summer where the pub takes bookings.",
+    "Worth knowing: food service often stops in the evening. If you're coming off the fells late, call ahead. Dog policies can differ between the bar and the dining room.",
   ],
   "activities": [
-    "Walking is the main draw, but there's more. Windermere and Coniston have steamers. Ullswater too. Paddleboarding, kayaking, and sailing are available on the main lakes. Grizedale has mountain biking and Go Ape.",
-    "Brockhole on Windermere is the main family attraction. Adventure activities, gardens, lake access. The Ravenglass and Eskdale Railway is a proper day out. Honister Slate Mine does via ferrata for the adventurous.",
-    "Worth knowing: water sports and boat hire get booked up in summer. Book ahead. The steamers run year-round but with reduced schedules in winter.",
+    "Walking is the main draw, but there's more. Boats run on Windermere, Coniston Water, Derwentwater and Ullswater. Paddleboarding, kayaking, and sailing are available on the main lakes. Grizedale has mountain biking and Go Ape.",
+    "The Ravenglass and Eskdale Railway is a heritage railway in the west of the National Park. Honister Slate Mine has mine tours and a via ferrata. At Brockhole on Windermere, the National Park leased the site in 2025 and BeWILDerwood is listed as coming soon.",
+    "Worth knowing: water sports and boat hire get booked up in summer. Book ahead. The boats on Windermere and Ullswater run through the winter on reduced timetables; the Keswick Launch does not sail in December and January.",
   ],
   "attractions": [
-    "Dove Cottage, Hill Top, Brockhole, Lakes Aquarium, Haverthwaite Railway, World of Beatrix Potter, Honister Slate Mine. The Lake District has a solid mix of heritage and family attractions.",
-    "Dove Cottage in Grasmere is Wordsworth's home. Hill Top near Sawrey is Beatrix Potter's. Both need booking. Brockhole on Windermere is the main family day out. Lakes Aquarium at the southern end of Windermere is good for wet weather.",
-    "Worth knowing: the heritage sites get busy in summer. Book ahead. Honister Slate Mine does tours and via ferrata. The Ravenglass and Eskdale Railway is a proper day out for families.",
+    "Dove Cottage, Hill Top, Brockhole, Lakes Aquarium, Haverthwaite Railway, World of Beatrix Potter, Honister Slate Mine. The Lake District has a mix of heritage and family attractions.",
+    "Dove Cottage in Grasmere is Wordsworth's home. Hill Top near Sawrey is Beatrix Potter's. Both need booking. Lakes Aquarium at the southern end of Windermere is indoors.",
+    "Worth knowing: the heritage sites get busy in summer, and several have shorter winter hours. Check before you go. Honister Slate Mine has mine tours and a via ferrata.",
   ],
   "accommodation": [
-    "The Lake District has everything from bunkhouses to five-star hotels. Ambleside, Keswick, and Windermere have the biggest range. Grasmere and Coniston are quieter. The Gilpin and Linthwaite House are the splurge options. B&Bs and inns are the backbone.",
-    "If you're here for The Open 2026 at Royal Birkdale, accommodation in the Lakes fills up. It's a drive to the course but a lot of visitors base themselves here for the week. Book early.",
+    "The Lake District has everything from bunkhouses to five-star hotels. Ambleside, Keswick, and Windermere have the biggest range. Grasmere and Coniston are quieter. B&Bs and inns make up much of the choice.",
+    "Some places close for part of the winter or for a break in January, so check dates when you book.",
     "Worth knowing: peak season (Easter, summer holidays, half terms) books out months ahead. Flexible on dates? Spring and autumn are quieter and often better for walking.",
   ],
   "shopping": [
-    "Keswick has the best outdoor shops. George Fisher, Cotswold Outdoor, and a cluster of independents. Ambleside has a good range too. If you need gear, that's where to go.",
-    "Grasmere has the gingerbread shop and a few independents. Hawkshead has Beatrix Potter connections and gift shops. Windermere and Bowness are more tourist-focused with the usual mix.",
-    "Worth knowing: the outdoor shops know their stuff. If you're unsure about a route or conditions, ask. They'll give you honest advice.",
+    "Keswick and Ambleside both have many outdoor gear shops. If you need kit, that's where to go.",
+    "Grasmere has the gingerbread shop and a few independents. Hawkshead has Beatrix Potter connections and gift shops. Windermere and Bowness have a wider mix of shops.",
+    "Worth knowing: town car parks fill early on summer weekends. Arrive early or use the bus.",
   ],
 };
 
@@ -149,9 +149,9 @@ const BASE_URL = "https://www.thelakesguide.co.uk";
 
 // Per-category meta description overrides — more specific than the generic template
 const CAT_META_DESCRIPTIONS: Partial<Record<string, string>> = {
-  activities: "Kayaking, sailing, walking, mountain biking in the Lake District. Browse all activity listings with ratings and contact details on TheLakesGuide.co.uk.",
-  accommodation: "Hotels, B&Bs and holiday lets in the Lake District. Find every place to stay with Google ratings and availability. Book early for summer.",
-  restaurants: "Restaurants in the Lake District. Italian, pub grub, fine dining. Browse every restaurant with Google ratings and booking links on TheLakesGuide.co.uk.",
+  activities: "Kayaking, sailing, walking and mountain biking in the Lake District, with practical notes for visitors.",
+  accommodation: "Hotels, B&Bs and holiday lets in the Lake District: where to base yourself and when to book.",
+  restaurants: "Restaurants in the Lake District: where to eat in Keswick, Ambleside and beyond, with practical notes for visitors.",
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -161,7 +161,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const theme = THEMES[category];
   const title = `${cat.name} in the Lake District`;
   const description = CAT_META_DESCRIPTIONS[category]
-    ?? `${theme?.tagline || cat.description}. Browse all listings with Google ratings, food hygiene scores and contact details on TheLakesGuide.co.uk`;
+    ?? `${theme?.tagline || cat.description}, with practical notes for visitors, on TheLakesGuide.co.uk.`;
   const url = `${BASE_URL}/${category}`;
   return {
     title, description,
@@ -255,6 +255,8 @@ export default async function CategoryPage({ params, searchParams }: Props) {
   } catch { /* DB unavailable — page renders with empty listings */ }
 
   // Area filter applied server-side (before passing to client)
+  // Lakes Guide lists no businesses yet (Damian, 11 Nov 2026): the page then reads as a guide.
+  const hasListings = businesses.length > 0;
   const filteredBusinesses = area
     ? businesses.filter((b) => matchesArea(b.address ?? "", b.postcode ?? "", area))
     : businesses;
@@ -328,17 +330,18 @@ export default async function CategoryPage({ params, searchParams }: Props) {
 
           <div className="flex items-end justify-between gap-6">
             <div>
-              <div className="text-5xl mb-4 drop-shadow-md">{theme.emoji}</div>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
                 <strong>{cat.name}</strong>
                 <span className="text-white/50 font-normal"> in the Lake District</span>
               </h1>
               <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-xl">{theme.tagline}</p>
             </div>
-            <div className="hidden md:flex flex-col items-end gap-1 flex-shrink-0">
-              <div className="font-display text-6xl font-bold text-white/20 leading-none">{filteredBusinesses.length}</div>
-              <div className="text-white/35 text-xs uppercase tracking-widest">listings</div>
-            </div>
+            {hasListings && (
+              <div className="hidden md:flex flex-col items-end gap-1 flex-shrink-0">
+                <div className="font-display text-6xl font-bold text-white/20 leading-none">{filteredBusinesses.length}</div>
+                <div className="text-white/35 text-xs uppercase tracking-widest">listings</div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -367,7 +370,6 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                   }`}
                   style={isActive ? { backgroundColor: theme.accent, borderColor: theme.accent } : {}}
                 >
-                  <span className="text-sm leading-none">{t.emoji}</span>
                   {c.name}
                 </Link>
               );
@@ -412,7 +414,6 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                         }`}
                         style={isActive ? { backgroundColor: theme.accent } : {}}
                       >
-                        <span className="text-base leading-none w-5 text-center flex-shrink-0">{t.emoji}</span>
                         {c.name}
                       </Link>
                     );
@@ -420,7 +421,8 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                 </nav>
               </div>
 
-              {/* Area filter */}
+              {/* Area filter (only when there are listings to filter) */}
+              {hasListings && (
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-1.5">
                   <ChevronRight className="w-3 h-3 -rotate-90 opacity-50" /> Area
@@ -454,9 +456,10 @@ export default async function CategoryPage({ params, searchParams }: Props) {
                   })}
                 </div>
               </div>
+              )}
 
-              {/* Editorial snippet */}
-              {CATEGORY_CONTENT[category] && (
+              {/* Editorial snippet (the full text is in the main column while the directory is empty) */}
+              {hasListings && CATEGORY_CONTENT[category] && (
                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4">
                   <p className="text-[13px] text-gray-500 leading-relaxed">
                     {CATEGORY_CONTENT[category][0]}
@@ -468,6 +471,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
 
           {/* ── Main content ──────────────────────────────────────────────── */}
           <div className="flex-1 min-w-0">
+            {hasListings ? (
             <CategoryBrowser
               businesses={filteredBusinesses}
               mapPins={mapPins}
@@ -484,6 +488,21 @@ export default async function CategoryPage({ params, searchParams }: Props) {
               currentArea={area}
               boostedBusinessIds={boostedIds}
             />
+            ) : (
+              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8">
+                {(CATEGORY_CONTENT[category] ?? []).map((para) => (
+                  <p key={para.slice(0, 40)} className="text-gray-600 leading-relaxed mb-4">{para}</p>
+                ))}
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <p className="font-semibold text-[#14231C] mb-1">The directory is opening</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    There are no businesses in this part of the directory yet. If you run a Lake District business that belongs here, you can ask to be listed through the{" "}
+                    <Link href="/contact" className="text-[#C4782A] font-semibold hover:underline">contact form</Link>
+                    {" "}(choose &ldquo;Claim my listing&rdquo; as the enquiry type).
+                  </p>
+                </div>
+              </div>
+            )}
 
             {/* ── Related Guides ──────────────────────────────────────────── */}
             {CATEGORY_GUIDES[category] && (
@@ -506,13 +525,14 @@ export default async function CategoryPage({ params, searchParams }: Props) {
             {/* ── Bottom CTA ──────────────────────────────────────────────── */}
             <div className="mt-10 rounded-2xl overflow-hidden">
               <div className={`bg-gradient-to-br ${theme.gradient} p-8 md:p-10 text-center`}>
-                <div className="text-4xl mb-3">{theme.emoji}</div>
                 <h3 className="font-display text-2xl font-bold text-white mb-2">Own a business in this category?</h3>
                 <p className="text-white/70 text-sm mb-6 max-w-sm mx-auto">
-                  List for free and get discovered by thousands of visitors planning their Lake District trip.
+                  {hasListings
+                    ? "List for free and get found by visitors planning their Lake District trip."
+                    : "The directory is opening. Ask to be listed through the contact form."}
                 </p>
-                <Link href="/claim-listing" className="inline-block bg-[#C4782A] hover:bg-[#E8B87A] text-white px-7 py-3 rounded-full font-bold text-sm transition-all hover:shadow-lg">
-                  Add Your Business →
+                <Link href={hasListings ? "/claim-listing" : "/contact"} className="inline-block bg-[#C4782A] hover:bg-[#E8B87A] text-white px-7 py-3 rounded-full font-bold text-sm transition-all hover:shadow-lg">
+                  {hasListings ? "Add Your Business →" : "Ask to be listed →"}
                 </Link>
               </div>
             </div>

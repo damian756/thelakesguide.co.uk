@@ -93,7 +93,7 @@ export default function TheOpen2026Page() {
             The Open 2026 and the Lake District
           </h1>
           <p className="text-white/80 text-lg max-w-2xl">
-            The Open Championship returns to Royal Birkdale in July 2026. The Lake District is about 45 minutes from the course. If you want to combine golf with a few days in the Lakes, or base yourself here for the week, this is where to look.
+            The Open Championship was played at Royal Birkdale in July 2026. This page was written beforehand for visitors staying in the Lake District during Open week. The town guides below cover a visit at any time of year.
           </p>
         </div>
         <div className="relative h-8 overflow-hidden">
@@ -106,30 +106,27 @@ export default function TheOpen2026Page() {
       <div className="container mx-auto px-4 max-w-3xl py-12">
         <div className="prose prose-slate max-w-none text-[#3C4E42] space-y-6">
           <p>
-            The Open 2026 is at Royal Birkdale, 12–19 July. Accommodation near the course fills early. The Lake District is a 45-minute drive. Keswick, Windermere, Ambleside, and Grasmere all have good options if you want to stay in the Lakes and drive to the course, or extend your trip with a few days walking.
-          </p>
-          <p>
-            Book early. Open week is one of the busiest periods. Lake District accommodation gets snapped up. Keswick and Windermere have the widest choice. Ambleside and Grasmere are quieter but still within range.
+            The Open 2026 was played at Royal Birkdale, 12 to 19 July. The southern Lake District is about an hour&apos;s drive from the course, and Keswick, Windermere, Ambleside and Grasmere all have accommodation.
           </p>
         </div>
 
         <div className="mt-12 bg-white rounded-2xl border border-gray-100 p-6">
-          <h2 className="font-display text-xl font-bold text-[#14231C] mb-4">Where to Stay</h2>
+          <h2 className="font-display text-xl font-bold text-[#14231C] mb-4">Town guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/accommodation?area=keswick" className="flex items-center justify-between p-4 rounded-xl bg-[#EAEDE8] hover:bg-[#D8E5E0] transition-colors group">
+            <Link href="/keswick" className="flex items-center justify-between p-4 rounded-xl bg-[#EAEDE8] hover:bg-[#D8E5E0] transition-colors group">
               <span className="font-semibold text-[#14231C]">Keswick</span>
               <ChevronRight className="w-5 h-5 text-[#C4782A] group-hover:translate-x-0.5 transition-transform" />
             </Link>
-            <Link href="/accommodation?area=windermere" className="flex items-center justify-between p-4 rounded-xl bg-[#EAEDE8] hover:bg-[#D8E5E0] transition-colors group">
+            <Link href="/windermere" className="flex items-center justify-between p-4 rounded-xl bg-[#EAEDE8] hover:bg-[#D8E5E0] transition-colors group">
               <span className="font-semibold text-[#14231C]">Windermere</span>
               <ChevronRight className="w-5 h-5 text-[#C4782A] group-hover:translate-x-0.5 transition-transform" />
             </Link>
-            <Link href="/accommodation?area=ambleside" className="flex items-center justify-between p-4 rounded-xl bg-[#EAEDE8] hover:bg-[#D8E5E0] transition-colors group">
+            <Link href="/ambleside" className="flex items-center justify-between p-4 rounded-xl bg-[#EAEDE8] hover:bg-[#D8E5E0] transition-colors group">
               <span className="font-semibold text-[#14231C]">Ambleside</span>
               <ChevronRight className="w-5 h-5 text-[#C4782A] group-hover:translate-x-0.5 transition-transform" />
             </Link>
-            <Link href="/accommodation" className="flex items-center justify-between p-4 rounded-xl bg-[#EAEDE8] hover:bg-[#D8E5E0] transition-colors group">
-              <span className="font-semibold text-[#14231C]">All accommodation</span>
+            <Link href="/grasmere" className="flex items-center justify-between p-4 rounded-xl bg-[#EAEDE8] hover:bg-[#D8E5E0] transition-colors group">
+              <span className="font-semibold text-[#14231C]">Grasmere</span>
               <ChevronRight className="w-5 h-5 text-[#C4782A] group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>

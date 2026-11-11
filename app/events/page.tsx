@@ -10,9 +10,9 @@ import MonthFilter from "./MonthFilter";
 export const revalidate = 3600; // Refresh hourly so Eventbrite sync appears
 
 export const metadata = {
-  title: "What's On in the Lake District 2026 | Events Calendar | The Lakes Guide",
+  title: "What's On in the Lake District | Events Calendar | The Lakes Guide",
   description:
-    "The complete guide to events in the Lake District in 2026. Festivals, races, and seasonal events, updated regularly.",
+    "Events in the Lake District: festivals, races, shows and seasonal events, with dates and a link to each organiser.",
   alternates: { canonical: "https://www.thelakesguide.co.uk/events" },
 };
 
@@ -124,12 +124,16 @@ export default async function EventsPage({
     ? allMonths.filter((m) => m === activeMonth)
     : allMonths;
 
-  const allMergedEvents = Object.values(eventsByMonth).flat();
+  // Structured data lists only events that have not yet finished.
+  const todayStart = new Date(new Date().setHours(0, 0, 0, 0));
+  const allMergedEvents = Object.values(eventsByMonth)
+    .flat()
+    .filter((e) => new Date(e.endIsoDate ?? e.isoDate) >= todayStart);
   const eventsJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Lake District Events 2026",
-    description: "The complete guide to events in the Lake District in 2026: festivals, races, and seasonal events.",
+    name: "Lake District Events",
+    description: "Upcoming events in the Lake District: festivals, races, shows and seasonal events.",
     url: "https://www.thelakesguide.co.uk/events",
     numberOfItems: allMergedEvents.length,
     itemListElement: allMergedEvents.map((event, i) => ({
@@ -199,14 +203,16 @@ export default async function EventsPage({
           </Link>
           <div className="flex items-center gap-3 mb-4">
             <CalendarDays className="w-8 h-8 text-[#C4782A]" />
-            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest">Updated weekly</p>
+            <p className="text-[#C4782A] text-xs font-bold uppercase tracking-widest">Events calendar</p>
           </div>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
             What&apos;s On in the Lake District<br />
-            <span className="text-[#C4782A]">2026 Events Calendar</span>
+            <span className="text-[#C4782A]">Events Calendar</span>
           </h1>
           <p className="text-white/80 text-lg lg:text-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] max-w-xl">
-            {upcomingCount} upcoming events across the year, from free community events to festivals and races. Updated regularly.
+            {upcomingCount > 0
+              ? `${upcomingCount} upcoming ${upcomingCount === 1 ? "event" : "events"}, from free community events to festivals and races.`
+              : "No upcoming events are listed at the moment. The 2026 events below have passed: check each organiser's website for next year's dates."}
           </p>
         </div>
         <div className="relative h-8 overflow-hidden">
@@ -276,8 +282,7 @@ export default async function EventsPage({
                               : "border-gray-100 hover:border-[#C4782A]/40 hover:shadow-md"
                           }`}
                         >
-                          <div className="flex items-start justify-between mb-3">
-                            <span className="text-2xl">{event.emoji}</span>
+                          <div className="flex items-start justify-end mb-3">
                             <div className="flex items-center gap-1.5">
                               {isCommunity && (
                                 <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">
@@ -326,7 +331,7 @@ export default async function EventsPage({
         <div className="mt-16 bg-[#14231C] rounded-3xl p-8 text-center">
           <h3 className="font-display text-2xl font-bold text-white mb-2">Got an event to add?</h3>
           <p className="text-white/60 mb-6">
-            We update this calendar weekly. If you run a Lake District event that&apos;s not listed, get in touch.
+            If you run a Lake District event that&apos;s not listed, get in touch.
           </p>
           <Link
             href="/contact"
