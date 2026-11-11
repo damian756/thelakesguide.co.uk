@@ -1,5 +1,6 @@
 {
   "framework": "nextjs",
+  "regions": ["lhr1"],
   "crons": [
     { "path": "/api/cron/weekly-email", "schedule": "0 8 * * 1" },
     { "path": "/api/cron/review-check", "schedule": "0 9 * * *" },
